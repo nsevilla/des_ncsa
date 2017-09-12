@@ -1,0 +1,6 @@
+{
+  "name": "des_public_new",
+  "short_name": "des_public_new",
+  "start_url": "/",
+  "display": "standalone"
+}
