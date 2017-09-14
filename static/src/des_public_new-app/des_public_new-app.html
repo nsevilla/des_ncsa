@@ -1,48 +1,164 @@
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="my-icons.html">
 
-<dom-module id="des_public_new-app">
+<link rel="import" href="des-card.html">
+<link rel="import" href="des-home.html">
+
+<link rel="lazy-import" href="des-view.html">
+<link rel="lazy-import" href="des-view404.html">
+
+<dom-module id="des-public_new-app">
   <template>
     <style>
       :host {
+        --app-primary-color: black;
+        --app-secondary-color: black;
         display: block;
+      }
+      app-drawer-layout:not([narrow]) [drawer-toggle] {
+        display: none;
+      }
+      app-header {
+        color: #fff;
+        background-color: var(--app-primary-color);
+      }
+      app-toolbar {
+        color: #fff;
+        background-color: var(--app-primary-color);
+      }
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+      .drawer-list {
+        margin: 0 20px;
+      }
+      .drawer-list a {
+        display: block;
+        padding: 0 16px;
+        text-decoration: none;
+        color: var(--app-secondary-color);
+        line-height: 40px;
+      }
+      .drawer-list a.iron-selected {
+        color: black;
+        font-weight: bold;
       }
     </style>
 
+    <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="[[rootPath]]:page"
+        data="{{routeData}}"
+        tail="{{subroute}}"></app-route>
 
+    <app-drawer-layout fullbleed narrow="{{narrow}}">
+      <!-- Drawer content -->
+      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+        <app-toolbar>
+          <iron-image
+                  style="width:60px; height:60px;"
+                  sizing="cover"
+                  src="/static/images/DESDM_logo.png"></iron-image>
+        </app-toolbar>
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <a name="home" href="[[rootPath]]home">Home</a>
+          <a name="view" href="[[rootPath]]view">Test</a>
+        </iron-selector>
+      </app-drawer>
 
-    <h2>Hello [[prop1]]! from Audrey (Testing) </h2>
+      <!-- Main content -->
+      <app-header-layout has-scrolling-region>
 
-    <paper-listbox>
-      <li>
-      <paper-item>Item 1</paper-item>
-      </li>
-      <li>
-      <paper-item>Item 2 </paper-item>
-      </li>
-    </paper-listbox>
+        <app-header slot="header" fixed>
+          <app-toolbar >
+            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+            <div main-title>DARK ENERGY Survey Data Management </div>
+          </app-toolbar>
+        </app-header>
 
-
-
-
+        <iron-pages
+            selected="[[page]]"
+            attr-for-selected="name"
+            fallback-selection="view404"
+            role="main">
+          <des-home name="home"></des-home>
+          <des-view name="view"></des-view>
+          <des-view404 name="view404"></des-view404>
+        </iron-pages>
+      </app-header-layout>
+    </app-drawer-layout>
   </template>
 
   <script>
-    /**
-     * @customElement
-     * @polymer
-     */
-    class Des_public_newApp extends Polymer.Element {
-      static get is() { return 'des_public_new-app'; }
+    class MyApp extends Polymer.Element {
+      static get is() { return 'des-public_new-app'; }
       static get properties() {
         return {
-          prop1: {
+          page: {
             type: String,
-            value: 'des_public_new-app'
-          }
+            reflectToAttribute: true,
+            observer: '_pageChanged',
+          },
+
+
+          routeData: Object,
+          subroute: String,
+          // This shouldn't be neccessary, but the Analyzer isn't picking up
+          // Polymer.Element#rootPath
+          rootPath: String,
         };
+      }
+
+
+      static get observers() {
+        return [
+          '_routePageChanged(routeData.page)',
+        ];
+      }
+
+
+      _routePageChanged(page) {
+        // If no page was found in the route data, page will be an empty string.
+        // Deault to 'view1' in that case.
+        this.page = page || 'home';
+        // Close a non-persistent drawer when the page & route are changed.
+        if (!this.$.drawer.persistent) {
+          this.$.drawer.close();
+        }
+      }
+
+
+      _pageChanged(page) {
+        // Load page import on demand. Show 404 page if fails
+        var resolvedPageUrl = this.resolveUrl('des-' + page + '.html');
+        Polymer.importHref(
+            resolvedPageUrl,
+            null,
+            this._showPage404.bind(this),
+            true);
+      }
+      _showPage404() {
+        this.page = 'view404';
       }
     }
 
-    window.customElements.define(Des_public_newApp.is, Des_public_newApp);
+
+    window.customElements.define(MyApp.is, MyApp);
   </script>
 </dom-module>

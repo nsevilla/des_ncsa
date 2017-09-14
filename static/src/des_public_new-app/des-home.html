@@ -1,28 +1,23 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
 <dom-module id="des-home">
-
-
 
 <template>
 
-      <custom-style>
-    <style is="custom-style">
-
-</style>
-</custom-style>
-
-
-
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
 
 <des-card>
         
 <div class="horizontal flex layout around-justified">
 
-  <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain"
-                src="/static/images/Decam.jpg"></iron-image>
-                  <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain"
-                src="/static/images/Blanco4m-starry-400px.jpg"></iron-image>
-                  <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain"
-                src="/static/images/TN_TN_47Tuc_adj.png"></iron-image>
+  <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain" src="static/images/Decam.jpg"></iron-image>
+  <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain" src="/static/images/Blanco4m-starry-400px.jpg"></iron-image>
+  <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain" src="/static/images/TN_TN_47Tuc_adj.png"></iron-image>
 
 
 </div>
@@ -48,9 +43,8 @@
 <li>Felipe Menanteau, <em>Research Scientist and Associate Research Professor of Astronomy.</em> <a href="mailto:felipe@illinois.edu"><em>email</em></a> <em><a href="http://cosmology.illinois.edu/~felipe">www</a></em></li>
 <li>Eric Morganson, <em>Research Scientist. </em><a href="mailto:ericm@illinois.edu"><em>email</em></a></li>
 <li> Francisco Paz-Chinchon,&nbsp;<em>Postdoctoral Reserach Associate</em>. <em><a href="mailto:fpazch@illinois.edu">email</a></em></li>
-<li>
-<p class="ws-ds-name detail-title">Christopher Pond,&nbsp;<em>Senior Database Administrator</em>. <em><a href="mailto:pond1@illinois.edu">email</a></em></p></li>
-
+<li><p class="ws-ds-name detail-title">Christopher Pond,&nbsp;<em>Senior Database Administrator</em>. <em><a href="mailto:pond1@illinois.edu">email</a></em></p></li>
+<li>Audrey Koziol, <em>Intern </em>. <a href="mailto:audrey@koziol.cc"></a></li>
 </ul>
 
           </div>
@@ -59,13 +53,11 @@
 
 
 </template>
-
 <script>
-      Polymer({
-      is: "des-home",
-    });
-
-
-</script>
+    class DesHome extends Polymer.Element {
+      static get is() { return 'des-home'; }
+    }
+    window.customElements.define(DesHome.is, DesHome);
+  </script>
 
 </dom-module>

@@ -1,0 +1,38 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<dom-module id="des-card">
+
+<template>
+<style>
+        paper-card {
+        margin-top: 0px;
+        width: 100%;
+    }
+ .headc {
+      --paper-card-header-color: var(--paper-red-500);
+}
+</style>
+
+        <paper-card  elevation="0" heading="{{heading}}" class="headc">
+      <slot></slot>
+      </paper-card>
+
+
+</template>
+
+  <script>
+    class DesCard extends Polymer.Element {
+      static get is() { return 'des-card'; }
+     static get properties() {
+         return {
+             heading: {
+                 type: String,
+                 value: ''
+             }
+         };
+     }
+    }
+    window.customElements.define(DesCard.is, DesCard);
+  </script>
+
+</dom-module>
