@@ -1,0 +1,30 @@
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="des-view">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
+
+    <des-card heading="Example">
+
+    <div class="card-content">
+      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
+      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+    </div>
+    </des-card>
+
+  </template>
+
+  <script>
+    class DesView extends Polymer.Element {
+      static get is() { return 'des-view'; }
+    }
+    window.customElements.define(DesView.is, DesView);
+  </script>
+</dom-module>
