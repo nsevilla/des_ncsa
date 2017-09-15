@@ -19,7 +19,7 @@
 <link rel="import" href="des-card.html">
 <link rel="import" href="des-home.html">
 
-<link rel="lazy-import" href="des-view.html">
+<link rel="lazy-import" href="des-releases.html">
 <link rel="lazy-import" href="des-view404.html">
 
 <dom-module id="des-public_new-app">
@@ -78,7 +78,7 @@
         </app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="home" href="[[rootPath]]home">Home</a>
-          <a name="view" href="[[rootPath]]view">Test</a>
+          <a name="releases" href="[[rootPath]]releases">Releases</a>
         </iron-selector>
       </app-drawer>
 
@@ -98,7 +98,7 @@
             fallback-selection="view404"
             role="main">
           <des-home name="home"></des-home>
-          <des-view name="view"></des-view>
+          <des-releases name="releases"></des-releases>
           <des-view404 name="view404"></des-view404>
         </iron-pages>
       </app-header-layout>

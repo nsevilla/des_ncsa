@@ -1,0 +1,42 @@
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="des-releases">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
+
+    <des-card heading="DES DATA RELEASE">
+
+    <div class="card-content">
+          Here we present both the official and unofficial data catalog releases from the Dark Energy Survey.
+          These releases consist of a series of catalogs distributed in files, with proper documentation and limited help support. Click on a release below.
+        </div>
+
+          <div class="card-content">
+          <div class="horizontal   layout around-justified" >
+          <!--<a href="/releases/sva1" target="_self" >
+          <img src="/static/sva1.jpg" class="img-circle" alt="sva1" height="120px" ></a> <h1>SVA1 Gold</h1>
+          <img src="/static/footprint.png" class="img-circle" alt="future" height="120px"> <h1>Future Releases</h1> -->
+          <paper-button noink raised class="cc" on-click="_sva1">SVA1 Gold Release</paper-button>
+          <paper-button noink raised class ="cc" on-click="_DR1">DR1 Release</paper-button>
+          <!-- <paper-button noink disabled>Future Releases</paper-button> -->
+          </div>
+          </div>
+    </div>
+    </des-card>
+
+  </template>
+
+  <script>
+    class DesView extends Polymer.Element {
+      static get is() { return 'des-releases'; }
+    }
+    window.customElements.define(DesView.is, DesView);
+  </script>
+</dom-module>
