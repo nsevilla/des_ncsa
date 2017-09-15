@@ -18,7 +18,7 @@
 
 <link rel="import" href="des-card.html">
 <link rel="import" href="des-home.html">
-
+<link rel="import" href="des-thankyou.html">
 <link rel="lazy-import" href="des-releases.html">
 <link rel="lazy-import" href="des-view404.html">
 
@@ -79,6 +79,7 @@
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="home" href="[[rootPath]]home">Home</a>
           <a name="releases" href="[[rootPath]]releases">Releases</a>
+          <a name="thankyou" href="[[rootPath]]thankyou">Acknowledgements</a>
         </iron-selector>
       </app-drawer>
 
@@ -99,6 +100,7 @@
             role="main">
           <des-home name="home"></des-home>
           <des-releases name="releases"></des-releases>
+          <des-thankyou name="thankyou"></des-thankyou>
           <des-view404 name="view404"></des-view404>
         </iron-pages>
       </app-header-layout>
