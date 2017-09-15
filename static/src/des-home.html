@@ -1,4 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/mp-slider-master/mp-slider.html">
+
 <link rel="import" href="shared-styles.html">
 <dom-module id="des-home">
 
@@ -13,14 +15,22 @@
 
 <des-card>
         
-<div class="horizontal flex layout around-justified">
 
-  <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain" src="static/images/Decam.jpg"></iron-image>
-  <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain" src="/static/images/Blanco4m-starry-400px.jpg"></iron-image>
-  <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain" src="/static/images/TN_TN_47Tuc_adj.png"></iron-image>
+    <mp-slider controls>
+    <div>
+        <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain" src="static/images/Decam.jpg"></iron-image>
+    </div>
+
+    <div>
+        <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain" src="/static/images/Blanco4m-starry-400px.jpg"></iron-image>
+    </div>
+
+    <div>
+        <iron-image style="width:300px; height:300px; padding: 40px;" sizing="contain" src="/static/images/TN_TN_47Tuc_adj.png"></iron-image>
+    </div>
+    </mp-slider>
 
 
-</div>
 
       <div class="card-content">
 
