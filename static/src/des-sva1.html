@@ -1,0 +1,56 @@
+<dom-module id="des-sva1">
+<template>
+
+<custom-style>
+<style is="custom-style">
+ 
+
+</style>
+</custom-style>
+
+
+
+<des-card  heading="DES SVA1 GOLD RELEASE" >
+        <div class="horizontal flex layout center-justified">
+        <iron-image style="width:350px; height:350px; padding: 40px;" sizing="contain"
+                src="/static/images/DESDarkMatterCutouts.jpg"></iron-image>
+     
+           <iron-image style="width:350px; height:350px; padding: 40px;" sizing="contain"
+                src="/static/images/sva1_gold_footprint.png"></iron-image>
+            </div>
+      <div class="card-content">
+          This is the unofficial release of the DES Science Verification (SV) data products, for
+          a detailed description of this release please see the
+          <a on-click="_documentation" href="#">Documentation page</a>.
+          Check <a on-click="_download" href="#">here</a>
+          to see the list of available files. For questions not covered in the <a
+              on-click="_documentation" href="#">Documentation</a>
+           please use this <a on-click="_help" href="#">Help</a> form.
+
+          </div>
+                <div class="card-content">
+
+      <div class="horizontal layout around-justified" >
+
+                 <paper-button   raised on-click="_download" class="cc"
+                         >Files</paper-button>
+                 <paper-button   raised on-click="_documentation"
+                                 class="cc" id="docs">Documentation</paper-button>
+                 <paper-button   raised on-click="_help"
+                                 class="cc">Help</paper-button>
+
+      </div>
+      </div>
+      </des-card>
+
+
+</template>
+
+<script>
+    class DesSVA1 extends Polymer.Element {
+      static get is() { return 'des-sva1'; }
+    }
+    window.customElements.define(DesSVA1.is, DesSVA1);
+  </script>
+
+</dom-module>
