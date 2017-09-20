@@ -3,7 +3,7 @@
 <template>
 <custom-style>
 
-    <style is="custom-style">
+    <style is="custom-style" include="shared-styles">
             paper-card {
         margin-top: 0px;
         width: 1000px;
@@ -12,7 +12,8 @@
     }
  .headc {
       --paper-card-header-color: var(--paper-red-500);
-}   
+}
+
 </style>
     </custom-style>
 
@@ -21,7 +22,7 @@
     <des-card>
     <div class="card-content" >
     The content of these files (by group catalog) are detailed in the
-    <a on-click="_documentation" href="#">
+    <a style="text-decoration: none" href="[[rootPath]]docs">
         Documentation</a> page.
         </div>
     </des-card>
@@ -32,14 +33,15 @@
 <a href="/releases/sva1/content/list_all_files_wget.txt" target="_parent">list_all_files_wget.txt</a>
 contains a list of urls for all files </div>
 <br>
-<table class="sortable">
-<tr>
-<th> Group catalog</th>
-<th> File name</th>
-<th> Link </th>
-<th> Size (human readable)</th>
-<th> Size in B</th>
-</tr>
+
+<table class="sortable" style="width:100%">
+    <tr>
+        <th> Group catalog</th>
+        <th> File name</th>
+        <th> Link </th>
+        <th> Size (human readable)</th>
+        <th> Size in B</th>
+    </tr>
 
 <tr>
 <td style="color: #f44336">Gold </td>
