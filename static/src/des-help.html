@@ -1,6 +1,12 @@
 <dom-module id="des-help">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html">
+<link rel="import" href="../bower_components">
 
-<template>
+    <template>
+
 <custom-style>
 <style is="custom-style">
 
@@ -18,7 +24,7 @@
       <div class="card-content">
 Please complete the form below with any questions related to the DES SVA1
     
-GOLD public data release that were not addressed by the <a on-click="_documentation" href="#">Documentation page</a>.
+GOLD public data release that were not addressed by the <a on-click="_documentation" href="[[rootPath]]docs">Documentation page</a>.
 Indicating one or more relevant topics will help us properly direct your question.
 </div>
 
@@ -29,7 +35,7 @@ Indicating one or more relevant topics will help us properly direct your questio
 <li>
 The SVA1 data products do not constitute an official DES data release and are provided on an "as is" basis in support of DES publications based on SVA1 data</li>
 <li>
-Support for the SVA1 data products is very limited. The primary sources of documentation are the papers that derived these data product as described in the <a on-click="_documentation" href="#">Documentation page</a>
+Support for the SVA1 data products is very limited. The primary sources of documentation are the papers that derived these data product as described by the Documentation page</a>
 </li>
 </ul>
 </div>
