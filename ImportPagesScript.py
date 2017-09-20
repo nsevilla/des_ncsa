@@ -55,13 +55,15 @@ with requests.session() as ssn:
                             "\nwindow.customElements.define(" +pageclass+".is," + pageclass+" );\n </script>\n</dom-module>")
 
         #renames file
-        newfilename = str(soup.title.text)[:-15] + ".html"
-        newfilename = re.sub('[/]', '-', newfilename)
+        #newfilename = str(soup.title.text)[:-15] + ".html"
+        #newfilename = re.sub('[/]', '-', newfilename)
+
+        newfilename=pageid+".html"
         os.rename("/Users/audreykoziol/des_public_new/static/src/"+filename, "/Users/audreykoziol/des_public_new/static/src/"+ newfilename)
 
         #add page identifiers to beginning of file
         line_prepender(newfilename, "<link rel='import' href='../bower_components/polymer/polymer-element.html'>\n <link rel='import' href='../bower_components/mp-slider-master/mp-slider.html'>\n"
-                                    "<link rel='import' href='shared-styles.html'> \n <dom-module id='" + pageid+ "'> <template> <style include='shared-styles'> \n "
+                                    "<link rel='import' href='shared-styles.html'> \n <dom-module id='" + pageid + "'> <template> <style include='shared-styles'> \n "
                                     ":host { \n display: block; \n padding: 10px;\n}\n</style>\n<des-card>")
 
         #adds more pages
