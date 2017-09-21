@@ -1,4 +1,10 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="my-icons.html">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans|Lato:400,700|Open+Sans+Condensed:700|Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet">
+<script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<script src="../../bower_components/web-component-tester/browser.js"></script>
+
 <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
@@ -14,13 +20,12 @@
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
-<link rel="import" href="my-icons.html">
+
+
 <link rel="import" href="../bower_components/sublistbox-gist-master/collapse-button.html">
 <link rel="import" href="../bower_components/sublistbox-gist-master/index.html">
 <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
-<link href="https://fonts.googleapis.com/css?family=Droid+Sans|Lato:400,700|Open+Sans+Condensed:700|Open+Sans" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet">
 <link rel="import" href="../bower_components/paper-search-master/paper-search-panel.html">
 <link rel="import" href="../bower_components/iron-collapse-master/iron-collapse.html">
 <link rel="import" href="../bower_components/app-menu-master/app-menu.html">
@@ -29,7 +34,6 @@
 <link rel="import" href="des-card.html">
 <link rel="import" href="des-home.html">
 <link rel="import" href="des-thankyou.html">
-<link rel="import" href="des-ditto.html">
 <link rel="import" href="des-releases.html">
 <link rel="lazy-import" href="des-view404.html">
 <link rel="import" href="des-supported.html">
@@ -42,10 +46,11 @@
 <link rel="import" href="des-docs-shear.html">
 <link rel="import" href="des-docs-photoz.html">
 <link rel="import" href="des-docs-redmapper.html">
+<link rel="stylesheet" href="shared-styles.html">
 
 <dom-module id="des-public_new-app">
   <template>
-    <style>
+    <style include="shared-styles">
       :host {
         --app-primary-color: black;
         --app-secondary-color: black;
@@ -97,38 +102,38 @@
 
           <app-menu selected="0">
 
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation" style="font-family: Droid Sans,Helvetica Neue,Comic Sans, American Typewriter,Arial, serif;font-size: 20px;font-weight:normal;line-height: 24px">
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 
           <a class ="app-menu-item" name="home" href="[[rootPath]]home">Home </a>
 
           <app-submenu>
-            <div class="app-menu-item" slot="submenu-trigger" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px;">
+            <div class="app-menu-item" slot="submenu-trigger">
               <a name="releases" href="[[rootPath]]releases">Releases<iron-icon icon="chevron-right"></iron-icon></a>
             </div>
             <app-menu slot="submenu-content">
               <app-submenu>
                 <div class="app-menu-item" slot="submenu-trigger">
-                <a class="app-menu-item" name="sva1" href="[[rootPath]]sva1" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px">SVA1 Gold<iron-icon icon="chevron-right"></iron-icon></a>
+                <a class="app-menu-item" name="sva1" href="[[rootPath]]sva1">SVA1 Gold<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu slot="submenu-content">
-                  <a class="app-menu-item" name="file-content" href="[[rootPath]]file-content" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px">Files</a>
+                  <a class="app-menu-item" name="file-content" href="[[rootPath]]file-content">Files</a>
 
                   <app-submenu>
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" name="docs" href="[[rootPath]]docs" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
+                  <a class="app-menu-item" name="docs" href="[[rootPath]]docs">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu slot="submenu-content">
-                  <a class="app-menu-item" name="docs-gold" href="[[rootPath]]docs-gold" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px">Gold</a>
-                  <a class="app-menu-item" name="docs-photoz" href="[[rootPath]]docs-photoz" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px">Photoz</a>
-                  <a class="app-menu-item" name="docs-shear" href="[[rootPath]]docs-shear" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px">Shear</a>
-                  <a class="app-menu-item" name="docs-redmapper" href="[[rootPath]]docs-redmapper" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px">RedMaPPer</a>
+                  <a class="app-menu-item" name="docs-gold" href="[[rootPath]]docs-gold">Gold</a>
+                  <a class="app-menu-item" name="docs-photoz" href="[[rootPath]]docs-photoz">Photoz</a>
+                  <a class="app-menu-item" name="docs-shear" href="[[rootPath]]docs-shear">Shear</a>
+                  <a class="app-menu-item" name="docs-redmapper" href="[[rootPath]]docs-redmapper">RedMaPPer</a>
                 </app-menu>
                   </app-submenu>
-                  <a class="app-menu-item" name="help" href="[[rootPath]]help" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px">Help</a>
+                  <a class="app-menu-item" name="help" href="[[rootPath]]help">Help</a>
                 </app-menu>
 
               </app-submenu>
-                <a class="app-menu-item" name="dr1" href="[[rootPath]]dr1" style="font-family: 'Droid Sans',Helvetica Neue,Comic Sans, American Typewriter,Arial, serif; font-size: 20px">DR1<iron-icon icon="chevron-right"></iron-icon></a>
+                <a class="app-menu-item" name="dr1" href="[[rootPath]]dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
             </app-menu>
           </app-submenu>
 
@@ -145,7 +150,7 @@
           <app-toolbar >
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
             <a href="/" style="text-decoration: none;color: white" ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px">Data Management Systems</paper-item></a>
-            <paper-search-bar placeholder="Search" hide-filter-button="True" style="padding-left:100px;padding-top:15px;"></paper-search-bar>
+            <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
           </app-toolbar>
 
         </app-header>

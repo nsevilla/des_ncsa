@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 <link rel="import" href="../bower_components/mp-slider-master/mp-slider.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
@@ -6,7 +7,6 @@
 <link rel="import" href="../bower_components/iron-icons/communication-icons.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="des-home">
-
 <template>
 
     <style include="shared-styles">
@@ -17,11 +17,12 @@
     </style>
 
 <des-card>
-        
 
-    <mp-slider controls>
+
+
+    <mp-slider controls  class="slider">
     <div>
-        <iron-image style="width:400px; height:400px; padding: 40px;" sizing="contain" src="static/images/Decam.jpg"></iron-image>
+        <iron-image style="width:400px; height:400px; padding: 40px;" sizing="contain" src="/static/images/Decam.jpg"></iron-image>
     </div>
 
     <div>
