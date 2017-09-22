@@ -4,6 +4,7 @@
 <link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet">
 <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 <script src="../../bower_components/web-component-tester/browser.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
 <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
@@ -20,6 +21,7 @@
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 
 
 <link rel="import" href="../bower_components/sublistbox-gist-master/collapse-button.html">
@@ -105,7 +107,7 @@
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 
-          <a class ="app-menu-item" name="home" href="[[rootPath]]home">Home </a>
+          <a class ="app-menu-item" name="home" href="[[rootPath]]home" >Home </a>
 
           <app-submenu>
             <div class="app-menu-item" slot="submenu-trigger">
@@ -140,7 +142,7 @@
           </app-submenu>
 
 
-          <a class ="app-menu-item" name="thankyou" href="[[rootPath]]thankyou" on-tap="">Acknowledgements </a>
+          <a class ="app-menu-item" name="thankyou" href="[[rootPath]]thankyou" on-tap="">About Us</a>
           <a class="app-menu-item" name="help" href="[[rootPath]]help">Help</a>
         </iron-selector>
       </app-menu>
@@ -151,7 +153,7 @@
 
         <app-header slot="header" fixed>
           <app-toolbar >
-            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+            <paper-icon-button icon="icons:menu" drawer-toggle></paper-icon-button>
             <a href="/" style="text-decoration: none;color: white" ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px">Data Management Systems</paper-item></a>
             <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
           </app-toolbar>
