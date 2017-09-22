@@ -100,6 +100,7 @@
           <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image style="width:230px; height:100px;" sizing="contain" src="/static/images/logo.png"></iron-image></a>
         </app-toolbar>
 
+
           <app-menu selected="0">
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
@@ -139,7 +140,7 @@
           </app-submenu>
 
 
-          <a class ="app-menu-item" name="thankyou" href="[[rootPath]]thankyou">Acknowledgements </a>
+          <a class ="app-menu-item" name="thankyou" href="[[rootPath]]thankyou" on-tap="">Acknowledgements </a>
           <a class="app-menu-item" name="help" href="[[rootPath]]help">Help</a>
         </iron-selector>
       </app-menu>
