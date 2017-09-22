@@ -28,7 +28,7 @@
 <link rel="import" href="../bower_components/sublistbox-gist-master/index.html">
 <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
-<link rel="import" href="../bower_components/paper-search-master/paper-search-panel.html">
+<link rel="import" href="../bower_components/paper-search-master/paper-search-bar.html">
 <link rel="import" href="../bower_components/iron-collapse-master/iron-collapse.html">
 <link rel="import" href="../bower_components/app-menu-master/app-menu.html">
 <link rel="import" href="../bower_components/app-menu-master/app-submenu.html">
@@ -107,7 +107,7 @@
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 
-          <a class ="app-menu-item" name="home" href="[[rootPath]]home" >Home </a>
+          <a class ="app-menu-item" name="home" href="[[rootPath]]home">Home </a>
 
           <app-submenu>
             <div class="app-menu-item" slot="submenu-trigger">
@@ -123,7 +123,7 @@
 
                   <app-submenu>
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" name="docs" href="[[rootPath]]docs">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
+                  <a class="app-menu-item" name="docs" href="[[rootPath]]docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu slot="submenu-content">
                   <a class="app-menu-item" name="docs-gold" href="[[rootPath]]docs-gold">Gold</a>
@@ -156,6 +156,8 @@
             <paper-icon-button icon="icons:menu" drawer-toggle></paper-icon-button>
             <a href="/" style="text-decoration: none;color: white" ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px">Data Management Systems</paper-item></a>
             <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
+
+
           </app-toolbar>
 
         </app-header>
@@ -217,6 +219,7 @@
         // If no page was found in the route data, page will be an empty string.
         // Deault to 'view1' in that case.
         this.page = page || 'home';
+
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
           this.$.drawer.close();
@@ -243,4 +246,5 @@
 
 
   </script>
+
 </dom-module>

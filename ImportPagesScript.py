@@ -40,8 +40,8 @@ with requests.session() as ssn:
         # saves pictures on the page to seperate files
         picturecontent = soup.findAll("img", {"class": "confluence-embedded-image"})
         for item in picturecontent:
-            bleh = item['src']
-            imageURL = "https://opensource.ncsa.illinois.edu" + bleh
+            imagesrc = item['src']
+            imageURL = "https://opensource.ncsa.illinois.edu" + imagesrc
             r = ssn.get(imageURL, allow_redirects=True)
             picturesfilename = str(item['data-linked-resource-default-alias'])
             open("/Users/audreykoziol/des_public_new/static/images/" + picturesfilename, 'wb').write(r.content)
