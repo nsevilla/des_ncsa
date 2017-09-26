@@ -21,7 +21,12 @@
 <p><span style="color: rgb(0,0,0);">Individual DECam exposures were coadded to increase survey depth. During the SV coaddition process, the point spread functions (PSFs) of the individual single-epoch images were not homogenized at the coadd image level. Rather, a parametric model was used to account for spatial variations in the PSF in each coadd image (PSFEx;&nbsp;</span><a href="http://adsabs.harvard.edu/abs/2011ASPC..442..435B">Bertin 2011</a><span style="color: rgb(0,0,0);">); however, this model is not a full description of the spatial variation of the PSF within a coadd image, and as a result there are systematic differences between the MAG_PSF measurements and the MAG_AUTO measurements of stars. We therefore&nbsp;</span><strong>STRONGLY RECOMMEND</strong><span style="color: rgb(0,0,0);">&nbsp;the use of the MAG_AUTO quantities unless detailed study motivates the use of MAG_PSF. The MAG_PSF variables were used to derive the stellar locus correction to the photometric calibration and are included for completeness.</span></p>
 <p>We provide several variable for star galaxy classification including SPREAD_MODEL (<a href="http://adsabs.harvard.edu/abs/2012ApJ...757...83D">Desai et al. 2012</a>), CLASS_STAR (<a href="http://adsabs.harvard.edu/abs/1996A%26AS..117..393B">Bertin &amp; Arnouts 1996</a>), and MODEST_CLASS (see Section 2.2. in <a href="http://adsabs.harvard.edu/abs/2015arXiv150705603J">Jarvis et al. 2015</a>). For simple and robust star-galaxy classification we recommend the MODEST_CLASS variable, which combines information from CLASS_STAR, SPREAD_MODEL, and SPREADERR_MODEL. The MODEST_CLASS galaxy classification is found to have a simultaneous efficiency (N(class galaxy)/N(true galaxy))&nbsp;and purity&nbsp;(N(class galaxy &amp; true galaxy)/N(class galaxy))&nbsp;of&nbsp;&ge;90% for objects with i-band magnitude fainter that 19.&nbsp;</p>
 <p>The SVA1 GOLD data products cover <span style="color: rgb(51,51,51);">~&nbsp;250 square degrees&nbsp;</span>with non-uniform depth and data quality. The non-uniform survey depth is estimated in detail via&nbsp;<a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/SVA1+GOLD+Catalog#SVA1GOLDCatalog-LimitingMagnitudeMaps">Limiting Magnitude Maps</a>; however, for convenience the median&nbsp;10&sigma; limiting magnitude for galaxies in SVA1 GOLD is approximately:&nbsp;<em>g</em> = 24.0, <em>r</em> = 23.8,<em> i</em> = 23.0, <em>z</em> = 22.3.&nbsp;The primary science data set can be broken into several fields (plotted below in Cartesian projection):</p>
-<ul>
+
+<div style="text-align: center">
+<iron-image  src="/static/images/sva1_gold_footprint.png" style="width:500px; height:500px;" sizing="contain"></iron-image>
+</div>
+
+          <ul>
 <li>
 <p><span style="color: rgb(51,51,51);"><strong>SPT-E</strong>:&nbsp;~160 sq. deg.&nbsp;overlapping the&nbsp;eastern part of the South Pole Telescope footprint.</span></p></li>
 <li>
@@ -34,9 +39,6 @@
 <p><strong>COSMOS</strong>:<span style="color: rgb(0,51,102);">&nbsp;<span style="color: rgb(51,51,51);">~ 3.5 sq. deg.</span></span>&nbsp;of imaging in the <a href="http://cosmos.astro.caltech.edu/">COSMOS field</a> reaching ~1 mag fainter than the nominal DES depth</p></li>
 <li><strong>VVDS-02h:</strong><span style="color: rgb(51,51,51);">&nbsp;~ 1&nbsp;sq. deg.&nbsp;</span>of the SN-X fields overlaps the <a href="http://adsabs.harvard.edu/abs/2013A%26A...559A..14L">VVDS-02h region</a>.<br /><br /></li></ul>
 
-<div  class="horizontal layout center-justified">
-<iron-image  src="/static/images/sva1_gold_footprint.png" style="width:500px; height:500px;" sizing="contain"></iron-image>
-</div>
 <p><hr />
           <h2>Downloads</h2>
 <p>SVA1 GOLD object catalog:</p>
