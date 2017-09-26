@@ -13,17 +13,17 @@
 <des-card heading="SVA1 Shear Catalogs">
         
       <div class="card-content">
-<h2>Overview</h2>
+            <h2><strong>Overview</strong></h2>
 <p>Details on the production of the SVA1 shear catalogs, including the raw measurements, object selection, and many tests of the accuracy of the measured shear estimates, can be found in <a href="http://adsabs.harvard.edu/abs/2015arXiv150705603J">Jarvis et al. (2015</a>). &nbsp;Users should see that paper for any questions about the content of the catalogs. Further questions can be addressed to Mike Jarvis, the corresponding author of that paper, whose email address is given therein. &nbsp;On this page, we merely describe the structure of the files being distributed, including brief descriptions of each of the columns included in the files, often pointing to the relevant sections of&nbsp;<a href="http://adsabs.harvard.edu/abs/2015arXiv150705603J">Jarvis et al. (2015</a>)&nbsp;for more details.</p><hr />
-<h2>Download</h2>
+            <h2><strong>Download</strong></h2>
 <ul>
 <li><a href="http://des.ncsa.illinois.edu/releases/sva1/content/sva1_gold_r1.1_im3shape.fits.gz" target="_parent">sva1_gold_r1.1_im3shape.fits.gz</a></li>
 <li><a href="http://des.ncsa.illinois.edu/releases/sva1/content/sva1_gold_r1.0_ngmix.fits.gz" target="_parent">sva1_gold_r1.0_ngmix.fits.gz</a></li>
 <li><a href="http://des.ncsa.illinois.edu/releases/sva1/content/sva1_gold_r1.0_wlinfo.fits.gz" target="_parent">sva1_gold_r1.0_wlinfo.fits.gz</a><br /><br /></li></ul>
 <hr />
-<h2>Im3Shape Catalog</h2>
+            <h2><strong>Im3Shape Catalog</strong></h2>
 <p>This catalog includes the shear estimates made using the Im3Shape algorithm, described in Section 7.3 of Jarvis et al, 2015. &nbsp;</p>
-<h3>Catalog Description</h3>
+            <h3><strong>Catalog Description</strong></h3>
 <table>
 <tbody>
 <tr>
@@ -116,7 +116,7 @@
 <div class="page" title="Page 36">
 <div class="layoutArea">
 <div class="column">
-<h3>Meaning of ERROR_FLAG in Im3Shape Catalog</h3></div></div></div>
+      <h3><strong>Meaning of ERROR_FLAG in Im3Shape Catalog</strong></h3></div></div></div>
 <table>
 <tbody>
 <tr>
@@ -192,7 +192,7 @@
 <div class="layoutArea">
 <div class="column">
 <p>&nbsp;</p></div></div></div>
-<h3>Meaning of INFO_FLAG in Im3Shape Catalog</h3>
+            <h3><strong>Meaning of INFO_FLAG in Im3Shape Catalog</strong></h3>
 <p>The order of the flags are such that the larger values are more egregious problems. &nbsp;This potentially allows a user to cut with something like INFO_FLAG &lt; 512 for instance, to select galaxies that may have some bits at positions 0-8 set, but nothing higher than that. &nbsp;This is why some flag items are redundant with other items at higher bit positions.</p>
 <table>
 <tbody>
@@ -311,9 +311,9 @@
 <td colspan="1">One or more error flags is set.</td></tr></tbody></table>
 <p>&nbsp;</p>
 <hr />
-<h2>NGMix Catalog</h2>
+            <h2><strong>NGMix Catalog</strong></h2>
 <p>This catalog includes the shear estimates made using the NGMix algorithm, described in Section 7.4 of Jarvis et al, 2015. &nbsp;</p>
-<h3>Catalog Description</h3>
+            <h3><strong>Catalog Description</strong></h3>
 <table>
 <tbody>
 <tr>
@@ -412,7 +412,7 @@
 <div class="page" title="Page 36">
 <div class="layoutArea">
 <div class="column">
-<h3>Meaning of ERROR_FLAG in NGMix Catalog</h3></div></div></div>
+      <h3><strong>Meaning of ERROR_FLAG in NGMix Catalog</strong></h3></div></div></div>
 <table>
 <tbody>
 <tr>
@@ -467,9 +467,9 @@
 <td colspan="1">No attempt at a fit was made due to other error flags or cuts prior to running ngmix.</td></tr></tbody></table>
 <p>&nbsp;</p>
 <hr />
-<h2>WL Info Catalog</h2>
+            <h2><strong>WL Info Catalog</strong></h2>
 <p>This catalog is merely for convenience, containing only information derived from other SVA1 catalogs. &nbsp;Internally, within DES WL, we found it convenient to have the more commonly needed columns from some other catalogs collated here so most weak lensing scientific analyses would only need this file plus one or both shear catalogs. &nbsp;We provide it here in the same thought that it might be useful for some users.</p>
-<h3>Catalog Description</h3>
+            <h3><strong>Catalog Description</strong></h3>
 <table>
 <tbody>
 <tr>
@@ -529,7 +529,7 @@
 <div class="page" title="Page 36">
 <div class="layoutArea">
 <div class="column">
-<h3>Meaning of SVA1_FLAG in WL Info Catalog</h3></div></div></div>
+      <h3><strong>Meaning of SVA1_FLAG in WL Info Catalog</strong></h3></div></div></div>
 <table>
 <tbody>
 <tr>
@@ -602,7 +602,7 @@
 
 
 <p>&nbsp;</p>
-<h1>Revision History</h1>
+            <h1><strong>Revision History</strong></h1>
 <ul>
 <li>sva1_gold_r1.0_im3shape.fits.gz&nbsp;
 <p>This version of the im3shape catalog incorrectly had all non-zero INFO_FLAG values set to 33554432 and all non-zero ERROR_FLAG values set to 1073741824.&nbsp; This was fixed in r1.1.</p></li></ul>

@@ -15,7 +15,7 @@
 <des-card heading="SVA1 GOLD Catalog" >
         
       <div class="card-content">
-  <h2>Overview</h2>
+          <h2><strong>Overview</strong></h2>
 <p>The SVA1 GOLD catalog consists of basic astrometry, photometry, and object classification for&nbsp;<span style="color: rgb(51,51,51);">25,227,559&nbsp;</span>objects. This catalog was assembled from the SVA1 GOLD data set processed with an early version of the DES Data Management (DESDM) system, which included image detrending, astrometric registration, global calibration, and image coaddition. The SExtractor toolkit was used to create object catalogs from coadded SV images (<a href="http://adsabs.harvard.edu/abs/1996A%26AS..117..393B">Bertin &amp; Arnouts 1996</a>).&nbsp;The SVA1 GOLD catalog has a relative astrometric precision of&nbsp;<span style="color: rgb(51,51,51);">~100&nbsp;</span>mas per coordinated (from multiple DES observations of the same object) and an absolute astrometric precision of&nbsp;<span style="color: rgb(51,51,51);">~200&nbsp;m</span>as per coordinate compared against the&nbsp;<span style="color: rgb(255,0,0);"><span style="color: rgb(0,51,102);">UCAC-4</span> <span style="color: rgb(0,0,0);">catalog (<a href="http://adsabs.harvard.edu/abs/2013AJ....145...44Z">Zacharias et al. 2013</a>)</span></span>. Object photometry is provided in the DES&nbsp;<em>g, r, i,</em>&nbsp;and&nbsp;<em>z</em>&nbsp;bands (no&nbsp;<em>Y</em>-band).</p>
 <p>Photometric calibration was performed in two stages. First, absolute calibrations were performed against a set of photometric standards using a global calibrations module (GCM;&nbsp;<span style="color: rgb(51,51,51);"><a href="http://adsabs.harvard.edu/abs/2007ASPC..364..187T">Tucker et al. 2007</a></span>). After the global calibration, a re-calibration was performed via stellar locus regression (SLR) using the BigMACs code (<a href="http://adsabs.harvard.edu/abs/2012ascl.soft08007K">Kelly et al. 2014</a>). The SLR zeropoint adjustment used the PSF magnitudes measured for objects classified as stars (more on this later). Note that the SLR adjustment produces magnitudes that are calibrated to the&nbsp;<strong>top of the Galaxy</strong>&nbsp;(i.e., corrections for Galactic extinction are already incorporated into the calibration). The calibration uncertainty of the SVA1 GOLD catalog is estimated to be &lt; 2%. All magnitudes are<span style="color: rgb(72,72,72);">&nbsp;put on a &quot;picomaggie&quot; system (DES AB magnitudes, zeropoint = 30.0).&nbsp;</span></p>
 <p><span style="color: rgb(0,0,0);">Individual DECam exposures were coadded to increase survey depth. During the SV coaddition process, the point spread functions (PSFs) of the individual single-epoch images were not homogenized at the coadd image level. Rather, a parametric model was used to account for spatial variations in the PSF in each coadd image (PSFEx;&nbsp;</span><a href="http://adsabs.harvard.edu/abs/2011ASPC..442..435B">Bertin 2011</a><span style="color: rgb(0,0,0);">); however, this model is not a full description of the spatial variation of the PSF within a coadd image, and as a result there are systematic differences between the MAG_PSF measurements and the MAG_AUTO measurements of stars. We therefore&nbsp;</span><strong>STRONGLY RECOMMEND</strong><span style="color: rgb(0,0,0);">&nbsp;the use of the MAG_AUTO quantities unless detailed study motivates the use of MAG_PSF. The MAG_PSF variables were used to derive the stellar locus correction to the photometric calibration and are included for completeness.</span></p>
@@ -40,7 +40,7 @@
 <li><strong>VVDS-02h:</strong><span style="color: rgb(51,51,51);">&nbsp;~ 1&nbsp;sq. deg.&nbsp;</span>of the SN-X fields overlaps the <a href="http://adsabs.harvard.edu/abs/2013A%26A...559A..14L">VVDS-02h region</a>.<br /><br /></li></ul>
 
 <p><hr />
-          <h2>Downloads</h2>
+          <h2><strong>Downloads</strong></h2>
 <p>SVA1 GOLD object catalog:</p>
 <ul>
 <li><a href="http://des.ncsa.illinois.edu/releases/sva1/content/sva1_gold_r1.0_catalog.fits.gz" target="_parent">sva1_gold_r1.0_catalog.fits.gz</a></li></ul>
@@ -53,7 +53,7 @@
 <p>SVA1 good-region footprint</p>
 <ul>
 <li><a href="http://des.ncsa.illinois.edu/releases/sva1/content/sva1_gold_r1.0_goodregions_04_n4096.fits.gz" target="_parent">sva1_gold_r1.0_goodregions_04_n4096.fits.gz</a></li></ul>
-<h2>Catalog Description</h2>
+          <h2><strong>Catalog Description</strong></h2>
 <table>
 <tbody>
 <tr>
@@ -119,11 +119,11 @@
 <td colspan="1">
 <p><span style="color: rgb(0,0,0);">Radius in pixels (0.263&quot;/pix) of a circle centered on the object barycenter that <br /></span><span style="color: rgb(0,0,0);">encloses half of </span><span style="color: rgb(0,0,0);">the total flux as measured by SExtractor.</span></p></td></tr></tbody></table>
 <hr />
-<h2 style="text-decoration:no-underline">Limiting Magnitude Maps</h2>
+          <h2 style="text-decoration:no-underline"><strong>Limiting Magnitude Maps</strong></h2>
 <p><span style="color: rgb(255,0,0);"><span style="color: rgb(0,0,0);">The SVA1 GOLD survey depth is estimated for the AUTO magnitudes appropriate for galaxies following the procedure of&nbsp;<a href="http://adsabs.harvard.edu/abs/2015arXiv150900870R">Rykoff et al. (2015)</a>. &nbsp;M</span></span><span style="color: rgb(0,0,0);">aps of the 10&sigma; galaxy limiting magnitude were generated by fitting the MAGERR_AUTO vs MAG_AUTO relationship on large pixels and correlating with small-scale spatially varying survey characteristics (<a href="http://adsabs.harvard.edu/abs/2015arXiv150705647L">Leistedt et al. 2015</a>). These maps are distributed in nested&nbsp;HEALPix format (nside=4096).</span></p>
-<h2><span style="line-height: 1.5;">Good-Region Footprint</span></h2>
+          <h2><span style="line-height: 1.5;"><strong>Good-Region Footprint</strong></span></h2>
 <p><span style="line-height: 1.5;"><span style="color: rgb(0,0,0);">We also distribute a &quot;good region&quot; footprint which masks regions with imaging artifacts (as identified by a high density of objects with &quot;crazy colors&quot;), regions close to bright&nbsp;2MASS stars, and regions where objects have large astrometric offsets between filters. A detailed description of the creation of the good region footprint can be found in Section 2.1 of&nbsp;</span><a href="http://adsabs.harvard.edu/abs/2015arXiv150705603J">Jarvis et al. (2015</a>)<span style="color: rgb(0,0,0);">.</span></span></p>
-<h2><span style="line-height: 1.5;">References</span></h2>
+          <h2><span style="line-height: 1.5;"><strong>References</strong></span></h2>
 <ul>
 <li class="p1"><a href="http://adsabs.harvard.edu/abs/1996A%26AS..117..393B">Bertin &amp; Arnouts (1996)</a></li>
 <li class="p1"><a href="http://adsabs.harvard.edu/abs/2011ASPC..442..435B">Bertin (2011)</a></li>

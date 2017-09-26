@@ -1,5 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans|Lato:400,700|Open+Sans+Condensed:700|Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet">
 
 <!-- shared styles for all views -->
 <dom-module id="shared-styles">
@@ -31,21 +33,15 @@
         line-height: 64px;
       }
 
-      h1 {
+      h1,h2,h3,h4 {
         margin: 16px 0;
         color: #212121;
         font-size: 22px;
-        font-family:Roboto,"Helvetica Neue","Comic Sans MS", Arial ,monospace;
+        font-family:Lato,"Helvetica Neue","Comic Sans MS", Arial ,monospace;
         font-weight: 400;
       }
 
-      h3{
-        color:black;
-        font-size:22px;
-        text-decoration: none;
-        font-family:Roboto,"Helvetica Neue","Times New Roman", Arial ,monospace;
-        font-weight: 400;
-      }
+
 
       p, .card-content{
         font-size:18px;
@@ -101,7 +97,7 @@
       }
 
       /* App  menu styling*/
-      .selectable-content ::slotted(.app-menu-item), app-menu-item {
+      .selectable-content ::slotted(.app-menu-item), .app-menu-item {
         padding:0;
       }
 
