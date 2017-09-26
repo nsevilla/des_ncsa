@@ -1,0 +1,263 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="my-icons.html">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans|Lato:400,700|Open+Sans+Condensed:700|Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet">
+<script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<script src="../../bower_components/web-component-tester/browser.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
+<link rel="import" href="../bower_components/sublistbox-gist-master/collapse-button.html">
+<link rel="import" href="../bower_components/sublistbox-gist-master/index.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-search-master/paper-search-bar.html">
+<link rel="import" href="../bower_components/iron-collapse-master/iron-collapse.html">
+<link rel="import" href="../bower_components/app-menu-master/app-menu.html">
+<link rel="import" href="../bower_components/app-menu-master/app-submenu.html">
+
+<link rel="import" href="des-card.html">
+<link rel="import" href="des-home.html">
+<link rel="import" href="des-thankyou.html">
+<link rel="import" href="des-releases.html">
+<link rel="lazy-import" href="des-view404.html">
+<link rel="import" href="des-supported.html">
+<link rel="import" href="des-sva1.html">
+<link rel="import" href="des-dr1.html">
+<link rel="import" href="des-file-content.html">
+<link rel="import" href="des-docs.html">
+<link rel="import" href="des-help.html">
+<link rel="import" href="des-docs-gold.html">
+<link rel="import" href="des-docs-shear.html">
+<link rel="import" href="des-docs-photoz.html">
+<link rel="import" href="des-docs-redmapper.html">
+<link rel="stylesheet" href="shared-styles.html">
+
+<dom-module id="des-public_new-app">
+  <template>
+    <style include="shared-styles">
+      :host {
+        --app-primary-color: black;
+        --app-secondary-color: black;
+        display: block;
+      }
+      app-drawer-layout:not([narrow]) [drawer-toggle] {
+        display: none;
+      }
+      app-header {
+        color: #fff;
+        background-color: var(--app-primary-color);
+      }
+      app-toolbar {
+        color: #fff;
+        background-color: var(--app-primary-color);
+      }
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: purple;
+      }
+      .drawer-list {
+        margin: 0 20px;
+      }
+      .drawer-list a {
+        display: block;
+        padding: 0 16px;
+        text-decoration: none;
+        color: var(--app-secondary-color);
+        line-height: 40px;
+      }
+      .drawer-list a.iron-selected {
+        color: black;
+        font-weight: normal;
+      }
+    </style>
+
+    <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="[[rootPath]]:page"
+        data="{{routeData}}"
+        tail="{{subroute}}"></app-route>
+
+    <app-drawer-layout fullbleed narrow="{{narrow}}">
+      <!-- Drawer content -->
+      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+        <app-toolbar>
+          <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image style="width:230px; height:100px;" sizing="contain" src="/static/images/logo.png"></iron-image></a>
+        </app-toolbar>
+
+
+          <app-menu selected="0">
+
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+
+          <a class ="app-menu-item" name="home" href="[[rootPath]]home">Home </a>
+
+          <app-submenu>
+            <div class="app-menu-item" slot="submenu-trigger">
+              <a name="releases" href="[[rootPath]]releases">Releases<iron-icon icon="chevron-right"></iron-icon></a>
+            </div>
+            <app-menu slot="submenu-content">
+              <app-submenu>
+                <div class="app-menu-item" slot="submenu-trigger">
+                <a class="app-menu-item" name="sva1" href="[[rootPath]]sva1">SVA1 Gold<iron-icon icon="chevron-right"></iron-icon></a>
+                </div>
+                <app-menu slot="submenu-content">
+                  <a class="app-menu-item" name="file-content" href="[[rootPath]]file-content">Files</a>
+
+                  <app-submenu>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" name="docs" href="[[rootPath]]docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
+                </div>
+                <app-menu slot="submenu-content">
+                  <a class="app-menu-item" name="docs-gold" href="[[rootPath]]docs-gold">Gold</a>
+                  <a class="app-menu-item" name="docs-photoz" href="[[rootPath]]docs-photoz">Photoz</a>
+                  <a class="app-menu-item" name="docs-shear" href="[[rootPath]]docs-shear">Shear</a>
+                  <a class="app-menu-item" name="docs-redmapper" href="[[rootPath]]docs-redmapper">RedMaPPer</a>
+                </app-menu>
+
+                </app-submenu>
+
+                </app-menu>
+
+              </app-submenu>
+
+               <app-submenu>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" name="dr1" href="[[rootPath]]dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
+                </div>
+                <app-menu slot="submenu-content">
+                  <a class="app-menu-item" name="" href="[[rootPath]]">Files</a>
+                  <a class="app-menu-item" name="" href="[[rootPath]]">Documentation</a>
+                  <a class="app-menu-item" name="" href="[[rootPath]]">DR1 Page 3</a>
+                  <a class="app-menu-item" name="" href="[[rootPath]]">DR1 Page 4</a>
+                </app-menu>
+               </app-submenu>
+            </app-menu>
+          </app-submenu>
+
+
+          <a class ="app-menu-item" name="thankyou" href="[[rootPath]]thankyou" on-tap="">About Us</a>
+          <a class="app-menu-item" name="help" href="[[rootPath]]help">Help</a>
+        </iron-selector>
+      </app-menu>
+     </app-drawer>
+
+      <!-- Main content -->
+      <app-header-layout has-scrolling-region>
+
+        <app-header slot="header" fixed>
+          <app-toolbar >
+            <paper-icon-button icon="icons:menu" drawer-toggle></paper-icon-button>
+            <a href="/" style="text-decoration: none;color: white" ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px">Data Management Systems</paper-item></a>
+
+            <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
+
+            <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
+
+
+          </app-toolbar>
+
+        </app-header>
+
+        <iron-pages
+            selected="[[page]]"
+            attr-for-selected="name"
+            fallback-selection="view404"
+            role="main">
+          <des-home name="home"></des-home>
+          <des-releases name="releases"></des-releases>
+          <des-sva1 name="sva1"></des-sva1>
+          <des-file-content name="file-content"></des-file-content>
+          <des-docs name="docs"></des-docs>
+          <des-docs-gold name="docs-gold"></des-docs-gold>
+          <des-docs-photoz name="docs-photoz"></des-docs-photoz>
+          <des-docs-shear name="docs-shear"></des-docs-shear>
+          <des-docs-redmapper name="docs-redmapper"></des-docs-redmapper>
+          <des-help name="help"></des-help>
+          <des-dr1 name="dr1"></des-dr1>
+          <des-thankyou name="thankyou"></des-thankyou>
+          <des-view404 name="view404"></des-view404>
+        </iron-pages>
+
+        <des-supported></des-supported>
+      </app-header-layout>
+    </app-drawer-layout>
+  </template>
+
+  <script>
+    class MyApp extends Polymer.Element {
+      static get is() { return 'des-public_new-app'; }
+      static get properties() {
+        return {
+          page: {
+            type: String,
+            reflectToAttribute: true,
+            observer: '_pageChanged'
+          },
+
+
+          routeData: Object,
+          subroute: String,
+          // This shouldn't be neccessary, but the Analyzer isn't picking up
+          // Polymer.Element#rootPath
+          rootPath: String
+        };
+      }
+
+
+      static get observers() {
+        return [
+          '_routePageChanged(routeData.page)'
+        ];
+      }
+
+
+      _routePageChanged(page) {
+        // If no page was found in the route data, page will be an empty string.
+        // Deault to 'view1' in that case.
+        this.page = page || 'home';
+
+        // Close a non-persistent drawer when the page & route are changed.
+        if (!this.$.drawer.persistent) {
+          this.$.drawer.close();
+        }
+      }
+
+
+      _pageChanged(page) {
+        // Load page import on demand. Show 404 page if fails
+        var resolvedPageUrl = this.resolveUrl('des-' + page + '.html');
+        Polymer.importHref(
+            resolvedPageUrl,
+            null,
+            this._showPage404.bind(this),
+            true);
+      }
+      _showPage404() {
+        this.page = 'view404';
+      }
+    }
+
+
+    window.customElements.define(MyApp.is, MyApp);
+
+
+  </script>
+
+</dom-module>

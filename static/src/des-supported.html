@@ -1,0 +1,38 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<dom-module id="des-supported">
+<style>
+
+</style>
+
+<template>
+        <des-card>
+        <div style = "padding:10px;text-align: center">
+        <p>The DES Data Management System is supported by the National Science Foundation under Grant
+            No. 1138766</p>
+        <div style="text-align: center">
+         <a href="http://www.ncsa.illinois.edu/" target="_blank" style="padding:20px">
+        <img src="/static/images/ncsa_logo.jpg" height="30px" style=" background-color: #eeeeee;"> </a>
+    <a href="http://illinois.edu/" target="_blank" style="padding:20px">
+        <img src="/static/images/black50.gif" height="30px" style=" background-color: #eeeeee"></a>
+    <a href="http://www.nsf.gov/" target="_blank" style="padding:20px">
+        <img src="/static/images/nsf1sm.gif" height="30px" style=" background-color: #eeeeee"></a>
+
+        </div>
+        </div>
+
+        <div>
+            &nbsp;
+        </div>
+ 
+      </des-card>
+
+
+</template>
+
+<script>
+     class DesSupported extends Polymer.Element {
+      static get is() { return 'des-supported'; }
+    }
+    window.customElements.define(DesSupported.is, DesSupported);
+  </script>
+</dom-module>
