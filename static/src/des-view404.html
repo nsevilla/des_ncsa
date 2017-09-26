@@ -1,0 +1,32 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="des-view404">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 20px 20px;
+      }
+    </style>
+    <div style="font-size: 22px;text-align: center">
+      <br>
+    Oops! You hit a 404. <a href="[[rootPath]]">Head back to DESDM home.</a>
+      <br>
+      <br>
+      </div>
+  </template>
+
+  <script>
+    class DesView404 extends Polymer.Element {
+      static get is() { return 'des-view404'; }
+      static get properties() {
+        return {
+          // This shouldn't be neccessary, but the Analyzer isn't picking up
+          // Polymer.Element#rootPath
+          rootPath: String
+        };
+      }
+    }
+    window.customElements.define(DesView404.is, DesView404);
+  </script>
+ </dom-module>
