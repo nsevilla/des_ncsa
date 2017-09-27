@@ -5,15 +5,11 @@
     <style>
       :host {
         display: block;
-        padding: 20px 20px;
+        padding: 10px 20px;
       }
     </style>
-    <div style="font-size: 22px;text-align: center">
-      <br>
-    Oops! You hit a 404. <a href="[[rootPath]]">Head back to DESDM home.</a>
-      <br>
-      <br>
-      </div>
+
+    Oops you hit a 404. <a href="[[rootPath]]">Head back to home.</a>
   </template>
 
   <script>
@@ -23,10 +19,10 @@
         return {
           // This shouldn't be neccessary, but the Analyzer isn't picking up
           // Polymer.Element#rootPath
-          rootPath: String
+          rootPath: String,
         };
       }
     }
     window.customElements.define(DesView404.is, DesView404);
   </script>
- </dom-module>
+</dom-module>
