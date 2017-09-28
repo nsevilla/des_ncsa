@@ -29,8 +29,8 @@
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../bower_components/paper-search-master/paper-search-bar.html">
 <link rel="import" href="../bower_components/iron-collapse-master/iron-collapse.html">
-<link rel="import" href="../bower_components/app-menu-master/app-menu.html">
-<link rel="import" href="../bower_components/app-menu-master/app-submenu.html">
+<link rel="import" href="../bower_components/app-menu/app-menu.html">
+<link rel="import" href="../bower_components/app-menu/app-submenu.html">
 
 <link rel="import" href="des-card.html">
 <link rel="import" href="des-home.html">
@@ -56,16 +56,34 @@
         --app-primary-color: black;
         --app-secondary-color: black;
         display: block;
+        --app-menu-color: #616161;
+      --app-menu-selected-bg-color: rgba(0, 0, 0, 0.05);
+      }
+
+
+
+      .sublist1 {
+          padding-left: 20px;
+      }
+      .sublist2 {
+          padding-left: 40px;
+      }
+      .sublist3 {
+          padding-left: 60px;
       }
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
       }
       app-header {
+
         color: #fff;
         background-color: var(--app-primary-color);
       }
+
+
       app-toolbar {
         color: #fff;
+        height: 97px;
         background-color: var(--app-primary-color);
       }
       app-header paper-icon-button {
@@ -109,22 +127,22 @@
           <a class ="app-menu-item" name="home" href="[[rootPath]]home">Home </a>
 
           <app-submenu>
-            <div class="app-menu-item" slot="submenu-trigger">
+            <div class="app-menu-item " slot="submenu-trigger">
               <a name="releases" href="[[rootPath]]releases">Releases<iron-icon icon="chevron-right"></iron-icon></a>
             </div>
             <app-menu slot="submenu-content">
               <app-submenu>
-                <div class="app-menu-item" slot="submenu-trigger">
+                <div class="app-menu-item sublist1" slot="submenu-trigger">
                 <a class="app-menu-item" name="sva1" href="[[rootPath]]sva1">SVA1 Gold<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
-                <app-menu slot="submenu-content">
+                <app-menu class="sublist2" slot="submenu-content">
                   <a class="app-menu-item" name="file-content" href="[[rootPath]]file-content">Files</a>
 
                   <app-submenu>
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" name="docs" href="[[rootPath]]docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
-                <app-menu slot="submenu-content">
+                <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" name="docs-gold" href="[[rootPath]]docs-gold">Gold</a>
                   <a class="app-menu-item" name="docs-photoz" href="[[rootPath]]docs-photoz">Photoz</a>
                   <a class="app-menu-item" name="docs-shear" href="[[rootPath]]docs-shear">Shear</a>
@@ -138,10 +156,10 @@
               </app-submenu>
 
                <app-submenu>
-                <div class="app-menu-item" slot="submenu-trigger">
+                <div class="app-menu-item sublist1" slot="submenu-trigger">
                   <a class="app-menu-item" name="dr1" href="[[rootPath]]dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
-                <app-menu slot="submenu-content">
+                <app-menu class="sublist2" slot="submenu-content">
                   <a class="app-menu-item" name="" href="[[rootPath]]">Files</a>
                   <a class="app-menu-item" name="" href="[[rootPath]]">Documentation</a>
                   <a class="app-menu-item" name="" href="[[rootPath]]">DR1 Page 3</a>
