@@ -96,7 +96,7 @@
 
     <app-drawer-layout fullbleed narrow="{{narrow}}">
       <!-- Drawer content -->
-      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]" style="border-right: groove 1px">
         <app-toolbar>
           <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image style="width:230px; height:100px;" sizing="contain" src="/static/images/logo.png"></iron-image></a>
         </app-toolbar>
@@ -158,7 +158,7 @@
      </app-drawer>
 
       <!-- Main content -->
-      <app-header-layout has-scrolling-region>
+      <app-header-layout has-scrolling-region  style="border-bottom: groove 1px">
 
         <app-header slot="header" fixed>
           <app-toolbar >
@@ -166,19 +166,17 @@
             <a href="/" style="text-decoration: none;color: white" ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px">Data Management Systems</paper-item></a>
 
             <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
-
             <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
 
-
           </app-toolbar>
-
         </app-header>
 
         <iron-pages
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="view404"
-            role="main">
+            role="main"
+        style="padding-left: 15px; padding-right: 15px">
           <des-home name="home"></des-home>
           <des-releases name="releases"></des-releases>
           <des-sva1 name="sva1"></des-sva1>
