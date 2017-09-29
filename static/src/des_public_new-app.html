@@ -40,6 +40,8 @@
 <link rel="import" href="des-supported.html">
 <link rel="import" href="des-sva1.html">
 <link rel="import" href="des-dr1.html">
+<link rel="import" href="des-dr1docs.html">
+<link rel="import" href="des-dr1files.html">
 <link rel="import" href="des-file-content.html">
 <link rel="import" href="des-docs.html">
 <link rel="import" href="des-help.html">
@@ -106,7 +108,7 @@
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 
-          <a class ="app-menu-item" name="home" href="[[rootPath]]home">Home </a>
+          <a class ="app-menu-item" name="home" href="[[rootPath]]home">Home</a>
 
           <app-submenu>
             <div class="app-menu-item" slot="submenu-trigger">
@@ -142,8 +144,9 @@
                   <a class="app-menu-item" name="dr1" href="[[rootPath]]dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu slot="submenu-content">
-                  <a class="app-menu-item" name="" href="[[rootPath]]">Files</a>
-                  <a class="app-menu-item" name="" href="[[rootPath]]">Documentation</a>
+                   <a class="app-menu-item" name="dr1files" href="[[rootPath]]dr1files">Files</a>
+                  <a class="app-menu-item" name="dr1docs" href="[[rootPath]]dr1docs">Documentation</a>
+
 
                 </app-menu>
                </app-submenu>
@@ -188,6 +191,8 @@
           <des-docs-redmapper name="docs-redmapper"></des-docs-redmapper>
           <des-help name="help"></des-help>
           <des-dr1 name="dr1"></des-dr1>
+          <des-dr1docs name="dr1docs"></des-dr1docs>
+          <des-dr1files name="dr1files"></des-dr1files>
           <des-thankyou name="thankyou"></des-thankyou>
           <des-view404 name="view404"></des-view404>
         </iron-pages>
