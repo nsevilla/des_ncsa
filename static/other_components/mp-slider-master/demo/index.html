@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <title>mp slider demos</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="../../webcomponentsjs/webcomponents.js"></script>
+        <link rel="import" href="../mp-slider.html" />
+        <style>
+            .card {
+                max-width: 1200px;
+                margin: 40px auto;
+                padding: 20px 20px 50px;
+                color: #757575;
+                border-radius: 5px;
+                position: relative;
+                background-color: #fff;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                box-sizing: border-box;
+            }
+        </style>
+        </head>
+
+        <body>
+            <div class="card">
+                <mp-slider controls bullets show-thumbs>
+                    <div>
+                        <img src="images/img1.jpg" />
+                        <mp-caption slider-header="Kung Fu Panda"
+                                    slider-content="Po and the legends of awesomeness">
+                        </mp-caption>
+                    </div>
+
+                    <div>
+                        <img src="images/img2.jpg" />
+                        <mp-caption slider-header="Despicable Me"
+                                    slider-content="Gru, the trio of orphan girls and the minions">
+                        </mp-caption>
+                    </div>
+
+                    <div>
+                        <img src="images/img3.jpg" />
+                    </div>
+
+                    <div>
+                        <img src="images/img4.jpg" />
+                        <mp-caption slider-header="Hotel Transylvania"></mp-caption>
+                    </div>
+                </mp-slider>
+            </div>
+        </body>
+    </html>
+</html>

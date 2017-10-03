@@ -3,7 +3,3 @@ static/files/SVA1/*
 static/log.csv
 __pycache__/
 static/bower_components/*
-!static/bower_components/mp-slider-master
-!static/bower_components/app-layout
-!static/bower_components/iron-selector
-!static/bower_components/app-menu-master

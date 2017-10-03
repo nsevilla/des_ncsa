@@ -11,4 +11,3 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)-8s - %(message)s',
                     datefmt='%d/%m/%Y %Hh%Mm%Ss')
 # console = logging.StreamHandler(sys.stderr)
-
