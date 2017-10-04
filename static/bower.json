@@ -85,7 +85,10 @@
     "platinum-sw": "PolymerElements/platinum-sw#^2.0.0",
     "prism-element": "PolymerElements/prism-element#^2.0.1",
     "mp-slider": "^2.0.0",
-    "iron-form": "^2.0.1"
+    "iron-form": "^2.0.1",
+    "l2t-paper-slider": "Link2Twenty/l2t-paper-slider#^1.4.2",
+    "app-menu": "oyeharry/app-menu#^2.1.0",
+    "paper-search": "Collaborne/paper-search#^2.0.9"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^6.0.0",
