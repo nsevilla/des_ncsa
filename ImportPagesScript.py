@@ -54,7 +54,7 @@ with requests.session() as ssn:
 
 
             # add page identifiers to end of file
-        pageid = input("What  should the dom-module id be? (des-home, des-data, etc.)")
+        pageid = input("What should the dom-module id be? (des-home, des-data, etc.)")
         pageclass=input("What Polymer class should this is labeled as?")
         newfile = open("/Users/audreykoziol/des_public_new/static/src/" + filename, 'a')
         newfile.write("</div> \n </des-card> \n </template> \n <script> class " + pageclass+ " extends Polymer.Element { \n static get is() { return '" +pageid + "'; }\n } "
