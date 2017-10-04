@@ -9,6 +9,9 @@ import re
 with requests.session() as ssn:
     usernameinput = input("What is your XConfluence username?")
     passwordinput = input("What is your XConfluence password?")
+    print("If you get an error saying 'AttributeError: 'NoneType' object has no attribute 'prettify' "
+          "after entering the URL for the below prompt, your password or username has probably been entered wrong. "
+          "Please restart the program and enter the correct login credentials.")
 
     payload = {
         'os_username': usernameinput,
@@ -63,7 +66,7 @@ with requests.session() as ssn:
         os.rename("/Users/audreykoziol/des_public_new/static/src/"+filename, "/Users/audreykoziol/des_public_new/static/src/"+ newfilename)
 
         #add page identifiers to beginning of file
-        line_prepender(newfilename, "<link rel='import' href='../bower_components/polymer/polymer-element.html'>\n <link rel='import' href='../bower_components/mp-slider-master/mp-slider.html'>\n"
+        line_prepender(newfilename, "<link rel='import' href='../bower_components/polymer/polymer-element.html'>\n <link rel='import' href='elements.html'>\n"
                                     "<link rel='import' href='shared-styles.html'> \n <dom-module id='" + pageid + "'> <template> <style include='shared-styles'> \n "
                                     ":host { \n display: block; \n padding: 10px;\n}\n</style>\n<des-card>")
 
