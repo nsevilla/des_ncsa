@@ -4,6 +4,8 @@ import os
 import random
 import string
 import re
+import time
+from time import sleep
 
 #opens requests.sessions and inputs in user data for time spent using the get_page_content() function
 with requests.session() as ssn:
@@ -39,7 +41,7 @@ with requests.session() as ssn:
                 f.write(line.rstrip('\r\n') + '\n' + content)
 
         pagecontent = soup.find("div", {"id": "main-content"})
-        newfile.write(pagecontent.prettify()[207:-50])
+        newfile.write(pagecontent.prettify()[207:])
 
         # saves pictures on the page to seperate files
         picturecontent = soup.findAll("img", {"class": "confluence-embedded-image"})
@@ -68,7 +70,7 @@ with requests.session() as ssn:
         #add page identifiers to beginning of file
         line_prepender(newfilename, "<link rel='import' href='../bower_components/polymer/polymer-element.html'>\n <link rel='import' href='elements.html'>\n"
                                     "<link rel='import' href='shared-styles.html'> \n <dom-module id='" + pageid + "'> <template> <style include='shared-styles'> \n "
-                                    ":host { \n display: block; \n padding: 10px;\n}\n</style>\n<des-card>")
+                                    ":host { \n display: block; \n padding: 10px;\n}\n</style>\n<des-card> <div class=card-content>")
 
         #adds more pages
         def addanotherpage():
@@ -77,6 +79,9 @@ with requests.session() as ssn:
                 get_page_content()
                 return
             if answer == "no" or answer == "No" or answer == "n":
+                print("Please note that locations within imported pages for images and other files will need to be changed to reflect the correct corresponding location on the user's computer "
+                      "(unless the file isn't imported from a local location)")
+                sleep(2)
                 print("Exiting program")
                 ssn.get("https://opensource.ncsa.illinois.edu/confluence/login.action?logout=true")
                 return
