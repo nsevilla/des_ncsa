@@ -17,8 +17,9 @@ with requests.session() as ssn:
 
     ssn.post('https://opensource.ncsa.illinois.edu/confluence/login.action', data=payload)
 
-#gets the content of the inputted URL's main content, saves it as a file, and additonally saves any linked images as files
 
+#gets the content of the inputted URL's main content, saves it as a file, and additonally saves any linked images as files
+#PLEASE NOTE: Changing the location of the saved files is necessary for them to be saved in the correct place!
     def get_page_content():
         #goes to website and creates file based off of HTML tile
         urlinput = "http://" + input("What URL do you want to pull from?(Please do not include http://)")
@@ -48,7 +49,7 @@ with requests.session() as ssn:
 
 
             # add page identifiers to end of file
-        pageid = input("What page should this be identified as? (des-home, des-data, etc.)")
+        pageid = input("What  should the dom-module id be? (des-home, des-data, etc.)")
         pageclass=input("What Polymer class should this is labeled as?")
         newfile = open("/Users/audreykoziol/des_public_new/static/src/" + filename, 'a')
         newfile.write("</div> \n </des-card> \n </template> \n <script> class " + pageclass+ " extends Polymer.Element { \n static get is() { return '" +pageid + "'; }\n } "
