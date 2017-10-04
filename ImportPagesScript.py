@@ -3,8 +3,6 @@ from bs4 import BeautifulSoup
 import os
 import random
 import string
-import re
-import time
 from time import sleep
 
 #opens requests.sessions and inputs in user data for time spent using the get_page_content() function
