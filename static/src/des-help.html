@@ -16,9 +16,14 @@
 <style is="custom-style" include="shared-styles">
 
 .form1:hover{
-    background: var(--paper-blue-grey-50);
+    background: var(--paper-blue-grey-50);}
 
+.helpform{
+    text-align:center;
+}
 
+.ironformcontent{
+    text-align: left;
 }
 
 </style>
@@ -48,13 +53,13 @@ Support for the SVA1 data products is very limited. The primary sources of docum
 <hr> 
 </des-card>
 
-<des-card >
+<des-card class="helpform">
 
 
-      <div class="card-content"  >
+      <div class="card-content">
             <div class="horizontal layout center-justified" >
             <paper-card  elevation="4" style="padding:20px; width:100%; max-width:600px;">
-       <iron-form>
+       <iron-form class="ironformcontent">
         <form is="iron-form" id="form" method="post">
             <div style="text-align: center; font-size: larger; color:red; padding-top: 10px">Help Form</div>
             <div class="form1" id="form1" >
