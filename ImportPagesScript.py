@@ -22,18 +22,18 @@ with requests.session() as ssn:
 
 
 #gets the content of the inputted URL's main content, saves it as a file, and additonally saves any linked images as files
-#PLEASE NOTE: Changing the location of the saved files is necessary for them to be saved in the correct place!
+    print("PLEASE NOTE: Changing the location of the saved files from imported pages is necessary for them to be displayed correctly!")
     def get_page_content():
         #goes to website and creates file based off of HTML tile
         urlinput = "http://" + input("What URL do you want to pull from?(Please do not include http://)")
         filename = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(1,10)) + ".html"
         page = ssn.get(urlinput)
         soup = BeautifulSoup(page.content,'html.parser')
-        newfile = open("/Users/audreykoziol/des_public_new/static/src/" + filename, "w+")
+        newfile = open("/Users/YOURUSERNAME/des_public_new/static/src/" + filename, "w+")
 
         # function to add content to the beginning of the file
         def line_prepender(file, line):
-            with open("/Users/audreykoziol/des_public_new/static/src/" + file, 'r+') as f:
+            with open("/Users/YOURUSERNAME/des_public_new/static/src/" + file, 'r+') as f:
                 content = f.read()
                 f.seek(0, 0)
                 f.write(line.rstrip('\r\n') + '\n' + content)
@@ -48,13 +48,13 @@ with requests.session() as ssn:
             imageURL = "https://opensource.ncsa.illinois.edu" + imagesrc
             r = ssn.get(imageURL, allow_redirects=True)
             picturesfilename = str(item['data-linked-resource-default-alias'])
-            open("/Users/audreykoziol/des_public_new/static/images/" + picturesfilename, 'wb').write(r.content)
+            open("/Users/YOURUSERNAME/des_public_new/static/images/" + picturesfilename, 'wb').write(r.content)
 
 
             # add page identifiers to end of file
         pageid = input("What should the dom-module id be? (des-home, des-data, etc.)")
         pageclass=input("What Polymer class should this is labeled as?")
-        newfile = open("/Users/audreykoziol/des_public_new/static/src/" + filename, 'a')
+        newfile = open("/Users/YOURUSERNAME/des_public_new/static/src/" + filename, 'a')
         newfile.write("</div> \n </des-card> \n </template> \n <script> class " + pageclass+ " extends Polymer.Element { \n static get is() { return '" +pageid + "'; }\n } "
                             "\nwindow.customElements.define(" +pageclass+".is," + pageclass+" );\n </script>\n</dom-module>")
 
@@ -63,7 +63,7 @@ with requests.session() as ssn:
         #newfilename = re.sub('[/]', '-', newfilename)
 
         newfilename=pageid+".html"
-        os.rename("/Users/audreykoziol/des_public_new/static/src/"+filename, "/Users/audreykoziol/des_public_new/static/src/"+ newfilename)
+        os.rename("/Users/YOURUSERNAME/des_public_new/static/src/"+filename, "/Users/YOURUSERNAME/des_public_new/static/src/"+ newfilename)
 
         #add page identifiers to beginning of file
         line_prepender(newfilename, "<link rel='import' href='../bower_components/polymer/polymer-element.html'>\n <link rel='import' href='elements.html'>\n"
