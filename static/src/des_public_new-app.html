@@ -22,6 +22,7 @@
       .sublist3 {
           padding-left: 45px;
       }
+
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
 
@@ -57,7 +58,7 @@
       .drawer-list a.iron-selected {
         color: black;
         font-weight: normal;
-        background-color : rgba(0, 0, 0, 0.05);
+        /*background-color : rgba(0, 0, 0, 0.05);*/
       }
       .drawer-list a:hover {
         color: black;
@@ -82,8 +83,18 @@
     <app-route
         route="{{subroute1}}"
         pattern="/:subpage1"
-        data="{{subrouteData1}}">
+        data="{{subrouteData1}}"
+        tail="{{subroute2}}">
     </app-route>
+
+    <app-route
+        route="{{subroute2}}"
+        pattern="/:subpage2"
+        data="{{subrouteData2}}">
+    </app-route>
+
+
+
 
     <app-drawer-layout fullbleed narrow="{{narrow}}">
       <!-- Drawer content -->
@@ -97,7 +108,7 @@
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 
-            <a  class="app-menu-item" name="home" href="[[rootPath]]home">Home </a>
+            <a  class="app-menu-item" name="home" href="[[rootPath]]home">Home</a>
 
           <app-submenu>
             <div class="app-menu-item " slot="submenu-trigger">
@@ -208,11 +219,17 @@
             type: String,
             reflectToAttribute: true,
           },
+          subpage2: {
+            type: String,
+            reflectToAttribute: true,
+          },
           routeData: Object,
           subrouteData: Object,
           subroute: String,
           subrouteData1: Object,
           subroute1: String,
+          subrouteData2:Object,
+          subroute2:String,
           rootPath: String
         };
       }
@@ -222,7 +239,8 @@
         return [
           '_routePageChanged(routeData.page)',
           '_routeSubPageChanged(subrouteData.subpage)',
-          '_routeSubPage1Changed(subrouteData1.subpage1)'
+          '_routeSubPage1Changed(subrouteData1.subpage1)',
+          '_routeSubPage2Changed(subrouteData2.subpage2)'
         ];
       }
 
@@ -255,6 +273,19 @@
         //this.subpage = (function () { return; })()  ;
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('subpage1:' + subpage1);
+        // Close a non-persistent drawer when the page & route are changed.
+        if (!this.$.drawer.persistent) {
+          this.$.drawer.close();
+        }
+      }
+
+      _routeSubPage2Changed(subpage2) {
+        //this.subpage = subpage || '';
+        this.routeData.page = subpage2;
+        this.subrouteData1.subpage1 = subpage2;
+        //this.subpage = (function () { return; })()  ;
+        //this.subrouteData.subpage = (function () { return; })()  ;
+        console.log('subpage2:' + subpage2);
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
           this.$.drawer.close();
