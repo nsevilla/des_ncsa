@@ -14,13 +14,13 @@
       }
 
       .sublist1 {
-          padding-left: 10px;
+          padding-left: 5px;
       }
       .sublist2 {
-          padding-left: 35px;
+          padding-left: 25px;
       }
       .sublist3 {
-          padding-left: 50px;
+          padding-left: 45px;
       }
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
@@ -41,15 +41,17 @@
         --paper-icon-button-ink-color: purple;
       }
       .drawer-list {
-        margin: 0 20px;
+        margin-right:20px;
       }
+
       .drawer-list a {
         display: block;
-        padding: 0 16px;
+        padding: 0 0 0 10px;
         text-decoration: none;
         color: var(--app-secondary-color);
         line-height: 40px;
       }
+
       .drawer-list a.iron-selected {
         color: black;
         font-weight: normal;
@@ -58,7 +60,7 @@
       .drawer-list a:hover {
         color: black;
         font-weight: normal;
-        background-color : rgba(0, 0, 0, 0.05);
+        /*background-color : rgba(0, 0, 0, 0.05);*/
       }
     </style>
 
@@ -73,12 +75,12 @@
         route="{{subroute}}"
         pattern="/:subpage"
         data="{{subrouteData}}"
-        tail="{{subroute1}}"
+        tail="{{subroute1}}">
     </app-route>
     <app-route
         route="{{subroute1}}"
         pattern="/:subpage1"
-        data="{{subrouteData1}}"
+        data="{{subrouteData1}}">
     </app-route>
 
     <app-drawer-layout fullbleed narrow="{{narrow}}">
@@ -99,9 +101,9 @@
             <div class="app-menu-item " slot="submenu-trigger">
               <a name="releases" href="[[rootPath]]releases">Releases<iron-icon icon="chevron-right"></iron-icon></a>
             </div>
-            <app-menu slot="submenu-content">
+            <app-menu slot="submenu-content" >
               <app-submenu>
-                <div class="app-menu-item sublist1" slot="submenu-trigger">
+                <div class="sublist1" slot="submenu-trigger">
                 <a class="app-menu-item" name="sva1" href="[[rootPath]]releases/sva1">SVA1 Gold<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
 
@@ -109,13 +111,13 @@
                   <a class="app-menu-item" name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
                   <app-submenu>
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" name="docs" href="[[rootPath]]docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
+                  <a class="app-menu-item" name="docs" href="[[rootPath]]releases/sva1/docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu class="sublist3" slot="submenu-content">
-                  <a class="app-menu-item" name="docs-gold" href="[[rootPath]]docs-gold">Gold</a>
-                  <a class="app-menu-item" name="docs-photoz" href="[[rootPath]]docs-photoz">Photoz</a>
-                  <a class="app-menu-item" name="docs-shear" href="[[rootPath]]docs-shear">Shear</a>
-                  <a class="app-menu-item" name="docs-redmapper" href="[[rootPath]]docs-redmapper">RedMaPPer</a>
+                  <a class="app-menu-item" name="docs-gold" href="[[rootPath]]releases/sva1/docs/docs-gold">Gold</a>
+                  <a class="app-menu-item" name="docs-photoz" href="[[rootPath]]releases/sva1/docs/docs-photoz">Photoz</a>
+                  <a class="app-menu-item" name="docs-shear" href="[[rootPath]]releases/sva1/docs/docs-shear">Shear</a>
+                  <a class="app-menu-item" name="docs-redmapper" href="[[rootPath]]releases/sva1/docs/docs-redmapper">RedMaPPer</a>
                 </app-menu>
                 </app-submenu>
                 </app-menu>
@@ -123,12 +125,12 @@
               </app-submenu>
 
                <app-submenu>
-                <div class="app-menu-item sublist1" slot="submenu-trigger">
-                  <a class="app-menu-item" name="dr1" href="[[rootPath]]dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
+                <div class="sublist1" slot="submenu-trigger">
+                  <a class="app-menu-item" name="dr1" href="[[rootPath]]releases/dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu class="sublist2" slot="submenu-content">
-                   <a class="app-menu-item" name="dr1files" href="[[rootPath]]dr1files">Files</a>
-                  <a class="app-menu-item" name="dr1docs" href="[[rootPath]]dr1docs">Documentation</a>
+                   <a class="app-menu-item" name="dr1files" href="[[rootPath]]releases/dr1/dr1files">Files</a>
+                  <a class="app-menu-item" name="dr1docs" href="[[rootPath]]releases/dr1/dr1docs">Documentation</a>
 
                 </app-menu>
                </app-submenu>
