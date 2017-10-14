@@ -9,8 +9,60 @@ import tornado.log
 import Settings
 import jira_ticket
 from tornado.options import define, options
+import base64
+import netaddr
+import bcrypt
 
 define("port", default=8080, help="run on the given port", type=int)
+
+
+def require_basic_auth(handler_class):
+    """ auth decorator see:
+        http://kevinsayscode.tumblr.com/post/7362319243/easy-basic-http-authentication-with-tornado
+    """
+    def wrap_execute(handler_execute):
+        def require_basic_auth(handler, kwargs):
+            auth_header = handler.request.headers.get('Authorization')
+            if auth_header is None or not auth_header.startswith('Basic '):
+                handler.set_status(401)
+                handler.set_header('WWW-Authenticate', 'Basic realm=Restricted')
+                handler._transforms = []
+                handler.finish()
+                return False
+            auth_decoded = base64.decodestring(str.encode(auth_header[6:]))
+            kwargs['basicauth_user'], kwargs['basicauth_pass'] = auth_decoded.decode().split(':', 2)
+            return True
+        def _execute(self, transforms, *args, **kwargs):
+            if not require_basic_auth(self, kwargs):
+                return False
+            return handler_execute(self, transforms, *args, **kwargs)
+        return _execute
+    handler_class._execute = wrap_execute(handler_class._execute)
+    return handler_class
+
+def read_passwd_file(passwdfile='./.htpasswd'):
+    with open(passwdfile, "r") as fh:
+        content = fh.readlines()
+    for item in content:
+        item.strip()
+    passwords = {}
+    for line in content:
+        if ":" in line:
+            username, password = line.split(":")
+            passwords[username] = password
+    return passwords
+
+def verify_password(passwords, username, password):
+    salt = bcrypt.gensalt(12)
+    hashed = bcrypt.hashpw(str.encode(password), salt)
+    stored_hash = passwords[username].strip("\n")
+    if hashed == bcrypt.hashpw(str.encode(stored_hash), salt):
+        return True
+    else:
+        return False
+
+
+
 
 class BaseHandler(tornado.web.RequestHandler):
     def get_current_user(self):
@@ -22,8 +74,10 @@ class MainHandler(tornado.web.RequestHandler):
     by page.js
     """
     @tornado.web.asynchronous
-    def get(self):
-        self.render('index.html')
+    def get(self, basicauth_user, basicauth_pass):
+        passwords = read_passwd_file()
+        if verify_password(passwords, basicauth_user, basicauth_pass):
+            self.render('index.html')
 
 class HelpHandler(tornado.web.RequestHandler):
     """
