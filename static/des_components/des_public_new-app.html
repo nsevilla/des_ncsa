@@ -10,13 +10,13 @@
       }
 
       .sublist1 {
-          padding-left: 5px;
-      }
-      .sublist2 {
           padding-left: 25px;
       }
-      .sublist3 {
+      .sublist2 {
           padding-left: 35px;
+      }
+      .sublist3 {
+          padding-left: 45px;
       }
 
       app-drawer-layout:not([narrow]) [drawer-toggle] {
@@ -117,7 +117,6 @@
                 </div>
 
                 <app-menu class="sublist2" slot="submenu-content">
-                  <a class="app-menu-item" name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
                   <app-submenu>
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" name="docs" href="[[rootPath]]releases/sva1/docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
@@ -129,6 +128,7 @@
                   <a class="app-menu-item" name="docs-redmapper" href="[[rootPath]]releases/sva1/docs/docs-redmapper">RedMaPPer</a>
                 </app-menu>
                 </app-submenu>
+                  <a class="app-menu-item" name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
                 </app-menu>
 
               </app-submenu>
@@ -143,6 +143,9 @@
 
                 </app-menu>
                </app-submenu>
+                <div class="sublist1" >
+               <a class ="app-menu-item" disabled>Y1A1 Gold</a>
+                </div>
             </app-menu>
           </app-submenu>
 

@@ -7,15 +7,34 @@
   <template>
     <style>
 
+    /* COLORS */
+    :root {
+        --color-button: green;
+        --color-button-hover: rebeccapurple;
+    }
+
+    /*  DES-HOME*/
+       .homeImages {
+           height: 400px;
+           width: 400px;
+       }
+     /* BUTTONS*/
       .desButton:hover{
-        background: rebeccapurple;
-         text-transform: none;
+        background: var(--color-button-hover);
       }
       .desButton{
-        background-color: red;
+        background-color: var(--color-button);
         color: white;
         text-transform: none;
+        opacity: 0.6;
       }
+      .desButton[disabled] {
+          background: #eaeaea;
+          color: #a8a8a8;
+          cursor: auto;
+          pointer-events: none;
+      }
+
 
       .card {
         margin: 24px;
