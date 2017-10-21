@@ -40,35 +40,37 @@ def send_email_desdm():
     s.sendmail(fromemail, toemail, msg.as_string())
     s.quit()
 
+
 def create_ticket(first, last, email, topics, subject, question):
-    f=open('.access','r')
-    A=f.readlines()
+    f = open('.access', 'r')
+    A = f.readlines()
     f.close()
-    my_string_u=A[0].strip()
-    my_string_p=A[1].strip()
+    my_string_u = base64.b64decode(A[0].strip()).decode().strip()
+    my_string_p = base64.b64decode(A[1].strip()).decode().strip()
+    print(my_string_u, my_string_p)
     """
     This function creates the ticket coming form the help form
     """
 
     jira = JIRA(
         server="https://opensource.ncsa.illinois.edu/jira/",
-        basic_auth=(base64.b64decode(my_string_u).decode(), base64.b64decode(my_string_p).decode()))
+        basic_auth=(my_string_u, my_string_p))
 
     body = """
     *ACTION ITEMS*
     - Please ASSIGN this ticket if it is unassigned.
     - PLEASE SEND AN EMAIL TO  *%s* to reply to this ticket
-    - COPY the answer in the comments section and ideally further communication. 
-    - PLEASE close this ticket when resolved 
-    
-    
+    - COPY the answer in the comments section and ideally further communication.
+    - PLEASE close this ticket when resolved
+
+
     *Name*: %s %s
-    
+
     *Email*: %s
-    
+
     *Topics*:
     %s
-    
+
     *Question*:
     %s
 
@@ -82,7 +84,7 @@ def create_ticket(first, last, email, topics, subject, question):
         #'reporter' : {'name': 'desdm-wufoo'},
         }
     jira.create_issue(fields=issue)
-    send_email()
+    #send_email()
 
 def create_ticket_desdm(first, last, email, username, topics, question):
     f=open('.access','r')
@@ -100,19 +102,19 @@ def create_ticket_desdm(first, last, email, username, topics, question):
 
     body = """
     PLEASE SEND AN EMAIL TO %s when
-    ticket is resolved and CONFIRM that it was done 
+    ticket is resolved and CONFIRM that it was done
     in the comments section of the ticket
     ------------------------------
-    
+
     *Name*: %s %s
-    
+
     *Email*: %s
 
     *Username* (if entered) : %s
-    
+
     *Quick help checkboxes*:
     %s
-    
+
     *Extra information*:
     %s
 

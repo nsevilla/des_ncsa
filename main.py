@@ -40,9 +40,6 @@ class HelpHandler(tornado.web.RequestHandler):
     deal with the form submission
     """
     @tornado.web.asynchronous
-    def get(self):
-        self.render('index.html')
-    @tornado.web.asynchronous
     def post(self):
         name = self.get_argument("name", "")
         last = self.get_argument("lastname", "")
@@ -50,7 +47,8 @@ class HelpHandler(tornado.web.RequestHandler):
         subject = self.get_argument("subject", "")
         question = self.get_argument("question", "")
         topic = self.get_argument("topic", "")
-        topics = topic.replace(',','\n')
+        topics = topic.replace(',', '\n')
+        print(name, last, email, topic)
         jira_ticket.create_ticket(name, last, email, topics, subject, question)
         self.set_status(200)
         self.flush()
@@ -75,7 +73,7 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r"/", MainHandler),
-            (r"/releases/sva1/help", HelpHandler),
+            (r"/help/", HelpHandler),
             (r"/releases/sva1/content/(.*)", tornado.web.StaticFileHandler,\
             {'path':Settings.SVA1_PATH}),
             ]

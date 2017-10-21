@@ -1,9 +1,7 @@
 <dom-module id="des-help">
+<template>
 
-    <template>
-
-<custom-style>
-<style is="custom-style" include="shared-styles">
+<style  include="shared-styles">
 
 .form1:hover{
     background: var(--paper-blue-grey-50);}
@@ -15,30 +13,15 @@
 .ironformcontent{
     text-align: left;
 }
-
 </style>
-</custom-style>
 
 
-<des-card  heading="DES SVA1 GOLD Release Help Form">
+<des-card  heading="DES Release Help Form">
 
       <div class="card-content">
-Please complete the form below with any questions related to the DES SVA1
-
-GOLD public data release that were not addressed by the <a on-click="_documentation" href="[[rootPath]]docs">Documentation page</a>.
+Please complete the form below with any questions related to the DES Releases
+that were not addressed by the socumentation pages.
 Indicating one or more relevant topics will help us properly direct your question.
-</div>
-
-<div class="card-content">
-
-<b>Notes:</b><br>
-<ul>
-<li>
-The SVA1 data products do not constitute an official DES data release and are provided on an "as is" basis in support of DES publications based on SVA1 data.</li>
-<li>
-Support for the SVA1 data products is very limited. The primary sources of documentation are the papers that derived these data product as described by the Documentation page.</a>
-</li>
-</ul>
 </div>
 <hr>
 </des-card>
@@ -49,8 +32,8 @@ Support for the SVA1 data products is very limited. The primary sources of docum
       <div class="card-content">
             <div class="horizontal layout center-justified" >
             <paper-card  elevation="4" style="padding:20px; width:100%; max-width:600px;">
-       <iron-form class="ironformcontent">
-        <form is="iron-form" id="form" method="post">
+       <iron-form class="ironformcontent" id="Helpform" >
+        <form is="iron-form" method="post" action="/help/">
             <div style="text-align: center; font-size: larger; color:red; padding-top: 10px">Help Form</div>
             <div class="form1" id="form1" >
             <p><b>Name:</b></p>
@@ -61,27 +44,30 @@ Support for the SVA1 data products is very limited. The primary sources of docum
             <div class="form1" id="form2"  >
             <p><b>Contact Information:</b></p>
             <paper-input name="email" label="Email" required ></paper-input>
-            <paper-input name="Other Contact Information" label="Other Contact Information" ></paper-input>
             </div>
 
             <div class="form1" id="form3"  >
             <p><b>Question Topic (Please Select All That Apply):</b></p>
-            <paper-checkbox name="topic" value="Gold Catalogs"> Gold catalogs</paper-checkbox><br>
-            <paper-checkbox name="topic" value="Shear Catalogs"> Shear catalogs</paper-checkbox> <br>
-            <paper-checkbox name="topic" value="Photo-z Catalogs"> Photo-z catalogs </paper-checkbox> <br>
-            <paper-checkbox name="topic" value="RedMapper Catalogs"> RedMapper catalogs </paper-checkbox><br>
+            <paper-checkbox name="topic" value="DR1 Release"> DR1 Release</paper-checkbox> <br>
+            <paper-checkbox name="topic" value="Interfaces"> User Interfaces </paper-checkbox> <br>
+            <paper-checkbox name="topic" value="User Accounts"> User Accounts </paper-checkbox><br>
             <paper-checkbox name="topic" value="Files format/access"> File formats / File access </paper-checkbox><br>
+            <paper-checkbox name="topic" value="SVA1 Gold"> SVA1 Gold</paper-checkbox><br>
+            <paper-checkbox name="topic" value="Y1A1 Gold"> Y1A1 Gold</paper-checkbox><br>
             <paper-checkbox name="topic" value="General Questions"> General questions </paper-checkbox><br>
             <paper-checkbox name="topic" value="Other"> Other </paper-checkbox><br>
             <paper-input name="topic"  label="Please supply topic if checked 'Other'"> </paper-input><br>
 
             </div>
 
+            <div class="form1" id="form4"  >
             <p><b>What's Your Question?</b></p>
-            <iron-autogrow-textarea name="question" rows="10"  style="width:100%" class="form1" required></iron-autogrow-textarea><br><br>
+            <paper-input name="subject"  label="Subject" required> </paper-input><br>
+            <iron-autogrow-textarea id="questionEntry" name="question" rows="10"  style="width:100%"  required auto-validate invalid="{{invalid}}" placeholder="This section is required"></iron-autogrow-textarea><br><br>
+        </div>
 
             <div style="text-align: center">
-                <paper-button class="desButton" on-click="_submit">Submit Form</paper-button>
+                <paper-button class="desButton"  on-click="_submit">Submit Form</paper-button>
             </div>
 
                 </form>
@@ -91,7 +77,8 @@ Support for the SVA1 data products is very limited. The primary sources of docum
     </div>
 
       </des-card>
-<paper-toast  id="toast1" text="Form has been submitted! Thanks!"> </paper-toast>
+<paper-toast style="z-index: 9999; margin-left:260px;" id="toast1" text="Form has been submitted! Thanks"> </paper-toast>
+<paper-toast style="z-index: 9999; margin-left:260px; color:red;" id="toast2" text="ERROR!, Please Check Form"> </paper-toast>
 
 
 </template>
@@ -99,6 +86,33 @@ Support for the SVA1 data products is very limited. The primary sources of docum
 <script>
     class DesHelp extends Polymer.Element {
       static get is() { return 'des-help'; }
+      static get properties() {
+          return {
+      invalid: {
+        type: Boolean,
+      }
+    }
+      }
+      _submit() {
+          console.log('Submit!');
+          var form1 = this.$.Helpform;
+          var toast= this.$.toast1;
+
+          console.log(form1);
+          var valid = form1.validate();
+       if (valid) {
+       form1.submit();
+       console.log('valid');
+       this.$.toast1.open();
+       form1.reset();
+       this.$.questionEntry.value='';
+       }
+       else{
+       console.log('invalid');
+       this.$.toast2.open();
+       }
+
+      }
     }
     window.customElements.define(DesHelp.is, DesHelp);
   </script>
