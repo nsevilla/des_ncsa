@@ -1,7 +1,3 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
-<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-<link rel="import" href="elements.html">
-
 <dom-module id="des-public_new-app">
   <template>
     <style include="shared-styles">
@@ -14,51 +10,56 @@
       }
 
       .sublist1 {
-          padding-left: 20px;
+          padding-left: 25px;
       }
       .sublist2 {
-          padding-left: 40px;
+          padding-left: 35px;
       }
       .sublist3 {
-          padding-left: 60px;
+          padding-left: 45px;
       }
+
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
+
       }
+
       app-header {
 
         color: #fff;
         background-color: var(--app-primary-color);
       }
 
-
       app-toolbar {
         color: #fff;
-        height: 97px;
+        height: 64px;
         background-color: var(--app-primary-color);
       }
       app-header paper-icon-button {
         --paper-icon-button-ink-color: purple;
       }
+
       .drawer-list {
-        margin: 0 20px;
+        margin-left:13px;
       }
+
       .drawer-list a {
         display: block;
-        padding: 0 16px;
+        padding: 0 0 0 0;
         text-decoration: none;
         color: var(--app-secondary-color);
         line-height: 40px;
       }
+
       .drawer-list a.iron-selected {
         color: black;
         font-weight: normal;
-        background-color : rgba(0, 0, 0, 0.05);
+        /*background-color : rgba(0, 0, 0, 0.05);*/
       }
       .drawer-list a:hover {
         color: black;
         font-weight: normal;
-        background-color : rgba(0, 0, 0, 0.05);
+        /*background-color : rgba(0, 0, 0, 0.05);*/
       }
     </style>
 
@@ -73,71 +74,85 @@
         route="{{subroute}}"
         pattern="/:subpage"
         data="{{subrouteData}}"
-        tail="{{subroute1}}"
+        tail="{{subroute1}}">
     </app-route>
     <app-route
         route="{{subroute1}}"
         pattern="/:subpage1"
         data="{{subrouteData1}}"
+        tail="{{subroute2}}">
     </app-route>
+
+    <app-route
+        route="{{subroute2}}"
+        pattern="/:subpage2"
+        data="{{subrouteData2}}">
+    </app-route>
+
+
+
 
     <app-drawer-layout fullbleed narrow="{{narrow}}">
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]" style="border-right: groove 1px">
         <app-toolbar>
-          <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image style="width:230px; height:100px;" sizing="contain" src="/static/images/logo.png"></iron-image></a>
+          <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image style="width:230px; height:64px;" sizing="contain" src="/static/images/DESDM_logo.png"></iron-image></a>
+
         </app-toolbar>
 
 
-          <app-menu selected="0">
+          <app-menu selected="0" class="drawer-list">
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 
-            <a  class="app-menu-item" name="home" href="[[rootPath]]home">Home </a>
+            <a  class="app-menu-item" name="home" href="[[rootPath]]home">Home</a>
 
           <app-submenu>
             <div class="app-menu-item " slot="submenu-trigger">
               <a name="releases" href="[[rootPath]]releases">Releases<iron-icon icon="chevron-right"></iron-icon></a>
             </div>
-            <app-menu slot="submenu-content">
+            <app-menu slot="submenu-content" >
               <app-submenu>
-                <div class="app-menu-item sublist1" slot="submenu-trigger">
+                <div class="sublist1" slot="submenu-trigger">
                 <a class="app-menu-item" name="sva1" href="[[rootPath]]releases/sva1">SVA1 Gold<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
 
                 <app-menu class="sublist2" slot="submenu-content">
-                  <a class="app-menu-item" name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
                   <app-submenu>
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" name="docs" href="[[rootPath]]docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
+                  <a class="app-menu-item" name="docs" href="[[rootPath]]releases/sva1/docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu class="sublist3" slot="submenu-content">
-                  <a class="app-menu-item" name="docs-gold" href="[[rootPath]]docs-gold">Gold</a>
-                  <a class="app-menu-item" name="docs-photoz" href="[[rootPath]]docs-photoz">Photoz</a>
-                  <a class="app-menu-item" name="docs-shear" href="[[rootPath]]docs-shear">Shear</a>
-                  <a class="app-menu-item" name="docs-redmapper" href="[[rootPath]]docs-redmapper">RedMaPPer</a>
+                  <a class="app-menu-item" name="docs-gold" href="[[rootPath]]releases/sva1/docs/docs-gold">Gold</a>
+                  <a class="app-menu-item" name="docs-photoz" href="[[rootPath]]releases/sva1/docs/docs-photoz">Photoz</a>
+                  <a class="app-menu-item" name="docs-shear" href="[[rootPath]]releases/sva1/docs/docs-shear">Shear</a>
+                  <a class="app-menu-item" name="docs-redmapper" href="[[rootPath]]releases/sva1/docs/docs-redmapper">RedMaPPer</a>
                 </app-menu>
                 </app-submenu>
+                  <a class="app-menu-item" name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
                 </app-menu>
 
               </app-submenu>
 
                <app-submenu>
-                <div class="app-menu-item sublist1" slot="submenu-trigger">
-                  <a class="app-menu-item" name="dr1" href="[[rootPath]]dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
+                <div class="sublist1" slot="submenu-trigger">
+                  <a class="app-menu-item" name="dr1" href="[[rootPath]]releases/dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu class="sublist2" slot="submenu-content">
-                   <a class="app-menu-item" name="dr1files" href="[[rootPath]]dr1files">Files</a>
-                  <a class="app-menu-item" name="dr1docs" href="[[rootPath]]dr1docs">Documentation</a>
+                   <a class="app-menu-item" name="dr1files" href="[[rootPath]]releases/dr1/dr1files">Files</a>
+                  <a class="app-menu-item" name="dr1docs" href="[[rootPath]]releases/dr1/dr1docs">Documentation</a>
 
                 </app-menu>
                </app-submenu>
+                <div class="sublist1" >
+               <a class ="app-menu-item" disabled>Y1A1 Gold</a>
+                </div>
             </app-menu>
           </app-submenu>
 
 
-          <a class ="app-menu-item" name="thankyou" href="[[rootPath]]thankyou" on-tap="">About Us</a>
           <a class="app-menu-item" name="help" href="[[rootPath]]help">Help</a>
+          <a class ="app-menu-item" name="thankyou" href="[[rootPath]]thankyou" on-tap="">About Us</a>
         </iron-selector>
       </app-menu>
      </app-drawer>
@@ -148,13 +163,12 @@
         <app-header slot="header" fixed>
           <app-toolbar >
             <paper-icon-button icon="icons:menu" drawer-toggle></paper-icon-button>
-            <a href="/" style="text-decoration: none;color: white" ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px">Data Management </paper-item></a>
+            <a href="/" style="text-decoration: none;color:white " ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px; text-decoration: none">DES Data Management</paper-item></a>
 
             <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
+            <!-- This is good, we can add it later when with a proper function whne ready
             <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
-            <!--
-            <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
-            -->
+         -->
           </app-toolbar>
         </app-header>
 
@@ -204,11 +218,17 @@
             type: String,
             reflectToAttribute: true,
           },
+          subpage2: {
+            type: String,
+            reflectToAttribute: true,
+          },
           routeData: Object,
           subrouteData: Object,
           subroute: String,
           subrouteData1: Object,
           subroute1: String,
+          subrouteData2:Object,
+          subroute2:String,
           rootPath: String
         };
       }
@@ -218,7 +238,8 @@
         return [
           '_routePageChanged(routeData.page)',
           '_routeSubPageChanged(subrouteData.subpage)',
-          '_routeSubPage1Changed(subrouteData1.subpage1)'
+          '_routeSubPage1Changed(subrouteData1.subpage1)',
+          '_routeSubPage2Changed(subrouteData2.subpage2)'
         ];
       }
 
@@ -251,6 +272,19 @@
         //this.subpage = (function () { return; })()  ;
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('subpage1:' + subpage1);
+        // Close a non-persistent drawer when the page & route are changed.
+        if (!this.$.drawer.persistent) {
+          this.$.drawer.close();
+        }
+      }
+
+      _routeSubPage2Changed(subpage2) {
+        //this.subpage = subpage || '';
+        this.routeData.page = subpage2;
+        this.subrouteData1.subpage1 = subpage2;
+        //this.subpage = (function () { return; })()  ;
+        //this.subrouteData.subpage = (function () { return; })()  ;
+        console.log('subpage2:' + subpage2);
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
           this.$.drawer.close();

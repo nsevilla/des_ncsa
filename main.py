@@ -9,8 +9,13 @@ import tornado.log
 import Settings
 import jira_ticket
 from tornado.options import define, options
+import base64
+import netaddr
+import bcrypt
 
 define("port", default=8080, help="run on the given port", type=int)
+
+
 
 class BaseHandler(tornado.web.RequestHandler):
     def get_current_user(self):
@@ -25,14 +30,15 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.render('index.html')
 
+        #passwords = read_passwd_file()
+        #if verify_password(passwords, basicauth_user, basicauth_pass):
+            #self.render('index.html')
+
 class HelpHandler(tornado.web.RequestHandler):
     """
     This class is special as it also include a post request to
     deal with the form submission
     """
-    @tornado.web.asynchronous
-    def get(self):
-        self.render('index.html')
     @tornado.web.asynchronous
     def post(self):
         name = self.get_argument("name", "")
@@ -41,7 +47,8 @@ class HelpHandler(tornado.web.RequestHandler):
         subject = self.get_argument("subject", "")
         question = self.get_argument("question", "")
         topic = self.get_argument("topic", "")
-        topics = topic.replace(',','\n')
+        topics = topic.replace(',', '\n')
+        print(name, last, email, topic)
         jira_ticket.create_ticket(name, last, email, topics, subject, question)
         self.set_status(200)
         self.flush()
@@ -66,7 +73,7 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r"/", MainHandler),
-            (r"/releases/sva1/help", HelpHandler),
+            (r"/help/", HelpHandler),
             (r"/releases/sva1/content/(.*)", tornado.web.StaticFileHandler,\
             {'path':Settings.SVA1_PATH}),
             ]

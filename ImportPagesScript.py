@@ -3,12 +3,15 @@ from bs4 import BeautifulSoup
 import os
 import random
 import string
-import re
+from time import sleep
 
 #opens requests.sessions and inputs in user data for time spent using the get_page_content() function
 with requests.session() as ssn:
     usernameinput = input("What is your XConfluence username?")
     passwordinput = input("What is your XConfluence password?")
+    print("If you get an error saying 'AttributeError: 'NoneType' object has no attribute 'prettify' "
+          "after entering the URL for the below prompt, your password or username has probably been entered wrong. "
+          "Please restart the program and enter the correct login credentials.")
 
     payload = {
         'os_username': usernameinput,
@@ -17,25 +20,26 @@ with requests.session() as ssn:
 
     ssn.post('https://opensource.ncsa.illinois.edu/confluence/login.action', data=payload)
 
-#gets the content of the inputted URL's main content, saves it as a file, and additonally saves any linked images as files
 
+#gets the content of the inputted URL's main content, saves it as a file, and additonally saves any linked images as files
+    print("PLEASE NOTE: Changing the location of the saved files from imported pages is necessary for them to be displayed correctly!")
     def get_page_content():
         #goes to website and creates file based off of HTML tile
         urlinput = "http://" + input("What URL do you want to pull from?(Please do not include http://)")
         filename = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(1,10)) + ".html"
         page = ssn.get(urlinput)
         soup = BeautifulSoup(page.content,'html.parser')
-        newfile = open("/Users/audreykoziol/des_public_new/static/src/" + filename, "w+")
+        newfile = open("/Users/YOURUSERNAME/des_public_new/static/src/" + filename, "w+")
 
         # function to add content to the beginning of the file
         def line_prepender(file, line):
-            with open("/Users/audreykoziol/des_public_new/static/src/" + file, 'r+') as f:
+            with open("/Users/YOURUSERNAME/des_public_new/static/src/" + file, 'r+') as f:
                 content = f.read()
                 f.seek(0, 0)
                 f.write(line.rstrip('\r\n') + '\n' + content)
 
         pagecontent = soup.find("div", {"id": "main-content"})
-        newfile.write(pagecontent.prettify()[207:-50])
+        newfile.write(pagecontent.prettify()[207:])
 
         # saves pictures on the page to seperate files
         picturecontent = soup.findAll("img", {"class": "confluence-embedded-image"})
@@ -44,13 +48,13 @@ with requests.session() as ssn:
             imageURL = "https://opensource.ncsa.illinois.edu" + imagesrc
             r = ssn.get(imageURL, allow_redirects=True)
             picturesfilename = str(item['data-linked-resource-default-alias'])
-            open("/Users/audreykoziol/des_public_new/static/images/" + picturesfilename, 'wb').write(r.content)
+            open("/Users/YOURUSERNAME/des_public_new/static/images/" + picturesfilename, 'wb').write(r.content)
 
 
             # add page identifiers to end of file
-        pageid = input("What page should this be identified as? (des-home, des-data, etc.)")
+        pageid = input("What should the dom-module id be? (des-home, des-data, etc.)")
         pageclass=input("What Polymer class should this is labeled as?")
-        newfile = open("/Users/audreykoziol/des_public_new/static/src/" + filename, 'a')
+        newfile = open("/Users/YOURUSERNAME/des_public_new/static/src/" + filename, 'a')
         newfile.write("</div> \n </des-card> \n </template> \n <script> class " + pageclass+ " extends Polymer.Element { \n static get is() { return '" +pageid + "'; }\n } "
                             "\nwindow.customElements.define(" +pageclass+".is," + pageclass+" );\n </script>\n</dom-module>")
 
@@ -59,12 +63,12 @@ with requests.session() as ssn:
         #newfilename = re.sub('[/]', '-', newfilename)
 
         newfilename=pageid+".html"
-        os.rename("/Users/audreykoziol/des_public_new/static/src/"+filename, "/Users/audreykoziol/des_public_new/static/src/"+ newfilename)
+        os.rename("/Users/YOURUSERNAME/des_public_new/static/src/"+filename, "/Users/YOURUSERNAME/des_public_new/static/src/"+ newfilename)
 
         #add page identifiers to beginning of file
-        line_prepender(newfilename, "<link rel='import' href='../bower_components/polymer/polymer-element.html'>\n <link rel='import' href='../bower_components/mp-slider-master/mp-slider.html'>\n"
+        line_prepender(newfilename, "<link rel='import' href='../bower_components/polymer/polymer-element.html'>\n <link rel='import' href='elements.html'>\n"
                                     "<link rel='import' href='shared-styles.html'> \n <dom-module id='" + pageid + "'> <template> <style include='shared-styles'> \n "
-                                    ":host { \n display: block; \n padding: 10px;\n}\n</style>\n<des-card>")
+                                    ":host { \n display: block; \n padding: 10px;\n}\n</style>\n<des-card> <div class=card-content>")
 
         #adds more pages
         def addanotherpage():
@@ -73,6 +77,9 @@ with requests.session() as ssn:
                 get_page_content()
                 return
             if answer == "no" or answer == "No" or answer == "n":
+                print("Please note that locations within imported pages for images and other files will need to be changed to reflect the correct corresponding location on the user's computer "
+                      "(unless the file isn't imported from a local location)")
+                sleep(2)
                 print("Exiting program")
                 ssn.get("https://opensource.ncsa.illinois.edu/confluence/login.action?logout=true")
                 return

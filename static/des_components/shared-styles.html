@@ -1,4 +1,3 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Lato:400,700|Open+Sans+Condensed:700|Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet">
@@ -7,6 +6,36 @@
 <dom-module id="shared-styles">
   <template>
     <style>
+
+    /* COLORS */
+    :root {
+        --color-button: green;
+        --color-button-hover: rebeccapurple;
+    }
+
+    /*  DES-HOME*/
+       .homeImages {
+           height: 400px;
+           width: 400px;
+       }
+     /* BUTTONS*/
+      .desButton:hover{
+        background: var(--color-button-hover);
+      }
+      .desButton{
+        background-color: var(--color-button);
+        color: white;
+        text-transform: none;
+        opacity: 0.6;
+      }
+      .desButton[disabled] {
+          background: #eaeaea;
+          color: #a8a8a8;
+          cursor: auto;
+          pointer-events: none;
+      }
+
+
       .card {
         margin: 24px;
         padding: 16px;
@@ -30,15 +59,17 @@
         background: #ddd;
         font-size: 30px;
         line-height: 64px;
+        margin: 0 auto;
       }
 
 
       h1,h2,h3,h4 {
-        margin: 16px 0;
+        margin: 16px auto;
         color: #212121;
         font-size: 22px;
         font-family:Lato,"Helvetica Neue","Comic Sans MS", Arial ,monospace;
         font-weight: 400;
+
       }
 
       p, .card-content{
@@ -58,30 +89,36 @@
       table {
       width:100%;
       table-layout:auto;
+      margin: 0 auto;
       }
 
       table, th, td {
       border: 2px solid white;
       border-collapse: collapse;
+      margin: 0 auto;
       }
 
       th, td {
       padding: 5px;
       text-align: left;
       word-wrap:break-word;
+      margin: 0 auto;
       }
 
       table tr:nth-child(even) {
       background-color: #eee;
+      margin: 0 auto;
       }
 
       table tr:nth-child(odd) {
       background-color:#fff;
+      margin: 0 auto;
       }
 
       table th {
       background-color: black;
       color: white;
+      margin: 0 auto;
       }
 
       .drawer-list{
@@ -107,22 +144,24 @@
 
     .app-menu-item{
         font-size: 22px;
-        font-family: Lato, "Helvetica Neue", serif;
+        font-family: Roboto, "Helvetica Neue", serif;
         font-weight: 400;
+        background: transparent;
       }
 
       p{
       font-size: 18px;
         font-family: Roboto, "Helvetica Neue", serif;
         font-weight:400;
+        margin: 0 auto;
+
       }
       li{
         font-size: 18px;
         font-family: Roboto, "Helvetica Neue", serif;
         font-weight:400;
+        margin: 0 auto;
       }
-
-
 
     </style>
   </template>

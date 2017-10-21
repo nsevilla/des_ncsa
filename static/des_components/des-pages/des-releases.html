@@ -1,8 +1,3 @@
-
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="shared-styles.html">
-
 <dom-module id="des-releases">
   <template>
     <style include="shared-styles">
@@ -24,8 +19,9 @@
           <!--<a href="/releases/sva1" target="_self" >
           <img src="/static/sva1.jpg" class="img-circle" alt="sva1" height="120px" ></a> <h1>SVA1 Gold</h1>
           <img src="/static/footprint.png" class="img-circle" alt="future" height="120px"> <h1>Future Releases</h1> -->
-            <a style="padding: 20px; text-decoration: none" href="[[rootPath]]sva1"><paper-button noink raised class="cc">SVA1 Gold Release</paper-button></a>
-            <a style="padding: 20px; text-decoration: none" href="[[rootPath]]dr1"><paper-button noink raised class ="cc">DR1 Release</paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]dr1"><paper-button noink raised class ="desButton">DR1 </paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]sva1"><paper-button noink raised class="desButton">SVA1 Gold</paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]dr1"><paper-button noink raised disabled class ="desButton">Y1A1 Gold </paper-button></a>
           <!-- <paper-button noink disabled>Future Releases</paper-button> -->
           </div>
           </div>
