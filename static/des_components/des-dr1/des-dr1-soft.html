@@ -1,0 +1,1613 @@
+    <dom-module id='des-dr1-soft'>
+    <template>
+    <style include='shared-styles'>
+    :host {
+       display: block;
+       padding: 10px;
+       }
+    </style>
+    <des-card heading="Data Processing">
+    <div class=card-content>
+    
+<div id="main-content">
+ <h2 id="ProcessingandSoftware-Overview" style="text-align: center;">
+  Overview
+ </h2>
+ <p>
+  <br/>
+ </p>
+ <p style="text-align: left;">
+  The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES, follows a well defined path, from its acquisition on the mountain top up to the stage when data is ready to be feed into science algorithms. We can distinguish two levels in data products, as well as two levels in raw-to-refined processing:
+ </p>
+ <ul>
+  <li style="text-align: left;">
+   Single Epochs images. Can be easily described as exposures of sky patches, each one independent of the others (namely, no combination of images are performed for overlap regions). These images need to be treated, and then we can distinguish two process being similar ins structure and procedure, but different in the employed calibrations and configurations files:
+  </li>
+ </ul>
+ <ol>
+  <li style="text-align: left;margin-left: 30.0px;">
+   First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from previous year of observing are used. At the end of the pipeline, quality assessments are performed, then exposures not reaching the criteria enters the queue to be re-observed at CTIO.
+  </li>
+  <li style="text-align: left;margin-left: 30.0px;">
+   Final cut: this pipeline performs the same tasks as First cut. The configuration files and the calibrations files (e.g., flats, bad pixels masking, sky flats) has been updated to the most recent version, for which the current year of observation is the source of such calibrations.
+  </li>
+ </ol>
+ <ul>
+  <li style="text-align: left;">
+   Multi Epoch images. After the run of Final cut, this pipeline is performed to achieve a higher depth on the DES footprint. Through co-additions of overlapping images, performing of algorithms for optimal shape and depth parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fiting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.
+  </li>
+ </ul>
+ <p style="text-align: left;">
+  The above pipelines/processings are described in more depth in Berstein et al. (2017)  and Morganson et al (2017). To help the visualization of the above landscape, below we show some of the Morganson et al. (2017) diagrams. The first figure shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are displayed.
+ </p>
+ <p style="text-align: left;">
+  <br/>
+ </p>
+ <p>
+  <span>
+   <img src="/static/images/fig4_desdm_paper.png" width="680"/>
+  </span>
+ </p>
+ <p>
+  <br/>
+ </p>
+ <p>
+  The second diagram shows the steps comprised on preprocessing, First cut being the upper set of connected boxes, and Final cut belonging to the upper and lower diagram flows. For the last, current year super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.
+ </p>
+ <p>
+  <br/>
+ </p>
+ <p>
+  <span>
+   <img height="250" src="/static/images/fig5_desdm_paper.png"/>
+  </span>
+ </p>
+ <p>
+  <br/>
+ </p>
+ <p>
+  One of the strengths of the pipeline taken as a whole, is the structure allowing to include more refined products to be used in the calibrations. The ability was learned from the work, and it's tangible when comparing initially raw images among the coadded products. This can be evidenced (even not in all its wideness) in the following figure (made by M. Carrasco, NCSA), exhibiting the different products from a single patch of sky, from the raw image to the fully reduced and processed and stacked (higher depth) image:
+ </p>
+ <p>
+  <br/>
+ </p>
+ <p>
+  <span>
+   <img src="/static/images/processing.gif" width="450"/>
+  </span>
+ </p>
+ <h2 id="ProcessingandSoftware-" style="text-align: center;">
+  <span style="color: rgb(0,0,0);">
+   <br/>
+  </span>
+ </h2>
+ <h2 id="ProcessingandSoftware-SingleEpoch" style="text-align: center;">
+  <span style="color: rgb(0,0,0);">
+   Single Epoch
+  </span>
+ </h2>
+ <p>
+  <span style="color: rgb(0,0,0);">
+   <br/>
+  </span>
+ </p>
+ <p>
+  <span style="color: rgb(0,0,0);">
+   To better show Single Epoch step by step, below are described the multiple series of actions followed to achieve processing, both for First and Final cut. For each step, the parent package alongside with its version are displayed, because of its different improvements to use the right version is a requirement for s successful processing.
+  </span>
+ </p>
+ <p>
+  <span style="color: rgb(0,0,0);">
+   The parent packages are listed, with
+   <span style="color: rgb(0,0,255);">
+    links
+   </span>
+   to their repositories, being Github DES Data Management (
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      DESDM
+     </span>
+    </a>
+   </span>
+   ) for the DES specific codes,
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      Astromatic
+     </span>
+    </a>
+   </span>
+   for astrometric and point spread function (Emmanuel Bertin's group), and the python wrapper for Healpix (
+  </span>
+  <span>
+   Górski et al. 2005)
+  </span>
+ </p>
+ <ol>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/imdetrend" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      imdetrend
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      pixcorrect
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      sextractor
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despymisc" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despymisc
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despyfitsutils
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      scamp
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despyfits" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despyfits
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/immask" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      immask
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      psfex
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      DatabaseApps
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/qatoolkit" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      qatoolkit
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/projectDECam" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      projectDECam
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <a href="https://github.com/healpy/healpy" rel="nofollow">
+    <span style="color: rgb(0,0,255);">
+     hpixDB
+    </span>
+   </a>
+  </li>
+ </ol>
+ <p>
+  <br/>
+ </p>
+ <p>
+  The following operation blocks applied crosstalk correction (influence of a CCD amplifier over others), bias, overscan, flats, bad pixel masks, bright fatter correction, non-linear and gain adjustments. Also creates masks for different issues in the CCDs, such as defective amplifier A of CCD 31, satellite streaks, and edge bleed due to saturated stars.
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      1
+     </td>
+     <td>
+      <span style="color: rgb(0,0,0);">
+       DECam_crosstalk
+      </span>
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/imdetrend" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         imdetrend
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      <span style="color: rgb(0,0,0);">
+       imdetrend/7.5.1+1/bin/DECam_crosstalk
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      2
+     </td>
+     <td>
+      pixcorrect_im
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/pixcorrect_im
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      3
+     </td>
+     <td>
+      null-weights
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/null_weights
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <span>
+   <br/>
+  </span>
+ </p>
+ <p>
+  <span>
+   Then, the first astrometric solution is calculated, followed by the masking of bleed edges (when a saturated trail reaches the CCD edges) and saturated pixels.
+  </span>
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      4
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+4/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      5
+     </td>
+     <td>
+      split_ahead_by_ccd.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despymisc" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despymisc
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      despymisc/1.0.3+1/bin/split_ahead_by_ccd.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      6
+     </td>
+     <td>
+      combine_cats.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despyfitsutils
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      despyfitsutils/1.0.1+6/bin/combine_cats.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      7
+     </td>
+     <td>
+      scamp
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         scamp
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      scamp/2.4.2+7/bin/scamp
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      8
+     </td>
+     <td>
+      split_head.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despyfitsutils
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      despyfitsutils/1.0.1+6/bin/split_head.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      9
+     </td>
+     <td>
+      updateWCS
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despyfits" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despyfits
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      despyfits/0.5.1+3/bin/updateWCS
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      10
+     </td>
+     <td>
+      mkbleedmask
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/imdetrend" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         imdetrend
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      imdetrend/7.5.1+1/bin/mkbleedmask
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <span>
+   <br/>
+  </span>
+ </p>
+ <p>
+  <span>
+   The sky templates and the star flat image are applied. The last is a second order flat correction, constructed from not crowded dithered fields images, after apply a Principal Components Analysis method. Additionally masking is performed.
+  </span>
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      11
+     </td>
+     <td>
+      sky_compress
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/sky_compress
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      12
+     </td>
+     <td>
+      sky_combine
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/sky_combine
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      13
+     </td>
+     <td>
+      sky_fit
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/sky_fit
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      14
+     </td>
+     <td>
+      sky_subtract
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/sky_subtract
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      15
+     </td>
+     <td>
+      pixcorrect_im
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/pixcorrect_im
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      16
+     </td>
+     <td>
+      null_weights
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/null_weights
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      17
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+4/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      18
+     </td>
+     <td>
+      immask
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/immask" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         immask
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      immask/0.5.2+12/bin/immask
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      19
+     </td>
+     <td>
+      rowinterp_nullweight
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/rowinterp_nullweight
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <br/>
+ </p>
+ <p>
+  Thus, model the point spread function to produce objects catalogs, and perform quality assessments. Following, the entire reduce focal plane is composited into a binned image. Healpix is also performed, for some predefined resolution scales.
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      20
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+4/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      21
+     </td>
+     <td>
+      psfex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         psfex
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      psfex/3.17.3+6/bin/psfex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      22
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+4/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      23
+     </td>
+     <td>
+      catalog_ingest.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         DatabaseApps
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      DatabaseApps/2.0.4+3/bin/catalog_ingest.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      24
+     </td>
+     <td>
+      assess_SE_products.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/qatoolkit" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         qatoolkit
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      qatoolkit/0.2.7+2/bin/assess_SE_products.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      25
+     </td>
+     <td>
+      projectDECamPNG
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/projectDECam" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         projectDECam
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      projectDECam/0.1.1+1/bin/projectDECamPNG
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      26
+     </td>
+     <td>
+      hpixDB
+     </td>
+     <td>
+      <a href="https://github.com/healpy/healpy" rel="nofollow">
+       <span style="color: rgb(0,0,255);">
+        hpixDB
+       </span>
+      </a>
+     </td>
+     <td>
+      hpixDB/1.1.0+0/bin/hpixDB
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      27
+     </td>
+     <td>
+      data_ingest.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         DatabaseApps
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      DatabaseApps/2.0.4+3/bin/datafile_ingest.py
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <br/>
+ </p>
+ <h2 id="ProcessingandSoftware-MultiEpoch" style="text-align: center;">
+  Multi Epoch
+ </h2>
+ <p>
+  <br/>
+ </p>
+ <p>
+  <span>
+   So far we have a set of Single Epoch images, with no co-addition between them. Even though the vast majority exhibits a high quality, many of the scientific goals of our collaboration needs a deeper magnitude and better signal-to-noise. Therefore, a stacking processing is needed, here is where Multi Epoch comes into play. It doesn't re-calculates neither calibrations, masking, nor other corrective processes. What Multi Epoch performs is an astrometry refinement, applies this refinement to Single Epoch images, and then continues to the coadd procedure.
+  </span>
+ </p>
+ <p>
+  <span>
+   The Multi Epoch procedure is listed below, in all its constituent steps. For the sake or a cleaner view, steps were divided in blocks, for whom the added a brief explanations. Besides, the list of parent packages with their links to the sources/repositories are provided, following the schema on Single Epoch.
+  </span>
+ </p>
+ <ol>
+  <li>
+   <span>
+    <span style="color: rgb(255,0,0);">
+     <span style="color: rgb(0,51,102);">
+      <span style="color: rgb(51,102,255);">
+       <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+        <span style="color: rgb(51,102,255);">
+         despyfitsutils
+        </span>
+       </a>
+      </span>
+     </span>
+    </span>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    <span style="color: rgb(51,102,255);">
+     <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
+      <span style="color: rgb(51,102,255);">
+       scamp
+      </span>
+     </a>
+    </span>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x1
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x2
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    <span style="color: rgb(51,102,255);">
+     <a href="https://www.astromatic.net/software/swarp" rel="nofollow">
+      <span style="color: rgb(51,102,255);">
+       swarp
+      </span>
+     </a>
+    </span>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x3
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(51,102,255);">
+    <a href="https://www.astromatic.net/software/stiff" rel="nofollow">
+     <span style="color: rgb(51,102,255);">
+      stiff
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    <span style="color: rgb(51,102,255);">
+     <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+      <span style="color: rgb(51,102,255);">
+       sextractor
+      </span>
+     </a>
+    </span>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    <span style="color: rgb(51,102,255);">
+     <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
+      <span style="color: rgb(51,102,255);">
+       psfex
+      </span>
+     </a>
+    </span>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x4
+    <br/>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    <span style="color: rgb(51,102,255);">
+     <a href="https://github.com/healpy/healpy" rel="nofollow">
+      <span style="color: rgb(51,102,255);">
+       hpixDB
+      </span>
+     </a>
+    </span>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x5
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x6
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    <span style="color: rgb(51,102,255);">
+     <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+      <span style="color: rgb(51,102,255);">
+       DatabaseApps
+      </span>
+     </a>
+    </span>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x7
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x8
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x9
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x10
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x11
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,51,102);">
+    x12
+   </span>
+   <br/>
+   <span style="color: rgb(0,51,102);">
+    <br/>
+   </span>
+  </li>
+ </ol>
+ <p>
+  First,
+  <span>
+   forgather the Single Epoch images into coadded images, on a 10,000x10,000 pixel base. This "minimal unit" is known as a tile. This is achieved by querying all images matching the particular tile, then re-calculating the astrometric solutions (as these can vary between Single Epoch images), performing
+   <em>
+    scamp
+   </em>
+   against 2MASS for campaigns up to Y3, and GAIA for campaigns from Y4. This can be sketched in 2 steps, one taking the solutions for the inner CCD deformation coefficients come from Final cut refinement, so the code tries to match them when adding different images together; the second is the matching with 2MASS (or GAIA). With the results of the astrometry, the
+   <em>
+    scamp
+   </em>
+   is used for stacking the images into a single one, adding also the photometric zeropoints information, coming from the Forward Global Calibration Method (FGCM), Burke et al. (2017).
+   <br/>
+  </span>
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th colspan="1" style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th colspan="1" style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td colspan="1">
+      1
+     </td>
+     <td>
+      combine_cats.py &amp; query_coadd_astrorefine.py
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td colspan="1">
+      despyfitsutils/1.0.1+0/bin/combine_cats.py
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      2
+     </td>
+     <td>
+      scamp
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td colspan="1">
+      scamp/2.2.5+2/bin/scamp
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      3
+     </td>
+     <td>
+      split_head.py
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td colspan="1">
+      despyfitsutils/1.0.1+0/bin/split_head.py
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      4
+     </td>
+     <td>
+      query_coadd_img_for_nullwgt.py
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td colspan="1">
+      x1
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      5
+     </td>
+     <td>
+      coadd_nwgint
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td colspan="1">
+      x2
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      6 - 9
+     </td>
+     <td>
+      swarp
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td colspan="1">
+      swarp/2.38.0.1+0/bin/swarp
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      10 - 11
+     </td>
+     <td>
+      coadd_assemble
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td colspan="1">
+      x3
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      12 - 13
+     </td>
+     <td>
+      stiff
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td colspan="1">
+      stiff/2.1.3+1/bin/stiff
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <span style="color: rgb(255,0,0);">
+   <br/>
+  </span>
+ </p>
+ <p>
+  With the coadded images, a new PSF model is performed.To achieve this, the source extraction was performed with the same configuration as Single Epoch. The goal is, as the sources has now a better signal-to-noise, get thinner half-at-width maximum. At this point, some complication appears: the PSF model doesn't performs as well on coadded images as it does on single images, mostly due to discontinuities on the coadded images that the
+  <em>
+   psfex
+  </em>
+  code cannot properly take into full account. This mostly affects the photometric precision, and not the object detection. This is one of the reasons of the need of Multi Object Fitting (MOF).
+ </p>
+ <p>
+  Additionally, the reddening coefficients from Schlegel, Finkbeiner &amp; Davis (1998) were applied.
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Execution order
+     </th>
+     <th>
+      Executable
+     </th>
+     <th>
+      Parent package
+     </th>
+     <th>
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td>
+      14 - 15
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      sextractor/2.19.5+1/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td>
+      16 - 17
+     </td>
+     <td>
+      psfex
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      psfex/3.17.3+1/bin/psfex
+     </td>
+    </tr>
+    <tr>
+     <td>
+      18 - 19
+     </td>
+     <td>
+      sextractor
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      sextractor/2.19.5+1/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td>
+      20
+     </td>
+     <td>
+      compute_SFD98_coadd_bands
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      x4
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <br/>
+ </p>
+ <p>
+  <span style="color: rgb(255,0,0);">
+   Performs healpix, weighted averaged magnitude calculation, Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), and mangle routines
+  </span>
+ </p>
+ <p>
+  <span style="color: rgb(255,0,0);">
+   Create coadd version of catalogs
+  </span>
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Execution order
+     </th>
+     <th>
+      Executable
+     </th>
+     <th>
+      Parent package
+     </th>
+     <th>
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td>
+      21
+     </td>
+     <td>
+      hpixDB
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      hpixDB/1.1.0+0/bin/hpixDB
+     </td>
+    </tr>
+    <tr>
+     <td>
+      22
+     </td>
+     <td>
+      computewavg.py
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      x5
+     </td>
+    </tr>
+    <tr>
+     <td>
+      23
+     </td>
+     <td>
+      mangle_one_tile
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      x6
+     </td>
+    </tr>
+    <tr>
+     <td>
+      24
+     </td>
+     <td>
+      mepoch_ingest.py
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      DatabaseApps/2.0.9+0/bin/mepoch_ingest.py
+     </td>
+    </tr>
+    <tr>
+     <td>
+      25
+     </td>
+     <td>
+      run_desmeds
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      x7
+     </td>
+    </tr>
+    <tr>
+     <td>
+      26
+     </td>
+     <td>
+      run_ngmixer-meds-make-nbrs-data &amp; query_coadd_for_mof.py
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      x8
+     </td>
+    </tr>
+    <tr>
+     <td>
+      27
+     </td>
+     <td>
+      run_ngmixit &amp; query_coadd_for_mof.py
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      x9
+     </td>
+    </tr>
+    <tr>
+     <td>
+      28
+     </td>
+     <td>
+      megamix-meds-collate-desdm
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      x10
+     </td>
+    </tr>
+    <tr>
+     <td>
+      29
+     </td>
+     <td>
+      run_ngmixit &amp; query_coadd_for_mof.py
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      x11
+     </td>
+    </tr>
+    <tr>
+     <td>
+      30
+     </td>
+     <td>
+      megamix-meds-collate-desdm
+     </td>
+     <td>
+      <br/>
+     </td>
+     <td>
+      x12
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <br/>
+ </p>
+ <h3 id="ProcessingandSoftware-References">
+  References
+ </h3>
+ <ol>
+  <li>
+   <span>
+    Bernstein, G., Abbot, T., Gruendl R., et al. 2017,
+    <em>
+     Instrumental response model and detrending for the Dark Energy Camera
+    </em>
+    (In preparation)
+   </span>
+  </li>
+  <li>
+   <p>
+    <span>
+     Burke, D. L., Rykoff, E. S., et al. 2017, in preparation
+     <br/>
+    </span>
+   </p>
+  </li>
+  <li>
+   <span>
+    Górski, K. M., Hivon, E., Banday, A. J., et al. 2005, ApJ, 622, 75.
+    <em>
+     HEALPix: A Framework for High-Resolution Discretization and Fast Analysis of Data Distributed on the Sphere
+    </em>
+   </span>
+  </li>
+  <li>
+   Morganson, E., et al. 2017, in preparation
+  </li>
+  <li>
+   Schlegel, D. J., Finkbeiner, D. P., Davis, M, 1998, ApJ, 500, 525.
+   <em>
+    Maps of Dust Infrared Emission for Use in Estimation of Reddening and Cosmic Microwave Background Radiation Foregrounds
+   </em>
+  </li>
+ </ol>
+ <p style="margin-left: 30.0px;">
+  <span>
+   <br/>
+  </span>
+ </p>
+</div>
+    </div>
+    </des-card>
+    </template>
+    <script>
+    class desDr1Soft extends Polymer.Element {
+      static get is() { return 'des-dr1-soft'; }
+       }
+     window.customElements.define(desDr1Soft.is,desDr1Soft);
+     </script>
+     </dom-module>
+    
