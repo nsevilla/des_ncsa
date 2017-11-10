@@ -21,7 +21,6 @@
 
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
-
       }
 
       app-header {
@@ -61,6 +60,18 @@
         font-weight: normal;
         /*background-color : rgba(0, 0, 0, 0.05);*/
       }
+    @media only screen and (min-width: 1000px) {
+    .smallScreen {
+        display: none;
+    }}
+        @media all and (max-width: 1000px) {
+    .wideScreen {
+        display: none;
+        }
+        .toast-position {
+            margin-left: 12px;
+        }
+    }
     </style>
 
     <app-location route="{{route}}" ></app-location>
@@ -90,13 +101,25 @@
     </app-route>
 
 
+ <app-header-layout has-scrolling-region fullbleed style="border-bottom: groove 1px">
 
+     <app-header slot="header" fixed>
+          <app-toolbar >
+            <paper-icon-button class = 'smallScreen' icon="icons:menu" onclick="drawer.toggle()" drawer-toggle></paper-icon-button>
+              <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image class = "wideScreen" style="width:60px; height:60px; margin-right:10px" sizing="cover" src="/static/images/DESDM_logo.png"></iron-image></a>
+            <a href="/" style="text-decoration: none;color:white " ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px; text-decoration: none">DES Data Management</paper-item></a>
+
+            <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
+            <!-- This is good, we can add it later when with a proper function whne ready
+            <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
+         -->
+          </app-toolbar>
+        </app-header>
 
     <app-drawer-layout fullbleed narrow="{{narrow}}">
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]" style="border-right: groove 1px">
         <app-toolbar>
-          <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image style="width:230px; height:64px;" sizing="contain" src="/static/images/DESDM_logo.png"></iron-image></a>
 
         </app-toolbar>
 
@@ -159,21 +182,6 @@
       </app-menu>
      </app-drawer>
 
-      <!-- Main content -->
-      <app-header-layout has-scrolling-region  style="border-bottom: groove 1px">
-
-        <app-header slot="header" fixed>
-          <app-toolbar >
-            <paper-icon-button icon="icons:menu" drawer-toggle></paper-icon-button>
-            <a href="/" style="text-decoration: none;color:white " ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px; text-decoration: none">DES Data Management</paper-item></a>
-
-            <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
-            <!-- This is good, we can add it later when with a proper function whne ready
-            <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
-         -->
-          </app-toolbar>
-        </app-header>
-
         <iron-pages
             selected="[[page]]"
             attr-for-selected="name"
@@ -203,6 +211,11 @@
         </iron-pages>
 
         <des-supported></des-supported>
+
+      <!-- Main content -->
+
+
+
       </app-header-layout>
     </app-drawer-layout>
   </template>
