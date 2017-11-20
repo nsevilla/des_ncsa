@@ -32130,10 +32130,12 @@ Indicating one or more relevant topics will help us properly direct your questio
             <paper-checkbox name="topic" value="Other"> Other </paper-checkbox><br>
             <paper-input name="topic" label="Please supply topic if checked 'Other'"> </paper-input><br>
 
-            </div>
+        </div>User Accounts
+
 
             <div class="form1" id="form4">
             <p><b>What's Your Question?</b></p>
+            <input type="hidden" id="hiddenEntry" name="question" value="">
             <paper-input name="subject" label="Subject" required=""> </paper-input><br>
             <iron-autogrow-textarea id="questionEntry" name="question" rows="10" style="width:100%" required="" auto-validate="" invalid="{{invalid}}" placeholder="This section is required"></iron-autogrow-textarea><br><br>
         </div>
@@ -32173,11 +32175,14 @@ Indicating one or more relevant topics will help us properly direct your questio
           console.log(form1);
           var valid = form1.validate();
        if (valid) {
+       var temp = this.$.questionEntry.value;
+       this.$.hiddenEntry.value = temp;
        form1.submit();
        console.log('valid');
        this.$.toast1.open();
        form1.reset();
        this.$.questionEntry.value='';
+       this.$.hiddenEntry.value='';
        }
        else{
        console.log('invalid');
@@ -36029,7 +36034,7 @@ Allow users to automate their analysis to aid discovery in large datasets
     </paper-card>
     <paper-card on-tap="_golinea">
         <div class="card-content">
-            <img class="card-image" src="/static/images/portal_logo.png">
+            <img class="card-image" src="/static/images/des_logo_oficial.jpg">
             <div class="access-header">LIneA Science Portal </div>
             Currently the LIneA Science Server provides access to the following services which are deveop for DES Data products :
 <ul>
