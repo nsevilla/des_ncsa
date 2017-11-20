@@ -7,14 +7,14 @@ import tornado.options
 import tornado.web
 import tornado.log
 import Settings
-import jira_ticket  <input type="hidden" name="country" value="Norway">
+import jira_ticket
 
 from tornado.options import define, options
 import base64
 import netaddr
 import bcrypt
 
-define("port", default=8081, help="run on the given port", type=int)
+define("port", default=8080, help="run on the given port", type=int)
 
 
 
