@@ -76,9 +76,6 @@
         paper-icon-button.smallScreen{
         }
 
-        app-drawer-layout{
-            z-index: auto;
-        }
     </style>
 
     <app-location route="{{route}}" ></app-location>
@@ -123,13 +120,13 @@
           </app-toolbar>
         </app-header>
 
-    <app-drawer-layout fullbleed narrow="{{narrow}}"  id="drawerLayout" responsive-width="1000px">
+    <app-drawer-layout fullbleed narrow="{{narrow}}"  id="drawerLayout" responsive-width="1000px" >
 
       <!-- Drawer content -->
-      <app-drawer id="drawer" slot="drawer"  class="drawer-content" swipe-open="[[narrow]]" style="border-right: groove 1px">
+      <app-drawer id="drawer" slot="drawer"  class="drawer-content" swipe-open="[[narrow]]" >
            <div style="height: 100%; overflow: auto;">
-               <app-toolbar style="height: 58px;"></app-toolbar>
-          <app-menu selected="0" class="drawer-list">
+               <app-toolbar style="height: 60px;"></app-toolbar>
+          <app-menu selected="0" class="drawer-list" style="padding-left: 6px">
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 
@@ -189,7 +186,7 @@
            </div>
      </app-drawer>
 
-        <iron-pages style="margin-top: 70px;"
+        <iron-pages style="margin-top: 70px;border-left: groove 1px"
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="view404"
