@@ -10211,6 +10211,8 @@ Or, in a Polymer element, you can include a meta in your template:
        .homeImages {
            height: 400px;
            width: 400px;
+           margin-top:40px;
+
        }
      /* BUTTONS*/
       .desButton:hover{
@@ -10258,7 +10260,7 @@ Or, in a Polymer element, you can include a meta in your template:
 
 
       h1,h2,h3,h4 {
-        margin: 16px auto;
+
         color: #212121;
         font-size: 22px;
         font-family:Lato,"Helvetica Neue","Comic Sans MS", Arial ,monospace;
@@ -31481,18 +31483,18 @@ Custom property | Description | Default
 
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
-
       }
 
       app-header {
 
         color: #fff;
         background-color: var(--app-primary-color);
+
       }
 
       app-toolbar {
         color: #fff;
-        height: 64px;
+        height: 72px;
         background-color: var(--app-primary-color);
       }
       app-header paper-icon-button {
@@ -31521,6 +31523,20 @@ Custom property | Description | Default
         font-weight: normal;
         /*background-color : rgba(0, 0, 0, 0.05);*/
       }
+    @media only screen and (min-width: 1000px) {
+    .smallScreen {
+        display: none;
+    }}
+        @media all and (max-width: 1000px) {
+    .wideScreen {
+        display: none;
+        }
+        .toast-position {
+            margin-left: 12px;
+        }
+    }
+        paper-icon-button.smallScreen{
+        }
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -31535,22 +31551,34 @@ Custom property | Description | Default
     </app-route>
 
 
+ <app-header-layout has-scrolling-region="" fullbleed="" style="border-bottom: groove 1px">
 
+     <app-header condenses="" slot="header" fixed="">
+          <app-toolbar>
+            <paper-icon-button class="smallScreen" icon="icons:menu" on-tap="_openDrawer"></paper-icon-button>
+              <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image class="wideScreen" style="width:63px; height:60px; margin-right:10px;" sizing="cover" src="/static/images/DESDM_logo.png"></iron-image></a>
+            <a href="/" style="text-decoration: none;color:white "><paper-item main-title="" style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px; text-decoration: none">DES Data Management</paper-item></a>
 
-    <app-drawer-layout fullbleed="" narrow="{{narrow}}">
+            <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
+            <!-- This is good, we can add it later when with a proper function when ready
+            <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
+         -->
+          </app-toolbar>
+        </app-header>
+
+    <app-drawer-layout fullbleed="" narrow="{{narrow}}" id="drawerLayout" responsive-width="1000px">
+
       <!-- Drawer content -->
-      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]" style="border-right: groove 1px">
-        <app-toolbar>
-          <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image style="width:230px; height:64px;" sizing="contain" src="/static/images/DESDM_logo.png"></iron-image></a>
-
-        </app-toolbar>
-
-
+      <app-drawer id="drawer" slot="drawer" class="drawer-content" swipe-open="[[narrow]]" style="border-right: groove 1px">
+           <div style="height: 100%; overflow: auto;">
+               <app-toolbar>
+      </app-toolbar>
           <app-menu selected="0" class="drawer-list">
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 
             <a class="app-menu-item" name="home" href="[[rootPath]]home">Home</a>
+
 
           <app-submenu>
             <div class="app-menu-item " slot="submenu-trigger">
@@ -31602,24 +31630,10 @@ Custom property | Description | Default
           <a class="app-menu-item" name="thankyou" href="[[rootPath]]thankyou" on-tap="">About Us</a>
         </iron-selector>
       </app-menu>
+           </div>
      </app-drawer>
 
-      <!-- Main content -->
-      <app-header-layout has-scrolling-region="" style="border-bottom: groove 1px">
-
-        <app-header slot="header" fixed="">
-          <app-toolbar>
-            <paper-icon-button icon="icons:menu" drawer-toggle=""></paper-icon-button>
-            <a href="/" style="text-decoration: none;color:white "><paper-item main-title="" style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px; text-decoration: none">DES Data Management</paper-item></a>
-
-            <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
-            <!-- This is good, we can add it later when with a proper function whne ready
-            <paper-search-bar class='paper-bar' placeholder="Search" hide-filter-button="True"></paper-search-bar>
-         -->
-          </app-toolbar>
-        </app-header>
-
-        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main" style="padding-left: 15px; padding-right: 15px">
+        <iron-pages style="margin-top: 70px;" selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main">
           <des-home name="home"></des-home>
           <des-releases name="releases"></des-releases>
           <!-- SVA1 pages -->
@@ -31643,8 +31657,15 @@ Custom property | Description | Default
         </iron-pages>
 
         <des-supported></des-supported>
-      </app-header-layout>
+
+      <!-- Main content -->
+
+
+
+
     </app-drawer-layout>
+  </app-header-layout>
+
   </template>
 
   <script>
@@ -31752,6 +31773,10 @@ Custom property | Description | Default
       _showPage404() {
         this.page = 'view404';
       }
+      _openDrawer(){
+          this.$.drawer.toggle();
+        }
+
     }
 
 
@@ -31759,6 +31784,8 @@ Custom property | Description | Default
 
 
   </script>
+    <script>
+    </script>
 
 </dom-module>
 <dom-module id="des-card" assetpath="./">
@@ -31816,7 +31843,8 @@ Custom property | Description | Default
       }
     </style>
 
-<des-card>
+
+<des-card></des-card>
 <!--
  <l2t-paper-slider total-slides="3" class="slides">
    <paper-slide>
@@ -31839,6 +31867,8 @@ Custom property | Description | Default
    </paper-slide>
  </l2t-paper-slider>
 -->
+
+
     <mp-slider id="mptest" controls="" class="slider">
     <div>
         <iron-image class="homeImages" sizing="contain" src="/static/images/Decam1.jpg"></iron-image>
@@ -31885,7 +31915,6 @@ Custom property | Description | Default
 
           </div>
 
-      </des-card>
 
 
 </template>
@@ -31910,9 +31939,12 @@ Custom property | Description | Default
     </style>
 
     <des-card>
+         <div class="card-content">
+<div id="main-content">
 
-<h3><strong>About DES Data Management</strong></h3>
-<p>
+    <h3 style="padding-top: 40px;"><strong>About DES Data Management</strong></h3>
+
+        <p>
     The DESDM team provides all the infrastructure to process, manage, and store the images and scientific data produced by DES. DESDM is comprised of astronomers, computer scientists, and system engineers who work together at the intersection of scientific research and the computing systems that enable it.
 </p>
         <p>
@@ -31943,22 +31975,24 @@ Custom property | Description | Default
     <p>
            Funding for the DES Project has been provided by the DOE and NSF(USA), MEC/MICINN/MINECO(Spain), STFC(UK), HEFCE(UK). NCSA(UIUC), KICP(U. Chicago), CCAPP(Ohio State), MIFPA(Texas A&amp;M), CNPQ, FAPERJ, FINEP (Brazil), DFG(Germany) and the Collaborating Institutions in the Dark Energy Survey.
         </p>
-
+<br>
         <p>
 The Collaborating Institutions are Argonne Lab, UC Santa Cruz, University of Cambridge, CIEMAT-Madrid, University of Chicago, University College London, DES-Brazil Consortium, University of Edinburgh,
             ETH Zurich, Fermilab, University of Illinois, ICE (IEEC-CSIC), IFAE Barcelona, Lawrence Berkeley National Lab (LBNL), LMU Munchen and the associated Excellence Cluster Universe, University of Michigan,
             NOAO, University of Nottingham, Ohio State University, University of Pennsylvania, University of Portsmouth, SLAC National Lab, Stanford University, University of Sussex, and Texas A&amp;M University.
 </p>
-
+<br>
 <p>
 The DES Data Management System is supported by the NSF under Grant Number AST-1138766. The DES participants from Spanish institutions are partially supported by MINECO under grants AYA2012-39559, ESP2013-48274, FPA2013-47986, and Centro de Excelencia Severo Ochoa SEV-2012-0234. Research leading to these results has received funding from the ERC under the EU's 7th Framework Programme including grants ERC 240672, 291329 and 306478.
 </p>
+    <br>
 <p>
 We are grateful for the extraordinary contributions of our CTIO colleagues and the DECam Construction, Commissioning and Science Verification teams in achieving the excellent instrument and telescope conditions that have made this work possible. The success of this project also relies critically on the expertise and dedication of the DES Data Management group.
 
-    </p>
+</p>
+</div>
+         </div>
     </des-card>
-
   </template>
 
   <script>
@@ -31977,7 +32011,7 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
       }
     </style>
 
-    <des-card heading="DES DATA RELEASE">
+    <des-card heading="DES DATA RELEASES">
 
     <div class="card-content">
           Here we present both the official and unofficial data catalog releases from the Dark Energy Survey.
@@ -32089,8 +32123,7 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
 
 
 <des-card heading="DES Release Help Form">
-
-      <div class="card-content">
+    <div class="card-content">
 Please complete the form below with any questions related to the DES Releases
 that were not addressed by the socumentation pages.
 Indicating one or more relevant topics will help us properly direct your question.
@@ -32130,10 +32163,12 @@ Indicating one or more relevant topics will help us properly direct your questio
             <paper-checkbox name="topic" value="Other"> Other </paper-checkbox><br>
             <paper-input name="topic" label="Please supply topic if checked 'Other'"> </paper-input><br>
 
-            </div>
+        </div>
+
 
             <div class="form1" id="form4">
             <p><b>What's Your Question?</b></p>
+            <input type="hidden" id="hiddenEntry" name="question" value="">
             <paper-input name="subject" label="Subject" required=""> </paper-input><br>
             <iron-autogrow-textarea id="questionEntry" name="question" rows="10" style="width:100%" required="" auto-validate="" invalid="{{invalid}}" placeholder="This section is required"></iron-autogrow-textarea><br><br>
         </div>
@@ -32173,11 +32208,14 @@ Indicating one or more relevant topics will help us properly direct your questio
           console.log(form1);
           var valid = form1.validate();
        if (valid) {
+       var temp = this.$.questionEntry.value;
+       this.$.hiddenEntry.value = temp;
        form1.submit();
        console.log('valid');
        this.$.toast1.open();
        form1.reset();
        this.$.questionEntry.value='';
+       this.$.hiddenEntry.value='';
        }
        else{
        console.log('invalid');
@@ -32537,8 +32575,10 @@ contains a list of urls for all files </div>
 
           <h2><strong>Description</strong></h2>
 <p>The Dark Energy Survey (DES; <a href="http://adsabs.harvard.edu/abs/2005astro.ph.10346T">DES Collaboration, 2005</a>, <a href="http://adsabs.harvard.edu/abs/2016arXiv160100329D">DES Collaboration, 2016</a>) Science Verification (SV) period was a&nbsp;post-commissioning testing phase during which a mini-survey was performed to a depth comparable to the 5-year DES survey.&nbsp;The purpose of the SV period was to verify that the Dark Energy Camera (DECam;&nbsp;<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al., 2015</a>)&nbsp;system was capable of producing science-quality data at a rate that would meet the DES science requirements.&nbsp;Between November 1, 2012, and<span style="color: rgb(0,0,0);">&nbsp;February 22, 2013,</span>&nbsp;<span style="color: rgb(0,0,0);">10,000+</span>&nbsp;SV exposures were collected by DECam&nbsp;and subsequently reduced with an early version of the DES Data Management (DESDM) software stack (<a href="http://adsabs.harvard.edu/abs/2011arXiv1109.6741S" style="line-height: 1.42857;">Sevilla et al. 2011</a>, <a href="http://adsabs.harvard.edu/abs/2012SPIE.8451E..0DM" style="line-height: 1.42857;">Mohr et al. 2012</a>,&nbsp;<a href="http://data.darkenergysurvey.org/aux/releasenotes/DESDMrelease.html" style="line-height: 1.42857;">Gruendl et al. in prep</a>). Both the raw and the reduced single-epoch images are available from the <a href="http://www.portal-nvo.noao.edu/" style="line-height: 1.42857;">NOAO science archive</a>.</p>
-<p>The data products provided here come from the first annual reduction of the SV images (SVA1) and consist of object catalogs, value-added quantities, and ancillary maps derived from the coadded SV images.&nbsp;<a data-route="doc_gold" href="[[rootPath]]docs-gold">The SVA1 Gold Catalog</a> provides photometry and simple classification for objects detected in the SVA1 coadd images. Ancillary maps describing the effective magnitude limit across the SVA1 footprint are also provided. <a data-route="doc_shear" href="[[rootPath]]docs-shear">The SVA1 Shear Catalogs</a>&nbsp;provide shape information for a high-quality subset of objects in the GOLD catalog as derived by <a href="http://adsabs.harvard.edu/abs/2015arXiv150705603J" style="line-height: 1.42857;">Jarvis et al. (2015)</a>. <a data-route="doc_photoz" href="[[rootPath]]docs-photoz"> The SVA1 Photo-z Catalogs</a> provide photometric redshift estimates for objects in the SVA1 GOLD catalog as derived in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1507.05909" style="line-height: 1.42857;">Bonnett et al. (2015)</a>. Catalogs of galaxy clusters and red galaxies in the SVA1 data set are provided by the&nbsp;<a data-route="doc_redmapper" href="[[rootPath]]docs-redmapper">SVA1 redMaPPer and redMaGiC Catalogs</a>&nbsp;as derived in <a href="http://adsabs.harvard.edu/abs/2016arXiv160100621R">Rykoff et al. (2016)</a>&nbsp;and&nbsp;<a class="external-link" href="http://adsabs.harvard.edu/abs/2015arXiv150705460R" rel="nofollow">Rozo et al. (2015)</a>.</p>
-<p><span style="color: rgb(0,0,0);">If you use a SVA1 data product in a scientific publication, we ask&nbsp;</span><span style="color: rgb(0,0,0);">that you cite the paper where the data product was derived and</span><span style="color: rgb(0,0,0);">&nbsp;add a footnote to the SVA1 release URL (http://des.ncsa.illinois.edu/releases/sva1).&nbsp;We also ask that you include the standard acknowledgment for the use of public DES data found&nbsp;<a href="http://www.noao.edu/noao/library/NOAO_Publications_Acknowledgments.html">here</a>.&nbsp;</span></p>
+<br>
+          <p>The data products provided here come from the first annual reduction of the SV images (SVA1) and consist of object catalogs, value-added quantities, and ancillary maps derived from the coadded SV images.&nbsp;<a data-route="doc_gold" href="[[rootPath]]docs-gold">The SVA1 Gold Catalog</a> provides photometry and simple classification for objects detected in the SVA1 coadd images. Ancillary maps describing the effective magnitude limit across the SVA1 footprint are also provided. <a data-route="doc_shear" href="[[rootPath]]docs-shear">The SVA1 Shear Catalogs</a>&nbsp;provide shape information for a high-quality subset of objects in the GOLD catalog as derived by <a href="http://adsabs.harvard.edu/abs/2015arXiv150705603J" style="line-height: 1.42857;">Jarvis et al. (2015)</a>. <a data-route="doc_photoz" href="[[rootPath]]docs-photoz"> The SVA1 Photo-z Catalogs</a> provide photometric redshift estimates for objects in the SVA1 GOLD catalog as derived in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1507.05909" style="line-height: 1.42857;">Bonnett et al. (2015)</a>. Catalogs of galaxy clusters and red galaxies in the SVA1 data set are provided by the&nbsp;<a data-route="doc_redmapper" href="[[rootPath]]docs-redmapper">SVA1 redMaPPer and redMaGiC Catalogs</a>&nbsp;as derived in <a href="http://adsabs.harvard.edu/abs/2016arXiv160100621R">Rykoff et al. (2016)</a>&nbsp;and&nbsp;<a class="external-link" href="http://adsabs.harvard.edu/abs/2015arXiv150705460R" rel="nofollow">Rozo et al. (2015)</a>.</p>
+<br>
+          <p><span style="color: rgb(0,0,0);">If you use a SVA1 data product in a scientific publication, we ask&nbsp;</span><span style="color: rgb(0,0,0);">that you cite the paper where the data product was derived and</span><span style="color: rgb(0,0,0);">&nbsp;add a footnote to the SVA1 release URL (http://des.ncsa.illinois.edu/releases/sva1).&nbsp;We also ask that you include the standard acknowledgment for the use of public DES data found&nbsp;<a href="http://www.noao.edu/noao/library/NOAO_Publications_Acknowledgments.html">here</a>.&nbsp;</span></p>
 <p>&nbsp;</p>
           <h2><strong>Caveats</strong></h2>
 <p>The SVA1 data products&nbsp;<strong><span style="color: rgb(0,0,0);">do not</span></strong>&nbsp;constitute an official DES data release and are provided on an&nbsp;<strong><span style="color: rgb(0,0,0);">"as is"</span></strong>&nbsp;basis in support of DES publications based on SVA1 data. The SVA1 data products possess several known issues (documented in more detail below)&nbsp;arising from features in the instrument, data reduction, catalog creation, and calibration processes that were present during this early phase of data taking prior to normal operations of DES.&nbsp;</p>
@@ -32634,10 +32674,18 @@ contains a list of urls for all files </div>
       <div class="card-content">
           <h2><strong>Overview</strong></h2>
 <p>The SVA1 GOLD catalog consists of basic astrometry, photometry, and object classification for&nbsp;<span style="color: rgb(51,51,51);">25,227,559&nbsp;</span>objects. This catalog was assembled from the SVA1 GOLD data set processed with an early version of the DES Data Management (DESDM) system, which included image detrending, astrometric registration, global calibration, and image coaddition. The SExtractor toolkit was used to create object catalogs from coadded SV images (<a href="http://adsabs.harvard.edu/abs/1996A%26AS..117..393B">Bertin &amp; Arnouts 1996</a>).&nbsp;The SVA1 GOLD catalog has a relative astrometric precision of&nbsp;<span style="color: rgb(51,51,51);">~100&nbsp;</span>mas per coordinated (from multiple DES observations of the same object) and an absolute astrometric precision of&nbsp;<span style="color: rgb(51,51,51);">~200&nbsp;m</span>as per coordinate compared against the&nbsp;<span style="color: rgb(255,0,0);"><span style="color: rgb(0,51,102);">UCAC-4</span> <span style="color: rgb(0,0,0);">catalog (<a href="http://adsabs.harvard.edu/abs/2013AJ....145...44Z">Zacharias et al. 2013</a>)</span></span>. Object photometry is provided in the DES&nbsp;<em>g, r, i,</em>&nbsp;and&nbsp;<em>z</em>&nbsp;bands (no&nbsp;<em>Y</em>-band).</p>
+
+ <h2><strong>Calibration</strong></h2>
 <p>Photometric calibration was performed in two stages. First, absolute calibrations were performed against a set of photometric standards using a global calibrations module (GCM;&nbsp;<span style="color: rgb(51,51,51);"><a href="http://adsabs.harvard.edu/abs/2007ASPC..364..187T">Tucker et al. 2007</a></span>). After the global calibration, a re-calibration was performed via stellar locus regression (SLR) using the BigMACs code (<a href="http://adsabs.harvard.edu/abs/2012ascl.soft08007K">Kelly et al. 2014</a>). The SLR zeropoint adjustment used the PSF magnitudes measured for objects classified as stars (more on this later). Note that the SLR adjustment produces magnitudes that are calibrated to the&nbsp;<strong>top of the Galaxy</strong>&nbsp;(i.e., corrections for Galactic extinction are already incorporated into the calibration). The calibration uncertainty of the SVA1 GOLD catalog is estimated to be &lt; 2%. All magnitudes are<span style="color: rgb(72,72,72);">&nbsp;put on a "picomaggie" system (DES AB magnitudes, zeropoint = 30.0).&nbsp;</span></p>
+
+          <h2><strong>Coadd Images</strong></h2>
 <p><span style="color: rgb(0,0,0);">Individual DECam exposures were coadded to increase survey depth. During the SV coaddition process, the point spread functions (PSFs) of the individual single-epoch images were not homogenized at the coadd image level. Rather, a parametric model was used to account for spatial variations in the PSF in each coadd image (PSFEx;&nbsp;</span><a href="http://adsabs.harvard.edu/abs/2011ASPC..442..435B">Bertin 2011</a><span style="color: rgb(0,0,0);">); however, this model is not a full description of the spatial variation of the PSF within a coadd image, and as a result there are systematic differences between the MAG_PSF measurements and the MAG_AUTO measurements of stars. We therefore&nbsp;</span><strong>STRONGLY RECOMMEND</strong><span style="color: rgb(0,0,0);">&nbsp;the use of the MAG_AUTO quantities unless detailed study motivates the use of MAG_PSF. The MAG_PSF variables were used to derive the stellar locus correction to the photometric calibration and are included for completeness.</span></p>
-<p>We provide several variables for star-galaxy classification including SPREAD_MODEL (<a href="http://adsabs.harvard.edu/abs/2012ApJ...757...83D">Desai et al. 2012</a>), CLASS_STAR (<a href="http://adsabs.harvard.edu/abs/1996A%26AS..117..393B">Bertin &amp; Arnouts 1996</a>), and MODEST_CLASS (see Section 2.2. in <a href="http://adsabs.harvard.edu/abs/2015arXiv150705603J">Jarvis et al. 2015</a>). For simple and robust star-galaxy classification we recommend the MODEST_CLASS variable, which combines information from CLASS_STAR, SPREAD_MODEL, and SPREADERR_MODEL. The MODEST_CLASS galaxy classification is found to have a simultaneous efficiency (N(class galaxy)/N(true galaxy))&nbsp;and purity&nbsp;(N(class galaxy &amp; true galaxy)/N(class galaxy))&nbsp;of&nbsp;≥90% for objects with i-band magnitude fainter than 19.&nbsp;</p>
-<p>The SVA1 GOLD data products cover <span style="color: rgb(51,51,51);">~&nbsp;250 square degrees&nbsp;</span>with non-uniform depth and data quality. The non-uniform survey depth is estimated in detail via&nbsp;<a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/SVA1+GOLD+Catalog#SVA1GOLDCatalog-LimitingMagnitudeMaps">Limiting Magnitude Maps</a>; however, for convenience, the median&nbsp;10σ limiting magnitude for galaxies in SVA1 GOLD is approximate:&nbsp;<em>g</em> = 24.0, <em>r</em> = 23.8,<em> i</em> = 23.0, <em>z</em> = 22.3.&nbsp;The primary science data set can be broken into several fields (plotted below in Cartesian projection):</p>
+
+          <h2><strong>Star-Galaxy Classification</strong></h2>
+          <p>We provide several variables for star-galaxy classification including SPREAD_MODEL (<a href="http://adsabs.harvard.edu/abs/2012ApJ...757...83D">Desai et al. 2012</a>), CLASS_STAR (<a href="http://adsabs.harvard.edu/abs/1996A%26AS..117..393B">Bertin &amp; Arnouts 1996</a>), and MODEST_CLASS (see Section 2.2. in <a href="http://adsabs.harvard.edu/abs/2015arXiv150705603J">Jarvis et al. 2015</a>). For simple and robust star-galaxy classification we recommend the MODEST_CLASS variable, which combines information from CLASS_STAR, SPREAD_MODEL, and SPREADERR_MODEL. The MODEST_CLASS galaxy classification is found to have a simultaneous efficiency (N(class galaxy)/N(true galaxy))&nbsp;and purity&nbsp;(N(class galaxy &amp; true galaxy)/N(class galaxy))&nbsp;of&nbsp;≥90% for objects with i-band magnitude fainter than 19.&nbsp;</p>
+
+          <h2><strong>Data Products</strong></h2>
+          <p>The SVA1 GOLD data products cover <span style="color: rgb(51,51,51);">~&nbsp;250 square degrees&nbsp;</span>with non-uniform depth and data quality. The non-uniform survey depth is estimated in detail via&nbsp;<a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/SVA1+GOLD+Catalog#SVA1GOLDCatalog-LimitingMagnitudeMaps">Limiting Magnitude Maps</a>; however, for convenience, the median&nbsp;10σ limiting magnitude for galaxies in SVA1 GOLD is approximate:&nbsp;<em>g</em> = 24.0, <em>r</em> = 23.8,<em> i</em> = 23.0, <em>z</em> = 22.3.&nbsp;The primary science data set can be broken into several fields (plotted below in Cartesian projection):</p>
 
 <div style="text-align: center">
 <iron-image src="/static/images/sva1_gold_footprint.png" style="width:700px; height:700px;" sizing="contain"></iron-image>
@@ -34130,40 +34178,45 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
        display: block;
        padding: 10px;
        }
+    div img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+     }
     </style>
     <des-card heading="Data Processing">
     <div class="card-content">
     
 <div id="main-content">
- <h2 id="ProcessingandSoftware-Overview" style="text-align: center;">
-  Overview
+ <h2 style="text-align: center;"><strong> Overview</strong>
+
  </h2>
  <p>
   <br>
  </p>
  <p style="text-align: left;">
-  The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES, follows a well defined path, from its acquisition on the mountain top up to the stage when data is ready to be feed into science algorithms. We can distinguish two levels in data products, as well as two levels in raw-to-refined processing:
+ The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES follows a well-defined path from its acquisition on the mountain top up to the stage when data is ready to be fed into science algorithms. We can distinguish two data production levels, as well as two levels in raw-to-refined processing:
  </p>
  <ul>
   <li style="text-align: left;">
-   Single Epochs images. Can be easily described as exposures of sky patches, each one independent of the others (namely, no combination of images are performed for overlap regions). These images need to be treated, and then we can distinguish two process being similar ins structure and procedure, but different in the employed calibrations and configurations files:
+   Single Epochs images. These can be easily described as exposures of sky patches, each independent from the others (namely, no combination of images are performed for overlap regions). First, these images need to be treated, and then we can distinguish two processes being similar in structure and procedure, but different in the employed calibrations and configurations files:
   </li>
  </ul>
  <ol>
   <li style="text-align: left;margin-left: 30.0px;">
-   First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from previous year of observing are used. At the end of the pipeline, quality assessments are performed, then exposures not reaching the criteria enters the queue to be re-observed at CTIO.
+  First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from the previous year of observation are used. At the end of the pipeline, quality assessments are performed, then exposures not meeting the criteria for those assessments enter the queue to be re-observed at CTIO.
   </li>
   <li style="text-align: left;margin-left: 30.0px;">
-   Final cut: this pipeline performs the same tasks as First cut. The configuration files and the calibrations files (e.g., flats, bad pixels masking, sky flats) has been updated to the most recent version, for which the current year of observation is the source of such calibrations.
+   Final cut: this pipeline performs the same tasks as First cut. The configuration files and the calibrations files (e.g., flats, bad pixels masking, sky flats) have been updated to the most recent version, for which the current year of observation is the source of such calibrations.
   </li>
  </ol>
  <ul>
   <li style="text-align: left;">
-   Multi Epoch images. After the run of Final cut, this pipeline is performed to achieve a higher depth on the DES footprint. Through co-additions of overlapping images, performing of algorithms for optimal shape and depth parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fiting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.
+  Multi-Epoch images. After the run of Final cut, this pipeline is performed to achieve a higher depth on the DES footprint. Through co-additions of overlapping images, application of algorithms for optimal shape and depth parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.
   </li>
  </ul>
  <p style="text-align: left;">
-  The above pipelines/processings are described in more depth in Berstein et al. (2017)&nbsp; and Morganson et al (2017). To help the visualization of the above landscape, below we show some of the Morganson et al. (2017) diagrams. The first figure shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are displayed.
+ The above pipelines/processes are described in depth in Berstein et al. (2017)  and Morganson et al (2017). To aid with visualizing the above landscape, several of the Morganson et al. (2017) diagrams are displayed below. The first figure shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are also displayed.
  </p>
  <p style="text-align: left;">
   <br>
@@ -34177,7 +34230,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <br>
  </p>
  <p>
-  The second diagram shows the steps comprised on preprocessing, First cut being the upper set of connected boxes, and Final cut belonging to the upper and lower diagram flows. For the last, current year super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.
+  The second diagram shows the steps in preprocessing. First cut is represented by the upper set of connected boxes, and Final cut is reresented by the upper and lower diagram flows. For the last and current year, super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.
  </p>
  <p>
   <br>
@@ -34191,7 +34244,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <br>
  </p>
  <p>
-  One of the strengths of the pipeline taken as a whole, is the structure allowing to include more refined products to be used in the calibrations. The ability was learned from the work, and it's tangible when comparing initially raw images among the coadded products. This can be evidenced (even not in all its wideness) in the following figure (made by M. Carrasco, NCSA), exhibiting the different products from a single patch of sky, from the raw image to the fully reduced and processed and stacked (higher depth) image:
+  One strength of the overall pipeline is that it provides room to include more refined products to be used in the calibrations. This ability was learned from previous work, and it's evident when comparing initially raw images among the coadded products. This is shown (even though it's not displayed in full width) in the following figure made by Matias Carrasco at NCSA. This figure displays the different products in a single patch of sky from the raw image to the fully reduced, processed, and stacked (higher depth) image:
  </p>
  <p>
   <br>
@@ -34207,9 +34260,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </span>
  </h2>
  <h2 id="ProcessingandSoftware-SingleEpoch" style="text-align: center;">
-  <span style="color: rgb(0,0,0);">
-   Single Epoch
-  </span>
+ <strong>Single Epoch Processing</strong>
  </h2>
  <p>
   <span style="color: rgb(0,0,0);">
@@ -34218,16 +34269,17 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
  </p>
  <p>
   <span style="color: rgb(0,0,0);">
-   To better show Single Epoch step by step, below are described the multiple series of actions followed to achieve processing, both for First and Final cut. For each step, the parent package alongside with its version are displayed, because of its different improvements to use the right version is a requirement for s successful processing.
+   To better illustrate each step of the Single Epoch process, the series of actions followed for processing, both for First and Final cut, are described below. For each step, the parent package with its corresponding version is displayed. Because of various improvements, using the right version of each package is a necessity for successful processing.
   </span>
  </p>
  <p>
   <span style="color: rgb(0,0,0);">
-   The parent packages are listed, with
+   <br>
+   The parent packages are listed with
    <span style="color: rgb(0,0,255);">
     links
    </span>
-   to their repositories, being Github DES Data Management (
+   to their repositories as Github DES Data Management (
    <span style="color: rgb(0,0,255);">
     <a href="https://github.com/DarkEnergySurvey/" rel="nofollow">
      <span style="color: rgb(0,0,255);">
@@ -34370,7 +34422,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <br>
  </p>
  <p>
-  The following operation blocks applied crosstalk correction (influence of a CCD amplifier over others), bias, overscan, flats, bad pixel masks, bright fatter correction, non-linear and gain adjustments. Also creates masks for different issues in the CCDs, such as defective amplifier A of CCD 31, satellite streaks, and edge bleed due to saturated stars.
+  The following operation blocks applied crosstalk correction (influence of a CCD amplifier over others), bias, overscan, flats, bad pixel masks, bright fatter correction, non-linear and gain adjustments. It also creates masks for different issues in the CCDs, such as defective amplifier A of CCD 31, satellite streaks, and edge bleed due to saturated stars.
  </p>
  <div>
   <table>
@@ -34653,7 +34705,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
  </p>
  <p>
   <span>
-   The sky templates and the star flat image are applied. The last is a second order flat correction, constructed from not crowded dithered fields images, after apply a Principal Components Analysis method. Additionally masking is performed.
+   The sky templates and the star flat image are applied. The last is a second order flat correction, constructed from non crowded dithered fields images, after apply a Principal Components Analysis method. Additional masking is performed.
   </span>
  </p>
  <div>
@@ -34870,7 +34922,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <br>
  </p>
  <p>
-  Thus, model the point spread function to produce objects catalogs, and perform quality assessments. Following, the entire reduce focal plane is composited into a binned image. Healpix is also performed, for some predefined resolution scales.
+  Thus, the point spread function is modeled to produce objects catalogs, and perform quality assessments. Then the entire reduce focal plane is composed into a binned image. Healpix is also performed for some predefined resolution scales.
  </p>
  <div>
   <table>
@@ -35063,172 +35115,157 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
  <p>
   <br>
  </p>
- <h2 id="ProcessingandSoftware-MultiEpoch" style="text-align: center;">
-  Multi Epoch
+ <h2 id="ProcessingandSoftware-MultiEpoch" style="text-align: center; color:black;">
+  <strong> Multi Epoch Processing</strong>
  </h2>
  <p>
   <br>
  </p>
  <p>
   <span>
-   So far we have a set of Single Epoch images, with no co-addition between them. Even though the vast majority exhibits a high quality, many of the scientific goals of our collaboration needs a deeper magnitude and better signal-to-noise. Therefore, a stacking processing is needed, here is where Multi Epoch comes into play. It doesn't re-calculates neither calibrations, masking, nor other corrective processes. What Multi Epoch performs is an astrometry refinement, applies this refinement to Single Epoch images, and then continues to the coadd procedure.
+   So far we have a set of Single Epoch images, with no co-addition between them. Even though the vast majority are of high quality, many of the scientific goals of our collaboration require a deeper magnitude and better signal-to-noise. Therefore,  stacking processing is needed, which is where Multi Epoch comes into play. It doesn't re-calculate calibrations, masking, or any other corrective processes, but performs a astrometry refinement. It applies this refinement to Single Epoch images and then continues to the coadd procedure.
   </span>
  </p>
  <p>
   <span>
-   The Multi Epoch procedure is listed below, in all its constituent steps. For the sake or a cleaner view, steps were divided in blocks, for whom the added a brief explanations. Besides, the list of parent packages with their links to the sources/repositories are provided, following the schema on Single Epoch.
+   <br>
+   The Multi Epoch procedure is listed below in all its constituent steps. For the sake of a clearer view, steps are divided into blocks with brief explanations. Following the schema on Single Epoch are the lists of parent packages with links to their sources/repositories.
   </span>
  </p>
  <ol>
   <li>
-   <span>
-    <span style="color: rgb(255,0,0);">
-     <span style="color: rgb(0,51,102);">
-      <span style="color: rgb(51,102,255);">
-       <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
-        <span style="color: rgb(51,102,255);">
-         despyfitsutils
-        </span>
-       </a>
-      </span>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despyfitsutils
      </span>
-    </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    <span style="color: rgb(51,102,255);">
-     <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
-      <span style="color: rgb(51,102,255);">
-       scamp
-      </span>
-     </a>
-    </span>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      scamp
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    x1
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      MEPipelineAppIntg
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    x2
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      pixcorrect
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    <span style="color: rgb(51,102,255);">
-     <a href="https://www.astromatic.net/software/swarp" rel="nofollow">
-      <span style="color: rgb(51,102,255);">
-       swarp
-      </span>
-     </a>
-    </span>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/swarp" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      swarp
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    x3
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despyfits" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despyfits
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(51,102,255);">
+   <span style="color: rgb(0,0,255);">
     <a href="https://www.astromatic.net/software/stiff" rel="nofollow">
-     <span style="color: rgb(51,102,255);">
+     <span style="color: rgb(0,0,255);">
       stiff
      </span>
     </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    <span style="color: rgb(51,102,255);">
-     <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
-      <span style="color: rgb(51,102,255);">
-       sextractor
-      </span>
-     </a>
-    </span>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      sextractor
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    <span style="color: rgb(51,102,255);">
-     <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
-      <span style="color: rgb(51,102,255);">
-       psfex
-      </span>
-     </a>
-    </span>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      psfex
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    x4
-    <br>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/extinction" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      extinction
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    <span style="color: rgb(51,102,255);">
-     <a href="https://github.com/healpy/healpy" rel="nofollow">
-      <span style="color: rgb(51,102,255);">
-       hpixDB
-      </span>
-     </a>
-    </span>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/healpy/healpy" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      hpixDB
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    x5
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/wavg" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      wavg
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    x6
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despymangle" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despymangle
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    <span style="color: rgb(51,102,255);">
-     <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
-      <span style="color: rgb(51,102,255);">
-       DatabaseApps
-      </span>
-     </a>
-    </span>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      DatabaseApps
+     </span>
+    </a>
    </span>
   </li>
   <li>
-   <span style="color: rgb(0,51,102);">
-    x7
-   </span>
-  </li>
-  <li>
-   <span style="color: rgb(0,51,102);">
-    x8
-   </span>
-  </li>
-  <li>
-   <span style="color: rgb(0,51,102);">
-    x9
-   </span>
-  </li>
-  <li>
-   <span style="color: rgb(0,51,102);">
-    x10
-   </span>
-  </li>
-  <li>
-   <span style="color: rgb(0,51,102);">
-    x11
-   </span>
-  </li>
-  <li>
-   <span style="color: rgb(0,51,102);">
-    x12
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/ngmixer" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      ngmixer
+     </span>
+    </a>
    </span>
    <br>
    <span style="color: rgb(0,51,102);">
@@ -35239,11 +35276,13 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
  <p>
   First,
   <span>
-   forgather the Single Epoch images into coadded images, on a 10,000x10,000 pixel base. This "minimal unit" is known as a tile. This is achieved by querying all images matching the particular tile, then re-calculating the astrometric solutions (as these can vary between Single Epoch images), performing
+   combine the Single Epoch images into coadded images, on a 10,000x10,000 pixel base. This "minimal unit" is known as a tile. This is achieved by querying all images matching the particular tile, then re-calculating the astrometric solutions (as these can vary between Single Epoch images), performing
    <em>
     scamp
    </em>
-   against 2MASS for campaigns up to Y3, and GAIA for campaigns from Y4. This can be sketched in 2 steps, one taking the solutions for the inner CCD deformation coefficients come from Final cut refinement, so the code tries to match them when adding different images together; the second is the matching with 2MASS (or GAIA). With the results of the astrometry, the
+   against 2MASS for campaigns up to Y3, and GAIA for campaigns from Y4.
+   This can be sketched in 2 steps, one taking the solutions for the inner CCD deformation coefficients come from Final cut refinement, so the code tries to match them when adding different images together; the second is the matching with 2MASS (or GAIA).
+   With the results of the astrometry, the
    <em>
     scamp
    </em>
@@ -35286,10 +35325,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       combine_cats.py &amp; query_coadd_astrorefine.py
      </td>
      <td>
-      <br>
+      <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+       despyfitsutils
+      </a>
      </td>
      <td colspan="1">
-      despyfitsutils/1.0.1+0/bin/combine_cats.py
+      despyfitsutils/1.0.1+7/bin/combine_cats.py
      </td>
     </tr>
     <tr>
@@ -35300,10 +35341,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       scamp
      </td>
      <td>
-      <br>
+      <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
+       scamp
+      </a>
      </td>
      <td colspan="1">
-      scamp/2.2.5+2/bin/scamp
+      scamp/2.4.2+6/bin/scamp
      </td>
     </tr>
     <tr>
@@ -35314,10 +35357,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       split_head.py
      </td>
      <td>
-      <br>
+      <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+       despyfitsutils
+      </a>
      </td>
      <td colspan="1">
-      despyfitsutils/1.0.1+0/bin/split_head.py
+      despyfitsutils/1.0.1+7/bin/split_head.py
      </td>
     </tr>
     <tr>
@@ -35328,10 +35373,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       query_coadd_img_for_nullwgt.py
      </td>
      <td>
-      <br>
+      <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+       MEPipelineAppIntg
+      </a>
      </td>
      <td colspan="1">
-      x1
+      MEPipelineAppIntg/1.0.9+1/bin/query_coadd_img_for_nullwgt.py
      </td>
     </tr>
     <tr>
@@ -35342,10 +35389,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       coadd_nwgint
      </td>
      <td>
-      <br>
+      <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+       pixcorrect
+      </a>
      </td>
      <td colspan="1">
-      x2
+      pixcorrect/0.5.3+7/bin/coadd_nwgint
      </td>
     </tr>
     <tr>
@@ -35356,10 +35405,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       swarp
      </td>
      <td>
-      <br>
+      <a href="https://www.astromatic.net/software/swarp" rel="nofollow">
+       swarp
+      </a>
      </td>
      <td colspan="1">
-      swarp/2.38.0.1+0/bin/swarp
+      swarp/2.40.0+1/bin/swarp
      </td>
     </tr>
     <tr>
@@ -35370,10 +35421,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       coadd_assemble
      </td>
      <td>
-      <br>
+      <a href="https://github.com/DarkEnergySurvey/despyfits" rel="nofollow">
+       despyfits
+      </a>
      </td>
      <td colspan="1">
-      x3
+      despyfits/0.5.2+1/bin/coadd_assemble
      </td>
     </tr>
     <tr>
@@ -35384,10 +35437,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       stiff
      </td>
      <td>
-      <br>
+      <a href="https://www.astromatic.net/software/stiff" rel="nofollow">
+       stiff
+      </a>
      </td>
      <td colspan="1">
-      stiff/2.1.3+1/bin/stiff
+      stiff/2.7.0+0/bin/stiff
      </td>
     </tr>
    </tbody>
@@ -35399,11 +35454,11 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </span>
  </p>
  <p>
-  With the coadded images, a new PSF model is performed.To achieve this, the source extraction was performed with the same configuration as Single Epoch. The goal is, as the sources has now a better signal-to-noise, get thinner half-at-width maximum. At this point, some complication appears: the PSF model doesn't performs as well on coadded images as it does on single images, mostly due to discontinuities on the coadded images that the
+ With the coadded images, a new PSF model is performed. To achieve this, the source extraction is performed with the same configuration as Single Epoch. The goal now is to get a thinner half-at-width maximum as the source now has a better signal-to-noise ratio. At this point, some complication appears: the PSF model doesn't perform as well on coadded images as it does on single images, mostly due to discontinuities on the coadded images that the
   <em>
    psfex
   </em>
-  code cannot properly take into full account. This mostly affects the photometric precision, and not the object detection. This is one of the reasons of the need of Multi Object Fitting (MOF).
+   code cannot properly take into full account. This mostly affects the photometric precision and not the object detection. This is one of the reasons for the need of Multi Object Fitting (MOF).
  </p>
  <p>
   Additionally, the reddening coefficients from Schlegel, Finkbeiner &amp; Davis (1998) were applied.
@@ -35443,10 +35498,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       sex
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      sextractor/2.19.5+1/bin/sex
+      sextractor/2.23.2+3/bin/sex
      </td>
     </tr>
     <tr>
@@ -35457,10 +35518,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       psfex
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         psfex
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      psfex/3.17.3+1/bin/psfex
+      psfex/3.17.3+4/bin/psfex
      </td>
     </tr>
     <tr>
@@ -35471,10 +35538,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       sextractor
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      sextractor/2.19.5+1/bin/sex
+      sextractor/2.23.2+3/bin/sex
      </td>
     </tr>
     <tr>
@@ -35485,10 +35558,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       compute_SFD98_coadd_bands
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/extinction" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         extinction
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      x4
+      extinction/1.3.0+2/bin/compute_SFD98_coadd_bands
      </td>
     </tr>
    </tbody>
@@ -35498,13 +35577,8 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <br>
  </p>
  <p>
-  <span style="color: rgb(255,0,0);">
-   Performs healpix, weighted averaged magnitude calculation, Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), and mangle routines
-  </span>
- </p>
- <p>
-  <span style="color: rgb(255,0,0);">
-   Create coadd version of catalogs
+  <span style="color: rgb(0,0,0);">
+   Performs healpix, weighted averaged magnitude calculation, Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), and mangle routines. Create coadd version of catalogs
   </span>
  </p>
  <div>
@@ -35542,10 +35616,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       hpixDB
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/healpy/healpy" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         hpixDB
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      hpixDB/1.1.0+0/bin/hpixDB
+      hpixDB/1.0.2+2/bin/hpixDB
      </td>
     </tr>
     <tr>
@@ -35556,10 +35636,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       computewavg.py
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/wavg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         wavg
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      x5
+      wavg/0.4+0/bin/computewavg.py
      </td>
     </tr>
     <tr>
@@ -35570,10 +35656,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       mangle_one_tile
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despymangle" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despymangle
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      x6
+      despymangle/2.2.3+1/bin/mangle_one_tile
      </td>
     </tr>
     <tr>
@@ -35584,10 +35676,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       mepoch_ingest.py
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         DatabaseApps
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      DatabaseApps/2.0.9+0/bin/mepoch_ingest.py
+      DatabaseApps/2.0.5+2/bin/mepoch_ingest.py
      </td>
     </tr>
     <tr>
@@ -35598,10 +35696,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       run_desmeds
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      x7
+      MEPipelineAppIntg/1.0.9+1/bin/run_desmeds
      </td>
     </tr>
     <tr>
@@ -35609,13 +35713,39 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       26
      </td>
      <td>
-      run_ngmixer-meds-make-nbrs-data &amp; query_coadd_for_mof.py
+      run_ngmixer-meds-make-nbrs-data
      </td>
      <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      MEPipelineAppIntg/1.1.6+0/bin/run_ngmixer-meds-make-nbrs-data
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
       <br>
      </td>
-     <td>
-      x8
+     <td colspan="1">
+      query_coadd_for_mof.py
+     </td>
+     <td colspan="1">
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td colspan="1">
+      MEPipelineAppIntg/1.1.6+0/bin/query_coadd_for_mof.py
      </td>
     </tr>
     <tr>
@@ -35623,13 +35753,39 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       27
      </td>
      <td>
-      run_ngmixit &amp; query_coadd_for_mof.py
+      run_ngmixit
      </td>
      <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      MEPipelineAppIntg/1.1.6+0/bin/run_ngmixit
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
       <br>
      </td>
-     <td>
-      x9
+     <td colspan="1">
+      query_coadd_for_mof.py
+     </td>
+     <td colspan="1">
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td colspan="1">
+      MEPipelineAppIntg/1.1.6+0/bin/query_coadd_for_mof.py
      </td>
     </tr>
     <tr>
@@ -35640,10 +35796,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       megamix-meds-collate-desdm
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/ngmixer" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         ngmixer
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      x10
+      ngmixer/y3v0.9.4a+0/bin/megamix-meds-collate-desdm
      </td>
     </tr>
     <tr>
@@ -35651,13 +35813,39 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       29
      </td>
      <td>
-      run_ngmixit &amp; query_coadd_for_mof.py
+      run_ngmixit
      </td>
      <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      MEPipelineAppIntg/1.1.6+0/bin/run_ngmixit
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
       <br>
      </td>
-     <td>
-      x11
+     <td colspan="1">
+      query_coadd_for_mof.py
+     </td>
+     <td colspan="1">
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td colspan="1">
+      MEPipelineAppIntg/1.1.6+0/bin/query_coadd_for_mof.py
      </td>
     </tr>
     <tr>
@@ -35668,10 +35856,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       megamix-meds-collate-desdm
      </td>
      <td>
-      <br>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/ngmixer" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         ngmixer
+        </span>
+       </a>
+      </span>
      </td>
      <td>
-      x12
+      ngmixer/y3v0.9.4a+0/bin/megamix-meds-collate-desdm
      </td>
     </tr>
    </tbody>
@@ -35686,17 +35880,42 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
  <ol>
   <li>
    <span>
-    Bernstein, G., Abbot, T., Gruendl R., et al. 2017,
+    Bernstein, G. M., Abbott, T. M. C., Desai, S., et al. 2017, PASP,
     <em>
-     Instrumental response model and detrending for the Dark Energy Camera
+     Instrumental Response Model and Detrending for the Dark Energy Camera
     </em>
-    (In preparation)
+    [
+    <span style="color: rgb(255,0,0);">
+     <a href="http://iopscience.iop.org/article/10.1088/1538-3873/aa858e/meta" rel="nofollow">
+      <span style="color: rgb(255,0,0);">
+       PASP
+      </span>
+     </a>
+    </span>
+    ]
    </span>
+   [
+   <span style="color: rgb(255,0,0);">
+    <a href="https://arxiv.org/abs/1706.09928" rel="nofollow">
+     <span style="color: rgb(255,0,0);">
+      arxiv
+     </span>
+    </a>
+   </span>
+   ]
   </li>
   <li>
    <p>
     <span>
-     Burke, D. L., Rykoff, E. S., et al. 2017, in preparation
+     Burke, D. L., Rykoff, E. S., et al. 2017, Forward Global Photometric Calibration of the Dark Energy Survey [
+     <span style="color: rgb(255,0,0);">
+      <a href="https://arxiv.org/abs/1706.01542" rel="nofollow">
+       <span style="color: rgb(255,0,0);">
+        arxiv
+       </span>
+      </a>
+     </span>
+     ]
      <br>
     </span>
    </p>
@@ -35707,6 +35926,23 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <em>
      HEALPix: A Framework for High-Resolution Discretization and Fast Analysis of Data Distributed on the Sphere
     </em>
+    [
+    <span style="color: rgb(255,0,0);">
+     <a href="http://iopscience.iop.org/article/10.1086/427976/meta" rel="nofollow">
+      <span style="color: rgb(255,0,0);">
+       ApJ
+      </span>
+     </a>
+    </span>
+    ]&nbsp;[
+    <span style="color: rgb(255,0,0);">
+     <a href="https://arxiv.org/abs/astro-ph/0409513" rel="nofollow">
+      <span style="color: rgb(255,0,0);">
+       arxiv
+      </span>
+     </a>
+    </span>
+    ]
    </span>
   </li>
   <li>
@@ -35716,6 +35952,26 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
    Schlegel, D. J., Finkbeiner, D. P., Davis, M, 1998, ApJ, 500, 525.
    <em>
     Maps of Dust Infrared Emission for Use in Estimation of Reddening and Cosmic Microwave Background Radiation Foregrounds
+   </em>
+   [
+   <span style="color: rgb(255,0,0);">
+    <a href="http://iopscience.iop.org/article/10.1086/305772/meta" rel="nofollow">
+     <span style="color: rgb(255,0,0);">
+      ApJ
+     </span>
+    </a>
+   </span>
+   ] [
+   <span style="color: rgb(255,0,0);">
+    <a href="https://arxiv.org/abs/astro-ph/9710327" rel="nofollow">
+     <span style="color: rgb(255,0,0);">
+      arxiv
+     </span>
+    </a>
+   </span>
+   ]
+   <em>
+    <br>
    </em>
   </li>
  </ol>
@@ -35828,7 +36084,7 @@ Allow users to automate their analysis to aid discovery in large datasets
     </paper-card>
     <paper-card on-tap="_golinea">
         <div class="card-content">
-            <img class="card-image" src="/static/images/portal_logo.png">
+            <img class="card-image" src="/static/images/des_logo_oficial.jpg">
             <div class="access-header">LIneA Science Portal </div>
             Currently the LIneA Science Server provides access to the following services which are deveop for DES Data products :
 <ul>

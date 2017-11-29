@@ -8,6 +8,7 @@ import tornado.web
 import tornado.log
 import Settings
 import jira_ticket
+
 from tornado.options import define, options
 import base64
 import netaddr
@@ -41,6 +42,8 @@ class HelpHandler(tornado.web.RequestHandler):
     """
     @tornado.web.asynchronous
     def post(self):
+        arguments = { k.lower(): self.get_argument(k) for k in self.request.arguments }
+        print(arguments)
         name = self.get_argument("name", "")
         last = self.get_argument("lastname", "")
         email = self.get_argument("email", "")
@@ -48,7 +51,7 @@ class HelpHandler(tornado.web.RequestHandler):
         question = self.get_argument("question", "")
         topic = self.get_argument("topic", "")
         topics = topic.replace(',', '\n')
-        print(name, last, email, topic)
+        print(name, last, email, topic, question)
         jira_ticket.create_ticket(name, last, email, topics, subject, question)
         self.set_status(200)
         self.flush()

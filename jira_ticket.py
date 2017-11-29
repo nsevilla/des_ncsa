@@ -47,7 +47,6 @@ def create_ticket(first, last, email, topics, subject, question):
     f.close()
     my_string_u = base64.b64decode(A[0].strip()).decode().strip()
     my_string_p = base64.b64decode(A[1].strip()).decode().strip()
-    print(my_string_u, my_string_p)
     """
     This function creates the ticket coming form the help form
     """
