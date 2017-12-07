@@ -284,14 +284,15 @@
 
 
       _routePageChanged(page) {
+        var drawerLayout = document.getElementById('drawerLayout');
         this.page = page || 'home';
         //this.subpage = (function () { return; })()  ;
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('page:' + page);
         // Close a non-persistent drawer when the page & route are changed.
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
+        //if (!this.$.drawer.persistent &&  drawerLayout.not([narrow]))  {
+          //this.$.drawer.close();
+        //}
       }
       _routeSubPageChanged(subpage) {
         //this.subpage = subpage || '';
@@ -300,9 +301,9 @@
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('subpage:' + subpage);
         // Close a non-persistent drawer when the page & route are changed.
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
+        //if (!this.$.drawer.persistent) {
+          //this.$.drawer.close();
+        //}
       }
       _routeSubPage1Changed(subpage1) {
         //this.subpage = subpage || '';
@@ -312,9 +313,9 @@
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('subpage1:' + subpage1);
         // Close a non-persistent drawer when the page & route are changed.
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
+        //if (!this.$.drawer.persistent ) {
+          //this.$.drawer.close();
+        //}
       }
 
       _routeSubPage2Changed(subpage2) {
@@ -325,9 +326,9 @@
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('subpage2:' + subpage2);
         // Close a non-persistent drawer when the page & route are changed.
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
+        // if (!this.$.drawer.persistent) {
+          //this.$.drawer.close();
+        //}
       }
 
       _pageChanged(page,subpage) {
@@ -340,6 +341,7 @@
             null,
             this._showPage404.bind(this),
             true);*/
+
       }
       _showPage404() {
         this.page = 'view404';
