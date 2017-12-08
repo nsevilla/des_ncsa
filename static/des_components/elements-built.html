@@ -31653,6 +31653,7 @@ Custom property | Description | Default
           <!-- Other pages -->
           <des-help name="help"></des-help>
           <des-thankyou name="thankyou"></des-thankyou>
+          <des-limited name="limited"></des-limited>
           <des-view404 name="view404"></des-view404>
         </iron-pages>
 
@@ -32000,6 +32001,32 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
       static get is() { return 'des-thankyou'; }
     }
     window.customElements.define(DesThankYou.is, DesThankYou);
+  </script>
+</dom-module>
+<dom-module id="des-limited" assetpath="des-pages/">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 10px 20px;
+      }
+    </style>
+
+    These contents are restricted and will be available in January 10th! <a href="[[rootPath]]">Head back to home.</a>
+  </template>
+
+  <script>
+    class DesLimited extends Polymer.Element {
+      static get is() { return 'des-limited'; }
+      static get properties() {
+        return {
+          // This shouldn't be neccessary, but the Analyzer isn't picking up
+          // Polymer.Element#rootPath
+          rootPath: String,
+        };
+      }
+    }
+    window.customElements.define(DesLimited.is, DesLimited);
   </script>
 </dom-module>
 <dom-module id="des-releases" assetpath="des-pages/">
