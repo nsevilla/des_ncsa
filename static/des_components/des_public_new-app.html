@@ -10,13 +10,13 @@
       }
 
       .sublist1 {
-          padding-left: 25px;
+          padding-left: 8px;
       }
       .sublist2 {
           padding-left: 35px;
       }
       .sublist3 {
-          padding-left: 45px;
+          padding-left: 40px;
       }
 
       app-drawer-layout:not([narrow]) [drawer-toggle] {
@@ -73,8 +73,22 @@
             margin-left: 12px;
         }
     }
-        paper-icon-button.smallScreen{
-        }
+
+
+/*Firefox specific styling because app-menu styling doesn't seem to be implemented in Firefox*/
+        @-moz-document url-prefix() {
+            #needindent{
+                text-indent: 20px;
+                font-size: 22px;
+                font-weight: normal;
+            }
+            #needsindent2{
+                text-indent: 45px;
+                font-size: 22px;
+                font-weight: normal;
+            }
+       }
+
     </style>
 
     <app-location route="{{route}}" ></app-location>
@@ -119,14 +133,13 @@
           </app-toolbar>
         </app-header>
 
-    <app-drawer-layout fullbleed narrow="{{narrow}}"  id="drawerLayout" responsive-width="1000px">
+    <app-drawer-layout fullbleed narrow="{{narrow}}"  id="drawerLayout" responsive-width="1000px" >
 
       <!-- Drawer content -->
-      <app-drawer id="drawer" slot="drawer"  class="drawer-content" swipe-open="[[narrow]]" style="border-right: groove 1px">
+      <app-drawer id="drawer" slot="drawer"  class="drawer-content" swipe-open="[[narrow]]" >
            <div style="height: 100%; overflow: auto;">
-               <app-toolbar>
-      </app-toolbar>
-          <app-menu selected="0" class="drawer-list">
+               <app-toolbar style="height: 60px;"></app-toolbar>
+          <app-menu selected="0" class="drawer-list" style="padding-left: 6px">
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 
@@ -135,7 +148,7 @@
 
           <app-submenu>
             <div class="app-menu-item " slot="submenu-trigger">
-              <a name="releases" href="[[rootPath]]releases">Releases<iron-icon icon="chevron-right"></iron-icon></a>
+              <a name="releases" href="[[rootPath]]releases" style="font-size: 22px; font-weight: normal;">Releases<iron-icon icon="chevron-right"></iron-icon></a>
             </div>
             <app-menu slot="submenu-content" >
               <app-submenu>
@@ -146,16 +159,16 @@
                 <app-menu class="sublist2" slot="submenu-content">
                   <app-submenu>
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" name="docs" href="[[rootPath]]releases/sva1/docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
+                  <a class="app-menu-item" id=needindent name="docs" href="[[rootPath]]releases/sva1/docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu class="sublist3" slot="submenu-content">
-                  <a class="app-menu-item" name="docs-gold" href="[[rootPath]]releases/sva1/docs/docs-gold">Gold</a>
-                  <a class="app-menu-item" name="docs-photoz" href="[[rootPath]]releases/sva1/docs/docs-photoz">Photoz</a>
-                  <a class="app-menu-item" name="docs-shear" href="[[rootPath]]releases/sva1/docs/docs-shear">Shear</a>
-                  <a class="app-menu-item" name="docs-redmapper" href="[[rootPath]]releases/sva1/docs/docs-redmapper">RedMaPPer</a>
+                  <a class="app-menu-item" id="needsindent2" name="docs-gold" href="[[rootPath]]releases/sva1/docs/docs-gold">Gold</a>
+                  <a class="app-menu-item" id="needsindent2" name="docs-photoz" href="[[rootPath]]releases/sva1/docs/docs-photoz" >Photoz</a>
+                  <a class="app-menu-item" id="needsindent2" name="docs-shear" href="[[rootPath]]releases/sva1/docs/docs-shear" >Shear</a>
+                  <a class="app-menu-item" id="needsindent2" name="docs-redmapper" href="[[rootPath]]releases/sva1/docs/docs-redmapper" >RedMaPPer</a>
                 </app-menu>
                 </app-submenu>
-                  <a class="app-menu-item" name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
+                  <a class="app-menu-item" id=needindent name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
                 </app-menu>
 
               </app-submenu>
@@ -165,16 +178,16 @@
                   <a class="app-menu-item" name="dr1" href="[[rootPath]]releases/dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu class="sublist2" slot="submenu-content">
-                   <a class="app-menu-item" name="dr1files" href="[[rootPath]]releases/dr1/dr1files">Files</a>
-                  <a class="app-menu-item" name="dr1docs" href="[[rootPath]]releases/dr1/dr1docs">Documentation</a>
-                  <a class="app-menu-item" name="dr1soft" href="[[rootPath]]releases/dr1/dr1soft">Processing</a>
-                  <a class="app-menu-item" name="dr1access" href="[[rootPath]]releases/dr1/dr1access">Data Access</a>
+                   <a class="app-menu-item" id=needindent name="dr1files" href="[[rootPath]]releases/dr1/dr1files" >Files</a>
+                  <a class="app-menu-item" id=needindent name="dr1docs" href="[[rootPath]]releases/dr1/dr1docs" >Documentation</a>
+                  <a class="app-menu-item" id=needindent name="dr1soft" href="[[rootPath]]releases/dr1/dr1soft" >Processing</a>
+                  <a class="app-menu-item" id=needindent name="dr1access" href="[[rootPath]]releases/dr1/dr1access" >Data Access</a>
 
                 </app-menu>
                </app-submenu>
-                <div class="sublist1" >
+                <!-- <div class="sublist1" >
                <a class ="app-menu-item" disabled>Y1A1 Gold</a>
-                </div>
+                </div> -->
             </app-menu>
           </app-submenu>
 
@@ -186,12 +199,12 @@
            </div>
      </app-drawer>
 
-        <iron-pages style="margin-top: 70px;"
+        <iron-pages style="margin-top: 5px;border-left: groove 1px;padding-left: 8px; padding-right: 8px"
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="view404"
             role="main"
-        style="padding-left: 15px; padding-right: 15px">
+         >
           <des-home name="home"></des-home>
           <des-releases name="releases"></des-releases>
           <!-- SVA1 pages -->
@@ -272,14 +285,15 @@
 
 
       _routePageChanged(page) {
+        var drawerLayout = document.getElementById('drawerLayout');
         this.page = page || 'home';
         //this.subpage = (function () { return; })()  ;
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('page:' + page);
         // Close a non-persistent drawer when the page & route are changed.
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
+        //if (!this.$.drawer.persistent &&  drawerLayout.not([narrow]))  {
+          //this.$.drawer.close();
+        //}
       }
       _routeSubPageChanged(subpage) {
         //this.subpage = subpage || '';
@@ -288,9 +302,9 @@
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('subpage:' + subpage);
         // Close a non-persistent drawer when the page & route are changed.
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
+        //if (!this.$.drawer.persistent) {
+          //this.$.drawer.close();
+        //}
       }
       _routeSubPage1Changed(subpage1) {
         //this.subpage = subpage || '';
@@ -300,9 +314,9 @@
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('subpage1:' + subpage1);
         // Close a non-persistent drawer when the page & route are changed.
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
+        //if (!this.$.drawer.persistent ) {
+          //this.$.drawer.close();
+        //}
       }
 
       _routeSubPage2Changed(subpage2) {
@@ -313,9 +327,9 @@
         //this.subrouteData.subpage = (function () { return; })()  ;
         console.log('subpage2:' + subpage2);
         // Close a non-persistent drawer when the page & route are changed.
-        if (!this.$.drawer.persistent) {
-          this.$.drawer.close();
-        }
+        // if (!this.$.drawer.persistent) {
+          //this.$.drawer.close();
+        //}
       }
 
       _pageChanged(page,subpage) {
@@ -328,6 +342,7 @@
             null,
             this._showPage404.bind(this),
             true);*/
+
       }
       _showPage404() {
         this.page = 'view404';
@@ -343,7 +358,5 @@
 
 
   </script>
-    <script>
-    </script>
 
 </dom-module>

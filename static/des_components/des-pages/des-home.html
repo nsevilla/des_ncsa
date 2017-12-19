@@ -1,3 +1,6 @@
+<link rel="import" href="../../../bower_components/paper-carousel/paper-carousel.html">
+<link rel="import" href="../../../templates/index.html">
+<script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 <dom-module id="des-home">
 
 <template>
@@ -15,7 +18,7 @@
       }
     </style>
 
-
+<body>
 <des-card></des-card>
 <!--
  <l2t-paper-slider total-slides="3" class="slides">
@@ -39,7 +42,7 @@
    </paper-slide>
  </l2t-paper-slider>
 -->
-
+ <div class="card-content">
 
     <mp-slider id="mptest" controls class="slider">
     <div>
@@ -74,7 +77,7 @@
     </mp-slider>
 
 
-      <div class="card-content">
+
           <h3><strong>Overview of the Dark Energy Survey (DES)</strong> </h3>
 
 <p>The DES is a 5000 square degree <em>grizY</em> survey of the Southern sky aimed at understanding the accelerating expansion rate of the universe using four complementary methods: weak gravitational lensing, galaxy cluster counts, baryon acoustic oscillations, and Type Ia supernovae. DES uses the new 3 square degree Dark Energy Camera (DECam) imager, a 570 Megapixel CCD camera installed at the prime focus of on the Blanco 4m telescope at the Cerro Tololo Interamerican Observatory in northern Chile. For about 100 nights per year, during the next five years, the DECam will scan the sky to perform a 5000 sq-degree wide field survey and 30 sq-degree supernova survey. Learn more on the main <a href="http://www.darkenergysurvey.org/">DES website.</a></p>
@@ -85,11 +88,13 @@
 <p> Survey operations began on August 31, 2013, and DES makes its data public in two ways. First, reduced DECAM images are available from NCSA a year after they are taken, starting in August 2014. Second, DESDM will host two public data releases, one about midway through the survey, and a final release. These will include catalog data of greater scope than the catalogs produces by the Community Pipeline run by NOAO.</p>
 
 
+
           </div>
 
-
+</body>
 
 </template>
+</dom-module>
 
 <script>
 
@@ -100,4 +105,4 @@
   </script>
 
 
-</dom-module>
+

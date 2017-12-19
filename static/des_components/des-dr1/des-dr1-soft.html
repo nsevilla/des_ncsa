@@ -2,9 +2,8 @@
     <template>
     <style include='shared-styles'>
     :host {
-       display: block;
-       padding: 10px;
-       }
+     display: block;
+    }
     div img{
     display: block;
     margin-left: auto;
@@ -22,11 +21,11 @@
   <br/>
  </p>
  <p style="text-align: left;">
- The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES follows a well-defined path from its acquisition on the mountain top up to the stage when data is ready to be fed into science algorithms. We can distinguish two data production levels, as well as two levels in raw-to-refined processing:
+ The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES follows a well-defined path from its acquisition on the mountain top up to the stage when data is ready to be fed into science algorithms. We can identify two data production levels, as well as two levels in raw-to-refined processing:
  </p>
  <ul>
   <li style="text-align: left;">
-   Single Epochs images. These can be easily described as exposures of sky patches, each independent from the others (namely, no combination of images are performed for overlap regions). First, these images need to be treated, and then we can distinguish two processes being similar in structure and procedure, but different in the employed calibrations and configurations files:
+   Single Epochs images. These can be easily described as exposures of sky patches, each independent from the others (namely, no combination of images are performed for overlap regions). First, these images need to be treated, and then we can distinguish two processes which are similar in structure and procedure, but different in the employed calibrations and configurations files:
   </li>
  </ul>
  <ol>
@@ -43,7 +42,7 @@
   </li>
  </ul>
  <p style="text-align: left;">
- The above pipelines/processes are described in depth in Berstein et al. (2017)  and Morganson et al (2017). To aid with visualizing the above landscape, several of the Morganson et al. (2017) diagrams are displayed below. The first figure shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are also displayed.
+ The above pipelines/processes are described in depth in Berstein et al. (2017)  and Morganson et al (2017). To aid with visualizing this landscape, several of the Morganson et al. (2017) diagrams are displayed below. The first figure shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are also displayed.
  </p>
  <p style="text-align: left;">
   <br/>
@@ -57,7 +56,7 @@
   <br/>
  </p>
  <p>
-  The second diagram shows the steps in preprocessing. First cut is represented by the upper set of connected boxes, and Final cut is reresented by the upper and lower diagram flows. For the last and current year, super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.
+  The second diagram shows the steps in preprocessing. First cut is represented by the upper set of connected boxes, and Final cut is reresented by the upper and lower diagram flows. For the previous and current year, super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.
  </p>
  <p>
   <br/>
@@ -71,7 +70,7 @@
   <br/>
  </p>
  <p>
-  One strength of the overall pipeline is that it provides room to include more refined products to be used in the calibrations. This ability was learned from previous work, and it's evident when comparing initially raw images among the coadded products. This is shown (even though it's not displayed in full width) in the following figure made by Matias Carrasco at NCSA. This figure displays the different products in a single patch of sky from the raw image to the fully reduced, processed, and stacked (higher depth) image:
+  One strength of the overall pipeline is that it provides room to include more refined products in calibrations. This ability was learned from previous work and is noticeable when comparing initially raw images among the coadded products. This is presented (even though it's not displayed in full width) in the following figure made by Matias Carrasco at NCSA. This figure displays the different products in a single patch of sky from the raw image to the fully reduced, processed, and stacked (higher depth) image:
  </p>
  <p>
   <br/>
@@ -96,7 +95,7 @@
  </p>
  <p>
   <span style="color: rgb(0,0,0);">
-   To better illustrate each step of the Single Epoch process, the series of actions followed for processing, both for First and Final cut, are described below. For each step, the parent package with its corresponding version is displayed. Because of various improvements, using the right version of each package is a necessity for successful processing.
+   To better illustrate each processing step of the Single Epoch workflow, each step is described below for both First and Final cut. For every step, the parent package with its corresponding version is displayed. Because of various improvements, you must use the right version of each package for successful processing.
   </span>
  </p>
  <p>
@@ -106,7 +105,7 @@
    <span style="color: rgb(0,0,255);">
     links
    </span>
-   to their repositories as Github DES Data Management (
+   to their repositories as Github DES Data Management(
    <span style="color: rgb(0,0,255);">
     <a href="https://github.com/DarkEnergySurvey/" rel="nofollow">
      <span style="color: rgb(0,0,255);">
@@ -114,7 +113,7 @@
      </span>
     </a>
    </span>
-   ) for the DES specific codes,
+   )for the DES specific codes,
    <span style="color: rgb(0,0,255);">
     <a href="https://www.astromatic.net/" rel="nofollow">
      <span style="color: rgb(0,0,255);">
@@ -122,10 +121,9 @@
      </span>
     </a>
    </span>
-   for astrometric and point spread function (Emmanuel Bertin's group), and the python wrapper for Healpix (
+   for astrometric and point spread function (Emmanuel Bertin's group), and the python wrapper for Healpix (Górski et al. 2005)
   </span>
   <span>
-   Górski et al. 2005)
   </span>
  </p>
  <ol>
@@ -249,7 +247,7 @@
   <br/>
  </p>
  <p>
-  The following operation blocks applied crosstalk correction (influence of a CCD amplifier over others), bias, overscan, flats, bad pixel masks, bright fatter correction, non-linear and gain adjustments. It also creates masks for different issues in the CCDs, such as defective amplifier A of CCD 31, satellite streaks, and edge bleed due to saturated stars.
+  The following operation blocks apply crosstalk correction (influence of a CCD amplifier over others), bias, overscan, flats, bad pixel masks, bright fatter correction, non-linear and gain adjustments. It also creates masks for different issues in the CCDs, such as defective amplifier A of CCD 31, satellite streaks, and edge bleed due to saturated stars.
  </p>
  <div>
   <table>
@@ -532,7 +530,7 @@
  </p>
  <p>
   <span>
-   The sky templates and the star flat image are applied. The last is a second order flat correction, constructed from non crowded dithered fields images, after apply a Principal Components Analysis method. Additional masking is performed.
+   The sky templates and the star flat image are applied. The last is a second order flat correction, constructed from non crowded dithered fields images, after applying a Principal Components Analysis method. Additional masking is performed.
   </span>
  </p>
  <div>
@@ -749,7 +747,7 @@
   <br/>
  </p>
  <p>
-  Thus, the point spread function is modeled to produce objects catalogs, and perform quality assessments. Then the entire reduce focal plane is composed into a binned image. Healpix is also performed for some predefined resolution scales.
+  Finally, the point spread function is modeled to produce objects catalogs, and perform quality assessments. Following this, the entire reduce focal plane is composed into a binned image and Healpix is also performed for some predefined resolution scales.
  </p>
  <div>
   <table>
@@ -950,7 +948,7 @@
  </p>
  <p>
   <span>
-   So far we have a set of Single Epoch images, with no co-addition between them. Even though the vast majority are of high quality, many of the scientific goals of our collaboration require a deeper magnitude and better signal-to-noise. Therefore,  stacking processing is needed, which is where Multi Epoch comes into play. It doesn't re-calculate calibrations, masking, or any other corrective processes, but performs a astrometry refinement. It applies this refinement to Single Epoch images and then continues to the coadd procedure.
+   At this point, we have a set of Single Epoch images, with no co-addition between them. Even though the vast majority are of high quality, many scientific goals of our collaboration require deeper magnitudes and better signal-to-noise. Therefore,  stacking processing is needed, which is where Multi Epoch comes into play. It doesn't re-calculate calibrations, masking, or any other corrective processes, but performs an astrometry refinement. It applies this refinement to Single Epoch images and then continues to the coadd procedure.
   </span>
  </p>
  <p>
@@ -1104,16 +1102,11 @@
   First,
   <span>
    combine the Single Epoch images into coadded images, on a 10,000x10,000 pixel base. This "minimal unit" is known as a tile. This is achieved by querying all images matching the particular tile, then re-calculating the astrometric solutions (as these can vary between Single Epoch images), performing
-   <em>
-    scamp
-   </em>
-   against 2MASS for campaigns up to Y3, and GAIA for campaigns from Y4.
-   This can be sketched in 2 steps, one taking the solutions for the inner CCD deformation coefficients come from Final cut refinement, so the code tries to match them when adding different images together; the second is the matching with 2MASS (or GAIA).
-   With the results of the astrometry, the
-   <em>
-    scamp
-   </em>
-   is used for stacking the images into a single one, adding also the photometric zeropoints information, coming from the Forward Global Calibration Method (FGCM), Burke et al. (2017).
+    SCAMP against 2MASS for campaigns up to Y3, and GAIA for campaigns from Y4.
+   <br>
+   This can be sketched in 2 steps; the first takes the solutions for the inner CCD deformation coefficients that come from Final cut refinement, so the code tries to match them when adding different images together. The second step is matched with 2MASS (or GAIA).
+   <br>
+   With the results of the astrometry, SCAMP is used for stacking the images into a single image, while also adding photometric zeropoints information coming from the Forward Global Calibration Method (FGCM), Burke et al. (2017).
    <br/>
   </span>
  </p>
@@ -1281,14 +1274,14 @@
   </span>
  </p>
  <p>
- With the coadded images, a new PSF model is performed. To achieve this, the source extraction is performed with the same configuration as Single Epoch. The goal now is to get a thinner half-at-width maximum as the source now has a better signal-to-noise ratio. At this point, some complication appears: the PSF model doesn't perform as well on coadded images as it does on single images, mostly due to discontinuities on the coadded images that the
+ With the coadded images, a new PSF model is performed. To achieve this, the source extraction is performed with the same configuration as Single Epoch. The goal now is to get a thinner half-at-width maximum as the source now has a better signal-to-noise ratio. <br> Usually at this point, some complication appears. Typically, the PSF model doesn't perform as well on coadded images as it does on single images, mostly due to discontinuities on the coadded images that the
   <em>
    psfex
   </em>
    code cannot properly take into full account. This mostly affects the photometric precision and not the object detection. This is one of the reasons for the need of Multi Object Fitting (MOF).
  </p>
  <p>
-  Additionally, the reddening coefficients from Schlegel, Finkbeiner &amp; Davis (1998) were applied.
+  Additionally, the reddening coefficients from Schlegel, Finkbeiner &amp; Davis (1998) are applied.
  </p>
  <div>
   <table>
@@ -1405,7 +1398,7 @@
  </p>
  <p>
   <span style="color: rgb(0,0,0);">
-   Performs healpix, weighted averaged magnitude calculation, Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), and mangle routines. Create coadd version of catalogs
+   Finally,  healpix, weighted averaged magnitude calculation, Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), and mangle routines are performed and a coadded version of the catalogs is created.
   </span>
  </p>
  <div>
@@ -1702,7 +1695,8 @@
   <br/>
  </p>
  <h3 id="ProcessingandSoftware-References">
-  References
+  <strong>
+   References</strong>
  </h3>
  <ol>
   <li>

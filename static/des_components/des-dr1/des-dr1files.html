@@ -4,15 +4,26 @@
 <template>
 
 <style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
 
 </style>
 
 
 
-    <p> DR1 Files</p>
+
+<des-card heading = 'Files'>
+    <div class=card-content>
+        <div id = 'main-content'>
+        <p> DR1 Files</p>
+        </div>
+    </div>
 
 
 
+</des-card>
 </template>
 <script>
     class DesDr1Files extends Polymer.Element {
