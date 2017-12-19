@@ -133,7 +133,7 @@
           </app-toolbar>
         </app-header>
 
-    <app-drawer-layout fullbleed narrow="{{narrow}}"  id="drawerLayout" responsive-width="1000px" >
+    <app-drawer-layout fullbleed narrow="{{narrow}}"  id="drawerLayout" responsive-width="1000px"  style = "height: 80%;">
 
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer"  class="drawer-content" swipe-open="[[narrow]]" >
@@ -199,7 +199,7 @@
            </div>
      </app-drawer>
 
-        <iron-pages style="margin-top: 5px;border-left: groove 1px;padding-left: 8px; padding-right: 8px"
+        <iron-pages style="margin-top: 72px;border-left: groove 1px;padding-left: 8px; padding-right: 8px"
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="view404"
