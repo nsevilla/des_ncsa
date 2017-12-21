@@ -9,37 +9,42 @@
       }
 
       .slides {
-          --paper-slide-height: 400px;
-          --paper-slide-dot: green;
-          --paper-slide-dot-selected: blue;
+          --paper-slide-height: 510px;
+          --paper-slide-dot: #eaeaea;
+          --paper-slide-dot-selected: #eaeaea;
+          --paper-slide-dot-styles:{
+          width: 10px;
+          height: 10px;}
+
       }
     </style>
 
-<body>
-<des-card></des-card>
-<!--
- <l2t-paper-slider total-slides="3" class="slides">
+<des-card>
+ <div class="card-content">
+
+ <l2t-paper-slider total-slides="4" class="slides" auto-progress slide-duration="2">
    <paper-slide>
         <div style="text-align: center">
-
-        <iron-image style="width:400px; height:400px " sizing="contain" src="/static/images/Decam.jpg"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="/static/images/Decam1.jpg"></iron-image>
           </div>
       </paper-slide>
    <paper-slide>
         <div style="text-align: center">
-        <iron-image style="width:400px; height:400px " sizing="contain" src="/static/images/Blanco4m-starry-400px.jpg"></iron-image>
+        <iron-image class="homeImages"  sizing="contain" src="/static/images/CometLovejoy.png"></iron-image>
           </div>
-    </div>
    </paper-slide>
    <paper-slide>
         <div style="text-align: center">
-        <iron-image style="width:400px; height:400px " sizing="contain" src="/static/images/TN_TN_47Tuc_adj.png"></iron-image>
+        <iron-image class="homeImages"  sizing="contain" src="/static/images/DECam2.jpg"></iron-image>
           </div>
-    </div>
    </paper-slide>
+   <paper-slide>
+        <div style="text-align: center">
+        <iron-image class="homeImages" sizing="contain" src="/static/images/BlancoTelescope.jpg"></iron-image>
+          </div>
  </l2t-paper-slider>
--->
- <div class="card-content">
+    </div>
+
 <!--
     <mp-slider id="mptest" controls class="slider">
     <div>
@@ -96,10 +101,8 @@
 
 
 
-          </div>
 
-</body>
-
+</des-card>
 </template>
 </dom-module>
 
