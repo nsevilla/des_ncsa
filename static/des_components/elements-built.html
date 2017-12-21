@@ -10217,7 +10217,16 @@ Or, in a Polymer element, you can include a meta in your template:
            height: 480px;
            width: 480px;
            margin-top:20px;
+           outline: none;
 
+       }
+       .homeImages:focus {
+          outline: 0;
+          border: 0;
+       }
+       .homeImages:active {
+          outline: 0;
+          border: 0;
        }
      /* BUTTONS*/
       .desButton:hover{
@@ -31859,6 +31868,8 @@ Custom property | Description | Default
       }
 
       .slides {
+          outline: 0;
+          border: 0;
           --paper-slide-height: 510px;
           --paper-slide-dot: #eaeaea;
           --paper-slide-dot-selected: #eaeaea;
@@ -31867,29 +31878,49 @@ Custom property | Description | Default
           height: 10px;}
 
       }
+      .slides:focus {
+          outline: 0;
+          border: 0;
+      }
+      .slides:active {
+          outline: 0;
+          border: 0;
+      }
+      .im-slide: {
+          outline: 0;
+          border: 0;
+      }
+      .im-slide:focus {
+          outline: 0;
+          border: 0;
+      }
+      .im-slide:active {
+          outline: 0;
+          border: 0;
+      }
     </style>
 
 <des-card>
  <div class="card-content">
 
- <l2t-paper-slider total-slides="4" class="slides" auto-progress="" slide-duration="2">
+ <l2t-paper-slider total-slides="4" class="slides" auto-progress="" slide-duration="8">
    <paper-slide>
-        <div style="text-align: center">
+        <div style="text-align: center" class="im-slide">
         <iron-image class="homeImages" sizing="contain" src="/static/images/Decam1.jpg"></iron-image>
           </div>
       </paper-slide>
    <paper-slide>
-        <div style="text-align: center">
+        <div style="text-align: center" class="im-slide">
         <iron-image class="homeImages" sizing="contain" src="/static/images/CometLovejoy.png"></iron-image>
           </div>
    </paper-slide>
    <paper-slide>
-        <div style="text-align: center">
+        <div style="text-align: center" class="im-slide">
         <iron-image class="homeImages" sizing="contain" src="/static/images/DECam2.jpg"></iron-image>
           </div>
    </paper-slide>
    <paper-slide>
-        <div style="text-align: center">
+        <div style="text-align: center" class="im-slide">
         <iron-image class="homeImages" sizing="contain" src="/static/images/BlancoTelescope.jpg"></iron-image>
           </div>
  </paper-slide></l2t-paper-slider>
