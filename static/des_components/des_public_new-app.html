@@ -79,12 +79,12 @@
         @-moz-document url-prefix() {
             #needindent{
                 text-indent: 20px;
-                font-size: 22px;
+                font-size: 18px;
                 font-weight: normal;
             }
             #needsindent2{
                 text-indent: 45px;
-                font-size: 22px;
+                font-size: 18px;
                 font-weight: normal;
             }
        }
@@ -147,8 +147,8 @@
 
 
           <app-submenu>
-            <div class="app-menu-item " slot="submenu-trigger">
-              <a name="releases" href="[[rootPath]]releases" style="font-size: 22px; font-weight: normal;">Releases<iron-icon icon="chevron-right"></iron-icon></a>
+            <div  slot="submenu-trigger">
+              <a class="app-menu-item" name="releases" href="[[rootPath]]releases" >Releases<iron-icon icon="chevron-right"></iron-icon></a>
             </div>
             <app-menu slot="submenu-content" >
               <app-submenu>
@@ -168,7 +168,7 @@
                   <a class="app-menu-item" id="needsindent2" name="docs-redmapper" href="[[rootPath]]releases/sva1/docs/docs-redmapper" >RedMaPPer</a>
                 </app-menu>
                 </app-submenu>
-                  <a class="app-menu-item" id=needindent name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
+                  <a class="app-menu-item" id="needindent" name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
                 </app-menu>
 
               </app-submenu>
