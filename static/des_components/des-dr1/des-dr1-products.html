@@ -1,0 +1,35 @@
+<dom-module id="des-dr1-products">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+
+</style>
+
+
+
+
+<des-card heading = 'Data Products'>
+    <div class=card-content>
+        <div id = 'main-content'>
+        <p> DR1 Products</p>
+        </div>
+    </div>
+
+
+
+</des-card>
+</template>
+<script>
+    class DesDr1Products extends Polymer.Element {
+      static get is() { return 'des-dr1-products'; }
+    }
+    window.customElements.define(DesDr1Products.is, DesDr1Products);
+  </script>
+
+</dom-module>
