@@ -1,4 +1,4 @@
-<dom-module id="des-public_new-app">
+<dom-module id="des-public-main">
   <template>
     <style include="shared-styles">
       :host {
@@ -13,10 +13,10 @@
           padding-left: 8px;
       }
       .sublist2 {
-          padding-left: 35px;
+          padding-left: 25px;
       }
       .sublist3 {
-          padding-left: 40px;
+          padding-left: 30px;
       }
 
       app-drawer-layout:not([narrow]) [drawer-toggle] {
@@ -178,10 +178,18 @@
                   <a class="app-menu-item" name="dr1" href="[[rootPath]]releases/dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
                 </div>
                 <app-menu class="sublist2" slot="submenu-content">
-                   <a class="app-menu-item" id=needindent name="dr1files" href="[[rootPath]]releases/dr1/dr1files" >Files</a>
-                  <a class="app-menu-item" id=needindent name="dr1docs" href="[[rootPath]]releases/dr1/dr1docs" >Documentation</a>
-                  <a class="app-menu-item" id=needindent name="dr1soft" href="[[rootPath]]releases/dr1/dr1soft" >Processing</a>
-                  <a class="app-menu-item" id=needindent name="dr1access" href="[[rootPath]]releases/dr1/dr1access" >Data Access</a>
+                   <!--<a class="app-menu-item" id=needindent name="dr1files" href="[[rootPath]]releases/dr1/dr1files" >Files</a>-->
+                  <app-submenu>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr1-docs" href="[[rootPath]]releases/dr1/dr1-docs" persistent="False">Overview<iron-icon icon="chevron-right"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id=needsindent2 name="acquisition" href="[[rootPath]]releases/dr1/dr1-docs/acquisition" >Data Acquisition</a>
+                  <a class="app-menu-item" id=needsindent2 name="processing" href="[[rootPath]]releases/dr1/dr1-docs/processing" >Processing</a>
+                </app-menu>
+                </app-submenu>
+                  <a class="app-menu-item" id=needindent name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products" >Products</a>
+                  <a class="app-menu-item" id=needindent name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access" >Data Access</a>
 
                 </app-menu>
                </app-submenu>
@@ -218,10 +226,11 @@
               <des-docs-redmapper name="docs-redmapper"></des-docs-redmapper>
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
-            <des-dr1docs name="dr1docs"></des-dr1docs>
-            <des-dr1files name="dr1files"></des-dr1files>
-            <des-dr1-soft name="dr1soft"></des-dr1-soft>
-            <des-dr1-access name="dr1access"></des-dr1-access>
+            <des-dr1docs name="dr1-docs"></des-dr1docs>
+            <des-dr1-products name="dr1-products"></des-dr1-products>
+            <des-dr1-soft name="processing"></des-dr1-soft>
+            <des-dr1-observing name="acquisition"></des-dr1-observing>
+            <des-dr1-access name="dr1-access"></des-dr1-access>
           <!-- Other pages -->
           <des-help name="help"></des-help>
           <des-thankyou name="thanks"></des-thankyou>
@@ -243,8 +252,8 @@
   </template>
 
   <script>
-    class MyApp extends Polymer.Element {
-      static get is() { return 'des-public_new-app'; }
+    class DesPublic extends Polymer.Element {
+      static get is() { return 'des-public-main'; }
       static get properties() {
         return {
           page: {
@@ -356,7 +365,7 @@
     }
 
 
-    window.customElements.define(MyApp.is, MyApp);
+    window.customElements.define(DesPublic.is, DesPublic);
 
 
   </script>

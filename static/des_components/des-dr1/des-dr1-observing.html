@@ -1,0 +1,39 @@
+<dom-module id="des-dr1-observing">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+
+</style>
+
+
+
+
+<des-card heading = 'Data Acquisition'>
+    <div class=card-content>
+
+        <p>DR1 is composed of data taken during 345 nights spread over the first three years of DES operations from 2013 August 15 to 2016 February 12.<br/>In this section, we briefly describe the characteristics of the DECam instrument and the DES observation strategy to provide context for DR1.<br/>We point the reader to other DES publications for further details on the technical aspects summarized here (i.e. Diehl et al. 2014, <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>,<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D"> Drlica-Wagner et al. 2017</a>, Morganson et al. 2018).</p>
+        <h3>DECam</h3>
+        <p>DECam is a wide field-of-view (3 sq. deg.) mosaic camera composed of 62 science CCDs (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>).<br/>The corrector system and pixel size provide an average plate scale of 0.263 arcsec per pixel.<br/>The DES wide-area survey observes five broadband filters, g, r, i, z, Y (see figure below), and the standard bandpasses for these filters are included as part of DR1.<br/>The DES filters are very similar to their analogously-named counterparts from other surveys. Uniquely, the DES z band has greater sensitivity at longer wavelengths than the SDSS z band and overlaps with the DES Y band.Additional details, including construction, installation, and a description of DECam subsystems and interfaces are provided in  (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>).</p>
+        <p>
+        <img width="600px" height="450px"
+                src="/static/images/dr1/dr1_bandpass.png"/>
+        </p>
+
+
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1Observing extends Polymer.Element {
+      static get is() { return 'des-dr1-observing'; }
+    }
+    window.customElements.define(DesDr1Observing.is, DesDr1Observing);
+  </script>
+
+</dom-module>
