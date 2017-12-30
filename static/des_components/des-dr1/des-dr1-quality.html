@@ -1,0 +1,42 @@
+<dom-module id="des-dr1-quality">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+
+</style>
+
+
+
+
+<des-card heading = 'Data Quality'>
+    <div class=card-content>
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1Quality extends Polymer.Element {
+      static get is() { return 'des-dr1-quality'; }
+      _progress() {
+          this.$.observing_progress.scrollIntoView();
+      }
+      _intro() {
+          this.$.observing_intro.scrollIntoView();
+      }
+      _decam() {
+          this.$.observing_decam.scrollIntoView();
+      }
+      _oper() {
+          this.$.observing_oper.scrollIntoView();
+      }
+
+    }
+    window.customElements.define(DesDr1Quality.is, DesDr1Quality);
+  </script>
+
+</dom-module>
