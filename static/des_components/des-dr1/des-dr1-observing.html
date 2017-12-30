@@ -5,7 +5,6 @@
 
 <style include="shared-styles">
 :host {
-       display: block;
        padding: 10px;
        }
 
@@ -14,6 +13,8 @@
 
 
 
+<div class="fixup" id="observing_top"></div>
+<div class="fixdown"></div>
 <des-card heading = 'Data Acquisition'>
     <div id="observing_card" class=card-content>
 
@@ -31,23 +32,40 @@
                 <a href="javascript:void(0)" on-tap="_progress">Survey Progress</a>
             </li>
         </ul>
-
+        <hr />
         <p><br /></p>
-        <div style="margin-top:-70px" id="observing_intro"></div>
-        <h3 style="margin-top:70px">Introduction</h3>
-        <p>DR1 is composed of data taken during 345 nights spread over the first three years of DES operations from 2013 August 15 to 2016 February 12.<br/>In this section, we briefly describe the characteristics of the DECam instrument and the DES observation strategy to provide context for DR1.<br/>We point the reader to other DES publications for further details on the technical aspects summarized here (i.e. Diehl et al. 2014, <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>,<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D"> Drlica-Wagner et al. 2017</a>, Morganson et al. 2018).</p>
+        <div class="fixup" id="observing_intro"></div>
+        <h3 class="fixdown">Introduction  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>DR1 is composed of data taken during 345 nights spread over the first three years of DES operations from 2013 August 15 to 2016 February 12.<br/>In this section, we briefly describe the characteristics of the DECam instrument and the DES observation strategy to provide context for DR1.<br/>We point the reader to other DES publications for further details on the technical aspects summarized here (i.e. <a href="http://adsabs.harvard.edu/abs/2014SPIE.9149E..0VD">Diehl et al. 2014</a>, <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>,<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D"> Drlica-Wagner et al. 2017</a>, Morganson et al. 2018).</p>
         <p><br /></p>
-        <div style="margin-top:-70px" id="observing_decam"></div>
-        <h3 style="margin-top:70px">DECam</h3>
+        <div class="fixup" id="observing_decam"></div>
+        <h3 class="fixdown">DECam  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>DECam is a wide field-of-view (3 sq. deg.) mosaic camera composed of 62 science CCDs (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>).<br/>The corrector system and pixel size provide an average plate scale of 0.263 arcsec per pixel.<br/>The DES wide-area survey observes five broadband filters, g, r, i, z, Y (see figure below), and the standard bandpasses for these filters are included as part of DR1.<br/>The DES filters are very similar to their analogously-named counterparts from other surveys. Uniquely, the DES z band has greater sensitivity at longer wavelengths than the SDSS z band and overlaps with the DES Y band.Additional details, including construction, installation, and a description of DECam subsystems and interfaces are provided in  (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>).</p>
-        <p>
+
+        <des-img src="/static/images/dr1/dr1_bandpass.png">DR1 Standard Bandpasses for the DECam g, r, i, z and
+Y filters. The bandpasses represent the total system throughput, including
+atmospheric transmission (airmass = 1.2) and the average
+instrumental response across the science CCDs</des-img>
+        <!--
+            <div>
+        <table style="width: 700px;" >
+        <caption align="bottom" style="text-align:justify">DR1 Standard Bandpasses for the DECam g, r, i, z and
+Y filters. The bandpasses represent the total system throughput, including
+atmospheric transmission (airmass = 1.2) and the average
+instrumental response across the science CCDs<br /></caption>
+        <tr><td>
         <img width="600px" height="450px"
                 src="/static/images/dr1/dr1_bandpass.png"/>
-        <img width="auto" height="450px"
+        </td></tr>
+    </table><br />
+            </div>
+        -->
+            <img width="auto" height="450px"
                 src="/static/images/dr1/DECam_chips.png"/>
-        </p>
-        <div style="margin-top:-70px" id="observing_oper"></div>
-        <h3 style="margin-top:70px">Survey Operations</h3>
+
+        <p><br /></p>
+        <div class="fixup" id="observing_oper"></div>
+        <h3 class="fixdown">Survey Operations  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>The target footprint of the DES wide-area and supernova surveys are shown in the Figure Below. The wide-area footprint shape was selected to obtain a large overlap with the South Pole Telescope survey (<a href="http://adsabs.harvard.edu/abs/2011PASP..123..568C">Carlstrom et al. 2011</a>) and Stripe 82 from SDSS (<a href="http://cdsads.u-strasbg.fr/abs/2009ApJS..182..543A">Abazajian et al. 2009</a>), plus a connection region to enhance overall calibration. Given the cosmological goals of the survey, DES avoids the Galactic plane to minimize stellar foregrounds and extinction from interstellar dust.<br/>The wide-field survey uses exposure times of 90s for <em>griz</em> and 45s for Y band, yielding a typical single-epoch depth at S/N = 10 of g = 23.57, r = 23.34, i = 22.78, i = 22.10 and Y = 20.69 (Morganson et al. 2018). The completed survey is expected to be roughly one magnitude deeper, through the coaddition of 10 images in each of the bands for a cumulative exposure time of 900 s in<em> griz</em> and 450 s in Y.</p>
             <img  width="600px" height="auto" src="/static/images/dr1/dr1_fwhm_hist.png"/>
             <img  width="600px" height="auto" src="/static/images/dr1/des_footprint_mbtpq.png"/>
@@ -59,8 +77,8 @@
         </p>
 
         <p><br /></p>
-        <div style="margin-top:-70px" id="observing_progress"></div>
-        <h3 style="margin-top:70px">Survey Progress through DR1</h3>
+        <div class="fixup" id="observing_progress"></div>
+        <h3 class="fixdown">Survey Progress through DR1  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p>
   <br/>
 </p>
@@ -76,18 +94,11 @@
 <script>
     class DesDr1Observing extends Polymer.Element {
       static get is() { return 'des-dr1-observing'; }
-      _progress() {
-          this.$.observing_progress.scrollIntoView();
-      }
-      _intro() {
-          this.$.observing_intro.scrollIntoView();
-      }
-      _decam() {
-          this.$.observing_decam.scrollIntoView();
-      }
-      _oper() {
-          this.$.observing_oper.scrollIntoView();
-      }
+      _progress() {this.$.observing_progress.scrollIntoView();}
+      _intro() {this.$.observing_intro.scrollIntoView();}
+      _decam() {this.$.observing_decam.scrollIntoView();}
+      _oper() {this.$.observing_oper.scrollIntoView();}
+      _top() {this.$.observing_top.scrollIntoView();}
 
     }
     window.customElements.define(DesDr1Observing.is, DesDr1Observing);
