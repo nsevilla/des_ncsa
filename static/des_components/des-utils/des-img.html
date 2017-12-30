@@ -4,12 +4,12 @@
 <style include="shared-styles">
 
 :host {
-    width: 800px;
+    width: 400px;
        }
 .caption {
     padding-left: 20px;
     width: 90%;
-    font-size: 14px;
+    font-size: 0.75rem;
     text-align: justify;
     font-style: italic;
 }
@@ -19,18 +19,21 @@
 }
 
 .localimg {
-    max-width: 800px;
+    max-width: 400px;
     width: 100%;
     height: auto;
 }
 
 </style>
+<div style="display: inline-block;">
+
 <table class="localtable" >
 <caption align="bottom" class="caption"><slot></slot><br /></caption>
 <tr><td>
 <img class="localimg"  src="{{src}}"/>
 </td></tr>
 </table><br />
+</div>
 </template>
 
   <script>
@@ -42,9 +45,9 @@
                  type: String,
                  value: ''
              },
-             eid: {
+             width: {
                  type: String,
-                 value: ''
+                 value: '800px'
              }
          };
      }

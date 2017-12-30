@@ -46,34 +46,20 @@
 Y filters. The bandpasses represent the total system throughput, including
 atmospheric transmission (airmass = 1.2) and the average
 instrumental response across the science CCDs</des-img>
-        <!--
-            <div>
-        <table style="width: 700px;" >
-        <caption align="bottom" style="text-align:justify">DR1 Standard Bandpasses for the DECam g, r, i, z and
-Y filters. The bandpasses represent the total system throughput, including
-atmospheric transmission (airmass = 1.2) and the average
-instrumental response across the science CCDs<br /></caption>
-        <tr><td>
-        <img width="600px" height="450px"
-                src="/static/images/dr1/dr1_bandpass.png"/>
-        </td></tr>
-    </table><br />
-            </div>
-        -->
-            <img width="auto" height="450px"
-                src="/static/images/dr1/DECam_chips.png"/>
+            <des-img src="/static/images/dr1/DECam_chips.png">
+            DECam focal plain chips layout. Each of the 62 rectangles repre-sents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red</des-img>
 
         <p><br /></p>
         <div class="fixup" id="observing_oper"></div>
         <h3 class="fixdown">Survey Operations  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>The target footprint of the DES wide-area and supernova surveys are shown in the Figure Below. The wide-area footprint shape was selected to obtain a large overlap with the South Pole Telescope survey (<a href="http://adsabs.harvard.edu/abs/2011PASP..123..568C">Carlstrom et al. 2011</a>) and Stripe 82 from SDSS (<a href="http://cdsads.u-strasbg.fr/abs/2009ApJS..182..543A">Abazajian et al. 2009</a>), plus a connection region to enhance overall calibration. Given the cosmological goals of the survey, DES avoids the Galactic plane to minimize stellar foregrounds and extinction from interstellar dust.<br/>The wide-field survey uses exposure times of 90s for <em>griz</em> and 45s for Y band, yielding a typical single-epoch depth at S/N = 10 of g = 23.57, r = 23.34, i = 22.78, i = 22.10 and Y = 20.69 (Morganson et al. 2018). The completed survey is expected to be roughly one magnitude deeper, through the coaddition of 10 images in each of the bands for a cumulative exposure time of 900 s in<em> griz</em> and 450 s in Y.</p>
-            <img  width="600px" height="auto" src="/static/images/dr1/dr1_fwhm_hist.png"/>
-            <img  width="600px" height="auto" src="/static/images/dr1/des_footprint_mbtpq.png"/>
+            <des-img src="/static/images/dr1/dr1_fwhm_hist.png"></des-img>
+            <des-img  width="600px" height="auto" src="/static/images/dr1/des_footprint_mbtpq.png"></des-img>
         <p>Nightly observations are divided between the wide-field and supernova (SN) surveys based on current environmental conditions and the data quality assessments of previous observations. Realtime optimization of survey strategy is accomplished through the ObsTac software on the mountain (<a href="http://adsabs.harvard.edu/abs/2014ASPC..485...77N">Neilsen &amp; Annis 2014</a>). ObsTac prioritizes the g, r, i, z and Y exposures accounting for moon position, sky brightness, current seeing, airmass, hour angle, and other observational characteristics. DES exposures are offset by roughly half the focal plane radius on average in successive visits to the same field, or “hex”, such that objects are observed by different CCDs in each “tiling”. This observing strategy minimizes inhomogeneities from the DECam geometry and enhances the relative photometric calibration. Blanco is an equatorial telescope and there is no rotation between dithered and/or repeated exposures.</p>
         <p>A single raw DECam exposure is ~0.5 GB in size, and DES collects ~300 science exposures per night. These data are transferred to NOAO for archiving (<a href="http://adsabs.harvard.edu/abs/2010ASPC..434..260F">Fitzpatrick 2010</a>) and to NCSA for further evaluation and processing by the <a href="http://processing">DESDM system</a> </p>
         <p>
-            <img width="600px" height="auto" src="/static/images/dr1/nimages_i.png"/>
-            <img width="600px" height="auto"  src="/static/images/dr1/dr1_nimages_hist.png"/>
+            <des-img src="/static/images/dr1/nimages_i.png"></des-img>
+            <des-img src="/static/images/dr1/dr1_nimages_hist.png"></des-img>
         </p>
 
         <p><br /></p>
