@@ -1,0 +1,55 @@
+<dom-module id="des-img">
+
+<template>
+<style include="shared-styles">
+
+:host {
+    width: 800px;
+       }
+.caption {
+    padding-left: 20px;
+    width: 90%;
+    font-size: 14px;
+    text-align: justify;
+    font-style: italic;
+}
+
+.localtable {
+    display: inline-block;
+}
+
+.localimg {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+}
+
+</style>
+<table class="localtable" >
+<caption align="bottom" class="caption"><slot></slot><br /></caption>
+<tr><td>
+<img class="localimg"  src="{{src}}"/>
+</td></tr>
+</table><br />
+</template>
+
+  <script>
+    class DesImg extends Polymer.Element {
+      static get is() { return 'des-img'; }
+     static get properties() {
+         return {
+             src: {
+                 type: String,
+                 value: ''
+             },
+             eid: {
+                 type: String,
+                 value: ''
+             }
+         };
+     }
+    }
+    window.customElements.define(DesImg.is, DesImg);
+  </script>
+
+</dom-module>
