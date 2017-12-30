@@ -1,0 +1,42 @@
+<dom-module id="des-dr1-faq">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+
+</style>
+
+
+
+
+<des-card heading ='FAQ'>
+    <div class=card-content>
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1Faq extends Polymer.Element {
+      static get is() { return 'des-dr1-faq'; }
+      _progress() {
+          this.$.observing_progress.scrollIntoView();
+      }
+      _intro() {
+          this.$.observing_intro.scrollIntoView();
+      }
+      _decam() {
+          this.$.observing_decam.scrollIntoView();
+      }
+      _oper() {
+          this.$.observing_oper.scrollIntoView();
+      }
+
+    }
+    window.customElements.define(DesDr1Faq.is, DesDr1Faq);
+  </script>
+
+</dom-module>
