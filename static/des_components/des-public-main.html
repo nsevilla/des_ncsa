@@ -9,6 +9,13 @@
       --app-menu-selected-bg-color: rgba(0, 0, 0, 0.00);
       }
 
+
+      .toolbar {
+          font-family: News Cycle, Helvetica Neue,Comic Sans, Arial;
+          font-size: 2.3rem;
+          text-decoration: none;
+      }
+
       .sublist1 {
           padding-left: 8px;
       }
@@ -61,11 +68,19 @@
         font-weight: normal;
         /*background-color : rgba(0, 0, 0, 0.05);*/
       }
-    @media only screen and (min-width: 1000px) {
+    @media only screen and (max-device-width: 800px) {
+        .toolbar {
+            font-size: 1.8rem;
+        }
+    }
+    @media only screen and (min-width: 800px) {
     .smallScreen {
         display: none;
     }}
-        @media all and (max-width: 1000px) {
+        @media all and (max-width: 800px) {
+        .toolbar {
+            font-size: 1.8rem;
+        }
     .wideScreen {
         display: none;
         }
@@ -79,12 +94,12 @@
         @-moz-document url-prefix() {
             #needindent{
                 text-indent: 20px;
-                font-size: 18px;
+                font-size: 1rem;
                 font-weight: normal;
             }
             #needsindent2{
                 text-indent: 45px;
-                font-size: 18px;
+                font-size: 1rem;
                 font-weight: normal;
             }
        }
@@ -124,7 +139,7 @@
           <app-toolbar >
             <paper-icon-button class = 'smallScreen' icon="icons:menu" on-tap="_openDrawer" ></paper-icon-button>
               <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image class = "wideScreen" style="width:63px; height:60px; margin-right:10px;" sizing="cover" src="/static/images/DESDM_logo.png"></iron-image></a>
-            <a href="/" style="text-decoration: none;color:white " ><paper-item main-title style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px; text-decoration: none">DES Data Management</paper-item></a>
+            <a href="/" style="text-decoration: none;color:white " ><paper-item main-title class="toolbar">DES Data Management</paper-item></a>
 
             <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
             <!-- This is good, we can add it later when with a proper function when ready
@@ -186,10 +201,13 @@
                 <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id=needsindent2 name="acquisition" href="[[rootPath]]releases/dr1/dr1-docs/acquisition" >Data Acquisition</a>
                   <a class="app-menu-item" id=needsindent2 name="processing" href="[[rootPath]]releases/dr1/dr1-docs/processing" >Processing</a>
+                  <a class="app-menu-item" id=needsindent2 name="quality" href="[[rootPath]]releases/dr1/dr1-docs/quality" >Data Quality</a>
+                  <a class="app-menu-item" id=needsindent2 name="known-issues" href="[[rootPath]]releases/dr1/dr1-docs/known-issues" >Known Issues</a>
                 </app-menu>
                 </app-submenu>
                   <a class="app-menu-item" id=needindent name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products" >Products</a>
                   <a class="app-menu-item" id=needindent name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access" >Data Access</a>
+                  <a class="app-menu-item" id=needindent name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq" >FAQ</a>
 
                 </app-menu>
                </app-submenu>
@@ -230,7 +248,10 @@
             <des-dr1-products name="dr1-products"></des-dr1-products>
             <des-dr1-soft name="processing"></des-dr1-soft>
             <des-dr1-observing name="acquisition"></des-dr1-observing>
+            <des-dr1-quality name="quality"></des-dr1-quality>
+            <des-dr1-known-issues name="known-issues"></des-dr1-known-issues>
             <des-dr1-access name="dr1-access"></des-dr1-access>
+            <des-dr1-faq name="dr1-faq"></des-dr1-faq>
           <!-- Other pages -->
           <des-help name="help"></des-help>
           <des-thankyou name="thanks"></des-thankyou>

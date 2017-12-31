@@ -1,0 +1,199 @@
+<dom-module id="des-dr1-quality">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+.fixup{
+    margin-top: -70px;
+}
+.fixdown{
+    margin-top: 70px;
+}
+
+</style>
+
+
+
+
+<div class="fixup" id="quality_top"></div>
+<div class="fixdown"></div>
+<des-card heading = 'Data Quality'>
+    <div class=card-content>
+        <ul>
+          <li>
+                <a href="javascript:void(0)" on-tap="_intro">Introduction</a>
+          </li>
+          <li>
+                <a href="javascript:void(0)" on-tap="_astro">Astrometry</a>
+          </li>
+          <li>
+                <a href="javascript:void(0)" on-tap="_photo">Photometry</a>
+          </li>
+          <li>
+                <a href="javascript:void(0)" on-tap="_flag">Flagged objects</a>
+          </li>
+          <li>
+                <a href="javascript:void(0)" on-tap="_depth">Depth</a>
+           </li>
+           <ul>
+
+              <li><a href="javascript:void(0)" on-tap="_flux">Flux Distribution</a></li>
+              <li><a href="javascript:void(0)" on-tap="_limit">Magnitude limit at fixed S/N</a></li>
+              <li><a href="javascript:void(0)" on-tap="_depth2">Depth from image properties</a></li>
+              <li><a href="javascript:void(0)" on-tap="_complete">Object detection completeness</a></li>
+            </ul>
+          <li>
+                <a href="javascript:void(0)" on-tap="_morph">Morphological object classification</a>
+           </li>
+        </ul>
+        <p>
+            <hr />
+          <br/>
+        </p>
+        <div class="fixup" id="quality_intro"></div>
+        <h3 class="fixdown">Introduction</h3>
+        <p>In this section, we provide a general assessment of the DR1 data quality including astrometric and photometric precision, imaging depth in terms of measurement signal-to-noise and object detection completeness, morphological object classification accuracy, and the identification and removal of likely artifacts.</p>
+        <p><br /> </p>
+        <div class="fixup" id="quality_astro"></div>
+        <h3 class="fixdown">Astrometry  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The DR1 astrometric solution is derived in two steps using SCAMP with 2MASS as the reference catalog (Morganson et al. 2018). At the single-epoch stage, we find internal astrometric uncertainties of 42, 36, 37, 39, and 56 mas in the g, r, i, z, and Y bands, respectively, as determined from the median of two-dimensional angular separations between repeated measurements of bright stars from individual exposures. Following the astrometric refinement step for image coaddition by SCAMP, the estimated internal astrometric precision for the coadd is ~30mas RMS (median over coadd tiles). The absolute astrometric uncertainty of the coadd is evaluated with respect to Gaia DR1 (<a href="http://adsabs.harvard.edu/abs/2016A%26A...595A...2G">Gaia Collaboration et al. 2016</a>). Figure 6 shows that the residuals are smallest in regions with with larger stellar densities closer to the Galactic plane (for comparison, see Figure 13), and the mean over the footprint is ~145 mas. Further details of astrometric calibration, including ongoing development using Gaia as a reference catalog, are provided in <a href="http://adsabs.harvard.edu/abs/2017PASP..129g4503B">Bernstein et al. (2017b</a>).</p>
+        <p><br /> </p>
+        <div class="fixup" id="quality_photo"></div>
+        <h3 class="fixdown">Photometry  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The relative top-of-the-atmosphere flux measurements for astronomical sources in DR1 have been calibrated using a forward modeling technique to account for both atmospheric and instrumental components of the total system throughput (FGCM; <a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B">Burke et al. 2017</a>). The parameters of the model were initially fit from observations taken in photometric conditions to establish a network of calibration stars that spans the full survey footprint. This network was subsequently used to refine the calibration of exposures taken in non-photometric conditions. Meanwhile, the absolute photometric calibration of DR1 is tied to the spectrophotometric Hubble CALSPEC standard star C26202 (<a href="http://adsabs.harvard.edu/abs/2014PASP..126..711B">Bohlin et al. 2014</a>) located in the SN field C3.<br/>Several hundred repeated measurements of C26202 in a variety of conditions yielded a set of small shifts (3 mmag) to place the DES photometry on the AB system. These shifts have been pre-applied to the DR1 zeropoints. The statistical uncertainties on these shifts are estimated to be 2.6, 2.9, 3.4, 2.5, and 4.5 mmag for the g, r, i, z, and Y bands, respectively. Additional sources of systematic uncertainty on the absolute photometric calibration could arise from uncertainty in the level of out-of-band light leakage and uncertainty in the synthetic photometry of C26202. We are currently undertaking observations and analysis of two additional HST CALSPEC standards to reduce the systematic uncertainty of the AB offsets.  We reproduce below several of the key results from <a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B">Burke et al. (2017)</a> regarding the relative photometric calibration.</p>
+        <p>The single-epoch photometric statistical precision (associated with random errors in the FGCM fit parameters) derived from repeated measurements of FGCM calibration stars is 7.3, 6.1, 5.9, 7.3, 7.8 mmag in the g, r, i, z, and Y bands, respectively. Under the assumption that successive tiled observations of the same fields yield largely independent model fit parameters (as would be expected from the widely spaced observations in DES), we estimate the statistical precision of coadd zeropoints by combining the fit results from overlapping exposures. The median coadd zeropoint statistical uncertainty for the g, r, i, z, and Y band is 5, 4, 5, 6, and 5 mmag, respectively. Figure 7 shows an example distribution for the i band. As a validation, we compare the photometric uniformity of DES DR1 to the space-based Gaia G-ban photometry. Variations in uniformity are found to be 6.6 mmag, as estimated from a Gaussian fit to the offset distribution between G<sub>Gaia</sub> and G<sub>pred</sub>(r) predicted from the DES r-band.</p>
+        <p>To account for extinction from interstellar dust, we include an additional column in the DR1 photometry tables for E(B - V) values from the reddening map of <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel et al. (1998)</a> (SFD98) at the location of each catalog object. The E(B -V) values were obtained using a linear interpolation of the Zenithal Equal Area projected map distributed by SFD98. We computed fiducial interstellar extinction coefficients, R<sub>b</sub>, for each band so that the corrections to the FGCM calibrated source magnitudes are A<sub>b</sub> = E(B -V)R<sub>b</sub>. Fiducial coefficients are derived using the <a href="http://adsabs.harvard.edu/abs/1999PASP..111...63F">Fitzpatrick (1999)</a> reddening law with R<sub>V</sub> = 3.1 and the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment to the original SFD98 reddening map (N = 0.78). Note that the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment is included in our fiducial reddening coefficients; these coefficients are intended to be used directly with E(B -V) values from the original SFD98 reddening map. We integrated over the DR1 Standard Bandpasses considering a fixed source spectrum that is constant in spectral flux density per unit wavelength, and adopted the low-extinction limit. The latter simplification is appropriate for DES, for which E(B-V) &lt; 0.1 mag over ~99% of the footprint. The resulting multiplicative coefficients for each band, R<sub>b</sub>, are 3.186, 2.140, 1.569, 1.196 and 1.048 in the g, r, i, z and Y bands, respectively. The DES science team continues to explore systematic uncertainties associated with interstellar extinction modeling.</p>
+        <p><br /> </p>
+        <div class="fixup" id="quality_flag"></div>
+        <h3 class="fixdown">Flagged objects  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The single-epoch object catalogs include a binary flag parameter, IMAFLAGS_ISO, that expresses the union of all mask bits present for pixels within the isophotal radius of each source (Morganson et al. 2018). For coadd objects, if any pixel is masked in all of the contributing exposures for a given band, the IMAFLAGS_ISO = 1 flag is set for that band. This flag is predominantly set for saturated objects and objects with missing data. We recommend a baseline quality criteria of IMAFLAGS_ISO = 0 (in the relevant bands) for most science applications since the majority of flagged objects have unreliable photometry. The DES DR1 catalog also includes other standard flags FLAGS provided by the SExtractor pipeline.</p>
+        <p><br /> </p>
+        <div class="fixup" id="quality_depth"></div>
+        <h3 class="fixdown">Depth  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The effective depth of the DES DR1 wide-field coadd catalog is dependent on the photometric measurement of interest and can be quantified through various approaches. Here we derive simple depth estimates from the flux distribution of cataloged objects, the magnitude corresponding to a fixed signal-to-noise threshold (S/N = 10), an aperture estimate from the input imaging, and object detection completeness. In general, the type of source and surface brightness must also be considered when evaluating the survey depth. The settings used for the source extraction and deblending steps of the DESDM pipeline allow for efficient detection of objects with S/N  ~10 in the <em>r +i+z</em> composite detection image (Morganson et al. 2018). At the bright end, saturation  effects start to become important at r &lt; 16. For even brighter magnitudes, the fraction of saturated objects increases until objects are no longer cataloged due to pixel-level masking applied during processing. For each of the depth studies considered here, we selected a sample of high-quality DR1 coadd objects with using FLAGS_[GRIZ] &lt; 4 and IMAFLAGS_ISO_[GRIZ] = 0. Below we describe these different approaches to estimate the depth of DR1. </p>
+        <p>
+          <br/>Table: DES DR1 coadd catalog depth estimates</p>
+        <table>
+          <colgroup>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Method</th>
+              <th>g</th>
+              <th>r</th>
+              <th>i</th>
+              <th>z</th>
+              <th>Y</th>
+            </tr>
+            <tr>
+              <td>Maximum in number counts (MAG_AUTO)</td>
+              <td>24.32</td>
+              <td>23.89</td>
+              <td>23.41</td>
+              <td>22.09</td>
+              <td>21.40</td>
+            </tr>
+            <tr>
+              <td>Imaging depth from mangle (MAG_APER_4)</td>
+              <td>24.28</td>
+              <td>23.95</td>
+              <td>23.34</td>
+              <td>22.63</td>
+              <td>21.38</td>
+            </tr>
+            <tr>
+              <td>Measured with S/N = 10 (MAG_AUTO)</td>
+              <td>23.52</td>
+              <td>23.10</td>
+              <td>22.51</td>
+              <td>21.81</td>
+              <td>20.61</td>
+            </tr>
+            <tr>
+              <td>Detection completeness of 95% (MAG_AUTO)</td>
+              <td>23.72</td>
+              <td>23.35</td>
+              <td>22.88</td>
+              <td>22.25</td>
+              <td>...</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><br /> </p>
+        <div class="fixup" id="quality_flux"></div>
+        <h5 class="fixdown">Flux Distribution</h5>
+        <p>The distribution of astronomical sources is weighted towards low-flux sources. An faint limit on the source detection threshold can be estimated from the mode of the number counts distribution of sources as a function of magnitude. Figure 9 shows the number counts of coadd objects as a function of MAG_AUTO in all five DES bands. The mode of the MAG_AUTO distribution is 24.32, 23.89, 23.41, 22.09, 21.40 in the g, r, i, z, and Y bands, respectively. No restriction were placed on source morphology (i.e., stars vs. galaxies) for this estimate.</p>
+        <p><br /> </p>
+        <div class="fixup" id="quality_limit"></div>
+        <h5 class="fixdown">Magnitude limit at fixed signal-to-noise</h5>
+        <p>The magnitude limit corresponding to a fixed signal-to-noise for a given photometric measurement (e.g., MAG_AUTO) can be empirically determined from the distribution of magnitude uncertainties as a function of magnitude (<a href="http://adsabs.harvard.edu/abs/2015arXiv150900870R">Rykoff et al. 2015</a>). SExtractor provides an estimate of the photometric uncertainty through the MAGERR quantities, which are estimated from the fluctuations of the background around the sources. These are related to signal-to-noise, δF/F, via the differentiation of Pogson’s law (<a href="http://adsabs.harvard.edu/abs/1856MNRAS..17...12P">Pogson 1856</a>):</p>
+        <p>
+          <br/>
+         <img src="http://latex.codecogs.com/gif.latex?\delta m = \frac{-2.5}{\ln 10} \frac{\delta F}{F}."/>
+        </p>
+        <p>We summarize in Table 2 the characteristic S/N = 10 thresholds for MAG_AUTO corresponding to δF/F  ~0.1 in each of the g, r, i, z, and Y bands. Figure 10 shows the MAG_AUTO distribution for DES DR1 catalog objects with 0.10837 &lt; MAGERR_AUTO &lt; 0.10877. The spread in these distributions represents comes from dependence of S/N on source properties (e.g., surface brightness) and survey non-uniformity.</p>
+        <p><br /> </p>
+        <div class="fixup" id="quality_depth2"></div>
+        <h5 class="fixdown">Depth from image properties</h5>
+        <p>It is also possible to estimate the DES DR1 imaging depth using mangle (<a href="http://adsabs.harvard.edu/abs/2004MNRAS.349..115H">Hamilton &amp; Tegmark 2004</a>, <a href="http://adsabs.harvard.edu/abs/2008MNRAS.387.1391S">Swanson et al. 2008</a>), which generates a vectorized map of the survey coverage accounting for the focal plane geometry and imaging artifacts (i.e., bright star masks, bleed trails, satellite trails) (<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>, Morganson et al. 2018). The mangle processing produces a coadd weight map from a weighted sum of the single-epoch input images. This weight was converted to a the S/N = 10 limiting magnitude for a 200 diameter aperture, corresponding to the MAG_APER_4 quantity measured by SExtractor (for details, see <a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). The median limiting magnitude in the g, r, i, z, and Y bands across the DES footprint is 23.52, 23.10, 22.51, 21.81, 20.61, respectively (Figure 10).</p>
+        <p><br /> </p>
+        <div class="fixup" id="quality_complete"></div>
+        <h5 class="fixdown">Object detection completeness</h5>
+        <p>Another measure of effective imaging depth is the object detection completeness relative to deeper imaging data. We evaluated the detection completeness of DES DR1 through a comparison to public CFHTLenS data (<a href="http://adsabs.harvard.edu/abs/2013MNRAS.433.2545E">Erben et al. 2013</a>) using an overlap region centered on (Ra;Dec) = (34.5;-5.4) consisting of 9 CFHTLenS fields in the W1 patch. The CFHTLens 5σ magnitude limits in a 2'' aperture for g', r', i', y' and z' are 25.58, 24.88, 24.54, 24.71 and 23.46, respectively. To ensure full coverage in both surveys, we restricted the analysis to regions with CFHTLenS image mask value MASK = 0 and DES coverage fraction &gt; 99% in the intersection of the griz bands (see <a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). The effective area of overlap in both surveys including masking is 6.0 sq. deg.</p>
+        <p>Object matching is performed using a 1'' radius and we require a robust flux measurement in the respective DES band (15 &lt; MAG_AUTO &lt; 30) that is roughly consistent with that of CFHTLenS (within 1 mag) for an object to count as “detected” in DES DR1.</p>
+        <p>The DES DR1 detection efficiency is defined as the fraction of CFHTLenS objects in a given flux interval that have a matched DES object passing the baseline quality cuts listed above, and is expressed in the DES photometric system using converted flux measurement from CFHTLenS. The resulting detection efficiency curves are plotted in Figure 11. DES DR1 detection efficiencies are only plotted for the magnitude range brighter than the typical S/N = 5 limiting magnitude of CFHTLenS. The 95% completeness magnitude thresholds obtained from this test in the g, r, i, and z bands are 23.72, 23.35, 22.88, and 22.25, respectively (Table 1). CFHTLenS does not include comparable Y-band coverage.</p>
+        <p>Using the same baseline quality selection criteria of FLAGS_[GRIZ] &lt; 4 and IMAFLAGS_ISO_[GRIZ] = 0, we find that in each of <em>griz</em> bands, that  roughly less than 1% of DES objects with MAG_AUTO greater than 20 and less than the typical S/N = 5 limiting magnitude of CFHTLenS lack a matched counterpart in CFHTLenS (Figure 11). This suggests that contamination from spurious objects in DES DR1 is also roughly 1%.</p>
+
+        <p><br /> </p>
+        <div class="fixup" id="quality_morph"></div>
+        <h3 class="fixdown">Morphological object classification  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>A basic selection on object size relative to the PSF can be used to separate samples of spatially extended galaxies from point-like stars and quasars. Accurate object classification becomes challenging for ground based imaging surveys at faint magnitudes, and accordingly, optimal use of morphological, color, and temporal information is an active area of research (e.g., <a href="http://adsabs.harvard.edu/abs/2012ApJ...760...15F">Fadely et al. 2012</a>,<a href="http://adsabs.harvard.edu/abs/2013A%26A...557A..16M"> Małek et al. 2013</a>, <a href="http://adsabs.harvard.edu/abs/2015MNRAS.453..507K">Kim et al. 2015</a>, <a href="http://adsabs.harvard.edu/abs/2017MNRAS.464.4463K">Kim &amp; Brunner 2017</a>). Several object classification schemes have been applied to DES data for a variety of science cases (e.g., <a href="http://adsabs.harvard.edu/abs/2013arXiv1306.5236S">Soumagnac et al. 2013</a>, <a href="http://adsabs.harvard.edu/abs/2015ApJ...801...73C">Chang et al. 2015</a>, <a href="http://adsabs.harvard.edu/abs/2015MNRAS.454.3952R">Reed et al. 2015</a>, <a href="http://adsabs.harvard.edu/abs/2015MNRAS.454.3952R">Drlica-Wagner et al. 2017</a>).<br/>The most common classification scheme makes use of the SExtractor SPREAD_MODEL, which compares the fit of a local PSF model to a slightly extended exponential disk model (<a href="http://adsabs.harvard.edu/abs/2012ApJ...757...83D">Desai et al. 2012</a>). Below we show a example using SPREAD_MODEL for object classification in a way that is suitable for both stellar and extragalactic science.</p>
+        <p>We define a new variable EXTENDED_COADD as the independent sum of several Boolean conditions:</p><br />
+
+
+        <p>EXTENDED_COADD =<br/>((SPREAD_MODEL_I+ 3 &times; SPREADERR_MODEL_I) &gt; 0.005)<br/>+ ((SPREAD_MODEL_I+SPREADERR_MODEL_I) &gt; 0.003)<br/>+ ((SPREAD_MODEL_I-SPREADERR_MODEL_I) &gt; 0.003)</p>
+        <p>
+          <br/>Note that EXTENDED_COADD is defined by a sequence of boolean conditions that, when true, add a unit to the classifier. This classifier results in a value of 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies).  </p>
+        <p>We evaluate the performance of the example classifier above using three regions in the main body of the DES footprint that overlap fields from HSC-SSP DR1 (<a href="http://adsabs.harvard.edu/abs/2017arXiv170208449A">Aihara et al. 2017b</a>) with typical seeing in the i-band FWHM ~ 0.7'': SXDS (Ultra Deep layer), DEEP2_3 (Deep layer), and portions of VVDS (Wide layer). The areal overlap between these HSCSSP data sets and DES is ~ 18 sq. deg. The HSC-SSP data is of sufficient depth and image quality that a distinct stellar locus is clearly visible in the HSC concentration parameter IMAG_PSF-ICMODEL_MAG to an i-band magnitude of ~24.0. We choose an interval of EXTENDED_COADD values to select stellar or galactic samples with a balance of classification efficiency and purity appropriate for different science cases (Figure 12).</p>
+        <p>We recommend using quantities based on SExtractor SPREAD_MODEL for morphological classification in DR1. Although the SExtractor quantity CLASS_STAR has been commonly used in the past, we find that SPREAD_MODEL based classifiers consistently outperform CLASS_STAR, as exemplified by the receiver operating characteristic (ROC) curve shown in Figure 14. The ROC curves are generated by performing a simple scan of threshold values for each of SExtractor quantities, and using the HSC-SSP classifications described above as a reference. Classifiers based on the weighted averaged SPREAD_MODEL from single epoch detections, WAVG_SPREAD_MODEL, are expected to be more robust for objects that are bright enough to be detected in single-epoch imaging (see Section 4.6). It is expected that classifiers using alternative bands and/or combinations of object measurements will be more appropriate for specific science cases.</p>
+        <p>
+          <br/>
+        </p>
+        <p>
+          <br/>
+        </p>
+
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1Quality extends Polymer.Element {
+      static get is() { return 'des-dr1-quality'; }
+      _intro() {this.$.quality_intro.scrollIntoView();}
+      _astro() {this.$.quality_astro.scrollIntoView();}
+      _photo() {this.$.quality_photo.scrollIntoView();}
+      _flag() {this.$.quality_flag.scrollIntoView();}
+      _depth() {this.$.quality_depth.scrollIntoView();}
+      _flux() {this.$.quality_flux.scrollIntoView();}
+      _limit() {this.$.quality_limit.scrollIntoView();}
+      _depth2() {this.$.quality_depth2.scrollIntoView();}
+      _complete() {this.$.quality_complete.scrollIntoView();}
+      _morph() {this.$.quality_morph.scrollIntoView();}
+      _top() {this.$.quality_top.scrollIntoView();}
+
+    }
+    window.customElements.define(DesDr1Quality.is, DesDr1Quality);
+  </script>
+
+</dom-module>

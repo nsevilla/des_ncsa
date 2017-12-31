@@ -5,15 +5,57 @@
 
 <style include="shared-styles">
 :host {
-       display: block;
        padding: 10px;
-       }
+        }
 
 </style>
+<!-- FIGURES
+-->
+<paper-dialog id="dialogfig1">
+            <des-img-big src="/static/images/dr1/DECam_chips.png">
+            Figure 1. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+            <des-img-big  src="/static/images/dr1/dr1_bandpass.png">
+            Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
+            Y filters. The bandpasses represent the total system throughput, including
+            atmospheric transmission (airmass = 1.2) and the average
+            instrumental response across the science CCDs</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig3">
+            <des-img-big src="/static/images/dr1/des_footprint_mbtpq.png">Figure 3. A plot of the DES survey area in celestial coordinates. The main 5000 sq. deg. survey footprint for DES is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b ±10 deg. The Large and Small Magellanic Clouds are indicated in gray.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig4">
+            <des-img-big src="/static/images/dr1/dr1_fwhm_hist.png">Figure 4. Distribution of PSF FHWM derived from the DECam single images in the DR1 data.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig5">
+            <des-img-big src="/static/images/dr1/dr1_nimages_hist.png">Figure 5. Distribution of overlapping images in each of the<em> grizY</em> bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig6">
+            <des-img-big src="/static/images/dr1/nimages_i.png">Figure 6.  Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 deg.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<!--   END FIGURES -->
 
-
-
-
+<div class="fixup" id="observing_top"></div>
+<div class="fixdown"></div>
 <des-card heading = 'Data Acquisition'>
     <div id="observing_card" class=card-content>
 
@@ -31,40 +73,55 @@
                 <a href="javascript:void(0)" on-tap="_progress">Survey Progress</a>
             </li>
         </ul>
+        <hr />
+        <p><br /></p>
+        <div class="fixup" id="observing_intro"></div>
+        <h3 class="fixdown">Introduction  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>DR1 is composed of data taken during 345 nights spread over the first three years of DES operations from 2013 August 15 to 2016 February 12.<br/>In this section, we briefly describe the characteristics of the DECam instrument and the DES observation strategy to provide context for DR1.<br/>We point the reader to other DES publications for further details on the technical aspects summarized here (i.e. <a href="http://adsabs.harvard.edu/abs/2014SPIE.9149E..0VD">Diehl et al. 2014</a>, <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>,<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D"> Drlica-Wagner et al. 2017</a>, Morganson et al. 2018).</p>
+        <p><br /></p>
+        <div class="fixup" id="observing_decam"></div>
+        <h3 class="fixdown">DECam  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+        <p>DECam is a wide field-of-view (3 sq. deg.) mosaic camera composed of 62 science CCDs  which are each readout by two amplifiers (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>). (See <a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a>). DECam has 8 additional corner CCDs for guiding, focusing and alignment. These 8 CCDs are not reduced or analyzed in our pipelines. In addition, the routines described here are not used to process CCD 61, which failed in 2012. Similarly, CCD 2 was not processed between November 2013 and December 2016, during which time it was not functional. Amplifier A of CCD 31 has an unpredictable, time-variable gain and is not processed or used for DES science. Amplifier B of CCD 31 functions normally and is processed. The rest of the science CCDs are performing within specifications and are usable for science.</p>
+        <p>The corrector system and pixel size provide an average plate scale of 0.263 arcsec per pixel. The DES wide-area survey observes five broadband filters, g, r, i, z, Y (see  <a href="javascript:void(0)" on-tap="_dialog" data-item="2"/>Figure 2</a>), and the standard bandpasses for these filters are included as part of DR1.<br/>The DES filters are very similar to their analogously-named counterparts from other surveys. Uniquely, the DES z band has greater sensitivity at longer wavelengths than the SDSS z band and overlaps with the DES Y band.Additional details, including construction, installation, and a description of DECam subsystems and interfaces are provided in  (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>). </p>
+        <p>
+          <br/>
+        </p>
+
+
+            <des-img src="/static/images/dr1/DECam_chips.png">
+            Figure 1. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img>
+
+            <des-img  src="/static/images/dr1/dr1_bandpass.png">
+            Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
+            Y filters. The bandpasses represent the total system throughput, including
+            atmospheric transmission (airmass = 1.2) and the average
+            instrumental response across the science CCDs</des-img>
 
         <p><br /></p>
-        <div style="margin-top:-70px" id="observing_intro"></div>
-        <h3 style="margin-top:70px">Introduction</h3>
-        <p>DR1 is composed of data taken during 345 nights spread over the first three years of DES operations from 2013 August 15 to 2016 February 12.<br/>In this section, we briefly describe the characteristics of the DECam instrument and the DES observation strategy to provide context for DR1.<br/>We point the reader to other DES publications for further details on the technical aspects summarized here (i.e. Diehl et al. 2014, <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>,<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D"> Drlica-Wagner et al. 2017</a>, Morganson et al. 2018).</p>
-        <p><br /></p>
-        <div style="margin-top:-70px" id="observing_decam"></div>
-        <h3 style="margin-top:70px">DECam</h3>
-        <p>DECam is a wide field-of-view (3 sq. deg.) mosaic camera composed of 62 science CCDs (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>).<br/>The corrector system and pixel size provide an average plate scale of 0.263 arcsec per pixel.<br/>The DES wide-area survey observes five broadband filters, g, r, i, z, Y (see figure below), and the standard bandpasses for these filters are included as part of DR1.<br/>The DES filters are very similar to their analogously-named counterparts from other surveys. Uniquely, the DES z band has greater sensitivity at longer wavelengths than the SDSS z band and overlaps with the DES Y band.Additional details, including construction, installation, and a description of DECam subsystems and interfaces are provided in  (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>).</p>
-        <p>
-        <img width="600px" height="450px"
-                src="/static/images/dr1/dr1_bandpass.png"/>
-        <img width="auto" height="450px"
-                src="/static/images/dr1/DECam_chips.png"/>
-        </p>
-        <div style="margin-top:-70px" id="observing_oper"></div>
-        <h3 style="margin-top:70px">Survey Operations</h3>
-        <p>The target footprint of the DES wide-area and supernova surveys are shown in the Figure Below. The wide-area footprint shape was selected to obtain a large overlap with the South Pole Telescope survey (<a href="http://adsabs.harvard.edu/abs/2011PASP..123..568C">Carlstrom et al. 2011</a>) and Stripe 82 from SDSS (<a href="http://cdsads.u-strasbg.fr/abs/2009ApJS..182..543A">Abazajian et al. 2009</a>), plus a connection region to enhance overall calibration. Given the cosmological goals of the survey, DES avoids the Galactic plane to minimize stellar foregrounds and extinction from interstellar dust.<br/>The wide-field survey uses exposure times of 90s for <em>griz</em> and 45s for Y band, yielding a typical single-epoch depth at S/N = 10 of g = 23.57, r = 23.34, i = 22.78, i = 22.10 and Y = 20.69 (Morganson et al. 2018). The completed survey is expected to be roughly one magnitude deeper, through the coaddition of 10 images in each of the bands for a cumulative exposure time of 900 s in<em> griz</em> and 450 s in Y.</p>
-            <img  width="600px" height="auto" src="/static/images/dr1/dr1_fwhm_hist.png"/>
-            <img  width="600px" height="auto" src="/static/images/dr1/des_footprint_mbtpq.png"/>
-        <p>Nightly observations are divided between the wide-field and supernova (SN) surveys based on current environmental conditions and the data quality assessments of previous observations. Realtime optimization of survey strategy is accomplished through the ObsTac software on the mountain (<a href="http://adsabs.harvard.edu/abs/2014ASPC..485...77N">Neilsen &amp; Annis 2014</a>). ObsTac prioritizes the g, r, i, z and Y exposures accounting for moon position, sky brightness, current seeing, airmass, hour angle, and other observational characteristics. DES exposures are offset by roughly half the focal plane radius on average in successive visits to the same field, or “hex”, such that objects are observed by different CCDs in each “tiling”. This observing strategy minimizes inhomogeneities from the DECam geometry and enhances the relative photometric calibration. Blanco is an equatorial telescope and there is no rotation between dithered and/or repeated exposures.</p>
+        <div class="fixup" id="observing_oper"></div>
+        <h3 class="fixdown">Survey Operations  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p>The target footprint of the DES wide-area and supernova surveys are shown in the <a href="javascript:void(0)" on-tap="_dialog" data-item="3"/>Figure 3</a> The wide-area footprint shape was selected to obtain a large overlap with the South Pole Telescope survey (<a href="http://adsabs.harvard.edu/abs/2011PASP..123..568C">Carlstrom et al. 2011</a>) and Stripe 82 from SDSS (<a href="http://cdsads.u-strasbg.fr/abs/2009ApJS..182..543A">Abazajian et al. 2009</a>), plus a connection region to enhance overall calibration. Given the cosmological goals of the survey, DES avoids the Galactic plane to minimize stellar foregrounds and extinction from interstellar dust.<br/>The wide-field survey uses exposure times of 90s for <em>griz</em> and 45s for Y band, yielding a typical single-epoch depth at S/N = 10 of g = 23.57, r = 23.34, i = 22.78, i = 22.10 and Y = 20.69 (Morganson et al. 2018). The completed survey is expected to be roughly one magnitude deeper, through the coaddition of 10 images in each of the bands for a cumulative exposure time of 900 s in<em> griz</em> and 450 s in Y.</p>
+
+            <des-img src="/static/images/dr1/des_footprint_mbtpq.png">Figure 3. A plot of the DES survey area in celestial coordinates. The main 5000 sq. deg. survey footprint for DES is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b ±10 deg. The Large and Small Magellanic Clouds are indicated in gray.</des-img>
+            <des-img src="/static/images/dr1/dr1_fwhm_hist.png">Figure 4. Distribution of PSF FHWM derived from the DECam single images in the DR1 data.</des-img>
+
+<p>Nightly observations are divided between the wide-field and supernova (SN) surveys based on current environmental conditions and the data quality assessments of previous observations. Realtime optimization of survey strategy is accomplished through the ObsTac software on the mountain (<a href="http://adsabs.harvard.edu/abs/2014ASPC..485...77N">Neilsen &amp; Annis 2014</a>). ObsTac prioritizes the g, r, i, z and Y exposures accounting for moon position, sky brightness, current seeing, airmass, hour angle, and other observational characteristics. DES exposures are offset by roughly half the focal plane radius on average in successive visits to the same field, or “hex”, such that objects are observed by different CCDs in each “tiling”. This observing strategy minimizes inhomogeneities from the DECam geometry and enhances the relative photometric calibration. Blanco is an equatorial telescope and there is no rotation between dithered and/or repeated exposures.</p>
+
         <p>A single raw DECam exposure is ~0.5 GB in size, and DES collects ~300 science exposures per night. These data are transferred to NOAO for archiving (<a href="http://adsabs.harvard.edu/abs/2010ASPC..434..260F">Fitzpatrick 2010</a>) and to NCSA for further evaluation and processing by the <a href="http://processing">DESDM system</a> </p>
         <p>
-            <img width="600px" height="auto" src="/static/images/dr1/nimages_i.png"/>
-            <img width="600px" height="auto"  src="/static/images/dr1/dr1_nimages_hist.png"/>
+            <des-img src="/static/images/dr1/dr1_nimages_hist.png">Figure 5. Distribution of overlapping images in each of the<em> grizY</em> bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images.</des-img>
+            <des-img src="/static/images/dr1/nimages_i.png">Figure 6.  Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 deg.</des-img>
         </p>
 
         <p><br /></p>
-        <div style="margin-top:-70px" id="observing_progress"></div>
-        <h3 style="margin-top:70px">Survey Progress through DR1</h3>
+        <div class="fixup" id="observing_progress"></div>
+        <h3 class="fixdown">Survey Progress through DR1  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p>
   <br/>
 </p>
-<p>Between Y1 and Y3, 38,850 wide-field exposures passed baseline survey quality thresholds (Morganson et al. 2018,<br/>section 4.7) and are included in coadd processing by DESDM (Morganson et al. 2018). The total number of exposures including the SN fields during the Y1–Y3 period was 61,828.<br/>The median airmass of DR1 survey-quality exposures was 1.22, with&gt;99% of exposures taken at airmass&lt;1.4. Meanwhile, the median delivered seeing in the g, r, i, z, and Y bands was 1.119, 0.958, 0.880, 0.836, and 0.904 arcsec, respectively (Figure 3). DES DR1 typically has 3 to 5 overlapping exposures in each of the grizY bands for each region of the DES footprint (Figure 4). As an example, the number of overlapping i-band exposures is shown in Figure 5.</p>
+<p>Between Y1 and Y3, 38,850 wide-field exposures passed baseline survey quality thresholds (Morganson et al. 2018,<br/>section 4.7) and are included in coadd processing by DESDM (Morganson et al. 2018). The total number of exposures including the SN fields during the Y1–Y3 period was 61,828.<br/>The median airmass of DR1 survey-quality exposures was 1.22, with&gt;99% of exposures taken at airmass&lt;1.4. Meanwhile, the median delivered seeing in the g, r, i, z, and Y bands was 1.119, 0.958, 0.880, 0.836, and 0.904 arcsec, respectively (<a href="javascript:void(0)" on-tap="_dialog" data-item="4"/>Figure 4</a>). DES DR1 typically has 3 to 5 overlapping exposures in each of the grizY bands for each region of the DES footprint (<a href="javascript:void(0)" on-tap="_dialog" data-item="5"/>Figure 5</a>). As an example, the number of overlapping i-band exposures is shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="6"/>Figure 6</a>.</p>
 <p>The total sky-coverage of DR1 was estimated using maps of the individual image coverage generated by mangle (<a href="http://adsabs.harvard.edu/abs/2004MNRAS.349..115H">Hamilton &amp; Tegmark 2004</a>, <a href="http://adsabs.harvard.edu/abs/2008MNRAS.387.1391S">Swanson et al. 2008</a>) and converted to HEALPix (<a href="http://adsabs.harvard.edu/abs/2005ApJ...622..759G">Górski et al. 2005</a>) maps with spatial resolution comparable to the size of gaps between individual CCDs (NSIDE = 4096, ~0.86 arcmin) (<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 201</a>7). When requiring at least one exposure in a given band, the areal coverage of each individual bands is g = 5224, r = 5231, i = 5230, z = 5234, and Y = 5227 sq. deg.. When requiring at least one exposure in all of the <em>grizY</em> bands, the DR1 footprint area is 5186 sq. deg.. These areal coverage numbers do not account for regions that are masked around bright stars or due to other imaging artifacts, which decrease these total areal coverage by ~200 sq. deg. Note also that we are not releasing mangle products for DR1. Instead, we are providing HEALPix index for all the objects at different resolutions as well as a Tabulated HEALPix Map with NSIDE=32 for the footprint. </p>
 <p>
   <br/>
@@ -76,18 +133,17 @@
 <script>
     class DesDr1Observing extends Polymer.Element {
       static get is() { return 'des-dr1-observing'; }
-      _progress() {
-          this.$.observing_progress.scrollIntoView();
-      }
-      _intro() {
-          this.$.observing_intro.scrollIntoView();
-      }
-      _decam() {
-          this.$.observing_decam.scrollIntoView();
-      }
-      _oper() {
-          this.$.observing_oper.scrollIntoView();
-      }
+      _progress() {this.$.observing_progress.scrollIntoView();}
+      _intro() {this.$.observing_intro.scrollIntoView();}
+      _decam() {this.$.observing_decam.scrollIntoView();}
+      _oper() {this.$.observing_oper.scrollIntoView();}
+      _top() {this.$.observing_top.scrollIntoView();}
+      _dialog(e) {
+          var temp = e.target.dataset.item;
+          //this.$.dialogfig.open();
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+
+          }
 
     }
     window.customElements.define(DesDr1Observing.is, DesDr1Observing);

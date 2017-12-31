@@ -1,0 +1,33 @@
+<dom-module id="des-title">
+
+<template>
+<style include="shared-styles">
+</style>
+
+
+<p><br /></p>
+<div style="margin-top:-70px" ></div>
+<h3 style="margin-top:70px"><slot></slot></h3>
+
+</template>
+
+  <script>
+    class DesTitle extends Polymer.Element {
+      static get is() { return 'des-title'; }
+     static get properties() {
+         return {
+             heading: {
+                 type: String,
+                 value: ''
+             },
+             eid: {
+                 type: String,
+                 value: ''
+             }
+         };
+     }
+    }
+    window.customElements.define(DesTitle.is, DesTitle);
+  </script>
+
+</dom-module>

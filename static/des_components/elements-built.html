@@ -8,6 +8,7 @@
 <!-- OTHER ELEMENTS-->
 <!-- DES ELEMENTS -->
 <!-- DES PAGES -->
+<!-- DES UTILS -->
 <!-- DES SVA1 -->
 <!-- DES DR1 -->
 </head><body><div hidden="" by-vulcanize=""><!--
@@ -10267,23 +10268,38 @@ Or, in a Polymer element, you can include a meta in your template:
         color: #555;
         border-radius: 50%;
         background: #ddd;
-        font-size: 30px;
+        font-size: 1.7rem;
         line-height: 64px;
         margin: 0 auto;
       }
 
 
+.fixup{
+    margin-top: -84px;
+}
+.fixdown{
+    margin-top: 84px;
+}
+
+
       h1,h2,h3,h4 {
 
         color: #212121;
-        font-size: 22px;
+        font-size: 1.35rem;
         font-family:Lato,"Helvetica Neue","Comic Sans MS", Arial ,monospace;
         font-weight: 400;
 
       }
 
-      p, .card-content{
-        font-size:18px;
+      h5 {
+        color: black;
+        font-size: 1.1rem;
+      }
+
+
+
+      .card-content{
+        font-size: 1rem;
         font-family: Roboto, "Helvetica Neue",serif;
         font-weight:400;
       }
@@ -10333,7 +10349,7 @@ Or, in a Polymer element, you can include a meta in your template:
       }
 
       .drawer-list{
-        font-size: 20px;
+        font-size: 1.1rem;
         font-weight:normal;
         line-height: 24px;
 
@@ -10354,21 +10370,16 @@ Or, in a Polymer element, you can include a meta in your template:
      }
 
     .app-menu-item{
-        font-size: 18px;
+        font-size: 1rem;
         font-family: Roboto, "Helvetica Neue", serif;
         font-weight: 400;
         background: transparent;
       }
 
-      p{
-      font-size: 18px;
-        font-family: Roboto, "Helvetica Neue", serif;
-        font-weight:400;
-        margin: 0 auto;
 
       }
       li{
-        font-size: 18px;
+        font-size: 1rem;
         font-family: Roboto, "Helvetica Neue", serif;
         font-weight:400;
         margin: 0 auto;
@@ -25178,260 +25189,61 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 --><!--
-Material design: [Cards](https://www.google.com/design/spec/components/cards.html)
+Material design: [Dialogs](https://www.google.com/design/spec/components/dialogs.html)
 
-`paper-card` is a container with a drop shadow.
+`<paper-dialog>` is a dialog with Material Design styling and optional animations when it is
+opened or closed. It provides styles for a header, content area, and an action area for buttons.
+You can use the `<paper-dialog-scrollable>` element (in its own repository) if you need a scrolling
+content area. To autofocus a specific child element after opening the dialog, give it the `autofocus`
+attribute. See `Polymer.PaperDialogBehavior` and `Polymer.IronOverlayBehavior` for specifics.
 
-Example:
+For example, the following code implements a dialog with a header, scrolling content area and
+buttons. Focus will be given to the `dialog-confirm` button when the dialog is opened.
 
-    <paper-card heading="Card Title">
-      <div class="card-content">Some content</div>
-      <div class="card-actions">
-        <paper-button>Some action</paper-button>
+    <paper-dialog>
+      <h2>Header</h2>
+      <paper-dialog-scrollable>
+        Lorem ipsum...
+      </paper-dialog-scrollable>
+      <div class="buttons">
+        <paper-button dialog-dismiss>Cancel</paper-button>
+        <paper-button dialog-confirm autofocus>Accept</paper-button>
       </div>
-    </paper-card>
-
-Example - top card image:
-
-    <paper-card heading="Card Title" image="/path/to/image.png" alt="image">
-      ...
-    </paper-card>
-
-### Accessibility
-
-By default, the `aria-label` will be set to the value of the `heading` attribute.
+    </paper-dialog>
 
 ### Styling
 
-The following custom properties and mixins are available for styling:
+See the docs for `Polymer.PaperDialogBehavior` for the custom properties available for styling
+this element.
 
-Custom property | Description | Default
-----------------|-------------|----------
-`--paper-card-background-color` | The background color of the card | `--primary-background-color`
-`--paper-card-header-color` | The color of the header text | `#000`
-`--paper-card-header` | Mixin applied to the card header section | `{}`
-`--paper-card-header-text` | Mixin applied to the title in the card header section | `{}`
-`--paper-card-header-image` | Mixin applied to the image in the card header section | `{}`
-`--paper-card-header-image-text` | Mixin applied to the text overlapping the image in the card header section | `{}`
-`--paper-card-content` | Mixin applied to the card content section| `{}`
-`--paper-card-actions` | Mixin applied to the card action section | `{}`
-`--paper-card` | Mixin applied to the card | `{}`
+### Animations
+
+Set the `entry-animation` and/or `exit-animation` attributes to add an animation when the dialog
+is opened or closed. See the documentation in
+[PolymerElements/neon-animation](https://github.com/PolymerElements/neon-animation) for more info.
+
+For example:
+
+    <link rel="import" href="components/neon-animation/animations/scale-up-animation.html">
+    <link rel="import" href="components/neon-animation/animations/fade-out-animation.html">
+
+    <paper-dialog entry-animation="scale-up-animation"
+                  exit-animation="fade-out-animation">
+      <h2>Header</h2>
+      <div>Dialog body</div>
+    </paper-dialog>
+
+### Accessibility
+
+See the docs for `Polymer.PaperDialogBehavior` for accessibility features implemented by this
+element.
 
 @group Paper Elements
-@element paper-card
+@element paper-dialog
+@hero hero.svg
 @demo demo/index.html
 -->
 
-<dom-module id="paper-card" assetpath="../bower_components/paper-card/">
-  <template>
-    <style include="paper-material-styles">
-      :host {
-        display: inline-block;
-        position: relative;
-        box-sizing: border-box;
-        background-color: var(--paper-card-background-color, var(--primary-background-color));
-        border-radius: 2px;
-
-        @apply --paper-font-common-base;
-        @apply --paper-card;
-      }
-
-      /* IE 10 support for HTML5 hidden attr */
-      [hidden] {
-        display: none !important;
-      }
-
-      .header {
-        position: relative;
-        border-top-left-radius: inherit;
-        border-top-right-radius: inherit;
-        overflow: hidden;
-
-        @apply --paper-card-header;
-      }
-
-      .header iron-image {
-        display: block;
-        width: 100%;
-        --iron-image-width: 100%;
-        pointer-events: none;
-
-        @apply --paper-card-header-image;
-      }
-
-      .header .title-text {
-        padding: 16px;
-        font-size: 24px;
-        font-weight: 400;
-        color: var(--paper-card-header-color, #000);
-
-        @apply --paper-card-header-text;
-      }
-
-      .header .title-text.over-image {
-        position: absolute;
-        bottom: 0px;
-
-        @apply --paper-card-header-image-text;
-      }
-
-      :host ::slotted(.card-content) {
-        padding: 16px;
-        position:relative;
-
-        @apply --paper-card-content;
-      }
-
-      :host ::slotted(.card-actions) {
-        border-top: 1px solid #e8e8e8;
-        padding: 5px 16px;
-        position:relative;
-
-        @apply --paper-card-actions;
-      }
-
-      :host([elevation="1"]) {
-        @apply --paper-material-elevation-1;
-      }
-
-      :host([elevation="2"]) {
-        @apply --paper-material-elevation-2;
-      }
-
-      :host([elevation="3"]) {
-        @apply --paper-material-elevation-3;
-      }
-
-      :host([elevation="4"]) {
-        @apply --paper-material-elevation-4;
-      }
-
-      :host([elevation="5"]) {
-        @apply --paper-material-elevation-5;
-      }
-    </style>
-
-    <div class="header">
-      <iron-image hidden$="[[!image]]" aria-hidden$="[[_isHidden(image)]]" src="[[image]]" alt="[[alt]]" placeholder="[[placeholderImage]]" preload="[[preloadImage]]" fade="[[fadeImage]]"></iron-image>
-      <div hidden$="[[!heading]]" class$="title-text [[_computeHeadingClass(image)]]">[[heading]]</div>
-    </div>
-
-    <slot></slot>
-  </template>
-
-  <script>
-    Polymer({
-      is: 'paper-card',
-
-      properties: {
-        /**
-         * The title of the card.
-         */
-        heading: {
-          type: String,
-          value: '',
-          observer: '_headingChanged'
-        },
-
-        /**
-         * The url of the title image of the card.
-         */
-        image: {
-          type: String,
-          value: ''
-        },
-
-        /**
-         * The text alternative of the card's title image.
-         */
-        alt: {
-          type: String
-        },
-
-        /**
-         * When `true`, any change to the image url property will cause the
-         * `placeholder` image to be shown until the image is fully rendered.
-         */
-        preloadImage: {
-          type: Boolean,
-          value: false
-        },
-
-        /**
-         * When `preloadImage` is true, setting `fadeImage` to true will cause the
-         * image to fade into place.
-         */
-        fadeImage: {
-          type: Boolean,
-          value: false
-        },
-
-        /**
-         * This image will be used as a background/placeholder until the src image has
-         * loaded. Use of a data-URI for placeholder is encouraged for instant rendering.
-         */
-        placeholderImage: {
-          type: String,
-          value: null
-        },
-
-        /**
-         * The z-depth of the card, from 0-5.
-         */
-        elevation: {
-          type: Number,
-          value: 1,
-          reflectToAttribute: true
-        },
-
-        /**
-         * Set this to true to animate the card shadow when setting a new
-         * `z` value.
-         */
-        animatedShadow: {
-          type: Boolean,
-          value: false
-        },
-
-        /**
-         * Read-only property used to pass down the `animatedShadow` value to
-         * the underlying paper-material style (since they have different names).
-         */
-        animated: {
-          type: Boolean,
-          reflectToAttribute: true,
-          readOnly: true,
-          computed: '_computeAnimated(animatedShadow)'
-        }
-      },
-
-      /**
-       * Format function for aria-hidden. Use the ! operator results in the
-       * empty string when given a falsy value.
-       */
-      _isHidden: function(image) {
-        return image ? 'false' : 'true';
-      },
-
-      _headingChanged: function(heading) {
-        var currentHeading = this.getAttribute('heading'),
-            currentLabel = this.getAttribute('aria-label');
-
-        if (typeof currentLabel !== 'string' || currentLabel === currentHeading) {
-          this.setAttribute('aria-label', heading);
-        }
-      },
-
-      _computeHeadingClass: function(image) {
-        return image ? ' over-image' : '';
-      },
-
-      _computeAnimated: function(animatedShadow) {
-        return animatedShadow;
-      }
-    });
-  </script>
-</dom-module>
 <!--
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
@@ -25441,57 +25253,274 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 --><!--
-Material design: [Snackbars & toasts](https://www.google.com/design/spec/components/snackbars-toasts.html)
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><script>
 
-`paper-toast` provides a subtle notification toast. Only one `paper-toast` will
-be visible on screen.
+  /**
+   * `Polymer.NeonAnimatableBehavior` is implemented by elements containing animations for use with
+   * elements implementing `Polymer.NeonAnimationRunnerBehavior`.
+   * @polymerBehavior
+   */
+  Polymer.NeonAnimatableBehavior = {
 
-Use `opened` to show the toast:
+    properties: {
 
-Example:
+      /**
+       * Animation configuration. See README for more info.
+       */
+      animationConfig: {
+        type: Object
+      },
 
-    <paper-toast text="Hello world!" opened></paper-toast>
+      /**
+       * Convenience property for setting an 'entry' animation. Do not set `animationConfig.entry`
+       * manually if using this. The animated node is set to `this` if using this property.
+       */
+      entryAnimation: {
+        observer: '_entryAnimationChanged',
+        type: String
+      },
 
-Also `open()` or `show()` can be used to show the toast:
+      /**
+       * Convenience property for setting an 'exit' animation. Do not set `animationConfig.exit`
+       * manually if using this. The animated node is set to `this` if using this property.
+       */
+      exitAnimation: {
+        observer: '_exitAnimationChanged',
+        type: String
+      }
 
-Example:
+    },
 
-    <paper-button on-click="openToast">Open Toast</paper-button>
-    <paper-toast id="toast" text="Hello world!"></paper-toast>
+    _entryAnimationChanged: function() {
+      this.animationConfig = this.animationConfig || {};
+      this.animationConfig['entry'] = [{
+        name: this.entryAnimation,
+        node: this
+      }];
+    },
 
-    ...
+    _exitAnimationChanged: function() {
+      this.animationConfig = this.animationConfig || {};
+      this.animationConfig['exit'] = [{
+        name: this.exitAnimation,
+        node: this
+      }];
+    },
 
-    openToast: function() {
-      this.$.toast.open();
+    _copyProperties: function(config1, config2) {
+      // shallowly copy properties from config2 to config1
+      for (var property in config2) {
+        config1[property] = config2[property];
+      }
+    },
+
+    _cloneConfig: function(config) {
+      var clone = {
+        isClone: true
+      };
+      this._copyProperties(clone, config);
+      return clone;
+    },
+
+    _getAnimationConfigRecursive: function(type, map, allConfigs) {
+      if (!this.animationConfig) {
+        return;
+      }
+
+      if(this.animationConfig.value && typeof this.animationConfig.value === 'function') {
+      	this._warn(this._logf('playAnimation', "Please put 'animationConfig' inside of your components 'properties' object instead of outside of it."));
+      	return;
+      }
+
+      // type is optional
+      var thisConfig;
+      if (type) {
+        thisConfig = this.animationConfig[type];
+      } else {
+        thisConfig = this.animationConfig;
+      }
+
+      if (!Array.isArray(thisConfig)) {
+        thisConfig = [thisConfig];
+      }
+
+      // iterate animations and recurse to process configurations from child nodes
+      if (thisConfig) {
+        for (var config, index = 0; config = thisConfig[index]; index++) {
+          if (config.animatable) {
+            config.animatable._getAnimationConfigRecursive(config.type || type, map, allConfigs);
+          } else {
+            if (config.id) {
+              var cachedConfig = map[config.id];
+              if (cachedConfig) {
+                // merge configurations with the same id, making a clone lazily
+                if (!cachedConfig.isClone) {
+                  map[config.id] = this._cloneConfig(cachedConfig);
+                  cachedConfig = map[config.id];
+                }
+                this._copyProperties(cachedConfig, config);
+              } else {
+                // put any configs with an id into a map
+                map[config.id] = config;
+              }
+            } else {
+              allConfigs.push(config);
+            }
+          }
+        }
+      }
+    },
+
+    /**
+     * An element implementing `Polymer.NeonAnimationRunnerBehavior` calls this method to configure
+     * an animation with an optional type. Elements implementing `Polymer.NeonAnimatableBehavior`
+     * should define the property `animationConfig`, which is either a configuration object
+     * or a map of animation type to array of configuration objects.
+     */
+    getAnimationConfig: function(type) {
+      var map = {};
+      var allConfigs = [];
+      this._getAnimationConfigRecursive(type, map, allConfigs);
+      // append the configurations saved in the map to the array
+      for (var key in map) {
+        allConfigs.push(map[key]);
+      }
+      return allConfigs;
     }
 
-Set `duration` to 0, a negative number or Infinity to persist the toast on screen:
+  };
 
-Example:
+</script><script>
 
-    <paper-toast text="Terms and conditions" opened duration="0">
-      <a href="#">Show more</a>
-    </paper-toast>
+  /**
+   * `Polymer.NeonAnimationRunnerBehavior` adds a method to run animations.
+   *
+   * @polymerBehavior Polymer.NeonAnimationRunnerBehavior
+   */
+  Polymer.NeonAnimationRunnerBehaviorImpl = {
 
+    _configureAnimations: function(configs) {
+      var results = [];
+      if (configs.length > 0) {
+        for (var config, index = 0; config = configs[index]; index++) {
+          var neonAnimation = document.createElement(config.name);
+          // is this element actually a neon animation?
+          if (neonAnimation.isNeonAnimation) {
+            var result = null;
+            // configuration or play could fail if polyfills aren't loaded
+            try {
+              result = neonAnimation.configure(config);
+              // Check if we have an Effect rather than an Animation
+              if (typeof result.cancel != 'function') {
+                result = document.timeline.play(result);
+              }
+            } catch (e) {
+              result = null;
+              console.warn('Couldnt play', '(', config.name, ').', e);
+            }
+            if (result) {
+              results.push({
+                neonAnimation: neonAnimation,
+                config: config,
+                animation: result,
+              });
+            }
+          } else {
+            console.warn(this.is + ':', config.name, 'not found!');
+          }
+        }
+      }
+      return results;
+    },
 
-### Styling
-The following custom properties and mixins are available for styling:
+    _shouldComplete: function(activeEntries) {
+      var finished = true;
+      for (var i = 0; i < activeEntries.length; i++) {
+        if (activeEntries[i].animation.playState != 'finished') {
+          finished = false;
+          break;
+        }
+      }
+      return finished;
+    },
 
-Custom property | Description | Default
-----------------|-------------|----------
-`--paper-toast-background-color` | The paper-toast background-color | `#323232`
-`--paper-toast-color` | The paper-toast color | `#f1f1f1`
+    _complete: function(activeEntries) {
+      for (var i = 0; i < activeEntries.length; i++) {
+        activeEntries[i].neonAnimation.complete(activeEntries[i].config);
+      }
+      for (var i = 0; i < activeEntries.length; i++) {
+        activeEntries[i].animation.cancel();
+      }
+    },
 
-This element applies the mixin `--paper-font-common-base` but does not import `paper-styles/typography.html`.
-In order to apply the `Roboto` font to this element, make sure you've imported `paper-styles/typography.html`.
+    /**
+     * Plays an animation with an optional `type`.
+     * @param {string=} type
+     * @param {!Object=} cookie
+     */
+    playAnimation: function(type, cookie) {
+      var configs = this.getAnimationConfig(type);
+      if (!configs) {
+        return;
+      }
+      this._active = this._active || {};
+      if (this._active[type]) {
+        this._complete(this._active[type]);
+        delete this._active[type];
+      }
 
-@group Paper Elements
-@element paper-toast
-@demo demo/index.html
-@hero hero.svg
--->
+      var activeEntries = this._configureAnimations(configs);
 
-<!--
+      if (activeEntries.length == 0) {
+        this.fire('neon-animation-finish', cookie, {bubbles: false});
+        return;
+      }
+
+      this._active[type] = activeEntries;
+
+      for (var i = 0; i < activeEntries.length; i++) {
+        activeEntries[i].animation.onfinish = function() {
+          if (this._shouldComplete(activeEntries)) {
+            this._complete(activeEntries);
+            delete this._active[type];
+            this.fire('neon-animation-finish', cookie, {bubbles: false});
+          }
+        }.bind(this);
+      }
+    },
+
+    /**
+     * Cancels the currently running animations.
+     */
+    cancelAnimation: function() {
+      for (var k in this._animations) {
+        this._animations[k].cancel();
+      }
+      this._animations = {};
+    }
+  };
+
+  /** @polymerBehavior Polymer.NeonAnimationRunnerBehavior */
+  Polymer.NeonAnimationRunnerBehavior = [
+    Polymer.NeonAnimatableBehavior,
+    Polymer.NeonAnimationRunnerBehaviorImpl
+  ];
+</script><!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><!--
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -27520,7 +27549,589 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
    */
 
 })();
-</script><dom-module id="paper-toast" assetpath="../bower_components/paper-toast/">
+</script><script>
+(function() {
+'use strict';
+
+/**
+Use `Polymer.PaperDialogBehavior` and `paper-dialog-shared-styles.html` to implement a Material Design
+dialog.
+
+For example, if `<paper-dialog-impl>` implements this behavior:
+
+    <paper-dialog-impl>
+        <h2>Header</h2>
+        <div>Dialog body</div>
+        <div class="buttons">
+            <paper-button dialog-dismiss>Cancel</paper-button>
+            <paper-button dialog-confirm>Accept</paper-button>
+        </div>
+    </paper-dialog-impl>
+
+`paper-dialog-shared-styles.html` provide styles for a header, content area, and an action area for buttons.
+Use the `<h2>` tag for the header and the `buttons` class for the action area. You can use the
+`paper-dialog-scrollable` element (in its own repository) if you need a scrolling content area.
+
+Use the `dialog-dismiss` and `dialog-confirm` attributes on interactive controls to close the
+dialog. If the user dismisses the dialog with `dialog-confirm`, the `closingReason` will update
+to include `confirmed: true`.
+
+### Accessibility
+
+This element has `role="dialog"` by default. Depending on the context, it may be more appropriate
+to override this attribute with `role="alertdialog"`.
+
+If `modal` is set, the element will prevent the focus from exiting the element.
+It will also ensure that focus remains in the dialog.
+
+@hero hero.svg
+@demo demo/index.html
+@polymerBehavior Polymer.PaperDialogBehavior
+*/
+  Polymer.PaperDialogBehaviorImpl = {
+
+    hostAttributes: {
+      'role': 'dialog',
+      'tabindex': '-1'
+    },
+
+    properties: {
+
+      /**
+       * If `modal` is true, this implies `no-cancel-on-outside-click`, `no-cancel-on-esc-key` and `with-backdrop`.
+       */
+      modal: {
+        type: Boolean,
+        value: false
+      },
+
+      __readied: {
+        type: Boolean,
+        value: false
+      }
+
+    },
+
+    observers: [
+      '_modalChanged(modal, __readied)'
+    ],
+
+    listeners: {
+      'tap': '_onDialogClick'
+    },
+
+    ready: function() {
+      // Only now these properties can be read.
+      this.__prevNoCancelOnOutsideClick = this.noCancelOnOutsideClick;
+      this.__prevNoCancelOnEscKey = this.noCancelOnEscKey;
+      this.__prevWithBackdrop = this.withBackdrop;
+      this.__readied = true;
+    },
+
+    _modalChanged: function(modal, readied) {
+      // modal implies noCancelOnOutsideClick, noCancelOnEscKey and withBackdrop.
+      // We need to wait for the element to be ready before we can read the
+      // properties values.
+      if (!readied) {
+        return;
+      }
+
+      if (modal) {
+        this.__prevNoCancelOnOutsideClick = this.noCancelOnOutsideClick;
+        this.__prevNoCancelOnEscKey = this.noCancelOnEscKey;
+        this.__prevWithBackdrop = this.withBackdrop;
+        this.noCancelOnOutsideClick = true;
+        this.noCancelOnEscKey = true;
+        this.withBackdrop = true;
+      } else {
+        // If the value was changed to false, let it false.
+        this.noCancelOnOutsideClick = this.noCancelOnOutsideClick &&
+          this.__prevNoCancelOnOutsideClick;
+        this.noCancelOnEscKey = this.noCancelOnEscKey &&
+          this.__prevNoCancelOnEscKey;
+        this.withBackdrop = this.withBackdrop && this.__prevWithBackdrop;
+      }
+    },
+
+    _updateClosingReasonConfirmed: function(confirmed) {
+      this.closingReason = this.closingReason || {};
+      this.closingReason.confirmed = confirmed;
+    },
+
+    /**
+     * Will dismiss the dialog if user clicked on an element with dialog-dismiss
+     * or dialog-confirm attribute.
+     */
+    _onDialogClick: function(event) {
+      // Search for the element with dialog-confirm or dialog-dismiss,
+      // from the root target until this (excluded).
+      var path = Polymer.dom(event).path;
+      for (var i = 0, l = path.indexOf(this); i < l; i++) {
+        var target = path[i];
+        if (target.hasAttribute && (target.hasAttribute('dialog-dismiss') || target.hasAttribute('dialog-confirm'))) {
+          this._updateClosingReasonConfirmed(target.hasAttribute('dialog-confirm'));
+          this.close();
+          event.stopPropagation();
+          break;
+        }
+      }
+    }
+
+  };
+
+  /** @polymerBehavior */
+  Polymer.PaperDialogBehavior = [Polymer.IronOverlayBehavior, Polymer.PaperDialogBehaviorImpl];
+
+})();
+</script><!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><!--
+### Styling
+
+The following custom properties and mixins are available for styling.
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--paper-dialog-background-color` | Dialog background color                     | `--primary-background-color`
+`--paper-dialog-color`            | Dialog foreground color                     | `--primary-text-color`
+`--paper-dialog`                  | Mixin applied to the dialog                 | `{}`
+`--paper-dialog-title`            | Mixin applied to the title (`<h2>`) element | `{}`
+`--paper-dialog-button-color`     | Button area foreground color                | `--default-primary-color`
+-->
+
+<dom-module id="paper-dialog-shared-styles" assetpath="../bower_components/paper-dialog-behavior/">
+  <template>
+    <style>
+      :host {
+        display: block;
+        margin: 24px 40px;
+
+        background: var(--paper-dialog-background-color, var(--primary-background-color));
+        color: var(--paper-dialog-color, var(--primary-text-color));
+
+        @apply --paper-font-body1;
+        @apply --shadow-elevation-16dp;
+        @apply --paper-dialog;
+      }
+
+      :host > ::slotted(*) {
+        margin-top: 20px;
+        padding: 0 24px;
+      }
+
+      :host > ::slotted(.no-padding) {
+        padding: 0;
+      }
+
+      /* In 1.x, this selector was `:host > ::content h2`. In 2.x <slot> allows
+      to only select only direct children, which increases the weight of this
+      selector, so we have to move it before first-child/last-child selectors */
+      :host > ::slotted(h2) {
+        position: relative;
+        margin: 0;
+        @apply --paper-font-title;
+
+        @apply --paper-dialog-title;
+      }
+
+      :host > ::slotted(*:first-child) {
+        margin-top: 24px;
+      }
+
+      :host > ::slotted(*:last-child) {
+        margin-bottom: 24px;
+      }
+
+      :host > ::slotted(.buttons) {
+        position: relative;
+        padding: 8px 8px 8px 24px;
+        margin: 0;
+
+        color: var(--paper-dialog-button-color, var(--primary-color));
+
+        @apply --layout-horizontal;
+        @apply --layout-end-justified;
+      }
+    </style>
+  </template>
+</dom-module>
+<dom-module id="paper-dialog" assetpath="../bower_components/paper-dialog/">
+  <template>
+    <style include="paper-dialog-shared-styles"></style>
+    <slot></slot>
+  </template>
+</dom-module>
+
+<script>
+
+(function() {
+'use strict';
+
+  Polymer({
+
+    is: 'paper-dialog',
+
+    behaviors: [
+      Polymer.PaperDialogBehavior,
+      Polymer.NeonAnimationRunnerBehavior
+    ],
+
+    listeners: {
+      'neon-animation-finish': '_onNeonAnimationFinish'
+    },
+
+    _renderOpened: function() {
+      this.cancelAnimation();
+      this.playAnimation('entry');
+    },
+
+    _renderClosed: function() {
+      this.cancelAnimation();
+      this.playAnimation('exit');
+    },
+
+    _onNeonAnimationFinish: function() {
+      if (this.opened) {
+        this._finishRenderOpened();
+      } else {
+        this._finishRenderClosed();
+      }
+    }
+
+  });
+
+})();
+
+</script>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><!--
+Material design: [Cards](https://www.google.com/design/spec/components/cards.html)
+
+`paper-card` is a container with a drop shadow.
+
+Example:
+
+    <paper-card heading="Card Title">
+      <div class="card-content">Some content</div>
+      <div class="card-actions">
+        <paper-button>Some action</paper-button>
+      </div>
+    </paper-card>
+
+Example - top card image:
+
+    <paper-card heading="Card Title" image="/path/to/image.png" alt="image">
+      ...
+    </paper-card>
+
+### Accessibility
+
+By default, the `aria-label` will be set to the value of the `heading` attribute.
+
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--paper-card-background-color` | The background color of the card | `--primary-background-color`
+`--paper-card-header-color` | The color of the header text | `#000`
+`--paper-card-header` | Mixin applied to the card header section | `{}`
+`--paper-card-header-text` | Mixin applied to the title in the card header section | `{}`
+`--paper-card-header-image` | Mixin applied to the image in the card header section | `{}`
+`--paper-card-header-image-text` | Mixin applied to the text overlapping the image in the card header section | `{}`
+`--paper-card-content` | Mixin applied to the card content section| `{}`
+`--paper-card-actions` | Mixin applied to the card action section | `{}`
+`--paper-card` | Mixin applied to the card | `{}`
+
+@group Paper Elements
+@element paper-card
+@demo demo/index.html
+-->
+
+<dom-module id="paper-card" assetpath="../bower_components/paper-card/">
+  <template>
+    <style include="paper-material-styles">
+      :host {
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        background-color: var(--paper-card-background-color, var(--primary-background-color));
+        border-radius: 2px;
+
+        @apply --paper-font-common-base;
+        @apply --paper-card;
+      }
+
+      /* IE 10 support for HTML5 hidden attr */
+      [hidden] {
+        display: none !important;
+      }
+
+      .header {
+        position: relative;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        overflow: hidden;
+
+        @apply --paper-card-header;
+      }
+
+      .header iron-image {
+        display: block;
+        width: 100%;
+        --iron-image-width: 100%;
+        pointer-events: none;
+
+        @apply --paper-card-header-image;
+      }
+
+      .header .title-text {
+        padding: 16px;
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--paper-card-header-color, #000);
+
+        @apply --paper-card-header-text;
+      }
+
+      .header .title-text.over-image {
+        position: absolute;
+        bottom: 0px;
+
+        @apply --paper-card-header-image-text;
+      }
+
+      :host ::slotted(.card-content) {
+        padding: 16px;
+        position:relative;
+
+        @apply --paper-card-content;
+      }
+
+      :host ::slotted(.card-actions) {
+        border-top: 1px solid #e8e8e8;
+        padding: 5px 16px;
+        position:relative;
+
+        @apply --paper-card-actions;
+      }
+
+      :host([elevation="1"]) {
+        @apply --paper-material-elevation-1;
+      }
+
+      :host([elevation="2"]) {
+        @apply --paper-material-elevation-2;
+      }
+
+      :host([elevation="3"]) {
+        @apply --paper-material-elevation-3;
+      }
+
+      :host([elevation="4"]) {
+        @apply --paper-material-elevation-4;
+      }
+
+      :host([elevation="5"]) {
+        @apply --paper-material-elevation-5;
+      }
+    </style>
+
+    <div class="header">
+      <iron-image hidden$="[[!image]]" aria-hidden$="[[_isHidden(image)]]" src="[[image]]" alt="[[alt]]" placeholder="[[placeholderImage]]" preload="[[preloadImage]]" fade="[[fadeImage]]"></iron-image>
+      <div hidden$="[[!heading]]" class$="title-text [[_computeHeadingClass(image)]]">[[heading]]</div>
+    </div>
+
+    <slot></slot>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'paper-card',
+
+      properties: {
+        /**
+         * The title of the card.
+         */
+        heading: {
+          type: String,
+          value: '',
+          observer: '_headingChanged'
+        },
+
+        /**
+         * The url of the title image of the card.
+         */
+        image: {
+          type: String,
+          value: ''
+        },
+
+        /**
+         * The text alternative of the card's title image.
+         */
+        alt: {
+          type: String
+        },
+
+        /**
+         * When `true`, any change to the image url property will cause the
+         * `placeholder` image to be shown until the image is fully rendered.
+         */
+        preloadImage: {
+          type: Boolean,
+          value: false
+        },
+
+        /**
+         * When `preloadImage` is true, setting `fadeImage` to true will cause the
+         * image to fade into place.
+         */
+        fadeImage: {
+          type: Boolean,
+          value: false
+        },
+
+        /**
+         * This image will be used as a background/placeholder until the src image has
+         * loaded. Use of a data-URI for placeholder is encouraged for instant rendering.
+         */
+        placeholderImage: {
+          type: String,
+          value: null
+        },
+
+        /**
+         * The z-depth of the card, from 0-5.
+         */
+        elevation: {
+          type: Number,
+          value: 1,
+          reflectToAttribute: true
+        },
+
+        /**
+         * Set this to true to animate the card shadow when setting a new
+         * `z` value.
+         */
+        animatedShadow: {
+          type: Boolean,
+          value: false
+        },
+
+        /**
+         * Read-only property used to pass down the `animatedShadow` value to
+         * the underlying paper-material style (since they have different names).
+         */
+        animated: {
+          type: Boolean,
+          reflectToAttribute: true,
+          readOnly: true,
+          computed: '_computeAnimated(animatedShadow)'
+        }
+      },
+
+      /**
+       * Format function for aria-hidden. Use the ! operator results in the
+       * empty string when given a falsy value.
+       */
+      _isHidden: function(image) {
+        return image ? 'false' : 'true';
+      },
+
+      _headingChanged: function(heading) {
+        var currentHeading = this.getAttribute('heading'),
+            currentLabel = this.getAttribute('aria-label');
+
+        if (typeof currentLabel !== 'string' || currentLabel === currentHeading) {
+          this.setAttribute('aria-label', heading);
+        }
+      },
+
+      _computeHeadingClass: function(image) {
+        return image ? ' over-image' : '';
+      },
+
+      _computeAnimated: function(animatedShadow) {
+        return animatedShadow;
+      }
+    });
+  </script>
+</dom-module>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+--><!--
+Material design: [Snackbars & toasts](https://www.google.com/design/spec/components/snackbars-toasts.html)
+
+`paper-toast` provides a subtle notification toast. Only one `paper-toast` will
+be visible on screen.
+
+Use `opened` to show the toast:
+
+Example:
+
+    <paper-toast text="Hello world!" opened></paper-toast>
+
+Also `open()` or `show()` can be used to show the toast:
+
+Example:
+
+    <paper-button on-click="openToast">Open Toast</paper-button>
+    <paper-toast id="toast" text="Hello world!"></paper-toast>
+
+    ...
+
+    openToast: function() {
+      this.$.toast.open();
+    }
+
+Set `duration` to 0, a negative number or Infinity to persist the toast on screen:
+
+Example:
+
+    <paper-toast text="Terms and conditions" opened duration="0">
+      <a href="#">Show more</a>
+    </paper-toast>
+
+
+### Styling
+The following custom properties and mixins are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--paper-toast-background-color` | The paper-toast background-color | `#323232`
+`--paper-toast-color` | The paper-toast color | `#f1f1f1`
+
+This element applies the mixin `--paper-font-common-base` but does not import `paper-styles/typography.html`.
+In order to apply the `Roboto` font to this element, make sure you've imported `paper-styles/typography.html`.
+
+@group Paper Elements
+@element paper-toast
+@demo demo/index.html
+@hero hero.svg
+-->
+
+<dom-module id="paper-toast" assetpath="../bower_components/paper-toast/">
   <template>
     <style>
       :host {
@@ -31486,6 +32097,13 @@ Custom property | Description | Default
       --app-menu-selected-bg-color: rgba(0, 0, 0, 0.00);
       }
 
+
+      .toolbar {
+          font-family: News Cycle, Helvetica Neue,Comic Sans, Arial;
+          font-size: 2.3rem;
+          text-decoration: none;
+      }
+
       .sublist1 {
           padding-left: 8px;
       }
@@ -31538,11 +32156,19 @@ Custom property | Description | Default
         font-weight: normal;
         /*background-color : rgba(0, 0, 0, 0.05);*/
       }
-    @media only screen and (min-width: 1000px) {
+    @media only screen and (max-device-width: 800px) {
+        .toolbar {
+            font-size: 1.8rem;
+        }
+    }
+    @media only screen and (min-width: 800px) {
     .smallScreen {
         display: none;
     }}
-        @media all and (max-width: 1000px) {
+        @media all and (max-width: 800px) {
+        .toolbar {
+            font-size: 1.8rem;
+        }
     .wideScreen {
         display: none;
         }
@@ -31556,12 +32182,12 @@ Custom property | Description | Default
         @-moz-document url-prefix() {
             #needindent{
                 text-indent: 20px;
-                font-size: 18px;
+                font-size: 1rem;
                 font-weight: normal;
             }
             #needsindent2{
                 text-indent: 45px;
-                font-size: 18px;
+                font-size: 1rem;
                 font-weight: normal;
             }
        }
@@ -31586,7 +32212,7 @@ Custom property | Description | Default
           <app-toolbar>
             <paper-icon-button class="smallScreen" icon="icons:menu" on-tap="_openDrawer"></paper-icon-button>
               <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image class="wideScreen" style="width:63px; height:60px; margin-right:10px;" sizing="cover" src="/static/images/DESDM_logo.png"></iron-image></a>
-            <a href="/" style="text-decoration: none;color:white "><paper-item main-title="" style="font-family: News Cycle, Helvetica Neue,Comic Sans, Arial; font-size: 40px; text-decoration: none">DES Data Management</paper-item></a>
+            <a href="/" style="text-decoration: none;color:white "><paper-item main-title="" class="toolbar">DES Data Management</paper-item></a>
 
             <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
             <!-- This is good, we can add it later when with a proper function when ready
@@ -31648,10 +32274,13 @@ Custom property | Description | Default
                 <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="acquisition" href="[[rootPath]]releases/dr1/dr1-docs/acquisition">Data Acquisition</a>
                   <a class="app-menu-item" id="needsindent2" name="processing" href="[[rootPath]]releases/dr1/dr1-docs/processing">Processing</a>
+                  <a class="app-menu-item" id="needsindent2" name="quality" href="[[rootPath]]releases/dr1/dr1-docs/quality">Data Quality</a>
+                  <a class="app-menu-item" id="needsindent2" name="known-issues" href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>
                 </app-menu>
                 </app-submenu>
                   <a class="app-menu-item" id="needindent" name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products">Products</a>
                   <a class="app-menu-item" id="needindent" name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access">Data Access</a>
+                  <a class="app-menu-item" id="needindent" name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq">FAQ</a>
 
                 </app-menu>
                </app-submenu>
@@ -31687,7 +32316,10 @@ Custom property | Description | Default
             <des-dr1-products name="dr1-products"></des-dr1-products>
             <des-dr1-soft name="processing"></des-dr1-soft>
             <des-dr1-observing name="acquisition"></des-dr1-observing>
+            <des-dr1-quality name="quality"></des-dr1-quality>
+            <des-dr1-known-issues name="known-issues"></des-dr1-known-issues>
             <des-dr1-access name="dr1-access"></des-dr1-access>
+            <des-dr1-faq name="dr1-faq"></des-dr1-faq>
           <!-- Other pages -->
           <des-help name="help"></des-help>
           <des-thankyou name="thanks"></des-thankyou>
@@ -31835,8 +32467,16 @@ Custom property | Description | Default
         paper-card {
         margin-top: 0px;
         width: 100%;
+        max-width: 1200px;
+        margin-left: 0px;
     }
+
+
+
  .headc {
+     --paper-card-header-text: {
+         font-size: 1.7rem;
+     }
       --paper-card-header-color: var(--paper-red-500);
 }
 
@@ -32359,6 +32999,147 @@ Indicating one or more relevant topics will help us to properly answer your ques
       }
     }
     window.customElements.define(DesHelp.is, DesHelp);
+  </script>
+
+</dom-module>
+<dom-module id="des-img" assetpath="des-utils/">
+
+<template>
+<style include="shared-styles">
+
+:host {
+    width: 500px;
+       }
+.caption {
+    padding-left: 20px;
+    width: 95%;
+    font-size: 0.75rem;
+    text-align: justify;
+    font-style: italic;
+}
+
+@media only screen and (max-device-width: 480px) {
+.caption {
+    padding-left: 20px;
+    width: 80%;
+    font-size: 0.7rem;
+    text-align: justify;
+    font-style: italic;
+    }
+    }
+
+.localtable {
+    display: inline-block;
+}
+
+.localimg {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+}
+
+</style>
+<div style="display: inline-block; margin-left: 30px">
+
+<table class="localtable">
+<caption align="bottom" class="caption"><slot></slot><br></caption>
+<tbody><tr><td>
+<img class="localimg" src="{{src}}">
+</td></tr>
+</tbody></table><br>
+</div>
+</template>
+
+  <script>
+    class DesImg extends Polymer.Element {
+      static get is() { return 'des-img'; }
+     static get properties() {
+         return {
+             src: {
+                 type: String,
+                 value: ''
+             },
+             width: {
+                 type: String,
+                 value: '800px'
+             }
+         };
+     }
+    }
+    window.customElements.define(DesImg.is, DesImg);
+  </script>
+
+</dom-module>
+<dom-module id="des-img-big" assetpath="des-utils/">
+
+<template>
+<style include="shared-styles">
+
+:host {
+    width: 800px;
+       }
+.caption {
+    padding-left: 20px;
+    width: 95%;
+    font-size: 0.85rem;
+    text-align: justify;
+    font-style: italic;
+}
+
+@media only screen and (max-device-width: 480px) {
+.caption {
+    padding-left: 20px;
+    width: 90%;
+    font-size: 0.7rem;
+    text-align: justify;
+    font-style: italic;
+}
+.localtable {
+    display: inline-block;
+    margin-left: -35px;
+}
+    }
+
+
+.localtable {
+    display: inline-block;
+}
+
+.localimg {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+}
+
+</style>
+<div style="display: inline-block; margin-left: 0px; padding: 15px;">
+
+<table class="localtable">
+<caption align="bottom" class="caption"><slot></slot><br></caption>
+<tbody><tr><td>
+<img class="localimg" src="{{src}}">
+</td></tr>
+</tbody></table><br>
+</div>
+</template>
+
+  <script>
+    class DesImgBig extends Polymer.Element {
+      static get is() { return 'des-img-big'; }
+     static get properties() {
+         return {
+             src: {
+                 type: String,
+                 value: ''
+             },
+             width: {
+                 type: String,
+                 value: '800px'
+             }
+         };
+     }
+    }
+    window.customElements.define(DesImgBig.is, DesImgBig);
   </script>
 
 </dom-module>
@@ -34239,6 +35020,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
           <a style="padding: 20px; text-decoration: none" href="[[rootpath]]releases/dr1/dr1-docs"><paper-button raised="" class="desButton">Overview</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-products"><paper-button raised="" class="desButton">Products</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-access"><paper-button raised="" class="desButton">Data Access</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-faq"><paper-button raised="" class="desButton">FAQ</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
 
 
@@ -34293,10 +35075,14 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             </h3>
           </li>
           <li>
-            <h3>Data Quality</h3>
+            <h3>
+              <a href="[[rootpath]]releases/dr1/dr1-docs/quality">Data Quality</a>
+            </h3>
           </li>
           <li>
-            <h3>Known Issues</h3>
+            <h3>
+              <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>
+            </h3>
           </li>
         </ul>
         <h2 style="text-align: left;">
@@ -34666,133 +35452,91 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 </dom-module>
 <dom-module id="des-dr1-soft" assetpath="des-dr1/">
-    <template>
-    <style include="shared-styles">
-    :host {
-     display: block;
-    }
-    div img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-     }
-    </style>
+<template>
+<style include="shared-styles">
+:host {
+    padding: 10px;
+}
+</style>
+
+
+<paper-dialog id="dialogfig1">
+   <des-img-big src="/static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Calibration and raw science images are delivered from DECam by SISPI and DTS to NCSA. In Single Epoch Processing (yellow box), raw science exposures undergo preprocessing and are combined with calibration images to produce First Cut images for initial inspection and Final Cut images for science releases. Images in the Supernova fields are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+   <des-img-big src="/static/images/fig5_desdm_paper.png">Figure 2. A diagram of the Preprocessing applied to every exposure. This is a “zoom in” of the the Preprocessing box in Figure 1. This includes our initial masking and detrending with bias and flat images (green and red arrows, respectively). Preprocessed exposures are then processed with the First Cut or Final Cut pipeline.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig3">
+   <des-img-big src="/static/images/processing.gif">Figure 3. Simplified animated version of both pipelines showing the final result after coadditon for a selected area of the sky&nbsp;</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+
+
+<div class="fixup" id="soft_top"></div>
+<div class="fixdown"></div>
     <des-card heading="Data Processing">
     <div class="card-content">
-    
-<div id="main-content">
- <h2 style="text-align: center;"><strong> Overview</strong>
 
- </h2>
- <p>
-  <br>
- </p>
- <p style="text-align: left;">
- The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES follows a well-defined path from its acquisition on the mountain top up to the stage when data is ready to be fed into science algorithms. We can identify two data production levels, as well as two levels in raw-to-refined processing:
- </p>
- <ul>
-  <li style="text-align: left;">
-   Single Epochs images. These can be easily described as exposures of sky patches, each independent from the others (namely, no combination of images are performed for overlap regions). First, these images need to be treated, and then we can distinguish two processes which are similar in structure and procedure, but different in the employed calibrations and configurations files:
+<ul>
+  <li>
+        <a href="javascript:void(0)" on-tap="_intro">Overview</a>
   </li>
- </ul>
- <ol>
-  <li style="text-align: left;margin-left: 30.0px;">
-  First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from the previous year of observation are used. At the end of the pipeline, quality assessments are performed, then exposures not meeting the criteria for those assessments enter the queue to be re-observed at CTIO.
+  <li>
+        <a href="javascript:void(0)" on-tap="_single">Single Epoch Pipeline</a>
   </li>
-  <li style="text-align: left;margin-left: 30.0px;">
-   Final cut: this pipeline performs the same tasks as First cut. The configuration files and the calibrations files (e.g., flats, bad pixels masking, sky flats) have been updated to the most recent version, for which the current year of observation is the source of such calibrations.
+  <li>
+        <a href="javascript:void(0)" on-tap="_multi">Multi Epoch Pipeline</a>
   </li>
- </ol>
- <ul>
-  <li style="text-align: left;">
-  Multi-Epoch images. After the run of Final cut, this pipeline is performed to achieve a higher depth on the DES footprint. Through co-additions of overlapping images, application of algorithms for optimal shape and depth parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.
-  </li>
- </ul>
- <p style="text-align: left;">
- The above pipelines/processes are described in depth in Berstein et al. (2017)  and Morganson et al (2017). To aid with visualizing this landscape, several of the Morganson et al. (2017) diagrams are displayed below. The first figure shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are also displayed.
- </p>
- <p style="text-align: left;">
+</ul>
+<hr>
+<p><br></p>
+<div class="fixup" id="soft_intro"></div>
+<h3 class="fixdown">Overview  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p>The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES, follows a well defined path, from its acquisition on the mountain top up to the stage when data is ready to be feed into science algorithms. We can distinguish two levels in data products, as well as two levels in raw-to-refined processing:</p>
+<ul>
+  <li style="text-align: left;">Single Epochs images. Can be easily described as exposures of sky patches, each one independent of the others (namely, no combination of images are performed for overlap regions). These images need to be treated, and then we can distinguish two process being similar ins structure and procedure, but different in the employed calibrations and configurations files:</li>
+</ul>
+<ol>
+  <li style="text-align: left;margin-left: 30.0px;">First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from previous year of observing are used. At the end of the pipeline, quality assessments are performed, then exposures not reaching the criteria enters the queue to be re-observed at CTIO.</li>
+  <li style="text-align: left;margin-left: 30.0px;">Final cut: this pipeline performs the same tasks as First cut. The configuration files and the calibrations files (e.g., flats, bad pixels masking, sky flats) has been updated to the most recent version, for which the current year of observation is the source of such calibrations.</li>
+</ol>
+<ul>
+  <li style="text-align: left;">Multi Epoch images. After the run of Final cut, this pipeline is performed to achieve a higher depth on the DES footprint. Through co-additions of overlapping images, performing of algorithms for optimal shape and depth parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fiting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.</li>
+</ul>
+<p>The above pipelines/processings are described in more depth in<a href="http://adsabs.harvard.edu/abs/2017PASP..129k4502B"> Berstein et al. (2017)</a>&nbsp; and Morganson et al (2017). To help the visualization of the above landscape, below we show some of the Morganson et al. (2017) diagrams. <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are displayed.</p>
   <br>
- </p>
- <p>
-  <span>
-   <img src="/static/images/fig4_desdm_paper.png" width="680">
-  </span>
- </p>
- <p>
   <br>
- </p>
- <p>
-  The second diagram shows the steps in preprocessing. First cut is represented by the upper set of connected boxes, and Final cut is reresented by the upper and lower diagram flows. For the previous and current year, super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.
- </p>
- <p>
-  <br>
- </p>
- <p>
-  <span>
-   <img height="250" src="/static/images/fig5_desdm_paper.png">
-  </span>
- </p>
+
+   <des-img-big src="/static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Calibration and raw science images are delivered from DECam by SISPI and DTS to NCSA. In Single Epoch Processing (yellow box), raw science exposures undergo preprocessing and are combined with calibration images to produce First Cut images for initial inspection and Final Cut images for science releases. Images in the Supernova fields are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+
+ <p><a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a> shows the steps comprised on preprocessing, First cut being the upper set of connected boxes, and Final cut belonging to the upper and lower diagram flows. For the last, current year super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.</p>
+
+   <des-img-big src="/static/images/fig5_desdm_paper.png">Figure 2. A diagram of the Preprocessing applied to every exposure. This is a “zoom in” of the the Preprocessing box in Figure 1. This includes our initial masking and detrending with bias and flat images (green and red arrows, respectively). Preprocessed exposures are then processed with the First Cut or Final Cut pipeline.</des-img-big>
  <p>
   <br>
  </p>
- <p>
-  One strength of the overall pipeline is that it provides room to include more refined products in calibrations. This ability was learned from previous work and is noticeable when comparing initially raw images among the coadded products. This is presented (even though it's not displayed in full width) in the following figure made by Matias Carrasco at NCSA. This figure displays the different products in a single patch of sky from the raw image to the fully reduced, processed, and stacked (higher depth) image:
- </p>
- <p>
-  <br>
- </p>
- <p>
-  <span>
-   <img src="/static/images/processing.gif" width="450">
-  </span>
- </p>
- <h2 id="ProcessingandSoftware-" style="text-align: center;">
-  <span style="color: rgb(0,0,0);">
-   <br>
-  </span>
- </h2>
- <h2 id="ProcessingandSoftware-SingleEpoch" style="text-align: center;">
- <strong>Single Epoch Processing</strong>
- </h2>
- <p>
-  <span style="color: rgb(0,0,0);">
-   <br>
-  </span>
- </p>
- <p>
-  <span style="color: rgb(0,0,0);">
+<p>One of the strengths of the pipeline taken as a whole, is the structure allowing to include more refined products to be used in the calibrations. The ability was learned from the work, and it's tangible when comparing initially raw images among the coadded products. This can be evidenced (even not in all its wideness) in the following <a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a> exhibiting the different products from a single patch of sky, from the raw image to the fully reduced and processed and stacked (higher depth) image:</p>
+
+   <des-img-big src="/static/images/processing.gif">Figure 3. Simplified animated version of both pipelines showing the final result after coadditon for a selected area of the sky&nbsp;</des-img-big>
+
+        <p><br></p>
+        <div class="fixup" id="soft_single"></div>
+        <h3 class="fixdown">Single Epoch  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>
    To better illustrate each processing step of the Single Epoch workflow, each step is described below for both First and Final cut. For every step, the parent package with its corresponding version is displayed. Because of various improvements, you must use the right version of each package for successful processing.
-  </span>
  </p>
- <p>
-  <span style="color: rgb(0,0,0);">
-   <br>
-   The parent packages are listed with
-   <span style="color: rgb(0,0,255);">
-    links
-   </span>
-   to their repositories as Github DES Data Management(
-   <span style="color: rgb(0,0,255);">
-    <a href="https://github.com/DarkEnergySurvey/" rel="nofollow">
-     <span style="color: rgb(0,0,255);">
-      DESDM
-     </span>
-    </a>
-   </span>
-   )for the DES specific codes,
-   <span style="color: rgb(0,0,255);">
-    <a href="https://www.astromatic.net/" rel="nofollow">
-     <span style="color: rgb(0,0,255);">
-      Astromatic
-     </span>
-    </a>
-   </span>
-   for astrometric and point spread function (Emmanuel Bertin's group), and the python wrapper for Healpix (Górski et al. 2005)
-  </span>
-  <span>
-  </span>
- </p>
+   The parent packages are listed, with links to their repositories, being Github DES Data Management ( <a href="https://github.com/DarkEnergySurvey/">DESDM </a>) for the DES specific codes, <a href="https://www.astromatic.net/">Astromatic </a>  for astrometric and point spread function (Emmanuel Bertin's group), and the python wrapper for Healpix <a href="http://adsabs.harvard.edu/abs/2005ApJ...622..759G"> (Górski et al. 2005)</a>
+
+
+ <p></p>
  <ol>
   <li>
    <span style="color: rgb(0,0,255);">
@@ -35606,18 +36350,13 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
  </div>
  <p>
   <br>
- </p>
- <h2 id="ProcessingandSoftware-MultiEpoch" style="text-align: center; color:black;">
-  <strong> Multi Epoch Processing</strong>
- </h2>
- <p>
-  <br>
- </p>
- <p>
+        </p><p><br></p>
+        <div class="fixup" id="soft_multi"></div>
+        <h3 class="fixdown">Multi Epoch Processing  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
   <span>
    At this point, we have a set of Single Epoch images, with no co-addition between them. Even though the vast majority are of high quality, many scientific goals of our collaboration require deeper magnitudes and better signal-to-noise. Therefore,  stacking processing is needed, which is where Multi Epoch comes into play. It doesn't re-calculate calibrations, masking, or any other corrective processes, but performs an astrometry refinement. It applies this refinement to Single Epoch images and then continues to the coadd procedure.
   </span>
- </p>
+ <p></p>
  <p>
   <span>
    <br>
@@ -35773,7 +36512,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
    <br>
    This can be sketched in 2 steps; the first takes the solutions for the inner CCD deformation coefficients that come from Final cut refinement, so the code tries to match them when adding different images together. The second step is matched with 2MASS (or GAIA).
    <br>
-   With the results of the astrometry, SCAMP is used for stacking the images into a single image, while also adding photometric zeropoints information coming from the Forward Global Calibration Method (FGCM), Burke et al. (2017).
+   With the results of the astrometry, SCAMP is used for stacking the images into a single image, while also adding photometric zeropoints information coming from the Forward Global Calibration Method (FGCM), <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1706.01542">Burke et al. (2017)</a>.
    <br>
   </span>
  </p>
@@ -35948,7 +36687,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
    code cannot properly take into full account. This mostly affects the photometric precision and not the object detection. This is one of the reasons for the need of Multi Object Fitting (MOF).
  </p>
  <p>
-  Additionally, the reddening coefficients from Schlegel, Finkbeiner &amp; Davis (1998) are applied.
+  Additionally, the reddening coefficients from <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel, Finkbeiner &amp; Davis (1998)</a> are applied.
  </p>
  <div>
   <table>
@@ -36361,10 +37100,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
  <p>
   <br>
  </p>
- <h3 id="ProcessingandSoftware-References">
-  <strong>
-   References</strong>
- </h3>
+        <h3>References  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
  <ol>
   <li>
    <span>
@@ -36469,32 +37205,85 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </span>
  </p>
 </div>
-    </div>
     </des-card>
     </template>
     <script>
     class desDr1Soft extends Polymer.Element {
       static get is() { return 'des-dr1-soft'; }
+      _intro() {this.$.soft_intro.scrollIntoView();}
+      _single() {this.$.soft_single.scrollIntoView();}
+      _multi() {this.$.soft_multi.scrollIntoView();}
+      _top() {
+          this.$.soft_top.scrollIntoView();
+      }
+      _dialog(e) {
+          var temp = e.target.dataset.item;
+          //this.$.dialogfig.open();
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+
+          }
        }
      window.customElements.define(desDr1Soft.is,desDr1Soft);
      </script>
      </dom-module>
-    <dom-module id="des-dr1-observing" assetpath="des-dr1/">
+<dom-module id="des-dr1-observing" assetpath="des-dr1/">
 
 
 <template>
 
 <style include="shared-styles">
 :host {
-       display: block;
        padding: 10px;
-       }
+        }
 
 </style>
+<!-- FIGURES
+-->
+<paper-dialog id="dialogfig1">
+            <des-img-big src="/static/images/dr1/DECam_chips.png">
+            Figure 1. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+            <des-img-big src="/static/images/dr1/dr1_bandpass.png">
+            Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
+            Y filters. The bandpasses represent the total system throughput, including
+            atmospheric transmission (airmass = 1.2) and the average
+            instrumental response across the science CCDs</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig3">
+            <des-img-big src="/static/images/dr1/des_footprint_mbtpq.png">Figure 3. A plot of the DES survey area in celestial coordinates. The main 5000 sq. deg. survey footprint for DES is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b ±10 deg. The Large and Small Magellanic Clouds are indicated in gray.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig4">
+            <des-img-big src="/static/images/dr1/dr1_fwhm_hist.png">Figure 4. Distribution of PSF FHWM derived from the DECam single images in the DR1 data.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig5">
+            <des-img-big src="/static/images/dr1/dr1_nimages_hist.png">Figure&nbsp;5. Distribution of overlapping images in each of the<em> grizY</em> bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig6">
+            <des-img-big src="/static/images/dr1/nimages_i.png">Figure 6. &nbsp;Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 deg.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<!--   END FIGURES -->
 
-
-
-
+<div class="fixup" id="observing_top"></div>
+<div class="fixdown"></div>
 <des-card heading="Data Acquisition">
     <div id="observing_card" class="card-content">
 
@@ -36512,38 +37301,55 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
                 <a href="javascript:void(0)" on-tap="_progress">Survey Progress</a>
             </li>
         </ul>
+        <hr>
+        <p><br></p>
+        <div class="fixup" id="observing_intro"></div>
+        <h3 class="fixdown">Introduction  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>DR1 is composed of data taken during 345 nights spread over the first three years of DES operations from 2013 August 15 to 2016 February 12.<br>In this section, we briefly describe the characteristics of the DECam instrument and the DES observation strategy to provide context for DR1.<br>We point the reader to other DES publications for further details on the technical aspects summarized here (i.e. <a href="http://adsabs.harvard.edu/abs/2014SPIE.9149E..0VD">Diehl et al. 2014</a>, <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>,<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D"> Drlica-Wagner et al. 2017</a>, Morganson et al. 2018).</p>
+        <p><br></p>
+        <div class="fixup" id="observing_decam"></div>
+        <h3 class="fixdown">DECam  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+        <p>DECam is a wide field-of-view (3 sq. deg.) mosaic camera composed of 62 science CCDs &nbsp;which are each readout by two amplifiers (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>). (See <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a>). DECam has 8 additional corner CCDs for guiding, focusing and alignment. These 8 CCDs are not reduced or analyzed in our pipelines. In addition, the routines described here are not used to process CCD 61, which failed in 2012. Similarly, CCD 2 was not processed between November 2013 and December 2016, during which time it was not functional. Amplifier A of CCD 31 has an unpredictable, time-variable gain and is not processed or used for DES science. Amplifier B of CCD 31 functions normally and is processed. The rest of the science CCDs are performing within specifications and are usable for science.</p>
+        <p>The corrector system and pixel size provide an average plate scale of 0.263 arcsec per pixel. The DES wide-area survey observes five broadband filters, g, r, i, z, Y (see  <a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a>), and the standard bandpasses for these filters are included as part of DR1.<br>The DES filters are very similar to their analogously-named counterparts from other surveys. Uniquely, the DES z band has greater sensitivity at longer wavelengths than the SDSS z band and overlaps with the DES Y band.Additional details, including construction, installation, and a description of DECam subsystems and interfaces are provided in&nbsp;&nbsp;(<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>).&nbsp;</p>
+        <p>
+          <br>
+        </p>
+
+
+            <des-img src="/static/images/dr1/DECam_chips.png">
+            Figure 1. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img>
+
+            <des-img src="/static/images/dr1/dr1_bandpass.png">
+            Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
+            Y filters. The bandpasses represent the total system throughput, including
+            atmospheric transmission (airmass = 1.2) and the average
+            instrumental response across the science CCDs</des-img>
 
         <p><br></p>
-        <div style="margin-top:-70px" id="observing_intro"></div>
-        <h3 style="margin-top:70px">Introduction</h3>
-        <p>DR1 is composed of data taken during 345 nights spread over the first three years of DES operations from 2013 August 15 to 2016 February 12.<br>In this section, we briefly describe the characteristics of the DECam instrument and the DES observation strategy to provide context for DR1.<br>We point the reader to other DES publications for further details on the technical aspects summarized here (i.e. Diehl et al. 2014, <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>,<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D"> Drlica-Wagner et al. 2017</a>, Morganson et al. 2018).</p>
-        <p><br></p>
-        <div style="margin-top:-70px" id="observing_decam"></div>
-        <h3 style="margin-top:70px">DECam</h3>
-        <p>DECam is a wide field-of-view (3 sq. deg.) mosaic camera composed of 62 science CCDs (<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>).<br>The corrector system and pixel size provide an average plate scale of 0.263 arcsec per pixel.<br>The DES wide-area survey observes five broadband filters, g, r, i, z, Y (see figure below), and the standard bandpasses for these filters are included as part of DR1.<br>The DES filters are very similar to their analogously-named counterparts from other surveys. Uniquely, the DES z band has greater sensitivity at longer wavelengths than the SDSS z band and overlaps with the DES Y band.Additional details, including construction, installation, and a description of DECam subsystems and interfaces are provided in&nbsp;&nbsp;(<a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. 2015</a>).</p>
-        <p>
-        <img width="600px" height="450px" src="/static/images/dr1/dr1_bandpass.png">
-        <img width="auto" height="450px" src="/static/images/dr1/DECam_chips.png">
-        </p>
-        <div style="margin-top:-70px" id="observing_oper"></div>
-        <h3 style="margin-top:70px">Survey Operations</h3>
-        <p>The target footprint of the DES wide-area and supernova surveys are shown in the Figure Below. The wide-area footprint shape was selected to obtain a large overlap with the South Pole Telescope survey (<a href="http://adsabs.harvard.edu/abs/2011PASP..123..568C">Carlstrom et al. 2011</a>) and Stripe 82 from SDSS (<a href="http://cdsads.u-strasbg.fr/abs/2009ApJS..182..543A">Abazajian et al. 2009</a>), plus a connection region to enhance overall calibration. Given the cosmological goals of the survey, DES avoids the Galactic plane to minimize stellar foregrounds and extinction from interstellar dust.<br>The wide-field survey uses exposure times of 90s for <em>griz</em> and 45s for Y band, yielding a typical single-epoch depth at S/N = 10 of g = 23.57, r = 23.34, i = 22.78, i = 22.10 and Y = 20.69 (Morganson et al. 2018). The completed survey is expected to be roughly one magnitude deeper, through the coaddition of 10 images in each of the bands for a cumulative exposure time of 900 s in<em> griz</em> and 450 s in Y.</p>
-            <img width="600px" height="auto" src="/static/images/dr1/dr1_fwhm_hist.png">
-            <img width="600px" height="auto" src="/static/images/dr1/des_footprint_mbtpq.png">
-        <p>Nightly observations are divided between the wide-field and supernova (SN) surveys based on current environmental conditions and the data quality assessments of previous observations. Realtime optimization of survey strategy is accomplished through the ObsTac software on the mountain (<a href="http://adsabs.harvard.edu/abs/2014ASPC..485...77N">Neilsen &amp; Annis 2014</a>). ObsTac prioritizes the g, r, i, z and Y exposures accounting for moon position, sky brightness, current seeing, airmass, hour angle, and other observational characteristics. DES exposures are offset by roughly half the focal plane radius on average in successive visits to the same field, or “hex”, such that objects are observed by different CCDs in each “tiling”. This observing strategy minimizes inhomogeneities from the DECam geometry and enhances the relative photometric calibration. Blanco is an equatorial telescope and there is no rotation between dithered and/or repeated exposures.</p>
+        <div class="fixup" id="observing_oper"></div>
+        <h3 class="fixdown">Survey Operations  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p>The target footprint of the DES wide-area and supernova surveys are shown in the <a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a> The wide-area footprint shape was selected to obtain a large overlap with the South Pole Telescope survey (<a href="http://adsabs.harvard.edu/abs/2011PASP..123..568C">Carlstrom et al. 2011</a>) and Stripe 82 from SDSS (<a href="http://cdsads.u-strasbg.fr/abs/2009ApJS..182..543A">Abazajian et al. 2009</a>), plus a connection region to enhance overall calibration. Given the cosmological goals of the survey, DES avoids the Galactic plane to minimize stellar foregrounds and extinction from interstellar dust.<br>The wide-field survey uses exposure times of 90s for <em>griz</em> and 45s for Y band, yielding a typical single-epoch depth at S/N = 10 of g = 23.57, r = 23.34, i = 22.78, i = 22.10 and Y = 20.69 (Morganson et al. 2018). The completed survey is expected to be roughly one magnitude deeper, through the coaddition of 10 images in each of the bands for a cumulative exposure time of 900 s in<em> griz</em> and 450 s in Y.</p>
+
+            <des-img src="/static/images/dr1/des_footprint_mbtpq.png">Figure 3. A plot of the DES survey area in celestial coordinates. The main 5000 sq. deg. survey footprint for DES is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b ±10 deg. The Large and Small Magellanic Clouds are indicated in gray.</des-img>
+            <des-img src="/static/images/dr1/dr1_fwhm_hist.png">Figure 4. Distribution of PSF FHWM derived from the DECam single images in the DR1 data.</des-img>
+
+<p>Nightly observations are divided between the wide-field and supernova (SN) surveys based on current environmental conditions and the data quality assessments of previous observations. Realtime optimization of survey strategy is accomplished through the ObsTac software on the mountain (<a href="http://adsabs.harvard.edu/abs/2014ASPC..485...77N">Neilsen &amp; Annis 2014</a>). ObsTac prioritizes the g, r, i, z and Y exposures accounting for moon position, sky brightness, current seeing, airmass, hour angle, and other observational characteristics. DES exposures are offset by roughly half the focal plane radius on average in successive visits to the same field, or “hex”, such that objects are observed by different CCDs in each “tiling”. This observing strategy minimizes inhomogeneities from the DECam geometry and enhances the relative photometric calibration. Blanco is an equatorial telescope and there is no rotation between dithered and/or repeated exposures.</p>
+
         <p>A single raw DECam exposure is ~0.5 GB in size, and DES collects ~300 science exposures per night. These data are transferred to NOAO for archiving (<a href="http://adsabs.harvard.edu/abs/2010ASPC..434..260F">Fitzpatrick 2010</a>) and to NCSA for further evaluation and processing by the <a href="http://processing">DESDM system</a>&nbsp;</p>
         <p>
-            <img width="600px" height="auto" src="/static/images/dr1/nimages_i.png">
-            <img width="600px" height="auto" src="/static/images/dr1/dr1_nimages_hist.png">
+            <des-img src="/static/images/dr1/dr1_nimages_hist.png">Figure&nbsp;5. Distribution of overlapping images in each of the<em> grizY</em> bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images.</des-img>
+            <des-img src="/static/images/dr1/nimages_i.png">Figure 6. &nbsp;Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 deg.</des-img>
         </p>
 
         <p><br></p>
-        <div style="margin-top:-70px" id="observing_progress"></div>
-        <h3 style="margin-top:70px">Survey Progress through DR1</h3>
+        <div class="fixup" id="observing_progress"></div>
+        <h3 class="fixdown">Survey Progress through DR1  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p>
   <br>
 </p>
-<p>Between Y1 and Y3, 38,850 wide-field exposures passed baseline survey quality thresholds (Morganson et al. 2018,<br>section 4.7) and are included in coadd processing by DESDM (Morganson et al. 2018). The total number of exposures including the SN fields during the Y1–Y3 period was 61,828.<br>The median airmass of DR1 survey-quality exposures was 1.22, with&gt;99% of exposures taken at airmass&lt;1.4. Meanwhile, the median delivered seeing in the g, r, i, z, and Y bands was 1.119, 0.958, 0.880, 0.836, and 0.904 arcsec, respectively (Figure 3). DES DR1 typically has 3 to 5 overlapping exposures in each of the grizY bands for each region of the DES footprint (Figure 4). As an example, the number of overlapping i-band exposures is shown in Figure 5.</p>
+<p>Between Y1 and Y3, 38,850 wide-field exposures passed baseline survey quality thresholds (Morganson et al. 2018,<br>section 4.7) and are included in coadd processing by DESDM (Morganson et al. 2018). The total number of exposures including the SN fields during the Y1–Y3 period was 61,828.<br>The median airmass of DR1 survey-quality exposures was 1.22, with&gt;99% of exposures taken at airmass&lt;1.4. Meanwhile, the median delivered seeing in the g, r, i, z, and Y bands was 1.119, 0.958, 0.880, 0.836, and 0.904 arcsec, respectively (<a href="javascript:void(0)" on-tap="_dialog" data-item="4">Figure 4</a>). DES DR1 typically has 3 to 5 overlapping exposures in each of the grizY bands for each region of the DES footprint (<a href="javascript:void(0)" on-tap="_dialog" data-item="5">Figure 5</a>). As an example, the number of overlapping i-band exposures is shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="6">Figure 6</a>.</p>
 <p>The total sky-coverage of DR1 was estimated using maps of the individual image coverage generated by mangle (<a href="http://adsabs.harvard.edu/abs/2004MNRAS.349..115H">Hamilton &amp; Tegmark 2004</a>, <a href="http://adsabs.harvard.edu/abs/2008MNRAS.387.1391S">Swanson et al. 2008</a>) and converted to HEALPix (<a href="http://adsabs.harvard.edu/abs/2005ApJ...622..759G">Górski et al. 2005</a>) maps with spatial resolution comparable to the size of gaps between individual CCDs (NSIDE = 4096, ~0.86 arcmin) (<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 201</a>7). When requiring at least one exposure in a given band, the areal coverage of each individual bands is g = 5224, r = 5231, i = 5230, z = 5234, and Y = 5227 sq. deg.. When requiring at least one exposure in all of the <em>grizY</em> bands, the DR1 footprint area is 5186 sq. deg.. These areal coverage numbers do not account for regions that are masked around bright stars or due to other imaging artifacts, which decrease these total areal coverage by ~200 sq. deg. Note also that we are not releasing mangle products for DR1. Instead, we are providing HEALPix index for all the objects at different resolutions as well as a Tabulated HEALPix Map with NSIDE=32 for the footprint.&nbsp;</p>
 <p>
   <br>
@@ -36555,6 +37361,246 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <script>
     class DesDr1Observing extends Polymer.Element {
       static get is() { return 'des-dr1-observing'; }
+      _progress() {this.$.observing_progress.scrollIntoView();}
+      _intro() {this.$.observing_intro.scrollIntoView();}
+      _decam() {this.$.observing_decam.scrollIntoView();}
+      _oper() {this.$.observing_oper.scrollIntoView();}
+      _top() {this.$.observing_top.scrollIntoView();}
+      _dialog(e) {
+          var temp = e.target.dataset.item;
+          //this.$.dialogfig.open();
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+
+          }
+
+    }
+    window.customElements.define(DesDr1Observing.is, DesDr1Observing);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr1-quality" assetpath="des-dr1/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+.fixup{
+    margin-top: -70px;
+}
+.fixdown{
+    margin-top: 70px;
+}
+
+</style>
+
+
+
+
+<div class="fixup" id="quality_top"></div>
+<div class="fixdown"></div>
+<des-card heading="Data Quality">
+    <div class="card-content">
+        <ul>
+          <li>
+                <a href="javascript:void(0)" on-tap="_intro">Introduction</a>
+          </li>
+          <li>
+                <a href="javascript:void(0)" on-tap="_astro">Astrometry</a>
+          </li>
+          <li>
+                <a href="javascript:void(0)" on-tap="_photo">Photometry</a>
+          </li>
+          <li>
+                <a href="javascript:void(0)" on-tap="_flag">Flagged objects</a>
+          </li>
+          <li>
+                <a href="javascript:void(0)" on-tap="_depth">Depth</a>
+           </li>
+           <ul>
+
+              <li><a href="javascript:void(0)" on-tap="_flux">Flux Distribution</a></li>
+              <li><a href="javascript:void(0)" on-tap="_limit">Magnitude limit at fixed S/N</a></li>
+              <li><a href="javascript:void(0)" on-tap="_depth2">Depth from image properties</a></li>
+              <li><a href="javascript:void(0)" on-tap="_complete">Object detection completeness</a></li>
+            </ul>
+          <li>
+                <a href="javascript:void(0)" on-tap="_morph">Morphological object classification</a>
+           </li>
+        </ul>
+        <p>
+            </p><hr>
+          <br>
+        <p></p>
+        <div class="fixup" id="quality_intro"></div>
+        <h3 class="fixdown">Introduction</h3>
+        <p>In this section, we provide a general assessment of the DR1 data quality including astrometric and photometric precision, imaging depth in terms of measurement signal-to-noise and object detection completeness, morphological object classification accuracy, and the identification and removal of likely artifacts.</p>
+        <p><br> </p>
+        <div class="fixup" id="quality_astro"></div>
+        <h3 class="fixdown">Astrometry  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The DR1 astrometric solution is derived in two steps using SCAMP with 2MASS as the reference catalog (Morganson et al. 2018). At the single-epoch stage, we find internal astrometric uncertainties of 42, 36, 37, 39, and 56 mas in the g, r, i, z, and Y bands, respectively, as determined from the median of two-dimensional angular separations between repeated measurements of bright stars from individual exposures. Following the astrometric refinement step for image coaddition by SCAMP, the estimated internal astrometric precision for the coadd is ~30mas RMS (median over coadd tiles). The absolute astrometric uncertainty of the coadd is evaluated with respect to Gaia DR1 (<a href="http://adsabs.harvard.edu/abs/2016A%26A...595A...2G">Gaia Collaboration et al. 2016</a>). Figure 6 shows that the residuals are smallest in regions with with larger stellar densities closer to the Galactic plane (for comparison, see Figure 13), and the mean over the footprint is ~145 mas. Further details of astrometric calibration, including ongoing development using Gaia as a reference catalog, are provided in <a href="http://adsabs.harvard.edu/abs/2017PASP..129g4503B">Bernstein et al. (2017b</a>).</p>
+        <p><br> </p>
+        <div class="fixup" id="quality_photo"></div>
+        <h3 class="fixdown">Photometry  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The relative top-of-the-atmosphere flux measurements for astronomical sources in DR1 have been calibrated using a forward modeling technique to account for both atmospheric and instrumental components of the total system throughput (FGCM; <a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B">Burke et al. 2017</a>). The parameters of the model were initially fit from observations taken in photometric conditions to establish a network of calibration stars that spans the full survey footprint. This network was subsequently used to refine the calibration of exposures taken in non-photometric conditions. Meanwhile, the absolute photometric calibration of DR1 is tied to the spectrophotometric Hubble CALSPEC standard star C26202 (<a href="http://adsabs.harvard.edu/abs/2014PASP..126..711B">Bohlin et al. 2014</a>) located in the SN field C3.<br>Several hundred repeated measurements of C26202 in a variety of conditions yielded a set of small shifts (3 mmag) to place the DES photometry on the AB system. These shifts have been pre-applied to the DR1 zeropoints. The statistical uncertainties on these shifts are estimated to be 2.6, 2.9, 3.4, 2.5, and 4.5 mmag for the g, r, i, z, and Y bands, respectively. Additional sources of systematic uncertainty on the absolute photometric calibration could arise from uncertainty in the level of out-of-band light leakage and uncertainty in the synthetic photometry of C26202. We are currently undertaking observations and analysis of two additional HST CALSPEC standards to reduce the systematic uncertainty of the AB offsets. &nbsp;We reproduce below several of the key results from <a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B">Burke et al. (2017)</a> regarding the relative photometric calibration.</p>
+        <p>The single-epoch photometric statistical precision (associated with random errors in the FGCM fit parameters) derived from repeated measurements of FGCM calibration stars is 7.3, 6.1, 5.9, 7.3, 7.8 mmag in the g, r, i, z, and Y bands, respectively. Under the assumption that successive tiled observations of the same fields yield largely independent model fit parameters (as would be expected from the widely spaced observations in DES), we estimate the statistical precision of coadd zeropoints by combining the fit results from overlapping exposures. The median coadd zeropoint statistical uncertainty for the g, r, i, z, and Y band is 5, 4, 5, 6, and 5 mmag, respectively. Figure 7 shows an example distribution for the i band. As a validation, we compare the photometric uniformity of DES DR1 to the space-based Gaia G-ban&nbsp;photometry. Variations in uniformity are found to be 6.6 mmag, as estimated from a Gaussian fit to the offset distribution between G<sub>Gaia</sub> and G<sub>pred</sub>(r) predicted from the DES r-band.</p>
+        <p>To account for extinction from interstellar dust, we include an additional column in the DR1 photometry tables for E(B - V) values from the reddening map of <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel et al. (1998)</a> (SFD98) at the location of each catalog object. The E(B -V) values were obtained using a linear interpolation of the Zenithal Equal Area projected map distributed by SFD98. We computed fiducial interstellar extinction coefficients, R<sub>b</sub>, for each band so that the corrections to the FGCM calibrated source magnitudes are A<sub>b</sub> = E(B -V)R<sub>b</sub>. Fiducial coefficients are derived using the <a href="http://adsabs.harvard.edu/abs/1999PASP..111...63F">Fitzpatrick (1999)</a> reddening law with R<sub>V</sub> = 3.1 and the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment to the original SFD98 reddening map (N = 0.78). Note that the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment is included in our fiducial reddening coefficients; these coefficients are intended to be used directly with E(B -V) values from the original SFD98 reddening map. We integrated over the DR1 Standard Bandpasses considering a fixed source spectrum that is constant in spectral flux density per unit wavelength, and adopted the low-extinction limit. The latter simplification is appropriate for DES, for which E(B-V) &lt; 0.1 mag over ~99% of the footprint. The resulting multiplicative coefficients for each band, R<sub>b</sub>, are 3.186, 2.140, 1.569, 1.196 and 1.048 in the g, r, i, z and Y bands, respectively. The DES science team continues to explore systematic uncertainties associated with interstellar extinction modeling.</p>
+        <p><br> </p>
+        <div class="fixup" id="quality_flag"></div>
+        <h3 class="fixdown">Flagged objects  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The single-epoch object catalogs include a binary flag parameter, IMAFLAGS_ISO, that expresses the union of all mask bits present for pixels within the isophotal radius of each source (Morganson et al. 2018). For coadd objects, if any pixel is masked in all of the contributing exposures for a given band, the IMAFLAGS_ISO = 1 flag is set for that band. This flag is predominantly set for saturated objects and objects with missing data. We recommend a baseline quality criteria of IMAFLAGS_ISO = 0 (in the relevant bands) for most science applications since the majority of flagged objects have unreliable photometry. The DES DR1 catalog also includes other standard flags FLAGS provided by the SExtractor pipeline.</p>
+        <p><br> </p>
+        <div class="fixup" id="quality_depth"></div>
+        <h3 class="fixdown">Depth  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The effective depth of the DES DR1 wide-field coadd catalog is dependent on the photometric measurement of interest and can be quantified through various approaches. Here we derive simple depth estimates from the flux distribution of cataloged objects, the magnitude corresponding to a fixed signal-to-noise threshold (S/N = 10), an aperture estimate from the input imaging, and object detection completeness. In general, the type of source and surface brightness must also be considered when evaluating the survey depth. The settings used for the source extraction and deblending steps of the DESDM pipeline allow for efficient detection of objects with S/N &nbsp;~10 in the <em>r +i+z</em> composite detection image (Morganson et al. 2018). At the bright end, saturation &nbsp;effects start to become important at r &lt; 16. For even brighter magnitudes, the fraction of saturated objects increases until objects are no longer cataloged due to pixel-level masking applied during processing. For each of the depth studies considered here, we selected a sample of high-quality DR1 coadd objects with using FLAGS_[GRIZ] &lt; 4 and IMAFLAGS_ISO_[GRIZ] = 0. Below we describe these different approaches to estimate the depth of DR1.&nbsp;</p>
+        <p>
+          <br>Table: DES DR1 coadd catalog depth estimates</p>
+        <table>
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Method</th>
+              <th>g</th>
+              <th>r</th>
+              <th>i</th>
+              <th>z</th>
+              <th>Y</th>
+            </tr>
+            <tr>
+              <td>Maximum in number counts (MAG_AUTO)</td>
+              <td>24.32</td>
+              <td>23.89</td>
+              <td>23.41</td>
+              <td>22.09</td>
+              <td>21.40</td>
+            </tr>
+            <tr>
+              <td>Imaging depth from mangle (MAG_APER_4)</td>
+              <td>24.28</td>
+              <td>23.95</td>
+              <td>23.34</td>
+              <td>22.63</td>
+              <td>21.38</td>
+            </tr>
+            <tr>
+              <td>Measured with S/N = 10 (MAG_AUTO)</td>
+              <td>23.52</td>
+              <td>23.10</td>
+              <td>22.51</td>
+              <td>21.81</td>
+              <td>20.61</td>
+            </tr>
+            <tr>
+              <td>Detection completeness of 95% (MAG_AUTO)</td>
+              <td>23.72</td>
+              <td>23.35</td>
+              <td>22.88</td>
+              <td>22.25</td>
+              <td>...</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><br> </p>
+        <div class="fixup" id="quality_flux"></div>
+        <h5 class="fixdown">Flux Distribution</h5>
+        <p>The distribution of astronomical sources is weighted towards low-flux sources. An faint limit on the source detection threshold can be estimated from the mode of the number counts distribution of sources as a function of magnitude. Figure 9 shows the number counts of coadd objects as a function of MAG_AUTO in all five DES bands. The mode of the MAG_AUTO distribution is 24.32, 23.89, 23.41, 22.09, 21.40 in the g, r, i, z, and Y bands, respectively. No restriction were placed on source morphology (i.e., stars vs. galaxies) for this estimate.</p>
+        <p><br> </p>
+        <div class="fixup" id="quality_limit"></div>
+        <h5 class="fixdown">Magnitude limit at fixed signal-to-noise</h5>
+        <p>The magnitude limit corresponding to a fixed signal-to-noise for a given photometric measurement (e.g., MAG_AUTO) can be empirically determined from the distribution of magnitude uncertainties as a function of magnitude (<a href="http://adsabs.harvard.edu/abs/2015arXiv150900870R">Rykoff et al. 2015</a>). SExtractor provides an estimate of the photometric uncertainty through the MAGERR quantities, which are estimated from the fluctuations of the background around the sources. These are related to signal-to-noise, δF/F, via the differentiation of Pogson’s law (<a href="http://adsabs.harvard.edu/abs/1856MNRAS..17...12P">Pogson 1856</a>):</p>
+        <p>
+          <br>
+         <img src="http://latex.codecogs.com/gif.latex?\delta m = \frac{-2.5}{\ln 10} \frac{\delta F}{F}.">
+        </p>
+        <p>We summarize in Table 2 the characteristic S/N = 10 thresholds for MAG_AUTO corresponding to δF/F &nbsp;~0.1 in each of the g, r, i, z, and Y bands. Figure 10 shows the MAG_AUTO distribution for DES DR1 catalog objects with 0.10837 &lt; MAGERR_AUTO &lt; 0.10877. The spread in these distributions represents comes from dependence of S/N on source properties (e.g., surface brightness) and survey non-uniformity.</p>
+        <p><br> </p>
+        <div class="fixup" id="quality_depth2"></div>
+        <h5 class="fixdown">Depth from image properties</h5>
+        <p>It is also possible to estimate the DES DR1 imaging depth using mangle (<a href="http://adsabs.harvard.edu/abs/2004MNRAS.349..115H">Hamilton &amp; Tegmark 2004</a>, <a href="http://adsabs.harvard.edu/abs/2008MNRAS.387.1391S">Swanson et al. 2008</a>), which generates a vectorized map of the survey coverage accounting for the focal plane geometry and imaging artifacts (i.e., bright star masks, bleed trails, satellite trails) (<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>, Morganson et al. 2018). The mangle processing produces a coadd weight map from a weighted sum of the single-epoch input images. This weight was converted to a the S/N = 10 limiting magnitude for a 200 diameter aperture, corresponding to the MAG_APER_4 quantity measured by SExtractor (for details, see <a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). The median limiting magnitude in the g, r, i, z, and Y bands across the DES footprint is 23.52, 23.10, 22.51, 21.81, 20.61, respectively (Figure 10).</p>
+        <p><br> </p>
+        <div class="fixup" id="quality_complete"></div>
+        <h5 class="fixdown">Object detection completeness</h5>
+        <p>Another measure of effective imaging depth is the object detection completeness relative to deeper imaging data. We evaluated the detection completeness of DES DR1 through a comparison to public CFHTLenS data (<a href="http://adsabs.harvard.edu/abs/2013MNRAS.433.2545E">Erben et al. 2013</a>) using an overlap region centered on (Ra;Dec) = (34.5;-5.4) consisting of 9 CFHTLenS fields in the W1 patch. The CFHTLens 5σ magnitude limits in a 2'' aperture for g', r', i', y' and z' are 25.58, 24.88, 24.54, 24.71 and 23.46, respectively. To ensure full coverage in both surveys, we restricted the analysis to regions with CFHTLenS image mask value MASK = 0 and DES coverage fraction &gt; 99% in the intersection of the griz bands (see <a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). The effective area of overlap in both surveys including masking is 6.0 sq. deg.</p>
+        <p>Object matching is performed using a 1'' radius and we require a robust flux measurement in the respective DES band (15 &lt; MAG_AUTO &lt; 30) that is roughly consistent with that of CFHTLenS (within 1 mag) for an object to count as “detected” in DES DR1.</p>
+        <p>The DES DR1 detection efficiency is defined as the fraction of CFHTLenS objects in a given flux interval that have a matched DES object passing the baseline quality cuts listed above, and is expressed in the DES photometric system using converted flux measurement from CFHTLenS. The resulting detection efficiency curves are plotted in Figure 11. DES DR1 detection efficiencies are only plotted for the magnitude range brighter than the typical S/N = 5 limiting magnitude of CFHTLenS. The 95% completeness magnitude thresholds obtained from this test in the g, r, i, and z bands are 23.72, 23.35, 22.88, and 22.25, respectively (Table 1). CFHTLenS does not include comparable Y-band coverage.</p>
+        <p>Using the same baseline quality selection criteria of FLAGS_[GRIZ] &lt; 4 and IMAFLAGS_ISO_[GRIZ] = 0, we find that in each of <em>griz</em> bands, that &nbsp;roughly less than 1% of DES objects with MAG_AUTO greater than 20 and less than the typical S/N = 5 limiting magnitude of CFHTLenS lack a matched counterpart in CFHTLenS (Figure 11). This suggests that contamination from spurious objects in DES DR1 is also roughly 1%.</p>
+
+        <p><br> </p>
+        <div class="fixup" id="quality_morph"></div>
+        <h3 class="fixdown">Morphological object classification  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>A basic selection on object size relative to the PSF can be used to separate samples of spatially extended galaxies from point-like stars and quasars. Accurate object classification becomes challenging for ground based imaging surveys at faint magnitudes, and accordingly, optimal use of morphological, color, and temporal information is an active area of research (e.g., <a href="http://adsabs.harvard.edu/abs/2012ApJ...760...15F">Fadely et al. 2012</a>,<a href="http://adsabs.harvard.edu/abs/2013A%26A...557A..16M"> Małek et al. 2013</a>, <a href="http://adsabs.harvard.edu/abs/2015MNRAS.453..507K">Kim et al. 2015</a>, <a href="http://adsabs.harvard.edu/abs/2017MNRAS.464.4463K">Kim &amp; Brunner 2017</a>). Several object classification schemes have been applied to DES data for a variety of science cases (e.g., <a href="http://adsabs.harvard.edu/abs/2013arXiv1306.5236S">Soumagnac et al. 2013</a>, <a href="http://adsabs.harvard.edu/abs/2015ApJ...801...73C">Chang et al. 2015</a>, <a href="http://adsabs.harvard.edu/abs/2015MNRAS.454.3952R">Reed et al. 2015</a>, <a href="http://adsabs.harvard.edu/abs/2015MNRAS.454.3952R">Drlica-Wagner et al. 2017</a>).<br>The most common classification scheme makes use of the SExtractor SPREAD_MODEL, which compares the fit of a local PSF model to a slightly extended exponential disk model (<a href="http://adsabs.harvard.edu/abs/2012ApJ...757...83D">Desai et al. 2012</a>). Below we show a example using SPREAD_MODEL for object classification in a way that is suitable for both stellar and extragalactic science.</p>
+        <p>We define a new variable EXTENDED_COADD as the independent sum of several Boolean conditions:</p><br>
+
+
+        <p>EXTENDED_COADD =<br>((SPREAD_MODEL_I+ 3 × SPREADERR_MODEL_I) &gt; 0.005)<br>+ ((SPREAD_MODEL_I+SPREADERR_MODEL_I) &gt; 0.003)<br>+ ((SPREAD_MODEL_I-SPREADERR_MODEL_I) &gt; 0.003)</p>
+        <p>
+          <br>Note that EXTENDED_COADD is defined by a sequence of boolean conditions that, when true, add a unit to the classifier. This classifier results in a value of 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies). &nbsp;</p>
+        <p>We evaluate the performance of the example classifier above using three regions in the main body of the DES footprint that overlap fields from HSC-SSP DR1 (<a href="http://adsabs.harvard.edu/abs/2017arXiv170208449A">Aihara et al. 2017b</a>) with typical seeing in the i-band FWHM ~ 0.7'': SXDS (Ultra Deep layer), DEEP2_3 (Deep layer), and portions of VVDS (Wide layer). The areal overlap between these HSCSSP data sets and DES is ~ 18 sq. deg. The HSC-SSP data is of sufficient depth and image quality that a distinct stellar locus is clearly visible in the HSC concentration parameter IMAG_PSF-ICMODEL_MAG to an i-band magnitude of ~24.0. We choose an interval of EXTENDED_COADD values to select stellar or galactic samples with a balance of classification efficiency and purity appropriate for different science cases (Figure 12).</p>
+        <p>We recommend using quantities based on SExtractor SPREAD_MODEL for morphological classification in DR1. Although the SExtractor quantity CLASS_STAR has been commonly used in the past, we find that SPREAD_MODEL based classifiers consistently outperform CLASS_STAR, as exemplified by the receiver operating characteristic (ROC) curve shown in Figure 14. The ROC curves are generated by performing a simple scan of threshold values for each of SExtractor quantities, and using the HSC-SSP classifications described above as a reference. Classifiers based on the weighted averaged SPREAD_MODEL from single epoch detections, WAVG_SPREAD_MODEL, are expected to be more robust for objects that are bright enough to be detected in single-epoch imaging (see Section 4.6). It is expected that classifiers using alternative bands and/or combinations of object measurements will be more appropriate for specific science cases.</p>
+        <p>
+          <br>
+        </p>
+        <p>
+          <br>
+        </p>
+
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1Quality extends Polymer.Element {
+      static get is() { return 'des-dr1-quality'; }
+      _intro() {this.$.quality_intro.scrollIntoView();}
+      _astro() {this.$.quality_astro.scrollIntoView();}
+      _photo() {this.$.quality_photo.scrollIntoView();}
+      _flag() {this.$.quality_flag.scrollIntoView();}
+      _depth() {this.$.quality_depth.scrollIntoView();}
+      _flux() {this.$.quality_flux.scrollIntoView();}
+      _limit() {this.$.quality_limit.scrollIntoView();}
+      _depth2() {this.$.quality_depth2.scrollIntoView();}
+      _complete() {this.$.quality_complete.scrollIntoView();}
+      _morph() {this.$.quality_morph.scrollIntoView();}
+      _top() {this.$.quality_top.scrollIntoView();}
+
+    }
+    window.customElements.define(DesDr1Quality.is, DesDr1Quality);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr1-known-issues" assetpath="des-dr1/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+
+</style>
+
+
+
+
+<des-card heading="Known Issues">
+    <div class="card-content">
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1KnownIssues extends Polymer.Element {
+      static get is() { return 'des-dr1-known-issues'; }
       _progress() {
           this.$.observing_progress.scrollIntoView();
       }
@@ -36569,7 +37615,49 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       }
 
     }
-    window.customElements.define(DesDr1Observing.is, DesDr1Observing);
+    window.customElements.define(DesDr1KnownIssues.is, DesDr1KnownIssues);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr1-faq" assetpath="des-dr1/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+
+</style>
+
+
+
+
+<des-card heading="FAQ">
+    <div class="card-content">
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1Faq extends Polymer.Element {
+      static get is() { return 'des-dr1-faq'; }
+      _progress() {
+          this.$.observing_progress.scrollIntoView();
+      }
+      _intro() {
+          this.$.observing_intro.scrollIntoView();
+      }
+      _decam() {
+          this.$.observing_decam.scrollIntoView();
+      }
+      _oper() {
+          this.$.observing_oper.scrollIntoView();
+      }
+
+    }
+    window.customElements.define(DesDr1Faq.is, DesDr1Faq);
   </script>
 
 </dom-module>
