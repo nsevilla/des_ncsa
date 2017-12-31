@@ -1,130 +1,88 @@
-    <dom-module id='des-dr1-soft'>
-    <template>
-    <style include='shared-styles'>
-    :host {
-     display: block;
-    }
-    div img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-     }
-    </style>
+<dom-module id='des-dr1-soft'>
+<template>
+<style include='shared-styles'>
+:host {
+    padding: 10px;
+}
+</style>
+
+
+<paper-dialog id="dialogfig1">
+   <des-img-big src="/static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Calibration and raw science images are delivered from DECam by SISPI and DTS to NCSA. In Single Epoch Processing (yellow box), raw science exposures undergo preprocessing and are combined with calibration images to produce First Cut images for initial inspection and Final Cut images for science releases. Images in the Supernova fields are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+   <des-img-big src="/static/images/fig5_desdm_paper.png">Figure 2. A diagram of the Preprocessing applied to every exposure. This is a “zoom in” of the the Preprocessing box in Figure 1. This includes our initial masking and detrending with bias and flat images (green and red arrows, respectively). Preprocessed exposures are then processed with the First Cut or Final Cut pipeline.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig3">
+   <des-img-big src="/static/images/processing.gif">Figure 3. Simplified animated version of both pipelines showing the final result after coadditon for a selected area of the sky </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+
+
+<div class="fixup" id="soft_top"></div>
+<div class="fixdown"></div>
     <des-card heading="Data Processing">
     <div class=card-content>
-    
-<div id="main-content">
- <h2 style="text-align: center;"><strong> Overview</strong>
 
- </h2>
- <p>
-  <br/>
- </p>
- <p style="text-align: left;">
- The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES follows a well-defined path from its acquisition on the mountain top up to the stage when data is ready to be fed into science algorithms. We can identify two data production levels, as well as two levels in raw-to-refined processing:
- </p>
- <ul>
-  <li style="text-align: left;">
-   Single Epochs images. These can be easily described as exposures of sky patches, each independent from the others (namely, no combination of images are performed for overlap regions). First, these images need to be treated, and then we can distinguish two processes which are similar in structure and procedure, but different in the employed calibrations and configurations files:
+<ul>
+  <li>
+        <a href="javascript:void(0)" on-tap="_intro">Overview</a>
   </li>
- </ul>
- <ol>
-  <li style="text-align: left;margin-left: 30.0px;">
-  First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from the previous year of observation are used. At the end of the pipeline, quality assessments are performed, then exposures not meeting the criteria for those assessments enter the queue to be re-observed at CTIO.
+  <li>
+        <a href="javascript:void(0)" on-tap="_single">Single Epoch Pipeline</a>
   </li>
-  <li style="text-align: left;margin-left: 30.0px;">
-   Final cut: this pipeline performs the same tasks as First cut. The configuration files and the calibrations files (e.g., flats, bad pixels masking, sky flats) have been updated to the most recent version, for which the current year of observation is the source of such calibrations.
+  <li>
+        <a href="javascript:void(0)" on-tap="_multi">Multi Epoch Pipeline</a>
   </li>
- </ol>
- <ul>
-  <li style="text-align: left;">
-  Multi-Epoch images. After the run of Final cut, this pipeline is performed to achieve a higher depth on the DES footprint. Through co-additions of overlapping images, application of algorithms for optimal shape and depth parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.
-  </li>
- </ul>
- <p style="text-align: left;">
- The above pipelines/processes are described in depth in Berstein et al. (2017)  and Morganson et al (2017). To aid with visualizing this landscape, several of the Morganson et al. (2017) diagrams are displayed below. The first figure shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are also displayed.
- </p>
- <p style="text-align: left;">
+</ul>
+<hr />
+<p><br /></p>
+<div class="fixup" id="soft_intro"></div>
+<h3 class="fixdown">Overview  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p>The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES, follows a well defined path, from its acquisition on the mountain top up to the stage when data is ready to be feed into science algorithms. We can distinguish two levels in data products, as well as two levels in raw-to-refined processing:</p>
+<ul>
+  <li style="text-align: left;">Single Epochs images. Can be easily described as exposures of sky patches, each one independent of the others (namely, no combination of images are performed for overlap regions). These images need to be treated, and then we can distinguish two process being similar ins structure and procedure, but different in the employed calibrations and configurations files:</li>
+</ul>
+<ol>
+  <li style="text-align: left;margin-left: 30.0px;">First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from previous year of observing are used. At the end of the pipeline, quality assessments are performed, then exposures not reaching the criteria enters the queue to be re-observed at CTIO.</li>
+  <li style="text-align: left;margin-left: 30.0px;">Final cut: this pipeline performs the same tasks as First cut. The configuration files and the calibrations files (e.g., flats, bad pixels masking, sky flats) has been updated to the most recent version, for which the current year of observation is the source of such calibrations.</li>
+</ol>
+<ul>
+  <li style="text-align: left;">Multi Epoch images. After the run of Final cut, this pipeline is performed to achieve a higher depth on the DES footprint. Through co-additions of overlapping images, performing of algorithms for optimal shape and depth parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fiting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.</li>
+</ul>
+<p>The above pipelines/processings are described in more depth in<a href="http://adsabs.harvard.edu/abs/2017PASP..129k4502B"> Berstein et al. (2017)</a>  and Morganson et al (2017). To help the visualization of the above landscape, below we show some of the Morganson et al. (2017) diagrams. <a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a> shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are displayed.</p>
   <br/>
- </p>
- <p>
-  <span>
-   <img src="/static/images/fig4_desdm_paper.png" width="680"/>
-  </span>
- </p>
- <p>
   <br/>
- </p>
- <p>
-  The second diagram shows the steps in preprocessing. First cut is represented by the upper set of connected boxes, and Final cut is reresented by the upper and lower diagram flows. For the previous and current year, super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.
- </p>
- <p>
-  <br/>
- </p>
- <p>
-  <span>
-   <img height="250" src="/static/images/fig5_desdm_paper.png"/>
-  </span>
- </p>
+
+   <des-img-big  src="/static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Calibration and raw science images are delivered from DECam by SISPI and DTS to NCSA. In Single Epoch Processing (yellow box), raw science exposures undergo preprocessing and are combined with calibration images to produce First Cut images for initial inspection and Final Cut images for science releases. Images in the Supernova fields are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+
+ <p><a href="javascript:void(0)" on-tap="_dialog" data-item="2"/>Figure 2</a> shows the steps comprised on preprocessing, First cut being the upper set of connected boxes, and Final cut belonging to the upper and lower diagram flows. For the last, current year super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.</p>
+
+   <des-img-big src="/static/images/fig5_desdm_paper.png">Figure 2. A diagram of the Preprocessing applied to every exposure. This is a “zoom in” of the the Preprocessing box in Figure 1. This includes our initial masking and detrending with bias and flat images (green and red arrows, respectively). Preprocessed exposures are then processed with the First Cut or Final Cut pipeline.</des-img-big>
  <p>
   <br/>
  </p>
- <p>
-  One strength of the overall pipeline is that it provides room to include more refined products in calibrations. This ability was learned from previous work and is noticeable when comparing initially raw images among the coadded products. This is presented (even though it's not displayed in full width) in the following figure made by Matias Carrasco at NCSA. This figure displays the different products in a single patch of sky from the raw image to the fully reduced, processed, and stacked (higher depth) image:
- </p>
- <p>
-  <br/>
- </p>
- <p>
-  <span>
-   <img src="/static/images/processing.gif" width="450"/>
-  </span>
- </p>
- <h2 id="ProcessingandSoftware-" style="text-align: center;">
-  <span style="color: rgb(0,0,0);">
-   <br/>
-  </span>
- </h2>
- <h2 id="ProcessingandSoftware-SingleEpoch" style="text-align: center;">
- <strong>Single Epoch Processing</strong>
- </h2>
- <p>
-  <span style="color: rgb(0,0,0);">
-   <br/>
-  </span>
- </p>
- <p>
-  <span style="color: rgb(0,0,0);">
+<p>One of the strengths of the pipeline taken as a whole, is the structure allowing to include more refined products to be used in the calibrations. The ability was learned from the work, and it's tangible when comparing initially raw images among the coadded products. This can be evidenced (even not in all its wideness) in the following <a href="javascript:void(0)" on-tap="_dialog" data-item="3"/>Figure 3</a> exhibiting the different products from a single patch of sky, from the raw image to the fully reduced and processed and stacked (higher depth) image:</p>
+
+   <des-img-big src="/static/images/processing.gif">Figure 3. Simplified animated version of both pipelines showing the final result after coadditon for a selected area of the sky </des-img-big>
+
+        <p><br /></p>
+        <div class="fixup" id="soft_single"></div>
+        <h3 class="fixdown">Single Epoch  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>
    To better illustrate each processing step of the Single Epoch workflow, each step is described below for both First and Final cut. For every step, the parent package with its corresponding version is displayed. Because of various improvements, you must use the right version of each package for successful processing.
-  </span>
  </p>
- <p>
-  <span style="color: rgb(0,0,0);">
-   <br>
-   The parent packages are listed with
-   <span style="color: rgb(0,0,255);">
-    links
-   </span>
-   to their repositories as Github DES Data Management(
-   <span style="color: rgb(0,0,255);">
-    <a href="https://github.com/DarkEnergySurvey/" rel="nofollow">
-     <span style="color: rgb(0,0,255);">
-      DESDM
-     </span>
-    </a>
-   </span>
-   )for the DES specific codes,
-   <span style="color: rgb(0,0,255);">
-    <a href="https://www.astromatic.net/" rel="nofollow">
-     <span style="color: rgb(0,0,255);">
-      Astromatic
-     </span>
-    </a>
-   </span>
-   for astrometric and point spread function (Emmanuel Bertin's group), and the python wrapper for Healpix (Górski et al. 2005)
-  </span>
-  <span>
-  </span>
+   The parent packages are listed, with links to their repositories, being Github DES Data Management ( <a href="https://github.com/DarkEnergySurvey/">DESDM </a>) for the DES specific codes, <a href="https://www.astromatic.net/">Astromatic </a>  for astrometric and point spread function (Emmanuel Bertin's group), and the python wrapper for Healpix <a href="http://adsabs.harvard.edu/abs/2005ApJ...622..759G"> (Górski et al. 2005)</a>
+
+
  </p>
  <ol>
   <li>
@@ -939,14 +897,9 @@
  </div>
  <p>
   <br/>
- </p>
- <h2 id="ProcessingandSoftware-MultiEpoch" style="text-align: center; color:black;">
-  <strong> Multi Epoch Processing</strong>
- </h2>
- <p>
-  <br/>
- </p>
- <p>
+        <p><br /></p>
+        <div class="fixup" id="soft_multi"></div>
+        <h3 class="fixdown">Multi Epoch Processing  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
   <span>
    At this point, we have a set of Single Epoch images, with no co-addition between them. Even though the vast majority are of high quality, many scientific goals of our collaboration require deeper magnitudes and better signal-to-noise. Therefore,  stacking processing is needed, which is where Multi Epoch comes into play. It doesn't re-calculate calibrations, masking, or any other corrective processes, but performs an astrometry refinement. It applies this refinement to Single Epoch images and then continues to the coadd procedure.
   </span>
@@ -1106,7 +1059,7 @@
    <br>
    This can be sketched in 2 steps; the first takes the solutions for the inner CCD deformation coefficients that come from Final cut refinement, so the code tries to match them when adding different images together. The second step is matched with 2MASS (or GAIA).
    <br>
-   With the results of the astrometry, SCAMP is used for stacking the images into a single image, while also adding photometric zeropoints information coming from the Forward Global Calibration Method (FGCM), Burke et al. (2017).
+   With the results of the astrometry, SCAMP is used for stacking the images into a single image, while also adding photometric zeropoints information coming from the Forward Global Calibration Method (FGCM), <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1706.01542">Burke et al. (2017)</a>.
    <br/>
   </span>
  </p>
@@ -1281,7 +1234,7 @@
    code cannot properly take into full account. This mostly affects the photometric precision and not the object detection. This is one of the reasons for the need of Multi Object Fitting (MOF).
  </p>
  <p>
-  Additionally, the reddening coefficients from Schlegel, Finkbeiner &amp; Davis (1998) are applied.
+  Additionally, the reddening coefficients from <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel, Finkbeiner &amp; Davis (1998)</a> are applied.
  </p>
  <div>
   <table>
@@ -1694,10 +1647,7 @@
  <p>
   <br/>
  </p>
- <h3 id="ProcessingandSoftware-References">
-  <strong>
-   References</strong>
- </h3>
+        <h3 >References  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
  <ol>
   <li>
    <span>
@@ -1802,14 +1752,24 @@
   </span>
  </p>
 </div>
-    </div>
     </des-card>
     </template>
     <script>
     class desDr1Soft extends Polymer.Element {
       static get is() { return 'des-dr1-soft'; }
+      _intro() {this.$.soft_intro.scrollIntoView();}
+      _single() {this.$.soft_single.scrollIntoView();}
+      _multi() {this.$.soft_multi.scrollIntoView();}
+      _top() {
+          this.$.soft_top.scrollIntoView();
+      }
+      _dialog(e) {
+          var temp = e.target.dataset.item;
+          //this.$.dialogfig.open();
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+
+          }
        }
      window.customElements.define(desDr1Soft.is,desDr1Soft);
      </script>
      </dom-module>
-    

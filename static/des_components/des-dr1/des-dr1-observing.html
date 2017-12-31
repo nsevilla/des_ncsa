@@ -6,7 +6,7 @@
 <style include="shared-styles">
 :host {
        padding: 10px;
-       }
+        }
 
 </style>
 <!-- FIGURES
@@ -140,8 +140,7 @@
       _top() {this.$.observing_top.scrollIntoView();}
       _dialog(e) {
           var temp = e.target.dataset.item;
-          console.log('#dialogfig'+temp)
-          //this.$( "#dialogfig" ).open();
+          //this.$.dialogfig.open();
           this.shadowRoot.querySelector('#dialogfig'+temp).open();
 
           }
