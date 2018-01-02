@@ -139,9 +139,9 @@
       _oper() {this.$.observing_oper.scrollIntoView();}
       _top() {this.$.observing_top.scrollIntoView();}
       _dialog(e) {
-          var temp = e.target.dataset.item;
           e.preventDefault();
           e.stopPropagation();
+          var temp = e.target.dataset.item;
           //this.$.dialogfig.open();
           this.shadowRoot.querySelector('#dialogfig'+temp).open();
 
