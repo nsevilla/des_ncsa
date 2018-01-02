@@ -32148,14 +32148,22 @@ Custom property | Description | Default
 
       .drawer-list a.iron-selected {
         color: black;
-        font-weight: normal;
+        font-weight: bold;
         /*background-color : rgba(0, 0, 0, 0.05);*/
       }
       .drawer-list a:hover {
         color: black;
-        font-weight: normal;
+        font-weight: bold;
         /*background-color : rgba(0, 0, 0, 0.05);*/
       }
+
+      .drawer-list .app-menu-item.iron-selected {
+        color: black;
+        font-weight: bold;
+        /*background-color : rgba(0, 0, 0, 0.05);*/
+      }
+
+
     @media only screen and (max-device-width: 800px) {
         .toolbar {
             font-size: 1.8rem;
@@ -32180,15 +32188,36 @@ Custom property | Description | Default
 
 /*Firefox specific styling because app-menu styling doesn't seem to be implemented in Firefox*/
         @-moz-document url-prefix() {
+
             #needindent{
                 text-indent: 20px;
                 font-size: 1rem;
                 font-weight: normal;
             }
+
+            #needindent.iron-selected{
+                color: black;
+                font-weight: bold;
+            }
+            #needindent:hover{
+                color: black;
+                font-weight: bold;
+            }
+
+
             #needsindent2{
-                text-indent: 45px;
+                padding-left: 60px;
                 font-size: 1rem;
                 font-weight: normal;
+            }
+
+            #needsindent2.iron-selected{
+                color: black;
+                font-weight: bold;
+            }
+            #needsindent2:hover{
+                color: black;
+                font-weight: bold;
             }
        }
 
@@ -32234,20 +32263,20 @@ Custom property | Description | Default
             <a class="app-menu-item" name="home" href="[[rootPath]]home">Home</a>
 
 
-          <app-submenu>
+          <app-submenu no-auto-close="">
             <div slot="submenu-trigger">
-              <a class="app-menu-item" name="releases" href="[[rootPath]]releases">Releases<iron-icon icon="chevron-right"></iron-icon></a>
+              <a class="app-menu-item" name="releases" href="[[rootPath]]releases">Releases<iron-icon icon="expand-more"></iron-icon></a>
             </div>
             <app-menu slot="submenu-content">
-              <app-submenu>
+              <app-submenu no-auto-close="">
                 <div class="sublist1" slot="submenu-trigger">
-                <a class="app-menu-item" name="sva1" href="[[rootPath]]releases/sva1">SVA1 Gold<iron-icon icon="chevron-right"></iron-icon></a>
+                <a class="app-menu-item" name="sva1" href="[[rootPath]]releases/sva1">SVA1 Gold<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
 
                 <app-menu class="sublist2" slot="submenu-content">
-                  <app-submenu>
+                  <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="docs" href="[[rootPath]]releases/sva1/docs" persistent="False">Documentation<iron-icon icon="chevron-right"></iron-icon></a>
+                  <a class="app-menu-item" id="needindent" name="docs" href="[[rootPath]]releases/sva1/docs" persistent="False">Documentation<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
                 <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="docs-gold" href="[[rootPath]]releases/sva1/docs/docs-gold">Gold</a>
@@ -32256,20 +32285,26 @@ Custom property | Description | Default
                   <a class="app-menu-item" id="needsindent2" name="docs-redmapper" href="[[rootPath]]releases/sva1/docs/docs-redmapper">RedMaPPer</a>
                 </app-menu>
                 </app-submenu>
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id="needindent" name="file-content" href="[[rootPath]]releases/sva1/file-content">Files</a>
+                </div>
+                </app-submenu>
+
                 </app-menu>
 
               </app-submenu>
 
-               <app-submenu>
+               <app-submenu no-auto-close="">
                 <div class="sublist1" slot="submenu-trigger">
-                  <a class="app-menu-item" name="dr1" href="[[rootPath]]releases/dr1">DR1<iron-icon icon="chevron-right"></iron-icon></a>
+                  <a class="app-menu-item" name="dr1" href="[[rootPath]]releases/dr1">DR1<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
                 <app-menu class="sublist2" slot="submenu-content">
                    <!--<a class="app-menu-item" id=needindent name="dr1files" href="[[rootPath]]releases/dr1/dr1files" >Files</a>-->
-                  <app-submenu>
+                  <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="dr1-docs" href="[[rootPath]]releases/dr1/dr1-docs" persistent="False">Overview<iron-icon icon="chevron-right"></iron-icon></a>
+                  <a class="app-menu-item" id="needindent" name="dr1-docs" href="[[rootPath]]releases/dr1/dr1-docs" persistent="False">Overview<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
                 <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="acquisition" href="[[rootPath]]releases/dr1/dr1-docs/acquisition">Data Acquisition</a>
@@ -32279,17 +32314,27 @@ Custom property | Description | Default
                 </app-menu>
                 </app-submenu>
 
-                  <app-submenu>
+                  <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products" persistent="False">Products<iron-icon icon="chevron-right"></iron-icon></a>
+                  <a class="app-menu-item" id="needindent" name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products" persistent="False">Products<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
                 <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="dr1-schema" href="[[rootPath]]releases/dr1/dr1-products/dr1-schema">Table Schema</a>
                 </app-menu>
                 </app-submenu>
 
-                  <a class="app-menu-item" id="needindent" name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access">Data Access</a>
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access" persistent="False">Data Access</a>
+                </div>
+                </app-submenu>
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id="needindent" name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq">FAQ</a>
+                </div>
+                </app-submenu>
+
 
                 </app-menu>
                </app-submenu>
