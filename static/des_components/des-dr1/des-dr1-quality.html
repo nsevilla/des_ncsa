@@ -8,6 +8,13 @@
        padding: 10px;
        }
 
+.caption {
+    padding-left: 0px;
+    width: 95%;
+    font-size: 0.85rem;
+    text-align: justify;
+    font-style: italic;
+}
 </style>
 
 <paper-dialog id="dialogfig1">
@@ -158,9 +165,12 @@
         <div class="fixup" id="quality_depth"></div>
         <h3 class="fixdown">Depth  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>The effective depth of the DES DR1 wide-field coadd catalog is dependent on the photometric measurement of interest and can be quantified through various approaches. Here we derive simple depth estimates from the flux distribution of cataloged objects, the magnitude corresponding to a fixed signal-to-noise threshold (S/N = 10), an aperture estimate from the input imaging, and object detection completeness. In general, the type of source and surface brightness must also be considered when evaluating the survey depth. The settings used for the source extraction and deblending steps of the DESDM pipeline allow for efficient detection of objects with S/N  ~10 in the <em>r +i+z</em> composite detection image (Morganson et al. 2018). At the bright end, saturation  effects start to become important at r &lt; 16. For even brighter magnitudes, the fraction of saturated objects increases until objects are no longer cataloged due to pixel-level masking applied during processing. For each of the depth studies considered here, we selected a sample of high-quality DR1 coadd objects with using FLAGS_[GRIZ] &lt; 4 and IMAFLAGS_ISO_[GRIZ] = 0. Below we describe these different approaches to estimate the depth of DR1. </p>
-        <p>
-          <br/>Table: DES DR1 coadd catalog depth estimates</p>
+
         <table>
+
+            <caption align="bottom" class="caption">
+            Table 1. DES DR1 coadd catalog depth estimates
+                <br /></caption>
           <colgroup>
             <col/>
             <col/>
@@ -247,7 +257,7 @@
         <h5 class="fixdown">Object detection completeness</h5>
         <p>Another measure of effective imaging depth is the object detection completeness relative to deeper imaging data. We evaluated the detection completeness of DES DR1 through a comparison to public CFHTLenS data (<a href="http://adsabs.harvard.edu/abs/2013MNRAS.433.2545E">Erben et al. 2013</a>) using an overlap region centered on (Ra;Dec) = (34.5;-5.4) consisting of 9 CFHTLenS fields in the W1 patch. The CFHTLens 5σ magnitude limits in a 2'' aperture for g', r', i', y' and z' are 25.58, 24.88, 24.54, 24.71 and 23.46, respectively. To ensure full coverage in both surveys, we restricted the analysis to regions with CFHTLenS image mask value MASK = 0 and DES coverage fraction &gt; 99% in the intersection of the griz bands (see <a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). The effective area of overlap in both surveys including masking is 6.0 sq. deg.</p>
         <p>Object matching is performed using a 1'' radius and we require a robust flux measurement in the respective DES band (15 &lt; MAG_AUTO &lt; 30) that is roughly consistent with that of CFHTLenS (within 1 mag) for an object to count as “detected” in DES DR1.</p>
-        <p>The DES DR1 detection efficiency is defined as the fraction of CFHTLenS objects in a given flux interval that have a matched DES object passing the baseline quality cuts listed above, and is expressed in the DES photometric system using converted flux measurement from CFHTLenS. The resulting detection efficiency curves are plotted in <a href="javascript:void(0)" on-tap="_dialog" data-item="7"/>Figure 7</a>. DES DR1 detection efficiencies are only plotted for the magnitude range brighter than the typical S/N = 5 limiting magnitude of CFHTLenS. The 95% completeness magnitude thresholds obtained from this test in the g, r, i, and z bands are 23.72, 23.35, 22.88, and 22.25, respectively (Table 1). CFHTLenS does not include comparable Y-band coverage.</p>
+        <p>The DES DR1 detection efficiency is defined as the fraction of CFHTLenS objects in a given flux interval that have a matched DES object passing the baseline quality cuts listed above, and is expressed in the DES photometric system using converted flux measurement from CFHTLenS. The resulting detection efficiency curves are plotted in <a href="javascript:void(0)" on-tap="_dialog" data-item="7"/>Figure 7</a>. DES DR1 detection efficiencies are only plotted for the magnitude range brighter than the typical S/N = 5 limiting magnitude of CFHTLenS. The 95% completeness magnitude thresholds obtained from this test in the g, r, i, and z bands are 23.72, 23.35, 22.88, and 22.25, respectively. CFHTLenS does not include comparable Y-band coverage.</p>
         <p>Using the same baseline quality selection criteria of FLAGS_[GRIZ] &lt; 4 and IMAFLAGS_ISO_[GRIZ] = 0, we find that in each of <em>griz</em> bands, that  roughly less than 1% of DES objects with MAG_AUTO greater than 20 and less than the typical S/N = 5 limiting magnitude of CFHTLenS lack a matched counterpart in CFHTLenS (<a href="javascript:void(0)" on-tap="_dialog" data-item="7"/>Figure 7</a>). This suggests that contamination from spurious objects in DES DR1 is also roughly 1%.</p>
 
         <p><br /> </p>
