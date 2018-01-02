@@ -5,35 +5,359 @@
 
 <style include="shared-styles">
 :host {
-       display: block;
        padding: 10px;
        }
 
+.caption {
+    padding-left: 0px;
+    width: 95%;
+    font-size: 0.85rem;
+    text-align: justify;
+    font-style: italic;
+}
 </style>
 
 
+<paper-dialog id="dialogfig1">
+            <des-img-big  src="/static/images/dr1/dr1_globular_cluster.png">
+            Figure 1. Color-magnitude diagram for a stellar sample selected within a 15' x 15' box centered on the M2 globular cluster. The weighted-average PSF photometry from WAVG_MAG_PSF (left) yields a tighter locus but does not extend as deep as the MAG_AUTO photometry (right).
+            </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+            <des-img-big  src="/static/images/dr1/saturated.png">
+            Figure 2. Composite<em> gri</em> 1' cutouts of saturated stars with IMAFLAGS_ISO =1.
+        </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig3">
+            <des-img-big  src="/static/images/dr1/niter.png">
+            Figure 3.  Composite <em>gri</em> 1' cutouts of objects with IMAFLAGS_ISO =1 and NITER_MODEL = 0 shows than in their majority, however not exclusively, are missing data.
+        </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig4">
+            <des-img-big  src="/static/images/dr1/bright.png">
+                Figure 4.  Examples of very bright stars, R Dor (30' cutout; top left) and α Phe (14' cutout; top right) and globular clusters, NGC 288 (8' cutout; bottom left) and NGC 1904 (2.5' cutout; bottom right), found within the DES DR1 footprint.
+            </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
 
 
+<div class="fixup" id="issues_top"></div>
+<div class="fixdown"></div>
 <des-card heading ='Known Issues'>
     <div class=card-content>
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_psf">PSF Model</a></li>
+          <li><a href="javascript:void(0)" on-tap="_imaflags">IMAFLAGS_ISO</a></li>
+          <li><a href="javascript:void(0)" on-tap="_bright">Bright Objects</a></li>
+          <li><a href="javascript:void(0)" on-tap="_zp">Zeropoints and bandpasses</a></li>
+        </ul>
+        <p><br/></p>
+        <div class="fixup" id="issues_psf"></div>
+        <h3 class="fixdown">PSF Model  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications (i.e., SPREAD_MODEL, CLASS_STAR) and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Using the i-band as an example, we identified such coadd PSF failures by searching for regions with anomalous coadd SPREAD_MODEL_I distributions and estimate that roughly less than 0.4% of the footprint is substantially affected. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources (<a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a>). Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources).</p>
+
+            <des-img-big  src="/static/images/dr1/dr1_globular_cluster.png" on-tap="_dialog" data-item="1">
+            Figure 1. Color-magnitude diagram for a stellar sample selected within a 15' x 15' box centered on the M2 globular cluster. The weighted-average PSF photometry from WAVG_MAG_PSF (left) yields a tighter locus but does not extend as deep as the MAG_AUTO photometry (right).
+            </des-img-big>
+        <p><br/></p>
+        <div class="fixup" id="issues_imaflags"></div>
+        <h3 class="fixdown">IMAFLAGS_ISO  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>Among all the objects detected and cataloged, ~2.3% have been flagged by IMAFLAGS_ISO in at least one of the<em> grizY </em>bands, and ~0.1% have artifacts in all 5 bands. It is recommended to use IMAFLAGS_ISO = 0 as a first filter of clean objects. Most of the objects with IMAFLAGS_ISO = 1 are saturated stars (<a href="javascript:void(0)" on-tap="_dialog" data-item="2"/>Figure 2</a>). A smaller fraction of flagged objects are missing imaging data in one or more of the bands, as shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="3"/>Figure 3</a>, and usually have NITER_MODEL = 0, which is set for objects that did not converge during the photometry measurement.</p>
+            <p>
+                <br />
+            </p>
+            <des-img  src="/static/images/dr1/saturated.png" on-tap="_dialog" data-item="2">
+            Figure 2. Composite<em> gri</em> 1' cutouts of saturated stars with IMAFLAGS_ISO =1.<br /><br />
+            </des-img>
+            <des-img  src="/static/images/dr1/niter.png" on-tap="_dialog" data-item="3">
+            Figure 3.  Composite <em>gri</em> 1' cutouts of objects with IMAFLAGS_ISO =1 and NITER_MODEL = 0 shows than in their majority, however not exclusively, are missing data.
+            </des-img>
+
+        <p><br/></p>
+        <div class="fixup" id="issues_bright"></div>
+        <h3 class="fixdown">Bright Objects  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>Scattered light from very bright stars can impact the photometry of nearby objects. Table 1 lists the coordinates and magnitudes of bright stars in the DES footprint. These stars generally cause ragged holes in the imaging coverage of DES DR1 due to image-level blacklisting of scattered light artifacts (<a href="javascript:void(0)" on-tap="_dialog" data-item="4"/>Figure 4</a>). Scattered light from these stars extends beyond image- and catalog-level masking, and can be observed at &gt; 1<sup>o</sup> in the number counts of objects with extreme colors, i.e. (g-r) &gt; 4 or (i-z) &gt; 4 (<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). Additional care must be taken for analyses close to bright stars.<br/>The DESDM processing pipeline is optimized for extragalactic science at high-Galactic latitudes. As such, it is not optimized to detect or measure sources in extremely crowded regions. Failures in source deblending are most noticeable  in the cores of Galactic globular clusters, where source confusion and saturation reduce the catalog completeness appreciably. Table 2 lists 5 classical globular clusters within the DES DR1 footprint with integrated V-band magnitude brighter than 10 (<a href="http://adsabs.harvard.edu/abs/1996AJ....112.1487H">Harris 1996</a>, 2010 edition). The bottom panels of <a href="javascript:void(0)" on-tap="_dialog" data-item="4"/>Figure 4</a> show two of these clusters, NGC 288 and NGC 1904, where saturation and source confusion can greatly impact source detection and photometric measurements.</p>
+
+            <des-img-big  src="/static/images/dr1/bright.png" on-tap="_dialog" data-item="4">
+                Figure 4.  Examples of very bright stars, R Dor (30' cutout; top left) and α Phe (14' cutout; top right) and globular clusters, NGC 288 (8' cutout; bottom left) and NGC 1904 (2.5' cutout; bottom right), found within the DES DR1 footprint.
+            </des-img-big>
+        <p>
+          <br/>
+        </p>
+        <table>
+        <caption align="bottom" class="caption">
+        Table 1. List of some of very bright stars with apparent visual magnitude brighter than 6 within the DES footprint.
+            <br /></caption>
+          <colgroup>
+            <col style="width: 29.2835%;"/>
+            <col style="width: 14.7456%;"/>
+            <col style="width: 15.6802%;"/>
+            <col style="width: 39.9792%;"/>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Star</th>
+              <th>RA(deg)</th>
+              <th>DEC(deg)</th>
+              <th>Apparent Magnitude (mag)</th>
+            </tr>
+            <tr>
+              <td>α Col (Phact)</td>
+              <td style="text-align: center;">84.9121</td>
+              <td style="text-align: center;">-34.0741</td>
+              <td style="text-align: center;">2.65</td>
+            </tr>
+            <tr>
+              <td>
+                <span>α</span> Phe (Ankaa)  </td>
+              <td style="text-align: center;">
+                <span> 6.5708 </span>
+              </td>
+              <td style="text-align: center;">
+                <span> -42.3061</span>
+              </td>
+              <td style="text-align: center;">
+                <span>2.38</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <span>α</span> Eri (Achernar)</p>
+              </td>
+              <td style="text-align: center;">
+                <span>24.4288</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-57.2367 </span>
+              </td>
+              <td style="text-align: center;">
+                <span>0.46</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>α</span> Hya (Alphard)</td>
+              <td style="text-align: center;">
+                <span>29.6925 </span>
+              </td>
+              <td style="text-align: center;">
+                <span> -61.5697</span>
+              </td>
+              <td style="text-align: center;">
+                <span>2.00</span>
+              </td>
+            </tr>
+            <tr>
+              <td>γ Eri (Zaurak)</td>
+              <td style="text-align: center;">
+                <span>59.5075</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-13.5086</span>
+              </td>
+              <td style="text-align: center;">
+                <span>2.91</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">R Dor</td>
+              <td colspan="1" style="text-align: center;">
+                <span> 69.1900</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-62.0775 </span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>5.40</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  <span>α </span>Car (Canopus)</p>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>95.9879</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-52.6958</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-0.74</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  <span>α</span> Pav (Peacock)</p>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>306.4121</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-56.7350</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>1.94</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  <span>α</span> Gru (Alnair)</p>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>332.0583</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-46.961</span>
+              </td>
+              <td colspan="1" style="text-align: center;">1.74</td>
+            </tr>
+            <tr>
+              <td colspan="1">β  Gru (Tiaki)</td>
+              <td colspan="1" style="text-align: center;">
+                <span>340.6671</span>
+              </td>
+              <td colspan="1" style="text-align: center;">-<span>46.8847</span>
+              </td>
+              <td colspan="1" style="text-align: center;">2.15</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <br/>
+        </p>
+        <table>
+          <colgroup>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Globular Cluster</th>
+              <th>RA(deg)</th>
+              <th>DEC(deg)</th>
+              <th>Apparent Magnitude (mag)</th>
+            </tr>
+            <tr>
+              <td>
+                <p>NGC 288</p>
+              </td>
+              <td style="text-align: center;">
+                <span>13.2</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-26.58</span>
+              </td>
+              <td style="text-align: center;">
+                <span>8.1</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <span>NGC 1261</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>48.075</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-55.13</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>8.4</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <span>NGC 1851</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>78.525 </span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-40.05</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>7.3</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>NGC 1904</span>
+              </td>
+              <td style="text-align: center;">
+                <span> 81.045</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-24.523</span>
+              </td>
+              <td style="text-align: center;">
+                <span> 8.0</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>NGC 7089</span>
+              </td>
+              <td style="text-align: center;">
+                <span>323.375</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-0.8167</span>
+              </td>
+              <td style="text-align: center;">
+                <span>6.5</span>
+              </td>
+            </tr>
+          </tbody>
+          <caption align="bottom" class="caption">
+        Table 2. Brightest globular clusters within DES DR1.
+              <br /></caption>
+        </table>
+        <p>
+          <br/>
+        </p>
+        <div class="fixup" id="issues_zp"></div>
+        <h3 class="fixdown">Zeropoints and bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The tabulated “DES DR1 Standard Bandpasses”  included in this release were not the ones used to calculate the zeropoints applied to the calibrated images and coadd source catalogs presented in this release which correspond to an earlier version of the system throughput, referred to as the “Y3A1 Standard Bandpasses”. The latter system, which was the one available at the time of data processing, differs from the DES DR1 Standard Bandpasses in the treatment of the out-of-band system response. The DES DR1 Standard Bandpasses correct for a small inaccurate representation of r-band throughput in the Y3A1 Standard Bandpasses, which due to an incorrect input calibration run,considered an unrealistically large light leakage relative to the in-band response ( ~ 10<sup>-2</sup>) at wavelengths ~8000Å and ~9200Å. For coadd objects, the impact of setting the out-of-band response to zero in the DES DR1 Standard Band.</p>
+        <p>
+          <br/>
+        </p>
+
     </div>
 </des-card>
 </template>
 <script>
     class DesDr1KnownIssues extends Polymer.Element {
       static get is() { return 'des-dr1-known-issues'; }
-      _progress() {
-          this.$.observing_progress.scrollIntoView();
-      }
-      _intro() {
-          this.$.observing_intro.scrollIntoView();
-      }
-      _decam() {
-          this.$.observing_decam.scrollIntoView();
-      }
-      _oper() {
-          this.$.observing_oper.scrollIntoView();
-      }
+      _top() {this.$.issues_top.scrollIntoView();}
+      _psf() {this.$.issues_psf.scrollIntoView();}
+      _imaflags() {this.$.issues_imaflags.scrollIntoView();}
+      _bright() {this.$.issues_bright.scrollIntoView();}
+      _zp() {this.$.issues_zp.scrollIntoView();}
+      _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          //this.$.dialogfig.open();
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+
+          }
 
     }
     window.customElements.define(DesDr1KnownIssues.is, DesDr1KnownIssues);
