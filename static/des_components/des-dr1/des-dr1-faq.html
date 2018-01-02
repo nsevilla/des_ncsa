@@ -16,7 +16,7 @@
     content: "Answer: ";
     font-size: 1.2rem;
     color: green;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 </style>
 
@@ -57,13 +57,14 @@
 <p><br/></p>
 <div class="fixup" id="faq1"></div>
 <h3 class="fixdown">1. How do I select stars/galaxies?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<p>We recommend the use of the SExtractor <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD_MODEL</a>, which compares the fit of a local PSF model to a slightly extended exponential disk model. Below we show a example using SPREAD_MODEL for object classification in a way that is suitable for both stellar and extragalactic science.</p>
+
+<div class="answer" style="diplay: inline;"> We recommend the use of the SExtractor <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD_MODEL</a>, which compares the fit of a local PSF model to a slightly extended exponential disk model. Below we show a example using SPREAD_MODEL for object classification in a way that is suitable for both stellar and extragalactic science.
 <p>We define a new variable EXTENDED_COADD as the independent sum of several Boolean conditions:</p>
 <p>EXTENDED_COADD =<br/>((SPREAD_MODEL_I+ 3 × SPREADERR_MODEL_I) &gt; 0.005)<br/>+ ((SPREAD_MODEL_I+SPREADERR_MODEL_I) &gt; 0.003)<br/>+ ((SPREAD_MODEL_I-SPREADERR_MODEL_I) &gt; 0.003)</p>
-<p>
-  <br/>Note that EXTENDED_COADD is defined by a sequence of boolean conditions that, when true, add a unit to the classifier. This classifier results in a value of 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies).  <span style="color: rgb(0,0,0);">Although the SExtractor quantity<a href="https://sextractor.readthedocs.io/en/des_dr1/ClassStar.html#class-star-def"> CLASS_STAR</a> has been commonly used in the past, we find that SPREAD_MODEL based classifiers consistently outperform CLASS_STAR. <span style="color: rgb(0,0,0);"> It is expected that classifiers using alternative bands and/or combinations of object measurements will be more appropriate for specific science cases.</span>
+<p>Note that EXTENDED_COADD is defined by a sequence of boolean conditions that, when true, add a unit to the classifier. This classifier results in a value of 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies).  <span style="color: rgb(0,0,0);">Although the SExtractor quantity<a href="https://sextractor.readthedocs.io/en/des_dr1/ClassStar.html#class-star-def"> CLASS_STAR</a> has been commonly used in the past, we find that SPREAD_MODEL based classifiers consistently outperform CLASS_STAR. <span style="color: rgb(0,0,0);"> It is expected that classifiers using alternative bands and/or combinations of object measurements will be more appropriate for specific science cases.</span>
   </span>
 </p>
+</div>
 
 <p><br/></p>
 <div class="fixup" id="faq2"></div>
@@ -77,9 +78,10 @@
 <p><br/></p>
 <div class="fixup" id="faq4"></div>
 <h3 class="fixdown">4. Where are <code>FLUX_PSF</code> and <code>MAG_PSF</code>?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<p>
+<p class="answer">
   <span style="color: rgb(0,0,0);">The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications  and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources</span>
-  <span style="color: rgb(0,0,0);">. Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources). Check Known Issues for more information.</span>
+  <span style="color: rgb(0,0,0);">. Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources). Check  <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a> for more information.</span>
+
 </p>
 
 <p><br/></p>
