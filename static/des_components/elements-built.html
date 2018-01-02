@@ -32278,7 +32278,16 @@ Custom property | Description | Default
                   <a class="app-menu-item" id="needsindent2" name="known-issues" href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>
                 </app-menu>
                 </app-submenu>
-                  <a class="app-menu-item" id="needindent" name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products">Products</a>
+
+                  <app-submenu>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products" persistent="False">Products<iron-icon icon="chevron-right"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="dr1-schema" href="[[rootPath]]releases/dr1/dr1-products/dr1-schema">Table Schema</a>
+                </app-menu>
+                </app-submenu>
+
                   <a class="app-menu-item" id="needindent" name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access">Data Access</a>
                   <a class="app-menu-item" id="needindent" name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq">FAQ</a>
 
@@ -32314,6 +32323,7 @@ Custom property | Description | Default
             <des-dr1 name="dr1"></des-dr1>
             <des-dr1docs name="dr1-docs"></des-dr1docs>
             <des-dr1-products name="dr1-products"></des-dr1-products>
+            <des-dr1-schema name="dr1-schema"></des-dr1-schema>
             <des-dr1-soft name="processing"></des-dr1-soft>
             <des-dr1-observing name="acquisition"></des-dr1-observing>
             <des-dr1-quality name="quality"></des-dr1-quality>
@@ -33037,6 +33047,9 @@ Indicating one or more relevant topics will help us to properly answer your ques
     width: 100%;
     height: auto;
 }
+.localimg:hover {
+    cursor: pointer;
+}
 
 </style>
 <div style="display: inline-block; margin-left: 30px">
@@ -33110,6 +33123,11 @@ Indicating one or more relevant topics will help us to properly answer your ques
     width: 100%;
     height: auto;
 }
+
+.localimg:hover {
+    cursor: pointer;
+}
+
 
 </style>
 <div style="display: inline-block; margin-left: 0px; padding: 15px;">
@@ -35089,316 +35107,261 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
           <span style="color: rgb(0,0,0);">DES DR1 Key Numbers and Data Quality Summary<br>
           </span>
         </h2>
-        <table class="fixed-table">
-          <colgroup>
-            <col style="width: 489.0px;">
-            <col style="width: 57.0px;">
-            <col style="width: 57.0px;">
-            <col style="width: 201.0px;">
-            <col style="width: 57.0px;">
-            <col style="width: 57.0px;">
-            <col style="width: 51.0px;">
-          </colgroup>
-          <tbody>
-            <tr>
-              <th>Parameter</th>
-              <th style="text-align: center;">
-                <br>
-              </th>
-              <th style="text-align: center;">
-                <br>
-              </th>
-              <th style="text-align: center;">Band</th>
-              <th style="text-align: center;">
-                <br>
-              </th>
-              <th style="text-align: center;">
-                <br>
-              </th>
-              <th style="text-align: center;">Link</th>
-            </tr>
-            <tr>
-              <th colspan="1">
-                <br>
-              </th>
-              <th colspan="1" style="text-align: center;">g</th>
-              <th colspan="1" style="text-align: center;">r</th>
-              <th colspan="1" style="text-align: center;">i</th>
-              <th colspan="1" style="text-align: center;">z</th>
-              <th colspan="1" style="text-align: center;">Y</th>
-              <th colspan="1" style="text-align: center;">
-                <br>
-              </th>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <p>Number of Exposures in Coadd</p>
-              </td>
-              <td colspan="1" style="text-align: center;">7626</td>
-              <td colspan="1" style="text-align: center;">7470</td>
-              <td colspan="1" style="text-align: center;">7470</td>
-              <td colspan="1" style="text-align: center;">7753</td>
-              <td colspan="1" style="text-align: center;">8531</td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <p>Median PSF FWHM (arcsec)</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>1.119</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>0.958</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>0.880</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>0.836</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>0.904</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Sky Coverage (individual bands, sq. deg.)</p>
-              </td>
-              <td style="text-align: center;">
-                <p>5224</p>
-              </td>
-              <td style="text-align: center;">
-                <p>5231</p>
-              </td>
-              <td style="text-align: center;">
-                <p>5230</p>
-              </td>
-              <td style="text-align: center;">
-                <p>5234</p>
-              </td>
-              <td style="text-align: center;">
-                <p>5227</p>
-              </td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Sky Coverage (grizY intersection, sq. deg.)</p>
-              </td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-              <td style="text-align: center;">5186</td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Single-epoch Astrometric Repeatability (mas)</p>
-              </td>
-              <td style="text-align: center;">42</td>
-              <td style="text-align: center;">36</td>
-              <td style="text-align: center;">37</td>
-              <td style="text-align: center;">39</td>
-              <td style="text-align: center;">56</td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td>Coadd Astrometric Precision (mas)</td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-              <td style="text-align: center;">30 (internal); 145 (external)</td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td>Absolute Photometric Statistical Uncertainty (mmag)</td>
-              <td style="text-align: center;">
-                <p>2.6</p>
-              </td>
-              <td style="text-align: center;">2.9</td>
-              <td style="text-align: center;">3.4</td>
-              <td style="text-align: center;">2.5</td>
-              <td style="text-align: center;">4.5</td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td>Single-epoch Photometric Repeatability (mmag)</td>
-              <td style="text-align: center;">
-                <p>7.3</p>
-              </td>
-              <td style="text-align: center;">6.1</td>
-              <td style="text-align: center;">5.9</td>
-              <td style="text-align: center;">7.3</td>
-              <td style="text-align: center;">7.8</td>
-              <td style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">Coadd Photometric Precision (mmag)</td>
-              <td colspan="1" style="text-align: center;">5</td>
-              <td colspan="1" style="text-align: center;">4</td>
-              <td colspan="1" style="text-align: center;">5</td>
-              <td colspan="1" style="text-align: center;">6</td>
-              <td colspan="1" style="text-align: center;">5</td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">Coadd Photometric Uniformity vs. Gaia (mmag)</td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">6.6</td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">...</td>
-              <td colspan="1" style="text-align: center;">...</td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">Coadd 95% Completeness Limit (mag)</td>
-              <td colspan="1" style="text-align: center;">
-                <p>23.72</p>
-              </td>
-              <td colspan="1" style="text-align: center;">23.35</td>
-              <td colspan="1" style="text-align: center;">22.88</td>
-              <td colspan="1" style="text-align: center;">22.25</td>
-              <td colspan="1" style="text-align: center;">...</td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">Coadd Magnitude Limit (MAG_AUTO, S/N = 10)</td>
-              <td colspan="1" style="text-align: center;">
-                <p>23.52</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>23.10</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>22.51</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>21.81</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>20.61</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">Coadd Spurious Object Rate&nbsp;</td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">&lt;~1%</td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">Coadd Galaxy Selection<p>(EXTENDED_COADD ≥ 2, MAG_AUTO_I ≤ 22.5)</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>Efficiency &gt; 99%<br>Contamination &lt; 3%</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <p>Coadd Stellar Selection<br>(EXTENDED_COADD ≤ 1, MAG_AUTO_I ≤ 22.5)</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <p>Efficiency &gt; 90%<br>Contamination &lt; 3%</p>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-              <td colspan="1" style="text-align: center;">
-                <br>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <p>
-          <span style="color: rgb(0,0,0);">
-            <br>
-          </span>
-        </p>
+        <table>
+  <colgroup>
+    <col style="width: 489.0px;">
+    <col style="width: 57.0px;">
+    <col style="width: 57.0px;">
+    <col style="width: 201.0px;">
+    <col style="width: 57.0px;">
+    <col style="width: 57.0px;">
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Parameter</th>
+      <th style="text-align: center;">
+        <br>
+      </th>
+      <th style="text-align: center;">
+        <br>
+      </th>
+      <th style="text-align: center;">Band</th>
+      <th style="text-align: center;">
+        <br>
+      </th>
+      <th style="text-align: center;">
+        <br>
+      </th>
+    </tr>
+    <tr>
+      <th colspan="1">
+        <br>
+      </th>
+      <th colspan="1" style="text-align: center;">g</th>
+      <th colspan="1" style="text-align: center;">r</th>
+      <th colspan="1" style="text-align: center;">i</th>
+      <th colspan="1" style="text-align: center;">z</th>
+      <th colspan="1" style="text-align: center;">Y</th>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>Number of Exposures in Coadd</p>
+      </td>
+      <td colspan="1" style="text-align: center;">7626</td>
+      <td colspan="1" style="text-align: center;">7470</td>
+      <td colspan="1" style="text-align: center;">7470</td>
+      <td colspan="1" style="text-align: center;">7753</td>
+      <td colspan="1" style="text-align: center;">8531</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>Median PSF FWHM (arcsec)</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>1.119</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>0.958</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>0.880</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>0.836</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>0.904</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>Sky Coverage (individual bands, sq. deg.)</p>
+      </td>
+      <td style="text-align: center;">
+        <p>5224</p>
+      </td>
+      <td style="text-align: center;">
+        <p>5231</p>
+      </td>
+      <td style="text-align: center;">
+        <p>5230</p>
+      </td>
+      <td style="text-align: center;">
+        <p>5234</p>
+      </td>
+      <td style="text-align: center;">
+        <p>5227</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>Sky Coverage (grizY intersection, sq. deg.)</p>
+      </td>
+      <td style="text-align: center;">
+        <br>
+      </td>
+      <td style="text-align: center;">
+        <br>
+      </td>
+      <td style="text-align: center;">5186</td>
+      <td style="text-align: center;">
+        <br>
+      </td>
+      <td style="text-align: center;">
+        <br>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>Single-epoch Astrometric Repeatability (mas)</p>
+      </td>
+      <td style="text-align: center;">42</td>
+      <td style="text-align: center;">36</td>
+      <td style="text-align: center;">37</td>
+      <td style="text-align: center;">39</td>
+      <td style="text-align: center;">56</td>
+    </tr>
+    <tr>
+      <td>Coadd Astrometric Precision (mas)</td>
+      <td style="text-align: center;">
+        <br>
+      </td>
+      <td style="text-align: center;">
+        <br>
+      </td>
+      <td style="text-align: center;">30 (internal); 145 (external)</td>
+      <td style="text-align: center;">
+        <br>
+      </td>
+      <td style="text-align: center;">
+        <br>
+      </td>
+    </tr>
+    <tr>
+      <td>Absolute Photometric Statistical Uncertainty (mmag)</td>
+      <td style="text-align: center;">
+        <p>2.6</p>
+      </td>
+      <td style="text-align: center;">2.9</td>
+      <td style="text-align: center;">3.4</td>
+      <td style="text-align: center;">2.5</td>
+      <td style="text-align: center;">4.5</td>
+    </tr>
+    <tr>
+      <td>Single-epoch Photometric Repeatability (mmag)</td>
+      <td style="text-align: center;">
+        <p>7.3</p>
+      </td>
+      <td style="text-align: center;">6.1</td>
+      <td style="text-align: center;">5.9</td>
+      <td style="text-align: center;">7.3</td>
+      <td style="text-align: center;">7.8</td>
+    </tr>
+    <tr>
+      <td colspan="1">Coadd Photometric Precision (mmag)</td>
+      <td colspan="1" style="text-align: center;">5</td>
+      <td colspan="1" style="text-align: center;">4</td>
+      <td colspan="1" style="text-align: center;">5</td>
+      <td colspan="1" style="text-align: center;">6</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">Coadd Photometric Uniformity vs. Gaia (mmag)</td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">6.6</td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">...</td>
+      <td colspan="1" style="text-align: center;">...</td>
+    </tr>
+    <tr>
+      <td colspan="1">Coadd 95% Completeness Limit (mag)</td>
+      <td colspan="1" style="text-align: center;">
+        <p>23.72</p>
+      </td>
+      <td colspan="1" style="text-align: center;">23.35</td>
+      <td colspan="1" style="text-align: center;">22.88</td>
+      <td colspan="1" style="text-align: center;">22.25</td>
+      <td colspan="1" style="text-align: center;">...</td>
+    </tr>
+    <tr>
+      <td colspan="1">Coadd Magnitude Limit (MAG_AUTO, S/N = 10)</td>
+      <td colspan="1" style="text-align: center;">
+        <p>23.52</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>23.10</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>22.51</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>21.81</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>20.61</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">Coadd Spurious Object Rate&nbsp;</td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">&lt;~1%</td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">Coadd Galaxy Selection<p>(EXTENDED_COADD ≥ 2, MAG_AUTO_I ≤ 22.5)</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>Efficiency &gt; 99%<br>Contamination &lt; 3%</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>Coadd Stellar Selection<br>(EXTENDED_COADD ≤ 1, MAG_AUTO_I ≤ 22.5)</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <p>Efficiency &gt; 90%<br>Contamination &lt; 3%</p>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+      <td colspan="1" style="text-align: center;">
+        <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
     </div>
@@ -35423,21 +35386,210 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <style include="shared-styles">
 :host {
-       display: block;
        padding: 10px;
        }
 
+.caption {
+    padding-left: 0px;
+    width: 95%;
+    font-size: 0.85rem;
+    text-align: justify;
+    font-style: italic;
+}
 </style>
 
 
+<paper-dialog id="dialogfig1">
+            <des-img-big src="/static/images/dr1/footprint_h32_tiles.png">
+                Figure 1. DES footprint subdivisions. This figure shows the 10,338 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR1.
+            </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+            <des-img-big src="/static/images/dr1/dr1_bandpass.png">
+            Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
+            Y filters. The bandpasses represent the total system throughput, including
+            atmospheric transmission (airmass = 1.2) and the average
+            instrumental response across the science CCDs</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
 
 
+<div class="fixup" id="products_top"></div>
+<div class="fixdown"></div>
 <des-card heading="Data Products">
     <div class="card-content">
-        <div id="main-content">
-        <p> DR1 Products</p>
-        </div>
-    </div>
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_intro">Introduction</a></li>
+          <li><a href="javascript:void(0)" on-tap="_images">Images</a></li>
+          <li><a href="javascript:void(0)" on-tap="_catalogs">Catalogs</a></li>
+          <ul>
+              <li>
+                  <a href="[[rootpath]]releases/dr1/dr1-products/dr1-schema">DR1 Table Schema</a>
+              </li>
+          </ul>
+          <li><a href="javascript:void(0)" on-tap="_filters">DR1 Standard Bandpasses</a></li>
+        </ul>
+        <hr>
+        <p><br></p>
+        <div class="fixup" id="products_intro"></div>
+        <h3 class="fixdown">Introduction  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>Here we present a summary and description of the individual products included in DES DR1. The primary components of DES DR1 are derived from the union of 10,338 coadd tiles covering the DES footprint. The tile distribution is shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> and a HEALPix map (NSIDE = 32) of 1753 pixels covering the entire DR1 release is also provided for reference. This map is useful for cross matching sections of the DES footprint with other surveys.</p>
+        <p>In order to provide a convenient way to download all the catalog data at once, and noting that the tile is the basic processing unit for the survey, we have created FITS file versions<br>of the catalog tables grouped by coadd tile. This amounts to 31,014 total files (for the DR1_MAIN, DR1_MAGNITUDE, and DR1_FLUX tables) with almost 2.5 TB of catalog data. Both the catalog and corresponding image file paths can beobtained from the DR1_TILE_INFO table &nbsp;and can be accessed through the interfaces.</p>
+            <des-img-big src="/static/images/dr1/footprint_h32_tiles.png" on-tap="_dialog" data-item="1">
+                Figure 1. DES footprint subdivisions. This figure shows the 10,338 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR1.
+            </des-img-big>
+
+        <p><br></p>
+        <div class="fixup" id="products_images"></div>
+        <h3 class="fixdown">Images  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>DES DR1 images can be separated into two categories:</p>
+        <p><b>a)</b> <u>Calibrated Single Exposures</u>: 38,850 exposures with photometric calibration, corresponding to 4,124,753 individual CCD images. The number of exposures per band are N<sub>g</sub> = 7626, N<sub>r</sub> = 7470, N<sub>i</sub> = 7470, N<sub>z</sub> = 7753 and N<sub>Y</sub> = 8531, respectively. Each exposure is roughly 500 MB in size. These images can be accessed through <a href="http://datalab.noao.edu/">NOAO Data Lab</a>.</p>
+        <p><b>b)</b> <u>Coadd Images</u>: As a result of the Multi-Epoch Pipeline described in <a href="[[rootpath]]releases/dr1/dr1-docs/processing">Data Processing</a>, a total of 10,338 tiles of 10k x 10k pixels spanning 0.7306deg on a side at a resolution of 0.263 arcsec/pixel (see <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> ) were produced in each of the 5 bands. These images along with the <em>r + i + z</em> combined detection image used are publicly available with a total of 62,028 images constituting ~11 TB of data.</p>
+
+
+        <p><br></p>
+        <div class="fixup" id="products_catalogs"></div>
+        <h3 class="fixdown">Catalogs  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The coadd source extraction process detected and cataloged 399,263,026 distinct objects. Morphological object information includes object centroids, shape parameters, HEALPix indices, and processing flags. Several different photometric measurements and associated uncertainties are provided including AUTO, PETRO, WAVG_PSF, and assorted aperture magnitudes (Table 1) These measurments are distributed in three database tables: DR1_MAIN, DR1_MAGNITUDE, and DR1_FLUX served from an Oracle database at NCSA. The DR1_MAIN table contains all object information that is not a photometric measurement or uncertainty, augmented by MAG_AUTO and MAG_PETRO (and associated uncertainties) and an extinction corrected versions. The other two tables contain auxiliary magnitude and flux measurements (with associated uncertainties) in addition to extra information which is present in all three tables, like coordinates, flags, and HEALPix indexes. Additionally, the table DR1_TILE_INFO contains information about the processed tiles, such as sky location, geometry, number of objects and file paths to access the images and catalogs generated.&nbsp;</p>
+        <table>
+  <colgroup>
+    <col>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column name</th>
+      <th style="text-align: center;">Diameter(pixels)</th>
+      <th style="text-align: center;">Diameter(arcsecs)</th>
+    </tr>
+    <tr>
+      <td>
+        <code>MAG_APER_1</code>
+      </td>
+      <td style="text-align: center;">1.85</td>
+      <td style="text-align: center;">0.49</td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+          <span>MAG_APER_2</span>
+        </code>
+      </td>
+      <td style="text-align: center;">3.70</td>
+      <td style="text-align: center;">0.97</td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+          <span>MAG_APER_3</span>
+        </code>
+      </td>
+      <td style="text-align: center;">5.55</td>
+      <td style="text-align: center;">1.46</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_4</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">7.41</td>
+      <td colspan="1" style="text-align: center;">1.95</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_5</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">11.11</td>
+      <td colspan="1" style="text-align: center;">2.92</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_6</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">14.81</td>
+      <td colspan="1" style="text-align: center;">3.90</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_7</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">18.52</td>
+      <td colspan="1" style="text-align: center;">4.87</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_8</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">22.22</td>
+      <td colspan="1" style="text-align: center;">5.84</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_9</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">25.93</td>
+      <td colspan="1" style="text-align: center;">6.82</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_10</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">29.63</td>
+      <td colspan="1" style="text-align: center;">7.79</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_11</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">44.44</td>
+      <td colspan="1" style="text-align: center;">11.69</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_12</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">66.67</td>
+      <td colspan="1" style="text-align: center;">17.53</td>
+    </tr>
+  </tbody>
+          <caption align="bottom" class="caption">
+              Table 1.&nbsp;Aperture Magnitudes Diameters
+              <br></caption>
+</table>
+        <p><br></p>
+        <div class="fixup" id="products_filters"></div>
+        <h3 class="fixdown">DR1 Standard Bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>DES DR1 includes an updated characterization of the Blanco/DECam total system response (instrument and at mosphere) for the g, r, i, z, Y bands. The DES DR1 Standard Bandpasses are defined as the average CCD response across the focal plane as measured with the DECal system (<a href="http://adsabs.harvard.edu/abs/2013arXiv1302.5720M">Marshall et al. 2013</a>), together with a standard atmospheric transmission computed with the <code>MODTRAN IV</code> code (<a href="http://adsabs.harvard.edu/abs/1999SPIE.3756..348B">Berk et al. 1999</a>) using parameters typical of the environmental conditions encountered during DES observations (for details, see<a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B"> Burke et al. 2017</a>). For example, the airmass adopted for the standard atmosphere, 1.2, is well matched to the median airmass of exposures entering the coadd, 1.22. The system response is defined in steps of 5 Å from 3800 Å to 11000 Å. Out-of-band light leakage has been directly measured with DECal to be roughly less than 10<sup>-3</sup> relative to the in-band response, and vendor measurements of witness samples suggest that the out-of-band leakage is typically at the 10<sup>-5</sup> to 10<sup>-4</sup> level. While detailed characterization of the out-of band response is ongoing, the throughput of the DES DR1 Standard Bandpasses are defined as zero for out-of-band wavelengths (see <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>).</p>
+            <des-img-big src="/static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
+            Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
+            Y filters. The bandpasses represent the total system throughput, including
+            atmospheric transmission (airmass = 1.2) and the average
+            instrumental response across the science CCDs</des-img-big>
+<p>
+    </p></div>
 
 
 
@@ -35446,8 +35598,995 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <script>
     class DesDr1Products extends Polymer.Element {
       static get is() { return 'des-dr1-products'; }
+      _intro() {this.$.products_intro.scrollIntoView();}
+      _images() {this.$.products_images.scrollIntoView();}
+      _catalogs() {this.$.products_catalogs.scrollIntoView();}
+      _filters() {this.$.products_filters.scrollIntoView();}
+      _top() {this.$.products_top.scrollIntoView();}
+      _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+          }
     }
     window.customElements.define(DesDr1Products.is, DesDr1Products);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr1-schema" assetpath="des-dr1/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+</style>
+
+
+
+
+<div class="fixup" id="schema_top"></div>
+<div class="fixdown"></div>
+<des-card heading="DR1 Table Schema">
+    <div class="card-content">
+        Below we present a summarized version of the DR1 tables and their description, some of the columns
+        have links to a more detailed explanation and origin, in particular, the <a href="http://sextractor.readthedocs.io/en/des_dr1/" target="_blank"> Sextractor parameters used for DR1 </a>.
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_main">DR1_MAIN</a></li>
+          <li><a href="javascript:void(0)" on-tap="_mags">DR1_MAGNITUDE</a></li>
+          <li><a href="javascript:void(0)" on-tap="_fluxes">DR1_FLUX</a></li>
+          <li><a href="javascript:void(0)" on-tap="_tiles">DR1_TILE_INFO</a></li>
+        </ul>
+        <hr>
+
+        <p><br></p>
+        <div class="fixup" id="schema_main"></div>
+        <h3 class="fixdown">DR1_MAIN  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<table>
+  <colgroup> <col style="width: 26.63%;"> <col style="width: 58.4908%;"> <col style="width: 14.841%;"> </colgroup>
+  <tbody>
+    <tr>
+      <th style="text-align: center;">
+        <span>Column</span>
+      </th>
+      <th style="text-align: center;">
+        <span>Description</span>
+      </th>
+      <th colspan="1" style="text-align: center;">
+        <span>Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+      </td>
+      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">AWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Major axis size, from 2nd order windowed moment measurements [pixels]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">A_IMAGE</a>
+      </td>
+      <td colspan="1">Major axis size based on an isophotal model [pixel]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>BACKGROUND_{G,R,I,Z,Y}</td>
+      <td>Background level, by CCD-amplifier [mag]&nbsp;</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">BWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Minor axis size, from 2nd order windowed moment measurements [pixels]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">B_IMAGE</a>
+      </td>
+      <td>Minor axis size based on an isophotal model [pixel]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://sextractor.readthedocs.io/en/des_dr1/ClassStar.html#class-star-def">CLASS_STAR_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Simple morphological extended source classifier. Values between 0 (galaxies) and 1 (stars). SPREAD_MODEL exhibits better performance for morphological classification.</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>COADD_OBJECT_ID</td>
+      <td>Unique identifier for the coadded objects</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DEC</td>
+      <td>Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+      </td>
+      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>EBV_SFD98</td>
+      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRAWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Uncertainty in major axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRA_IMAGE</a>
+      </td>
+      <td>Uncertainty in major axis size, from isophotal model [pixel]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRBWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in minor axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRB_IMAGE</a>
+      </td>
+      <td>Uncertainty in minor axis size, from isophotal model [pixel]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRTHETAWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in source position angle, from converged windowed measurement [degrees]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRTHETA_IMAGE</a>
+      </td>
+      <td>Uncertainty in source position, from isophotal model [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRX2WIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in second moment of x-distribution centroid, from converged windowed measurements [pixel2]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRXYWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in second moment of xy-distribution, from converged windowed measurements [pixel2]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>
+          <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRY2WIN_IMAGE_{G,R,I,Z,Y}</a>
+        </p>
+      </td>
+      <td colspan="1">Uncertainty in second moment of y-distribution centroid, from converged windowed measurements [pixel2]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">FLAGS_{G,R,I,Z,Y}</td>
+      <td colspan="1">Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Uncertainty in aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUX_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">FLUX_RADIUS_{G,R,I,Z,Y}</td>
+      <td colspan="1">Half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=fwhm%20image#windowed-positional-parameters">FWHM_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">FWHM measured from the isophotal area, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">GALACTIC_B</td>
+      <td colspan="1">Galactic Latitude [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">GALACTIC_L</td>
+      <td colspan="1">Galactic Longitude [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
+      <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
+      <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>ISOAREA_IMAGE_{G,R,I,Z,Y}</td>
+      <td>Isophotal area of the coadded source [pixel2]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>KRON_RADIUS</td>
+      <td>Kron radius measured from detection image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>KRON_RADIUS_{G,R,I,Z,Y}</td>
+      <td>Kron radius measured from coadded image [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAG_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>MAG_AUTO_{G,R,I,Z,Y}_DERED</td>
+      <td>Dereddened magnitude estimation (using SFD98), for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>NEPOCHS_{G,R,I,Z,Y}</td>
+      <td>Number of epochs the source is detected in single epoch images</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Model.html#model-minimization-def">NITER_MODEL_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Number of iterations in model fitting photometric measurements</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>RA</td>
+      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREADERR_MODEL_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD_MODEL_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">THETAWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Position angle of source, for converged windowed measurement grow from x to y [degrees]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html?highlight=j2000#basic-shape-parameters-a-b-theta">THETA_J2000</a>
+      </td>
+      <td>Position angle of source in J2000 coordinates, from non-windowed measurement [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TILENAME</td>
+      <td>Identifier of each one of the tiles on which the survey is gridded</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+      <td>Uncertainty of weighted averaged flux measurement of PSF fit single epoch detections [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+      <td>Weighted average flux measurement of PSF fit single epoch detections [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+      <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+      <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}_DERED</td>
+      <td>Dereddened weighted average magnitude (using SFD98) from PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_SPREADERR_MODEL_{G,R,I,Z,Y}</td>
+      <td>Uncertainty in <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_SPREAD_MODEL_{G,R,I,Z,Y}</td>
+      <td>
+        <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">X2WIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Second moment in x-direction, from converged windowed measurements [pixel2]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE</a>
+        </p>
+      </td>
+      <td>X-centroid from windowed measurements on coadded image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>X-centroid from windowed measurements on coadded band image [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">XYWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>
+        <p>Second moment in xy-direction, from converged windowed measurements [pixel2]</p>
+      </td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">Y2WIN_IMAGE_{G,R,I,Z,Y}</a>
+        </p>
+      </td>
+      <td>Second moment in y-direction, from converged windowed measurements [pixel2]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE</a>
+      </td>
+      <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Y-centroid from windowed measurements on coadded band images [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+      <td style="text-align: center;">213</td>
+    </tr>
+  </tbody>
+</table>
+        <p><br></p>
+        <div class="fixup" id="schema_mags"></div>
+        <h3 class="fixdown">DR1_MAGNITUDE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<table>
+  <colgroup> <col style="width: 22.789%;"> <col style="width: 62.3696%;"> <col style="width: 14.8033%;"> </colgroup>
+  <tbody>
+    <tr>
+      <th style="text-align: center;">
+        <span>Column</span>
+      </th>
+      <th style="text-align: center;">
+        <span>Description</span>
+      </th>
+      <th style="text-align: center;">
+        <span>Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+      </td>
+      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>COADD_OBJECT_ID</td>
+      <td>Unique identifier for the coadded objects</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DEC</td>
+      <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+      </td>
+      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>EBV_SFD98</td>
+      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FLAGS_{G,R,I,Z,Y}</td>
+      <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
+      <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
+      <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in magnitude estimation for circular apertures [mag]</td>
+      <td style="text-align: center;">60</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>MAGERR_PETRO_{G,R,I,Z,Y}</td>
+      <td>Uncertainty in magnitude for a Petrosian radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_APER_{1-12}_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Magnitude estimation for circular apertures [mag]</td>
+      <td style="text-align: center;">60</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAG_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>MAG_PETRO_{G,R,I,Z,Y}</td>
+      <td>Magnitude for a Petrosian radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>PETRO_RADIUS_{G,R,I,Z,Y}</td>
+      <td>Petrosian radius [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>RA</td>
+      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TILENAME</td>
+      <td>Identifier of each one of the tiles on which the survey is gridded</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+      <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+      <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+      </td>
+      <td>X-centroid from windowed measurements on coadded image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+      </td>
+      <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+      <td style="text-align: center;">179</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <br>
+</p>
+        <p><br></p>
+        <div class="fixup" id="schema_fluxes"></div>
+        <h3 class="fixdown">DR1_FLUX  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<table>
+  <colgroup> <col style="width: 23.1261%;"> <col style="width: 62.0506%;"> <col style="width: 14.7852%;"> </colgroup>
+  <tbody>
+    <tr>
+      <th style="text-align: center;">
+        <span>Column</span>
+      </th>
+      <th style="text-align: center;">
+        <span>Description</span>
+      </th>
+      <th style="text-align: center;">
+        <span>Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+      </td>
+      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>COADD_OBJECT_ID</td>
+      <td>Unique identifier for the coadded objects</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DEC</td>
+      <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+      </td>
+      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>EBV_SFD98</td>
+      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FLAGS_{G,R,I,Z,Y}</td>
+      <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUXERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Uncertainty in flux measurement for circular apertures [ADU]</td>
+      <td colspan="1" style="text-align: center;">60</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Uncertainty in flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>FLUXERR_PETRO_{G,R,I,Z,Y}</td>
+      <td>Uncertainty in flux for a Petrosian radius [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUX_APER_{1-12}_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Flux measurement for circular apertures [ADU]</td>
+      <td style="text-align: center;">60</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUX_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>FLUX_PETRO_{G,R,I,Z,Y}</td>
+      <td>Flux for a Petrosian radius [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>HPIX_{32,64,1024,4096,16384}</td>
+      <td>Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
+      <td>Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>PETRO_RADIUS_{G,R,I,Z,Y}</td>
+      <td>Petrosian radius [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>RA</td>
+      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TILENAME</td>
+      <td>Identifier of each one of the tiles on which the survey is gridded</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+      <td>Uncertainty of weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+      <td>Weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+      </td>
+      <td>X-centroid of source (from coadd detection image)</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+      </td>
+      <td>Y-centroid of source (from coadd detection image)</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+      <td style="text-align: center;">179</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <br>
+</p>
+        <p><br></p>
+        <div class="fixup" id="schema_tiles"></div>
+        <h3 class="fixdown">DR1_TILE_INFO  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<table>
+  <colgroup> <col style="width: 16.4384%;"> <col style="width: 68.5662%;"> <col style="width: 14.9574%;"> </colgroup>
+  <tbody>
+    <tr>
+      <th>
+        <span>Column</span>
+      </th>
+      <th>
+        <span>Description</span>
+      </th>
+      <th style="text-align: center;">
+        <span>Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1">CD1_1</td>
+      <td colspan="1">WCS definition for pixel orientation. Value: -0.0000730556</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>CD1_2</td>
+      <td>WCS definition for pixel orientation. Value: 0</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>CD2_1</td>
+      <td>WCS definition for pixel orientation. Value: 0</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>CD2_2</td>
+      <td>WCS definition for pixel orientation. Value: 0.0000730556</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">COUNT</td>
+      <td colspan="1">Number of objects per tile</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CROSSRA0</td>
+      <td colspan="1">Flag tile bounday crosses RA=0/24h boundary. Values: Y or N</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRPIX1</td>
+      <td colspan="1">WCS definition of central pixel for axis 1. Value: 5000.5</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRPIX2</td>
+      <td colspan="1">WCS definition of central pixel for axis 2. Value: 5000.5</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRVAL1</td>
+      <td colspan="1">WCS definition of central pixel value for axis 1</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRVAL2</td>
+      <td colspan="1">WCS definition of central pixel value for axis 2</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CTYPE1</td>
+      <td colspan="1">WCS projection used for axis 1. Value: RA---TAN</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CTYPE2</td>
+      <td colspan="1">WCS projection used for axis 2. Value: DEC--TAN</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC1</td>
+      <td colspan="1">Declination at Corner 1 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC2</td>
+      <td colspan="1">Declination at Corner 2 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC3</td>
+      <td colspan="1">Declination at Corner 3 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC4</td>
+      <td colspan="1">Declination at Corner 4 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECCMAX</td>
+      <td colspan="1">Maximum Declination covered in tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DECCMIN</td>
+      <td>Minimum Declination covered in tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DEC_CENT</td>
+      <td>Central Declination for tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DEC_SIZE</td>
+      <td>Extent of Declination for tile, in average is 0.7304 deg [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_DR1_FLUX</td>
+      <td>Filename of the served FITS being {tile_name}_dr1_flux.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_DR1_MAGNITUDE</td>
+      <td>Filename of the served FITS being {tile_name}_dr1_magnitude.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_DR1_MAIN</td>
+      <td>Filename of the served FITS being {tile_name}_dr1_main.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_IMAGE_DET</td>
+      <td>Filename of the served FITS being {tile_name}_r{reqnum}p{attnum}_det.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_IMAGE_{G,R,I,Z,Y}</td>
+      <td>Filename of the served FITS, per band, being {tile_name}_r{reqnum}p{attnum}_{band}.fits.fz</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>NAXIS1</td>
+      <td>WCS definition for number of pixels for axis 1</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>NAXIS2</td>
+      <td>WCS definition for number of pixels for axis 2</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>PIXELSCALE</td>
+      <td>WCS definition of pixel scale. Values: 0.263 arcsec/pixel [arcsec/pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC1</td>
+      <td>Right Ascension at Corner 1 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC2</td>
+      <td>Right Ascension at Corner 2 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC3</td>
+      <td>Right Ascension at Corner 3 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC4</td>
+      <td>Right Ascension at Corner 4 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RACMAX</td>
+      <td>Maximum Right Ascension covered in tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RACMIN</td>
+      <td>Minimum Right Ascension covered in tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RA_CENT</td>
+      <td>Central Right Ascension for tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RA_SIZE</td>
+      <td>Extent of Right Ascension for tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TIFF_COLOR_IMAGE</td>
+      <td>Filename of the TIFF image for the tile, being {tilename}_r{reqnum}p{attnum)_irg.tiff</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TILENAME</td>
+      <td>Tilename identifier</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>UDECMAX</td>
+      <td>Maximum Unique Declination of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>UDECMIN</td>
+      <td>Minimum Unique Declination of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>URAMAX</td>
+      <td>Maximum Unique Right Ascension of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>URAMIN</td>
+      <td>Minimum Unique Right Ascension of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+      <td style="text-align: center;">46</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1Schema extends Polymer.Element {
+      static get is() { return 'des-dr1-schema'; }
+      _top() {this.$.schema_top.scrollIntoView();}
+      _mags() {this.$.schema_mags.scrollIntoView();}
+      _fluxes() {this.$.schema_fluxes.scrollIntoView();}
+      _main() {this.$.schema_main.scrollIntoView();}
+      _tiles() {this.$.schema_tiles.scrollIntoView();}
+
+    }
+    window.customElements.define(DesDr1Schema.is, DesDr1Schema);
   </script>
 
 </dom-module>
@@ -35515,17 +36654,17 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <br>
   <br>
 
-   <des-img-big src="/static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Calibration and raw science images are delivered from DECam by SISPI and DTS to NCSA. In Single Epoch Processing (yellow box), raw science exposures undergo preprocessing and are combined with calibration images to produce First Cut images for initial inspection and Final Cut images for science releases. Images in the Supernova fields are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+   <des-img-big src="/static/images/fig4_desdm_paper.png" on-tap="_dialog" data-item="1">Figure 1. DESDM Pipeline. Calibration and raw science images are delivered from DECam by SISPI and DTS to NCSA. In Single Epoch Processing (yellow box), raw science exposures undergo preprocessing and are combined with calibration images to produce First Cut images for initial inspection and Final Cut images for science releases. Images in the Supernova fields are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
 
  <p><a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a> shows the steps comprised on preprocessing, First cut being the upper set of connected boxes, and Final cut belonging to the upper and lower diagram flows. For the last, current year super-calibrations (generated from each epoch) are employed, in contrast to First cut where previous super-calibrations are selected.</p>
 
-   <des-img-big src="/static/images/fig5_desdm_paper.png">Figure 2. A diagram of the Preprocessing applied to every exposure. This is a “zoom in” of the the Preprocessing box in Figure 1. This includes our initial masking and detrending with bias and flat images (green and red arrows, respectively). Preprocessed exposures are then processed with the First Cut or Final Cut pipeline.</des-img-big>
+   <des-img-big src="/static/images/fig5_desdm_paper.png" on-tap="_dialog" data-item="2">Figure 2. A diagram of the Preprocessing applied to every exposure. This is a “zoom in” of the the Preprocessing box in Figure 1. This includes our initial masking and detrending with bias and flat images (green and red arrows, respectively). Preprocessed exposures are then processed with the First Cut or Final Cut pipeline.</des-img-big>
  <p>
   <br>
  </p>
 <p>One of the strengths of the pipeline taken as a whole, is the structure allowing to include more refined products to be used in the calibrations. The ability was learned from the work, and it's tangible when comparing initially raw images among the coadded products. This can be evidenced (even not in all its wideness) in the following <a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a> exhibiting the different products from a single patch of sky, from the raw image to the fully reduced and processed and stacked (higher depth) image:</p>
 
-   <des-img-big src="/static/images/processing.gif">Figure 3. Simplified animated version of both pipelines showing the final result after coadditon for a selected area of the sky&nbsp;</des-img-big>
+   <des-img-big src="/static/images/processing.gif" on-tap="_dialog" data-item="3">Figure 3. Simplified animated version of both pipelines showing the final result after coadditon for a selected area of the sky&nbsp;</des-img-big>
 
         <p><br></p>
         <div class="fixup" id="soft_single"></div>
@@ -37217,6 +38356,8 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
           this.$.soft_top.scrollIntoView();
       }
       _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
           var temp = e.target.dataset.item;
           //this.$.dialogfig.open();
           this.shadowRoot.querySelector('#dialogfig'+temp).open();
@@ -37317,10 +38458,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </p>
 
 
-            <des-img src="/static/images/dr1/DECam_chips.png">
+            <des-img src="/static/images/dr1/DECam_chips.png" on-tap="_dialog" data-item="1">
             Figure 1. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img>
 
-            <des-img src="/static/images/dr1/dr1_bandpass.png">
+            <des-img src="/static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
@@ -37332,15 +38473,15 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <p>The target footprint of the DES wide-area and supernova surveys are shown in the <a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a> The wide-area footprint shape was selected to obtain a large overlap with the South Pole Telescope survey (<a href="http://adsabs.harvard.edu/abs/2011PASP..123..568C">Carlstrom et al. 2011</a>) and Stripe 82 from SDSS (<a href="http://cdsads.u-strasbg.fr/abs/2009ApJS..182..543A">Abazajian et al. 2009</a>), plus a connection region to enhance overall calibration. Given the cosmological goals of the survey, DES avoids the Galactic plane to minimize stellar foregrounds and extinction from interstellar dust.<br>The wide-field survey uses exposure times of 90s for <em>griz</em> and 45s for Y band, yielding a typical single-epoch depth at S/N = 10 of g = 23.57, r = 23.34, i = 22.78, i = 22.10 and Y = 20.69 (Morganson et al. 2018). The completed survey is expected to be roughly one magnitude deeper, through the coaddition of 10 images in each of the bands for a cumulative exposure time of 900 s in<em> griz</em> and 450 s in Y.</p>
 
-            <des-img src="/static/images/dr1/des_footprint_mbtpq.png">Figure 3. A plot of the DES survey area in celestial coordinates. The main 5000 sq. deg. survey footprint for DES is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b ±10 deg. The Large and Small Magellanic Clouds are indicated in gray.</des-img>
-            <des-img src="/static/images/dr1/dr1_fwhm_hist.png">Figure 4. Distribution of PSF FHWM derived from the DECam single images in the DR1 data.</des-img>
+            <des-img src="/static/images/dr1/des_footprint_mbtpq.png" on-tap="_dialog" data-item="3">Figure 3. A plot of the DES survey area in celestial coordinates. The main 5000 sq. deg. survey footprint for DES is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b ±10 deg. The Large and Small Magellanic Clouds are indicated in gray.</des-img>
+            <des-img src="/static/images/dr1/dr1_fwhm_hist.png" on-tap="_dialog" data-item="4">Figure 4. Distribution of PSF FHWM derived from the DECam single images in the DR1 data.<br><br><br></des-img>
 
 <p>Nightly observations are divided between the wide-field and supernova (SN) surveys based on current environmental conditions and the data quality assessments of previous observations. Realtime optimization of survey strategy is accomplished through the ObsTac software on the mountain (<a href="http://adsabs.harvard.edu/abs/2014ASPC..485...77N">Neilsen &amp; Annis 2014</a>). ObsTac prioritizes the g, r, i, z and Y exposures accounting for moon position, sky brightness, current seeing, airmass, hour angle, and other observational characteristics. DES exposures are offset by roughly half the focal plane radius on average in successive visits to the same field, or “hex”, such that objects are observed by different CCDs in each “tiling”. This observing strategy minimizes inhomogeneities from the DECam geometry and enhances the relative photometric calibration. Blanco is an equatorial telescope and there is no rotation between dithered and/or repeated exposures.</p>
 
         <p>A single raw DECam exposure is ~0.5 GB in size, and DES collects ~300 science exposures per night. These data are transferred to NOAO for archiving (<a href="http://adsabs.harvard.edu/abs/2010ASPC..434..260F">Fitzpatrick 2010</a>) and to NCSA for further evaluation and processing by the <a href="http://processing">DESDM system</a>&nbsp;</p>
         <p>
-            <des-img src="/static/images/dr1/dr1_nimages_hist.png">Figure&nbsp;5. Distribution of overlapping images in each of the<em> grizY</em> bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images.</des-img>
-            <des-img src="/static/images/dr1/nimages_i.png">Figure 6. &nbsp;Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 deg.</des-img>
+            <des-img src="/static/images/dr1/dr1_nimages_hist.png" on-tap="_dialog" data-item="5">Figure&nbsp;5. Distribution of overlapping images in each of the<em> grizY</em> bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images.<br></des-img>
+            <des-img src="/static/images/dr1/nimages_i.png" on-tap="_dialog" data-item="6">Figure 6. &nbsp;Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 deg.</des-img>
         </p>
 
         <p><br></p>
@@ -37367,6 +38508,8 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       _oper() {this.$.observing_oper.scrollIntoView();}
       _top() {this.$.observing_top.scrollIntoView();}
       _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
           var temp = e.target.dataset.item;
           //this.$.dialogfig.open();
           this.shadowRoot.querySelector('#dialogfig'+temp).open();
@@ -37385,20 +38528,96 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <style include="shared-styles">
 :host {
-       display: block;
        padding: 10px;
        }
-.fixup{
-    margin-top: -70px;
-}
-.fixdown{
-    margin-top: 70px;
-}
 
+.caption {
+    padding-left: 0px;
+    width: 95%;
+    font-size: 0.85rem;
+    text-align: justify;
+    font-style: italic;
+}
 </style>
 
-
-
+<paper-dialog id="dialogfig1">
+        <des-img-big src="/static/images/dr1/gaia_astro_residual.png">Figure 1. Absolute astrometric precision against an external source, namely, Gaia stars with G<sub>Gaia</sub> ~ 16. On the left is plotted the mean value of astrometric discrepancy with Gaia vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the overall offset is shown.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+       <des-img-big src="/static/images/dr1/fgcm_calib_error_i_nozpcorr.png">Figure 2. FGCM calibration error. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the photometric residue is shown.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig3">
+       <des-img-big src="/static/images/dr1/gaia_phot_residual_nozpcorr.png">Figure 3. &nbsp;The distribution of photometric residuals against the Gaia’s G band across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the photometric residue is shown.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig4">
+       <des-img-big src="/static/images/dr1/dr1_magauto.png">Figure 4. Source counts using SExtractor’s MAG_AUTO quantity.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig5">
+       <des-img-big src="/static/images/dr1/dr1_coadd_depth_sn10.png">Figure 5. Catalog depth estimated for MAG_AUTO using catalog objects with S/N = 10 (MAGERR_AUTO = 0.10857.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig6">
+       <des-img-big src="/static/images/dr1/dr1_maglim_hist.png">Figure 6.&nbsp;Catalog depth estimated for a 2'' aperture (MAG_AUTO_4) using mangle.<br></des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig7">
+       <des-img-big src="/static/images/dr1/dr1_efficiency_contamination_band.png">Figure 7. &nbsp;DES DR1 detection efficiency and contamination relative to deeper imaging from CFHTLenS. Solid color curves represent the detection efficiency, while dashed color curves show the fraction of unmatched objects appearing only in DES. For visual reference, gray dashed lines indicate 5% and 95% of objects</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig8">
+       <des-img-big src="/static/images/dr1/y3a2_ext_coadd_scatter.png">Figure 8. Stars and galaxies occupy distinct regions of spreadmodel-space at bright magnitudes, but become more difficult to distinguish at faint magnitudes<br><br></des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig9">
+       <des-img-big src="/static/images/dr1/y3a2_ext_coadd_stellar_selection.png">Figure 9. &nbsp;DES DR1 object classification accuracy versus HSC-SSP for the stellar sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig10">
+       <des-img-big src="/static/images/dr1/stellar_density_1024.png">Figure 10. Stellar density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 0 selection described above. Discrete peaks in the stellar density correspond to globular clusters and dwarf galaxies in the Milky Way halo. <br></des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig11">
+       <des-img-big src="/static/images/dr1/y3a2_ext_coadd_galaxy_selection.png">Figure 11. &nbsp;&nbsp;DES DR1 object classification accuracy versus HSC-SSP for the galaxy sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig12">
+       <des-img-big src="/static/images/dr1/galaxy_density_1024.png">Figure 12. &nbsp;Galaxy density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 3 selection described above. <br><br></des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig13">
+    <des-img-big src="/static/images/dr1/dr1_roc.png">Figure 13. &nbsp;Receiver operating characteristic (ROC) curve for a stellar selection in the magnitude range 22.5 &lt; MAG_AUTO_I &lt; 23.0. The SPREAD_MODEL outperforms CLASS_STAR in classification accuracy of DES DR1 objects with respect to HSC-SSP.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
 
 <div class="fixup" id="quality_top"></div>
 <div class="fixdown"></div>
@@ -37436,29 +38655,45 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
           <br>
         <p></p>
         <div class="fixup" id="quality_intro"></div>
-        <h3 class="fixdown">Introduction</h3>
+        <h3 class="fixdown">Introduction  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>In this section, we provide a general assessment of the DR1 data quality including astrometric and photometric precision, imaging depth in terms of measurement signal-to-noise and object detection completeness, morphological object classification accuracy, and the identification and removal of likely artifacts.</p>
         <p><br> </p>
         <div class="fixup" id="quality_astro"></div>
         <h3 class="fixdown">Astrometry  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <p>The DR1 astrometric solution is derived in two steps using SCAMP with 2MASS as the reference catalog (Morganson et al. 2018). At the single-epoch stage, we find internal astrometric uncertainties of 42, 36, 37, 39, and 56 mas in the g, r, i, z, and Y bands, respectively, as determined from the median of two-dimensional angular separations between repeated measurements of bright stars from individual exposures. Following the astrometric refinement step for image coaddition by SCAMP, the estimated internal astrometric precision for the coadd is ~30mas RMS (median over coadd tiles). The absolute astrometric uncertainty of the coadd is evaluated with respect to Gaia DR1 (<a href="http://adsabs.harvard.edu/abs/2016A%26A...595A...2G">Gaia Collaboration et al. 2016</a>). Figure 6 shows that the residuals are smallest in regions with with larger stellar densities closer to the Galactic plane (for comparison, see Figure 13), and the mean over the footprint is ~145 mas. Further details of astrometric calibration, including ongoing development using Gaia as a reference catalog, are provided in <a href="http://adsabs.harvard.edu/abs/2017PASP..129g4503B">Bernstein et al. (2017b</a>).</p>
+        <p>The DR1 astrometric solution is derived in two steps using SCAMP with 2MASS as the reference catalog (Morganson et al. 2018). At the single-epoch stage, we find internal astrometric uncertainties of 42, 36, 37, 39, and 56 mas in the g, r, i, z, and Y bands, respectively, as determined from the median of two-dimensional angular separations between repeated measurements of bright stars from individual exposures. Following the astrometric refinement step for image coaddition by SCAMP, the estimated internal astrometric precision for the coadd is ~30mas RMS (median over coadd tiles). The absolute astrometric uncertainty of the coadd is evaluated with respect to Gaia DR1 (<a href="http://adsabs.harvard.edu/abs/2016A%26A...595A...2G">Gaia Collaboration et al. 2016</a>).
+            <br><a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> shows that the residuals are smallest in regions with with larger stellar densities closer to the Galactic plane (for comparison, see <a href="javascript:void(0)" on-tap="_dialog" data-item="10">Figure 10</a> ), and the mean over the footprint is ~145 mas. Further details of astrometric calibration, including ongoing development using Gaia as a reference catalog, are provided in <a href="http://adsabs.harvard.edu/abs/2017PASP..129g4503B">Bernstein et al. (2017b</a>).</p>
         <p><br> </p>
+
+        <des-img-big src="/static/images/dr1/gaia_astro_residual.png" on-tap="_dialog" data-item="1">Figure 1. Absolute astrometric precision against an external source, namely, Gaia stars with G<sub>Gaia</sub> ~ 16. On the left is plotted the mean value of astrometric discrepancy with Gaia vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the overall offset is shown.</des-img-big>
+
         <div class="fixup" id="quality_photo"></div>
         <h3 class="fixdown">Photometry  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>The relative top-of-the-atmosphere flux measurements for astronomical sources in DR1 have been calibrated using a forward modeling technique to account for both atmospheric and instrumental components of the total system throughput (FGCM; <a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B">Burke et al. 2017</a>). The parameters of the model were initially fit from observations taken in photometric conditions to establish a network of calibration stars that spans the full survey footprint. This network was subsequently used to refine the calibration of exposures taken in non-photometric conditions. Meanwhile, the absolute photometric calibration of DR1 is tied to the spectrophotometric Hubble CALSPEC standard star C26202 (<a href="http://adsabs.harvard.edu/abs/2014PASP..126..711B">Bohlin et al. 2014</a>) located in the SN field C3.<br>Several hundred repeated measurements of C26202 in a variety of conditions yielded a set of small shifts (3 mmag) to place the DES photometry on the AB system. These shifts have been pre-applied to the DR1 zeropoints. The statistical uncertainties on these shifts are estimated to be 2.6, 2.9, 3.4, 2.5, and 4.5 mmag for the g, r, i, z, and Y bands, respectively. Additional sources of systematic uncertainty on the absolute photometric calibration could arise from uncertainty in the level of out-of-band light leakage and uncertainty in the synthetic photometry of C26202. We are currently undertaking observations and analysis of two additional HST CALSPEC standards to reduce the systematic uncertainty of the AB offsets. &nbsp;We reproduce below several of the key results from <a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B">Burke et al. (2017)</a> regarding the relative photometric calibration.</p>
-        <p>The single-epoch photometric statistical precision (associated with random errors in the FGCM fit parameters) derived from repeated measurements of FGCM calibration stars is 7.3, 6.1, 5.9, 7.3, 7.8 mmag in the g, r, i, z, and Y bands, respectively. Under the assumption that successive tiled observations of the same fields yield largely independent model fit parameters (as would be expected from the widely spaced observations in DES), we estimate the statistical precision of coadd zeropoints by combining the fit results from overlapping exposures. The median coadd zeropoint statistical uncertainty for the g, r, i, z, and Y band is 5, 4, 5, 6, and 5 mmag, respectively. Figure 7 shows an example distribution for the i band. As a validation, we compare the photometric uniformity of DES DR1 to the space-based Gaia G-ban&nbsp;photometry. Variations in uniformity are found to be 6.6 mmag, as estimated from a Gaussian fit to the offset distribution between G<sub>Gaia</sub> and G<sub>pred</sub>(r) predicted from the DES r-band.</p>
+        <p>
+            <br>
+        </p>
+
+       <des-img src="/static/images/dr1/fgcm_calib_error_i_nozpcorr.png" on-tap="_dialog" data-item="2">Figure 2. FGCM calibration error. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the photometric residue is shown. <br></des-img>
+
+
+       <des-img src="/static/images/dr1/gaia_phot_residual_nozpcorr.png" on-tap="_dialog" data-item="3">Figure 3. &nbsp;The distribution of photometric residuals against the Gaia’s G band across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the photometric residue is shown.</des-img>
+
+        <p>The single-epoch photometric statistical precision (associated with random errors in the FGCM fit parameters) derived from repeated measurements of FGCM calibration stars is 7.3, 6.1, 5.9, 7.3, 7.8 mmag in the g, r, i, z, and Y bands, respectively. Under the assumption that successive tiled observations of the same fields yield largely independent model fit parameters (as would be expected from the widely spaced observations in DES), we estimate the statistical precision of coadd zeropoints by combining the fit results from overlapping exposures. The median coadd zeropoint statistical uncertainty for the g, r, i, z, and Y band is 5, 4, 5, 6, and 5 mmag, respectively.  <a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a> shows an example distribution for the i band. As a validation, we compare the photometric uniformity of DES DR1 to the space-based Gaia G-ban&nbsp;photometry (<a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a>). Variations in uniformity are found to be 6.6 mmag, as estimated from a Gaussian fit to the offset distribution between G<sub>Gaia</sub> and G<sub>pred</sub>(r) predicted from the DES r-band.</p>
         <p>To account for extinction from interstellar dust, we include an additional column in the DR1 photometry tables for E(B - V) values from the reddening map of <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel et al. (1998)</a> (SFD98) at the location of each catalog object. The E(B -V) values were obtained using a linear interpolation of the Zenithal Equal Area projected map distributed by SFD98. We computed fiducial interstellar extinction coefficients, R<sub>b</sub>, for each band so that the corrections to the FGCM calibrated source magnitudes are A<sub>b</sub> = E(B -V)R<sub>b</sub>. Fiducial coefficients are derived using the <a href="http://adsabs.harvard.edu/abs/1999PASP..111...63F">Fitzpatrick (1999)</a> reddening law with R<sub>V</sub> = 3.1 and the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment to the original SFD98 reddening map (N = 0.78). Note that the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment is included in our fiducial reddening coefficients; these coefficients are intended to be used directly with E(B -V) values from the original SFD98 reddening map. We integrated over the DR1 Standard Bandpasses considering a fixed source spectrum that is constant in spectral flux density per unit wavelength, and adopted the low-extinction limit. The latter simplification is appropriate for DES, for which E(B-V) &lt; 0.1 mag over ~99% of the footprint. The resulting multiplicative coefficients for each band, R<sub>b</sub>, are 3.186, 2.140, 1.569, 1.196 and 1.048 in the g, r, i, z and Y bands, respectively. The DES science team continues to explore systematic uncertainties associated with interstellar extinction modeling.</p>
         <p><br> </p>
         <div class="fixup" id="quality_flag"></div>
         <h3 class="fixdown">Flagged objects  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <p>The single-epoch object catalogs include a binary flag parameter, IMAFLAGS_ISO, that expresses the union of all mask bits present for pixels within the isophotal radius of each source (Morganson et al. 2018). For coadd objects, if any pixel is masked in all of the contributing exposures for a given band, the IMAFLAGS_ISO = 1 flag is set for that band. This flag is predominantly set for saturated objects and objects with missing data. We recommend a baseline quality criteria of IMAFLAGS_ISO = 0 (in the relevant bands) for most science applications since the majority of flagged objects have unreliable photometry. The DES DR1 catalog also includes other standard flags FLAGS provided by the SExtractor pipeline.</p>
+        <p>For coadd objects, if any pixel is masked in all of the contributing exposures for a given band, the IMAFLAGS_ISO = 1 flag is set for that band. This flag is predominantly set for saturated objects and objects with missing data. We recommend a baseline quality criteria of IMAFLAGS_ISO = 0 (in the relevant bands) for most science applications since the majority of flagged objects have unreliable photometry. The DES DR1 catalog also includes other standard flags FLAGS provided by the SExtractor pipeline.</p>
         <p><br> </p>
         <div class="fixup" id="quality_depth"></div>
         <h3 class="fixdown">Depth  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>The effective depth of the DES DR1 wide-field coadd catalog is dependent on the photometric measurement of interest and can be quantified through various approaches. Here we derive simple depth estimates from the flux distribution of cataloged objects, the magnitude corresponding to a fixed signal-to-noise threshold (S/N = 10), an aperture estimate from the input imaging, and object detection completeness. In general, the type of source and surface brightness must also be considered when evaluating the survey depth. The settings used for the source extraction and deblending steps of the DESDM pipeline allow for efficient detection of objects with S/N &nbsp;~10 in the <em>r +i+z</em> composite detection image (Morganson et al. 2018). At the bright end, saturation &nbsp;effects start to become important at r &lt; 16. For even brighter magnitudes, the fraction of saturated objects increases until objects are no longer cataloged due to pixel-level masking applied during processing. For each of the depth studies considered here, we selected a sample of high-quality DR1 coadd objects with using FLAGS_[GRIZ] &lt; 4 and IMAFLAGS_ISO_[GRIZ] = 0. Below we describe these different approaches to estimate the depth of DR1.&nbsp;</p>
-        <p>
-          <br>Table: DES DR1 coadd catalog depth estimates</p>
+
         <table>
+
+            <caption align="bottom" class="caption">
+            Table 1. DES DR1 coadd catalog depth estimates
+                <br></caption>
           <colgroup>
             <col>
             <col>
@@ -37510,10 +38745,14 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             </tr>
           </tbody>
         </table>
+
+       <des-img-big src="/static/images/dr1/dr1_magauto.png" on-tap="_dialog" data-item="4">Figure 4. Source counts using SExtractor’s MAG_AUTO quantity.</des-img-big>
+
+
         <p><br> </p>
         <div class="fixup" id="quality_flux"></div>
         <h5 class="fixdown">Flux Distribution</h5>
-        <p>The distribution of astronomical sources is weighted towards low-flux sources. An faint limit on the source detection threshold can be estimated from the mode of the number counts distribution of sources as a function of magnitude. Figure 9 shows the number counts of coadd objects as a function of MAG_AUTO in all five DES bands. The mode of the MAG_AUTO distribution is 24.32, 23.89, 23.41, 22.09, 21.40 in the g, r, i, z, and Y bands, respectively. No restriction were placed on source morphology (i.e., stars vs. galaxies) for this estimate.</p>
+        <p>The distribution of astronomical sources is weighted towards low-flux sources. An faint limit on the source detection threshold can be estimated from the mode of the number counts distribution of sources as a function of magnitude. <a href="javascript:void(0)" on-tap="_dialog" data-item="4">Figure 4</a> shows the number counts of coadd objects as a function of MAG_AUTO in all five DES bands. The mode of the MAG_AUTO distribution is 24.32, 23.89, 23.41, 22.09, 21.40 in the g, r, i, z, and Y bands, respectively. No restriction were placed on source morphology (i.e., stars vs. galaxies) for this estimate.</p>
         <p><br> </p>
         <div class="fixup" id="quality_limit"></div>
         <h5 class="fixdown">Magnitude limit at fixed signal-to-noise</h5>
@@ -37522,18 +38761,27 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
           <br>
          <img src="http://latex.codecogs.com/gif.latex?\delta m = \frac{-2.5}{\ln 10} \frac{\delta F}{F}.">
         </p>
-        <p>We summarize in Table 2 the characteristic S/N = 10 thresholds for MAG_AUTO corresponding to δF/F &nbsp;~0.1 in each of the g, r, i, z, and Y bands. Figure 10 shows the MAG_AUTO distribution for DES DR1 catalog objects with 0.10837 &lt; MAGERR_AUTO &lt; 0.10877. The spread in these distributions represents comes from dependence of S/N on source properties (e.g., surface brightness) and survey non-uniformity.</p>
+        <p>We summarize in Table 2 the characteristic S/N = 10 thresholds for MAG_AUTO corresponding to δF/F &nbsp;~0.1 in each of the g, r, i, z, and Y bands. <a href="javascript:void(0)" on-tap="_dialog" data-item="5">Figure 5</a> shows the MAG_AUTO distribution for DES DR1 catalog objects with 0.10837 &lt; MAGERR_AUTO &lt; 0.10877. The spread in these distributions represents comes from dependence of S/N on source properties (e.g., surface brightness) and survey non-uniformity.</p>
         <p><br> </p>
         <div class="fixup" id="quality_depth2"></div>
         <h5 class="fixdown">Depth from image properties</h5>
-        <p>It is also possible to estimate the DES DR1 imaging depth using mangle (<a href="http://adsabs.harvard.edu/abs/2004MNRAS.349..115H">Hamilton &amp; Tegmark 2004</a>, <a href="http://adsabs.harvard.edu/abs/2008MNRAS.387.1391S">Swanson et al. 2008</a>), which generates a vectorized map of the survey coverage accounting for the focal plane geometry and imaging artifacts (i.e., bright star masks, bleed trails, satellite trails) (<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>, Morganson et al. 2018). The mangle processing produces a coadd weight map from a weighted sum of the single-epoch input images. This weight was converted to a the S/N = 10 limiting magnitude for a 200 diameter aperture, corresponding to the MAG_APER_4 quantity measured by SExtractor (for details, see <a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). The median limiting magnitude in the g, r, i, z, and Y bands across the DES footprint is 23.52, 23.10, 22.51, 21.81, 20.61, respectively (Figure 10).</p>
+        <p>It is also possible to estimate the DES DR1 imaging depth using mangle (<a href="http://adsabs.harvard.edu/abs/2004MNRAS.349..115H">Hamilton &amp; Tegmark 2004</a>, <a href="http://adsabs.harvard.edu/abs/2008MNRAS.387.1391S">Swanson et al. 2008</a>), which generates a vectorized map of the survey coverage accounting for the focal plane geometry and imaging artifacts (i.e., bright star masks, bleed trails, satellite trails) (<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>, Morganson et al. 2018). The mangle processing produces a coadd weight map from a weighted sum of the single-epoch input images. This weight was converted to a the S/N = 10 limiting magnitude for a 2'' diameter aperture, corresponding to the MAG_APER_4 quantity measured by SExtractor (for details, see <a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). The median limiting magnitude in the g, r, i, z, and Y bands across the DES footprint is 23.52, 23.10, 22.51, 21.81, 20.61, respectively (<a href="javascript:void(0)" on-tap="_dialog" data-item="6">Figure 6</a>).</p>
+
+        <p>
+          <br>
+        </p>
+
+       <des-img src="/static/images/dr1/dr1_coadd_depth_sn10.png" on-tap="_dialog" data-item="5">Figure 5. Catalog depth estimated for MAG_AUTO using catalog objects with S/N = 10 (MAGERR_AUTO = 0.10857.</des-img>
+
+       <des-img src="/static/images/dr1/dr1_maglim_hist.png" on-tap="_dialog" data-item="6">Figure 6.&nbsp;Catalog depth estimated for a 2'' aperture (MAG_AUTO_4) using mangle.<br></des-img>
+
         <p><br> </p>
         <div class="fixup" id="quality_complete"></div>
         <h5 class="fixdown">Object detection completeness</h5>
         <p>Another measure of effective imaging depth is the object detection completeness relative to deeper imaging data. We evaluated the detection completeness of DES DR1 through a comparison to public CFHTLenS data (<a href="http://adsabs.harvard.edu/abs/2013MNRAS.433.2545E">Erben et al. 2013</a>) using an overlap region centered on (Ra;Dec) = (34.5;-5.4) consisting of 9 CFHTLenS fields in the W1 patch. The CFHTLens 5σ magnitude limits in a 2'' aperture for g', r', i', y' and z' are 25.58, 24.88, 24.54, 24.71 and 23.46, respectively. To ensure full coverage in both surveys, we restricted the analysis to regions with CFHTLenS image mask value MASK = 0 and DES coverage fraction &gt; 99% in the intersection of the griz bands (see <a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). The effective area of overlap in both surveys including masking is 6.0 sq. deg.</p>
         <p>Object matching is performed using a 1'' radius and we require a robust flux measurement in the respective DES band (15 &lt; MAG_AUTO &lt; 30) that is roughly consistent with that of CFHTLenS (within 1 mag) for an object to count as “detected” in DES DR1.</p>
-        <p>The DES DR1 detection efficiency is defined as the fraction of CFHTLenS objects in a given flux interval that have a matched DES object passing the baseline quality cuts listed above, and is expressed in the DES photometric system using converted flux measurement from CFHTLenS. The resulting detection efficiency curves are plotted in Figure 11. DES DR1 detection efficiencies are only plotted for the magnitude range brighter than the typical S/N = 5 limiting magnitude of CFHTLenS. The 95% completeness magnitude thresholds obtained from this test in the g, r, i, and z bands are 23.72, 23.35, 22.88, and 22.25, respectively (Table 1). CFHTLenS does not include comparable Y-band coverage.</p>
-        <p>Using the same baseline quality selection criteria of FLAGS_[GRIZ] &lt; 4 and IMAFLAGS_ISO_[GRIZ] = 0, we find that in each of <em>griz</em> bands, that &nbsp;roughly less than 1% of DES objects with MAG_AUTO greater than 20 and less than the typical S/N = 5 limiting magnitude of CFHTLenS lack a matched counterpart in CFHTLenS (Figure 11). This suggests that contamination from spurious objects in DES DR1 is also roughly 1%.</p>
+        <p>The DES DR1 detection efficiency is defined as the fraction of CFHTLenS objects in a given flux interval that have a matched DES object passing the baseline quality cuts listed above, and is expressed in the DES photometric system using converted flux measurement from CFHTLenS. The resulting detection efficiency curves are plotted in <a href="javascript:void(0)" on-tap="_dialog" data-item="7">Figure 7</a>. DES DR1 detection efficiencies are only plotted for the magnitude range brighter than the typical S/N = 5 limiting magnitude of CFHTLenS. The 95% completeness magnitude thresholds obtained from this test in the g, r, i, and z bands are 23.72, 23.35, 22.88, and 22.25, respectively. CFHTLenS does not include comparable Y-band coverage.</p>
+        <p>Using the same baseline quality selection criteria of FLAGS_[GRIZ] &lt; 4 and IMAFLAGS_ISO_[GRIZ] = 0, we find that in each of <em>griz</em> bands, that &nbsp;roughly less than 1% of DES objects with MAG_AUTO greater than 20 and less than the typical S/N = 5 limiting magnitude of CFHTLenS lack a matched counterpart in CFHTLenS (<a href="javascript:void(0)" on-tap="_dialog" data-item="7">Figure 7</a>). This suggests that contamination from spurious objects in DES DR1 is also roughly 1%.</p>
 
         <p><br> </p>
         <div class="fixup" id="quality_morph"></div>
@@ -37545,11 +38793,26 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <p>EXTENDED_COADD =<br>((SPREAD_MODEL_I+ 3 × SPREADERR_MODEL_I) &gt; 0.005)<br>+ ((SPREAD_MODEL_I+SPREADERR_MODEL_I) &gt; 0.003)<br>+ ((SPREAD_MODEL_I-SPREADERR_MODEL_I) &gt; 0.003)</p>
         <p>
           <br>Note that EXTENDED_COADD is defined by a sequence of boolean conditions that, when true, add a unit to the classifier. This classifier results in a value of 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies). &nbsp;</p>
-        <p>We evaluate the performance of the example classifier above using three regions in the main body of the DES footprint that overlap fields from HSC-SSP DR1 (<a href="http://adsabs.harvard.edu/abs/2017arXiv170208449A">Aihara et al. 2017b</a>) with typical seeing in the i-band FWHM ~ 0.7'': SXDS (Ultra Deep layer), DEEP2_3 (Deep layer), and portions of VVDS (Wide layer). The areal overlap between these HSCSSP data sets and DES is ~ 18 sq. deg. The HSC-SSP data is of sufficient depth and image quality that a distinct stellar locus is clearly visible in the HSC concentration parameter IMAG_PSF-ICMODEL_MAG to an i-band magnitude of ~24.0. We choose an interval of EXTENDED_COADD values to select stellar or galactic samples with a balance of classification efficiency and purity appropriate for different science cases (Figure 12).</p>
-        <p>We recommend using quantities based on SExtractor SPREAD_MODEL for morphological classification in DR1. Although the SExtractor quantity CLASS_STAR has been commonly used in the past, we find that SPREAD_MODEL based classifiers consistently outperform CLASS_STAR, as exemplified by the receiver operating characteristic (ROC) curve shown in Figure 14. The ROC curves are generated by performing a simple scan of threshold values for each of SExtractor quantities, and using the HSC-SSP classifications described above as a reference. Classifiers based on the weighted averaged SPREAD_MODEL from single epoch detections, WAVG_SPREAD_MODEL, are expected to be more robust for objects that are bright enough to be detected in single-epoch imaging (see Section 4.6). It is expected that classifiers using alternative bands and/or combinations of object measurements will be more appropriate for specific science cases.</p>
+
+          <p><br></p>
+       <des-img src="/static/images/dr1/dr1_efficiency_contamination_band.png" on-tap="_dialog" data-item="7">Figure 7. &nbsp;DES DR1 detection efficiency and contamination relative to deeper imaging from CFHTLenS. Solid color curves represent the detection efficiency, while dashed color curves show the fraction of unmatched objects appearing only in DES. For visual reference, gray dashed lines indicate 5% and 95% of objects</des-img>
+       <des-img src="/static/images/dr1/y3a2_ext_coadd_scatter.png" on-tap="_dialog" data-item="8">Figure 8. Stars and galaxies occupy distinct regions of spreadmodel-space at bright magnitudes, but become more difficult to distinguish at faint magnitudes<br><br></des-img>
+
+
+        <p>We evaluate the performance of the example classifier above using three regions in the main body of the DES footprint that overlap fields from HSC-SSP DR1 (<a href="http://adsabs.harvard.edu/abs/2017arXiv170208449A">Aihara et al. 2017b</a>) with typical seeing in the i-band FWHM ~ 0.7'': SXDS (Ultra Deep layer), DEEP2_3 (Deep layer), and portions of VVDS (Wide layer). The areal overlap between these HSCSSP data sets and DES is ~ 18 sq. deg. The HSC-SSP data is of sufficient depth and image quality that a distinct stellar locus is clearly visible in the HSC concentration parameter IMAG_PSF-ICMODEL_MAG to an i-band magnitude of ~24.0. We choose an interval of EXTENDED_COADD values to select stellar or galactic samples with a balance of classification efficiency and purity appropriate for different science cases (<a href="javascript:void(0)" on-tap="_dialog" data-item="8">Figure 8</a>, <a href="javascript:void(0)" on-tap="_dialog" data-item="9">Figure 9</a>, <a href="javascript:void(0)" on-tap="_dialog" data-item="10">Figure 10</a>, <a href="javascript:void(0)" on-tap="_dialog" data-item="11">Figure 11</a> and <a href="javascript:void(0)" on-tap="_dialog" data-item="12">Figure 12</a>).</p>
+        <p><br></p>
+
+       <des-img src="/static/images/dr1/y3a2_ext_coadd_stellar_selection.png" on-tap="_dialog" data-item="9">Figure 9. &nbsp;DES DR1 object classification accuracy versus HSC-SSP for the stellar sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img>
+       <des-img src="/static/images/dr1/stellar_density_1024.png" on-tap="_dialog" data-item="10">Figure 10. Stellar density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 0 selection described above. Discrete peaks in the stellar density correspond to globular clusters and dwarf galaxies in the Milky Way halo. <br></des-img>
+        <p><br></p>
+       <des-img src="/static/images/dr1/y3a2_ext_coadd_galaxy_selection.png" on-tap="_dialog" data-item="11">Figure 11. &nbsp;&nbsp;DES DR1 object classification accuracy versus HSC-SSP for the galaxy sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img>
+       <des-img src="/static/images/dr1/galaxy_density_1024.png" on-tap="_dialog" data-item="12">Figure 12. &nbsp;Galaxy density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 3 selection described above. <br><br></des-img>
+
+        <p>We recommend using quantities based on SExtractor SPREAD_MODEL for morphological classification in DR1. Although the SExtractor quantity CLASS_STAR has been commonly used in the past, we find that SPREAD_MODEL based classifiers consistently outperform CLASS_STAR, as exemplified by the receiver operating characteristic (ROC) curve shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="13">Figure 13</a>. The ROC curves are generated by performing a simple scan of threshold values for each of SExtractor quantities, and using the HSC-SSP classifications described above as a reference. Classifiers based on the weighted averaged SPREAD_MODEL from single epoch detections, WAVG_SPREAD_MODEL, are expected to be more robust for objects that are bright enough to be detected in single-epoch imaging (see Section 4.6). It is expected that classifiers using alternative bands and/or combinations of object measurements will be more appropriate for specific science cases.</p>
         <p>
           <br>
         </p>
+         <des-img-big src="/static/images/dr1/dr1_roc.png" on-tap="_dialog" data-item="13">Figure 13. &nbsp;Receiver operating characteristic (ROC) curve for a stellar selection in the magnitude range 22.5 &lt; MAG_AUTO_I &lt; 23.0. The SPREAD_MODEL outperforms CLASS_STAR in classification accuracy of DES DR1 objects with respect to HSC-SSP.</des-img-big>
         <p>
           <br>
         </p>
@@ -37571,6 +38834,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       _complete() {this.$.quality_complete.scrollIntoView();}
       _morph() {this.$.quality_morph.scrollIntoView();}
       _top() {this.$.quality_top.scrollIntoView();}
+      _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+          }
 
     }
     window.customElements.define(DesDr1Quality.is, DesDr1Quality);
@@ -37584,35 +38853,360 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <style include="shared-styles">
 :host {
-       display: block;
        padding: 10px;
        }
 
+.caption {
+    padding-left: 0px;
+    width: 95%;
+    font-size: 0.85rem;
+    text-align: justify;
+    font-style: italic;
+}
 </style>
 
 
+<paper-dialog id="dialogfig1">
+            <des-img-big src="/static/images/dr1/dr1_globular_cluster.png">
+            Figure 1. Color-magnitude diagram for a stellar sample selected within a 15' x 15' box centered on the M2 globular cluster. The weighted-average PSF photometry from WAVG_MAG_PSF (left) yields a tighter locus but does not extend as deep as the MAG_AUTO photometry (right).
+            </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+            <des-img-big src="/static/images/dr1/saturated.png">
+            Figure 2. Composite<em> gri</em> 1' cutouts of saturated stars with IMAFLAGS_ISO =1.
+        </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig3">
+            <des-img-big src="/static/images/dr1/niter.png">
+            Figure 3. &nbsp;Composite <em>gri</em> 1' cutouts of objects with IMAFLAGS_ISO =1 and NITER_MODEL = 0 shows than in their majority, however not exclusively, are missing data.
+        </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig4">
+            <des-img-big src="/static/images/dr1/bright.png">
+                Figure 4. &nbsp;Examples of very bright stars, R Dor (30' cutout; top left) and α&nbsp;Phe (14' cutout; top right) and globular clusters, NGC 288 (8' cutout; bottom left) and NGC 1904 (2.5' cutout; bottom right), found within the DES DR1 footprint.
+            </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
 
 
+<div class="fixup" id="issues_top"></div>
+<div class="fixdown"></div>
 <des-card heading="Known Issues">
     <div class="card-content">
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_psf">PSF Model</a></li>
+          <li><a href="javascript:void(0)" on-tap="_imaflags">IMAFLAGS_ISO</a></li>
+          <li><a href="javascript:void(0)" on-tap="_bright">Bright Objects</a></li>
+          <li><a href="javascript:void(0)" on-tap="_zp">Zeropoints and bandpasses</a></li>
+        </ul>
+        <hr>
+        <p><br></p>
+        <div class="fixup" id="issues_psf"></div>
+        <h3 class="fixdown">PSF Model  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications (i.e., SPREAD_MODEL, CLASS_STAR) and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Using the i-band as an example, we identified such coadd PSF failures by searching for regions with anomalous coadd SPREAD_MODEL_I distributions and estimate that roughly less than 0.4% of the footprint is substantially affected. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources (<a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a>). Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources).</p>
+
+            <des-img-big src="/static/images/dr1/dr1_globular_cluster.png" on-tap="_dialog" data-item="1">
+            Figure 1. Color-magnitude diagram for a stellar sample selected within a 15' x 15' box centered on the M2 globular cluster. The weighted-average PSF photometry from WAVG_MAG_PSF (left) yields a tighter locus but does not extend as deep as the MAG_AUTO photometry (right).
+            </des-img-big>
+        <p><br></p>
+        <div class="fixup" id="issues_imaflags"></div>
+        <h3 class="fixdown">IMAFLAGS_ISO  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>Among all the objects detected and cataloged, ~2.3% have been flagged by IMAFLAGS_ISO in at least one of the<em> grizY&nbsp;</em>bands, and ~0.1% have artifacts in all 5 bands. It is recommended to use IMAFLAGS_ISO = 0 as a first filter of clean objects. Most of the objects with IMAFLAGS_ISO = 1 are saturated stars (<a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a>). A smaller fraction of flagged objects are missing imaging data in one or more of the bands, as shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a>, and usually have NITER_MODEL = 0, which is set for objects that did not converge during the photometry measurement.</p>
+            <p>
+                <br>
+            </p>
+            <des-img src="/static/images/dr1/saturated.png" on-tap="_dialog" data-item="2">
+            Figure 2. Composite<em> gri</em> 1' cutouts of saturated stars with IMAFLAGS_ISO =1.<br><br>
+            </des-img>
+            <des-img src="/static/images/dr1/niter.png" on-tap="_dialog" data-item="3">
+            Figure 3. &nbsp;Composite <em>gri</em> 1' cutouts of objects with IMAFLAGS_ISO =1 and NITER_MODEL = 0 shows than in their majority, however not exclusively, are missing data.
+            </des-img>
+
+        <p><br></p>
+        <div class="fixup" id="issues_bright"></div>
+        <h3 class="fixdown">Bright Objects  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>Scattered light from very bright stars can impact the photometry of nearby objects. Table 1 lists the coordinates and magnitudes of bright stars in the DES footprint. These stars generally cause ragged holes in the imaging coverage of DES DR1 due to image-level blacklisting of scattered light artifacts (<a href="javascript:void(0)" on-tap="_dialog" data-item="4">Figure 4</a>). Scattered light from these stars extends beyond image- and catalog-level masking, and can be observed at &gt; 1<sup>o</sup> in the number counts of objects with extreme colors, i.e. (g-r) &gt; 4 or (i-z) &gt; 4 (<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). Additional care must be taken for analyses close to bright stars.<br>The DESDM processing pipeline is optimized for extragalactic science at high-Galactic latitudes. As such, it is not optimized to detect or measure sources in extremely crowded regions. Failures in source deblending are most noticeable &nbsp;in the cores of Galactic globular clusters, where source confusion and saturation reduce the catalog completeness appreciably. Table 2 lists 5 classical globular clusters within the DES DR1 footprint with integrated V-band magnitude brighter than 10 (<a href="http://adsabs.harvard.edu/abs/1996AJ....112.1487H">Harris 1996</a>, 2010 edition). The bottom panels of <a href="javascript:void(0)" on-tap="_dialog" data-item="4">Figure 4</a> show two of these clusters, NGC 288 and NGC 1904, where saturation and source confusion can greatly impact source detection and photometric measurements.</p>
+
+            <des-img-big src="/static/images/dr1/bright.png" on-tap="_dialog" data-item="4">
+                Figure 4. &nbsp;Examples of very bright stars, R Dor (30' cutout; top left) and α&nbsp;Phe (14' cutout; top right) and globular clusters, NGC 288 (8' cutout; bottom left) and NGC 1904 (2.5' cutout; bottom right), found within the DES DR1 footprint.
+            </des-img-big>
+        <p>
+          <br>
+        </p>
+        <table>
+        <caption align="bottom" class="caption">
+        Table 1. List of some of very bright stars with apparent visual magnitude brighter than 6 within the DES footprint.
+            <br></caption>
+          <colgroup>
+            <col style="width: 29.2835%;">
+            <col style="width: 14.7456%;">
+            <col style="width: 15.6802%;">
+            <col style="width: 39.9792%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Star</th>
+              <th>RA(deg)</th>
+              <th>DEC(deg)</th>
+              <th>Apparent Magnitude (mag)</th>
+            </tr>
+            <tr>
+              <td>α Col (Phact)</td>
+              <td style="text-align: center;">84.9121</td>
+              <td style="text-align: center;">-34.0741</td>
+              <td style="text-align: center;">2.65</td>
+            </tr>
+            <tr>
+              <td>
+                <span>α</span> Phe (Ankaa) &nbsp;</td>
+              <td style="text-align: center;">
+                <span> 6.5708 </span>
+              </td>
+              <td style="text-align: center;">
+                <span> -42.3061</span>
+              </td>
+              <td style="text-align: center;">
+                <span>2.38</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <span>α</span> Eri (Achernar)</p>
+              </td>
+              <td style="text-align: center;">
+                <span>24.4288</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-57.2367 </span>
+              </td>
+              <td style="text-align: center;">
+                <span>0.46</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>α</span> Hya (Alphard)</td>
+              <td style="text-align: center;">
+                <span>29.6925 </span>
+              </td>
+              <td style="text-align: center;">
+                <span> -61.5697</span>
+              </td>
+              <td style="text-align: center;">
+                <span>2.00</span>
+              </td>
+            </tr>
+            <tr>
+              <td>γ Eri (Zaurak)</td>
+              <td style="text-align: center;">
+                <span>59.5075</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-13.5086</span>
+              </td>
+              <td style="text-align: center;">
+                <span>2.91</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">R Dor</td>
+              <td colspan="1" style="text-align: center;">
+                <span> 69.1900</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-62.0775 </span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>5.40</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  <span>α </span>Car (Canopus)</p>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>95.9879</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-52.6958</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-0.74</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  <span>α</span> Pav (Peacock)</p>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>306.4121</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-56.7350</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>1.94</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  <span>α</span> Gru (Alnair)</p>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>332.0583</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-46.961</span>
+              </td>
+              <td colspan="1" style="text-align: center;">1.74</td>
+            </tr>
+            <tr>
+              <td colspan="1">β &nbsp;Gru (Tiaki)</td>
+              <td colspan="1" style="text-align: center;">
+                <span>340.6671</span>
+              </td>
+              <td colspan="1" style="text-align: center;">-<span>46.8847</span>
+              </td>
+              <td colspan="1" style="text-align: center;">2.15</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <br>
+        </p>
+        <table>
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Globular Cluster</th>
+              <th>RA(deg)</th>
+              <th>DEC(deg)</th>
+              <th>Apparent Magnitude (mag)</th>
+            </tr>
+            <tr>
+              <td>
+                <p>NGC 288</p>
+              </td>
+              <td style="text-align: center;">
+                <span>13.2</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-26.58</span>
+              </td>
+              <td style="text-align: center;">
+                <span>8.1</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <span>NGC 1261</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>48.075</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-55.13</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>8.4</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <span>NGC 1851</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>78.525 </span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>-40.05</span>
+              </td>
+              <td colspan="1" style="text-align: center;">
+                <span>7.3</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>NGC 1904</span>
+              </td>
+              <td style="text-align: center;">
+                <span> 81.045</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-24.523</span>
+              </td>
+              <td style="text-align: center;">
+                <span> 8.0</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>NGC 7089</span>
+              </td>
+              <td style="text-align: center;">
+                <span>323.375</span>
+              </td>
+              <td style="text-align: center;">
+                <span>-0.8167</span>
+              </td>
+              <td style="text-align: center;">
+                <span>6.5</span>
+              </td>
+            </tr>
+          </tbody>
+          <caption align="bottom" class="caption">
+        Table 2.&nbsp;Brightest globular clusters within DES DR1.
+              <br></caption>
+        </table>
+        <p>
+          <br>
+        </p>
+        <div class="fixup" id="issues_zp"></div>
+        <h3 class="fixdown">Zeropoints and bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>The tabulated “DES DR1 Standard Bandpasses” &nbsp;included in this release were not the ones used to calculate the zeropoints applied to the calibrated images and coadd source catalogs presented in this release which correspond to an earlier version of the system throughput, referred to as the “Y3A1 Standard Bandpasses”. The latter system, which was the one available at the time of data processing, differs from the DES DR1 Standard Bandpasses in the treatment of the out-of-band system response. The DES DR1 Standard Bandpasses correct for a small inaccurate representation of r-band throughput in the Y3A1 Standard Bandpasses, which due to an incorrect input calibration run,considered an unrealistically large light leakage relative to the in-band response ( ~ 10<sup>-2</sup>) at wavelengths ~8000Å and ~9200Å. For coadd objects, the impact of setting the out-of-band response to zero in the DES DR1 Standard Band.</p>
+        <p>
+          <br>
+        </p>
+
     </div>
 </des-card>
 </template>
 <script>
     class DesDr1KnownIssues extends Polymer.Element {
       static get is() { return 'des-dr1-known-issues'; }
-      _progress() {
-          this.$.observing_progress.scrollIntoView();
-      }
-      _intro() {
-          this.$.observing_intro.scrollIntoView();
-      }
-      _decam() {
-          this.$.observing_decam.scrollIntoView();
-      }
-      _oper() {
-          this.$.observing_oper.scrollIntoView();
-      }
+      _top() {this.$.issues_top.scrollIntoView();}
+      _psf() {this.$.issues_psf.scrollIntoView();}
+      _imaflags() {this.$.issues_imaflags.scrollIntoView();}
+      _bright() {this.$.issues_bright.scrollIntoView();}
+      _zp() {this.$.issues_zp.scrollIntoView();}
+      _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          //this.$.dialogfig.open();
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+
+          }
 
     }
     window.customElements.define(DesDr1KnownIssues.is, DesDr1KnownIssues);
@@ -37626,35 +39220,100 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <style include="shared-styles">
 :host {
-       display: block;
        padding: 10px;
        }
 
+.answer {
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+.answer:before{
+    content: "Answer: ";
+    font-size: 1.2rem;
+    color: green;
+    opacity: 0.6;
+}
 </style>
 
 
-
-
+<div class="fixup" id="faq_top"></div>
+<div class="fixdown"></div>
 <des-card heading="FAQ">
     <div class="card-content">
-    </div>
+<ol>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="1">
+      How do I select stars/galaxies?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="2">
+      Why does THETAWIN_IMAGE have such strange spikes?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="3">
+   Where is THETA_IMAGE? How do I draw ellipses in image coordinates?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="4">
+  Where are FLUX_PSF and MAG_PSF?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="5">
+  What is IMAFLAGS_ISO and how should I use it?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="6">
+  How do I find out if my object/location on the sky is in the DES footprint?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="7">
+  Is FLUX_RADIUS a flux or a radius?
+  </a></li>
+</ol>
+<hr>
+<br>
+
+<p><br></p>
+<div class="fixup" id="faq1"></div>
+<h3 class="fixdown">1. How do I select stars/galaxies?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p><br></p>
+<div class="fixup" id="faq2"></div>
+<h3 class="fixdown">2. Why does <code>THETAWIN_IMAGE</code> have such strange spikes?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p><br></p>
+<div class="fixup" id="faq3"></div>
+<h3 class="fixdown">3. Where is <code>THETA_IMAGE</code>? How do I draw ellipses in image coordinates?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+
+<p><br></p>
+<div class="fixup" id="faq4"></div>
+<h3 class="fixdown">4. Where are <code>FLUX_PSF</code> and <code>MAG_PSF</code>?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p><br></p>
+<div class="fixup" id="faq5"></div>
+<h3 class="fixdown">5. What is <code>IMAFLAGS_ISO</code> and how should I use it?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">
+  <span>Among all the objects detected and cataloged, ~2.3% have been flagged by IMAFLAGS_ISO in at least one of the</span> <em>&nbsp;grizY&nbsp;</em> <span>bands, and ~0.1% have artifacts in all 5 bands.<br> </span> <span>It is recommended to use IMAFLAGS_ISO = 0 as a first filter of clean objects. Most of the objects with IMAFLAGS_ISO = 1 are saturated stars</span> <span>. A smaller fraction of flagged objects are missing imaging data in one or more of the bands</span> <span>, and usually have NITER_MODEL = 0, which is set for objects that did not converge during the photometry measurement.</span>
+</p>
+
+<p><br></p>
+<div class="fixup" id="faq6"></div>
+<h3 class="fixdown">6. How do I find out if my object/location on the sky is in the DES footprint?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p class="answer">You can use the interactive tools,&nbsp;<a href="https://des.ncsa.illinois.edu/easyweb/footprint">https://des.ncsa.illinois.edu/easyweb/footprint</a>&nbsp;or here&nbsp;<a href="https://desportal2.cosmology.illinois.edu/dri/apps/home/">https://desportal2.cosmology.illinois.edu/dri/apps/home/</a>&nbsp;. &nbsp;Using Healpix you can locate a position (or a set of positions) within a Healpix cell, then you can select the cell and the objects within directly from the DR1 DB. HPIX resolutions in NESTED schema are available at nside = 32, 64,&nbsp;1024,4096,16384</p>
+
+<p><br></p>
+<div class="fixup" id="faq7"></div>
+<h3 class="fixdown">7. Is <code>FLUX_RADIUS</code> a flux or a radius? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">It is a radius measurement, it's the half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions. If the profile is Gaussian, then&nbsp;&nbsp;FWHM = 2*FLUX_RADIUS .</p>
+
+</div>
 </des-card>
 </template>
 <script>
     class DesDr1Faq extends Polymer.Element {
       static get is() { return 'des-dr1-faq'; }
-      _progress() {
-          this.$.observing_progress.scrollIntoView();
-      }
-      _intro() {
-          this.$.observing_intro.scrollIntoView();
-      }
-      _decam() {
-          this.$.observing_decam.scrollIntoView();
-      }
-      _oper() {
-          this.$.observing_oper.scrollIntoView();
-      }
+      _top() { this.$.faq_top.scrollIntoView();}
+      _scroll(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#faq'+temp).scrollIntoView();
+          }
 
     }
     window.customElements.define(DesDr1Faq.is, DesDr1Faq);
