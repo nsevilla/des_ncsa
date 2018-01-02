@@ -1,0 +1,976 @@
+<dom-module id="des-dr1-schema">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+</style>
+
+
+
+
+<div class="fixup" id="schema_top"></div>
+<div class="fixdown"></div>
+<des-card heading ='DR1 Table Schema'>
+    <div class=card-content>
+        Below we present a summarized version of the DR1 tables and their description, some of the columns
+        have links to a more detailed explanation and origin, in particular, the <a href = "http://sextractor.readthedocs.io/en/des_dr1/" target="_blank"> Sextractor parameters used for DR1 </a>.
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_main">DR1_MAIN</a></li>
+          <li><a href="javascript:void(0)" on-tap="_mags">DR1_MAGNITUDE</a></li>
+          <li><a href="javascript:void(0)" on-tap="_fluxes">DR1_FLUX</a></li>
+          <li><a href="javascript:void(0)" on-tap="_tiles">DR1_TILE_INFO</a></li>
+        </ul>
+        <hr />
+
+        <p><br/></p>
+        <div class="fixup" id="schema_main"></div>
+        <h3 class="fixdown">DR1_MAIN  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<table >
+  <colgroup> <col style="width: 26.63%;"/> <col style="width: 58.4908%;"/> <col style="width: 14.841%;"/> </colgroup>
+  <tbody>
+    <tr>
+      <th style="text-align: center;">
+        <span >Column</span>
+      </th>
+      <th style="text-align: center;">
+        <span >Description</span>
+      </th>
+      <th colspan="1" style="text-align: center;">
+        <span >Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+      </td>
+      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">AWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Major axis size, from 2nd order windowed moment measurements [pixels]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">A_IMAGE</a>
+      </td>
+      <td colspan="1">Major axis size based on an isophotal model [pixel]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>BACKGROUND_{G,R,I,Z,Y}</td>
+      <td>Background level, by CCD-amplifier [mag] </td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">BWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Minor axis size, from 2nd order windowed moment measurements [pixels]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">B_IMAGE</a>
+      </td>
+      <td>Minor axis size based on an isophotal model [pixel]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://sextractor.readthedocs.io/en/des_dr1/ClassStar.html#class-star-def">CLASS_STAR_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Simple morphological extended source classifier. Values between 0 (galaxies) and 1 (stars). SPREAD_MODEL exhibits better performance for morphological classification.</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>COADD_OBJECT_ID</td>
+      <td>Unique identifier for the coadded objects</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DEC</td>
+      <td>Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+      </td>
+      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>EBV_SFD98</td>
+      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRAWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Uncertainty in major axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRA_IMAGE</a>
+      </td>
+      <td>Uncertainty in major axis size, from isophotal model [pixel]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRBWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in minor axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRB_IMAGE</a>
+      </td>
+      <td>Uncertainty in minor axis size, from isophotal model [pixel]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRTHETAWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in source position angle, from converged windowed measurement [degrees]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRTHETA_IMAGE</a>
+      </td>
+      <td>Uncertainty in source position, from isophotal model [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRX2WIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in second moment of x-distribution centroid, from converged windowed measurements [pixel2]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRXYWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in second moment of xy-distribution, from converged windowed measurements [pixel2]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>
+          <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRY2WIN_IMAGE_{G,R,I,Z,Y}</a>
+        </p>
+      </td>
+      <td colspan="1">Uncertainty in second moment of y-distribution centroid, from converged windowed measurements [pixel2]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">FLAGS_{G,R,I,Z,Y}</td>
+      <td colspan="1">Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Uncertainty in aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUX_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">FLUX_RADIUS_{G,R,I,Z,Y}</td>
+      <td colspan="1">Half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=fwhm%20image#windowed-positional-parameters">FWHM_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">FWHM measured from the isophotal area, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">GALACTIC_B</td>
+      <td colspan="1">Galactic Latitude [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">GALACTIC_L</td>
+      <td colspan="1">Galactic Longitude [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
+      <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
+      <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>ISOAREA_IMAGE_{G,R,I,Z,Y}</td>
+      <td>Isophotal area of the coadded source [pixel2]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>KRON_RADIUS</td>
+      <td>Kron radius measured from detection image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>KRON_RADIUS_{G,R,I,Z,Y}</td>
+      <td>Kron radius measured from coadded image [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAG_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>MAG_AUTO_{G,R,I,Z,Y}_DERED</td>
+      <td>Dereddened magnitude estimation (using SFD98), for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>NEPOCHS_{G,R,I,Z,Y}</td>
+      <td>Number of epochs the source is detected in single epoch images</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Model.html#model-minimization-def">NITER_MODEL_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Number of iterations in model fitting photometric measurements</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>RA</td>
+      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREADERR_MODEL_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD_MODEL_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">THETAWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Position angle of source, for converged windowed measurement grow from x to y [degrees]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html?highlight=j2000#basic-shape-parameters-a-b-theta">THETA_J2000</a>
+      </td>
+      <td>Position angle of source in J2000 coordinates, from non-windowed measurement [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TILENAME</td>
+      <td>Identifier of each one of the tiles on which the survey is gridded</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+      <td>Uncertainty of weighted averaged flux measurement of PSF fit single epoch detections [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+      <td>Weighted average flux measurement of PSF fit single epoch detections [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+      <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+      <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}_DERED</td>
+      <td>Dereddened weighted average magnitude (using SFD98) from PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_SPREADERR_MODEL_{G,R,I,Z,Y}</td>
+      <td>Uncertainty in <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_SPREAD_MODEL_{G,R,I,Z,Y}</td>
+      <td>
+        <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">X2WIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Second moment in x-direction, from converged windowed measurements [pixel2]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE</a>
+        </p>
+      </td>
+      <td>X-centroid from windowed measurements on coadded image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>X-centroid from windowed measurements on coadded band image [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">XYWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>
+        <p>Second moment in xy-direction, from converged windowed measurements [pixel2]</p>
+      </td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">Y2WIN_IMAGE_{G,R,I,Z,Y}</a>
+        </p>
+      </td>
+      <td>Second moment in y-direction, from converged windowed measurements [pixel2]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE</a>
+      </td>
+      <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Y-centroid from windowed measurements on coadded band images [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <br/>
+      </td>
+      <td>
+        <br/>
+      </td>
+      <td style="text-align: center;">213</td>
+    </tr>
+  </tbody>
+</table>
+        <p><br/></p>
+        <div class="fixup" id="schema_mags"></div>
+        <h3 class="fixdown">DR1_MAGNITUDE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<table >
+  <colgroup> <col style="width: 22.789%;"/> <col style="width: 62.3696%;"/> <col style="width: 14.8033%;"/> </colgroup>
+  <tbody>
+    <tr>
+      <th style="text-align: center;">
+        <span >Column</span>
+      </th>
+      <th style="text-align: center;">
+        <span >Description</span>
+      </th>
+      <th style="text-align: center;">
+        <span >Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+      </td>
+      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>COADD_OBJECT_ID</td>
+      <td>Unique identifier for the coadded objects</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DEC</td>
+      <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+      </td>
+      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>EBV_SFD98</td>
+      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FLAGS_{G,R,I,Z,Y}</td>
+      <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
+      <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
+      <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in magnitude estimation for circular apertures [mag]</td>
+      <td style="text-align: center;">60</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>MAGERR_PETRO_{G,R,I,Z,Y}</td>
+      <td>Uncertainty in magnitude for a Petrosian radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_APER_{1-12}_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Magnitude estimation for circular apertures [mag]</td>
+      <td style="text-align: center;">60</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAG_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>MAG_PETRO_{G,R,I,Z,Y}</td>
+      <td>Magnitude for a Petrosian radius [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>PETRO_RADIUS_{G,R,I,Z,Y}</td>
+      <td>Petrosian radius [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>RA</td>
+      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TILENAME</td>
+      <td>Identifier of each one of the tiles on which the survey is gridded</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+      <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+      <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+      </td>
+      <td>X-centroid from windowed measurements on coadded image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+      </td>
+      <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <br/>
+      </td>
+      <td>
+        <br/>
+      </td>
+      <td style="text-align: center;">179</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <br/>
+</p>
+        <p><br/></p>
+        <div class="fixup" id="schema_fluxes"></div>
+        <h3 class="fixdown">DR1_FLUX  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<table >
+  <colgroup> <col style="width: 23.1261%;"/> <col style="width: 62.0506%;"/> <col style="width: 14.7852%;"/> </colgroup>
+  <tbody>
+    <tr>
+      <th style="text-align: center;">
+        <span >Column</span>
+      </th>
+      <th style="text-align: center;">
+        <span >Description</span>
+      </th>
+      <th style="text-align: center;">
+        <span >Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+      </td>
+      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>COADD_OBJECT_ID</td>
+      <td>Unique identifier for the coadded objects</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DEC</td>
+      <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+      </td>
+      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>EBV_SFD98</td>
+      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FLAGS_{G,R,I,Z,Y}</td>
+      <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUXERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Uncertainty in flux measurement for circular apertures [ADU]</td>
+      <td colspan="1" style="text-align: center;">60</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td colspan="1">Uncertainty in flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+      <td colspan="1" style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>FLUXERR_PETRO_{G,R,I,Z,Y}</td>
+      <td>Uncertainty in flux for a Petrosian radius [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUX_APER_{1-12}_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Flux measurement for circular apertures [ADU]</td>
+      <td style="text-align: center;">60</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUX_AUTO_{G,R,I,Z,Y}</a>
+      </td>
+      <td>Flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>FLUX_PETRO_{G,R,I,Z,Y}</td>
+      <td>Flux for a Petrosian radius [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>HPIX_{32,64,1024,4096,16384}</td>
+      <td>Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
+      <td>Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>PETRO_RADIUS_{G,R,I,Z,Y}</td>
+      <td>Petrosian radius [pixel]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>RA</td>
+      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TILENAME</td>
+      <td>Identifier of each one of the tiles on which the survey is gridded</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+      <td>Uncertainty of weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+      <td>Weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+      </td>
+      <td>X-centroid of source (from coadd detection image)</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+      </td>
+      <td>Y-centroid of source (from coadd detection image)</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <br/>
+      </td>
+      <td>
+        <br/>
+      </td>
+      <td style="text-align: center;">179</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <br/>
+</p>
+        <p><br/></p>
+        <div class="fixup" id="schema_tiles"></div>
+        <h3 class="fixdown">DR1_TILE_INFO  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<table >
+  <colgroup> <col style="width: 16.4384%;"/> <col style="width: 68.5662%;"/> <col style="width: 14.9574%;"/> </colgroup>
+  <tbody>
+    <tr>
+      <th>
+        <span >Column</span>
+      </th>
+      <th>
+        <span >Description</span>
+      </th>
+      <th style="text-align: center;">
+        <span >Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1">CD1_1</td>
+      <td colspan="1">WCS definition for pixel orientation. Value: -0.0000730556</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>CD1_2</td>
+      <td>WCS definition for pixel orientation. Value: 0</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>CD2_1</td>
+      <td>WCS definition for pixel orientation. Value: 0</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>CD2_2</td>
+      <td>WCS definition for pixel orientation. Value: 0.0000730556</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">COUNT</td>
+      <td colspan="1">Number of objects per tile</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CROSSRA0</td>
+      <td colspan="1">Flag tile bounday crosses RA=0/24h boundary. Values: Y or N</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRPIX1</td>
+      <td colspan="1">WCS definition of central pixel for axis 1. Value: 5000.5</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRPIX2</td>
+      <td colspan="1">WCS definition of central pixel for axis 2. Value: 5000.5</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRVAL1</td>
+      <td colspan="1">WCS definition of central pixel value for axis 1</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRVAL2</td>
+      <td colspan="1">WCS definition of central pixel value for axis 2</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CTYPE1</td>
+      <td colspan="1">WCS projection used for axis 1. Value: RA---TAN</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CTYPE2</td>
+      <td colspan="1">WCS projection used for axis 2. Value: DEC--TAN</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC1</td>
+      <td colspan="1">Declination at Corner 1 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC2</td>
+      <td colspan="1">Declination at Corner 2 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC3</td>
+      <td colspan="1">Declination at Corner 3 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC4</td>
+      <td colspan="1">Declination at Corner 4 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECCMAX</td>
+      <td colspan="1">Maximum Declination covered in tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DECCMIN</td>
+      <td>Minimum Declination covered in tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DEC_CENT</td>
+      <td>Central Declination for tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DEC_SIZE</td>
+      <td>Extent of Declination for tile, in average is 0.7304 deg [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_DR1_FLUX</td>
+      <td>Filename of the served FITS being {tile_name}_dr1_flux.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_DR1_MAGNITUDE</td>
+      <td>Filename of the served FITS being {tile_name}_dr1_magnitude.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_DR1_MAIN</td>
+      <td>Filename of the served FITS being {tile_name}_dr1_main.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_IMAGE_DET</td>
+      <td>Filename of the served FITS being {tile_name}_r{reqnum}p{attnum}_det.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_IMAGE_{G,R,I,Z,Y}</td>
+      <td>Filename of the served FITS, per band, being {tile_name}_r{reqnum}p{attnum}_{band}.fits.fz</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>NAXIS1</td>
+      <td>WCS definition for number of pixels for axis 1</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>NAXIS2</td>
+      <td>WCS definition for number of pixels for axis 2</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>PIXELSCALE</td>
+      <td>WCS definition of pixel scale. Values: 0.263 arcsec/pixel [arcsec/pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC1</td>
+      <td>Right Ascension at Corner 1 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC2</td>
+      <td>Right Ascension at Corner 2 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC3</td>
+      <td>Right Ascension at Corner 3 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC4</td>
+      <td>Right Ascension at Corner 4 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RACMAX</td>
+      <td>Maximum Right Ascension covered in tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RACMIN</td>
+      <td>Minimum Right Ascension covered in tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RA_CENT</td>
+      <td>Central Right Ascension for tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RA_SIZE</td>
+      <td>Extent of Right Ascension for tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TIFF_COLOR_IMAGE</td>
+      <td>Filename of the TIFF image for the tile, being {tilename}_r{reqnum}p{attnum)_irg.tiff</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TILENAME</td>
+      <td>Tilename identifier</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>UDECMAX</td>
+      <td>Maximum Unique Declination of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>UDECMIN</td>
+      <td>Minimum Unique Declination of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>URAMAX</td>
+      <td>Maximum Unique Right Ascension of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>URAMIN</td>
+      <td>Minimum Unique Right Ascension of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <br/>
+      </td>
+      <td>
+        <br/>
+      </td>
+      <td style="text-align: center;">46</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1Schema extends Polymer.Element {
+      static get is() { return 'des-dr1-schema'; }
+      _top() {this.$.schema_top.scrollIntoView();}
+      _mags() {this.$.schema_mags.scrollIntoView();}
+      _fluxes() {this.$.schema_fluxes.scrollIntoView();}
+      _main() {this.$.schema_main.scrollIntoView();}
+      _tiles() {this.$.schema_tiles.scrollIntoView();}
+
+    }
+    window.customElements.define(DesDr1Schema.is, DesDr1Schema);
+  </script>
+
+</dom-module>

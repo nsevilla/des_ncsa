@@ -5,35 +5,100 @@
 
 <style include="shared-styles">
 :host {
-       display: block;
        padding: 10px;
        }
 
+.answer {
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+.answer:before{
+    content: "Answer: ";
+    font-size: 1.2rem;
+    color: green;
+    opacity: 0.6;
+}
 </style>
 
 
-
-
+<div class="fixup" id="faq_top"></div>
+<div class="fixdown"></div>
 <des-card heading ='FAQ'>
     <div class=card-content>
-    </div>
+<ol>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="1">
+      How do I select stars/galaxies?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="2">
+      Why does THETAWIN_IMAGE have such strange spikes?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="3">
+   Where is THETA_IMAGE? How do I draw ellipses in image coordinates?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="4">
+  Where are FLUX_PSF and MAG_PSF?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="5">
+  What is IMAFLAGS_ISO and how should I use it?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="6">
+  How do I find out if my object/location on the sky is in the DES footprint?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="7">
+  Is FLUX_RADIUS a flux or a radius?
+  </a></li>
+</ol>
+<hr />
+<br />
+
+<p><br/></p>
+<div class="fixup" id="faq1"></div>
+<h3 class="fixdown">1. How do I select stars/galaxies?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p><br/></p>
+<div class="fixup" id="faq2"></div>
+<h3 class="fixdown">2. Why does <code>THETAWIN_IMAGE</code> have such strange spikes?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p><br/></p>
+<div class="fixup" id="faq3"></div>
+<h3 class="fixdown">3. Where is <code>THETA_IMAGE</code>? How do I draw ellipses in image coordinates?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+
+<p><br/></p>
+<div class="fixup" id="faq4"></div>
+<h3 class="fixdown">4. Where are <code>FLUX_PSF</code> and <code>MAG_PSF</code>?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p><br/></p>
+<div class="fixup" id="faq5"></div>
+<h3 class="fixdown">5. What is <code>IMAFLAGS_ISO</code> and how should I use it?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">
+  <span>Among all the objects detected and cataloged, ~2.3% have been flagged by IMAFLAGS_ISO in at least one of the</span> <em> grizY </em> <span>bands, and ~0.1% have artifacts in all 5 bands.<br/> </span> <span>It is recommended to use IMAFLAGS_ISO = 0 as a first filter of clean objects. Most of the objects with IMAFLAGS_ISO = 1 are saturated stars</span> <span>. A smaller fraction of flagged objects are missing imaging data in one or more of the bands</span> <span>, and usually have NITER_MODEL = 0, which is set for objects that did not converge during the photometry measurement.</span>
+</p>
+
+<p><br/></p>
+<div class="fixup" id="faq6"></div>
+<h3 class="fixdown">6. How do I find out if my object/location on the sky is in the DES footprint?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<p class="answer">You can use the interactive tools, <a href="https://des.ncsa.illinois.edu/easyweb/footprint">https://des.ncsa.illinois.edu/easyweb/footprint</a> or here <a href="https://desportal2.cosmology.illinois.edu/dri/apps/home/">https://desportal2.cosmology.illinois.edu/dri/apps/home/</a> .  Using Healpix you can locate a position (or a set of positions) within a Healpix cell, then you can select the cell and the objects within directly from the DR1 DB. HPIX resolutions in NESTED schema are available at nside = 32, 64, 1024,4096,16384</p>
+
+<p><br/></p>
+<div class="fixup" id="faq7"></div>
+<h3 class="fixdown">7. Is <code>FLUX_RADIUS</code> a flux or a radius? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">It is a radius measurement, it's the half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions. If the profile is Gaussian, then  FWHM = 2*FLUX_RADIUS .</p>
+
+</div>
 </des-card>
 </template>
 <script>
     class DesDr1Faq extends Polymer.Element {
       static get is() { return 'des-dr1-faq'; }
-      _progress() {
-          this.$.observing_progress.scrollIntoView();
-      }
-      _intro() {
-          this.$.observing_intro.scrollIntoView();
-      }
-      _decam() {
-          this.$.observing_decam.scrollIntoView();
-      }
-      _oper() {
-          this.$.observing_oper.scrollIntoView();
-      }
+      _top() { this.$.faq_top.scrollIntoView();}
+      _scroll(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#faq'+temp).scrollIntoView();
+          }
 
     }
     window.customElements.define(DesDr1Faq.is, DesDr1Faq);

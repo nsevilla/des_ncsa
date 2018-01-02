@@ -205,7 +205,16 @@
                   <a class="app-menu-item" id=needsindent2 name="known-issues" href="[[rootPath]]releases/dr1/dr1-docs/known-issues" >Known Issues</a>
                 </app-menu>
                 </app-submenu>
-                  <a class="app-menu-item" id=needindent name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products" >Products</a>
+
+                  <app-submenu>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products" persistent="False">Products<iron-icon icon="chevron-right"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id=needsindent2 name="dr1-schema" href="[[rootPath]]releases/dr1/dr1-products/dr1-schema" >Table Schema</a>
+                </app-menu>
+                </app-submenu>
+
                   <a class="app-menu-item" id=needindent name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access" >Data Access</a>
                   <a class="app-menu-item" id=needindent name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq" >FAQ</a>
 
@@ -246,6 +255,7 @@
             <des-dr1 name="dr1"></des-dr1>
             <des-dr1docs name="dr1-docs"></des-dr1docs>
             <des-dr1-products name="dr1-products"></des-dr1-products>
+            <des-dr1-schema name="dr1-schema"></des-dr1-schema>
             <des-dr1-soft name="processing"></des-dr1-soft>
             <des-dr1-observing name="acquisition"></des-dr1-observing>
             <des-dr1-quality name="quality"></des-dr1-quality>
