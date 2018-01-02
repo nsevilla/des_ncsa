@@ -302,6 +302,8 @@
       _morph() {this.$.quality_morph.scrollIntoView();}
       _top() {this.$.quality_top.scrollIntoView();}
       _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
           var temp = e.target.dataset.item;
           this.shadowRoot.querySelector('#dialogfig'+temp).open();
           }
