@@ -252,8 +252,13 @@
 
                   <app-submenu no-auto-close>
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id=needindent name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access" persistent="False">Data Access</a>
+                  <a class="app-menu-item" id=needindent name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access" persistent="False">Data Access<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id=needsindent2 name="dr1-ncsa" href="[[rootPath]]releases/dr1/dr1-access/dr1-ncsa" >NCSA DESaccess</a>
+                  <a class="app-menu-item" id=needsindent2 name="dr1-linea" href="[[rootPath]]releases/dr1/dr1-access/dr1-linea" >LIneA Science Server</a>
+                  <a class="app-menu-item" id=needsindent2 name="dr1-noao" href="[[rootPath]]releases/dr1/dr1-access/dr1-noao" >NOAO DataLab</a>
+                </app-menu>
                 </app-submenu>
 
                   <app-submenu no-auto-close>
@@ -306,6 +311,9 @@
             <des-dr1-quality name="quality"></des-dr1-quality>
             <des-dr1-known-issues name="known-issues"></des-dr1-known-issues>
             <des-dr1-access name="dr1-access"></des-dr1-access>
+            <des-dr1-ncsa name="dr1-ncsa"></des-dr1-ncsa>
+            <des-dr1-noao name="dr1-noao"></des-dr1-noao>
+            <des-dr1-linea name="dr1-linea"></des-dr1-linea>
             <des-dr1-faq name="dr1-faq"></des-dr1-faq>
           <!-- Other pages -->
           <des-help name="help"></des-help>
