@@ -1,0 +1,68 @@
+<dom-module id="des-dr1-ncsa">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+</style>
+
+<div class="fixup" id="ncsa_top"></div>
+<div class="fixdown"></div>
+<paper-dialog id="dialogfig3">
+            <des-img-big  src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
+            Figure 3. Schema for DESaccess arquitecture
+            </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+
+<des-card heading = 'NCSA DESaccess'>
+    <div class=card-content>
+
+    <paper-button class="desButton" raised on-tap="_goncsa">Go to DESaccess</paper-button>
+    <br />
+
+         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an  Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. The main services can be summarized as follows:</p>
+             <p>
+               <strong>SQL web client:</strong> We provide a SQL web client that allows the user to submit asynchronous query jobs against the Oracle 12 database which contains the DES DR1 tables, the submitted jobs enter into a queue and results can be retrieved at later times in either csv, FITS (<a href="http://adsabs.harvard.edu/abs/1981A%26AS...44..363W">Wells et al. 1981</a>) or HDF5 (<a href="http://www.hdfgroup.org/HDF5/">The HDF Group 1997-NNNN</a>) file format, supporting compression in some of the cases. Big jobs are divided into chunks of 1.5GB to facilitate file transfer. This interface also provides means to check syntax and to evaluate synchronous jobs for a quick view. Result files are served from a HTTP server which allows file transfer to remote machines. The query used and the results are persisted for a limited period of time under a “My-Jobs” tab. The query interface is powered using <a href="https://github.com/mgckind/easyaccess">easyaccess</a>, a enhance SQL command line interpreter designed for astronomical surveys and developed for DES.</p>
+             <p>
+               <strong>Cutout server:</strong> The cutout server allows the user to generate cutouts up to 15' on a side centered on a given set of positions, the returned files include all the cutouts in all the bands, a cutout in the detection image, a color TIFF image using STIFF (<a href="http://adsabs.harvard.edu/abs/2012ASPC..461..263B">Bertin 2012</a>) by combining the g, r and i bands, and a PNG image. These cutout jobs also go into a queue and results can retrieve later from the files served remotely. The header of the cutouts is a copy from the original header from the images with extra keys indicating the center of the cutout RA_CUTOUT and DEC_CUTOUT. Results are preserved for a limit period of time and can also be retrieved under a “My-Jobs” tab within the web service. No stitching is performed for objects near the edge of the tile. This feature might be added in the future.</p>
+             <p>
+               <strong>Footprint:</strong> A light-weight interactive tool which displays the DES footprint and its tiles. This tool can be used to search for a position in the sky and return the tile information regarding the tile name, corner coordinates, and list of files for download. It also allows searches by tilename when the name is available. This service also provides access to all the processed tiles,  including images and catalogs in a tile based directly from the file server.</p>
+             <p>
+               <a href="https://github.com/mgckind/desaccess">DESaccess code</a> as well as the <a href="https://github.com/mgckind/des_public_new">release page</a> are open sourced. The frontend was developed using web components, HTML, JS and <a href="https://www.polymer-project.org/">Polymer</a> which allows the re-use of already existing elements. The backend is mainly developed using the Python <a href="http://www.tornadoweb.org/en/stable/">Tornado web framework</a>. The submission jobs are handled by <a href="http://www.celeryproject.org/">Celery</a> which is a distributed queue manager written in Python. All of these applications are containerized using <a href="https://www.docker.com/">Docker</a> and all the nodes resources and scheduling, as well as all the deployment, is managed by <a href="https://kubernetes.io/">Kubernetes</a> which allows to run, manage and scale containerized applications in a robust and efficient manner.</p>
+
+            <des-img-big  src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
+            Figure 3. Schema for DESaccess arquitecture
+            </des-img-big>
+             <p>
+               <br/>
+             </p>
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1NCSA extends Polymer.Element {
+      static get is() { return 'des-dr1-ncsa'; }
+      _goncsa() {
+          var win = window.open('/easyweb/', '_blank');
+          win.focus();
+      }
+      _top() {this.$.ncsa_top.scrollIntoView();}
+      _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+
+          }
+    }
+    window.customElements.define(DesDr1NCSA.is, DesDr1NCSA);
+  </script>
+
+</dom-module>

@@ -1,0 +1,38 @@
+<dom-module id="des-dr1-noao">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+</style>
+
+
+<des-card heading = 'NOAO DataLab'>
+    <div class=card-content>
+        <p>The NOAO Data Lab (<a href="http://adsabs.harvard.edu/abs/2016SPIE.9913E..0LF">Fitzpatrick et al. (2016)</a>) is one of the access portals for DES DR1. The goal of the Data  Lab is to enable efficient exploration and analysis of large datasets, including catalogs, with a particular focus on surveys using DECam and the NOAO Mosaic cameras. Among its features are a database for catalog data, accessible both from a Table Access Protocol (<a href="http://ivoa.net/documents/TAP">TAP</a>) service and from direct PostgreSQL queries, web-based, command-line and programmatic catalog and image query interfaces (both custom and via standard VO protocols), remote storage space for personal database and files, a JupyterHub-based notebook analysis environment, and a Simple Image Access (SIA) service. The Data Lab hosts the DES DR1 catalog tables using a PostgreSQL v9.6 database on the backend. The data are identical to those hosted by the DES Collaboration through the NCSA portal, but with a few additions; first, the Data Lab database contains tables with crossmatches to other large catalogs (AllWISE, GALEX, HSC, and Simbad) and a table of neighboring objects within a 30 arcsecond radius for all objects in DES. Second, the main table contains a few extra columns, such as Ecliptic and Galactic coordinates, an <a href="http://www.skyserver.org/htm">HTM</a> (Hierarchical Triangular Mesh) index, two supplementary HEALPix indices in RING (NSIDE = 256) and NESTED (NSIDE = 4096) schemes, and precomputed colors. Finally, the data are clustered and indexed using the Q3C scheme (<a href="http://adsabs.harvard.edu/abs/2006ASPC..351..735K">Koposov &amp; Bartunov 2006</a>), allowing Q3C functions to perform fast spatial queries on the tables.</p>
+      <p>NOAO DataLab Services</p>
+      <p>1. Anonymous and authenticated access to DES DR1 through Data Lab services. Anonymous users of the Data Lab can query the DES DR1 database and use the web-based tools. By creating and logging into an account through <a href="http://datalab.noao.edu">datalab.noao.edu</a>, authenticated users get access to a dedicated Jupyter notebook server with permanently stored notebooks and 1 TB of storage space for personal database tables and files.</p>
+      <p>2. Access to DES DR1 through TAP. The Data Lab exposes the DES DR1 catalog through a TAP service, which may be accessed through a web query form and schema browser. Alternately, users may query DES DR1 through TOPCAT (<a href="http://adsabs.harvard.edu/abs/2005ASPC..347...29T">Taylor 2005</a>) by pointing to the URL of the Data Lab TAP service (<a href="http://datalab.noao.edu/tap">http://datalab.noao.edu/tap</a>) from within the application.</p>
+      <p>3. Python and command-line query clients. The DataLab client package (<a href="https://github.com/">https://github.com/</a>
+        <a href="https://github.com/noao-datalab/datalab-client">noao-datalab/datalab-client</a>) contains the multipurpose datalab command-line interface and the queryClient Python module. Both interfaces allow  synchronous queries, for which control is suspended until a result is returned, using either ADQL (the native TAP interface query language) or the Postgres SQL syntax. The user may also run asynchronous ADQL queries, for which the query operation is given a job ID and run in the background, through the TAP service. The queryClient module is preinstalled on the Data Lab Jupyter notebook server.</p>
+      <p>4. An image cutout service. The Data Lab SIA service provides access to cutouts of the DES DR1 images. For a given position on the sky, the SIA service returns a table of metadata of all images that fall within the specified radius. The metadata includes select header information for each image, along with a URL to retrieve a cutout of a specified size.</p>
+      <p>5. A JupyterHub notebook server. This server provides access to common Python libraries as well as all Data Lab Python modules, including the authClient authorization module, the queryClient query module, the storeClient virtual storage module, and other interface modules. The Jupyter notebook server provides a convenient way to run code close to the data.</p>
+      <p>More information on using these services is available on the Data Lab web page, <a href="http://datalab.noao.edu">http://datalab.noao.edu</a>.</p>
+      <p>
+        <br/>
+      </p>
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1NOAO extends Polymer.Element {
+      static get is() { return 'des-dr1-noao'; }
+    }
+    window.customElements.define(DesDr1NOAO.is, DesDr1NOAO);
+  </script>
+
+</dom-module>

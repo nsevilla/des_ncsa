@@ -52,6 +52,7 @@
               </li>
           </ul>
           <li><a href="javascript:void(0)" on-tap="_filters">DR1 Standard Bandpasses</a></li>
+          <li><a href="javascript:void(0)" on-tap="_software">DR1 Software</a></li>
         </ul>
         <hr />
         <p><br/></p>
@@ -207,11 +208,13 @@
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
             instrumental response across the science CCDs</des-img-big>
-<p>
+
+        <p><br/></p>
+        <div class="fixup" id="products_software"></div>
+        <h3 class="fixdown">DR1 Software  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>All the software used in the DESDM pipelines described in Processing and in Morganson et al. (2018) can be accessed from the release page itself or from the <a href="https://github.com/DarkEnergySurvey">DES Github Organization</a>. With access to the software used to generate these products and the configuration described in Morganson et al. (2018), we provide the main ingredients to reprocess the data in a similar manner as done by DES.</p>
+
     </div>
-
-
-
 </des-card>
 </template>
 <script>
@@ -221,6 +224,7 @@
       _images() {this.$.products_images.scrollIntoView();}
       _catalogs() {this.$.products_catalogs.scrollIntoView();}
       _filters() {this.$.products_filters.scrollIntoView();}
+      _software() {this.$.products_software.scrollIntoView();}
       _top() {this.$.products_top.scrollIntoView();}
       _dialog(e) {
           e.preventDefault();

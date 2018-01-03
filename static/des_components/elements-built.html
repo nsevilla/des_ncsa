@@ -32325,8 +32325,13 @@ Custom property | Description | Default
 
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access" persistent="False">Data Access</a>
+                  <a class="app-menu-item" id="needindent" name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access" persistent="False">Data Access<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="dr1-ncsa" href="[[rootPath]]releases/dr1/dr1-access/dr1-ncsa">NCSA DESaccess</a>
+                  <a class="app-menu-item" id="needsindent2" name="dr1-linea" href="[[rootPath]]releases/dr1/dr1-access/dr1-linea">LIneA Science Server</a>
+                  <a class="app-menu-item" id="needsindent2" name="dr1-noao" href="[[rootPath]]releases/dr1/dr1-access/dr1-noao">NOAO DataLab</a>
+                </app-menu>
                 </app-submenu>
 
                   <app-submenu no-auto-close="">
@@ -32374,6 +32379,9 @@ Custom property | Description | Default
             <des-dr1-quality name="quality"></des-dr1-quality>
             <des-dr1-known-issues name="known-issues"></des-dr1-known-issues>
             <des-dr1-access name="dr1-access"></des-dr1-access>
+            <des-dr1-ncsa name="dr1-ncsa"></des-dr1-ncsa>
+            <des-dr1-noao name="dr1-noao"></des-dr1-noao>
+            <des-dr1-linea name="dr1-linea"></des-dr1-linea>
             <des-dr1-faq name="dr1-faq"></des-dr1-faq>
           <!-- Other pages -->
           <des-help name="help"></des-help>
@@ -35478,6 +35486,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
               </li>
           </ul>
           <li><a href="javascript:void(0)" on-tap="_filters">DR1 Standard Bandpasses</a></li>
+          <li><a href="javascript:void(0)" on-tap="_software">DR1 Software</a></li>
         </ul>
         <hr>
         <p><br></p>
@@ -35633,11 +35642,13 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
             instrumental response across the science CCDs</des-img-big>
-<p>
-    </p></div>
 
+        <p><br></p>
+        <div class="fixup" id="products_software"></div>
+        <h3 class="fixdown">DR1 Software  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>All the software used in the DESDM pipelines described in Processing and in Morganson et al. (2018) can be accessed from the release page itself or from the <a href="https://github.com/DarkEnergySurvey">DES Github Organization</a>. With access to the software used to generate these products and the configuration described in Morganson et al. (2018), we provide the main ingredients to reprocess the data in a similar manner as done by DES.</p>
 
-
+    </div>
 </des-card>
 </template>
 <script>
@@ -35647,6 +35658,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       _images() {this.$.products_images.scrollIntoView();}
       _catalogs() {this.$.products_catalogs.scrollIntoView();}
       _filters() {this.$.products_filters.scrollIntoView();}
+      _software() {this.$.products_software.scrollIntoView();}
       _top() {this.$.products_top.scrollIntoView();}
       _dialog(e) {
           e.preventDefault();
@@ -35691,391 +35703,395 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <p><br></p>
         <div class="fixup" id="schema_main"></div>
         <h3 class="fixdown">DR1_MAIN  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<table>
-  <colgroup> <col style="width: 26.63%;"> <col style="width: 58.4908%;"> <col style="width: 14.841%;"> </colgroup>
-  <tbody>
-    <tr>
-      <th style="text-align: center;">
-        <span>Column</span>
-      </th>
-      <th style="text-align: center;">
-        <span>Description</span>
-      </th>
-      <th colspan="1" style="text-align: center;">
-        <span>Number of Columns</span>
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
-      </td>
-      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">AWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">Major axis size, from 2nd order windowed moment measurements [pixels]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">A_IMAGE</a>
-      </td>
-      <td colspan="1">Major axis size based on an isophotal model [pixel]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>BACKGROUND_{G,R,I,Z,Y}</td>
-      <td>Background level, by CCD-amplifier [mag]&nbsp;</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">BWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">Minor axis size, from 2nd order windowed moment measurements [pixels]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">B_IMAGE</a>
-      </td>
-      <td>Minor axis size based on an isophotal model [pixel]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://sextractor.readthedocs.io/en/des_dr1/ClassStar.html#class-star-def">CLASS_STAR_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Simple morphological extended source classifier. Values between 0 (galaxies) and 1 (stars). SPREAD_MODEL exhibits better performance for morphological classification.</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>COADD_OBJECT_ID</td>
-      <td>Unique identifier for the coadded objects</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>DEC</td>
-      <td>Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
-      </td>
-      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>EBV_SFD98</td>
-      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRAWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">Uncertainty in major axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRA_IMAGE</a>
-      </td>
-      <td>Uncertainty in major axis size, from isophotal model [pixel]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRBWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in minor axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRB_IMAGE</a>
-      </td>
-      <td>Uncertainty in minor axis size, from isophotal model [pixel]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRTHETAWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in source position angle, from converged windowed measurement [degrees]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRTHETA_IMAGE</a>
-      </td>
-      <td>Uncertainty in source position, from isophotal model [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRX2WIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in second moment of x-distribution centroid, from converged windowed measurements [pixel2]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRXYWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in second moment of xy-distribution, from converged windowed measurements [pixel2]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p>
-          <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRY2WIN_IMAGE_{G,R,I,Z,Y}</a>
-        </p>
-      </td>
-      <td colspan="1">Uncertainty in second moment of y-distribution centroid, from converged windowed measurements [pixel2]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">FLAGS_{G,R,I,Z,Y}</td>
-      <td colspan="1">Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">Uncertainty in aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUX_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">Aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">FLUX_RADIUS_{G,R,I,Z,Y}</td>
-      <td colspan="1">Half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=fwhm%20image#windowed-positional-parameters">FWHM_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">FWHM measured from the isophotal area, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">GALACTIC_B</td>
-      <td colspan="1">Galactic Latitude [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td colspan="1">GALACTIC_L</td>
-      <td colspan="1">Galactic Longitude [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
-      <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
-      <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>ISOAREA_IMAGE_{G,R,I,Z,Y}</td>
-      <td>Isophotal area of the coadded source [pixel2]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>KRON_RADIUS</td>
-      <td>Kron radius measured from detection image [pixel]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>KRON_RADIUS_{G,R,I,Z,Y}</td>
-      <td>Kron radius measured from coadded image [pixel]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAGERR_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAG_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>MAG_AUTO_{G,R,I,Z,Y}_DERED</td>
-      <td>Dereddened magnitude estimation (using SFD98), for an elliptical model based on the Kron radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>NEPOCHS_{G,R,I,Z,Y}</td>
-      <td>Number of epochs the source is detected in single epoch images</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Model.html#model-minimization-def">NITER_MODEL_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Number of iterations in model fitting photometric measurements</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>RA</td>
-      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREADERR_MODEL_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD_MODEL_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">THETAWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Position angle of source, for converged windowed measurement grow from x to y [degrees]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html?highlight=j2000#basic-shape-parameters-a-b-theta">THETA_J2000</a>
-      </td>
-      <td>Position angle of source in J2000 coordinates, from non-windowed measurement [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>TILENAME</td>
-      <td>Identifier of each one of the tiles on which the survey is gridded</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
-      <td>Uncertainty of weighted averaged flux measurement of PSF fit single epoch detections [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
-      <td>Weighted average flux measurement of PSF fit single epoch detections [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
-      <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
-      <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}_DERED</td>
-      <td>Dereddened weighted average magnitude (using SFD98) from PSF fit single epoch detections [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_SPREADERR_MODEL_{G,R,I,Z,Y}</td>
-      <td>Uncertainty in <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_SPREAD_MODEL_{G,R,I,Z,Y}</td>
-      <td>
-        <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">X2WIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Second moment in x-direction, from converged windowed measurements [pixel2]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE</a>
-        </p>
-      </td>
-      <td>X-centroid from windowed measurements on coadded image [pixel]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td>X-centroid from windowed measurements on coadded band image [pixel]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">XYWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td>
-        <p>Second moment in xy-direction, from converged windowed measurements [pixel2]</p>
-      </td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">Y2WIN_IMAGE_{G,R,I,Z,Y}</a>
-        </p>
-      </td>
-      <td>Second moment in y-direction, from converged windowed measurements [pixel2]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE</a>
-      </td>
-      <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Y-centroid from windowed measurements on coadded band images [pixel]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td style="text-align: center;">213</td>
-    </tr>
-  </tbody>
-</table>
+        <table>
+          <colgroup> <col style="width: 26.63%;"> <col style="width: 58.4908%;"> <col style="width: 14.841%;"> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th colspan="1" style="text-align: center;">
+                <span>Number of Columns</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+              </td>
+              <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">AWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Major axis size, from 2nd order windowed moment measurements [pixels]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">A_IMAGE</a>
+              </td>
+              <td colspan="1">Major axis size based on an isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>BACKGROUND_{G,R,I,Z,Y}</td>
+              <td>Background level, by CCD-amplifier [mag]&nbsp;</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">BWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Minor axis size, from 2nd order windowed moment measurements [pixels]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">B_IMAGE</a>
+              </td>
+              <td>Minor axis size based on an isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#class-star">CLASS_STAR_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Simple morphological extended source classifier. Values between 0 (galaxies) and 1 (stars). SPREAD_MODEL exhibits better performance for morphological classification.</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>Unique identifier for the coadded objects</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>DEC</td>
+              <td>Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+              </td>
+              <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>EBV_SFD98</td>
+              <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRAWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in major axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRA_IMAGE</a>
+              </td>
+              <td>Uncertainty in major axis size, from isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRBWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in minor axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRB_IMAGE</a>
+              </td>
+              <td>Uncertainty in minor axis size, from isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRTHETAWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in source position angle, from converged windowed measurement [degrees]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRTHETA_IMAGE</a>
+              </td>
+              <td>Uncertainty in source position, from isophotal model [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRX2WIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in second moment of x-distribution centroid, from converged windowed measurements [pixel2]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRXYWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in second moment of xy-distribution, from converged windowed measurements [pixel2]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRY2WIN_IMAGE_{G,R,I,Z,Y}</a>
+                </p>
+              </td>
+              <td colspan="1">Uncertainty in second moment of y-distribution centroid, from converged windowed measurements [pixel2]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">FLAGS_{G,R,I,Z,Y}</td>
+              <td colspan="1">Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUX_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">FLUX_RADIUS_{G,R,I,Z,Y}</td>
+              <td colspan="1">Half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=fwhm%20image#windowed-positional-parameters">FWHM_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">FWHM measured from the isophotal area, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">GALACTIC_B</td>
+              <td colspan="1">Galactic Latitude [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">GALACTIC_L</td>
+              <td colspan="1">Galactic Longitude [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
+              <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
+              <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>ISOAREA_IMAGE_{G,R,I,Z,Y}</td>
+              <td>Isophotal area of the coadded source [pixel2]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#kron-radius">KRON_RADIUS</a>
+              </td>
+              <td>Kron radius measured from detection image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#kron-radius">KRON_RADIUS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Kron radius measured from coadded image [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAG_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>MAG_AUTO_{G,R,I,Z,Y}_DERED</td>
+              <td>Dereddened magnitude estimation (using SFD98), for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>NEPOCHS_{G,R,I,Z,Y}</td>
+              <td>Number of epochs the source is detected in single epoch images</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Model.html#model-minimization-def">NITER_MODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Number of iterations in model fitting photometric measurements</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spreaderr-model">SPREADERR_MODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spread-model">SPREAD_MODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">THETAWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Position angle of source, for converged windowed measurement grow from x to y [degrees]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html?highlight=j2000#basic-shape-parameters-a-b-theta">THETA_J2000</a>
+              </td>
+              <td>Position angle of source in J2000 coordinates, from non-windowed measurement [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>TILENAME</td>
+              <td>Identifier of each one of the tiles on which the survey is gridded</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged flux measurement of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted average flux measurement of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAG_PSF_{G,R,I,Z,Y}_DERED</td>
+              <td>Dereddened weighted average magnitude (using SFD98) from PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_SPREADERR_MODEL_{G,R,I,Z,Y}</td>
+              <td>Uncertainty in <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spreaderr-model">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_SPREAD_MODEL_{G,R,I,Z,Y}</td>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spread-model">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">X2WIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Second moment in x-direction, from converged windowed measurements [pixel2]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE</a>
+                </p>
+              </td>
+              <td>X-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>X-centroid from windowed measurements on coadded band image [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">XYWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>
+                <p>Second moment in xy-direction, from converged windowed measurements [pixel2]</p>
+              </td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">Y2WIN_IMAGE_{G,R,I,Z,Y}</a>
+                </p>
+              </td>
+              <td>Second moment in y-direction, from converged windowed measurements [pixel2]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE</a>
+              </td>
+              <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Y-centroid from windowed measurements on coadded band images [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td>
+                <br>
+              </td>
+              <td style="text-align: center;">213</td>
+            </tr>
+          </tbody>
+        </table>
         <p><br></p>
         <div class="fixup" id="schema_mags"></div>
         <h3 class="fixdown">DR1_MAGNITUDE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
@@ -38586,19 +38602,19 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 </style>
 
 <paper-dialog id="dialogfig1">
-        <des-img-big src="/static/images/dr1/gaia_astro_residual.png">Figure 1. Absolute astrometric precision against an external source, namely, Gaia stars with G<sub>Gaia</sub> ~ 16. On the left is plotted the mean value of astrometric discrepancy with Gaia vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the overall offset is shown.</des-img-big>
+        <des-img-big src="/static/images/dr1/gaia_astro_residual.png">Figure 1. Absolute astrometric precision against an external source, namely, Gaia stars with G<sub>Gaia</sub> ~ 16. On the left is plotted the mean value of astrometric discrepancy with Gaia vs sky position in a HEALPix cell of NSIDE = 256. On the right, the histogram of the overall offset is shown.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig2">
-       <des-img-big src="/static/images/dr1/fgcm_calib_error_i_nozpcorr.png">Figure 2. FGCM calibration error. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the photometric residue is shown.</des-img-big>
+       <des-img-big src="/static/images/dr1/fgcm_calib_error_i_nozpcorr.png">Figure 2. FGCM calibration error. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 256. On the right, the histogram of the photometric residue is shown.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig3">
-       <des-img-big src="/static/images/dr1/gaia_phot_residual_nozpcorr.png">Figure 3. &nbsp;The distribution of photometric residuals against the Gaia’s G band across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the photometric residue is shown.</des-img-big>
+       <des-img-big src="/static/images/dr1/gaia_phot_residual_nozpcorr.png">Figure 3. &nbsp;The distribution of photometric residuals against the Gaia’s G band across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 256. On the right, the histogram of the photometric residue is shown.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
@@ -38709,7 +38725,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <br><a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> shows that the residuals are smallest in regions with with larger stellar densities closer to the Galactic plane (for comparison, see <a href="javascript:void(0)" on-tap="_dialog" data-item="10">Figure 10</a> ), and the mean over the footprint is ~145 mas. Further details of astrometric calibration, including ongoing development using Gaia as a reference catalog, are provided in <a href="http://adsabs.harvard.edu/abs/2017PASP..129g4503B">Bernstein et al. (2017b</a>).</p>
         <p><br> </p>
 
-        <des-img-big src="/static/images/dr1/gaia_astro_residual.png" on-tap="_dialog" data-item="1">Figure 1. Absolute astrometric precision against an external source, namely, Gaia stars with G<sub>Gaia</sub> ~ 16. On the left is plotted the mean value of astrometric discrepancy with Gaia vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the overall offset is shown.</des-img-big>
+        <des-img-big src="/static/images/dr1/gaia_astro_residual.png" on-tap="_dialog" data-item="1">Figure 1. Absolute astrometric precision against an external source, namely, Gaia stars with G<sub>Gaia</sub> ~ 16. On the left is plotted the mean value of astrometric discrepancy with Gaia vs sky position in a HEALPix cell of NSIDE = 256. On the right, the histogram of the overall offset is shown.</des-img-big>
 
         <div class="fixup" id="quality_photo"></div>
         <h3 class="fixdown">Photometry  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
@@ -38718,10 +38734,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <br>
         </p>
 
-       <des-img src="/static/images/dr1/fgcm_calib_error_i_nozpcorr.png" on-tap="_dialog" data-item="2">Figure 2. FGCM calibration error. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the photometric residue is shown. <br></des-img>
+       <des-img src="/static/images/dr1/fgcm_calib_error_i_nozpcorr.png" on-tap="_dialog" data-item="2">Figure 2. FGCM calibration error. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 256. On the right, the histogram of the photometric residue is shown. <br></des-img>
 
 
-       <des-img src="/static/images/dr1/gaia_phot_residual_nozpcorr.png" on-tap="_dialog" data-item="3">Figure 3. &nbsp;The distribution of photometric residuals against the Gaia’s G band across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 1024. On the right, the histogram of the photometric residue is shown.</des-img>
+       <des-img src="/static/images/dr1/gaia_phot_residual_nozpcorr.png" on-tap="_dialog" data-item="3">Figure 3. &nbsp;The distribution of photometric residuals against the Gaia’s G band across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. On the left is plotted the mean value of this residual vs sky position in a HEALPix cell of NSIDE = 256. On the right, the histogram of the photometric residue is shown.</des-img>
 
         <p>The single-epoch photometric statistical precision (associated with random errors in the FGCM fit parameters) derived from repeated measurements of FGCM calibration stars is 7.3, 6.1, 5.9, 7.3, 7.8 mmag in the g, r, i, z, and Y bands, respectively. Under the assumption that successive tiled observations of the same fields yield largely independent model fit parameters (as would be expected from the widely spaced observations in DES), we estimate the statistical precision of coadd zeropoints by combining the fit results from overlapping exposures. The median coadd zeropoint statistical uncertainty for the g, r, i, z, and Y band is 5, 4, 5, 6, and 5 mmag, respectively.  <a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a> shows an example distribution for the i band. As a validation, we compare the photometric uniformity of DES DR1 to the space-based Gaia G-ban&nbsp;photometry (<a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a>). Variations in uniformity are found to be 6.6 mmag, as estimated from a Gaussian fit to the offset distribution between G<sub>Gaia</sub> and G<sub>pred</sub>(r) predicted from the DES r-band.</p>
         <p>To account for extinction from interstellar dust, we include an additional column in the DR1 photometry tables for E(B - V) values from the reddening map of <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel et al. (1998)</a> (SFD98) at the location of each catalog object. The E(B -V) values were obtained using a linear interpolation of the Zenithal Equal Area projected map distributed by SFD98. We computed fiducial interstellar extinction coefficients, R<sub>b</sub>, for each band so that the corrections to the FGCM calibrated source magnitudes are A<sub>b</sub> = E(B -V)R<sub>b</sub>. Fiducial coefficients are derived using the <a href="http://adsabs.harvard.edu/abs/1999PASP..111...63F">Fitzpatrick (1999)</a> reddening law with R<sub>V</sub> = 3.1 and the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment to the original SFD98 reddening map (N = 0.78). Note that the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment is included in our fiducial reddening coefficients; these coefficients are intended to be used directly with E(B -V) values from the original SFD98 reddening map. We integrated over the DR1 Standard Bandpasses considering a fixed source spectrum that is constant in spectral flux density per unit wavelength, and adopted the low-extinction limit. The latter simplification is appropriate for DES, for which E(B-V) &lt; 0.1 mag over ~99% of the footprint. The resulting multiplicative coefficients for each band, R<sub>b</sub>, are 3.186, 2.140, 1.569, 1.196 and 1.048 in the g, r, i, z and Y bands, respectively. The DES science team continues to explore systematic uncertainties associated with interstellar extinction modeling.</p>
@@ -39228,7 +39244,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </p>
         <div class="fixup" id="issues_zp"></div>
         <h3 class="fixdown">Zeropoints and bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <p>The tabulated “DES DR1 Standard Bandpasses” &nbsp;included in this release were not the ones used to calculate the zeropoints applied to the calibrated images and coadd source catalogs presented in this release which correspond to an earlier version of the system throughput, referred to as the “Y3A1 Standard Bandpasses”. The latter system, which was the one available at the time of data processing, differs from the DES DR1 Standard Bandpasses in the treatment of the out-of-band system response. The DES DR1 Standard Bandpasses correct for a small inaccurate representation of r-band throughput in the Y3A1 Standard Bandpasses, which due to an incorrect input calibration run,considered an unrealistically large light leakage relative to the in-band response ( ~ 10<sup>-2</sup>) at wavelengths ~8000Å and ~9200Å. For coadd objects, the impact of setting the out-of-band response to zero in the DES DR1 Standard Band.</p>
+        <p>The tabulated “DES DR1 Standard Bandpasses” &nbsp;included in this release were not the ones used to calculate the zeropoints applied to the calibrated images and coadd source catalogs presented in this release which correspond to an earlier version of the system throughput, referred to as the “Y3A1 Standard Bandpasses”. The latter system, which was the one available at the time of data processing, differs from the DES DR1 Standard Bandpasses in the treatment of the out-of-band system response. The DES DR1 Standard Bandpasses correct for a small inaccurate representation of r-band throughput in the Y3A1 Standard Bandpasses, which due to an incorrect input calibration run,considered an unrealistically large light leakage relative to the in-band response ( ~ 10<sup>-2</sup>) at wavelengths ~8000Å and ~9200Å. For coadd objects, the impact of setting the out-of-band response to zero in the DES DR1 Standard Bandpasses would lead to a photometry difference of  less than 2 mmag (RMS) in the g, r, i, z, Y bands, which is below the level of statistical uncertainty in the coadd zeropoints.</p>
         <p>
           <br>
         </p>
@@ -39276,7 +39292,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     content: "Answer: ";
     font-size: 1.2rem;
     color: green;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 </style>
 
@@ -39307,6 +39323,9 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="7">
   Is FLUX_RADIUS a flux or a radius?
   </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="8">
+      What is the difference between the "DR1 Standard Bandpasses" and the "Y3A2 Standard Bandpasses"?
+  </a></li>
 </ol>
 <hr>
 <br>
@@ -39314,6 +39333,14 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <p><br></p>
 <div class="fixup" id="faq1"></div>
 <h3 class="fixdown">1. How do I select stars/galaxies?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<div class="answer" style="diplay: inline;"> We recommend the use of the SExtractor <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD_MODEL</a>, which compares the fit of a local PSF model to a slightly extended exponential disk model. Below we show a example using SPREAD_MODEL for object classification in a way that is suitable for both stellar and extragalactic science.
+<p>We define a new variable EXTENDED_COADD as the independent sum of several Boolean conditions:</p>
+<p>EXTENDED_COADD =<br>((SPREAD_MODEL_I+ 3 × SPREADERR_MODEL_I) &gt; 0.005)<br>+ ((SPREAD_MODEL_I+SPREADERR_MODEL_I) &gt; 0.003)<br>+ ((SPREAD_MODEL_I-SPREADERR_MODEL_I) &gt; 0.003)</p>
+<p>Note that EXTENDED_COADD is defined by a sequence of boolean conditions that, when true, add a unit to the classifier. This classifier results in a value of 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies). &nbsp;<span style="color: rgb(0,0,0);">Although the SExtractor quantity<a href="https://sextractor.readthedocs.io/en/des_dr1/ClassStar.html#class-star-def"> CLASS_STAR</a> has been commonly used in the past, we find that SPREAD_MODEL based classifiers consistently outperform CLASS_STAR.&nbsp;<span style="color: rgb(0,0,0);">&nbsp;It is expected that classifiers using alternative bands and/or combinations of object measurements will be more appropriate for specific science cases.</span>
+  </span>
+</p>
+</div>
 
 <p><br></p>
 <div class="fixup" id="faq2"></div>
@@ -39327,6 +39354,11 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <p><br></p>
 <div class="fixup" id="faq4"></div>
 <h3 class="fixdown">4. Where are <code>FLUX_PSF</code> and <code>MAG_PSF</code>?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">
+  <span style="color: rgb(0,0,0);">The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications &nbsp;and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources</span>
+  <span style="color: rgb(0,0,0);">. Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources). Check  <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a> for more information.</span>
+
+</p>
 
 <p><br></p>
 <div class="fixup" id="faq5"></div>
@@ -39345,6 +39377,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <div class="fixup" id="faq7"></div>
 <h3 class="fixdown">7. Is <code>FLUX_RADIUS</code> a flux or a radius? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p class="answer">It is a radius measurement, it's the half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions. If the profile is Gaussian, then&nbsp;&nbsp;FWHM = 2*FLUX_RADIUS .</p>
+
+<p><br></p>
+<div class="fixup" id="faq8"></div>
+<h3 class="fixdown">8. What is the difference between the "DR1 Standard Bandpasses" and the "Y3A2 Standard Bandpasses"? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
 </div>
 </des-card>
@@ -39369,7 +39405,6 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <template>
     <style include="shared-styles">
     :host {
-       display: block;
        padding: 10px;
        }
        .testcards {
@@ -39385,22 +39420,31 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
        .access-header {
            @apply --paper-font-headline;
+           font-size: 1.2rem;
+           color: var(--paper-blue-500);
+           align-self: baseline;
+       }
+
+
+
+    @media only screen and (max-device-width: 480px) {
+       .access-header {
+           font-size: 0.6rem;
            color: var(--paper-blue-500);
        }
+    }
        .card-image {
            display: block;
-            width	: 80%;
+            width	: 100%;
+            height: auto;
             margin: 0 auto;
-            min-height: 100px;
-            min-width: 230px;
-            max-height: 230px;
-            max-width: 230px;
+            max-height: 280px;
+            max-width: 280px;
        }
         paper-card {
-        margin-top: 20px;
+        margin-top: 0px;
         width: auto;
         max-width: 32%;
-        min-width: 150px;
         cursor: pointer;
         -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -39418,80 +39462,70 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       .desButton{
           margin-top:15px;
       }
-        ul{
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
     </style>
     <des-card heading="DR1 Data Access">
     <div class="card-content">
-        <h2><strong>DR1 Data Access</strong></h2>
-        If you'd like to access the images and catalogs for DR1, please use the complementary set of tools
-        created by NCSA, NOAO, and LIneA. These tools allow one to access, obtain, visualize, and explore DES products for quick scientific discovery. Click on the cards below to start exploring DES data tools.
-
+        <p>
+        If you'd like to access the images and catalogs from DES DR1, please use the complementary set of tools
+        created by a collaborative effort between NCSA, NOAO, and LIneA. These tools allow the users to access, obtain, visualize, and explore DES DR1 products. Click on the logos below to start exploring DES data tools. Click on the links below to learn more about each tool and their functionalities. <br></p>
 
         <div class="testcards">
     <paper-card on-tap="_goncsa">
         <div class="card-content">
             <img class="card-image" src="/static/images/ea_icon.png">
-            <br>
             <div class="access-header">NCSA DESaccess</div>
-            NCSA provides DES a specific set of services, called DESaccess, which accesses both the catalog and image data. DESaccess is an online
-            Web SQL client that provides a way to submit query jobs and retrieve data directly from the DES Oracle DB. This data is available through downloadable files as well as the <a href="#"> searchable Table Schema</a>. Within the same interface the user can submit cutout jobs to retrieve cutouts files from a position (or a list of positions) for all the bands. In addition, these files can be downloaded as a TIFF and png image from the cutouts. Finally, users can retrieve tile images directly, as well as fits catalogs on a tile basis.
-            <div class="card-actions bt">
-            <paper-button on-tap="_goregister" class="desButton">Sign Up</paper-button>
         </div>
-        </div>
-
     </paper-card>
 
     <paper-card on-tap="_gonoao">
         <div class="card-content">
-
-            <img class="card-image" src="/static/images/datalab2.png" style="padding-top: 15px; padding-bottom: 41px;">
-            <br>
-
+            <img class="card-image" src="/static/images/datalab3.png">
             <div class="access-header">NOAO DataLab</div>
-            The overall goal of the NOAO Data Lab is to enable efficient exploration and analysis of the large datasets now being generated by instruments on NOAO and other wide-field telescopes. The Data Lab aims to:
-<ul>
-<li>
-Connect users to high-value catalogs from NOAO and external sources (e.g. SDSS, GAIA) along with NOAO-based images linked to catalog objects
-</li>
-<li>
-Enable users to discover the data that they need for their science
-</li>
-<li>
-Allow users to develop intuition through interaction with selected catalog and image sets
-</li>
-<li>
-Allow users to automate their analysis to aid discovery in large datasets
-</li>
-
-</ul>
-        <div class="card-actions bt">
-            <paper-button on-tap="_goregisterNOAO" class="desButton">Register</paper-button>
-        </div>
         </div>
 
     </paper-card>
     <paper-card on-tap="_golinea">
         <div class="card-content">
             <img class="card-image" src="/static/images/des_logo_oficial.jpg">
-
-            <br>
-
             <div class="access-header">LIneA Science Server </div>
-The LIneA Science Server provides visualization and query tools for the user to explore DES data being made available in DR1. This is the first public release of the server and it is a subset of the tools being developed for the collaboration. Here you will find Sky Viewer, a tool to browse the entire DES footprint and Image Viewer, which allows the user to examine DES tiles in more detail and to overlay the associated catalog. Another available tool is the Target Viewer, which allows one to load a list of coordinates, examine DES images at these locations and create mosaics. Finally, User query allows one to query DES database, which creates temporary tables listing the results that can be immediately viewed using Target Viewer.
         </div>
 
-        <div class="card-actions bt">
-            <paper-button on-tap="_goregister" class="desButton">Sign Up</paper-button>
-        </div>
-        </paper-card></div>
-    
+    </paper-card>
 
     </div>
-    
+    <hr>
+    <br>
+    <p>
+
+    From these institutions, a rich and complementary set of tools and interfaces were developed to access and interact with DES data in different ways that cover a broad set of use cases which enable scientific discovery.
+    For the moment, NCSA and LIneA services are linked to the same account. <br>
+    To <b>register</b> visit:
+    <a href="https://des.ncsa.illinois.edu/easyweb/signup/" target="_blank">https://des.ncsa.illinois.edu/easyweb/signup/</a>
+    </p>
+    <p>
+        To learn more about the DES DR1 services use the following links:
+    </p>
+        <ul>
+          <li>
+            <h3>
+              <a href="[[rootpath]]releases/dr1/dr1-access/dr1-ncsa">NCSA DESaccess</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="[[rootpath]]releases/dr1/dr1-access/dr1-linea">LIneA Science Server</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="[[rootpath]]releases/dr1/dr1-access/dr1-noao">NOAO DataLab</a>
+            </h3>
+          </li>
+        </ul>
+
+
+
+    </div>
     </des-card>
     </template>
     <script>
@@ -39521,4 +39555,147 @@ The LIneA Science Server provides visualization and query tools for the user to 
      window.customElements.define(desDr1Access.is,desDr1Access);
      </script>
      </dom-module>
+<dom-module id="des-dr1-ncsa" assetpath="des-dr1/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+</style>
+
+<div class="fixup" id="ncsa_top"></div>
+<div class="fixdown"></div>
+<paper-dialog id="dialogfig3">
+            <des-img-big src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
+            Figure 3. Schema for DESaccess arquitecture
+            </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+
+<des-card heading="NCSA DESaccess">
+    <div class="card-content">
+
+    <paper-button class="desButton" raised="" on-tap="_goncsa">Go to DESaccess</paper-button>
+    <br>
+
+         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an &nbsp;Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. The main services can be summarized as follows:</p>
+             <p>
+               <strong>SQL web client:</strong> We provide a SQL web client that allows the user to submit asynchronous query jobs against the Oracle 12 database which contains the DES DR1 tables, the submitted jobs enter into a queue and results can be retrieved at later times in either csv, FITS (<a href="http://adsabs.harvard.edu/abs/1981A%26AS...44..363W">Wells et al. 1981</a>) or HDF5 (<a href="http://www.hdfgroup.org/HDF5/">The HDF Group 1997-NNNN</a>) file format, supporting compression in some of the cases. Big jobs are divided into chunks of 1.5GB to facilitate file transfer. This interface also provides means to check syntax and to evaluate synchronous jobs for a quick view. Result files are served from a HTTP server which allows file transfer to remote machines. The query used and the results are persisted for a limited period of time under a “My-Jobs” tab. The query interface is powered using <a href="https://github.com/mgckind/easyaccess">easyaccess</a>, a enhance SQL command line interpreter designed for astronomical surveys and developed for DES.</p>
+             <p>
+               <strong>Cutout server:</strong> The cutout server allows the user to generate cutouts up to 15' on a side centered on a given set of positions, the returned files include all the cutouts in all the bands, a cutout in the detection image, a color TIFF image using STIFF (<a href="http://adsabs.harvard.edu/abs/2012ASPC..461..263B">Bertin 2012</a>) by combining the g, r and i bands, and a PNG image. These cutout jobs also go into a queue and results can retrieve later from the files served remotely. The header of the cutouts is a copy from the original header from the images with extra keys indicating the center of the cutout RA_CUTOUT and DEC_CUTOUT. Results are preserved for a limit period of time and can also be retrieved under a “My-Jobs” tab within the web service. No stitching is performed for objects near the edge of the tile. This feature might be added in the future.</p>
+             <p>
+               <strong>Footprint:</strong> A light-weight interactive tool which displays the DES footprint and its tiles. This tool can be used to search for a position in the sky and return the tile information regarding the tile name, corner coordinates, and list of files for download. It also allows searches by tilename when the name is available. This service also provides access to all the processed tiles, &nbsp;including images and catalogs in a tile based directly from the file server.</p>
+             <p>
+               <a href="https://github.com/mgckind/desaccess">DESaccess code</a> as well as the <a href="https://github.com/mgckind/des_public_new">release page</a> are open sourced. The frontend was developed using web components, HTML, JS and <a href="https://www.polymer-project.org/">Polymer</a> which allows the re-use of already existing elements. The backend is mainly developed using the Python <a href="http://www.tornadoweb.org/en/stable/">Tornado web framework</a>. The submission jobs are handled by <a href="http://www.celeryproject.org/">Celery</a> which is a distributed queue manager written in Python. All of these applications are containerized using <a href="https://www.docker.com/">Docker</a> and all the nodes resources and scheduling, as well as all the deployment, is managed by <a href="https://kubernetes.io/">Kubernetes</a> which allows to run, manage and scale containerized applications in a robust and efficient manner.</p>
+
+            <des-img-big src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
+            Figure 3. Schema for DESaccess arquitecture
+            </des-img-big>
+             <p>
+               <br>
+             </p>
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1NCSA extends Polymer.Element {
+      static get is() { return 'des-dr1-ncsa'; }
+      _goncsa() {
+          var win = window.open('/easyweb/', '_blank');
+          win.focus();
+      }
+      _top() {this.$.ncsa_top.scrollIntoView();}
+      _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+
+          }
+    }
+    window.customElements.define(DesDr1NCSA.is, DesDr1NCSA);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr1-noao" assetpath="des-dr1/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+</style>
+
+
+<des-card heading="NOAO DataLab">
+    <div class="card-content">
+        <p>The NOAO Data Lab (<a href="http://adsabs.harvard.edu/abs/2016SPIE.9913E..0LF">Fitzpatrick et al. (2016)</a>) is one of the access portals for DES DR1. The goal of the Data &nbsp;Lab is to enable efficient exploration and analysis of large datasets, including catalogs, with a particular focus on surveys using DECam and the NOAO Mosaic cameras. Among its features are a database for catalog data, accessible both from a Table Access Protocol (<a href="http://ivoa.net/documents/TAP">TAP</a>) service and from direct PostgreSQL queries, web-based, command-line and programmatic catalog and image query interfaces (both custom and via standard VO protocols), remote storage space for personal database and files, a JupyterHub-based notebook analysis environment, and a Simple Image Access (SIA) service. The Data Lab hosts the DES DR1 catalog tables using a PostgreSQL v9.6 database on the backend. The data are identical to those hosted by the DES Collaboration through the NCSA portal, but with a few additions; first, the Data Lab database contains tables with crossmatches to other large catalogs (AllWISE, GALEX, HSC, and Simbad) and a table of neighboring objects within a 30 arcsecond radius for all objects in DES. Second, the main table contains a few extra columns, such as Ecliptic and Galactic coordinates, an <a href="http://www.skyserver.org/htm">HTM</a> (Hierarchical Triangular Mesh) index, two supplementary HEALPix indices in RING (NSIDE = 256) and NESTED (NSIDE = 4096) schemes, and precomputed colors. Finally, the data are clustered and indexed using the Q3C scheme (<a href="http://adsabs.harvard.edu/abs/2006ASPC..351..735K">Koposov &amp; Bartunov 2006</a>), allowing Q3C functions to perform fast spatial queries on the tables.</p>
+      <p>NOAO DataLab Services</p>
+      <p>1. Anonymous and authenticated access to DES DR1 through Data Lab services. Anonymous users of the Data Lab can query the DES DR1 database and use the web-based tools. By creating and logging into an account through <a href="http://datalab.noao.edu">datalab.noao.edu</a>, authenticated users get access to a dedicated Jupyter notebook server with permanently stored notebooks and 1 TB of storage space for personal database tables and files.</p>
+      <p>2. Access to DES DR1 through TAP. The Data Lab exposes the DES DR1 catalog through a TAP service, which may be accessed through a web query form and schema browser. Alternately, users may query DES DR1 through TOPCAT (<a href="http://adsabs.harvard.edu/abs/2005ASPC..347...29T">Taylor 2005</a>) by pointing to the URL of the Data Lab TAP service (<a href="http://datalab.noao.edu/tap">http://datalab.noao.edu/tap</a>) from within the application.</p>
+      <p>3. Python and command-line query clients. The DataLab client package (<a href="https://github.com/">https://github.com/</a>
+        <a href="https://github.com/noao-datalab/datalab-client">noao-datalab/datalab-client</a>) contains the multipurpose datalab command-line interface and the queryClient Python module. Both interfaces allow &nbsp;synchronous queries, for which control is suspended until a result is returned, using either ADQL (the native TAP interface query language) or the Postgres SQL syntax. The user may also run asynchronous ADQL queries, for which the query operation is given a job ID and run in the background, through the TAP service. The queryClient module is preinstalled on the Data Lab Jupyter notebook server.</p>
+      <p>4. An image cutout service. The Data Lab SIA service provides access to cutouts of the DES DR1 images. For a given position on the sky, the SIA service returns a table of metadata of all images that fall within the specified radius. The metadata includes select header information for each image, along with a URL to retrieve a cutout of a specified size.</p>
+      <p>5. A JupyterHub notebook server. This server provides access to common Python libraries as well as all Data Lab Python modules, including the authClient authorization module, the queryClient query module, the storeClient virtual storage module, and other interface modules. The Jupyter notebook server provides a convenient way to run code close to the data.</p>
+      <p>More information on using these services is available on the Data Lab web page, <a href="http://datalab.noao.edu">http://datalab.noao.edu</a>.</p>
+      <p>
+        <br>
+      </p>
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1NOAO extends Polymer.Element {
+      static get is() { return 'des-dr1-noao'; }
+    }
+    window.customElements.define(DesDr1NOAO.is, DesDr1NOAO);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr1-linea" assetpath="des-dr1/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+</style>
+
+
+<des-card heading="LIneA Science Server">
+    <div class="card-content">
+      <p>The images and catalogs generated by DESDM for DR1 can also be accessed by an interface developed by the Laboratorio Interinstitucional de e-Astronomia (LIneA) which supports the participation of Brazilian scientists in DES. It has been designed to offer ways to examine both images and catalogs, compare them with the results of other surveys, and examine the results of queries to the database. The interface consists of the following three services:</p>
+      <p>
+        <strong>Sky/Image viewer</strong>: The Sky/Image viewer combination integrates third-party tools to allow the user to visualize the entire sky map produced by DES (<a href="http://aladin.u-strasbg.fr/">Aladin Light developed by CDS</a>) in the form of a HIPs color-coded image as well as each individual tile using <a href="https://www.astromatic.net/software/visiomatic">VisiOmatic</a>. The native functions, such as zoom, have been augmented with: 1) an image layer that allows the display of other surveys; 2) a position locator; 3) the possibility of sharing a display with other users; 4) a map viewer which enables the display of HEALpix maps generated during the processing of the data (e.g., the number of images available at each point in the sky); 5) different grids including the original coadd tiles and the border of the DES footprint; 6) access to the image of a specific tile which can be examined using VisOmatic The image viewer can be used to examine the tile as a whole and to inspect a specific position on the sky in more detail using the native functions of the tool which include snapshot, profile overlays, contrast settings, color mix, zoom, full screen mode, and catalog overlay. The interface also allows the side-by-side comparison of the same sky region using different settings. Other useful functions are the ability to switch on/off markers, recenter the display to provide a visualization of the entire tile, crop part of the image, and download the fits images and catalog associated to the tile being displayed.</p>
+      <p>Finally, one can also overlay object catalogs which are classified into three categories: 1) targets - list of positions or objects either uploaded or created using the Target viewer and User Query services described below; 2) object catalog - the DES DR1 object catalog produced by DESDM; 3) external catalogs - a sample of catalogs available in Vizier. To facilitate the comparison between catalogs, the user can change the symbol, color, and size of each catalog it selects to display.</p>
+      <p>
+        <strong>Target Viewer</strong>: This service enables the user to examine a list of uploaded positions or of objects selected using the user query service described below. The first page provides the user a summary of the available target lists, the ability to upload/delete lists, and the ability to mark favorite lists. Adding a list can be done by pasting a list of RA and Dec coordinates. Once a list is selected the image surrounding an object/position can be visualized by selecting an entry in the list and the corresponding position. The user can then select the columns to be shown, sort according to a given attribute, and comment, rank and reject an entry.&nbsp;</p>
+      <p>
+        <strong>User Query</strong>: This service provides access to the database table storing the DES DR1 data from which SQL queries can be written, validated, and executed. The resulting table is displayed under “My Tables” where it can be deleted, renamed, and a few lines of its content listed. Objects selected can be immediately viewed in the target viewer after the columns of the resulting table are properly associated to those recognized by the tool.</p>
+      <p>Given the suite of functionalities available in each tool, tutorials in the form of videos have been prepared to help introduce first time users to the services. Information about the current limitations is available in the help associated for each tool.</p>
+      <p>More information on using these services is available on the LIneA Server &nbsp;page,&nbsp;<a href="https://desportal2.cosmology.illinois.edu/dri/apps/home/">https://desportal2.cosmology.illinois.edu/dri/apps/home/</a>
+      </p>
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr1LINEA extends Polymer.Element {
+      static get is() { return 'des-dr1-linea'; }
+    }
+    window.customElements.define(DesDr1LINEA.is, DesDr1LINEA);
+  </script>
+
+</dom-module>
 </div></body></html>
