@@ -47,18 +47,19 @@
 <p><br /></p>
 <div class="fixup" id="soft_intro"></div>
 <h3 class="fixdown">Overview  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<p>The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES, follows a well defined path, from its acquisition on the mountain top up to the stage when data is ready to be feed into science algorithms. We can distinguish two levels in data products, as well as two levels in raw-to-refined processing:</p>
+<p>The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES, follows a well defined path, from its acquisition on the mountain top up to the stage when data is ready to be fed into science algorithms. We can distinguish two levels in data products, as well as two levels in raw-to-refined processing:</p>
 <ul>
-  <li style="text-align: left;">Single Epochs images. Can be easily described as exposures of sky patches, each one independent of the others (namely, no combination of images are performed for overlap regions). These images need to be treated, and then we can distinguish two process being similar ins structure and procedure, but different in the employed calibrations and configurations files:</li>
+  <li style="text-align: left;">Single Epoch processing. This pipeline removes instrumental signatures from individual exposures from the camera, each one independent of the others (namely, no combination of images are performed at this stage for overlapping regions). We can then distinguish two processes similar in structure and procedure, but performed for slightly different purposes (early quality assessment first, final products later). They differ in the employed calibrations and configuration files:</li>
 </ul>
 <ol>
-  <li style="text-align: left;margin-left: 30.0px;">First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from previous year of observing are used. At the end of the pipeline, quality assessments are performed, then exposures not reaching the criteria enters the queue to be re-observed at CTIO.</li>
-  <li style="text-align: left;margin-left: 30.0px;">Final cut: this pipeline performs the same tasks as First cut. The configuration files and the calibrations files (e.g., flats, bad pixels masking, sky flats) has been updated to the most recent version, for which the current year of observation is the source of such calibrations.</li>
+  <li style="text-align: left;margin-left: 30.0px;">First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from the previous year of observing are used. At the end of the pipeline, a quality assessment is performed, and any exposures not passing minimum quality criteria re-enters the queue to be re-observed at CTIO.</li>
+  <li style="text-align: left;margin-left: 30.0px;">Final cut: this pipeline performs the same tasks as First cut. However, configuration and calibration files (e.g., flats, bad pixels masking, sky flats) are updated to the most recent versions, which include calibrations coming from the current year of observations. This pipeline is the source of the images that will enter the Multi Epoch processing to generate the coadded catalogs of DR1.</li>
 </ol>
 <ul>
-  <li style="text-align: left;">Multi Epoch images. After the run of Final cut, this pipeline is performed to achieve a higher depth on the DES footprint. Through co-additions of overlapping images, performing of algorithms for optimal shape and depth parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fiting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.</li>
+  <li style="text-align: left;">Multi Epoch processing. After Final cut, this pipeline is run to achieve a higher depth on the DES footprint. Through the co-addition of overlapping images, execution of algorithms to optimally measure shape parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.</li>
 </ul>
-<p>The above pipelines/processings are described in more depth in<a href="http://adsabs.harvard.edu/abs/2017PASP..129k4502B"> Berstein et al. (2017)</a>  and Morganson et al (2017). To help the visualization of the above landscape, below we show some of the Morganson et al. (2017) diagrams. <a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a> shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are displayed.</p>
+<p>The above pipelines/processings are described in more depth in<a href="http://adsabs.harvard.edu/abs/2017PASP..129k4502B"> Bernstein et al. (2017)</a>, <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. (2017)</a> and Morganson et al (2018). To help the visualization of the above landscape, below we show some of the Morganson et al. (2018) diagrams. Figure 1 shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are displayed.</p>
+
   <br/>
   <br/>
 
@@ -1648,104 +1649,31 @@
   <br/>
  </p>
         <h3 >References  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
- <ol>
-  <li>
-   <span>
-    Bernstein, G. M., Abbott, T. M. C., Desai, S., et al. 2017, PASP,
-    <em>
-     Instrumental Response Model and Detrending for the Dark Energy Camera
-    </em>
-    [
-    <span style="color: rgb(255,0,0);">
-     <a href="http://iopscience.iop.org/article/10.1088/1538-3873/aa858e/meta" rel="nofollow">
-      <span style="color: rgb(255,0,0);">
-       PASP
-      </span>
-     </a>
-    </span>
-    ]
-   </span>
-   [
-   <span style="color: rgb(255,0,0);">
-    <a href="https://arxiv.org/abs/1706.09928" rel="nofollow">
-     <span style="color: rgb(255,0,0);">
-      arxiv
-     </span>
-    </a>
-   </span>
-   ]
-  </li>
-  <li>
-   <p>
-    <span>
-     Burke, D. L., Rykoff, E. S., et al. 2017, Forward Global Photometric Calibration of the Dark Energy Survey [
-     <span style="color: rgb(255,0,0);">
-      <a href="https://arxiv.org/abs/1706.01542" rel="nofollow">
-       <span style="color: rgb(255,0,0);">
-        arxiv
-       </span>
-      </a>
-     </span>
-     ]
-     <br/>
-    </span>
-   </p>
-  </li>
-  <li>
-   <span>
-    Górski, K. M., Hivon, E., Banday, A. J., et al. 2005, ApJ, 622, 75.
-    <em>
-     HEALPix: A Framework for High-Resolution Discretization and Fast Analysis of Data Distributed on the Sphere
-    </em>
-    [
-    <span style="color: rgb(255,0,0);">
-     <a href="http://iopscience.iop.org/article/10.1086/427976/meta" rel="nofollow">
-      <span style="color: rgb(255,0,0);">
-       ApJ
-      </span>
-     </a>
-    </span>
-    ] [
-    <span style="color: rgb(255,0,0);">
-     <a href="https://arxiv.org/abs/astro-ph/0409513" rel="nofollow">
-      <span style="color: rgb(255,0,0);">
-       arxiv
-      </span>
-     </a>
-    </span>
-    ]
-   </span>
-  </li>
-  <li>
-   Morganson, E., et al. 2017, in preparation
-  </li>
-  <li>
-   Schlegel, D. J., Finkbeiner, D. P., Davis, M, 1998, ApJ, 500, 525.
-   <em>
-    Maps of Dust Infrared Emission for Use in Estimation of Reddening and Cosmic Microwave Background Radiation Foregrounds
-   </em>
-   [
-   <span style="color: rgb(255,0,0);">
-    <a href="http://iopscience.iop.org/article/10.1086/305772/meta" rel="nofollow">
-     <span style="color: rgb(255,0,0);">
-      ApJ
-     </span>
-    </a>
-   </span>
-   ] [
-   <span style="color: rgb(255,0,0);">
-    <a href="https://arxiv.org/abs/astro-ph/9710327" rel="nofollow">
-     <span style="color: rgb(255,0,0);">
-      arxiv
-     </span>
-    </a>
-   </span>
-   ]
-   <em>
-    <br/>
-   </em>
-  </li>
- </ol>
+        <ol>
+          <li>
+            <span>Bernstein, G. M., Abbott, T. M. C., Desai, S., et al. 2017, PASP, <em>Instrumental Response Model and Detrending for the Dark Energy Camera</em> [<span style="color: rgb(255,0,0);"> <a href="http://iopscience.iop.org/article/10.1088/1538-3873/aa858e/meta"> <span style="color: rgb(255,0,0);">PASP</span> </a> </span>] </span>[<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/1706.09928"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]</li>
+          <li>
+            <p>
+              <span>Burke, D. L., Rykoff, E. S., et al. 2017, Forward Global Photometric Calibration of the Dark Energy Survey [<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/1706.01542"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]<br/> </span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span>Drlica-Wagner, A., Sevilla-Noarbe, I., Rykoff, E. et al. Dark Energy Survey Year 1 Results: Photometric Data Set for Cosmology  [<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/1708.01531">
+                    <span style="color: rgb(255,0,0);">arxiv</span> </a>
+                </span>]</span>
+            </p>
+          </li>
+          <li>
+            <p>Górski, K. M., Hivon, E., Banday, A. J., et al. 2005, ApJ, 622, 75. <em>HEALPix: A Framework for High-Resolution Discretization and Fast Analysis of Data Distributed on the Sphere </em>[<span style="color: rgb(255,0,0);"> <a href="http://iopscience.iop.org/article/10.1086/427976/meta"> <span style="color: rgb(255,0,0);">ApJ</span> </a> </span>] [<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/astro-ph/0409513"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]</p>
+          </li>
+          <li>Morganson, E., et al. 2018, in preparation</li>
+          <li>Schlegel, D. J., Finkbeiner, D. P., Davis, M, 1998, ApJ, 500, 525. <em>Maps of Dust Infrared Emission for Use in Estimation of Reddening and Cosmic Microwave Background Radiation Foregrounds</em> [<span style="color: rgb(255,0,0);"> <a href="http://iopscience.iop.org/article/10.1086/305772/meta"> <span style="color: rgb(255,0,0);">ApJ</span> </a> </span>] [<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/astro-ph/9710327"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]<em> </em>
+            <em>
+              <br/>
+            </em>
+          </li>
+        </ol>
  <p style="margin-left: 30.0px;">
   <span>
    <br/>

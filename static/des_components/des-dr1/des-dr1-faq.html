@@ -21,6 +21,31 @@
 </style>
 
 
+<paper-dialog id="dialogfig1">
+            <des-img-big  src="/static/images/faq/theta_image_spikes.png" on-tap="_dialog" data-item="1">
+            Figure 1. Histograms of THETAWIN_IMAGE for a sample of objects with no filters applied(top) and with selection filters applied (bottom)
+        </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+
+<paper-dialog id="dialogfig2">
+            <des-img  src="/static/images/faq/spikes.png" on-tap="_dialog" data-item="2">
+            Figure 2. The represented 5-edge-contiguous-pixel configurations in a 9 x 9 box. <br />
+        </des-img>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig3">
+        <des-img-big  src="/static/images/faq/regellipses.png" on-tap="_dialog" data-item="3">
+        Figure 3.  DS9 snapshot of the i-band fits image for tile DES0203-4914 (retrieved from the DR1 footprint tool
+    </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
 <div class="fixup" id="faq_top"></div>
 <div class="fixdown"></div>
 <des-card heading ='FAQ'>
@@ -48,7 +73,7 @@
   Is FLUX_RADIUS a flux or a radius?
   </a></li>
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="8">
-      What is the difference between the "DR1 Standard Bandpasses" and the "Y3A2 Standard Bandpasses"?
+      What is the difference between the "DR1 Standard Bandpasses" and the "Y3A1 Standard Bandpasses"?
   </a></li>
 </ol>
 <hr />
@@ -70,9 +95,45 @@
 <div class="fixup" id="faq2"></div>
 <h3 class="fixdown">2. Why does <code>THETAWIN_IMAGE</code> have such strange spikes?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
+<div class="answer" style="diplay: inline;">
+    A histogram of THETAWIN_IMAGE appears to be quantized, with angles of 90 degrees and 45 appearing much more commonly than angles in between (<a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a>).
+<p>What's going on?   In short, object detection in sextractor requires about 5 contiguous pixels to be above background for an object detction. Some configurations of these 5 contiguous pixels are not allowed, such as pixels that only touch at the corners, full edge continuity is required.  For faint objects, allowed patterns in the pixel checkerboard of 5 touching pixels result in a measured position angle (THETAWIN_IMAGE) of certain angles, like 0, 90, 45, 90-45 degrees, and to a lessor extent 18.4, 90-18.4 degrees to be much more common (see upper panel of first figure).   If one selects a subset of objects with:</p>
+<p>b_image &gt; 0.9 .AND. ( (mag_auto_i &lt; 19 and 1-b_image/a_image &lt; 0.2) OR (1-b_image/a_image &lt; 0.2 + (mag_auto_i-19)/5 )), one rejects very small objects and also objects which are bright and very elongated or somewhat fainter and slightly more elongated), one can get rid of most of the spikes in the histogram (lower panel of <a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a>).  The over-represented 5-edge-contiguous-pixel configurations are shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="2"/>Figure 2</a>.</p>
+
+            <des-img  src="/static/images/faq/theta_image_spikes.png" on-tap="_dialog" data-item="1">
+            Figure 1. Histograms of THETAWIN_IMAGE for a sample of objects with no filters applied(top) and with selection filters applied (bottom)
+            </des-img>
+            <des-img  src="/static/images/faq/spikes.png" on-tap="_dialog" data-item="2">
+            Figure 2. The represented 5-edge-contiguous-pixel configurations in a 9 x 9 box. <br />
+            </des-img>
+</div>
+
 <p><br/></p>
 <div class="fixup" id="faq3"></div>
 <h3 class="fixdown">3. Where is <code>THETA_IMAGE</code>? How do I draw ellipses in image coordinates?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<div class="answer" style="diplay: inline;">Users of the DR1 sample will note that quantities THETAWIN_IMAGE_{grizY} are present, along with the quantity THETA_J2000 (with no band suffix).
+<p>THETA_IMAGE is missing.  Error quantities ERRTHETAWIN_IMAGE_{grizY} are available, and ERRTHETA_IMAGE, but no ERRTHETA_J2000.</p>
+<p>What's going on?  Part of this is for historical reasons, but one should be able to use these quantities for your science and for drawing accurate ellipses around your objects of interest.  The quantities with _IMAGE in them are sextractor image coordinate quantities.  The quantity with _J2000 is in the 'world coordinate system'.  Since the coadd tiles x,y axes are aligned with RA,DEC the angles contain basically the same information and may be used interchangable, modulo a 90 degree difference.</p>
+<p>The quantities without the band suffix (A_IMAGE,B_IMAGE,THETA_J2000) are measured off of the so called detection image, an image which combines the r,i and z band filters. </p>
+<p>The THETA_J2000 angle is related to the missing THETA_IMAGE angle very nearly by the relation: MOD(THETA_IMAGE+180,180) =MOD(THETA_J2000+90,180)  where the MOD operation is modulus, and maps the resulting angles into the range 0 &lt;= angle &lt; 180.</p>
+<p>To overlay ellipses on your galaxies and other objects, using, for instance, a .reg file in DS9:  select from the database the quantities RA,DEC,A_IMAGE, B_IMAGE and THETA_J2000+90 for your set of objects.  Then construct a .reg region file which has lines of the form:</p>
+<p>J2000 (first line)</p>
+<p>ELLIPSE &lt;RA&gt; &lt;DEC&gt; &lt;A_IMAGE&gt;" &lt;B_IMAGE&gt;" &lt;90+THETA_J2000&gt; #color=&lt;color&gt; width=&lt;liinewidth&gt;</p>
+<p>for instance if for two objects on tile DES0203-4914 have:</p>
+<p>(ra,dec,a_image,b_image,theta_j2000) = (31.32668 deg ,-48.93462 deg , 13.38 pixel,3.95 pixels, 75.7 deg)</p>
+<p>(ra,dec,a_image,b_image,theta_j2000) = (31.32832 deg ,-48.93039 deg , 6.08 pixel,3.58 pixels, 44.97 deg)</p>
+<p>A .reg file with these three lines, overlaid on the ds9 displayed image:</p>
+<p>J2000</p>
+<p>ellipse  31.326685      -48.934621      13.38"  3.95"   165.700 #color=red width=3</p>
+<p>ellipse  31.328324      -48.930391      6.08"   3.58"   134.97 #color=yellow width=3</p>
+<p>
+</p>
+<p>will draw red and yellow ellipses around the objects.  Note that the A_IMAGE/B_IMAGE unit is in pixels of 0.263'' each but the units in the .reg file are arcsec. A rough factor of 1 pixel per image ''  is used to give a pleasing object-encircling radius for your ellipse (you may wish to adjust).  The double quote mark (") should follow the a/b sizes and one decimal place should be enough.</p>
+<p>Figure 3 shows  a DS9 snapshot of the i-band fits image for tile DES0203-4914 (retrieved from the DR1 footprint tool).  The above .reg file is then loaded as a region.</p>
+
+        <des-img-big  src="/static/images/faq/regellipses.png" on-tap="_dialog" data-item="3">
+        Figure 3.  DS9 snapshot of the i-band fits image for tile DES0203-4914 (retrieved from the DR1 footprint tool
+    </des-img-big>
 
 
 <p><br/></p>
@@ -104,7 +165,8 @@
 
 <p><br/></p>
 <div class="fixup" id="faq8"></div>
-<h3 class="fixdown">8. What is the difference between the "DR1 Standard Bandpasses" and the "Y3A2 Standard Bandpasses"? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">8. What is the difference between the "DR1 Standard Bandpasses" and the "Y3A1 Standard Bandpasses"? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">The DR1 standard bandpasses contain the DES survey's present best knowledge of the true filter bandpasses of the DECam CCD+Filter system.  The Y3A1 Standard Bandpasses have slightly different behavior in the far out-of-band regions of some filters.  This can result in a color-dependent magnitude difference for very red objects (g-r &gt; 1.5, i.e. late M-star and redder) of a few mmag.  The magnitudes in the DR1 release have <strong>not</strong> been corrected to account for what the survey understands about the out-of-band behavior of the DES filters, as that analyses is proceeding.  For essentially all science projects the systematic difference is much smaller than other photometric errors.</p>
 
 </div>
 </des-card>
@@ -118,6 +180,12 @@
           e.stopPropagation();
           var temp = e.target.dataset.item;
           this.shadowRoot.querySelector('#faq'+temp).scrollIntoView();
+          }
+      _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
           }
 
     }

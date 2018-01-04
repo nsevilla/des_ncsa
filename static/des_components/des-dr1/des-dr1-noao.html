@@ -11,8 +11,12 @@
 </style>
 
 
+<div class="fixup" id="noao_top"></div>
+<div class="fixdown"></div>
 <des-card heading = 'NOAO DataLab'>
     <div class=card-content>
+    <paper-button class="desButton" raised on-tap="_gonoao">Go to NOAO DataLab</paper-button>
+    <br />
         <p>The NOAO Data Lab (<a href="http://adsabs.harvard.edu/abs/2016SPIE.9913E..0LF">Fitzpatrick et al. (2016)</a>) is one of the access portals for DES DR1. The goal of the Data  Lab is to enable efficient exploration and analysis of large datasets, including catalogs, with a particular focus on surveys using DECam and the NOAO Mosaic cameras. Among its features are a database for catalog data, accessible both from a Table Access Protocol (<a href="http://ivoa.net/documents/TAP">TAP</a>) service and from direct PostgreSQL queries, web-based, command-line and programmatic catalog and image query interfaces (both custom and via standard VO protocols), remote storage space for personal database and files, a JupyterHub-based notebook analysis environment, and a Simple Image Access (SIA) service. The Data Lab hosts the DES DR1 catalog tables using a PostgreSQL v9.6 database on the backend. The data are identical to those hosted by the DES Collaboration through the NCSA portal, but with a few additions; first, the Data Lab database contains tables with crossmatches to other large catalogs (AllWISE, GALEX, HSC, and Simbad) and a table of neighboring objects within a 30 arcsecond radius for all objects in DES. Second, the main table contains a few extra columns, such as Ecliptic and Galactic coordinates, an <a href="http://www.skyserver.org/htm">HTM</a> (Hierarchical Triangular Mesh) index, two supplementary HEALPix indices in RING (NSIDE = 256) and NESTED (NSIDE = 4096) schemes, and precomputed colors. Finally, the data are clustered and indexed using the Q3C scheme (<a href="http://adsabs.harvard.edu/abs/2006ASPC..351..735K">Koposov &amp; Bartunov 2006</a>), allowing Q3C functions to perform fast spatial queries on the tables.</p>
       <p>NOAO DataLab Services</p>
       <p>1. Anonymous and authenticated access to DES DR1 through Data Lab services. Anonymous users of the Data Lab can query the DES DR1 database and use the web-based tools. By creating and logging into an account through <a href="http://datalab.noao.edu">datalab.noao.edu</a>, authenticated users get access to a dedicated Jupyter notebook server with permanently stored notebooks and 1 TB of storage space for personal database tables and files.</p>
@@ -31,6 +35,10 @@
 <script>
     class DesDr1NOAO extends Polymer.Element {
       static get is() { return 'des-dr1-noao'; }
+      _gonoao() {
+          var win = window.open('http://datalab.noao.edu/', '_blank');
+          win.focus();
+      }
     }
     window.customElements.define(DesDr1NOAO.is, DesDr1NOAO);
   </script>
