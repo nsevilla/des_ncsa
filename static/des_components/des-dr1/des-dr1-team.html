@@ -1,0 +1,89 @@
+<dom-module id="des-dr1-team">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+.who {
+    text-indent: 20px;
+}
+
+
+.what {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+</style>
+
+
+
+
+<div class="fixup" id="linea_top"></div>
+<div class="fixdown"></div>
+<des-card heading = 'DR1 Release Team'>
+    This data release is the result of the collaborative efforts of many people from different institutions around the Globe.<br />
+
+    <div class="what">DR1 Release Scientist and coordinator</div>
+        <div class='who'>&bull; Matias Carrasco Kind (NCSA)</div>
+
+    <div class="what">DR1 Release Core Team</div>
+        <div class='who'>&bull; Keith Bechtol (LSST)</div>
+        <div class='who'>&bull; Matias Carrasco Kind (NCSA)</div>
+        <div class='who'>&bull; Alex Drlica-Wagner (Fermilab)</div>
+        <div class='who'>&bull; Robert Gruendl (NCSA)</div>
+        <div class='who'>&bull; Audrey Koziol (NCSA)</div>
+        <div class='who'>&bull; Ruiqi Li (NCSA)</div>
+        <div class='who'>&bull; Francisco Paz-Chinchon (NCSA)</div>
+        <div class='who'>&bull; Ignacio Sevilla (CIEMAT)</div>
+
+    <div class="what"> <a href="[[rootpath]]about">DESDM</a> Release Team</div>
+        <div class='who'>&bull; Michael Johnson (NCSA)</div>
+        <div class='who'>&bull; JD Maloney (NCSA)</div>
+        <div class='who'>&bull; Felipe Menanteau (NCSA)</div>
+        <div class='who'>&bull; Chris Pond (NCSA)</div>
+
+    <div class="what">Other DES collaborators</div>
+        <div class='who'>&bull; Chris Davis (UChicago)</div>
+        <div class='who'>&bull; Josh Frieman (UChicago)</div>
+        <div class='who'>&bull; Rich Kron (UChicago)</div>
+        <div class='who'>&bull; Ting Li (Fermilab)</div>
+        <div class='who'>&bull; Ashley Ross (Ohio)</div>
+        <div class='who'>&bull; Eli Rykoff (SLAC)</div>
+        <div class='who'>&bull; Kathy Vivas (CTIO)</div>
+        <div class='who'>&bull; Brian Yanny (Fermilab)</div>
+        <div class='who'>&bull; Yuanyuan Zhang (UChicago)</div>
+
+
+    <div class="what">NOAO DataLab Team</div>
+        <div class='who'>&bull; Mike Fitzpatrick (NOAO)</div>
+        <div class='who'>&bull; Stephanie Juneau (NOAO)</div>
+        <div class='who'>&bull; Robert Nikutta (NOAO)</div>
+        <div class='who'>&bull; Knut Olsen (NOAO)</div>
+
+
+    <div class="what">LIneA Science Server Team</div>
+
+
+
+    <div class=card-content>
+    </div>
+
+
+
+</des-card>
+</template>
+<script>
+    class DesDr1Team extends Polymer.Element {
+      static get is() { return 'des-dr1-team'; }
+    }
+    window.customElements.define(DesDr1Team.is, DesDr1Team);
+  </script>
+
+</dom-module>
