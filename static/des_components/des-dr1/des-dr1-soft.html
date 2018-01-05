@@ -49,14 +49,14 @@
 <h3 class="fixdown">Overview  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p>The workflow for the images taken at Cerro Tololo Interamerican Observatory (CTIO) within the DES, follows a well defined path, from its acquisition on the mountain top up to the stage when data is ready to be fed into science algorithms. We can distinguish two levels in data products, as well as two levels in raw-to-refined processing:</p>
 <ul>
-  <li style="text-align: left;">Single Epoch processing. This pipeline removes instrumental signatures from individual exposures from the camera, each one independent of the others (namely, no combination of images are performed at this stage for overlapping regions). We can then distinguish two processes similar in structure and procedure, but performed for slightly different purposes (early quality assessment first, final products later). They differ in the employed calibrations and configuration files:</li>
+  <li >Single Epoch processing. This pipeline removes instrumental signatures from individual exposures from the camera, each one independent of the others (namely, no combination of images are performed at this stage for overlapping regions). We can then distinguish two processes similar in structure and procedure, but performed for slightly different purposes (early quality assessment first, final products later). They differ in the employed calibrations and configuration files:</li>
 </ul>
 <ol>
-  <li style="text-align: left;margin-left: 30.0px;">First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from the previous year of observing are used. At the end of the pipeline, a quality assessment is performed, and any exposures not passing minimum quality criteria re-enters the queue to be re-observed at CTIO.</li>
-  <li style="text-align: left;margin-left: 30.0px;">Final cut: this pipeline performs the same tasks as First cut. However, configuration and calibration files (e.g., flats, bad pixels masking, sky flats) are updated to the most recent versions, which include calibrations coming from the current year of observations. This pipeline is the source of the images that will enter the Multi Epoch processing to generate the coadded catalogs of DR1.</li>
+  <li style="margin-left: 30.0px;">First cut: this pipeline (roughly) comprises the tasks oriented to transform and calibrate the raw image, calculate astrometric solutions, mask regions, model point spread function, apply quality assessments, and save such results as part of the single epoch database catalogs. For this pipeline, calibrations coming from the previous year of observing are used. At the end of the pipeline, a quality assessment is performed, and any exposures not passing minimum quality criteria re-enters the queue to be re-observed at CTIO.</li>
+  <li style="margin-left: 30.0px;">Final cut: this pipeline performs the same tasks as First cut. However, configuration and calibration files (e.g., flats, bad pixels masking, sky flats) are updated to the most recent versions, which include calibrations coming from the current year of observations. This pipeline is the source of the images that will enter the Multi Epoch processing to generate the coadded catalogs of DR1.</li>
 </ol>
 <ul>
-  <li style="text-align: left;">Multi Epoch processing. After Final cut, this pipeline is run to achieve a higher depth on the DES footprint. Through the co-addition of overlapping images, execution of algorithms to optimally measure shape parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.</li>
+  <li>Multi Epoch processing. After Final cut, this pipeline is run to achieve a higher depth on the DES footprint. Through the co-addition of overlapping images, execution of algorithms to optimally measure shape parameters, and creation of deeper catalogs, higher level products are obtained, such as Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), Weighted Average Magnitudes (WAVG), and Metacalibrations.</li>
 </ul>
 <p>The above pipelines/processings are described in more depth in<a href="http://adsabs.harvard.edu/abs/2017PASP..129k4502B"> Bernstein et al. (2017)</a>, <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. (2017)</a> and Morganson et al (2018). To help the visualization of the above landscape, below we show some of the Morganson et al. (2018) diagrams. Figure 1 shows the schematics of the complete DES Data Management. The Single Epoch, harboring First cut and Final cut, and the Multi Epoch processing are displayed.</p>
 
@@ -71,7 +71,7 @@
  <p>
   <br/>
  </p>
-<p>One of the strengths of the pipeline taken as a whole, is the structure allowing to include more refined products to be used in the calibrations. The ability was learned from the work, and it's tangible when comparing initially raw images among the coadded products. This can be evidenced (even not in all its wideness) in the following <a href="javascript:void(0)" on-tap="_dialog" data-item="3"/>Figure 3</a> exhibiting the different products from a single patch of sky, from the raw image to the fully reduced and processed and stacked (higher depth) image:</p>
+<p>Taken as a whole,  one strength of the pipeline is that  the structure allows one to include more refined products to be used in the calibrations. The ability was learned from the work, and it's tangible when comparing initially raw images among the coadded products. This can be evidenced (even not in all its wideness) in the following <a href="javascript:void(0)" on-tap="_dialog" data-item="3"/>Figure 3</a> exhibiting the different products from a single patch of sky, from the raw image to the fully reduced and processed and stacked (higher depth) image:</p>
 
    <des-img-big src="/static/images/processing.gif" on-tap="_dialog" data-item="3">Figure 3. Simplified animated version of both pipelines showing the final result after coadditon for a selected area of the sky </des-img-big>
 
@@ -1232,7 +1232,7 @@
   <em>
    psfex
   </em>
-   code cannot properly take into full account. This mostly affects the photometric precision and not the object detection. This is one of the reasons for the need of Multi Object Fitting (MOF).
+   code cannot properly take into full account. This mostly affects the photometric precision and not the object detection. This is one of the reasons for using Multi Object Fitting (MOF).
  </p>
  <p>
   Additionally, the reddening coefficients from <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel, Finkbeiner &amp; Davis (1998)</a> are applied.

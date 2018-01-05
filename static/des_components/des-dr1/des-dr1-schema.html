@@ -30,7 +30,7 @@
         <p><br/></p>
         <div class="fixup" id="schema_main"></div>
         <h3 class="fixdown">DR1_MAIN  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <table>
+        <table class="wrapped">
           <colgroup> <col style="width: 26.63%;"/> <col style="width: 58.4908%;"/> <col style="width: 14.841%;"/> </colgroup>
           <tbody>
             <tr>
@@ -88,7 +88,7 @@
               <td>
                 <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#class-star">CLASS_STAR_{G,R,I,Z,Y}</a>
               </td>
-              <td>Simple morphological extended source classifier. Values between 0 (galaxies) and 1 (stars). SPREAD_MODEL exhibits better performance for morphological classification.</td>
+              <td>Simple morphological extended source classifier. Values between 0 (galaxies) and 1 (stars). SPREAD<a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#model-based-star-galaxy-separation-spread-model">SPREAD_MODEL</a> exhibits better performance for morphological classification.</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -179,7 +179,9 @@
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
-              <td colspan="1">FLAGS_{G,R,I,Z,Y}</td>
+              <td colspan="1">
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flags">FLAGS_{G,R,I,Z,Y}</a>
+              </td>
               <td colspan="1">Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
@@ -225,7 +227,9 @@
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
-              <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
+              <td colspan="1">
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#imaflags_iso">IMAFLAGS_ISO_{G,R,I,Z,Y}</a>
+              </td>
               <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
@@ -418,7 +422,7 @@
               <td style="text-align: center;">213</td>
             </tr>
           </tbody>
-        </table>
+      </table>
         <p><br/></p>
         <div class="fixup" id="schema_mags"></div>
         <h3 class="fixdown">DR1_MAGNITUDE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
