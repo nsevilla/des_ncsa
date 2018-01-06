@@ -422,308 +422,330 @@
               <td style="text-align: center;">213</td>
             </tr>
           </tbody>
-      </table>
+        </table>
+
+
         <p><br/></p>
         <div class="fixup" id="schema_mags"></div>
         <h3 class="fixdown">DR1_MAGNITUDE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<table >
-  <colgroup> <col style="width: 22.789%;"/> <col style="width: 62.3696%;"/> <col style="width: 14.8033%;"/> </colgroup>
-  <tbody>
-    <tr>
-      <th style="text-align: center;">
-        <span >Column</span>
-      </th>
-      <th style="text-align: center;">
-        <span >Description</span>
-      </th>
-      <th style="text-align: center;">
-        <span >Number of Columns</span>
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
-      </td>
-      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>COADD_OBJECT_ID</td>
-      <td>Unique identifier for the coadded objects</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td colspan="1">DEC</td>
-      <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
-      </td>
-      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>EBV_SFD98</td>
-      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>FLAGS_{G,R,I,Z,Y}</td>
-      <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
-      <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
-      <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_APER_{1-12}_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in magnitude estimation for circular apertures [mag]</td>
-      <td style="text-align: center;">60</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAGERR_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>MAGERR_PETRO_{G,R,I,Z,Y}</td>
-      <td>Uncertainty in magnitude for a Petrosian radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_APER_{1-12}_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Magnitude estimation for circular apertures [mag]</td>
-      <td style="text-align: center;">60</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAG_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>MAG_PETRO_{G,R,I,Z,Y}</td>
-      <td>Magnitude for a Petrosian radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>PETRO_RADIUS_{G,R,I,Z,Y}</td>
-      <td>Petrosian radius [pixel]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>RA</td>
-      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>TILENAME</td>
-      <td>Identifier of each one of the tiles on which the survey is gridded</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
-      <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
-      <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
-      </td>
-      <td>X-centroid from windowed measurements on coadded image [pixel]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
-      </td>
-      <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <br/>
-      </td>
-      <td>
-        <br/>
-      </td>
-      <td style="text-align: center;">179</td>
-    </tr>
-  </tbody>
-</table>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 22.789%;"/> <col style="width: 62.3696%;"/> <col style="width: 14.8033%;"/> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Number of Columns</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+              </td>
+              <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>Unique identifier for the coadded objects</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">DEC</td>
+              <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+              </td>
+              <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>EBV_SFD98</td>
+              <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>FLAGS_{G,R,I,Z,Y}</td>
+              <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
+              <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#imaflags_iso">IMAFLAGS_ISO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude estimation for circular apertures [mag]</td>
+              <td style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">MAGERR_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude for a Petrosian radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude estimation for circular apertures [mag]</td>
+              <td style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAG_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">MAG_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude for a Petrosian radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">PETRO_RADIUS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Petrosian radius [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>TILENAME</td>
+              <td>Identifier of each one of the tiles on which the survey is gridded</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+              </td>
+              <td>X-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+              </td>
+              <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <br/>
+              </td>
+              <td>
+                <br/>
+              </td>
+              <td style="text-align: center;">179</td>
+            </tr>
+          </tbody>
+        </table>
 <p>
   <br/>
 </p>
         <p><br/></p>
         <div class="fixup" id="schema_fluxes"></div>
         <h3 class="fixdown">DR1_FLUX  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<table >
-  <colgroup> <col style="width: 23.1261%;"/> <col style="width: 62.0506%;"/> <col style="width: 14.7852%;"/> </colgroup>
-  <tbody>
-    <tr>
-      <th style="text-align: center;">
-        <span >Column</span>
-      </th>
-      <th style="text-align: center;">
-        <span >Description</span>
-      </th>
-      <th style="text-align: center;">
-        <span >Number of Columns</span>
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
-      </td>
-      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>COADD_OBJECT_ID</td>
-      <td>Unique identifier for the coadded objects</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td colspan="1">DEC</td>
-      <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
-      </td>
-      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>EBV_SFD98</td>
-      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>FLAGS_{G,R,I,Z,Y}</td>
-      <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUXERR_APER_{1-12}_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">Uncertainty in flux measurement for circular apertures [ADU]</td>
-      <td colspan="1" style="text-align: center;">60</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">Uncertainty in flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>FLUXERR_PETRO_{G,R,I,Z,Y}</td>
-      <td>Uncertainty in flux for a Petrosian radius [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUX_APER_{1-12}_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Flux measurement for circular apertures [ADU]</td>
-      <td style="text-align: center;">60</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUX_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>FLUX_PETRO_{G,R,I,Z,Y}</td>
-      <td>Flux for a Petrosian radius [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>HPIX_{32,64,1024,4096,16384}</td>
-      <td>Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
-      <td>Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>PETRO_RADIUS_{G,R,I,Z,Y}</td>
-      <td>Petrosian radius [pixel]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>RA</td>
-      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>TILENAME</td>
-      <td>Identifier of each one of the tiles on which the survey is gridded</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
-      <td>Uncertainty of weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
-      <td>Weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
-      </td>
-      <td>X-centroid of source (from coadd detection image)</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
-      </td>
-      <td>Y-centroid of source (from coadd detection image)</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <br/>
-      </td>
-      <td>
-        <br/>
-      </td>
-      <td style="text-align: center;">179</td>
-    </tr>
-  </tbody>
-</table>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 23.1261%;"/> <col style="width: 62.0506%;"/> <col style="width: 14.7852%;"/> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Number of Columns</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+              </td>
+              <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>Unique identifier for the coadded objects</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">DEC</td>
+              <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+              </td>
+              <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>EBV_SFD98</td>
+              <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flags">FLAGS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUXERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in flux measurement for circular apertures [ADU]</td>
+              <td colspan="1" style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">FLUXERR_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in flux for a Petrosian radius [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUX_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux measurement for circular apertures [ADU]</td>
+              <td style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUX_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">FLUX_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux for a Petrosian radius [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>HPIX_{32,64,1024,4096,16384}</td>
+              <td>Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#imaflags_iso">IMAFLAGS_ISO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">PETRO_RADIUS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Petrosian radius [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>TILENAME</td>
+              <td>Identifier of each one of the tiles on which the survey is gridded</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+              </td>
+              <td>X-centroid of source (from coadd detection image)</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+              </td>
+              <td>Y-centroid of source (from coadd detection image)</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <br/>
+              </td>
+              <td>
+                <br/>
+              </td>
+              <td style="text-align: center;">179</td>
+            </tr>
+          </tbody>
+        </table>
 <p>
   <br/>
 </p>
