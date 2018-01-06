@@ -32336,16 +32336,14 @@ Custom property | Description | Default
 
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq">FAQ</a>
+                  <a class="app-menu-item" id="needindent" name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq">DR1 FAQ</a>
                 </div>
                 </app-submenu>
-                  <!--
-                  <app-submenu no-auto-close>
+                  <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id=needindent name="dr1-team" href="[[rootPath]]releases/dr1/dr1-team" >DR1 Release Team</a>
+                  <a class="app-menu-item" id="needindent" name="dr1-team" href="[[rootPath]]releases/dr1/dr1-team">DR1 Release Team</a>
                 </div>
                 </app-submenu>
-            -->
 
 
                 </app-menu>
@@ -32358,7 +32356,7 @@ Custom property | Description | Default
 
 
           <a class="app-menu-item" name="help" href="[[rootPath]]help">Get Help</a>
-          <a class="app-menu-item" name="thanks" href="[[rootPath]]thanks">Acknowledgement</a>
+          <a class="app-menu-item" name="thanks" href="[[rootPath]]thanks">Acknowledgements</a>
           <a class="app-menu-item" name="about" href="[[rootPath]]about" on-tap="">About Us</a>
         </iron-selector>
       </app-menu>
@@ -32394,6 +32392,7 @@ Custom property | Description | Default
           <!-- Other pages -->
           <des-help name="help"></des-help>
           <des-thankyou name="thanks"></des-thankyou>
+          <des-terms name="terms"></des-terms>
           <des-about name="about"></des-about>
           <des-limited name="limited"></des-limited>
           <des-view404 name="view404"></des-view404>
@@ -32767,7 +32766,10 @@ Based in part on observations at Cerro Tololo Inter-American Observatory, Nation
 </pre>
 
 </div>
+<br><br>
+        <a href="[[rootpath]]/terms">Terms and Conditions</a>
          </div>
+
     </des-card>
   </template>
 
@@ -33075,6 +33077,128 @@ Indicating one or more relevant topics will help us to properly answer your ques
     window.customElements.define(DesHelp.is, DesHelp);
   </script>
 
+</dom-module>
+<dom-module id="des-terms" assetpath="des-pages/">
+  <template>
+    <style include="shared-styles">
+      :host {
+        padding: 10px;
+      }
+    </style>
+
+    <des-card heading="Terms and Conditions">
+         <div class="card-content">
+             <p>
+               <span style="color: rgb(33,33,33);">Welcome to the DESaccess website.<br>
+               </span>
+               <span style="color: rgb(33,33,33);">NCSA provides website applications and other products and services to access DES public data.<br>
+               </span>
+               <span style="color: rgb(33,33,33);">By using these services and these data products you are agreeing to abide by these terms.<br>
+               </span>
+               <span style="color: rgb(33,33,33);">NCSA provides these services and access to DES data subject to the following conditions, policies and agreements.</span>
+             </p>
+             <p>
+               <span style="color: rgb(33,33,33);">These Terms are subject for review and modification without notice. Revisions and changes &nbsp;will be published &nbsp;on this page.</span>
+             </p>
+             <p>
+               <span style="color: rgb(33,33,33);">For more information regarding these terms, please contact us at </span>
+               <a href="mailto:des-dr-help@ncsa.illinois.edu">
+                 <span style="color: rgb(17,85,204);">des-dr-help@ncsa.illinois.edu</span>
+               </a>
+             </p>
+             <h3>
+               <u>
+                 <span style="color: rgb(67,67,67);">Services</span>
+               </u>
+             </h3>
+             <p>
+               <span style="color: rgb(0,0,0);">Registered users agree to the fact that as a result of using our services, maintenance, administrative and general announcements by email are expected.</span>
+             </p>
+             <p>
+               <span style="color: rgb(0,0,0);">We are a small team and we are try to provide an enjoyable and seamless user experience while accessing DES data. NCSA does not make any specific promises about these services but to the do the best possible to accomplish our goal. Registered users acknowledge that we provide these service “as is”.</span>
+             </p>
+             <p>
+               <span style="color: rgb(0,0,0);"> To provide registered users a fair and homogeneous experience, services will have limitations detailed in the applications documentation. These limitations include, cpu time for long queries, memory resources or perform cutouts for many locations at time, among others. NCSA retains the right to stop any process which is consuming more resources than expected.</span>
+             </p>
+             <h3>
+               <u>
+                 <span style="color: rgb(67,67,67);">Data Policy</span>
+               </u>
+             </h3>
+             <p>
+               <span style="color: rgb(0,0,0);">Registered users &nbsp;who make use of these data (catalogs, files or images) for research, teaching purposes and other non-profit activities may freely use these products under the condition to abide to the acknowledgement and copyright policy below.</span>
+             </p>
+             <p>
+               <span style="color: rgb(0,0,0);">Commercial use of these data is strictly prohibited without permission.<br>
+               </span>
+             </p>
+             <p>
+               <span style="color: rgb(0,0,0);">If in doubt about this Data Policy or how does it apply in your case please do not hesitate to contact us.</span>
+             </p>
+             <h3>
+               <u>
+                 <span style="color: rgb(67,67,67);">Acceptable Use Policy</span>
+               </u>
+             </h3>
+             <p>
+               <span style="color: rgb(0,0,0);">Usage: Registered users agree to use these services, including the web pages, the web applications and the file servers for their intended purpose and not to cause harm, or perform actions that will prevent other users from accessing and use these services.&nbsp;</span>
+               <span style="color: rgb(0,0,0);">Registered users agree to not gain unauthorized access, attempt to access data that they are not authorized to use or access, or perform any unauthorized change to the documentation, or to our services.</span>
+             </p>
+             <p>
+               <span style="color: rgb(33,33,33);">Termination: NCSA retains the right to terminate, interrupt the usage of these services if a registered user violates the Acceptable Use Policy.</span>
+             </p>
+             <p>
+               <span style="color: rgb(0,0,0);">Data Expiration: User generated data, including internal database tables, files as result of databases queries, cutout files will be persisted for a limit period of time, between 7 and 10 days. Please consider this into account when using these services.</span>
+             </p>
+             <h3>
+               <u>
+                 <span style="color: rgb(67,67,67);">Copyright Policy</span>
+               </u>
+             </h3>
+             <p>
+               <span style="color: rgb(34,34,34);">Registered users are ask that &nbsp;the use of material from these services to &nbsp;be credited to The DES Collaboration. Coadd images or derived products are recommended to be credited to the DES Collaboration as well.</span>
+             </p>
+             <h3>
+               <u>
+                 <span style="color: rgb(67,67,67);">Acknowledgements Policy </span>
+               </u>
+             </h3>
+             <p>
+               <span style="color: rgb(0,0,0);">Registered users are requested to include respective acknowledgements in any publications that used DES data. Please read the Acknowledgements page: </span>
+               <span style="color: rgb(17,85,204);">
+                 <a href="https://des.ncsa.illinois.edu/thanks">https://des.ncsa.illinois.edu/thanks</a>
+               </span>
+               <span style="color: rgb(0,0,0);">If NCSA &nbsp;services were used on any scientific or educational work, we suggest the following acknowledgement:</span>
+             </p>
+             <p>
+               <span style="color: rgb(0,0,0);">This work has made use of the NCSA resources and services.</span>
+             </p>
+             <p>
+               <span style="color: rgb(0,0,0);">Registered users are asked to consider notify the DES Release Team (</span>
+               <a href="mailto:des-dr-help@ncsa.illinois.edu">
+                 <span style="color: rgb(17,85,204);">des-dr-help@ncsa.illinois.edu</span>
+               </a>
+               <span style="color: rgb(0,0,0);">) upon acceptance or publication of an article, poster or educational work &nbsp;based on DES data</span>
+             </p>
+             <h3>
+               <u>
+                 <span style="color: rgb(67,67,67);">Private Policy</span>
+               </u>
+             </h3>
+             <p>
+               <span style="color: rgb(0,0,0);">Information collected during registration (such as Name, Last Name and Email) and during usage of these services, such accessing logs and job statistic is meant to be kept private and to be only used to improve user experience, enhance our services and trace back possible issues. No private information will be released by any means.</span>
+             </p>
+
+         </div>
+    </des-card>
+  </template>
+
+  <script>
+    class DesTerms extends Polymer.Element {
+      static get is() { return 'des-terms'; }
+    }
+    window.customElements.define(DesTerms.is, DesTerms);
+  </script>
 </dom-module>
 <dom-module id="des-img" assetpath="des-utils/">
 
@@ -36106,308 +36230,330 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
               <td style="text-align: center;">213</td>
             </tr>
           </tbody>
-      </table>
+        </table>
+
+
         <p><br></p>
         <div class="fixup" id="schema_mags"></div>
         <h3 class="fixdown">DR1_MAGNITUDE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<table>
-  <colgroup> <col style="width: 22.789%;"> <col style="width: 62.3696%;"> <col style="width: 14.8033%;"> </colgroup>
-  <tbody>
-    <tr>
-      <th style="text-align: center;">
-        <span>Column</span>
-      </th>
-      <th style="text-align: center;">
-        <span>Description</span>
-      </th>
-      <th style="text-align: center;">
-        <span>Number of Columns</span>
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
-      </td>
-      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>COADD_OBJECT_ID</td>
-      <td>Unique identifier for the coadded objects</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td colspan="1">DEC</td>
-      <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
-      </td>
-      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>EBV_SFD98</td>
-      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>FLAGS_{G,R,I,Z,Y}</td>
-      <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
-      <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
-      <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_APER_{1-12}_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in magnitude estimation for circular apertures [mag]</td>
-      <td style="text-align: center;">60</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAGERR_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>MAGERR_PETRO_{G,R,I,Z,Y}</td>
-      <td>Uncertainty in magnitude for a Petrosian radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_APER_{1-12}_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Magnitude estimation for circular apertures [mag]</td>
-      <td style="text-align: center;">60</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAG_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>MAG_PETRO_{G,R,I,Z,Y}</td>
-      <td>Magnitude for a Petrosian radius [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>PETRO_RADIUS_{G,R,I,Z,Y}</td>
-      <td>Petrosian radius [pixel]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>RA</td>
-      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>TILENAME</td>
-      <td>Identifier of each one of the tiles on which the survey is gridded</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
-      <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
-      <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
-      </td>
-      <td>X-centroid from windowed measurements on coadded image [pixel]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
-      </td>
-      <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td style="text-align: center;">179</td>
-    </tr>
-  </tbody>
-</table>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 22.789%;"> <col style="width: 62.3696%;"> <col style="width: 14.8033%;"> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Number of Columns</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+              </td>
+              <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>Unique identifier for the coadded objects</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">DEC</td>
+              <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+              </td>
+              <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>EBV_SFD98</td>
+              <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>FLAGS_{G,R,I,Z,Y}</td>
+              <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
+              <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#imaflags_iso">IMAFLAGS_ISO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude estimation for circular apertures [mag]</td>
+              <td style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">MAGERR_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude for a Petrosian radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude estimation for circular apertures [mag]</td>
+              <td style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAG_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">MAG_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude for a Petrosian radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">PETRO_RADIUS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Petrosian radius [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>TILENAME</td>
+              <td>Identifier of each one of the tiles on which the survey is gridded</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+              </td>
+              <td>X-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+              </td>
+              <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td>
+                <br>
+              </td>
+              <td style="text-align: center;">179</td>
+            </tr>
+          </tbody>
+        </table>
 <p>
   <br>
 </p>
         <p><br></p>
         <div class="fixup" id="schema_fluxes"></div>
         <h3 class="fixdown">DR1_FLUX  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<table>
-  <colgroup> <col style="width: 23.1261%;"> <col style="width: 62.0506%;"> <col style="width: 14.7852%;"> </colgroup>
-  <tbody>
-    <tr>
-      <th style="text-align: center;">
-        <span>Column</span>
-      </th>
-      <th style="text-align: center;">
-        <span>Description</span>
-      </th>
-      <th style="text-align: center;">
-        <span>Number of Columns</span>
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
-      </td>
-      <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>COADD_OBJECT_ID</td>
-      <td>Unique identifier for the coadded objects</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td colspan="1">DEC</td>
-      <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td colspan="1" style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
-      </td>
-      <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>EBV_SFD98</td>
-      <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>FLAGS_{G,R,I,Z,Y}</td>
-      <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUXERR_APER_{1-12}_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">Uncertainty in flux measurement for circular apertures [ADU]</td>
-      <td colspan="1" style="text-align: center;">60</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td colspan="1">Uncertainty in flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
-      <td colspan="1" style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>FLUXERR_PETRO_{G,R,I,Z,Y}</td>
-      <td>Uncertainty in flux for a Petrosian radius [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUX_APER_{1-12}_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Flux measurement for circular apertures [ADU]</td>
-      <td style="text-align: center;">60</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUX_AUTO_{G,R,I,Z,Y}</a>
-      </td>
-      <td>Flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>FLUX_PETRO_{G,R,I,Z,Y}</td>
-      <td>Flux for a Petrosian radius [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>HPIX_{32,64,1024,4096,16384}</td>
-      <td>Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
-      <td>Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>PETRO_RADIUS_{G,R,I,Z,Y}</td>
-      <td>Petrosian radius [pixel]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>RA</td>
-      <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>TILENAME</td>
-      <td>Identifier of each one of the tiles on which the survey is gridded</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
-      <td>Uncertainty of weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
-      <td>Weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
-      <td style="text-align: center;">5</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
-      </td>
-      <td>X-centroid of source (from coadd detection image)</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
-      </td>
-      <td>Y-centroid of source (from coadd detection image)</td>
-      <td style="text-align: center;">1</td>
-    </tr>
-    <tr>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td style="text-align: center;">179</td>
-    </tr>
-  </tbody>
-</table>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 23.1261%;"> <col style="width: 62.0506%;"> <col style="width: 14.7852%;"> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Number of Columns</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+              </td>
+              <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>Unique identifier for the coadded objects</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">DEC</td>
+              <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+              </td>
+              <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>EBV_SFD98</td>
+              <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flags">FLAGS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUXERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in flux measurement for circular apertures [ADU]</td>
+              <td colspan="1" style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">FLUXERR_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in flux for a Petrosian radius [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUX_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux measurement for circular apertures [ADU]</td>
+              <td style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUX_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">FLUX_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux for a Petrosian radius [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>HPIX_{32,64,1024,4096,16384}</td>
+              <td>Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#imaflags_iso">IMAFLAGS_ISO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">PETRO_RADIUS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Petrosian radius [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>TILENAME</td>
+              <td>Identifier of each one of the tiles on which the survey is gridded</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+              </td>
+              <td>X-centroid of source (from coadd detection image)</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+              </td>
+              <td>Y-centroid of source (from coadd detection image)</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td>
+                <br>
+              </td>
+              <td style="text-align: center;">179</td>
+            </tr>
+          </tbody>
+        </table>
 <p>
   <br>
 </p>
@@ -39238,6 +39384,9 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     color: green;
     opacity: 0.7;
 }
+h3 {
+    font-weight: bold;
+}
 </style>
 
 
@@ -39268,8 +39417,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 </paper-dialog>
 <div class="fixup" id="faq_top"></div>
 <div class="fixdown"></div>
-<des-card heading="FAQ">
+<des-card heading="DR1 Frequently Asked Questions">
     <div class="card-content">
+        A growing list of Frequently Asked Question will be posted here for future references.
+
 <ol>
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="1">
       How do I select stars/galaxies?
@@ -39294,6 +39445,15 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </a></li>
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="8">
       What is the difference between the "DR1 Standard Bandpasses" and the "Y3A1 Standard Bandpasses"?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="9">
+      How to acknowledge the usage of the data?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="10">
+      What are the Terms and Conditions?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="11">
+      What to do if a question is not listed in here?
   </a></li>
 </ol>
 <hr>
@@ -39388,7 +39548,22 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <h3 class="fixdown">8. What is the difference between the "DR1 Standard Bandpasses" and the "Y3A1 Standard Bandpasses"? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p class="answer">The DR1 standard bandpasses contain the DES survey's present best knowledge of the true filter bandpasses of the DECam CCD+Filter system.&nbsp; The Y3A1 Standard Bandpasses have slightly different behavior in the far out-of-band regions of some filters.&nbsp; This can result in a color-dependent magnitude difference for very red objects (g-r &gt; 1.5, i.e. late M-star and redder) of a few mmag.&nbsp; The magnitudes in the DR1 release have <strong>not</strong> been corrected to account for what the survey understands about the out-of-band behavior of the DES filters, as that analyses is proceeding.&nbsp; For essentially all science projects the systematic difference is much smaller than other photometric errors.</p>
 
-</div>
+<p><br></p>
+<div class="fixup" id="faq9"></div>
+<h3 class="fixdown">9. How to acknowledge the usage of the data? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">Please check our <a href="[[rootpath]]thanks">Acknowledgements</a> page for more information.&nbsp;</p>
+
+<p><br></p>
+<div class="fixup" id="faq10"></div>
+<h3 class="fixdown">10. What are the Terms and Conditions? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">Please check our <a href="[[rootpath]]terms">Terms and Conditions</a> page for more information
+
+</p><p><br></p>
+<div class="fixup" id="faq11"></div>
+<h3 class="fixdown">11. What to do if a question is not listed in here? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">Please our <a href="[[rootpath]]help">Help Form</a> or send an email to&nbsp;<a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
+
+</p></div>
 
 </div></des-card></template>
 <script>
@@ -39599,7 +39774,9 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <paper-button class="desButton" raised="" on-tap="_goncsa">Go to DESaccess</paper-button>
     <br>
 
-         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an &nbsp;Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. The main services can be summarized as follows:</p>
+         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an &nbsp;Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. Please read the <a href="[[rootpath]]terms">Terms and Conditions</a> before using these interfaces. <br>
+
+             The main services can be summarized as follows:</p>
              <p>
                <strong>SQL web client:</strong> We provide a SQL web client that allows the user to submit asynchronous query jobs against the Oracle 12 database which contains the DES DR1 tables, the submitted jobs enter into a queue and results can be retrieved at later times in either csv, FITS (<a href="http://adsabs.harvard.edu/abs/1981A%26AS...44..363W">Wells et al. 1981</a>) or HDF5 (<a href="http://www.hdfgroup.org/HDF5/">The HDF Group 1997-NNNN</a>) file format, supporting compression in some of the cases. Big jobs are divided into chunks of 1.5GB to facilitate file transfer. This interface also provides means to check syntax and to evaluate synchronous jobs for a quick view. Result files are served from a HTTP server which allows file transfer to remote machines. The query used and the results are persisted for a limited period of time under a “My-Jobs” tab. The query interface is powered using <a href="https://github.com/mgckind/easyaccess">easyaccess</a>, a enhance SQL command line interpreter designed for astronomical surveys and developed for DES.</p>
              <p>
@@ -39612,6 +39789,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <des-img-big src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
             Figure 3. Schema for DESaccess arquitecture
             </des-img-big>
+
              <p>
                <br>
              </p>
@@ -39670,7 +39848,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <des-card heading="DR1 Release Team">
     This data release is the result of the collaborative efforts of many people from different DES institutions around the Globe.<br>
 
-    <div class="what">DR1 Release Scientist and coordinator</div>
+    <div class="what">DR1 Release Scientist and Coordinator</div>
         <div class="who">• Matias Carrasco Kind (NCSA)</div>
 
     <div class="what">DR1 Release Core Team</div>
@@ -39681,7 +39859,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <div class="who">• Audrey Koziol (NCSA)</div>
         <div class="who">• Ruiqi Li (NCSA)</div>
         <div class="who">• Francisco Paz-Chinchón (NCSA)</div>
-        <div class="who">• Ignacio Sevilla (CIEMAT)</div>
+        <div class="who">• Ignacio Sevilla-Noarbe (CIEMAT)</div>
 
     <div class="what">Other DES members</div>
         <div class="who">• Emmanuel Bertin (IAP Paris)</div>
@@ -39694,14 +39872,17 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <div class="who">• Paloma López-Reyes (CIEMAT)</div>
         <div class="who">• Ashley Ross (CCAPP)</div>
         <div class="who">• Eli Rykoff (SLAC)</div>
+        <div class="who">• Douglas Tucker (Fermilab)</div>
         <div class="who">• Kathy Vivas (CTIO)</div>
         <div class="who">• Brian Yanny (Fermilab)</div>
+        <div class="who">• William Wester (Fermilab)</div>
         <div class="who">• Yuanyuan Zhang (UChicago)</div>
 
     <div class="what"> <a href="[[rootpath]]about">DESDM Release Team</a></div>
         <div class="who">• Michael Johnson (NCSA)</div>
         <div class="who">• JD Maloney (NCSA)</div>
         <div class="who">• Felipe Menanteau (NCSA)</div>
+        <div class="who">• Don Petravick (NCSA)</div>
         <div class="who">• Chris Pond (NCSA)</div>
 
     <div class="what"><a href="http://datalab.noao.edu/people.php" target="_blank"> NOAO DataLab DR1 Team</a></div>
