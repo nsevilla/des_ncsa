@@ -27,7 +27,9 @@
     <paper-button class="desButton" raised on-tap="_goncsa">Go to DESaccess</paper-button>
     <br />
 
-         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an  Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. The main services can be summarized as follows:</p>
+         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an  Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. Please read the <a href="[[rootpath]]terms">Terms and Conditions</a> before using these interfaces. <br />
+
+             The main services can be summarized as follows:</p>
              <p>
                <strong>SQL web client:</strong> We provide a SQL web client that allows the user to submit asynchronous query jobs against the Oracle 12 database which contains the DES DR1 tables, the submitted jobs enter into a queue and results can be retrieved at later times in either csv, FITS (<a href="http://adsabs.harvard.edu/abs/1981A%26AS...44..363W">Wells et al. 1981</a>) or HDF5 (<a href="http://www.hdfgroup.org/HDF5/">The HDF Group 1997-NNNN</a>) file format, supporting compression in some of the cases. Big jobs are divided into chunks of 1.5GB to facilitate file transfer. This interface also provides means to check syntax and to evaluate synchronous jobs for a quick view. Result files are served from a HTTP server which allows file transfer to remote machines. The query used and the results are persisted for a limited period of time under a “My-Jobs” tab. The query interface is powered using <a href="https://github.com/mgckind/easyaccess">easyaccess</a>, a enhance SQL command line interpreter designed for astronomical surveys and developed for DES.</p>
              <p>
@@ -40,6 +42,7 @@
             <des-img-big  src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
             Figure 3. Schema for DESaccess arquitecture
             </des-img-big>
+
              <p>
                <br/>
              </p>
