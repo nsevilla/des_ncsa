@@ -31,7 +31,7 @@
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
-            instrumental response across the science CCDs</des-img-big>
+            instrumental response across the science CCDs These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information"> Here</a></des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
@@ -75,6 +75,9 @@
         <p><br/></p>
         <div class="fixup" id="products_catalogs"></div>
         <h3 class="fixdown">Catalogs  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>
+        <a href="[[rootpath]]releases/dr1/dr1-products/dr1-schema">DR1 Table Schema</a>    
+        </p>
         <p>The coadd source extraction process detected and cataloged 399,263,026 distinct objects. Morphological object information includes object centroids, shape parameters, HEALPix indices, and processing flags. Several different photometric measurements and associated uncertainties are provided including AUTO, PETRO, WAVG_PSF, and assorted aperture magnitudes (Table 1) These measurments are distributed in three database tables: DR1_MAIN, DR1_MAGNITUDE, and DR1_FLUX served from an Oracle database at NCSA. The DR1_MAIN table contains all object information that is not a photometric measurement or uncertainty, augmented by MAG_AUTO and MAG_PETRO (and associated uncertainties) and an extinction corrected versions. The other two tables contain auxiliary magnitude and flux measurements (with associated uncertainties) in addition to extra information which is present in all three tables, like coordinates, flags, and HEALPix indexes. Additionally, the table DR1_TILE_INFO contains information about the processed tiles, such as sky location, geometry, number of objects and file paths to access the images and catalogs generated. </p>
         <table>
   <colgroup>
@@ -203,11 +206,14 @@
         <div class="fixup" id="products_filters"></div>
         <h3 class="fixdown">DR1 Standard Bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>DES DR1 includes an updated characterization of the Blanco/DECam total system response (instrument and at mosphere) for the g, r, i, z, Y bands. The DES DR1 Standard Bandpasses are defined as the average CCD response across the focal plane as measured with the DECal system (<a href="http://adsabs.harvard.edu/abs/2013arXiv1302.5720M">Marshall et al. 2013</a>), together with a standard atmospheric transmission computed with the <code>MODTRAN IV</code> code (<a href="http://adsabs.harvard.edu/abs/1999SPIE.3756..348B">Berk et al. 1999</a>) using parameters typical of the environmental conditions encountered during DES observations (for details, see<a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B"> Burke et al. 2017</a>). For example, the airmass adopted for the standard atmosphere, 1.2, is well matched to the median airmass of exposures entering the coadd, 1.22. The system response is defined in steps of 5 Å from 3800 Å to 11000 Å. Out-of-band light leakage has been directly measured with DECal to be roughly less than 10<sup>-3</sup> relative to the in-band response, and vendor measurements of witness samples suggest that the out-of-band leakage is typically at the 10<sup>-5</sup> to 10<sup>-4</sup> level. While detailed characterization of the out-of band response is ongoing, the throughput of the DES DR1 Standard Bandpasses are defined as zero for out-of-band wavelengths (see <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>).</p>
+
+<p>These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information">Here</a>. Note that, as described in the <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>, Y3A1 Standard Bandpasses have some minor inaccuracies and are not being released in favor of the DR1 set, but can be requested by sending an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
+
             <des-img-big  src="/static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
-            instrumental response across the science CCDs</des-img-big>
+            instrumental response across the science CCDs. These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information"> Here</a></des-img-big>
 
         <p><br/></p>
         <div class="fixup" id="products_software"></div>
