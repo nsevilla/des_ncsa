@@ -51,6 +51,14 @@
   </div>
 </paper-dialog>
 
+<paper-dialog id="dialogfig5">
+            <des-img-big src="/static/images/dr1/DECam_chips.png">
+            Figure 5. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+
 
 <div class="fixup" id="issues_top"></div>
 <div class="fixdown"></div>
@@ -61,12 +69,15 @@
           <li><a href="javascript:void(0)" on-tap="_imaflags">IMAFLAGS_ISO</a></li>
           <li><a href="javascript:void(0)" on-tap="_bright">Bright Objects</a></li>
           <li><a href="javascript:void(0)" on-tap="_zp">Zeropoints and bandpasses</a></li>
+          <li><a href="javascript:void(0)" on-tap="_decam">DECam CCDs</a></li>
         </ul>
         <hr />
         <p><br/></p>
         <div class="fixup" id="issues_psf"></div>
         <h3 class="fixdown">PSF Model  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <p>The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications (i.e., SPREAD_MODEL, CLASS_STAR) and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Using the i-band as an example, we identified such coadd PSF failures by searching for regions with anomalous coadd SPREAD_MODEL_I distributions and estimate that roughly less than 0.4% of the footprint is substantially affected. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources (<a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a>). Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources, we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources).</p>
+
+        <p>The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications (i.e., SPREAD_MODEL, CLASS_STAR) and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Using the i-band as an example, we identified such  coadd PSF failures by searching for regions with anomalous coadd SPREAD_MODEL_I distributions and estimate that ~0.4% of the footprint is substantially affected. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources (<a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a>). Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources, we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO and MAG_APER (faint sources).</p>
+
 
             <des-img-big  src="/static/images/dr1/dr1_globular_cluster.png" on-tap="_dialog" data-item="1">
             Figure 1. Color-magnitude diagram for a stellar sample selected within a 15' x 15' box centered on the M2 globular cluster. The weighted-average PSF photometry from WAVG_MAG_PSF (left) yields a tighter locus but does not extend as deep as the MAG_AUTO photometry (right).
@@ -330,12 +341,27 @@
         Table 2. Brightest globular clusters within DES DR1.
               <br /></caption>
         </table>
+
         <p>
           <br/>
         </p>
         <div class="fixup" id="issues_zp"></div>
         <h3 class="fixdown">Zeropoints and bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <p>The tabulated “DES DR1 Standard Bandpasses”  included in this release were not the ones used to calculate the zeropoints applied to the calibrated images and coadd source catalogs presented in this release which correspond to an earlier version of the system throughput, referred to as the “Y3A1 Standard Bandpasses”. The latter system, which was the one available at the time of data processing, differs from the DES DR1 Standard Bandpasses in the treatment of the out-of-band system response. The DES DR1 Standard Bandpasses correct for a small inaccurate representation of r-band throughput in the Y3A1 Standard Bandpasses, which due to an incorrect input calibration run,considered an unrealistically large light leakage relative to the in-band response ( ~ 10<sup>-2</sup>) at wavelengths ~8000Å and ~9200Å. For coadd objects, the impact of setting the out-of-band response to zero in the DES DR1 Standard Bandpasses would lead to a photometry difference of  less than 2 mmag (RMS) in the g, r, i, z, Y bands, which is below the level of statistical uncertainty in the coadd zeropoints.</p>
+
+<p>The tabulated “DES DR1 Standard Bandpasses”  included in this release were not the ones used to calculate the zeropoints applied to the calibrated images and coadd source catalogs presented in DR1, but instead correspond to an earlier version of the system throughput referred to as the “Y3A1 Standard Bandpasses”. The latter system, that was the one available at the time of data processing, differs from the DES DR1 Standard Bandpasses in the treatment of the out-of-band system response. The DES DR1 Standard Bandpasses correct for a small inaccurate representation of r-band throughput in the Y3A1 Standard Bandpasses, which due to an incorrect input calibration run, considered an unrealistically large light leakage relative to the in-band response (~10<sup>-2</sup>) at wavelengths ~8000Å and ~9200Å. For coadd objects, the impact of setting the out-of-band response to zero in the DES DR1 Standard Bandpasses would lead to a photometry difference less than  2 mmag (RMS) in the <em>grizY</em> bands, which is below the level of statistical uncertainty in the coadd zeropoints </p>
+
+        <p>
+          <br/>
+        </p>
+        <div class="fixup" id="issues_decam"></div>
+        <h3 class="fixdown">DECam CCDs  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>
+            From all 62 science CCDs from DECam, CCD 61, which failed in 2012. Similarly, CCD 2 was not processed between November 2013 and December 2016, during which time it was not functional. Amplifier A of CCD 31 has an unpredictable, time-variable gain and is not processed or used for DES science. Amplifier B of CCD 31 functions normally and is processed. The rest of the science CCDs are performing within specifications and are usable for science (<a href="javascript:void(0)" on-tap="_dialog" data-item="5"/>Figure 5</a>).
+        </p>
+
+            <des-img-big src="/static/images/dr1/DECam_chips.png">
+            Figure 5. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
+
         <p>
           <br/>
         </p>
@@ -351,6 +377,7 @@
       _imaflags() {this.$.issues_imaflags.scrollIntoView();}
       _bright() {this.$.issues_bright.scrollIntoView();}
       _zp() {this.$.issues_zp.scrollIntoView();}
+      _decam() {this.$.issues_decam.scrollIntoView();}
       _dialog(e) {
           e.preventDefault();
           e.stopPropagation();
