@@ -99,7 +99,9 @@ h3 {
 
 <div class="answer" style="diplay: inline;"> We recommend the use of the SExtractor <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD_MODEL</a>, which compares the fit of a local PSF model to a slightly extended exponential disk model. Below we show a example using SPREAD_MODEL for object classification in a way that is suitable for both stellar and extragalactic science.
 <p>We define a new variable EXTENDED_COADD as the independent sum of several Boolean conditions:</p>
+<code>
 <p>EXTENDED_COADD =<br/>((SPREAD_MODEL_I+ 3 × SPREADERR_MODEL_I) &gt; 0.005)<br/>+ ((SPREAD_MODEL_I+SPREADERR_MODEL_I) &gt; 0.003)<br/>+ ((SPREAD_MODEL_I-SPREADERR_MODEL_I) &gt; 0.003)</p>
+</code>
 <p>Note that EXTENDED_COADD is defined by a sequence of boolean conditions that, when true, add a unit to the classifier. This classifier results in a value of 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies).  <span style="color: rgb(0,0,0);">Although the SExtractor quantity<a href="https://sextractor.readthedocs.io/en/des_dr1/ClassStar.html#class-star-def"> CLASS_STAR</a> has been commonly used in the past, we find that SPREAD_MODEL based classifiers consistently outperform CLASS_STAR. <span style="color: rgb(0,0,0);"> It is expected that classifiers using alternative bands and/or combinations of object measurements will be more appropriate for specific science cases.</span>
   </span>
 </p>
