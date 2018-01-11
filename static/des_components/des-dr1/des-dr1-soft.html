@@ -52,7 +52,7 @@
   <li>Single Epoch processing. This pipeline removes instrumental signatures from individual exposures. We define two processing pipelines for realtime data quality assessment and final science analysis. These two pipelines differ in image calibration and configuration files:</li>
 </ul>
 <ol>
-  <li style="margin-left: 30.0px;">First Cut: this pipeline is focused on realtime data quality assessment to evaluate whether a specific exposure needs to be retaken. The First Cut pipeline reduces and calibrates raw image, calculate astrometric solutions, masks bad regions, models the point spread function, applies quality assessments, and produces catalog objects. This pipeline uses calibrations from the previous year of observing. At the end of the pipeline, a quality assessment is performed, and any exposures not passing minimum quality criteria re-enters the queue to be re-observation.</li>
+  <li style="margin-left: 30.0px;">First Cut: this pipeline is focused on real-time data quality assessment to evaluate whether a specific exposure needs to be retaken. The First Cut pipeline reduces and calibrates raw image, calculate astrometric solutions, masks bad regions, models the point spread function, applies quality assessments, and produces catalog objects. This pipeline uses calibrations from the previous year of observing. At the end of the pipeline, a quality assessment is performed, and any exposures not passing minimum quality criteria re-enters the queue to be re-observation.</li>
   <li style="margin-left: 30.0px;">Final Cut: this pipeline performs the same tasks as First Cut. However, configuration and calibration files (e.g., flats, bad pixels masking, sky flats) are updated to the most recent versions, which include calibrations coinciding with the epoch during which the observation was taken. This pipeline is produces images that enter the Multi Epoch processing to generate the DR1 coadded catalogs.</li>
 </ol>
 <ul>
@@ -206,7 +206,7 @@
   <br/>
  </p>
  <p>
-  The following operation blocks apply crosstalk correction (influence of a CCD amplifier over others), bias, overscan, flats, bad pixel masks, bright fatter correction, non-linear and gain adjustments. It also creates masks for different issues in the CCDs, such as defective amplifier A of CCD 31, satellite streaks, and edge bleed due to saturated stars.
+  The following operation blocks applies crosstalk correction, bias frame subtraction, overscan correction, flat fielding, bad pixel masking, brighter fatter correction, non-linearity corrections and gain adjustments. It also masks the defective amplifier A of CCD 31, satellite streaks, and edge bleed due to saturated stars.
  </p>
  <div>
   <table>
