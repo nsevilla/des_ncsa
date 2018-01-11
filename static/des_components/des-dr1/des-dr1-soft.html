@@ -309,7 +309,7 @@
  </p>
  <p>
   <span>
-   Then, the first astrometric solution is calculated, followed by the masking of bleed edges (when a saturated trail reaches the CCD edges) and saturated pixels.
+   Then, the first astrometric solution is calculated, followed by the masking of edge bleeds (when excess charge from saturated stars reaches the CCD edges) and saturated pixels.
   </span>
  </p>
  <div>
@@ -489,7 +489,7 @@
  </p>
  <p>
   <span>
-   The sky templates and the star flat image are applied. The last is a second order flat correction, constructed from non crowded dithered fields images, after applying a Principal Components Analysis method. Additional masking is performed.
+   The sky templates and the star flat images are applied. The latter is a second order Principal Components Analysis of dense dithered fields images. Additional masking is also performed.
   </span>
  </p>
  <div>
