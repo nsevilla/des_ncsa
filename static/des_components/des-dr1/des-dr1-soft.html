@@ -713,7 +713,7 @@
   <br/>
  </p>
  <p>
- The point spread function is modeled and the final single-epoch object catalog is produced. Data quality assessment is performed and a binned PNG is created for each exposure.  Healpix <a href="http://adsabs.harvard.edu/abs/2005ApJ...622..759G">(Górski et al. 2005)</a> are calculated for each catalog object at several resolutions.
+ The point spread function is modeled and the final single-epoch object catalog is produced. Data quality assessment is performed and a binned PNG is created for each exposure.  HEALPix <a href="http://adsabs.harvard.edu/abs/2005ApJ...622..759G">(Górski et al. 2005)</a> are calculated for each catalog object at several resolutions.
  </p>
  <div>
   <table>
@@ -1060,11 +1060,8 @@
  </ol>
  <p>
   <span>
-   We begin by combining the Single-Epoch images into 10,000 x 10,000 pixel coadded images. This unit is known as a coadd "tile". This is achieved by querying all images matching the particular tile, then re-calculating the astrometric solutions (as these can vary between Single Epoch images), running SCAMP against 2MASS for campaigns up to Y3.
-   <br>
-   This can be sketched in 2 steps; the first takes the solutions for the inner CCD deformation coefficients that come from Final Cut refinement, so the code tries to match them when adding different images together. The second step is to match against 2MASS.
-   <br>
-   With the results of the astrometry, SCAMP is used for stacking the images into a single image, while also adding photometric zeropoints information coming from the Forward Global Calibration Method (FGCM), <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1706.01542">Burke et al. (2017)</a>.
+   We begin by combining the Single-Epoch images into 10,000 x 10,000 pixel coadded images. This unit is known as a coadd "tile". We query all images matching the particular tile, then re-calculating the astrometric solutions (as these can vary between Single Epoch images). The astrometric refinement is done in two steps: first we perform an internal matching between CCDs, then we run SCAMP to match against 2MASS.
+   With the results of the astrometry, SWARP is used to stack the images into a single image, while also adding photometric zeropoints from the FGCM <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1706.01542">(Burke et al. 2017)</a>.
    <br/>
   </span>
  </p>
@@ -1232,10 +1229,10 @@
   </span>
  </p>
  <p>
- With the coadded images, a new PSF model is calculated. To achieve this, the source extraction is performed with the same configuration as Single Epoch. Typically, the PSF estimation does not perform as well on coadded images as it does on single images, mostly due to discontinuities on the coadded images that the <em>psfex</em> code cannot fully model. This affects photometric precision more strongly than object detection, and is one motivation for Multi Object Fitting (MOF).
+ After coadd images are produced, a new PSF model is calculated. Source extraction is performed with the same configuration as Single Epoch and PSFEx is run. Coadd PSF estimation encounters several difficulties due to sharp discontinuities in depth and quality of the coadd images that cannot be fully modeled by <em>psfex</em>. An imperfect PSF model affects photometric and morphological measurements more strongly than object detection.
  </p>
  <p>
-  Additionally, interstellar extinction from <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel, Finkbeiner &amp; Davis (1998)</a> is calculated.
+  For each object, we calculate interstellar extinction, E(B-V), from <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel, Finkbeiner &amp; Davis (1998), HEALPix pixels, and weighted-averaged magnitudes.  </a>.
  </p>
  <div>
   <table>
@@ -1344,44 +1341,6 @@
       extinction/1.3.0+2/bin/compute_SFD98_coadd_bands
      </td>
     </tr>
-   </tbody>
-  </table>
- </div>
- <p>
-  <br/>
- </p>
- <p>
-  <span style="color: rgb(0,0,0);">
-   Finally,  healpix and weighted averaged magnitudes are calculated, Multi Object Fitting (MOF), Multi Epoch Data Structure (MEDS), and mangle routines are executed, and a coadded version of the catalogs is created.
-  </span>
- </p>
- <div>
-  <table>
-   <colgroup>
-    <col>
-    </col>
-    <col>
-    </col>
-    <col>
-    </col>
-    <col>
-    </col>
-   </colgroup>
-   <tbody>
-    <tr>
-     <th>
-      Execution order
-     </th>
-     <th>
-      Executable
-     </th>
-     <th>
-      Parent package
-     </th>
-     <th>
-      Package path
-     </th>
-    </tr>
     <tr>
      <td>
       21
@@ -1421,6 +1380,44 @@
      <td>
       wavg/0.4+0/bin/computewavg.py
      </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <br/>
+ </p>
+ <p>
+  <span style="color: rgb(0,0,0);">
+   Several additional algorithms are run to optimally measure shapes and photometry for DES cosmology. These steps include the creation of Multi Epoch Data Structures (MEDS, <a href="http://adsabs.harvard.edu/abs/2016MNRAS.460.2245J">Jarvis et al. 2015</a>, Morganson et al. 2018), Multi Object Fitting (MOF, <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>), and metacalibration shear estimates (<a href="http://iopscience.iop.org/article/10.3847/1538-4357/aa704b/meta">Sheldon &amp; Huff 2017</a>). These data products <b>are not</b> included with DES DR1, but are include here for completeness.
+  </span>
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+    <col>
+    </col>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Execution order
+     </th>
+     <th>
+      Executable
+     </th>
+     <th>
+      Parent package
+     </th>
+     <th>
+      Package path
+     </th>
     </tr>
     <tr>
      <td>
@@ -1654,7 +1651,7 @@
             <span>Bernstein, G. M., Abbott, T. M. C., Desai, S., et al. 2017, PASP, <em>Instrumental Response Model and Detrending for the Dark Energy Camera</em> [<span style="color: rgb(255,0,0);"> <a href="http://iopscience.iop.org/article/10.1088/1538-3873/aa858e/meta"> <span style="color: rgb(255,0,0);">PASP</span> </a> </span>] </span>[<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/1706.09928"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]</li>
           <li>
             <p>
-              <span>Burke, D. L., Rykoff, E. S., et al. 2017, Forward Global Photometric Calibration of the Dark Energy Survey <a href="http://iopscience.iop.org/article/10.3847/1538-3881/aa9f22/meta"> <span style="color: rgb(255,0,0);">AJ</span> </a> </span>] </span>[<span style="color: rgb(255,0,0);"> [<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/1706.01542"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]<br/> </span>
+              <span>Burke, D. L., Rykoff, E. S., et al. 2017, Forward Global Photometric Calibration of the Dark Energy Survey [<a href="http://iopscience.iop.org/article/10.3847/1538-3881/aa9f22/meta"> <span style="color: rgb(255,0,0);">AJ</span> </a> </span>] </span>[<span style="color: rgb(255,0,0);"> [<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/1706.01542"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]<br/> </span>
             </p>
           </li>
           <li>
