@@ -1,0 +1,96 @@
+<dom-module id="des-docs-svmaps">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="SVA1 Mass Maps">
+
+      <div class="card-content">
+            <h2><strong>SVA1 Maps Overview</strong></h2>
+
+
+<p>Details on the production of the original SVA1 Mass Maps using Kaiser-Squires , can be found in <a href="http://adsabs.harvard.edu/abs/2015PhRvD..92b2006V">Vikram et al. (2015)</a>. and <a href="http://adsabs.harvard.edu/abs/2015PhRvL.115e1301C">Chang et al. (2015)</a> &nbsp;Users should see that paper for any questions about the content of the original maps. Details on the improved weak lensing SV Maps, using Kaiser-Squires, Gaussian and Sparsity Priors presented  here can be found in <a href="https://arxiv.org/abs/1801.08945">Jeffrey et al. (2018)</a>.
+
+Further questions can be addressed the corresponding authors of these papers, whose email addresses are given therein. &nbsp;On this page, we merely describe the structure of the maps files being distributed.
+
+<h2><strong>Download</strong></h2>
+ Below you will find the links to download the original and new mass maps. Note that all these maps are in Healpix format with NSIDE = 1024  resolution, in RING format schema and partial format.
+<hr />
+
+<h2><strong>Improved Maps (2018)</strong></h2>
+
+<ul>
+<li> Kaiser-Squires with 10 arcminute Gaussian smoothing <br />
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_with_priors_2018/published_des_sv_map_ks_10am.fits" target="_parent">published_des_sv_map_ks_10am.fits</a></li>
+<li>Wiener filter reconstruction<br />
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_with_priors_2018/published_des_sv_map_wiener.fits" target="_parent">published_des_sv_map_wiener.fits</a></li>
+<li> GLIMPSE (sparse) reconstruction with λ=3.0 <br />
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_with_priors_2018/published_des_sv_map_glimpse_l3.fits" target="_parent">published_des_sv_map_glimpse_l3.fits</a></li>
+</ul>
+<hr />
+
+<h2><strong>Original Maps (2015)</strong></h2>
+ The format of these maps are as follows: <br /><br />
+ <b>${map_type}_${shear_pipeline}_${smoothing}_${pixel}.fits </b><br /><br />
+
+ <u>map_type:</u>
+ <ul>
+    <li>k: kappa converted from ellipticity</li>
+    <li>kg: weighted projected galaxy density map </li>
+ </ul>
+
+<u>shear_pipeline:</u>
+<ul>
+<li> im3shape v9 (flat v5)</li>
+<li> ngimx 011 (flat v5)</li>
+</ul>
+
+<u>smoothing:</u>  RMS of Gaussian smoothing in arcmin <br /><br />
+
+<u>pixel:</u> size of pixel in arcmin <br /><br />
+
+<b> Notes:</b>
+<ul>
+    <li>all maps are projected with a sinusoidal projection with reference RA at 71 deg</li>
+    <li> for the kappa map, first extension is E-mode kappa, second is B-mode kappa, third is mask </li>
+    <li> photo-z are from BPZ </li>
+</ul>
+
+<h4> Maps</h4>
+<ul>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/k_im3shape_10.0_5.0.fits" target="_parent">k_im3shape_10.0_5.0.fits</a></li>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/k_im3shape_20.0_5.0.fits" target="_parent">k_im3shape_20.0_5.0.fits</a></li>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/k_ngmix_10.0_5.0.fits" target="_parent">k_ngmix_10.0_5.0.fits</a></li>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/k_ngmix_20.0_5.0.fits" target="_parent">k_ngmix_20.0_5.0.fits</a></li>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/kg_f3_im3shape_10.0_5.0.fits" target="_parent">kg_f3_im3shape_10.0_5.0.fits</a></li>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/kg_f3_im3shape_20.0_5.0.fits" target="_parent">kg_f3_im3shape_20.0_5.0.fits</a></li>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/kg_f3_ngmix_10.0_5.0.fits" target="_parent">kg_f3_ngmix_10.0_5.0.fits</a></li>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/kg_f3_ngmix_20.0_5.0.fits" target="_parent">kg_f3_ngmix_20.0_5.0.fits</a></li>
+
+</ul>
+
+<h4> Coordinates</h4>
+<ul>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/RA_des_sv_spte.fits" target="_parent">RA_des_sv_spte.fits</a> (RA coordinates for each pixel)</li>
+<li><a href="http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/maps/des_sv_original_2015/DEC_des_sv_spte.fits" target="_parent">DEC_des_sv_spte.fits</a> (DEC coordinates for each pixel)</li>
+</ul>
+<hr />
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesDocsMaps extends Polymer.Element {
+      static get is() { return 'des-docs-svmaps'; }
+    }
+    window.customElements.define(DesDocsMaps.is, DesDocsMaps);
+  </script>
+
+</dom-module>
