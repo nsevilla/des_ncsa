@@ -10,6 +10,7 @@
 <!-- DES PAGES -->
 <!-- DES UTILS -->
 <!-- DES SVA1 -->
+<!-- DES Y1A1 -->
 <!-- DES DR1 -->
 </head><body><div hidden="" by-vulcanize=""><!--
 @license
@@ -32297,6 +32298,40 @@ Custom property | Description | Default
 
               </app-submenu>
 
+              <!-- Y1 -->
+              <app-submenu no-auto-close="">
+                <div class="sublist1" slot="submenu-trigger">
+                <a class="app-menu-item" name="y1a1" href="[[rootPath]]releases/y1a1">Y1A1 Gold<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+
+                <app-menu class="sublist2" slot="submenu-content">
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="docs" href="[[rootPath]]releases/sva1/docs" persistent="False">Documentation<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="docs-gold" href="[[rootPath]]releases/sva1/docs/docs-gold">Gold</a>
+                  <a class="app-menu-item" id="needsindent2" name="docs-photoz" href="[[rootPath]]releases/sva1/docs/docs-photoz">Photoz</a>
+                  <a class="app-menu-item" id="needsindent2" name="docs-shear" href="[[rootPath]]releases/sva1/docs/docs-shear">Shear</a>
+                  <a class="app-menu-item" id="needsindent2" name="docs-redmapper" href="[[rootPath]]releases/sva1/docs/docs-redmapper">RedMaPPer</a>
+                  <a class="app-menu-item" id="needsindent2" name="docs-svmaps" href="[[rootPath]]releases/sva1/docs/docs-svmaps">Mass Maps</a>
+                </app-menu>
+                </app-submenu>
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="file-content" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank">Files</a>
+                </div>
+                </app-submenu>
+
+                </app-menu>
+
+              </app-submenu>
+
+
+              <!-- DR1 -->
+
+
                <app-submenu no-auto-close="">
                 <div class="sublist1" slot="submenu-trigger">
                   <a class="app-menu-item" name="dr1" href="[[rootPath]]releases/dr1">DR1<iron-icon icon="expand-more"></iron-icon></a>
@@ -32376,6 +32411,8 @@ Custom property | Description | Default
               <des-docs-shear name="docs-shear"></des-docs-shear>
               <des-docs-redmapper name="docs-redmapper"></des-docs-redmapper>
               <des-docs-svmaps name="docs-svmaps"></des-docs-svmaps>
+          <!-- Y1A1 pages -->
+              <des-y1a1 name="y1a1"></des-y1a1>
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
             <des-dr1docs name="dr1-docs"></des-dr1docs>
@@ -32738,6 +32775,9 @@ Custom property | Description | Default
          <div class="card-content">
          We request that all papers that use DES public data include the acknowledgement below (TeX format included below). In addition, we would appreciate if authors of all such papers would cite the following papers where appropriate:
 
+        <h5>SVA1</h5>
+        Please refer to the <a href="https://des.ncsa.illinois.edu/releases/sva1" target="_blank">SV Release page</a> for the corresponding references.
+
         <h5>DR1</h5>
         <a href="https://arxiv.org/abs/1801.03181">The Dark Energy Survey Data Release 1, DES Collaboration (2018)</a><br>
         <a href="https://arxiv.org/abs/1801.03177">The Dark Energy Survey Image Processing Pipeline, E. Morganson, et al. (2018)</a><br>
@@ -32812,7 +32852,7 @@ Based in part on observations at Cerro Tololo Inter-American Observatory, Nation
 <p>Please see the details below if you need to contact anyone specifically at DESDM.</p>
 <ul>
 <li>Donald Petravick,&nbsp;<em>Senior Project Manager and Principal Investigator</em>.&nbsp;<em><a href="mailto:petravic@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
-<li>Matias Carrasco Kind, <em>Research and Release Scientist. <a href="mailto:mcarras2@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a> <a href="http://matias-ck.com/" target="_blank" style="color: dimgrey;"><iron-icon icon="hardware:desktop-windows"></iron-icon></a></em></li>
+<li>Matias Carrasco Kind, <em>Senior Research and Release Scientist. <a href="mailto:mcarras2@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a> <a href="http://matias-ck.com/" target="_blank" style="color: dimgrey;"><iron-icon icon="hardware:desktop-windows"></iron-icon></a></em></li>
 <li>Gregory Daues, <em>Research Programmer.</em> <a href="mailto:daues@illinois.edu" style="color: dimgrey;"><em><iron-icon icon="communication:email"></iron-icon></em></a></li>
 <li>Douglas Friedel, <em>Research Programmer</em>. <em><a href="mailto:friedel@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
 <li>Margaret Gelman, <em>Research Scientist.</em> <a href="mailto:mgelman2@illinois.edu" style="color: dimgrey;"><em><iron-icon icon="communication:email"></iron-icon></em></a></li>
@@ -32879,6 +32919,7 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
           <img src="/static/footprint.png" class="img-circle" alt="future" height="120px"> <h1>Future Releases</h1> -->
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/dr1"><paper-button noink="" raised="" class="desButton">DR1 </paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sva1"><paper-button noink="" raised="" class="desButton">SVA1 Gold</paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/y1a1"><paper-button noink="" raised="" class="desButton">Y1A1 Gold</paper-button></a>
             <div style="padding: 20px; text-decoration: none; display: inline;"><paper-button noink="" raised="" disabled="" class="desButton">Future Releases </paper-button></div>
           <!-- <paper-button noink disabled>Future Releases</paper-button> -->
           </div>
@@ -35395,6 +35436,46 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       static get is() { return 'des-docs-redmapper'; }
     }
     window.customElements.define(DesDocsRedmapper.is, DesDocsRedmapper);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1" assetpath="des-y1a1/">
+<template>
+
+<style include="shared-styles"></style>
+
+
+<des-card heading="DES Y1A1 GOLD RELEASE">
+        <div style="text-align: center">
+        <iron-image style="width:395px; height:395px; padding:40px;" sizing="contain" src="/static/images/y1a1/mass.png"></iron-image>
+            <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="/static/images/y1a1/lim_mag_y1.png"></iron-image>
+            </div>
+      <div class="card-content">
+          This is the unofficial release of the DES Year 1 Annual Release 1 (Y1A1) data products. For
+          a detailed description and list of available files of this release please see the links below.
+          </div>
+                <div class="card-content">
+
+      <div style="text-align: center">
+
+          <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank"><paper-button raised="" class="desButton">Files</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/sva1/docs"><paper-button raised="" class="desButton">Documentation</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/sva1/docs/docs-svmaps"><paper-button raised="" class="desButton">Mass Maps</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
+
+
+      </div>
+      </div>
+      </des-card>
+
+
+</template>
+
+<script>
+    class DesY1A1 extends Polymer.Element {
+      static get is() { return 'des-y1a1'; }
+    }
+    window.customElements.define(DesY1A1.is, DesY1A1);
   </script>
 
 </dom-module>
