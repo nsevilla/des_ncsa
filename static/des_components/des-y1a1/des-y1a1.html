@@ -1,0 +1,42 @@
+<dom-module id="des-y1a1">
+<template>
+
+<style include="shared-styles"></style>
+
+
+<des-card  heading="DES Y1A1 GOLD RELEASE" >
+        <div style="text-align: center">
+        <iron-image style="width:395px; height:395px; padding:40px;" sizing="contain"
+                src="/static/images/y1a1/mass.png"></iron-image>
+            <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain"
+                src="/static/images/y1a1/lim_mag_y1.png"></iron-image>
+            </div>
+      <div class="card-content">
+          This is the unofficial release of the DES Year 1 Annual Release 1 (Y1A1) data products. For
+          a detailed description and list of available files of this release please see the links below.
+          </div>
+                <div class="card-content">
+
+      <div style="text-align: center">
+
+          <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank"><paper-button   raised  class="desButton">Files</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/sva1/docs"><paper-button   raised  class="desButton" >Documentation</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/sva1/docs/docs-svmaps"><paper-button   raised  class="desButton" >Mass Maps</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button   raised class="desButton">Help</paper-button></a>
+
+
+      </div>
+      </div>
+      </des-card>
+
+
+</template>
+
+<script>
+    class DesY1A1 extends Polymer.Element {
+      static get is() { return 'des-y1a1'; }
+    }
+    window.customElements.define(DesY1A1.is, DesY1A1);
+  </script>
+
+</dom-module>
