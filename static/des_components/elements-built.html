@@ -32307,14 +32307,11 @@ Custom property | Description | Default
                 <app-menu class="sublist2" slot="submenu-content">
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="docs" href="[[rootPath]]releases/sva1/docs" persistent="False">Documentation<iron-icon icon="expand-more"></iron-icon></a>
+                  <a class="app-menu-item" id="needindent" name="gold" href="[[rootPath]]releases/y1a1/gold" persistent="False">Gold Products<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
                 <app-menu class="sublist3" slot="submenu-content">
-                  <a class="app-menu-item" id="needsindent2" name="docs-gold" href="[[rootPath]]releases/sva1/docs/docs-gold">Gold</a>
-                  <a class="app-menu-item" id="needsindent2" name="docs-photoz" href="[[rootPath]]releases/sva1/docs/docs-photoz">Photoz</a>
-                  <a class="app-menu-item" id="needsindent2" name="docs-shear" href="[[rootPath]]releases/sva1/docs/docs-shear">Shear</a>
-                  <a class="app-menu-item" id="needsindent2" name="docs-redmapper" href="[[rootPath]]releases/sva1/docs/docs-redmapper">RedMaPPer</a>
-                  <a class="app-menu-item" id="needsindent2" name="docs-svmaps" href="[[rootPath]]releases/sva1/docs/docs-svmaps">Mass Maps</a>
+                  <a class="app-menu-item" id="needsindent2" name="morphology" href="[[rootPath]]releases/y1a1/gold/morphology">Morphology</a>
+                  <a class="app-menu-item" id="needsindent2" name="classification" href="[[rootPath]]releases/y1a1/gold/classification">Star/Galaxy</a>
                 </app-menu>
                 </app-submenu>
 
@@ -32413,6 +32410,9 @@ Custom property | Description | Default
               <des-docs-svmaps name="docs-svmaps"></des-docs-svmaps>
           <!-- Y1A1 pages -->
               <des-y1a1 name="y1a1"></des-y1a1>
+              <des-y1a1-gold name="gold"></des-y1a1-gold>
+              <des-y1a1-gold-morphology name="morphology"></des-y1a1-gold-morphology>
+              <des-y1a1-gold-classification name="classification"></des-y1a1-gold-classification>
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
             <des-dr1docs name="dr1-docs"></des-dr1docs>
@@ -35448,7 +35448,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <des-card heading="DES Y1A1 GOLD RELEASE">
         <div style="text-align: center">
         <iron-image style="width:395px; height:395px; padding:40px;" sizing="contain" src="/static/images/y1a1/mass.png"></iron-image>
-            <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="/static/images/y1a1/lim_mag_y1.png"></iron-image>
+            <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="/static/images/y1a1/y1a1_footprint.png"></iron-image>
             </div>
       <div class="card-content">
           This is the unofficial release of the DES Year 1 Annual Release 1 (Y1A1) data products. For
@@ -35459,8 +35459,9 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <div style="text-align: center">
 
           <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank"><paper-button raised="" class="desButton">Files</paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/sva1/docs"><paper-button raised="" class="desButton">Documentation</paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/sva1/docs/docs-svmaps"><paper-button raised="" class="desButton">Mass Maps</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/gold"><paper-button raised="" class="desButton">Gold Products </paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/cosmology"><paper-button raised="" class="desButton">Cosmology Products</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/bao"><paper-button raised="" class="desButton"> BAO Products</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
 
 
@@ -35476,6 +35477,286 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       static get is() { return 'des-y1a1'; }
     }
     window.customElements.define(DesY1A1.is, DesY1A1);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-gold" assetpath="des-y1a1/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1A1 Gold Catalogs">
+
+      <div class="card-content">
+            <h2><strong> Overview</strong></h2>
+
+
+<hr>
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1Gold extends Polymer.Element {
+      static get is() { return 'des-y1a1-gold'; }
+    }
+    window.customElements.define(DesY1A1Gold.is, DesY1A1Gold);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-gold-morphology" assetpath="des-y1a1/gold/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1A1 Gold Morphology Catalogs">
+<div class="card-content">
+  <h2>
+    <strong>Morphology Catalog Overview</strong>
+  </h2>
+  <p>In&nbsp;<a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a> w<span style="color: rgb(0,0,0);">e present a structural and morphological catalogue for 45 million objects selected from the first year data of the Dark Energy Survey (DES). Single Sérsic fits and non-parametric measurements are produced for g, r and i filters. The parameters from the best-fitting Sérsic model (total magnitude, half-light radius, Sérsic index, axis ratio and position angle) are measured with GALFIT; the non-parametric coefficients (concentration, asymmetry, clumpiness, Gini, M20) are provided using the Zurich Estimator of Structural Types (ZEST+).</span>
+  </p>
+  <p>
+    <span style="color: rgb(0,0,0);"> To study the statistical uncertainties, we consider a sample of state-of-the-art image simulations with a realistic distribution in the input parameter space and then process and analyse them as we do with real data: this enables us to quantify the observational biases due to PSF blurring and magnitude effects and correct the measurements as a function of magnitude, galaxy size, Sérsic index (concentration for the analysis of the non-parametric measurements) and ellipticity. </span>
+  </p>
+  <p>
+    <span style="color: rgb(0,0,0);">We present the largest structural catalog&nbsp;to date: we find that accurate and complete measurements for all the structural parameters are typically obtained for galaxies with SEXTRACTOR MAG_AUTO_I ≤ 21. Indeed, the parameters in the filters i and r can be overall well recovered up to MAG_AUTO ≤ 21.5, corresponding to a fitting completeness of ~90% below this threshold, for a total of 25 million galaxies. The combination of parametric and non-parametric structural measurements makes this catalog&nbsp;an important instrument to explore and understand how galaxies form and evolve.&nbsp;</span>
+  </p>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>The whole catalog was split in 6 files of ~ 3GB each, here is a list of all the files. which can also be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/all_files.txt">here</a>&nbsp;</p>
+  <ul>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000001.fits">Y1A1_morphological_000001.fits (3.0 GB)</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000002.fits">Y1A1_morphological_000002.fits (3.0 GB)</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000003.fits">Y1A1_morphological_000003.fits (3.0 GB)</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000004.fits">Y1A1_morphological_000004.fits (3.0 GB)</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000005.fits">Y1A1_morphological_000005.fits (3.0 GB)</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000006.fits">Y1A1_morphological_000006.fits (2.4 GB)</a>
+    </li>
+  </ul>
+  <h2>
+    <strong>Catalog Description</strong>
+  </h2>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">COADD_OBJECTS_ID</td>
+        <td colspan="1">Identifier&nbsp; assigned&nbsp; to&nbsp; each&nbsp; object&nbsp; in&nbsp; the&nbsp; co-add&nbsp; DES&nbsp; Y1&nbsp; dataset,&nbsp; reported&nbsp; here&nbsp; from&nbsp; The Gold Catalog</td>
+      </tr>
+      <tr>
+        <td colspan="1">TILENAME</td>
+        <td colspan="1">Column reporting the name of the tile image where the object lies</td>
+      </tr>
+      <tr>
+        <td colspan="1">ID</td>
+        <td colspan="1">Rows enumerator, running for 1 to the total number of entries in the catalog.</td>
+      </tr>
+      <tr>
+        <td colspan="1">RA/DEC</td>
+        <td colspan="1">Coordinates for the objects.</td>
+      </tr>
+      <tr>
+        <td colspan="1">SG</td>
+        <td colspan="1">Linear combination of the star-galaxy classifier SPREAD_MODEL and its uncertainty, SPREADERR_MODEL, according to Equation 4 in <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a>. <br>A cut in SG &gt; 0.005 is recommended</td>
+      </tr>
+      <tr>
+        <td colspan="1">SN_X</td>
+        <td colspan="1">
+          <p>Signal-to-noise expressed as the ratio between FLUX_AUTO_X and FLUXERR_AUTO_X.</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <strong>Selection and pre-fitting classification flags</strong>
+        </td>
+        <td colspan="1">
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">SELECTION_FLAGS_X</td>
+        <td colspan="1">
+          <p>If equal to 1, then the relative object has been selected, according to the requirements described in Section 3.1 of <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a>. It can assume other numerical values in the following cases:</p>
+          <ul style="list-style-type: square;">
+            <li>if the object passes the selection requirements, but is not included in the intersection between the DESDM catalogs and the Y1A1 GOLD catalog, then this flag is set to 2;</li>
+          </ul>
+          <ul style="list-style-type: square;">
+            <li>if the object passes the selection requirements, but it is fainter then GOLD_MAG_AUTO_i = 23 , then the flag is set to 3;</li>
+            <li>if the object enters in the previous category, but it has no match with the Y1A1 GOLD catalog, then the flag is set to 4.<br>
+              <p>If the object is not selected because it doesn’t pass any of the selection requirements, then the SELECTION_FLAGS_X and all<br>the other flags are set to zero. The catalog version made available to the users includes all the objects which have been selected at least in one of the three bands g,r,i</p>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">C_FLAGS_X</td>
+        <td colspan="1">Number of neighbours in the fitted stamp</td>
+      </tr>
+      <tr>
+        <td colspan="1">MAX_OVERLAP_PERC_X</td>
+        <td colspan="1">Percentage of the central galaxy isophotes overlapping with the closest neighbour. If there are noneighbours or no overlapping neighbours, then it is set to 0. <br>A cut in MAX_OVERLAP_PERC_X &lt; 50 is recommended</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <strong>Parametric measurements (GALFIT)</strong>
+        </td>
+        <td colspan="1">
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">MAG_SERSIC_X</td>
+        <td colspan="1">Galfit value for the magnitude of the galaxy. The value already includes the calibration listed in the column MAG_CAL_X.</td>
+      </tr>
+      <tr>
+        <td colspan="1">RE_SERSIC_X</td>
+        <td colspan="1">Galfit measure of the half light radius (or Effective radius) of the galaxy. It is expressed in pixels and is already calibrated. The correction is reported in the column RE_CAL_X.</td>
+      </tr>
+      <tr>
+        <td colspan="1">N_SERSIC_X</td>
+        <td colspan="1">Galfit output for the Sersic Index. The measure is calibrated, and the can find the relative correction in the column N_SERSIC_CAL_X</td>
+      </tr>
+      <tr>
+        <td colspan="1">ELLIPTICITY_SERSIC_X</td>
+        <td colspan="1">Ellipticity of the galaxy, calculated by subtracting from unity the Galfit estimate for the axis-ratio. The value is corrected and the calibration is accessible through the column ELLIPTICITY_SERSIC_CAL_X.</td>
+      </tr>
+      <tr>
+        <td colspan="1">OUTLIERS_X</td>
+        <td colspan="1">If equal to 1, it labels the objects classified as outliers in the catalogue validation process</td>
+      </tr>
+      <tr>
+        <td colspan="1">FIT_STATUS_X</td>
+        <td colspan="1">If equal to 1, this flag selects all the objects with a successfully validated and calibrated converged fit. See note on <span> </span>
+          <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a> about this Column.</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <strong>Non-Parametric Coefficients (ZEST+)</strong>
+        </td>
+        <td colspan="1">
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">SELECTION_NP_X</td>
+        <td colspan="1">If equal to 1, the object is selected in the X filter, otherwise it is 0.</td>
+      </tr>
+      <tr>
+        <td colspan="1">FIT_STATUS_NP_X</td>
+        <td colspan="1">If equal to 1, this flag selects all the objects with successfully validated and calibrated measurements.</td>
+      </tr>
+      <tr>
+        <td colspan="1">CONCENTRATION_X</td>
+        <td colspan="1">ZEST+ measurement&nbsp; for&nbsp; the&nbsp; Concentration&nbsp; of&nbsp; light.&nbsp; See&nbsp; Equation&nbsp; 11&nbsp; from <span> </span>
+          <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a> for&nbsp; its&nbsp; definition.&nbsp; The calibration vector is listed in the column CONCENTRATION_CAL_X.</td>
+      </tr>
+      <tr>
+        <td colspan="1">ASYMMETRY_X</td>
+        <td colspan="1">
+          <p>ZEST+ value for the Asymmetry (see Equation 16 <span> from </span>
+            <span> </span>
+            <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a> ).</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">CLUMPINESS_X</td>
+        <td colspan="1">ZEST+ value for the Clumpiness (see Equation 17 <span> from </span>
+          <span> </span>
+          <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a> ).</td>
+      </tr>
+      <tr>
+        <td colspan="1">GINI_X&nbsp;</td>
+        <td colspan="1">Measure of the Gini parameter, defined in Equation 18 <span> from </span>
+          <span> </span>
+          <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a> .</td>
+      </tr>
+      <tr>
+        <td colspan="1">M20_X&nbsp;</td>
+        <td colspan="1">Measure of the M20 parameter, for more details see Equation 20 <span> from </span>
+          <span> </span>
+          <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1GoldMorphology extends Polymer.Element {
+      static get is() { return 'des-y1a1-gold-morphology'; }
+    }
+    window.customElements.define(DesY1A1GoldMorphology.is, DesY1A1GoldMorphology);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-gold-classification" assetpath="des-y1a1/gold/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1A1 Gold Star/Galaxy Separation">
+<div class="card-content">
+
+
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1GoldClassification extends Polymer.Element {
+      static get is() { return 'des-y1a1-gold-classification'; }
+    }
+    window.customElements.define(DesY1A1GoldClassification.is, DesY1A1GoldClassification);
   </script>
 
 </dom-module>
