@@ -36028,9 +36028,210 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <des-card heading="Y1A1 Gold Star/Galaxy Separation">
 <div class="card-content">
 
-
-
-
+  <h2>
+    <strong>Overview</strong>
+  </h2>
+  <p>
+    <span style="color: rgb(0,0,0);">In <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. (2018)</a> we perform a comparison of different approaches to star-galaxy classification using the broad-band photometric data from Year 1 of the Dark Energy Survey. This is done by performing a wide range of tests with and without external `truth' information, which can be ported to other similar datasets. We make a broad evaluation of the performance of the classifiers in two science cases with DES data that are most affected by this systematic effect: large-scale structure and Milky Way studies. In general, even though the default morphological classifiers used for DES Y1 cosmology studies are sufficient to maintain a low level of systematic contamination from stellar mis-classification, contamination can be reduced to the O(1%) level by using multi-epoch and infrared information from external datasets. For Milky Way studies the stellar sample can be augmented by ~20% for a given flux limit.</span>
+  </p>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>The catalogs included here are of two types:</p>
+  <ul>
+    <li>Calibration catalogs of DES measurements matched to external imaging or spectroscopic data, which serve as 'truth' references.</li>
+    <li>A 'wide' catalog including ~95M sources with additional measurements of different star-galaxy classifiers.</li>
+  </ul>
+  <p>
+    <strong>Files:</strong>
+  </p>
+  <p>All files associated with the star/galaxy separation tests can be found here:</p>
+  <p>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/">http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/</a>
+  </p>
+  <p>Or from individual links below:</p>
+  <ul>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_cosmos_tests_v2.fits">sgsep_cosmos_tests_v2.fits (23MB)</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_hsc_tests_v2.fits">sgsep_hsc_tests_v2.fits (3MB)</a>&nbsp;</li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_stripe82_tests_v2.fits">sgsep_stripe82_tests_v2.fits (9.4MB)</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_validation_masked_nopzs.fits">sgsep_validation_masked_nopzs.fits (16GB)</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_vvds_tests_v2.fits">sgsep_vvds_tests_v2.fits (1MB)</a>
+    </li>
+  </ul>
+  <h2>
+    <strong>Catalog Description</strong>
+  </h2>
+  <p>The following columns describe the information in the calibration catalogs. NB some of the columns might be absent in some of them. See <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. 2018</a> for a full description of the classifiers included here.</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">COADD_OBJECTS_ID</td>
+        <td colspan="1">Identifier&nbsp; assigned&nbsp; to&nbsp; each&nbsp; object&nbsp; in&nbsp; the&nbsp; co-add&nbsp; DES&nbsp; Y1&nbsp; dataset,&nbsp; reported&nbsp; here&nbsp; from&nbsp; The Gold Catalog</td>
+      </tr>
+      <tr>
+        <td colspan="1">RA/DEC</td>
+        <td colspan="1">Coordinates for the objects.</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>
+            <span style="color: rgb(0,0,0);">MAG_AUTO_{G|R|I|Z|Y}</span>
+          </p>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">MAGERR_AUTO_{G|R|I|Z|Y}</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p class="p1">
+            <span class="s1">MAG_CM_MOF_</span>{<span style="color: rgb(0,0,0);">G|R|I|Z</span>}</p>
+        </td>
+        <td colspan="1">
+          <p>Magnitude estimation, using the MOF code (see Drlica Wagner et al. 2018) from a Gaussian mixture model fit to the multiple epochs composing the detection. This</p>
+          <p>magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in <span>Drlica Wagner et al. 2018. </span>[mag]</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p class="p1">
+            <span class="s1">MAG_PSF_MOF_<span>{</span>
+              <span style="color: rgb(0,0,0);">G|R|I|Z</span>
+              <span>}</span>
+            </span>
+          </p>
+        </td>
+        <td colspan="1">
+          <span>
+            <span>Magnitude estimation, using the MOF code (see Drlica Wagner et al. 2018) using the flux through the PSF estimated model.</span>
+          </span>
+          <p>This magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in Drlica Wagner et al. 2018. [mag]</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">CONCENTRATION_MOF_<span>{</span>
+          <span style="color: rgb(0,0,0);">G|R|I|Z</span>
+          <span>}</span>
+        </td>
+        <td colspan="1">
+          <span>MAG_PSF_MOF_</span>
+          <span>{</span>
+          <span style="color: rgb(0,0,0);">G|R|I|Z</span>
+          <span>} - <span class="s1">MAG_CM_MOF_</span>
+            <span>{</span>
+            <span style="color: rgb(0,0,0);">G|R|I|Z</span>
+            <span>}</span>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">CLASS_STAR_I</td>
+        <td colspan="1">SExtractor's neural network star-galaxy classifier, measured on the i-band coadd image. 0 – extended; 1 – point source.</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">SPREAD_MODEL_I</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span style="color: rgb(0,0,0);">SPREADERR_MODEL_I</span>
+        </td>
+        <td>
+          <span style="color: rgb(0,0,0);">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">CM_T</td>
+        <td colspan="1">A size estimator from the MOF pipeline, this is the <span style="color: rgb(34,34,34);">parameter in the Gaussian mixture model corresponding to the trace of the unweighted</span>
+          <br>
+          <span style="color: rgb(34,34,34);">second moments matrix.</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">CM_T_ERR</td>
+        <td colspan="1">Error on CM_T</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p class="p1">
+            <span class="s1">ADABOOST_PGAL</span>
+          </p>
+        </td>
+        <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the SExtractor outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p class="p1">
+            <span class="s1">ADABOOST_PGAL_MOF</span>
+          </p>
+        </td>
+        <td colspan="1">
+          <span>The star-galaxy classifier using a machine learning framework based on the scikit package, using the MOF outputs. </span>
+          <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p class="p1">
+            <span class="s1">GALSIFT_PGAL_MOF</span>
+          </p>
+        </td>
+        <td colspan="1">
+          <span>The star-galaxy classifier using the machine learning method based on MultiClass (Soumagnac et al. 2015), using MOF outputs. </span>
+          <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p class="p1">
+            <span class="s1">MCAL_RATIO</span>
+          </p>
+        </td>
+        <td colspan="1">The size ratio between the model fit, using a single Gaussian, and a PSF fit, from the metacalibration pipeline (Sheldon &amp; Huff 2017, Huff &amp; Mandelbaum 2017).</td>
+      </tr>
+      <tr>
+        <td colspan="1">SVMPRED</td>
+        <td colspan="1">A Support Vector Machine prediction using FLUX_RADIUS, MAG_AUTO and SPREAD_MODEL.</td>
+      </tr>
+      <tr>
+        <td colspan="1">BPZ_MC</td>
+        <td colspan="1">A photometric redshift prediction using the BPZ (Benítez 2000) template fitting code.</td>
+      </tr>
+      <tr>
+        <td colspan="1">TRUE_CLASS</td>
+        <td colspan="1">The 'truth' value for the object, according to the matched catalog (ADD DESCRIPTION HERE ON HOW THIS IS OBTAINED).</td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
 </des-card>
@@ -36306,173 +36507,172 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <des-card heading="Y1A1 Gold Observing Conditions">
 <div class="card-content">
-
-  <h2>
-    <strong>Overview</strong>
-  </h2>
-  <p>
-    <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>&nbsp; we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming cosmological analyses. The Y1A1 GOLD data set is assembled from multiple epochs of DES imaging and consists of calibrated photometric zero-points, object catalogs, and ancillary data products—e.g., maps of survey depth and observing conditions, star–galaxy classification, and photometric redshift estimates— The Y1A1 GOLD wide-area object catalog consists of ∼ 137 million objects detected in co-added images covering ∼ 1800 {\deg }</span>
-    <sup>2</sup>
-    <span style="color: rgb(0,0,0);">&nbsp;in the DES grizY filters. </span>
-  </p>
-  <p>
-    <span style="color: rgb(0,0,0);">
-      <br>
-    </span>
-  </p>
-  <p>
-    <span style="color: rgb(0,0,0);">In this page we share the observing condition maps created from DESDM products.<br>
-    </span>
-  </p>
-  <h2>
-    <strong>
-      <span style="color: rgb(0,0,0);">Download</span>
-    </strong>
-  </h2>
-  <p>
-    <span style="color: rgb(0,0,0);">The observing conditions maps are distributed separately for the two wide Y1A1 regions, <strong>SPT</strong> and <strong>STRIPE82</strong>. In both cases, these are <a href="https://healpix.jpl.nasa.gov/">healpix</a> maps, in RING ordering, equatorial coordinates at nside=4096 that have been compressed in a <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">zip</a> file.&nbsp; For the SPT observing conditions, we further divide the data into various zip files, two per band (grizY), one with observing conditions related to FWHM (SPT_band_X_FWHM), and another file with the rest of observables (SPT_band_X_ALLBUTFWHM).</span>
-  </p>
-  <p>
-    <span style="color: rgb(0,0,0);">
-      <br>
-    </span>
-  </p>
-  <ul>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_STRIPE82.zip">Observing conditions for STRIPE82 (217M)</a>
-      </span>
-      <br>
-      <span style="color: rgb(0,0,0);">
-        <br>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_g_FWHM.zip">Y1A1NEW_COADD_SPT_band_g_FWHM.zip (213M)</a>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_g_ALLBUTFWHM.zip">Y1A1NEW_COADD_SPT_band_g_ALLBUTFWHM.zip (253M)</a>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_r_FWHM.zip">Y1A1NEW_COADD_SPT_band_r_FWHM.zip (206M)</a>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_r_ALLBUTFWHM.zip">Y1A1NEW_COADD_SPT_band_r_ALLBUTFWHM.zip (269M)</a>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_i_FWHM.zip">Y1A1NEW_COADD_SPT_band_i_FWHM.zip (206M)</a>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_i_ALLBUTFWHM.zip">Y1A1NEW_COADD_SPT_band_i_ALLBUTFWHM.zip (243M)</a>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_z_FWHM.zip">Y1A1NEW_COADD_SPT_band_z_FWHM.zip (210M)</a>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_z_ALLBUTFWHM.zip">Y1A1NEW_COADD_SPT_band_z_ALLBUTFWHM.zip (249M)</a>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_Y_FWHM.zip">Y1A1NEW_COADD_SPT_band_Y_FWHM.zip (204M)</a>
-      </span>
-    </li>
-    <li>
-      <span style="color: rgb(0,0,0);">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT_band_Y_ALLBUTFWHM.zip">Y1A1NEW_COADD_SPT_band_Y_ALLBUTFWHM.zip (292M)</a>
-      </span>
-    </li>
-  </ul>
-  <p>
+<h2>
+  <strong>Overview</strong>
+</h2>
+<p>
+  <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>&nbsp; we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming cosmological analyses. The Y1A1 GOLD data set is assembled from multiple epochs of DES imaging and consists of calibrated photometric zero-points, object catalogs, and ancillary data products—e.g., maps of survey depth and observing conditions, star–galaxy classification, and photometric redshift estimates— The Y1A1 GOLD wide-area object catalog consists of ∼ 137 million objects detected in co-added images covering ∼ 1800 {\deg }</span>
+  <sup>2</sup>
+  <span style="color: rgb(0,0,0);">&nbsp;in the DES grizY filters. </span>
+</p>
+<p>
+  <span style="color: rgb(0,0,0);">
     <br>
-  </p>
-  <h2>
-    <strong>
-      <span style="color: rgb(0,0,0);">Description</span>
-    </strong>
-  </h2>
-  <p>
-    <span style="color: rgb(0,0,0);">For each band g,r,i,z,Y we have the following observing condition maps:&nbsp; </span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">AIRMASS_coaddweights3_mean, AIRMASS_mean</span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">count_fracdet</span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">EXPTIME_total</span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">FWHM_FROMFLUXRADIUS_MEAN_coaddweights3_mean, <span style="color: rgb(0,0,0);">
-        <span style="color: rgb(0,0,0);">FWHM_FROMFLUXRADIUS_MEAN_mean</span>
-      </span>
-    </span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">FWHM_PIXELFREE_MEAN_coaddweights3_mean, <span style="color: rgb(0,0,0);">FWHM_PIXELFREE_MEAN_mean</span>,</span>
-  </p>
-  <p style="margin-left: 30.0px;">
+  </span>
+</p>
+<p>
+  <span style="color: rgb(0,0,0);">In this page we share the observing condition maps created from DESDM products.<br>
+  </span>
+</p>
+<h2>
+  <strong>
+    <span style="color: rgb(0,0,0);">Download</span>
+  </strong>
+</h2>
+<p>
+  <span style="color: rgb(0,0,0);">The observing conditions maps are distributed separately for the two wide Y1A1 regions, <strong>SPT</strong> and <strong>STRIPE82</strong>. </span>
+</p>
+<p>
+  <span style="color: rgb(0,0,0);">In both cases, these are <a href="https://healpix.jpl.nasa.gov/">healpix</a> maps, in RING ordering schema, equatorial coordinates at nside = 4096 that have been compressed in a <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">zip</a> file.&nbsp;&nbsp;</span>
+</p>
+<p>
+  <strong>
+    <span style="color: rgb(0,0,0);">Files</span>
+  </strong>
+</p>
+<ul>
+  <li>
     <span style="color: rgb(0,0,0);">
-      <span style="color: rgb(0,0,0);">
-        <span style="color: rgb(0,0,0);">
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_STRIPE82.zip">Y1A1NEW_COADD_STRIPE82.zip (121M)</a>
+    </span>
+  </li>
+  <li>
+    <span style="color: rgb(0,0,0);">
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT.zip">Y1A1NEW_COADD_SPT.zip (1.3G)</a>
+    </span>
+  </li>
+</ul>
+<h2>
+  <strong>
+    <span style="color: rgb(0,0,0);">Description</span>
+  </strong>
+</h2>
+<p>
+  <span style="color: rgb(0,0,0);">For each band g,r,i,z,Y we have the following observing condition maps:&nbsp; </span>
+</p>
+<table class="wrapped">
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <span style="color: rgb(0,0,0);">AIRMASS_coaddweights3_mean</span>
+      </td>
+      <td>Mean AIRMASS</td>
+    </tr>
+    <tr>
+      <td>
+        <p style="margin-left: 30.0px;">
+          <span style="color: rgb(0,0,0);">count_fracdet</span>
+        </p>
+      </td>
+      <td>Effective area of the pixel, normalized to 1.</td>
+    </tr>
+    <tr>
+      <td>
+        <p style="margin-left: 30.0px;">
+          <span style="color: rgb(0,0,0);">EXPTIME_total</span>
+        </p>
+      </td>
+      <td>Total exposure time</td>
+    </tr>
+    <tr>
+      <td>
+        <p style="margin-left: 30.0px;">
           <span style="color: rgb(0,0,0);">
             <span style="color: rgb(0,0,0);">
-              <span style="color: rgb(0,0,0);">FWHM_MEAN_<span style="color: rgb(0,0,0);">coaddweights3_mean,</span> </span>
+              <span style="color: rgb(0,0,0);">
+                <span style="color: rgb(0,0,0);">
+                  <span style="color: rgb(0,0,0);">
+                    <span style="color: rgb(0,0,0);">
+                      <span style="color: rgb(0,0,0);">FWHM_MEAN_<span style="color: rgb(0,0,0);">coaddweights3_mean</span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>
             </span>
-          </span>FWHM_MEAN_mean</span>
-      </span>
-      <br>
-    </span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">
-      <span style="color: rgb(0,0,0);">FWHM_coaddweights3_mean, FWHM_mean<br>
-      </span>
-    </span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">maglimit3</span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">NSTARS_ACCEPTED_MEAN_coaddweights3_mean, NSTARS_ACCEPTED_MEAN_mean</span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">SKYBRITE_coaddweights3_mean, SKYBRITE_mean</span>
-  </p>
-  <p style="margin-left: 30.0px;">
-    <span style="color: rgb(0,0,0);">SKYSIGMA_coaddweights3_mean, SKYSIGMA_mean<br>
-    </span>
-  </p>
-  <p>
-    <span style="color: rgb(0,0,0);">
-      <br>
-    </span>
-  </p>
-  <p>
-    <span style="color: rgb(0,0,0);">The FWHM quantities (FWHM_MEAN, FWHM_PIXELFREE, FWHM_FROMFLUXRADIUS_MEAN) should be used instead of the simple FWHM<br>
-    </span>
-  </p>
-  <p>
-    <span style="color: rgb(0,0,0);">
-      <br>
-    </span>
-  </p>
+          </span>
+        </p>
+      </td>
+      <td>Mean FWHM</td>
+    </tr>
+    <tr>
+      <td>
+        <p style="margin-left: 30.0px;">
+          <span style="color: rgb(0,0,0);">FWHM_PIXELFREE_MEAN_coaddweights3_mean</span>
+        </p>
+      </td>
+      <td>Other definitions of FWHM</td>
+    </tr>
+    <tr>
+      <td>
+        <span style="color: rgb(0,0,0);">FWHM_FROMFLUXRADIUS_MEAN_coaddweights3_mean</span>
+      </td>
+      <td>Other definitions of FWHM</td>
+    </tr>
+    <tr>
+      <td>
+        <p style="margin-left: 30.0px;">
+          <span style="color: rgb(0,0,0);">maglimit3</span>
+        </p>
+      </td>
+      <td>Magnitude limit at 10sigma for an aperture of 2"</td>
+    </tr>
+    <tr>
+      <td>
+        <p style="margin-left: 30.0px;">
+          <span style="color: rgb(0,0,0);">SKYBRITE_coaddweights3_mean</span>
+        </p>
+      </td>
+      <td>Mean skybrightness</td>
+    </tr>
+    <tr>
+      <td>
+        <span style="color: rgb(0,0,0);">SKYSIGMA_coaddweights3_mean</span>
+      </td>
+      <td>Mean skysigma</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <span style="color: rgb(0,0,0);">
+    <br>
+  </span>
+</p>
+<p style="margin-left: 30.0px;">
+  <span style="color: rgb(0,0,0);">
+    <br>
+  </span>
+</p>
+<p style="margin-left: 30.0px;">
+  <br>
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <span style="color: rgb(0,0,0);">
+    <br>
+  </span>
+</p>
+
 
 
 </div>
