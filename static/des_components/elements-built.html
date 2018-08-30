@@ -32305,6 +32305,7 @@ Custom property | Description | Default
                 </div>
 
                 <app-menu class="sublist2" slot="submenu-content">
+
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id="needindent" name="gold" href="[[rootPath]]releases/y1a1/gold" persistent="False">Gold Products<iron-icon icon="expand-more"></iron-icon></a>
@@ -32315,6 +32316,23 @@ Custom property | Description | Default
                   <a class="app-menu-item" id="needsindent2" name="footprint" href="[[rootPath]]releases/y1a1/gold/footprint">Mask and Depth Maps</a>
                   <a class="app-menu-item" id="needsindent2" name="systematics" href="[[rootPath]]releases/y1a1/gold/systematics">Observing Conditions</a>
                 </app-menu>
+                </app-submenu>
+
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="key-catalogs" href="[[rootPath]]releases/y1a1/key-catalogs" persistent="False">Y1KP Catalogs<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="key-mof" href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">MOF Catalogs</a>
+                </app-menu>
+                </app-submenu>
+
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="bao" href="[[rootPath]]releases/y1a1/bao">BAO Products</a>
+                </div>
                 </app-submenu>
 
                   <app-submenu no-auto-close="">
@@ -32413,10 +32431,13 @@ Custom property | Description | Default
           <!-- Y1A1 pages -->
               <des-y1a1 name="y1a1"></des-y1a1>
               <des-y1a1-gold name="gold"></des-y1a1-gold>
-              <des-y1a1-gold-morphology name="morphology"></des-y1a1-gold-morphology>
-              <des-y1a1-gold-classification name="classification"></des-y1a1-gold-classification>
-              <des-y1a1-gold-footprint name="footprint"></des-y1a1-gold-footprint>
-              <des-y1a1-gold-systematics name="systematics"></des-y1a1-gold-systematics>
+                <des-y1a1-gold-morphology name="morphology"></des-y1a1-gold-morphology>
+                <des-y1a1-gold-classification name="classification"></des-y1a1-gold-classification>
+                <des-y1a1-gold-footprint name="footprint"></des-y1a1-gold-footprint>
+                <des-y1a1-gold-systematics name="systematics"></des-y1a1-gold-systematics>
+              <des-y1a1-key-catalogs name="key-catalogs"></des-y1a1-key-catalogs>
+                <des-y1a1-key-mof name="key-mof"></des-y1a1-key-mof>
+              <des-y1a1-bao name="bao"></des-y1a1-bao>
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
             <des-dr1docs name="dr1-docs"></des-dr1docs>
@@ -35464,7 +35485,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
           <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank"><paper-button raised="" class="desButton">Files</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/gold"><paper-button raised="" class="desButton">Gold Products </paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/cosmology"><paper-button raised="" class="desButton">Cosmology Products</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/key"><paper-button raised="" class="desButton">Key Projects</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/bao"><paper-button raised="" class="desButton"> BAO Products</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
 
@@ -35495,293 +35516,283 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 </style>
 
 
-<des-card heading="Y1A1 Gold Catalogs">
+<des-card heading="Y1A1 Gold Data">
+<div class="card-content">
 
-      <div class="card-content">
-        <h2><b>Y1A1 Gold Overview</b></h2>
-        <p>
-          <span style="color: rgb(0,0,0);">In <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">Drlica-Wagner et al. (2018)</a>&nbsp; we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming cosmological analyses. The Y1A1 GOLD data set is assembled from multiple epochs of DES imaging and consists of calibrated photometric zero-points, object catalogs, and ancillary data products—e.g., maps of survey depth and observing conditions, star–galaxy classification, and photometric redshift estimates—that are necessary for accurate cosmological analyses. The Y1A1 GOLD wide-area object catalog consists of ∼ 137 million objects detected in co-added images covering ∼ 1800 {\deg }</span>
-          <sup>2</sup>
-          <span style="color: rgb(0,0,0);">&nbsp;in the DES grizY filters. </span>
-        </p>
-        <p>
-          <span style="color: rgb(0,0,0);">The 10σ limiting magnitude for galaxies is g = 23.4, r = 23.2, i = 22.5, z = 21.8, and Y = 20.1. </span>
-        </p>
-        <p>
-          <span style="color: rgb(0,0,0);">Photometric calibration of Y1A1 GOLD was performed by combining nightly zero-point solutions with stellar locus regression, and the absolute calibration accuracy is better than 2% over the survey area. DES Y1A1 GOLD is the largest photometric data set at the achieved depth to date, enabling precise measurements of cosmic acceleration at z ≲ 1.</span>
-        </p>
-        <p>
-          <span style="color: rgb(0,0,0);">
-            <br>
-          </span>
-        </p>
-        <p>
-          <span style="color: rgb(0,0,0);">Y1A1 GOLD data set served as input for the creation of value added quantities needed for the cosmological analysis that are also publicly available through this page. The documentation for each of these sub-products can be found in the links below<br>
-          </span>
-        </p>
-        <h2><b>Download</b></h2>
-        <p>The whole catalog was split in 3707 tiles corresponding to the Y1A1 footprint. You can find all the&nbsp;&nbsp;files <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/gold_catalogs/">here</a>.&nbsp;</p>
-        <p>A plain txt file with all the links can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/gold_catalogs/all.txt">here</a>
-        </p>
-        <h2><b>Y1A1 Gold Subproducts</b></h2>
+<h2>
+  <strong>Y1A1 Gold Overview</strong>
+</h2>
+<p>
+  <span style="color: rgb(0,0,0);">In <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">Drlica-Wagner et al. (2018)</a>&nbsp;we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of the DES Y1 cosmological analyses. The Y1A1 GOLD data set is assembled from multiple epochs of DES imaging and consists of calibrated photometric zero-points, object catalogs, and ancillary data products—e.g., maps of survey depth and observing conditions, star–galaxy classification, and photometric redshift estimates—that are necessary for accurate cosmological analyses. The Y1A1 GOLD wide-area object catalog consists of ~137 million objects detected in co-added images covering ~1800 deg</span>
+  <sup>2</sup>
+  <span style="color: rgb(0,0,0);">&nbsp;in the DES grizY filters. </span>
+</p>
+<p>
+  <span style="color: rgb(0,0,0);">The 10σ limiting magnitude (MAG_AUTO) for galaxies is g = 23.4, r = 23.2, i = 22.5, z = 21.8, and Y = 20.1. </span>
+</p>
+<p>
+  <span style="color: rgb(0,0,0);">Photometric calibration of Y1A1 GOLD was performed by combining nightly zero-point solutions with stellar locus regression, and the absolute calibration accuracy is better than 2% over the survey area. DES Y1A1 GOLD is the largest photometric data set at the achieved depth to date, enabling precise measurements of cosmic acceleration at z ≲ 1.</span>
+</p>
+<p>
+  <span style="color: rgb(0,0,0);">The Y1A1 GOLD data set served as input for the creation of value added quantities used in the DES Y1 cosmological analyses that are publicly release here. The documentation for each of these sub-products can be found in the links below.<br>
+  </span>
+</p>
+<h2>
+  <strong>Download</strong>
+</h2>
+<p>The DES Y1A1 GOLD catalog is divided into 3705 files (~11MB) corresponding to 0.73 x 0.73 deg coadd tiles in the Y1A1 footprint. These files can be accessed for download&nbsp;<a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/gold_catalogs/">here</a>.&nbsp;</p>
+<p>A plain text file with all the links can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/gold_catalogs/all.txt">here</a>
+</p>
+<h2>
+  <strong>Y1A1 Gold Subproducts</strong>
+</h2>
+<ul>
+  <li>
+    <a href="[[rootPath]]releases/y1a1/gold/morphology">Morphological Catalogs</a>
+  </li>
+  <li>
+    <a href="[[rootPath]]releases/y1a1/gold/classification">Star/Galaxy Separation</a>
+  </li>
+  <li>
+    <a href="[[rootPath]]releases/y1a1/gold/footprint">Footprint/Depth</a>
+  </li>
+  <li>
+     <a href="[[rootPath]]releases/y1a1/gold/systematics">Observing Conditions</a>
+  </li>
+</ul>
+<h2>
+  <strong>Y1A1 Gold Main Catalog&nbsp; Description</strong>
+</h2>
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">COADD_OBJECTS_ID</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Y1A1 unique object ID</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">RA/DEC</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Equatorial coordinates (J2000) [degrees]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">TILENAME</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Identifier for the coadd tile of each object</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">L/B</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Galactic coordinates [degrees]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">EBV</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">FLAGS_GOLD</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Gold quality flags&nbsp;(one value for all bands). 0 means no issues.</span>
+        <br>
         <ul>
           <li>
-                <a href="[[rootPath]]releases/y1a1/gold/morphology">Morphological Catalogs</a>
+            <span style="color: rgb(0,0,0);">1: OR of SExtractor FLAGS_[GRIZ] &gt; 3 (GOLD is defined as good all of [GRIZ])</span>
           </li>
           <li>
-              <a href="[[rootPath]]releases/y1a1/gold/classification">Star-Galaxy Separation</a>
-          </li>
-          <li>Photometric Redshifts</li>
-          <li>
-            <a href="[[rootPath]]releases/y1a1/gold/footprint">Footprint/Depth</a>
+            <span style="color: rgb(0,0,0);">2: Crazy color (&lt;-1 or &gt;4 in either g-r,r-i or i-z in MAG_AUTO SLR corrected)</span>
           </li>
           <li>
-            <a href="[[rootPath]]releases/y1a1/gold/systematics">Observing Conditions</a>
+            <span style="color: rgb(0,0,0);">4: Bright Blue Squares around bright objects</span>
+            <ul>
+              <li>
+                <span style="color: rgb(0,0,0);">NEPOCHS_G = 0 &amp; MAGERR_AUTO_G &lt; 0.05 &amp; (MAG_MODEL_I - MAG_AUTO_I) &lt; -0.4. SLR corrected magnitudes have been used</span>
+                <br>
+                <span style="color: rgb(0,0,0);">(MAG_DETMODEL_G - MAG_MODEL_G) &gt; 2 &amp; MAG_MODEL_G &lt; 19 are objects near BBS's almost ~100% of the time (very few of them after BBS cuts though). This cut has not been included</span>
+              </li>
+            </ul>
           </li>
-          <li>redMaGiC Catalogs</li>
-          <li>redMaPPer Catalogs</li>
-          <li>Multi-Object-Fitting (MOF) Catalogs</li>
-          <li>Shear Catalogs</li>
-          <li>PSF Catalogs</li>
+          <li>
+            <span style="color: rgb(0,0,0);">8: Bad astrometric colors: ALPHAWIN_J2000/DELTAWIN_J2000 in G is not consistent with position in I within 1" if MAGERR_AUTO_G &lt; 0.22 (NB the slight inconsistency with the bad region definition, which requires MAGERR_AUTO_G &lt; 0.2 and MAG_AUTO_G &lt; 22 for an object to be termed as having a bad astrometric color).</span>
+          </li>
         </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">FLAGS_BADREGION</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Any badregion information from GOLD footprint/bad regions&nbsp;(one value for all bands)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">KRON_RADIUS</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Kron radius measured from detection image [pixel]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">MODEST_CLASS</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Star/Galaxy classification. 1 = GALAXY, 2 = STAR</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">HPIX_16384</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Healpix index at the object position in nside= 16384, NESTED</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
         <p>
-          <br>
+          <span style="color: rgb(0,0,0);">MAG_AUTO_{G|R|I|Z|Y}</span>
         </p>
-        <h2><b>Y1A1 Gold Main Catalog&nbsp; Description</b></h2>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Magnitude estimation, for an elliptical model based on the Kron radius. Already corrected for interstellar extinction using the SLR technique [mag]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">MAGERR_AUTO_{G|R|I|Z|Y}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
         <p>
-          <br>
+          <span style="color: rgb(0,0,0);">FLUX_AUTO_{G|R|I|Z|Y}</span>
         </p>
-        <table>
-          <colgroup>
-            <col>
-            <col>
-          </colgroup>
-          <tbody>
-            <tr>
-              <th>Column Name</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">COADD_OBJECTS_ID</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Y1A1 unique object ID</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">RA/DEC</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Coordinates [degrees]</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">TILENAME</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Identifier of each one of the tiles on which the survey is tiled</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">L/B</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Galactic coordinates [degrees]</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">EBV</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">FLAGS_GOLD</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Gold quality flags&nbsp;(one value for all bands). 0 means no issues.</span>
-                <br>
-                <ul>
-                  <li>
-                    <span style="color: rgb(0,0,0);">1: OR of FLAGS_[GRIZ] &gt; 3 (lose some objects that have flags set in one band, but GOLD is defined as good [GRIZ])</span>
-                  </li>
-                  <li>
-                    <span style="color: rgb(0,0,0);">2: Crazy color (&lt;-1 or &gt;4 in either g-r,r-i or i-z in MAG_AUTO SLR corrected)</span>
-                  </li>
-                  <li>
-                    <span style="color: rgb(0,0,0);">4: Bright Blue Squares around bright objects</span>
-                    <ul>
-                      <li>
-                        <span style="color: rgb(0,0,0);">NEPOCHS_G = 0 &amp; MAGERR_AUTO_G &lt; 0.05 &amp; (MAG_MODEL_I - MAG_AUTO_I) &lt; -0.4. SLR corrected magnitudes have been used</span>
-                        <br>
-                        <span style="color: rgb(0,0,0);">(MAG_DETMODEL_G - MAG_MODEL_G) &gt; 2 &amp; MAG_MODEL_G &lt; 19 are objects near BBS's almost ~100% of the time (very few of them after BBS cuts though). This cut has not been included</span>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span style="color: rgb(0,0,0);">8: Bad astrometric colors: ALPHAWIN_J2000/DELTAWIN_J2000 in G is not consistent with position in I within 1" if MAGERR_AUTO_G &lt; 0.22 (NB the slight inconsistency with the bad region definition, which requires MAGERR_AUTO_G &lt; 0.2 and MAG_AUTO_G &lt; 22 for an object to be termed as having a bad astrometric color).</span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">FLAGS_BADREGION</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Any badregion information from gold footprint/bad regions&nbsp;&nbsp;(one value for all bands)</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">KRON_RADIUS</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Kron radius measured from detection image [pixel]</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">MODEST_CLASS</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Star/Galaxy classification. 1 = GALAXY, 2 = STAR</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">HPIX_16384</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Healpix index at the object position in nside= 16384, NESTED</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <p>
-                  <span style="color: rgb(0,0,0);">MAG_AUTO_{G|R|I|Z|Y}</span>
-                </p>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">MAGERR_AUTO_{G|R|I|Z|Y}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <p>
-                  <span style="color: rgb(0,0,0);">FLUX_AUTO_{G|R|I|Z|Y}</span>
-                </p>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Aperture-flux measurement, elliptical model based on the Kron radius [ADU]. Zeropoint is 30 and fixed for all bands.</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">FLUXERR_AUTO{G|R|I|Z|Y}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Uncertainty in aperture-flux measurement, elliptical model based on the Kron radius [ADU]</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">WAVGCALIB_MAG_PSF_{G|R|I|Z|Y}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Weighted average magnitude, of PSF fit single epoch detections [mag]</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">WAVG_MAGERR_PSF_{G|R|I|Z|Y}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Uncertainty in WAVGCALIB_MAG_PSF_</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">SPREAD_MODEL_{G|R|I|Y|Z}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">SPREADERR_MODEL_{G|R|I|Y|Z}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">WAVG_SPREAD_MODEL_{G|R|I|Y|Z}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Weighted average SPREAD_MODEL from single epochs</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">SLR_SHIFT_{G|R|I|Z|Y}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Zeropoints shifts from the SLR zeropoint adjustment. Already added to magnitudes.</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">OBSERVED_{G|R|I|Y|Z}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Whether an object was observed in each band (comes from NITER_xx &gt; 0)</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">NITER_MODEL_{G|R|I|Z|Y}</span>
-              </td>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">Number of iterations in model fitting photometric measurements</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">
-                <span style="color: rgb(0,0,0);">MU_MAX_{G|R|I|Z|Y}</span>
-              </td>
-              <td colspan="1">
-                <br>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <h2><b>References</b></h2>
-        <p>
-          <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">Drlica-Wagner et al. (2018)</a>
-          <span style="color: rgb(0,0,0);">&nbsp;</span>
-        </p>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Aperture-flux measurement, elliptical model based on the Kron radius [ADU]. Zeropoint is 30 and fixed for all bands.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">FLUXERR_AUTO{G|R|I|Z|Y}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Uncertainty in aperture-flux measurement, elliptical model based on the Kron radius [ADU]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">WAVGCALIB_MAG_PSF_{G|R|I|Z|Y}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Weighted average magnitude, of PSF fit single epoch detections [mag]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">WAVG_MAGERR_PSF_{G|R|I|Z|Y}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Uncertainty in WAVGCALIB_MAG_PSF_</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">SPREAD_MODEL_{G|R|I|Y|Z}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">SPREADERR_MODEL_{G|R|I|Y|Z}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">WAVG_SPREAD_MODEL_{G|R|I|Y|Z}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Weighted average SPREAD_MODEL from single epochs</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">SLR_SHIFT_{G|R|I|Z|Y}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Zeropoints shifts from the SLR zeropoint adjustment. Already added to magnitudes.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">OBSERVED_{G|R|I|Y|Z}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Whether an object was observed in each band (comes from NITER_xx &gt; 0)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">NITER_MODEL_{G|R|I|Z|Y}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Number of iterations in model fitting photometric measurements</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">MU_MAX_{G|R|I|Z|Y}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Peak surface brightness [mag arcsec^-2]</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h2>
+  <strong>References</strong>
+</h2>
+<p>
+  <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">Drlica-Wagner et al. (2018)</a>
+  <span style="color: rgb(0,0,0);">&nbsp;</span>
+</p>
 
-
-
-<hr>
 
 </div>
 </des-card>
@@ -35792,6 +35803,475 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       static get is() { return 'des-y1a1-gold'; }
     }
     window.customElements.define(DesY1A1Gold.is, DesY1A1Gold);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-bao" assetpath="des-y1a1/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1A1 BAO Data">
+<div class="card-content">
+
+  <h2>
+    <strong>Overview</strong>
+  </h2>
+  <p>In <a href="https://arxiv.org/abs/1712.06209">DES Collaboration (2017)</a>&nbsp;we present angular diameter distance measurements obtained by locating the BAO scale in the distribution of galaxies selected from the first year of Dark Energy Survey data.</p>
+  <ul>
+    <li>
+      <span>We consider a sample of over 1.3 million galaxies distributed over a footprint of 1336 deg2 with 0.6&lt;redshift&lt;1 and a typical redshift uncertainty of 0.03(1+z). The sample selection is intended to target red and luminous galaxies and was defined using color and magnitude cuts that optimise trade-offs between number density and redshift uncertainty.</span>
+    </li>
+    <li>
+      <p>We investigate the BAO signal in the projected clustering using three conventions, the angular separation (angular correlation function, wth), the co-moving transverse separation (xirp) and spherical harmonics (2PS).</p>
+    </li>
+    <li>
+      <span>We use 1800 simulations that approximate our sample in order to produce covariance matrices</span>
+    </li>
+  </ul>
+  <p>
+    <span>We measure the angular diameter distance at the effective redshift of our sample (z=0.81) divided by the true physical scale of the BAO feature.&nbsp;Our measurement is released as a likelihood for alpha, with alpha defined </span>
+  </p>
+  <p>
+    <span>alpha = DA (zeff) rd_fid/(DA_fid(zeff) rd)<br>
+    </span>
+  </p>
+  <p>In our work, zeff=0.81, rd_fid = 153.44 Mpc, and DA_fid = 1597.2 Mpc. The likelihood is given below. It has significant non-Gaussian tails and we thus recommend its direct use, rather than any Gaussian approximation.</p>
+  <p>Here we make public all the data products and catalogs used to derived those results.</p>
+  <h2>
+    <strong>References</strong>
+  </h2>
+  <ol>
+    <li>DES Collaboration 2017, ArXiv e-prints 1712.06209: main BAO paper</li>
+    <li>Crocce M. et al, 2017, ArXiv e-prints 1712.06211: sample selection</li>
+    <li>Avila S. et al, 2018, MNRAS, 479, 94: mock catalogues</li>
+    <li>Ross A. J. et al, 2017, MNRAS, 472, 4456: theory paper for xirp</li>
+    <li>Chan K. C. et al., 2018, MNRAS, 480, 3031: theory paper for wth</li>
+    <li>Camacho H. et al., 2018, ArXiv e-prints 1807.10163: theory and measurement paper for Cl's.</li>
+  </ol>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>All the products can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/">here</a>.&nbsp;</p>
+  <p>We provide: the galaxy catalog, the footprint mask, 2 random catalogs containing 25M objects each, the data-vectors of the different observables (wth and Cl in 4 baseline tomographic bins and xirp), the true redshift distributions dn/dz for the 4 baseline tomographic bins, the full covariance for each observable, and the final likelihood.</p>
+  <h3>Catalog, dn/dz, footprint and associated randoms</h3>
+  <ul>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/DES_Y1A1_LSSBAO_v1.0_CATALOG.fits">DES_Y1A1_LSSBAO_v1.0_CATALOG.fits</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/LSSBAO_CALIBRATED_dNdZ/">LSSBAO_CALIBRATED_dNdZ</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/DES_Y1A1_LSSBAO_v1.0_MASK_HPIX4096RING.fits">DES_Y1A1_LSSBAO_v1.0_MASK_HPIX4096RING.fits</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/DES_Y1A1_LSSBAO_v1.0_20xrandoms0.fits">DES_Y1A1_LSSBAO_v1.0_20xrandoms0.fits</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/DES_Y1A1_LSSBAO_v1.0_20xrandoms1.fits">DES_Y1A1_LSSBAO_v1.0_20xrandoms1.fits</a>
+    </li>
+  </ul>
+  <h3>Data vectors and likelihoods</h3>
+  <ul>
+    <li>
+      <p>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/mainBAOpaper/DES_Y1A1_LSSBAO_likelihood.dat">Consensus BAO sample likelihood</a>
+      </p>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/">Angular Correlation Function w(th)</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/xir/">Co-moving Transverse Correlation Function xi(r)</a>
+    </li>
+    <li>Spherical Harmonics Cl's (Coming Soon)</li>
+  </ul>
+  <h2>
+    <strong>Description</strong>
+  </h2>
+  <h3>
+    <span class="toc-item-body">
+      <span class="toc-link">Catalog, dn/dz, footprint and associated randoms</span>
+    </span>
+  </h3>
+  <h4>
+    <br>DES_Y1A1_LSSBAO_v1.0_CATALOG.fits</h4>
+  <p>This is the main BAO sample catalog detailed in <span class="MathJax">
+      <a href="https://arxiv.org/abs/1712.06211">Crocce et al. (2018)</a>
+    </span>
+  </p>
+  <p>
+    <br>
+  </p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>Column Name</p>
+        </th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">ID</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Y1A1 unique object ID (Equivalent to COADD_OBJECTS_ID in other Gold products)<br>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">RA/DEC</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Coordinates [degrees]</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">z</td>
+        <td colspan="1">DNF photometric redshift best estimate</td>
+      </tr>
+      <tr>
+        <td colspan="1">z_mc</td>
+        <td colspan="1">MonteCarlo realization of DNF photometric PDF distribution</td>
+      </tr>
+      <tr>
+        <td colspan="1">wtot</td>
+        <td colspan="1">
+          <p>The total systematic weight. Thus multiplication of the three weights</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">wdepth</td>
+        <td colspan="1">weights based on fits against relationships with g band depths</td>
+      </tr>
+      <tr>
+        <td colspan="1">wsee</td>
+        <td colspan="1">
+          <p>weights based on fits against relationships with the mean i-band PSF FWHM</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">wst</td>
+        <td colspan="1">Star contamination correction</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>DES_Y1A1_LSSBAO_v1.0_MASK_HPIX4096RING.fits</h4>
+  <p>This is the BAO sample mask, detailed in <span class="MathJax">
+      <a href="https://arxiv.org/abs/1712.06211">Crocce et al. (2018)</a>
+    </span>. It is a Healpix map in order = RING at nside = 4096. The map has as information the effective area per healpix pixel.</p>
+  <h4>LSSBAO_CALIBRATED_dNdZ</h4>
+  <p>The redshift probability distributions for each of the 4 tomographic bins. Each file has two columns, one is the redshift, and the other the estimated true</p>
+  <p>redshift distribution from the 30-band DES-COSMOS field with Sample Variance Cancellation as described in <span class="MathJax">
+      <a href="https://arxiv.org/abs/1712.06211">Crocce et al. (2018)</a>
+    </span>.</p>
+  <p>
+    <br>
+  </p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>File Name</th>
+        <th>photo-z range</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/DNFdNdz30band/dNdzZ30meanSVCMOF-DNF0.60.7.dat">DES_Y1A1_LSSBAO_v1.0_CALIBRATED_dNdZ_0.6_0.7.dat</a>
+          </pre>
+        </td>
+        <td colspan="1">0.6 &lt; photo-z &lt; 0.7<span style="color: rgb(0,0,0);">
+            <br>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/DNFdNdz30band/dNdzZ30meanSVCMOF-DNF0.70.8.dat">DES_Y1A1_LSSBAO_v1.0_CALIBRATED_dNdZ_0.7_0.8.dat</a>
+          </pre>
+        </td>
+        <td colspan="1">0.7 &lt; photo-z &lt; 0.8</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/DNFdNdz30band/dNdzZ30meanSVCMOF-DNF0.80.9.dat">DES_Y1A1_LSSBAO_v1.0_CALIBRATED_dNdZ_0.8_0.9.dat</a>
+          </pre>
+        </td>
+        <td colspan="1">0.8 &lt; photo-z &lt; 0.9</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/DNFdNdz30band/dNdzZ30meanSVCMOF-DNF0.91.0.dat">DES_Y1A1_LSSBAO_v1.0_CALIBRATED_dNdZ_0.9_1.0.dat</a>
+          </pre>
+        </td>
+        <td colspan="1">0.9 &lt; photo-z &lt; 1.0</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>20xrandoms0 and 20xrandoms1</h4>
+  <p>These are the randoms used in the BAO sample analysis. It is divided in two files of 20 times the size of the BAO sample. Concatenating both, you will end with a sample 40 times the size.</p>
+  <ul>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/20xrandoms0_Y1redLSS_Y1_DNFv1.0_z0.6-1.0_MICEwtd.fits">DES_Y1A1_LSSBAO_v1.0_20xrandoms0.fits</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/20xrandoms1_Y1redLSS_Y1_DNFv1.0_z0.6-1.0_MICEwtd.fits">DES_Y1A1_LSSBAO_v1.0_20xrandoms1.fits</a>
+    </li>
+  </ul>
+  <p>
+    <br>
+  </p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>RA</pre>
+        </td>
+        <td colspan="1">Right Ascension (RA)<span style="color: rgb(0,0,0);">
+            <br>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>DEC</pre>
+        </td>
+        <td colspan="1">Declination (DEC)</td>
+      </tr>
+      <tr>
+        <td colspan="1">ZMEAN</td>
+        <td colspan="1">Photo-z</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <br>
+  </p>
+  <h3>Data vectors and likelihoods</h3>
+  <h4>Consensus BAO sample likelihood</h4>
+  <p>This is our final likelihood for the angular diameter distance DA at the effective redshift divided by the sound horizon at the drag epoch (normalized by those quantities for a Planck cosmology, for which (DA/rd)_Planck = 10.41). This is the final result in <a href="https://arxiv.org/abs/1712.06209">DES Collaboration (2017)</a>.</p>
+  <p>The consensus likelihood concides with the one for wth.</p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>File Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/mainBAOpaper/DES_Y1A1_LSSBAO_likelihood.dat">DES_Y1A1_LSSBAO_likelihood.dat</a>
+          </p>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">likelihood for (DA/rd) / (DA/rd)_Planck<br class="confluenceTd">
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Angular Correlation Function w(th)</h4>
+  <p>Angular Correlation Function w(th)</p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>File Name</p>
+        </th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/mainBAOpaper/DES_Y1A1_LSSBAO_v1.0_w2PCF_0.6_0.7.dat">DES_Y1A1_LSSBAO_v1.0_w2PCF_0.6_0.7.dat</a>
+          </p>
+        </td>
+        <td colspan="1">w(th) for 0.6 &lt; z &lt; 0.7<span style="color: rgb(0,0,0);">
+            <br>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/mainBAOpaper/DES_Y1A1_LSSBAO_v1.0_w2PCF_0.7_0.8.dat">DES_Y1A1_LSSBAO_v1.0_w2PCF_0.7_0.8.dat</a>
+          </pre>
+        </td>
+        <td colspan="1">w(th) for 0.7 &lt; z &lt; 0.8</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/mainBAOpaper/DES_Y1A1_LSSBAO_v1.0_w2PCF_0.8_0.9.dat">DES_Y1A1_LSSBAO_v1.0_w2PCF_0.8_0.9.dat</a>
+          </pre>
+        </td>
+        <td colspan="1">w(th) for 0.8 &lt; z &lt; 0.9</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/mainBAOpaper/DES_Y1A1_LSSBAO_v1.0_w2PCF_0.9_1.0.dat">DES_Y1A1_LSSBAO_v1.0_w2PCF_0.9_1.0.dat</a>
+          </pre>
+        </td>
+        <td colspan="1">w(th) for 0.9 &lt; z &lt; 1.0</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/mainBAOpaper/DES_Y1A1_LSSBAO_v1.0_w2PCF_cov.dat">DES_Y1A1_LSSBAO_v1.0_w2PCF_cov.dat</a>
+        </td>
+        <td colspan="1">Mock Covariance matrix, including covariance across tomographic bins</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <br>
+  </p>
+  <h4>Co-moving Transverse Separation xi(r)</h4>
+  <p>Co-moving Transverse Separation Correlation Function xi(rp)</p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>File Name</p>
+        </th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/xir/DES_Y1A1_LSSBAO_v1.0_xirp_0.6_1.0.dat">DES_Y1A1_LSSBAO_v1.0_xirp_0.6_1.0.dat</a>
+          </p>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">xi(rp) measurement between 0.6 &lt; photo-z &lt; 1.0<br class="confluenceTd">
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/xir/DES_Y1A1_LSSBAO_v1.0_xirpcov.dat">DES_Y1A1_LSSBAO_v1.0_xirpcov.dat</a>
+          </pre>
+        </td>
+        <td colspan="1">Mock covariance matrix for xi(rp)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="auto-cursor-target">
+    <br>
+  </p>
+  <p>Spherical Harmonics Cl's&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <p>Coming soon...</p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1Bao extends Polymer.Element {
+      static get is() { return 'des-y1a1-bao'; }
+    }
+    window.customElements.define(DesY1A1Bao.is, DesY1A1Bao);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-key-catalogs" assetpath="des-y1a1/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1KP Catalogs">
+<div class="card-content">
+
+  <h2>
+    <strong>Overview</strong>
+  </h2>
+  <p>
+    <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>&nbsp;we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of the DES Y1 cosmological analyses. The Y1A1 GOLD contains a secondary reduction result, called <strong>MOF</strong>. We used the <strong>
+        <a href="https://github.com/esheldon/ngmixer">ngmix</a>
+      </strong> code (<a href="http://adsabs.harvard.edu/abs/2014MNRAS.444L..25S">Sheldon 2014</a>; <a href="http://iopscience.iop.org/article/10.3847/1538-4357/aa704b/meta">Sheldon &amp; Huff 2017</a>; <a href="http://adsabs.harvard.edu/abs/2016MNRAS.460.2245J">Jarvis et al. 2016</a>) to reanalyze pixel-lelvel data from multi-epoch postage stamps of each object in the Y1A1 GOLD coadd catalog. We used ngmix in multi-epoch, multi-band, and multi-object fit, which we call "<strong>MOF</strong>".</span>
+  </p>
+  <p>
+    <span style="color: rgb(0,0,0);">The MOF photometry served as input for the creation of photometric redshifts and shape catalogs used in weak lensing analysis, for the Redmapper and Redmagic catalogs. These products, together with the PSF modelling with psfex are delivered in this page<br>
+    </span>
+  </p>
+  <h2>
+    <strong>Y1KP Products Download</strong>
+  </h2>
+  <ul>
+    <li>
+    <a href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">Multi-Object-Fitting (MOF) Catalogs and Depth Maps</a>
+    </li>
+    <li>
+      <a href="#">PSF Catalog</a>
+    </li>
+    <li>
+        Shape Catalogs with associated redshift distributions</li>
+    <li>redMaGiC Catalogs (To be released)</li>
+    <li>redMaPPer Catalogs (To be released)</li>
+  </ul>
+  <p>Further information on individual galaxies’ photometric redshifts will be released on 1 Oct 2018.</p>
+  <p>
+    <br>
+  </p>
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyCatalogs extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-catalogs'; }
+    }
+    window.customElements.define(DesY1A1KeyCatalogs.is, DesY1A1KeyCatalogs);
   </script>
 
 </dom-module>
@@ -36027,211 +36507,331 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <des-card heading="Y1A1 Gold Star/Galaxy Separation">
 <div class="card-content">
-
-  <h2>
-    <strong>Overview</strong>
-  </h2>
-  <p>
-    <span style="color: rgb(0,0,0);">In <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. (2018)</a> we perform a comparison of different approaches to star-galaxy classification using the broad-band photometric data from Year 1 of the Dark Energy Survey. This is done by performing a wide range of tests with and without external `truth' information, which can be ported to other similar datasets. We make a broad evaluation of the performance of the classifiers in two science cases with DES data that are most affected by this systematic effect: large-scale structure and Milky Way studies. In general, even though the default morphological classifiers used for DES Y1 cosmology studies are sufficient to maintain a low level of systematic contamination from stellar mis-classification, contamination can be reduced to the O(1%) level by using multi-epoch and infrared information from external datasets. For Milky Way studies the stellar sample can be augmented by ~20% for a given flux limit.</span>
-  </p>
-  <h2>
-    <strong>Download</strong>
-  </h2>
-  <p>The catalogs included here are of two types:</p>
-  <ul>
-    <li>Calibration catalogs of DES measurements matched to external imaging or spectroscopic data, which serve as 'truth' references.</li>
-    <li>A 'wide' catalog including ~95M sources with additional measurements of different star-galaxy classifiers.</li>
-  </ul>
-  <p>
-    <strong>Files:</strong>
-  </p>
-  <p>All files associated with the star/galaxy separation tests can be found here:</p>
-  <p>
-    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/">http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/</a>
-  </p>
-  <p>Or from individual links below:</p>
-  <ul>
-    <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_cosmos_tests_v2.fits">sgsep_cosmos_tests_v2.fits (23MB)</a>
-    </li>
-    <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_hsc_tests_v2.fits">sgsep_hsc_tests_v2.fits (3MB)</a>&nbsp;</li>
-    <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_stripe82_tests_v2.fits">sgsep_stripe82_tests_v2.fits (9.4MB)</a>
-    </li>
-    <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_validation_masked_nopzs.fits">sgsep_validation_masked_nopzs.fits (16GB)</a>
-    </li>
-    <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_vvds_tests_v2.fits">sgsep_vvds_tests_v2.fits (1MB)</a>
-    </li>
-  </ul>
-  <h2>
-    <strong>Catalog Description</strong>
-  </h2>
-  <p>The following columns describe the information in the calibration catalogs. NB some of the columns might be absent in some of them. See <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. 2018</a> for a full description of the classifiers included here.</p>
-  <table>
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <tbody>
-      <tr>
-        <th>Column name</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td colspan="1">COADD_OBJECTS_ID</td>
-        <td colspan="1">Identifier&nbsp; assigned&nbsp; to&nbsp; each&nbsp; object&nbsp; in&nbsp; the&nbsp; co-add&nbsp; DES&nbsp; Y1&nbsp; dataset,&nbsp; reported&nbsp; here&nbsp; from&nbsp; The Gold Catalog</td>
-      </tr>
-      <tr>
-        <td colspan="1">RA/DEC</td>
-        <td colspan="1">Coordinates for the objects.</td>
-      </tr>
-      <tr>
-        <td colspan="1">
-          <p>
-            <span style="color: rgb(0,0,0);">MAG_AUTO_{G|R|I|Z|Y}</span>
-          </p>
-        </td>
-        <td colspan="1">
-          <span style="color: rgb(0,0,0);">Magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">
-          <span style="color: rgb(0,0,0);">MAGERR_AUTO_{G|R|I|Z|Y}</span>
-        </td>
-        <td colspan="1">
-          <span style="color: rgb(0,0,0);">Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">
-          <p class="p1">
-            <span class="s1">MAG_CM_MOF_</span>{<span style="color: rgb(0,0,0);">G|R|I|Z</span>}</p>
-        </td>
-        <td colspan="1">
-          <p>Magnitude estimation, using the MOF code (see Drlica Wagner et al. 2018) from a Gaussian mixture model fit to the multiple epochs composing the detection. This</p>
-          <p>magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in <span>Drlica Wagner et al. 2018. </span>[mag]</p>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">
-          <p class="p1">
-            <span class="s1">MAG_PSF_MOF_<span>{</span>
-              <span style="color: rgb(0,0,0);">G|R|I|Z</span>
-              <span>}</span>
-            </span>
-          </p>
-        </td>
-        <td colspan="1">
-          <span>
-            <span>Magnitude estimation, using the MOF code (see Drlica Wagner et al. 2018) using the flux through the PSF estimated model.</span>
-          </span>
-          <p>This magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in Drlica Wagner et al. 2018. [mag]</p>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">CONCENTRATION_MOF_<span>{</span>
-          <span style="color: rgb(0,0,0);">G|R|I|Z</span>
-          <span>}</span>
-        </td>
-        <td colspan="1">
-          <span>MAG_PSF_MOF_</span>
-          <span>{</span>
-          <span style="color: rgb(0,0,0);">G|R|I|Z</span>
-          <span>} - <span class="s1">MAG_CM_MOF_</span>
-            <span>{</span>
+<h2>
+  <strong>Overview</strong>
+</h2>
+<p>
+  <span style="color: rgb(0,0,0);">In <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. (2018)</a> we perform a comparison of different approaches to star-galaxy classification using the broad-band photometric data from Year 1 of the Dark Energy Survey. This is done by performing a wide range of tests with and without external `truth' information, which can be ported to other similar datasets. We make a broad evaluation of the performance of the classifiers in two science cases with DES data that are most affected by this systematic effect: large-scale structure and Milky Way studies. In general, even though the default morphological classifiers used for DES Y1 cosmology studies are sufficient to maintain a low level of systematic contamination from stellar mis-classification, contamination can be reduced to the O(1%) level by using multi-epoch and infrared information from external datasets. For Milky Way studies the stellar sample can be augmented by ~20% for a given flux limit.</span>
+</p>
+<p>In this page, we include the files used to replicate the results and plots shown in this paper, including DES information crossed-matched with 'truth' information from imaging and spectroscopic surveys, as well as some of the best performant classifiers with predictions calculated for most of the footprint of Y1.</p>
+<h2>
+  <strong>Download</strong>
+</h2>
+<p>The catalogs included here are of two types:</p>
+<ul>
+  <li>Calibration catalogs of DES measurements matched to external imaging or spectroscopic data, which serve as 'truth' references.</li>
+  <li>A 'wide' catalog including ~95M sources with additional measurements of different star-galaxy classifiers.</li>
+</ul>
+<p>
+  <strong>Files:</strong>
+</p>
+<p>All files associated with the star/galaxy separation tests can be found here:</p>
+<p>
+  <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/">http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/</a>
+</p>
+<p>Or from individual links below:</p>
+<ul>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_cosmos_tests_v2.fits">sgsep_cosmos_tests_v2.fits (23MB)</a>&nbsp;<br>This covers DES observations from the Science Verification period and other DECam observations over the <a href="http://cosmos.astro.caltech.edu/">COSMOS</a> field.&nbsp;</li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_hsc_tests_v2.fits">sgsep_hsc_tests_v2.fits (3MB)<br>
+    </a>&nbsp;This covers DES observations from the Science Verification period over two specific fields with Hubble Space Telescope observations (downloaded from the <a href="https://archive.stsci.edu/hst/hsc/">Hubble Source Catalog</a> site) with the ACS camera (other than COSMOS) appropriate for star-galaxy separation tests.</li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_stripe82_tests_v2.fits">sgsep_stripe82_tests_v2.fits (9.4MB)</a>&nbsp;<br>This file covers stripe 82 observations from <a href="https://www.sdss.org/dr13/">SDSS</a>&nbsp;with DES Y1 data.</li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_validation_masked_nopzs.fits">sgsep_validation_masked_nopzs.fits (16GB)</a>&nbsp;<br>This file covers observations in the main Y1 footprint with selected columns from Gold, MOF, and star-galaxy classifiers.</li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_vvds_tests_v2.fits">sgsep_vvds_tests_v2.fits (1MB)<br>
+    </a>This file covers <a href="http://cesam.oamp.fr/vvdsproject/vvds.htm">VVDS</a> observations with DES from the Science Verification period.&nbsp;</li>
+</ul>
+<h2>
+  <strong>Catalog Description</strong>
+</h2>
+<p>The following columns describe the information in the calibration catalogs. NB some of the columns might be absent in some of them. See <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. 2018</a> for a full description of the classifiers included here.</p>
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td colspan="1">COADD_OBJECTS_ID</td>
+      <td colspan="1">Identifier&nbsp; assigned&nbsp; to&nbsp; each&nbsp; object&nbsp; in&nbsp; the&nbsp; co-add&nbsp; DES&nbsp; Y1&nbsp; dataset,&nbsp; reported&nbsp; here&nbsp; from the Gold Catalog</td>
+    </tr>
+    <tr>
+      <td colspan="1">RA/DEC</td>
+      <td colspan="1">Coordinates for the objects.</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>
+          <span style="color: rgb(0,0,0);">MAG_AUTO_{G|R|I|Z|Y}</span>
+        </p>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">MAGERR_AUTO_{G|R|I|Z|Y}</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p class="p1">
+          <span class="s1">MAG_CM_MOF_</span>{<span style="color: rgb(0,0,0);">G|R|I|Z</span>}</p>
+      </td>
+      <td colspan="1">
+        <p>Magnitude estimation, using the MOF code (see Drlica Wagner et al. 2018) from a Gaussian mixture model fit to the multiple epochs composing the detection. This</p>
+        <p>magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in <span>Drlica Wagner et al. 2018. </span>[mag]</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p class="p1">
+          <span class="s1">MAG_PSF_MOF_<span>{</span>
             <span style="color: rgb(0,0,0);">G|R|I|Z</span>
             <span>}</span>
           </span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">CLASS_STAR_I</td>
-        <td colspan="1">SExtractor's neural network star-galaxy classifier, measured on the i-band coadd image. 0 – extended; 1 – point source.</td>
-      </tr>
-      <tr>
-        <td colspan="1">
-          <span style="color: rgb(0,0,0);">SPREAD_MODEL_I</span>
-        </td>
-        <td colspan="1">
-          <span style="color: rgb(0,0,0);">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies.</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span style="color: rgb(0,0,0);">SPREADERR_MODEL_I</span>
-        </td>
-        <td>
-          <span style="color: rgb(0,0,0);">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">CM_T</td>
-        <td colspan="1">A size estimator from the MOF pipeline, this is the <span style="color: rgb(34,34,34);">parameter in the Gaussian mixture model corresponding to the trace of the unweighted</span>
-          <br>
-          <span style="color: rgb(34,34,34);">second moments matrix.</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">CM_T_ERR</td>
-        <td colspan="1">Error on CM_T</td>
-      </tr>
-      <tr>
-        <td colspan="1">
-          <p class="p1">
-            <span class="s1">ADABOOST_PGAL</span>
-          </p>
-        </td>
-        <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the SExtractor outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">
-          <p class="p1">
-            <span class="s1">ADABOOST_PGAL_MOF</span>
-          </p>
-        </td>
-        <td colspan="1">
-          <span>The star-galaxy classifier using a machine learning framework based on the scikit package, using the MOF outputs. </span>
-          <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">
-          <p class="p1">
-            <span class="s1">GALSIFT_PGAL_MOF</span>
-          </p>
-        </td>
-        <td colspan="1">
-          <span>The star-galaxy classifier using the machine learning method based on MultiClass (Soumagnac et al. 2015), using MOF outputs. </span>
-          <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="1">
-          <p class="p1">
-            <span class="s1">MCAL_RATIO</span>
-          </p>
-        </td>
-        <td colspan="1">The size ratio between the model fit, using a single Gaussian, and a PSF fit, from the metacalibration pipeline (Sheldon &amp; Huff 2017, Huff &amp; Mandelbaum 2017).</td>
-      </tr>
-      <tr>
-        <td colspan="1">SVMPRED</td>
-        <td colspan="1">A Support Vector Machine prediction using FLUX_RADIUS, MAG_AUTO and SPREAD_MODEL.</td>
-      </tr>
-      <tr>
-        <td colspan="1">BPZ_MC</td>
-        <td colspan="1">A photometric redshift prediction using the BPZ (Benítez 2000) template fitting code.</td>
-      </tr>
-      <tr>
-        <td colspan="1">TRUE_CLASS</td>
-        <td colspan="1">The 'truth' value for the object, according to the matched catalog (ADD DESCRIPTION HERE ON HOW THIS IS OBTAINED).</td>
-      </tr>
-    </tbody>
-  </table>
+        </p>
+      </td>
+      <td colspan="1">
+        <span>
+          <span>Magnitude estimation, using the MOF code (see Drlica Wagner et al. 2018) using the flux through the PSF estimated model.</span>
+        </span>
+        <p>This magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in Drlica Wagner et al. 2018. [mag]</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">CONCENTRATION_MOF_<span>{</span>
+        <span style="color: rgb(0,0,0);">G|R|I|Z</span>
+        <span>}</span>
+      </td>
+      <td colspan="1">
+        <span>MAG_PSF_MOF_</span>
+        <span>{</span>
+        <span style="color: rgb(0,0,0);">G|R|I|Z</span>
+        <span>} - <span class="s1">MAG_CM_MOF_</span>
+          <span>{</span>
+          <span style="color: rgb(0,0,0);">G|R|I|Z</span>
+          <span>}</span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">CLASS_STAR_I</td>
+      <td colspan="1">SExtractor's neural network star-galaxy classifier (Bertin &amp; Arnouts 1998), measured on the i-band coadd image. 0 – extended; 1 – point source.</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">SPREAD_MODEL_I</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies.</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span style="color: rgb(0,0,0);">SPREADERR_MODEL_I</span>
+      </td>
+      <td>
+        <span style="color: rgb(0,0,0);">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">CM_T</td>
+      <td colspan="1">A size estimator from the MOF pipeline, this is the <span style="color: rgb(34,34,34);">parameter in the Gaussian mixture model corresponding to the trace of the unweighted</span>
+        <br>
+        <span style="color: rgb(34,34,34);">second moments matrix.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">CM_T_ERR</td>
+      <td colspan="1">Error on CM_T</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p class="p1">
+          <span class="s1">ADABOOST_PGAL</span>
+        </p>
+      </td>
+      <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the SExtractor outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p class="p1">
+          <span class="s1">ADABOOST_PGAL_MOF</span>
+        </p>
+      </td>
+      <td colspan="1">
+        <span>The star-galaxy classifier using a machine learning framework based on the scikit package, using the MOF outputs. </span>
+        <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p class="p1">
+          <span class="s1">GALSIFT_PGAL_MOF</span>
+        </p>
+      </td>
+      <td colspan="1">
+        <span>The star-galaxy classifier using the machine learning method based on MultiClass (Soumagnac et al. 2015), using MOF outputs. </span>
+        <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p class="p1">
+          <span class="s1">MCAL_RATIO</span>
+        </p>
+      </td>
+      <td colspan="1">The size ratio between the model fit, using a single Gaussian, and a PSF fit, from the metacalibration pipeline (Sheldon &amp; Huff 2017, Huff &amp; Mandelbaum 2017).</td>
+    </tr>
+    <tr>
+      <td colspan="1">SVMPRED</td>
+      <td colspan="1">A Support Vector Machine prediction using FLUX_RADIUS, MAG_AUTO and SPREAD_MODEL.</td>
+    </tr>
+    <tr>
+      <td colspan="1">HB_PROB</td>
+      <td colspan="1">Probabilistic galaxy prediction using a template fitting code (Fadely et al. 2012, COSMOS only)</td>
+    </tr>
+    <tr>
+      <td colspan="1">JMKSEXT</td>
+      <td colspan="1">J-K from VHS data (stripe 82 only)</td>
+    </tr>
+    <tr>
+      <td colspan="1">BPZ_MC</td>
+      <td colspan="1">A photometric redshift prediction using the BPZ (Benítez 2000) template fitting code.</td>
+    </tr>
+    <tr>
+      <td colspan="1">z</td>
+      <td colspan="1">Available spectroscopic redshift for the object.</td>
+    </tr>
+    <tr>
+      <td colspan="1">TRUE_CLASS</td>
+      <td colspan="1">The 'truth' value for the object, according to the matched catalog (ADD DESCRIPTION HERE ON HOW THIS IS OBTAINED).</td>
+    </tr>
+  </tbody>
+</table>
+<p class="auto-cursor-target">
+  <br>
+</p>
+<p>
+  <br>
+</p>
+<p>The large file spanning most of the Y1 footprint includes the following columns (*NB photometric redshifts from BPZ to be added in the next version*):</p>
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td colspan="1">coadd_object_id</td>
+      <td colspan="1">Identifier&nbsp; assigned&nbsp; to&nbsp; each&nbsp; object&nbsp; in&nbsp; the&nbsp; co-add&nbsp; DES&nbsp; Y1&nbsp; dataset,&nbsp; reported&nbsp; here&nbsp; from the Gold Catalog</td>
+    </tr>
+    <tr>
+      <td colspan="1">ra/dec</td>
+      <td colspan="1">Coordinates for the objects.</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>
+          <span style="color: rgb(0,0,0);">mag_auto_{g|r|i|z}</span>
+        </p>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">magerr_auto_i</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Uncertainty in magnitude estimation in the i band (best signal to noise band on average), for an elliptical model based on the Kron radius [mag]</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">wavgcalib_mag_psf_i</td>
+      <td colspan="1">An estimate of the PSF magnitude, using a weighted average of the PSF magnitudes of the individual single epoch detections corresponding to this specific coadd detection (this means that some faint objects won't have a valid value).</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">spread_model_i</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">spreaderr_model_i</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">modest_class</td>
+      <td colspan="1">A discrete classifier for objects according to their extendedness, based on SPREAD_MODEL_I, see Drlica-Wagner et al. 2018, Sevilla-Noarbe et al. 2018 for details.</td>
+    </tr>
+    <tr>
+      <td colspan="1">class_star_i</td>
+      <td colspan="1">SExtractor's neural network star-galaxy classifier, measured on the i-band coadd image. 0 – extended; 1 – point source.</td>
+    </tr>
+    <tr>
+      <td colspan="1">cm_t</td>
+      <td colspan="1">A size estimator from the MOF pipeline, this is the <span style="color: rgb(34,34,34);">parameter in the Gaussian mixture model corresponding to the trace of the unweighted</span>
+        <br>
+        <span style="color: rgb(34,34,34);">second moments matrix.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">cm_t_err</td>
+      <td colspan="1">Error on cm_t</td>
+    </tr>
+    <tr>
+      <td colspan="1">flags_badregion</td>
+      <td colspan="1">Flags indicating whether the object lies on a 'bad region' as described in Drlica-Wagner et al. 2018. = 0 is a good choice to get rid of any spurious effects.</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p class="p1">adaboost_pgal</p>
+      </td>
+      <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the SExtractor outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p class="p1">adaboost_pgal_mof</p>
+      </td>
+      <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the MOF outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p class="p1">galsift_pgal_mof</p>
+      </td>
+      <td colspan="1">The star-galaxy classifier using the machine learning method based on MultiClass (Soumagnac et al. 2015), using MOF outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  <br>
 
 </div>
 </des-card>
@@ -36258,17 +36858,24 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <des-card heading="Y1A1 Gold Footprint and Depth Maps">
 <div class="card-content">
+
   <h2>
     <strong>Overview</strong>
   </h2>
   <p>
-    <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>&nbsp; we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming cosmological analyses. The Y1A1 GOLD wide-area object catalog consists of ∼ 137 million objects detected in co-added images covering ∼ 1800 {\deg }</span>
+    <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>&nbsp; we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming cosmological analyses. The Y1A1 GOLD wide-area object catalog consists of ~137 million objects detected in co-added images covering ~1800 deg</span>
     <sup>2</sup>
     <span style="color: rgb(0,0,0);">&nbsp;in the DES grizY filters. </span>
   </p>
   <p>
-    <span style="color: rgb(0,0,0);">In this page we present the Y1A1 GOLD footprint maps and 10sigma depth maps in <a href="https://healpix.jpl.nasa.gov/">healpix</a> formats. Depth maps have been calculated without the effect of extinction, so this must be applied on top of these maps, for two independent magnitude definitions: <strong>MAG_AUTO</strong> (from SexTractor) and <strong>MOF</strong> (Multi-Object-Fitting, as explained in the documentation).<br>
-    </span>
+    <span style="color: rgb(0,0,0);">In this page we present the Y1A1 GOLD footprint maps and 10sigma depth maps in <a href="https://healpix.jpl.nasa.gov/">healpix</a> formats. Depth maps have the&nbsp;stellar locus regression (SLR) calibration adjustment applied to them to correct for interstellar extinction and zeropoint nonuniformity</span>
+    <span style="color: rgb(0,0,0);">&nbsp;(for the </span>
+    <strong style="color: rgb(0,0,0);letter-spacing: 0.0px;">MOF&nbsp;</strong>
+    <span style="color: rgb(0,0,0);">depth maps, please go </span>
+    <strong style="color: rgb(0,0,0);letter-spacing: 0.0px;">
+      <a href="#">here</a>
+    </strong>
+    <span style="color: rgb(0,0,0);">).</span>
   </p>
   <p>
     <span style="color: rgb(0,0,0);">The footprint maps are divided into two parts:</span>
@@ -36330,21 +36937,9 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_wide_auto_nside4096_Y_10sigma.fits.gz">y1a1_gold_1.0.2_wide_auto_nside4096_Y_10sigma.fits.gz (25M)</a>
     </li>
   </ul>
-  <h4>10sigma MOF depth maps</h4>
-  <ul>
-    <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_cm_mof_001_nside4096_g_10sigma.fits.gz">y1a1_gold_1.0.2_cm_mof_001_nside4096_g_10sigma.fits.gz (26M)</a>
-    </li>
-    <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_cm_mof_001_nside4096_r_10sigma.fits.gz">y1a1_gold_1.0.2_cm_mof_001_nside4096_r_10sigma.fits.gz (25M)</a>
-    </li>
-    <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_cm_mof_001_nside4096_i_10sigma.fits.gz">y1a1_gold_1.0.2_cm_mof_001_nside4096_i_10sigma.fits.gz (24M)</a>
-    </li>
-    <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_cm_mof_001_nside4096_z_10sigma.fits.gz">y1a1_gold_1.0.2_cm_mof_001_nside4096_z_10sigma.fits.gz (25M)</a>
-    </li>
-  </ul>
+  <p>
+    <br>
+  </p>
   <h2>
     <strong>Description</strong>
   </h2>
@@ -36463,16 +37058,9 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <p>
     <br>
   </p>
-  <p>
-    <span style="color: rgb(0,0,0);">The <strong>10sigma depth</strong> maps are estimated for the <strong>AUTO</strong> and <strong>MOF</strong> magnitudes, appropriate for galaxies, following the procedure of&nbsp;<a class="external-link" href="http://adsabs.harvard.edu/abs/2015arXiv150900870R" rel="nofollow">
-        <span style="color: rgb(0,0,0);">Rykoff et al. (2015)</span>
-      </a>. &nbsp;Maps of the 10σ galaxy limiting magnitude were generated by fitting the magnitude error versus magnitude relationship on large pixels and correlating with small-scale spatially varying survey characteristics. <strong>NO EXTINCTION HAVE BEEN APPLIED IN THESE MAPS</strong>
-      <br>
-    </span>
+  <p>The <strong>10sigma depth</strong> maps are estimated for the <strong>AUTO</strong> magnitude, appropriate for galaxies, following the procedure of&nbsp;<a class="external-link" href="http://adsabs.harvard.edu/abs/2015arXiv150900870R" rel="nofollow">Rykoff et al. (2015)</a>. &nbsp;Maps of the 10σ galaxy limiting magnitude were generated by fitting the magnitude error versus magnitude relationship on large pixels and correlating with small-scale spatially varying survey characteristics. <strong>The depth maps have the stellar locus regression zeropoint corrections applied which account for interstellar extinction.</strong>
   </p>
-  <p>
-    <span style="color: rgb(0,0,0);">Coarse depth measurements were made with NISDE=1024 using secure galaxies selected by the MODEST_CLASS classificator, and good objects and all good region cuts.</span>
-  </p>
+  <p>Coarse depth measurements were made with NISDE=1024 using secure galaxies selected by the MODEST_CLASS classificator, and good objects and all good region cuts.</p>
   <p>For training, systematics maps (nside=4096) were averaged to NSIDE=1024. Only coarse pixels that were completely filled in the given band were used in training. Only pixels that had at least 100 galaxies were used in the training. (Note that for Y band everything had to be done at NSIDE=512 to get sufficient density of galaxies).</p>
   <p>According to simple estimates the AUTO depth maps are good to 6-7%, though 3-4% of this (in quadrature) is due to "pixelization noise". (That is, the high resolution maps should be good, but when you average over a range of depths you necessarily introduce additional noise).</p>
   <p>
@@ -36480,7 +37068,6 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <br>
     </span>
   </p>
-
 
 </div>
 </des-card>
@@ -36491,6 +37078,32 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       static get is() { return 'des-y1a1-gold-footprint'; }
     }
     window.customElements.define(DesY1A1GoldFootprint.is, DesY1A1GoldFootprint);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-key-mof" assetpath="des-y1a1/key-catalogs/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Multi-Object-Fitting (MOF) Catalogs">
+<div class="card-content">
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyMof extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-mof'; }
+    }
+    window.customElements.define(DesY1A1KeyMof.is, DesY1A1KeyMof);
   </script>
 
 </dom-module>
@@ -36507,94 +37120,89 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <des-card heading="Y1A1 Gold Observing Conditions">
 <div class="card-content">
-<h2>
-  <strong>Overview</strong>
-</h2>
-<p>
-  <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>&nbsp; we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming cosmological analyses. The Y1A1 GOLD data set is assembled from multiple epochs of DES imaging and consists of calibrated photometric zero-points, object catalogs, and ancillary data products—e.g., maps of survey depth and observing conditions, star–galaxy classification, and photometric redshift estimates— The Y1A1 GOLD wide-area object catalog consists of ∼ 137 million objects detected in co-added images covering ∼ 1800 {\deg }</span>
-  <sup>2</sup>
-  <span style="color: rgb(0,0,0);">&nbsp;in the DES grizY filters. </span>
-</p>
-<p>
-  <span style="color: rgb(0,0,0);">
-    <br>
-  </span>
-</p>
-<p>
-  <span style="color: rgb(0,0,0);">In this page we share the observing condition maps created from DESDM products.<br>
-  </span>
-</p>
-<h2>
-  <strong>
-    <span style="color: rgb(0,0,0);">Download</span>
-  </strong>
-</h2>
-<p>
-  <span style="color: rgb(0,0,0);">The observing conditions maps are distributed separately for the two wide Y1A1 regions, <strong>SPT</strong> and <strong>STRIPE82</strong>. </span>
-</p>
-<p>
-  <span style="color: rgb(0,0,0);">In both cases, these are <a href="https://healpix.jpl.nasa.gov/">healpix</a> maps, in RING ordering schema, equatorial coordinates at nside = 4096 that have been compressed in a <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">zip</a> file.&nbsp;&nbsp;</span>
-</p>
-<p>
-  <strong>
-    <span style="color: rgb(0,0,0);">Files</span>
-  </strong>
-</p>
-<ul>
-  <li>
-    <span style="color: rgb(0,0,0);">
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_STRIPE82.zip">Y1A1NEW_COADD_STRIPE82.zip (121M)</a>
-    </span>
-  </li>
-  <li>
-    <span style="color: rgb(0,0,0);">
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1NEW_COADD_SPT.zip">Y1A1NEW_COADD_SPT.zip (1.3G)</a>
-    </span>
-  </li>
-</ul>
-<h2>
-  <strong>
-    <span style="color: rgb(0,0,0);">Description</span>
-  </strong>
-</h2>
-<p>
-  <span style="color: rgb(0,0,0);">For each band g,r,i,z,Y we have the following observing condition maps:&nbsp; </span>
-</p>
-<table class="wrapped">
-  <colgroup>
-    <col>
-    <col>
-  </colgroup>
-  <tbody>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>
-        <span style="color: rgb(0,0,0);">AIRMASS_coaddweights3_mean</span>
-      </td>
-      <td>Mean AIRMASS</td>
-    </tr>
-    <tr>
-      <td>
-        <p style="margin-left: 30.0px;">
+
+  <h2>
+    <strong>Overview</strong>
+  </h2>
+  <p>
+    <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>&nbsp; we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming cosmological analyses. The Y1A1 GOLD data set is assembled from multiple epochs of DES imaging and consists of calibrated photometric zero-points, object catalogs, and ancillary data products—e.g., maps of survey depth and observing conditions, star–galaxy classification, and photometric redshift estimates— The Y1A1 GOLD wide-area object catalog consists of ~137 million objects detected in co-added images covering ~1800 deg</span>
+    <sup>2</sup>
+    <span style="color: rgb(0,0,0);">&nbsp;in the DES grizY filters. </span>
+  </p>
+  <p>
+    <span style="color: rgb(0,0,0);letter-spacing: 0.0px;">This page documents the observing condition maps created from the DESDM products.</span>
+  </p>
+  <h2>
+    <strong>
+      <span style="color: rgb(0,0,0);">Download</span>
+    </strong>
+  </h2>
+  <p>
+    <span style="color: rgb(0,0,0);">The observing conditions maps are distributed separately for each band and contains the survey conditions both for SPT and STRIPE82 together.</span>
+  </p>
+  <p>
+    <span style="color: rgb(0,0,0);">In all cases, these are <a href="https://healpix.jpl.nasa.gov/">healpix</a> maps, in RING ordering schema, equatorial coordinates at nside = 4096 that have been compressed in a <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">zip</a> file of&nbsp; ~ 160MB each.&nbsp;&nbsp;</span>
+  </p>
+  <p>
+    <strong>
+      <span style="color: rgb(0,0,0);">Files</span>
+    </strong>
+  </p>
+  <ul>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_g_nside4096_systematics.zip">Y1A1GOLD_band_g_nside4096_systematics.zip</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_r_nside4096_systematics.zip">Y1A1GOLD_band_r_nside4096_systematics.zip</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_i_nside4096_systematics.zip">Y1A1GOLD_band_i_nside4096_systematics.zip</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_z_nside4096_systematics.zip">Y1A1GOLD_band_z_nside4096_systematics.zip</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_Y_nside4096_systematics.zip">Y1A1GOLD_band_Y_nside4096_systematics.zip</a>
+    </li>
+  </ul>
+  <h2>
+    <strong>
+      <span style="color: rgb(0,0,0);">Description</span>
+    </strong>
+  </h2>
+  <p>
+    <span style="color: rgb(0,0,0);">For each band g,r,i,z,Y we have the following observing condition maps:&nbsp; </span>
+  </p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>
+          <span style="color: rgb(0,0,0);">AIRMASS_coaddweights3_mean</span>
+        </td>
+        <td>Mean AIRMASS</td>
+      </tr>
+      <tr>
+        <td>
           <span style="color: rgb(0,0,0);">count_fracdet</span>
-        </p>
-      </td>
-      <td>Effective area of the pixel, normalized to 1.</td>
-    </tr>
-    <tr>
-      <td>
-        <p style="margin-left: 30.0px;">
+        </td>
+        <td>Effective area of the pixel, normalized to 1.</td>
+      </tr>
+      <tr>
+        <td>
           <span style="color: rgb(0,0,0);">EXPTIME_total</span>
-        </p>
-      </td>
-      <td>Total exposure time</td>
-    </tr>
-    <tr>
-      <td>
-        <p style="margin-left: 30.0px;">
+        </td>
+        <td>Total exposure time</td>
+      </tr>
+      <tr>
+        <td>
           <span style="color: rgb(0,0,0);">
             <span style="color: rgb(0,0,0);">
               <span style="color: rgb(0,0,0);">
@@ -36609,71 +37217,56 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
               </span>
             </span>
           </span>
-        </p>
-      </td>
-      <td>Mean FWHM</td>
-    </tr>
-    <tr>
-      <td>
-        <p style="margin-left: 30.0px;">
-          <span style="color: rgb(0,0,0);">FWHM_PIXELFREE_MEAN_coaddweights3_mean</span>
-        </p>
-      </td>
-      <td>Other definitions of FWHM</td>
-    </tr>
-    <tr>
-      <td>
-        <span style="color: rgb(0,0,0);">FWHM_FROMFLUXRADIUS_MEAN_coaddweights3_mean</span>
-      </td>
-      <td>Other definitions of FWHM</td>
-    </tr>
-    <tr>
-      <td>
-        <p style="margin-left: 30.0px;">
+        </td>
+        <td>Mean FWHM</td>
+      </tr>
+      <tr>
+        <td>
           <span style="color: rgb(0,0,0);">maglimit3</span>
-        </p>
-      </td>
-      <td>Magnitude limit at 10sigma for an aperture of 2"</td>
-    </tr>
-    <tr>
-      <td>
-        <p style="margin-left: 30.0px;">
+        </td>
+        <td>Magnitude limit at 10sigma for an aperture of 2"</td>
+      </tr>
+      <tr>
+        <td>
           <span style="color: rgb(0,0,0);">SKYBRITE_coaddweights3_mean</span>
-        </p>
-      </td>
-      <td>Mean skybrightness</td>
-    </tr>
-    <tr>
-      <td>
-        <span style="color: rgb(0,0,0);">SKYSIGMA_coaddweights3_mean</span>
-      </td>
-      <td>Mean skysigma</td>
-    </tr>
-  </tbody>
-</table>
-<p>
-  <span style="color: rgb(0,0,0);">
+        </td>
+        <td>Mean sky brightness</td>
+      </tr>
+      <tr>
+        <td>
+          <span style="color: rgb(0,0,0);">SKYSIGMA_coaddweights3_mean</span>
+        </td>
+        <td>Mean skysigma</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <span style="color: rgb(0,0,0);">
+      <br>
+    </span>
+  </p>
+  <p style="margin-left: 30.0px;">
+    <span style="color: rgb(0,0,0);">
+      <br>
+    </span>
+  </p>
+  <p style="margin-left: 30.0px;">
     <br>
-  </span>
-</p>
-<p style="margin-left: 30.0px;">
-  <span style="color: rgb(0,0,0);">
+  </p>
+  <p>
     <br>
-  </span>
-</p>
-<p style="margin-left: 30.0px;">
-  <br>
-</p>
-<p>
-  <br>
-</p>
-<p>
-  <span style="color: rgb(0,0,0);">
+  </p>
+  <p>
+    <span style="color: rgb(0,0,0);">
+      <br>
+    </span>
+  </p>
+  <p>
     <br>
-  </span>
-</p>
-
-
+  </p>
+  <p>
+    <br>
+  </p>
 
 </div>
 </des-card>
