@@ -231,6 +231,7 @@
                 </div>
 
                 <app-menu class="sublist2" slot="submenu-content">
+
                   <app-submenu no-auto-close>
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id=needindent name="gold" href="[[rootPath]]releases/y1a1/gold" persistent="False">Gold Products<iron-icon icon="expand-more"></iron-icon></a>
@@ -243,6 +244,15 @@
                 </app-menu>
                 </app-submenu>
 
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="key-catalogs" href="[[rootPath]]releases/y1a1/key-catalogs" persistent="False">Y1KP Catalogs<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="key-mof" href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">MOF Catalogs</a>
+                </app-menu>
+                </app-submenu>
 
 
                   <app-submenu no-auto-close>
@@ -352,11 +362,12 @@
           <!-- Y1A1 pages -->
               <des-y1a1 name="y1a1"></des-y1a1>
               <des-y1a1-gold name="gold"></des-y1a1-gold>
-              <des-y1a1-gold-morphology name="morphology"></des-y1a1-gold-morphology>
-              <des-y1a1-gold-classification name="classification"></des-y1a1-gold-classification>
-              <des-y1a1-gold-footprint name="footprint"></des-y1a1-gold-footprint>
-              <des-y1a1-gold-systematics name="systematics"></des-y1a1-gold-systematics>
-
+                <des-y1a1-gold-morphology name="morphology"></des-y1a1-gold-morphology>
+                <des-y1a1-gold-classification name="classification"></des-y1a1-gold-classification>
+                <des-y1a1-gold-footprint name="footprint"></des-y1a1-gold-footprint>
+                <des-y1a1-gold-systematics name="systematics"></des-y1a1-gold-systematics>
+              <des-y1a1-key-catalogs name="key-catalogs"></des-y1a1-key-catalogs>
+                <des-y1a1-key-mof name="key-mof"></des-y1a1-key-mof>
               <des-y1a1-bao name="bao"></des-y1a1-bao>
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
