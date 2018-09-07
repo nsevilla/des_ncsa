@@ -12,6 +12,142 @@
 <des-card heading="redMaGiC Catalogs">
 <div class="card-content">
 
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>In <strong>
+        <a href="https://arxiv.org/abs/1708.01536">Elvin-Poole et at. (2017)</a>
+      </strong> we studied the large-scale observational systematic and measured the clustering signal of a sample consisting of 6.6 x 10<sup>5</sup> luminous red galaxies selected from DES Year 1 using the redMaGiC algorithm over an area of 1321 square degrees. The sample was split into five tomographic redshift bins in the redshift range 0.15 &lt; z &lt; 0.9, has a mean redshift uncertainty per-galaxy of 0.017(1+z).</p>
+    <p>The systematic that we quantified and correct for, by assigning weights to individual galaxies, originate from spurious correlations induced by spatially varying survey properties.</p>
+    <p>This sample was later combined with weak lensing samples in order to produce precise cosmological constraints from the <br/>joint analysis of large-scale structure and lensing correlations (galaxy clustering, galaxy-galaxy lensing and cosmic shear).</p>
+    <p>Here we make public all the data products and catalogs related to the lens sample.</p>
+    <p>At this stage we provide: the galaxy catalog, the footprint mask and random catalogs containing 52M objects.</p>
+    <p>In a future release we will further provide the data-vectors (angular correlation function in 5 tomographic bins) with their covariance and the estimated true redshift distributions (dn/dz) for those bins.</p>
+    <h2>
+      <strong>References</strong>
+    </h2>
+    <ol>
+      <li>
+        <a href="https://arxiv.org/abs/1708.01536">Elvin-Poole J. et al, 2017</a>, ArXiv e-prints 1708.01536: characterisation of the lensing sample (LSS systematics, clustering)</li>
+      <li>
+        <a href="https://arxiv.org/abs/1507.05460">Rozo E. et al. 2016</a>, MNRAS 461, 1431, ArXiv e-prints 1507.05460: description of the redMaGiC algorithm for DES</li>
+      <li>
+        <a href="https://arxiv.org/abs/1708.01530">DES Collaboration 2017</a>, ArXiv e-prints 1708.01530: main 3x2pt cosmological analysis paper</li>
+    </ol>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <p>Catalog, footprint mask, and associated randoms</p>
+    <ul>
+      <li>
+        <p>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits</a>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits">DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits</a>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_RANDOMS.fits">DES_Y1A1_3x2pt_redMaGiC_RANDOMS.fits</a>
+        </p>
+      </li>
+    </ul>
+    <h2>
+      <strong>Description</strong>
+    </h2>
+    <h3>Galaxy Catalog</h3>
+    <p>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits</a>
+    </p>
+    <p>This is the lens sample catalog of redMaGiC galaxies described in <a href="https://arxiv.org/abs/1708.01536">Elvin-Poole et al. (2017)</a>. <br/>In our analysis, the sample was split into 5 tomographic bins.</p>
+    <p>bin 1 : 0.15 &lt; photo-z &lt; 0.30 - galaxies with luminosities L / L* &gt; 0.5<br/>bin 2 : 0.30 &lt; photo-z &lt; 0.45 - galaxies with luminosities L / L* &gt; 0.5<br/>bin 3 : 0.45 &lt; photo-z &lt; 0.60 - galaxies with luminosities L / L* &gt; 0.5<br/>bin 4 : 0.60 &lt; photo-z &lt; 0.75 - galaxies with luminosities L / L* &gt; 1.0<br/>bin 5 : 0.75 &lt; photo-z &lt; 0.90 - galaxies with luminosities L / L* &gt; 1.5</p>
+    <p>Note that if you select galaxies with different tomographic binning you might be mixing luminosities and samples (i.e. we do not include 1 &gt; L/L* &gt; 0.5 with photo-z &gt; 0.6)</p>
+    <p>The catalog format is</p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>
+            <strong>column name</strong>
+          </th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td>ID</td>
+          <td>Y1A1 unique object ID (Equivalent to COADD_OBJECTS_ID in other Gold products)</td>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right Ascension (RA) in degrees</td>
+        </tr>
+        <tr>
+          <td colspan="1">DEC</td>
+          <td colspan="1">Declination (DEC) in degrees</td>
+        </tr>
+        <tr>
+          <td>ZREDMAGIC</td>
+          <td>redmagic photometric redshift</td>
+        </tr>
+        <tr>
+          <td colspan="1">weight</td>
+          <td colspan="1">weight correcting for observational systematics</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Mask</h3>
+    <p>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits">DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits</a>
+    </p>
+    <p>This is the sample final mask, detailed in Elvin-Poole et al. (2017). It is a Healpix map in order = RING at nside = 4096. The map has as information the effective area per healpix pixel</p>
+    <h3>Randoms</h3>
+    <p>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_RANDOMS.fits">DES_Y1A1_3x2pt_redMaGiC_RANDOMS.fits</a>
+    </p>
+    <p>Random catalog associated with the sample. The redshift variable is such that the randoms follow the radial distribution of the data. For projected clustering the redshift variable is not relevant.</p>
+    <p>
+      <br/>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>
+            <p>
+              <strong>column name</strong>
+            </p>
+          </th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right Ascension (RA) in degrees</td>
+        </tr>
+        <tr>
+          <td>DEC</td>
+          <td>Declination (DEC) in degrees</td>
+        </tr>
+        <tr>
+          <td colspan="1">z</td>
+          <td colspan="1">redshift</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+
+
+
+
 </div>
 </des-card>
 </template>
