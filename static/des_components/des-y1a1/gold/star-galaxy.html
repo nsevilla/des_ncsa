@@ -9,333 +9,377 @@
 </style>
 
 
-<des-card heading="Y1A1 Gold Star/Galaxy Separation">
+<des-card heading="Y1 Star-Galaxy Separation">
 <div class="card-content">
-<h2>
-  <strong>Overview</strong>
-</h2>
-<p>
-  <span style="color: rgb(0,0,0);">In <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. (2018)</a> we perform a comparison of different approaches to star-galaxy classification using the broad-band photometric data from Year 1 of the Dark Energy Survey. This is done by performing a wide range of tests with and without external `truth' information, which can be ported to other similar datasets. We make a broad evaluation of the performance of the classifiers in two science cases with DES data that are most affected by this systematic effect: large-scale structure and Milky Way studies. In general, even though the default morphological classifiers used for DES Y1 cosmology studies are sufficient to maintain a low level of systematic contamination from stellar mis-classification, contamination can be reduced to the O(1%) level by using multi-epoch and infrared information from external datasets. For Milky Way studies the stellar sample can be augmented by ~20% for a given flux limit.</span>
-</p>
-<p>In this page, we include the files used to replicate the results and plots shown in this paper, including DES information crossed-matched with 'truth' information from imaging and spectroscopic surveys, as well as some of the best performant classifiers with predictions calculated for most of the footprint of Y1.</p>
-<h2>
-  <strong>Download</strong>
-</h2>
-<p>The catalogs included here are of two types:</p>
-<ul>
-  <li>Calibration catalogs of DES measurements matched to external imaging or spectroscopic data, which serve as 'truth' references.</li>
-  <li>A 'wide' catalog including ~95M sources with additional measurements of different star-galaxy classifiers.</li>
-</ul>
-<p>
-  <strong>Files:</strong>
-</p>
-<p>All files associated with the star/galaxy separation tests can be found here:</p>
-<p>
-  <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/">http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/</a>
-</p>
-<p>Or from individual links below:</p>
-<ul>
-  <li>
-    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_cosmos_tests_v2.fits">sgsep_cosmos_tests_v2.fits (23MB)</a> <br/>This covers DES observations from the Science Verification period and other DECam observations over the <a href="http://cosmos.astro.caltech.edu/">COSMOS</a> field. </li>
-  <li>
-    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_hsc_tests_v2.fits">sgsep_hsc_tests_v2.fits (3MB)<br/>
-    </a> This covers DES observations from the Science Verification period over two specific fields with Hubble Space Telescope observations (downloaded from the <a href="https://archive.stsci.edu/hst/hsc/">Hubble Source Catalog</a> site) with the ACS camera (other than COSMOS) appropriate for star-galaxy separation tests.</li>
-  <li>
-    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_stripe82_tests_v2.fits">sgsep_stripe82_tests_v2.fits (9.4MB)</a> <br/>This file covers stripe 82 observations from <a href="https://www.sdss.org/dr13/">SDSS</a> with DES Y1 data.</li>
-  <li>
-    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_validation_masked_nopzs.fits">sgsep_validation_masked_nopzs.fits (16GB)</a> <br/>This file covers observations in the main Y1 footprint with selected columns from Gold, MOF, and star-galaxy classifiers.</li>
-  <li>
-    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_vvds_tests_v2.fits">sgsep_vvds_tests_v2.fits (1MB)<br/>
-    </a>This file covers <a href="http://cesam.oamp.fr/vvdsproject/vvds.htm">VVDS</a> observations with DES from the Science Verification period. </li>
-</ul>
-<h2>
-  <strong>Catalog Description</strong>
-</h2>
-<p>The following columns describe the information in the calibration catalogs. NB some of the columns might be absent in some of them. See <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. 2018</a> for a full description of the classifiers included here.</p>
-<table>
-  <colgroup>
-    <col/>
-    <col/>
-  </colgroup>
-  <tbody>
-    <tr>
-      <th>Column name</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td colspan="1">COADD_OBJECTS_ID</td>
-      <td colspan="1">Identifier  assigned  to  each  object  in  the  co-add  DES  Y1  dataset,  reported  here  from the Gold Catalog</td>
-    </tr>
-    <tr>
-      <td colspan="1">RA/DEC</td>
-      <td colspan="1">Coordinates for the objects.</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p>
-          <span style="color: rgb(0,0,0);">MAG_AUTO_{G|R|I|Z|Y}</span>
-        </p>
-      </td>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">Magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">MAGERR_AUTO_{G|R|I|Z|Y}</span>
-      </td>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p class="p1">
-          <span class="s1">MAG_CM_MOF_</span>{<span style="color: rgb(0,0,0);">G|R|I|Z</span>}</p>
-      </td>
-      <td colspan="1">
-        <p>Magnitude estimation, using the MOF code (see Drlica Wagner et al. 2018) from a Gaussian mixture model fit to the multiple epochs composing the detection. This</p>
-        <p>magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in <span>Drlica Wagner et al. 2018. </span>[mag]</p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p class="p1">
-          <span class="s1">MAG_PSF_MOF_<span>{</span>
-            <span style="color: rgb(0,0,0);">G|R|I|Z</span>
-            <span>}</span>
-          </span>
-        </p>
-      </td>
-      <td colspan="1">
-        <span>
-          <span>Magnitude estimation, using the MOF code (see Drlica Wagner et al. 2018) using the flux through the PSF estimated model.</span>
-        </span>
-        <p>This magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in Drlica Wagner et al. 2018. [mag]</p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">CONCENTRATION_MOF_<span>{</span>
-        <span style="color: rgb(0,0,0);">G|R|I|Z</span>
-        <span>}</span>
-      </td>
-      <td colspan="1">
-        <span>MAG_PSF_MOF_</span>
-        <span>{</span>
-        <span style="color: rgb(0,0,0);">G|R|I|Z</span>
-        <span>} - <span class="s1">MAG_CM_MOF_</span>
-          <span>{</span>
-          <span style="color: rgb(0,0,0);">G|R|I|Z</span>
-          <span>}</span>
-        </span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">CLASS_STAR_I</td>
-      <td colspan="1">SExtractor's neural network star-galaxy classifier (Bertin &amp; Arnouts 1998), measured on the i-band coadd image. 0 – extended; 1 – point source.</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">SPREAD_MODEL_I</span>
-      </td>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies.</span>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span style="color: rgb(0,0,0);">SPREADERR_MODEL_I</span>
-      </td>
-      <td>
-        <span style="color: rgb(0,0,0);">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">CM_T</td>
-      <td colspan="1">A size estimator from the MOF pipeline, this is the <span style="color: rgb(34,34,34);">parameter in the Gaussian mixture model corresponding to the trace of the unweighted</span>
-        <br/>
-        <span style="color: rgb(34,34,34);">second moments matrix.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">CM_T_ERR</td>
-      <td colspan="1">Error on CM_T</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p class="p1">
-          <span class="s1">ADABOOST_PGAL</span>
-        </p>
-      </td>
-      <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the SExtractor outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p class="p1">
-          <span class="s1">ADABOOST_PGAL_MOF</span>
-        </p>
-      </td>
-      <td colspan="1">
-        <span>The star-galaxy classifier using a machine learning framework based on the scikit package, using the MOF outputs. </span>
-        <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p class="p1">
-          <span class="s1">GALSIFT_PGAL_MOF</span>
-        </p>
-      </td>
-      <td colspan="1">
-        <span>The star-galaxy classifier using the machine learning method based on MultiClass (Soumagnac et al. 2015), using MOF outputs. </span>
-        <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p class="p1">
-          <span class="s1">MCAL_RATIO</span>
-        </p>
-      </td>
-      <td colspan="1">The size ratio between the model fit, using a single Gaussian, and a PSF fit, from the metacalibration pipeline (Sheldon &amp; Huff 2017, Huff &amp; Mandelbaum 2017).</td>
-    </tr>
-    <tr>
-      <td colspan="1">SVMPRED</td>
-      <td colspan="1">A Support Vector Machine prediction using FLUX_RADIUS, MAG_AUTO and SPREAD_MODEL.</td>
-    </tr>
-    <tr>
-      <td colspan="1">HB_PROB</td>
-      <td colspan="1">Probabilistic galaxy prediction using a template fitting code (Fadely et al. 2012, COSMOS only)</td>
-    </tr>
-    <tr>
-      <td colspan="1">JMKSEXT</td>
-      <td colspan="1">J-K from VHS data (stripe 82 only)</td>
-    </tr>
-    <tr>
-      <td colspan="1">BPZ_MC</td>
-      <td colspan="1">A photometric redshift prediction using the BPZ (Benítez 2000) template fitting code.</td>
-    </tr>
-    <tr>
-      <td colspan="1">z</td>
-      <td colspan="1">Available spectroscopic redshift for the object.</td>
-    </tr>
-    <tr>
-      <td colspan="1">TRUE_CLASS</td>
-      <td colspan="1">The 'truth' value for the object, according to the matched catalog (ADD DESCRIPTION HERE ON HOW THIS IS OBTAINED).</td>
-    </tr>
-  </tbody>
-</table>
-<p class="auto-cursor-target">
-  <br/>
-</p>
-<p>
-  <br/>
-</p>
-<p>The large file spanning most of the Y1 footprint includes the following columns (*NB photometric redshifts from BPZ to be added in the next version*):</p>
-<table >
-  <colgroup>
-    <col/>
-    <col/>
-  </colgroup>
-  <tbody>
-    <tr>
-      <th>Column name</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td colspan="1">coadd_object_id</td>
-      <td colspan="1">Identifier  assigned  to  each  object  in  the  co-add  DES  Y1  dataset,  reported  here  from the Gold Catalog</td>
-    </tr>
-    <tr>
-      <td colspan="1">ra/dec</td>
-      <td colspan="1">Coordinates for the objects.</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p>
-          <span style="color: rgb(0,0,0);">mag_auto_{g|r|i|z}</span>
-        </p>
-      </td>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">Magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">magerr_auto_i</span>
-      </td>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">Uncertainty in magnitude estimation in the i band (best signal to noise band on average), for an elliptical model based on the Kron radius [mag]</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">wavgcalib_mag_psf_i</td>
-      <td colspan="1">An estimate of the PSF magnitude, using a weighted average of the PSF magnitudes of the individual single epoch detections corresponding to this specific coadd detection (this means that some faint objects won't have a valid value).</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">spread_model_i</span>
-      </td>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">spreaderr_model_i</span>
-      </td>
-      <td colspan="1">
-        <span style="color: rgb(0,0,0);">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">modest_class</td>
-      <td colspan="1">A discrete classifier for objects according to their extendedness, based on SPREAD_MODEL_I, see Drlica-Wagner et al. 2018, Sevilla-Noarbe et al. 2018 for details.</td>
-    </tr>
-    <tr>
-      <td colspan="1">class_star_i</td>
-      <td colspan="1">SExtractor's neural network star-galaxy classifier, measured on the i-band coadd image. 0 – extended; 1 – point source.</td>
-    </tr>
-    <tr>
-      <td colspan="1">cm_t</td>
-      <td colspan="1">A size estimator from the MOF pipeline, this is the <span style="color: rgb(34,34,34);">parameter in the Gaussian mixture model corresponding to the trace of the unweighted</span>
-        <br/>
-        <span style="color: rgb(34,34,34);">second moments matrix.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">cm_t_err</td>
-      <td colspan="1">Error on cm_t</td>
-    </tr>
-    <tr>
-      <td colspan="1">flags_badregion</td>
-      <td colspan="1">Flags indicating whether the object lies on a 'bad region' as described in Drlica-Wagner et al. 2018. = 0 is a good choice to get rid of any spurious effects.</td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p class="p1">adaboost_pgal</p>
-      </td>
-      <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the SExtractor outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p class="p1">adaboost_pgal_mof</p>
-      </td>
-      <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the MOF outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
-        <p class="p1">galsift_pgal_mof</p>
-      </td>
-      <td colspan="1">The star-galaxy classifier using the machine learning method based on MultiClass (Soumagnac et al. 2015), using MOF outputs. <span style="color: rgb(0,0,0);">Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
-      </td>
-    </tr>
-  </tbody>
-</table>
-  <br/>
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>
+      <span style="color: rgb(0,0,0);">In <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. (2018)</a> we perform a comparison of different approaches to star-galaxy classification using the broad-band photometric data from Year 1 of the Dark Energy Survey. This is done by performing a wide range of tests with and without external 'truth' information, which can be ported to other similar datasets. We make a broad evaluation of the performance of the classifiers in two science cases with DES data that are most affected by this systematic effect: large-scale structure and Milky Way studies. In general, even though the default morphological classifiers used for DES Y1 cosmology studies are sufficient to maintain a low level of systematic contamination from stellar mis-classification, contamination can be reduced to the O(1%) level by using multi-epoch and infrared information from external datasets. For Milky Way studies the stellar sample can be augmented by ~20% for a given flux limit.</span>
+    </p>
+    <p>In this page, we include the files used to replicate the results and plots shown in this paper, including DES information crossed-matched with 'truth' information from imaging and spectroscopic surveys, as well as some of the best performant classifiers with predictions calculated for most of the footprint of Y1.</p>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <p>The catalogs included here are of two types:</p>
+    <ul>
+      <li>Calibration catalogs of DES measurements matched to external imaging or spectroscopic data, which serve as 'truth' references.</li>
+      <li>A 'wide' catalog including ~95M sources with additional measurements of different star-galaxy classifiers.</li>
+    </ul>
+    <p>
+      <strong>Files:</strong>
+    </p>
+    <p>All files associated with the star/galaxy separation tests can be found here:</p>
+    <p>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/">http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/</a>
+    </p>
+    <p>Or from individual links below:</p>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_cosmos_tests_v2.fits">sgsep_cosmos_tests_v2.fits (23MB)</a> <br/>This covers DES observations from the Science Verification period and other DECam observations over the <a href="http://cosmos.astro.caltech.edu/">COSMOS</a> field. </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_hsc_tests_v2.fits">sgsep_hsc_tests_v2.fits (3MB)<br/>
+        </a> This covers DES observations from the Science Verification period over two specific fields with Hubble Space Telescope observations (downloaded from the <a href="https://archive.stsci.edu/hst/hsc/">Hubble Source Catalog</a> site) with the ACS camera (other than COSMOS) appropriate for star-galaxy separation tests.</li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_stripe82_tests_v2.fits">sgsep_stripe82_tests_v2.fits (9.4MB)</a> <br/>This file covers stripe 82 observations from <a href="https://www.sdss.org/dr13/">SDSS</a> with DES Y1 data.</li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_validation_masked_nopzs.fits">sgsep_validation_masked_nopzs.fits (16GB)</a> <br/>This file covers observations in the main Y1 footprint with selected columns from Gold, MOF, and star-galaxy classifiers.</li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/sgsep_vvds_tests_v2.fits">sgsep_vvds_tests_v2.fits (1MB)<br/>
+        </a>This file covers <a href="http://cesam.oamp.fr/vvdsproject/vvds.htm">VVDS</a> observations with DES from the Science Verification period. </li>
+    </ul>
+    <h2>
+      <strong>Catalog Description</strong>
+    </h2>
+    <p>The following columns describe the information in the calibration catalogs. NB some of the columns might be absent in some catalogs. See <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. 2018</a> for a full description of the classifiers included here.</p>
+    <table >
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">COADD_OBJECTS_ID</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Identifier  assigned  to  each  object  in  the  co-add  DES  Y1  dataset,  reported  here  from the Gold Catalog</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">RA/DEC</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Coordinates for the objects [deg]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>
+              <span style="color: rgb(0,0,0);">MAG_AUTO_{G|R|I|Z|Y}</span>
+            </p>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">MAGERR_AUTO_{G|R|I|Z|Y}</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p class="p1">
+              <span style="color: rgb(0,0,0);">
+                <span class="s1">MAG_CM_MOF_</span>{G|R|I|Z}</span>
+            </p>
+          </td>
+          <td colspan="1">
+            <p>
+              <span style="color: rgb(0,0,0);">Magnitude estimation, using the MOF code (see <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">
+                  <span style="color: rgb(0,0,0);">Drlica Wagner et al. (2018</span>
+                </a>)) from a Gaussian mixture model fit to the multiple epochs composing the detection. This</span>
+            </p>
+            <p>
+              <span style="color: rgb(0,0,0);">magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in Drlica Wagner et al. 2018. [mag]</span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p class="p1">
+              <span class="s1" style="color: rgb(0,0,0);">MAG_PSF_MOF_{G|R|I|Z}</span>
+            </p>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Magnitude estimation, using the MOF code (see <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">
+                <span style="color: rgb(0,0,0);">Drlica Wagner et al. (2018)</span>
+              </a>) using the flux through the PSF estimated model.</span>
+            <p>
+              <span style="color: rgb(0,0,0);">This magnitude is corrected by stellar locus regression (including the effect of extinction using SFD98 maps) as explained in <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">
+                  <span style="color: rgb(0,0,0);">Drlica Wagner et al. (2018)</span>
+                </a>. [mag]</span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">CONCENTRATION_MOF_{G|R|I|Z}</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">MAG_PSF_MOF_{G|R|I|Z} - <span class="s1">MAG_CM_MOF_</span>{G|R|I|Z}</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">CLASS_STAR_I</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">SExtractor's neural network star-galaxy classifier (Bertin &amp; Arnouts 1998), measured on the i-band coadd image. 0 – extended; 1 – point source.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">SPREAD_MODEL_I</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span style="color: rgb(0,0,0);">SPREADERR_MODEL_I</span>
+          </td>
+          <td>
+            <span style="color: rgb(0,0,0);">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">CM_T</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">A size estimator from the MOF pipeline, this is the parameter in the Gaussian mixture model corresponding to the trace of the unweighted</span>
+            <br/>
+            <span style="color: rgb(0,0,0);">second moments matrix.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">CM_T_ERR</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Error on CM_T</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p class="p1">
+              <span class="s1" style="color: rgb(0,0,0);">ADABOOST_PGAL</span>
+            </p>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">The star-galaxy classifier using a machine learning framework based on the scikit package, using the SExtractor outputs. Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p class="p1">
+              <span class="s1" style="color: rgb(0,0,0);">ADABOOST_PGAL_MOF</span>
+            </p>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">The star-galaxy classifier using a machine learning framework based on the scikit package, using the MOF outputs. Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p class="p1">
+              <span class="s1" style="color: rgb(0,0,0);">GALSIFT_PGAL_MOF</span>
+            </p>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">The star-galaxy classifier using the machine learning method based on MultiClass (Soumagnac et al. 2015), using MOF outputs. Values closer to 1 correspond to galaxies, larger values correspond to stars.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p class="p1">
+              <span class="s1" style="color: rgb(0,0,0);">MCAL_RATIO</span>
+            </p>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">The size ratio between the model fit, using a single Gaussian, and a PSF fit, from the metacalibration pipeline (Sheldon &amp; Huff 2017, Huff &amp; Mandelbaum 2017).</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">SVMPRED</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">A Support Vector Machine prediction using FLUX_RADIUS, MAG_AUTO and SPREAD_MODEL.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">HB_PROB</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Probabilistic galaxy prediction using a template fitting code (Fadely et al. 2012, COSMOS only)</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">JMKSEXT</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">J-K from VHS data (stripe 82 only)</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">BPZ_MC</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">A photometric redshift prediction using the BPZ (Benítez 2000) template fitting code.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">z</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Available spectroscopic redshift for the object.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">TRUE_CLASS</span>
+          </td>
+          <td colspan="1">
+            <p>
+              <span style="color: rgb(0,0,0);">The 'truth' value for the object, according to the matched catalog. 0 is assigned to galaxies, 1 to stars.</span>
+            </p>
+            <ul>
+              <li>
+                <span style="color: rgb(0,0,0);">COSMOS: truth is given by MU_CLASS from Leauthaud et al. 2007 (1 – extended, 2 – point-like).</span>
+              </li>
+              <li>
+                <span style="color: rgb(0,0,0);">Hubble Source Catalog: truth is given from extendedness coefficient CI (CI &lt; 1.2 for point-like objects).</span>
+              </li>
+              <li>
+                <span style="color: rgb(0,0,0);">VVDS: truth is given according to spectroscopic redshift (z &lt; 0.001 for stars).</span>
+              </li>
+              <li>
+                <span style="color: rgb(0,0,0);">Stripe 82: truth is given according to spectroscopic redshift (z &lt; 0.001 for stars).</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <p>
+      <br/>
+    </p>
+    <p>The large file spanning most of the Y1 footprint includes the following columns (*NB photometric redshifts from BPZ to be added in the next version*):</p>
+    <table >
+      <colgroup>
+        <col />
+        <col />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td colspan="1">coadd_object_id</td>
+          <td colspan="1">Identifier  assigned  to  each  object  in  the  co-add  DES  Y1  dataset,  reported  here  from the Gold Catalog</td>
+        </tr>
+        <tr>
+          <td colspan="1">ra/dec</td>
+          <td colspan="1">Coordinates for the objects.</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>mag_auto_{g|r|i|z}</p>
+          </td>
+          <td colspan="1">Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+        </tr>
+        <tr>
+          <td colspan="1">magerr_auto_i</td>
+          <td colspan="1">Uncertainty in magnitude estimation in the i band (best signal to noise band on average), for an elliptical model based on the Kron radius [mag]</td>
+        </tr>
+        <tr>
+          <td colspan="1">wavgcalib_mag_psf_i</td>
+          <td colspan="1">An estimate of the PSF magnitude, using a weighted average of the PSF magnitudes of the individual single epoch detections corresponding to this specific coadd detection (this means that some faint objects won't have a valid value).</td>
+        </tr>
+        <tr>
+          <td colspan="1">spread_model_i</td>
+          <td colspan="1">Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies.</td>
+        </tr>
+        <tr>
+          <td colspan="1">spreaderr_model_i</td>
+          <td colspan="1">Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</td>
+        </tr>
+        <tr>
+          <td colspan="1">modest_class</td>
+          <td colspan="1">A discrete classifier for objects according to their extendedness, based on SPREAD_MODEL_I, see Drlica-Wagner et al. 2018, Sevilla-Noarbe et al. 2018 for details.</td>
+        </tr>
+        <tr>
+          <td colspan="1">class_star_i</td>
+          <td colspan="1">SExtractor's neural network star-galaxy classifier, measured on the i-band coadd image. 0 – extended; 1 – point source.</td>
+        </tr>
+        <tr>
+          <td colspan="1">cm_t</td>
+          <td colspan="1">A size estimator from the MOF pipeline, this is the parameter in the Gaussian mixture model corresponding to the trace of the unweighted<br/>second moments matrix.</td>
+        </tr>
+        <tr>
+          <td colspan="1">cm_t_err</td>
+          <td colspan="1">Error on cm_t</td>
+        </tr>
+        <tr>
+          <td colspan="1">flags_badregion</td>
+          <td colspan="1">Flags indicating whether the object lies on a 'bad region' as described in <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">Drlica-Wagner et al. (2018)</a>. = 0 is a good choice to get rid of any spurious effects.</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p class="p1">adaboost_pgal</p>
+          </td>
+          <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the SExtractor outputs. Values closer to 1 correspond to galaxies, larger values correspond to stars.</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p class="p1">adaboost_pgal_mof</p>
+          </td>
+          <td colspan="1">The star-galaxy classifier using a machine learning framework based on the scikit package, using the MOF outputs. Values closer to 1 correspond to galaxies, larger values correspond to stars.</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p class="p1">galsift_pgal_mof</p>
+          </td>
+          <td colspan="1">The star-galaxy classifier using the machine learning method based on MultiClass (Soumagnac et al. 2015), using MOF outputs. Values closer to 1 correspond to galaxies, larger values correspond to stars.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+
+
+
 
 </div>
 </des-card>
