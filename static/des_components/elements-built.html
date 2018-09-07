@@ -32337,6 +32337,12 @@ Custom property | Description | Default
 
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="density" href="[[rootPath]]releases/y1a1/density">Y1 Split Density</a>
+                </div>
+                </app-submenu>
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id="needindent" name="file-content" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank">Files</a>
                 </div>
                 </app-submenu>
@@ -32438,6 +32444,7 @@ Custom property | Description | Default
               <des-y1a1-key-catalogs name="key-catalogs"></des-y1a1-key-catalogs>
                 <des-y1a1-key-mof name="key-mof"></des-y1a1-key-mof>
               <des-y1a1-bao name="bao"></des-y1a1-bao>
+              <des-y1a1-density name="density"></des-y1a1-density>
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
             <des-dr1docs name="dr1-docs"></des-dr1docs>
@@ -35501,7 +35508,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <p style="margin-left: 60.0px;">2) <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+catalogs">Y1KP catalogs</a>: This section contains additional science catalogs based on different reduction pipelines. We include the "Multi-object" fitting (MOF) photometry (and their depth maps), photometric redshifts based on MOF, the PSF and shape catalogs used in the weak lensing analyses and the redMaGiC and redMaPPer galaxy catalogs (based on MOF).</p>
       <p style="margin-left: 60.0px;">3) <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products">Y1KP products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y1KP Catalogs described above.</p>
       <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y1a1/bao">Y1 BAO sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based in a combination of the Y1 Gold catalog and MOF photometry.</p>
-      <p style="margin-left: 60.0px;">5) <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1+Density+Split+Statistics">Y1 density split statistics</a>: Data vectors and likelihoods for measuring density split statistics. These results used the Y1KP catalogs described above<strong>.</strong>
+      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y1a1/density">Y1 density split statistics</a>: Data vectors and likelihoods for measuring density split statistics. These results used the Y1KP catalogs described above<strong>.</strong>
         <span style="color: rgb(255,0,0);"> </span>
       </p>
       <p style="text-align: left;">
@@ -36686,6 +36693,269 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       static get is() { return 'des-y1a1-bao'; }
     }
     window.customElements.define(DesY1A1Bao.is, DesY1A1Bao);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-density" assetpath="des-y1a1/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 Density Split Statistics">
+<div class="card-content">
+
+    <p>
+      <br>
+    </p>
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>In <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3507G">Gruen et al. 2018</a> we derive cosmological constraints from the probability distribution function (PDF) of evolved large-scale matter density fluctuations using the modeling of <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3508F">Friedrich et al. 2018</a>. We do this by splitting lines of sight by density based on their count of tracer galaxies, and by measuring both gravitational shear around and counts-in-cells in overdense and underdense lines of sight, in Dark Energy Survey (DES) Y1 data. Our analysis uses a perturbation theory model and is validated using N-body simulation realizations and log-normal mocks. It allows us to constrain cosmology, bias and stochasticity of galaxies w.r.t. matter density and, in addition, the skewness of the matter density field.<br>From a Bayesian model comparison, we find that the data weakly prefer a connection of galaxies and matter that is stochastic beyond Poisson fluctuations on &lt;=20 arcmin angular smoothing scale. The two stochasticity models we fit yield DES constraints on the matter density <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">Ω</span>
+                    </span>
+                    <sub>
+                      <span>
+                        <span class="mi">m</span>
+                      </span>
+                    </sub>
+                  </span>
+                </span>
+                <span class="mo">=</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mn">0.26</span>
+                    </span>
+                    <sup>
+                      <span>
+                        <span class="texatom">
+                          <span class="mrow">
+                            <span class="mo">+</span>
+                            <span class="mn">0.04</span>
+                          </span>
+                        </span>
+                      </span>
+                    </sup>
+                    <sub>
+                      <span>
+                        <span class="texatom">
+                          <span class="mrow">
+                            <span class="mo">−</span>
+                            <span class="mn">0.03</span>
+                          </span>
+                        </span>
+                      </span>
+                    </sub>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span> and <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">Ω</span>
+                    </span>
+                    <sub>
+                      <span>
+                        <span class="mi">m</span>
+                      </span>
+                    </sub>
+                  </span>
+                </span>
+                <span class="mo">=</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mn">0.28</span>
+                    </span>
+                    <sup>
+                      <span>
+                        <span class="texatom">
+                          <span class="mrow">
+                            <span class="mo">+</span>
+                            <span class="mn">0.05</span>
+                          </span>
+                        </span>
+                      </span>
+                    </sup>
+                    <sub>
+                      <span>
+                        <span class="texatom">
+                          <span class="mrow">
+                            <span class="mo">−</span>
+                            <span class="mn">0.04</span>
+                          </span>
+                        </span>
+                      </span>
+                    </sub>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span> that are consistent with each other. These values also agree with the DES analysis of galaxy and shear two-point functions (3x2pt), whose data products are released <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products">here</a>. Density Split Statistic constraints on <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">σ</span>
+                    </span>
+                    <sub>
+                      <span>
+                        <span class="mn">8</span>
+                      </span>
+                    </sub>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span> are model dependent, but consistent with each other and with the 3x2pt results if stochasticity is at the low end of the posterior range. As an additional test of gravity, counts and lensing in cells allow to compare the skewness <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">S</span>
+                    </span>
+                    <sub>
+                      <span>
+                        <span class="mn">3</span>
+                      </span>
+                    </sub>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span> of the matter density PDF to its LambdaCDM prediction. We find no evidence of excess skewness in any model or data set, with better than 25 per cent relative precision in the skewness estimate.</p>
+    <p>For details of the analysis and the perturbation theory modeling, please see <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3507G">Gruen et al. 2018</a> and <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3508F">Friedrich et al. 2018</a> and feel free to contact the authors.</p>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <p>Here you can download the Data Vectors used in the main Y1 density split statistic analysis, as well as the likelihoods. <br>The full listing of downloadable files can be found<strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/">here</a>. </strong>
+    </p>
+    <h3>Density Split maps</h3>
+    <ul>
+      <li>
+        <p>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/trough_maps.tar.gz">trough_maps.tar.gz</a> contains five healpix maps, where the value in each pixel describes the probability that this line of sight is in quintile 0 (lowest 20% in galaxy count) to quintile 4 (highest 20% in galaxy count) of all lines of sight. The full definition of the meaning of the pixel values is given as the weight w in section IIA of <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3507G">Gruen et al. 2018</a>. The filenames indicate the smoothing scale – 20' radius top-hat circular filters, with a redshift cut of z=0.2-0.45 of the tracer population – and the quintile, from *0.fits to *4.fits. </p>
+      </li>
+    </ul>
+    <h3>Data Vectors</h3>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/data_des_20_allbins_metacal_y1.tab">data_des_20_allbins_metacal_y1.tab</a> in text format, 365 entries, including tomographic tangential shear profiles and mean counts in quantiles, with a header describing the file structure in detail.</li>
+    </ul>
+    <h3>Covariance</h3>
+    <ul>
+      <li>
+        <a href="http://cov_des_mcal_unblind_20_allbins_fullmodel.tab">cov_des_mcal_unblind_20_allbins_fullmodel.tab</a> in text format, 365x365 covariance of the above data vector estimated from 1000 realizations of the noise. Details are described in Section IV of Gruen et al. 2018.</li>
+    </ul>
+    <p>
+      <br>
+    </p>
+    <p>Redshift Distributions in Tomographic Bins</p>
+    <ul>
+      <li>
+        <span style="color: rgb(255,0,0);">
+          <span style="color: rgb(23,43,77);">Coming soon</span>
+        </span>
+      </li>
+    </ul>
+    <h3>Cosmology Chains</h3>
+    <p>There is a chain for each of a set of models of increasing complexity. See Section IIIC in Gruen et al. 2018 for details and Table I therein for priors.</p>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/datalike_unblind_run0_model0_nomn.tab.gz">Model 0</a>: linear bias only, S<sub>3</sub> fixed to perturbation theory prediction</li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/datalike_unblind_run0_model1_nomn.tab.gz">Model 1</a>: linear bias and stochasticity, S<sub>3</sub> fixed to perturbation theory prediction</li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/datalike_unblind_run0_model2_nomn.tab.gz">Model 2</a>: linear bias and density dependent stochasticity, S<sub>3</sub> fixed to perturbation theory prediction</li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/datalike_unblind_run0_model3_nomn.tab.gz">Model 3</a>: linear bias only, S<sub>3</sub> free</li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/datalike_unblind_run0_model4_nomn.tab.gz">Model 4</a>: linear bias and stochasticity, S<sub>3</sub> free</li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/datalike_unblind_run0_model5_nomn.tab.gz">Model 5</a>: linear bias and density dependent stochasticity, S<sub>3</sub> free</li>
+    </ul>
+    <p>The evidence ratios mildly prefer models with stochasticity and show now need for a free S<sub>3</sub> parameter.</p>
+    <p>The chains are already unblinded and burn-in has been removed. They include a header describing the structure in detail.</p>
+    <h2>
+      <strong>Analysis code</strong>
+    </h2>
+    <p>While the code for measuring and predicting density split statistics and for running the likelihood has not been publicly released, the authors are usually happy to provide it and have done so in the past for several related studies.</p>
+    <h2>
+      <strong>References</strong>
+    </h2>
+    <p>
+      <a href="https://arxiv.org/abs/1710.05045">https://arxiv.org/abs/1710.05045</a> Gruen et al.</p>
+    <p>
+      <a href="https://arxiv.org/abs/1710.05162">https://arxiv.org/abs/1710.05162</a> Friedrich et al.</p>
+    <p>
+      <a href="https://arxiv.org/abs/1712.07298">https://arxiv.org/abs/1712.07298</a> Cawthon et al.</p>
+    <p>
+      <a href="https://arxiv.org/abs/1710.02517" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1710.02517</a>
+      <span style="letter-spacing: 0.0px;"> Davis et al.</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01536" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01536</a>
+      <span style="letter-spacing: 0.0px;"> Elvin-Poole et al.</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/1709.00992">https://arxiv.org/abs/1709.00992</a>
+      <span> Gatti et al.</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01532">https://arxiv.org/abs/1708.01532</a> Hoyle et al.</p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01533" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01533</a>
+      <span style="letter-spacing: 0.0px;"> Zuntz et al.</span>
+    </p>
+    <p>
+      <span style="letter-spacing: 0.0px;">
+        <br>
+      </span>
+    </p>
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1Density extends Polymer.Element {
+      static get is() { return 'des-y1a1-density'; }
+    }
+    window.customElements.define(DesY1A1Density.is, DesY1A1Density);
   </script>
 
 </dom-module>
