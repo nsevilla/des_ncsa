@@ -11,6 +11,141 @@
 
 <des-card heading="PSF Catalogs">
 <div class="card-content">
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>
+      <span style="color: rgb(51,51,51);">For the PSF estimation used for weak lensing, we used PSFEx with somewhat modified parameters compared to what was used for the main Y1A1 Gold catalogs.  Primarily, this was to alleviate some inaccuracies that were found in the <span style="color: rgb(51,51,51);">PSFEx solutions in the initial processing</span>.</span>
+    </p>
+    <p>
+      <span style="color: rgb(51,51,51);">The main change we made was to exclude bright stars, which were affected by the so-called brighter-fatter effect, whereby accumulated electrons repel subsequent electrons, making bright stars appear larger than the true PSF profile.  We excluded the brightest three magnitudes of unsaturated stars from the list of candidate PSF stars.  (Note that this is a different magnitude range for each exposure, since the saturation magnitude is a function of seeing, which varies.)  In addition, we excluded stars that overlapped parts of the CCD with anomalous electric field patterns (called "tape bumps") as well as stars that were considered outliers in the size or shape (most of which were found to be contaminated by other nearby objects or be very noisy). </span>
+    </p>
+    <p>We also used a slightly different choice of PSFEx parameters (described in more detail <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty2219" style="letter-spacing: 0.0px;">Zuntz et al, 2018</a>), which were designed to minimize the mean PSF size and shape residuals.  Most notably, we used BASIS_TYPE=PIXEL, rather than PIXEL_AUTO.  We found that that latter choice led to unacceptably large mean size residuals.</p>
+    <p>In addition to rejecting some stars, as described above, we also reserved a random 20% of the remaining "good" stars from the PSF solution.  This allows for more robust tests of the quality of the PSF models, since we have measurements of the size and shape residuals at locations that were not used for creating the PSF solution.</p>
+    <p>We provide the sizes and shapes, as measured by the <a href="http://adsabs.harvard.edu/abs/2003MNRAS.343..459H">HSM algorithm</a>, of both the stellar images and the PSF model images rendered by PSFEx for these reserved stars.  These objects are detected in the single-epoch images, and they do not have the COADD_OBJECTS_ID column that most of the rest of the Y1A1 catalogs have.  RA and DEC columns are provided and it should be possible to match these rows to rows in other catalogs via the sky position. </p>
+    <h2>
+      <strong>Reference</strong>
+    </h2>
+    <ul>
+      <li>
+        <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty2219">Zuntz et al, 2018</a>
+      </li>
+    </ul>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/psf_catalogs/psf_y1a1-v13.fits">psf_y1a1-v13.fits (1.5G)</a>
+      </li>
+    </ul>
+    <h2>
+      <strong>Description</strong>
+    </h2>
+    <p>
+      <br/>
+    </p>
+    <table class="relative-table wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">ra, dec</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Sky coordinates [degrees]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">x, y</td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Position on CCD</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">e1, e2</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Shape of observed star using HSM moments</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">size</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Size of observed star (as T = Ixx + Iyy) using HSM moments</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">psf_e1, psf_e2</span>
+          </td>
+          <td colspan="1">Shape of PSFEx model using HSM moments</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">psf_size </span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Size (Ixx + Iyy) of PSFEx model using HSM moments</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">exp</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Exposure number</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">ccd</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">CCD number 1-62</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">fov_x, fov_y</td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Position in field-of-view coordinates</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>
+              <span style="color: rgb(0,0,0);">filter</span>
+            </p>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Filter of the observation (grizY)</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">tiling</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Tiling number (usually 1-4) of the observation</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+
+
 
 </div>
 </des-card>
