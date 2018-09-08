@@ -32312,9 +32312,9 @@ Custom property | Description | Default
                 </div>
                 <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="morphology" href="[[rootPath]]releases/y1a1/gold/morphology">Morphology</a>
-                  <a class="app-menu-item" id="needsindent2" name="classification" href="[[rootPath]]releases/y1a1/gold/classification">Star/Galaxy</a>
-                  <a class="app-menu-item" id="needsindent2" name="footprint" href="[[rootPath]]releases/y1a1/gold/footprint">Mask and Depth Maps</a>
-                  <a class="app-menu-item" id="needsindent2" name="systematics" href="[[rootPath]]releases/y1a1/gold/systematics">Observing Conditions</a>
+                  <a class="app-menu-item" id="needsindent2" name="classification" href="[[rootPath]]releases/y1a1/gold/classification">Star-Galaxy</a>
+                  <a class="app-menu-item" id="needsindent2" name="footprint" href="[[rootPath]]releases/y1a1/gold/footprint">Mask/Depth Maps</a>
+                  <a class="app-menu-item" id="needsindent2" name="systematics" href="[[rootPath]]releases/y1a1/gold/systematics">Systematics</a>
                 </app-menu>
                 </app-submenu>
 
@@ -32326,8 +32326,23 @@ Custom property | Description | Default
                 <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="key-mof" href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">MOF Catalogs</a>
                 </app-menu>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="key-psf" href="[[rootPath]]releases/y1a1/key-catalogs/key-psf">PSF Catalogs</a>
+                </app-menu>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="key-shape" href="[[rootPath]]releases/y1a1/key-catalogs/key-shape">Shape Catalogs</a>
+                </app-menu>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="key-redmagic" href="[[rootPath]]releases/y1a1/key-catalogs/key-redmagic">redMaGiC Catalogs</a>
+                </app-menu>
                 </app-submenu>
 
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="key-products" href="[[rootPath]]releases/y1a1/key-products">Y1KP Products</a>
+                </div>
+                </app-submenu>
 
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
@@ -32337,7 +32352,7 @@ Custom property | Description | Default
 
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="density" href="[[rootPath]]releases/y1a1/density">Y1 Split Density</a>
+                  <a class="app-menu-item" id="needindent" name="density" href="[[rootPath]]releases/y1a1/density">Y1 Density Split</a>
                 </div>
                 </app-submenu>
 
@@ -32443,8 +32458,12 @@ Custom property | Description | Default
                 <des-y1a1-gold-systematics name="systematics"></des-y1a1-gold-systematics>
               <des-y1a1-key-catalogs name="key-catalogs"></des-y1a1-key-catalogs>
                 <des-y1a1-key-mof name="key-mof"></des-y1a1-key-mof>
+                <des-y1a1-key-psf name="key-psf"></des-y1a1-key-psf>
+                <des-y1a1-key-shape name="key-shape"></des-y1a1-key-shape>
+                <des-y1a1-key-redmagic name="key-redmagic"></des-y1a1-key-redmagic>
               <des-y1a1-bao name="bao"></des-y1a1-bao>
               <des-y1a1-density name="density"></des-y1a1-density>
+              <des-y1a1-key-products name="key-products"></des-y1a1-key-products>
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
             <des-dr1docs name="dr1-docs"></des-dr1docs>
@@ -35505,8 +35524,8 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       </h2>
       <p>The Dark Energy Survey (DES) Year-One (Y1) Gold data release consists of a subset of the data products used for DES Y1 cosmology and non-cosmology related science. These products include object catalogs, survey characterization maps, and cosmological likelihoods associated with DES Y1 papers. This release is divided into several sections:</p>
       <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y1a1/gold">Y1 Gold products</a>: This section contains the primary DES Y1 data products including the Gold object catalog, Galaxy Evolution morphology catalog, and star/galaxy separation catalogs. It also contains observing condition maps and footprint masks.</p>
-      <p style="margin-left: 60.0px;">2) <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+catalogs">Y1KP catalogs</a>: This section contains additional science catalogs based on different reduction pipelines. We include the "Multi-object" fitting (MOF) photometry (and their depth maps), photometric redshifts based on MOF, the PSF and shape catalogs used in the weak lensing analyses and the redMaGiC and redMaPPer galaxy catalogs (based on MOF).</p>
-      <p style="margin-left: 60.0px;">3) <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products">Y1KP products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y1KP Catalogs described above.</p>
+      <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y1a1/key-catalogs">Y1KP catalogs</a>: This section contains additional science catalogs based on different reduction pipelines. We include the "Multi-object" fitting (MOF) photometry (and their depth maps), photometric redshifts based on MOF, the PSF and shape catalogs used in the weak lensing analyses and the redMaGiC and redMaPPer galaxy catalogs (based on MOF).</p>
+      <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y1a1/key-products">Y1KP products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y1KP Catalogs described above.</p>
       <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y1a1/bao">Y1 BAO sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based in a combination of the Y1 Gold catalog and MOF photometry.</p>
       <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y1a1/density">Y1 density split statistics</a>: Data vectors and likelihoods for measuring density split statistics. These results used the Y1KP catalogs described above<strong>.</strong>
         <span style="color: rgb(255,0,0);"> </span>
@@ -35875,7 +35894,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1 Density Split Stats</td>
             <td colspan="1">Data Vectors</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1+Density+Split+Statistics#Y1DensitySplitStatistics-DataVectors">Link</a>
+              <a href="[[rootPath]]releases/y1a1/density">Link</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/data_des_20_allbins_metacal_y1.tab">Link</a>
@@ -35888,7 +35907,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1 Density Split Stats</td>
             <td colspan="1">Covariance</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1+Density+Split+Statistics#Y1DensitySplitStatistics-Covariance">Link</a>
+              <a href="[[rootPath]]releases/y1a1/density">Link</a>
             </td>
             <td colspan="1">
               <a href="http://cov_des_mcal_unblind_20_allbins_fullmodel.tab/">Link</a>
@@ -35901,10 +35920,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1 Density Split Stats</td>
             <td colspan="1">Redshift Distributions</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1+Density+Split+Statistics#Y1DensitySplitStatistics-RedshiftDistributionsinTomographicBins">Link</a>
+              <a href="[[rootPath]]releases/y1a1/density">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/2pt_NG_mcal_1110.fits">Link</a>
+              To be released
             </td>
             <td colspan="1">
               <a href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H">Hoyle &amp; Gruen et al. (2018)</a>
@@ -35914,7 +35933,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1 Density Split Stats</td>
             <td colspan="1">Cosmology Chains</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1+Density+Split+Statistics#Y1DensitySplitStatistics-CosmologyChains">Link</a>
+              <a href="[[rootPath]]releases/y1a1/density">Link</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/">Link</a>
@@ -36959,6 +36978,928 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </script>
 
 </dom-module>
+<dom-module id="des-y1a1-key-products" assetpath="des-y1a1/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1KP Products">
+<div class="card-content">
+
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>In <a href="https://arxiv.org/abs/1708.01530">DES Collaboration (2018)</a> we present cosmological results from a combined analysis of galaxy clustering and weak gravitational lensing, using 1321 deg<sup>
+        <span class="MathJax">
+          <span class="math">
+            <span>
+              <span>
+                <span class="mrow">
+                  <span class="msubsup">
+                    <span>
+                      <span>
+                        <span class="mn">2</span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </sup> of <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="mi">g</span>
+                <span class="mi">r</span>
+                <span class="mi">i</span>
+                <span class="mi">z</span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span> imaging data from the first year of the Dark Energy Survey (DES Y1). We combine three two-point functions: (i) the cosmic shear correlation function of 26 million source galaxies in four redshift bins, (ii) the galaxy angular autocorrelation function of 650,000 luminous red galaxies in five redshift bins, and (iii) the galaxy-shear cross-correlation of luminous red galaxy positions and source galaxy shears. To demonstrate the robustness of these results, we use independent pairs of galaxy shape, photometric redshift estimation and validation, and likelihood analysis pipelines. To prevent confirmation bias, the bulk of the analysis was carried out while blind to the true results; we describe an extensive suite of systematics checks performed and passed during this blinded phase. The data are modeled in flat <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="mi">Λ</span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>CDM and <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="mi">w</span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>CDM cosmologies, marginalizing over 20 nuisance parameters, varying 6 (for <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="mi">Λ</span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>CDM) or 7 (for <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="mi">w</span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>CDM) cosmological parameters including the neutrino mass density and including the 457 <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="mo">×</span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span> 457 element analytic covariance matrix. We find consistent cosmological results from these three two-point functions, and from their combination obtain <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">S</span>
+                    </span>
+                    <span>
+                      <span class="mn">8</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="mo">≡</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">σ</span>
+                    </span>
+                    <span>
+                      <span class="mn">8</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="mo">(</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">Ω</span>
+                    </span>
+                    <span>
+                      <span class="mi">m</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="texatom">
+                  <span class="mrow">
+                    <span class="mo">/</span>
+                  </span>
+                </span>
+                <span class="mn">0.3</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mo">)</span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mn">0.5</span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="mo">=</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mn">0.783</span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">+</span>
+                          <span class="mn">0.021</span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">−</span>
+                          <span class="mn">0.025</span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span> and <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">Ω</span>
+                    </span>
+                    <span>
+                      <span class="mi">m</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="mo">=</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mn">0.264</span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">+</span>
+                          <span class="mn">0.032</span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">−</span>
+                          <span class="mn">0.019</span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span> for <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="mi">Λ</span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>CDM for <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="mi">w</span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>CDM, we find <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">S</span>
+                    </span>
+                    <span>
+                      <span class="mn">8</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="mo">=</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mn">0.794</span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">+</span>
+                          <span class="mn">0.029</span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">−</span>
+                          <span class="mn">0.027</span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>, <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mi">Ω</span>
+                    </span>
+                    <span>
+                      <span class="mi">m</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="mo">=</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mn">0.279</span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">+</span>
+                          <span class="mn">0.043</span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">−</span>
+                          <span class="mn">0.022</span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>, and <span class="MathJax">
+        <span class="math">
+          <span>
+            <span>
+              <span class="mrow">
+                <span class="mi">w</span>
+                <span class="mo">=</span>
+                <span class="mo">−</span>
+                <span class="msubsup">
+                  <span>
+                    <span>
+                      <span class="mn">0.80</span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">+</span>
+                          <span class="mn">0.20</span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span class="texatom">
+                        <span class="mrow">
+                          <span class="mo">−</span>
+                          <span class="mn">0.22</span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span> at 68% CL.</p>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <p>Here you can download the Data Vectors (coming soon) used in the main 3x2pt Y1A1 DES analysis, as well as the cosmology chains. The full listing of downloadable files can be found<strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/">here</a>. <br>
+      </strong>Also you can download the weak lensing mass maps (full listing <strong>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/">here</a>
+      </strong>).</p>
+    <p>
+      <br>
+    </p>
+    <p>
+      <strong>Data Vectors</strong>
+    </p>
+    <ul>
+      <li>Coming soon</li>
+    </ul>
+    <p>Redshift Distributions in Tomographic Bins</p>
+    <ul>
+      <li>
+        <span style="color: rgb(255,0,0);">
+          <span style="color: rgb(23,43,77);">Coming soon</span>
+        </span>
+      </li>
+    </ul>
+    <h3>Cosmology Chains</h3>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/">Fiducial Y1 Cosmology</a>
+      </li>
+    </ul>
+    <h3>Weak Lensing Mass Maps</h3>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/">Mass Maps</a>
+      </li>
+    </ul>
+    <h2>
+      <strong>Description</strong>
+    </h2>
+    <h3>Cosmology Chains</h3>
+    <p>Here we present the cosmological chains for the various models presented in the Y1A1 key papers. In all cases, 3 neutrinos were taken to be degenerate [appropriate to the mass range to which we are sensitive]. </p>
+    <p>
+      <br>The chains are produced using multinest. When using the chains, you must weight the contribution of each sample according to the weight column. (<a href="https://opensource.ncsa.illinois.edu/confluence/download/attachments/132841548/read_DES_y1kp_chains.py?api=v2">see the python snippet attached</a>)</p>
+    <p>
+      <br>
+    </p>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>
+            <p>File Name</p>
+          </th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/d_l3.txt">d_l3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES 3x2pt LCDM </pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/d_w3.txt">d_w3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES 3x2pt wCDM</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/de_l3.txt">de_l3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES 3x2pt LCDM combined with Planck + BAO + SN</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/de_w3.txt">de_w3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES 3x2pt wCDM combined with Planck + BAO + SN</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/deprime_l3.txt">deprime_l3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES 3x2pt LCDM combined with BAO + SN</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/deprime_w3.txt">deprime_w3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES 3x2pt wCDM combined with BAO + SN</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/deprimeh_l3.txt">deprimeh_l3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES 3x2pt LCDM combined with BAO + SN + H0 prior</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/dpnl_l3.txt">dpnl_l3.txt</a> </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES 3x2pt LCDM combined with Planck no lensing</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/dpnl_w3.txt">dpnl_w3.txt</a> </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES 3x2pt wCDM combined with Planck no lensing</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/e_l3.txt">e_l3.txt</a> </pre>
+          </td>
+          <td colspan="1">
+            <pre>Planck + BAO + SN in LCDM</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/e_w3.txt">e_w3.txt</a> </pre>
+          </td>
+          <td colspan="1">
+            <pre>Planck + BAO + SN in wCDM</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/eprime_l3.txt">eprime_l3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>BAO + SN in LCDM</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/pnl_l3.txt">pnl_l3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>Planck with no lensing in LCDM</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/pnl_w3.txt">pnl_w3.txt</a> </pre>
+          </td>
+          <td colspan="1">
+            <pre>Planck with no lensing in wCDM</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/s_l3.txt">s_l3.txt</a>    </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES shear only in LCDM</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/s_w3.txt">s_w3.txt</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES shear only in wCDM</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/wg_l3.txt">wg_l3.txt</a> </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES wtheta + galaxy-galaxy lensing in LCDM</pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/wg_w3.txt">wg_w3.txt</a> </pre>
+          </td>
+          <td colspan="1">
+            <pre>DES wtheta + galaxy-galaxy lensing in wCDM</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Weak Lensing Mass Maps</h3>
+    <p>Details on the production and testing of the original Y1A1 Mass Maps using Spherical Kaiser-Squires, can be found in <a href="https://arxiv.org/abs/1708.01535">Chang et al. (2018)</a>. Users should see that paper for any questions about the content of the original maps. The shape catalogs and photo-z catalog used for these maps are described in <a href="https://arxiv.org/abs/1708.01533">Zuntz et al. (2018)</a> and <a href="https://arxiv.org/abs/1708.01532">Hoyle et al. (2018)</a>, respectively.</p>
+    <p>Note that each fits file contains one column named by its type: E-mode kappa map (kE), B-mode kappa map (kB) or the binary mask used to construct the map (mask). These are 1D Healpix arrays with NSIDE = 1024 resolution and RING format.</p>
+    <p>
+      <br>
+    </p>
+    <table class="relative-table wrapped">
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>File Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.2_0.43_kB.fits">y1a1_spt_im3shape_0.2_0.43_kB.fits</a> </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.2 &lt; z &lt; 0.43 B-mode kappa map<br>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.2_0.43_kE.fits">y1a1_spt_im3shape_0.2_0.43_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.2 &lt; z &lt; 0.43 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.2_0.43_mask.fits">y1a1_spt_im3shape_0.2_0.43_mask.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.2 &lt; z &lt; 0.43 mask map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.2_1.3_kB.fits">y1a1_spt_im3shape_0.2_1.3_kB.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.2 &lt; z &lt; 1.3 B-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.2_1.3_kE.fits">y1a1_spt_im3shape_0.2_1.3_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.2 &lt; z &lt; 1.3 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.2_1.3_mask.fits">y1a1_spt_im3shape_0.2_1.3_mask.fits</a> </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.2 &lt; z &lt; 1.3 mask map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.43_0.63_kB.fits">y1a1_spt_im3shape_0.43_0.63_kB.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.43 &lt; z &lt; 0.63 B-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.43_0.63_kE.fits">y1a1_spt_im3shape_0.43_0.63_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.43 &lt; z &lt; 0.63 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.43_0.63_mask.fits">y1a1_spt_im3shape_0.43_0.63_mask.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.43 &lt; z &lt; 0.63 mask map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.63_0.9_kB.fits">y1a1_spt_im3shape_0.63_0.9_kB.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.63 &lt; z &lt; 0.9 B-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.63_0.9_kE.fits">y1a1_spt_im3shape_0.63_0.9_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.63 &lt; z &lt; 0.9 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.63_0.9_mask.fits">y1a1_spt_im3shape_0.63_0.9_mask.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.63 &lt; z &lt; 0.9 mask map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.9_1.3_kB.fits">y1a1_spt_im3shape_0.9_1.3_kB.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.9 &lt; z &lt; 1.3 B-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.9_1.3_kE.fits">y1a1_spt_im3shape_0.9_1.3_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.9 &lt; z &lt; 1.3 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_im3shape_0.9_1.3_mask.fits">y1a1_spt_im3shape_0.9_1.3_mask.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">im3shape 0.9 &lt; z &lt; 1.3 mask map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.2_0.43_kB.fits">y1a1_spt_mcal_0.2_0.43_kB.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.2 &lt; z &lt; 0.43 B-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.2_0.43_kE.fits">y1a1_spt_mcal_0.2_0.43_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.2 &lt; z &lt; 0.43 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.2_0.43_mask.fits">y1a1_spt_mcal_0.2_0.43_mask.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.2 &lt; z &lt; 0.43 mask map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.2_1.3_kB.fits">y1a1_spt_mcal_0.2_1.3_kB.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.2 &lt; z &lt; 1.3 B-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.2_1.3_kE.fits">y1a1_spt_mcal_0.2_1.3_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.2 &lt; z &lt; 1.3 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.2_1.3_mask.fits">y1a1_spt_mcal_0.2_1.3_mask.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.2 &lt; z &lt; 1.3 mask map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.43_0.63_kB.fits">y1a1_spt_mcal_0.43_0.63_kB.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.43 &lt; z &lt; 0.63 B-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.43_0.63_kE.fits">y1a1_spt_mcal_0.43_0.63_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.43 &lt; z &lt; 0.63 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.43_0.63_mask.fits">y1a1_spt_mcal_0.43_0.63_mask.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.43 &lt; z &lt; 0.63 mask map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.63_0.9_kB.fits">y1a1_spt_mcal_0.63_0.9_kB.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.63 &lt; z &lt; 0.9 B-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.63_0.9_kE.fits">y1a1_spt_mcal_0.63_0.9_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.63 &lt; z &lt; 0.9 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.63_0.9_mask.fits">y1a1_spt_mcal_0.63_0.9_mask.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.63 &lt; z &lt; 0.9 mask map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.9_1.3_kB.fits">y1a1_spt_mcal_0.9_1.3_kB.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.9 &lt; z &lt; 1.3 B-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.9_1.3_kE.fits">y1a1_spt_mcal_0.9_1.3_kE.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.9 &lt; z &lt; 1.3 E-mode kappa map</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <pre>              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/y1a1_spt_mcal_0.9_1.3_mask.fits">y1a1_spt_mcal_0.9_1.3_mask.fits</a>
+            </pre>
+          </td>
+          <td colspan="1">metacal <span style="color: rgb(0,0,0);">0.9 &lt; z &lt; 1.3 mask map</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>
+      <br>
+      <strong>References</strong>
+    </h2>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01530">https://arxiv.org/abs/1708.01530</a> DES Collaboration</p>
+    <p>
+      <a href="https://arxiv.org/abs/1711.00403">https://arxiv.org/abs/1711.00403</a> DES Collaboration (H0)</p>
+    <p>
+      <a href="https://arxiv.org/abs/1712.07298">https://arxiv.org/abs/1712.07298</a> Cawthon et al.</p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01535">https://arxiv.org/abs/1708.01535</a> Chang et al.</p>
+    <p>
+      <a href="https://arxiv.org/abs/1710.02517" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1710.02517</a>
+      <span style="letter-spacing: 0.0px;"> Davis et al.</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01536" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01536</a>
+      <span style="letter-spacing: 0.0px;"> Elvin-Poole et al.</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/1709.00992">https://arxiv.org/abs/1709.00992</a>
+      <span> Gatti et al.</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01532">https://arxiv.org/abs/1708.01532</a> Hoyle et al.</p>
+    <p>
+      <a href="https://arxiv.org/abs/1803.09795" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1803.09795</a>
+      <span style="letter-spacing: 0.0px;"> McCrann et al.</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01537" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01537</a>
+      <span style="letter-spacing: 0.0px;"> Prat et al.</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01534" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01534</a>
+      <span style="letter-spacing: 0.0px;"> Samuroff et al.</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01538">https://arxiv.org/abs/1708.01538</a> Troxel et al.</p>
+    <p>
+      <a href="https://arxiv.org/abs/1708.01533" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01533</a>
+      <span style="letter-spacing: 0.0px;"> Zuntz et al.</span>
+    </p>
+    <p>
+      <br>
+    </p>
+    <p>
+      <br>
+    </p>
+    <p>
+      <br>
+    </p>
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyProducts extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-products'; }
+    }
+    window.customElements.define(DesY1A1KeyProducts.is, DesY1A1KeyProducts);
+  </script>
+
+</dom-module>
 <dom-module id="des-y1a1-key-catalogs" assetpath="des-y1a1/">
 
 
@@ -36973,37 +37914,47 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <des-card heading="Y1KP Catalogs">
 <div class="card-content">
 
-  <h2>
-    <strong>Overview</strong>
-  </h2>
-  <p>
-    <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>&nbsp;we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of the DES Y1 cosmological analyses. The Y1A1 GOLD contains a secondary reduction result, called <strong>MOF</strong>. We used the <strong>
-        <a href="https://github.com/esheldon/ngmixer">ngmix</a>
-      </strong> code (<a href="http://adsabs.harvard.edu/abs/2014MNRAS.444L..25S">Sheldon 2014</a>; <a href="http://iopscience.iop.org/article/10.3847/1538-4357/aa704b/meta">Sheldon &amp; Huff 2017</a>; <a href="http://adsabs.harvard.edu/abs/2016MNRAS.460.2245J">Jarvis et al. 2016</a>) to reanalyze pixel-lelvel data from multi-epoch postage stamps of each object in the Y1A1 GOLD coadd catalog. We used ngmix in multi-epoch, multi-band, and multi-object fit, which we call "<strong>MOF</strong>".</span>
-  </p>
-  <p>
-    <span style="color: rgb(0,0,0);">The MOF photometry served as input for the creation of photometric redshifts and shape catalogs used in weak lensing analysis, for the Redmapper and Redmagic catalogs. These products, together with the PSF modelling with psfex are delivered in this page<br>
-    </span>
-  </p>
-  <h2>
-    <strong>Y1KP Products Download</strong>
-  </h2>
-  <ul>
-    <li>
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>
+      <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a> we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of the DES Y1 cosmological analyses. Y1A1 GOLD contains parameters generated by reanalyzing pixel-level data from multi-epoch postage stamps of each object in the Y1A1 GOLD coadd catalog using the<span style="color: rgb(0,0,0);"> </span>
+        <strong>
+          <a href="https://github.com/esheldon/ngmixer">ngmix</a>
+        </strong>
+        <span style="color: rgb(0,0,0);"> code (</span>
+        <a href="http://adsabs.harvard.edu/abs/2014MNRAS.444L..25S">Sheldon 2014</a>
+        <span style="color: rgb(0,0,0);">; </span>
+        <a href="http://iopscience.iop.org/article/10.3847/1538-4357/aa704b/meta">Sheldon &amp; Huff 2017</a>
+        <span style="color: rgb(0,0,0);">; </span>
+        <a href="http://adsabs.harvard.edu/abs/2016MNRAS.460.2245J">Jarvis et al. 2016</a>
+        <span style="color: rgb(0,0,0);">)</span>. The ngmix multi-epoch, multi-band, and multi-object fit is referred to as "<strong>MOF</strong>".</span>
+    </p>
+    <p>
+      <span style="color: rgb(0,0,0);">The MOF photometry served as input for the creation of photometric redshifts and shape catalogs used in weak lensing analysis, for the redMaPPer and redMaGiC catalogs. These products, together with the PSF modeling with psfex are delivered in this page<br>
+      </span>
+    </p>
+    <h2>
+      <strong>Y1KP Products Download</strong>
+    </h2>
+    <ul>
+      <li>
     <a href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">Multi-Object-Fitting (MOF) Catalogs and Depth Maps</a>
-    </li>
-    <li>
-      <a href="#">PSF Catalog</a>
-    </li>
-    <li>
-        Shape Catalogs with associated redshift distributions</li>
-    <li>redMaGiC Catalogs (To be released)</li>
-    <li>redMaPPer Catalogs (To be released)</li>
-  </ul>
-  <p>Further information on individual galaxies’ photometric redshifts will be released on 1 Oct 2018.</p>
-  <p>
-    <br>
-  </p>
+      </li>
+      <li>
+    <a href="[[rootPath]]releases/y1a1/key-catalogs/key-psf">PSF Catalog</a>
+      </li>
+      <li>
+    <a href="[[rootPath]]releases/y1a1/key-catalogs/key-shape">Shape Catalogs</a> with associated redshift distributions
+      </li><li>
+       <a href="[[rootPath]]releases/y1a1/key-catalogs/key-redmagic">redMaGiC Catalogs</a>
+      </li>
+      <li>redMaPPer Catalogs (To be released soon)</li>
+    </ul>
+    <p>Further information on individual galaxies’ photometric redshifts will be released in October 2018.</p>
+    <p>
+      <br>
+    </p>
 
 
 </div>
@@ -37877,8 +38828,166 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 </style>
 
 
-<des-card heading="Multi-Object-Fitting (MOF) Catalogs">
+<des-card heading="Y1 Multi-Object-Fitting (MOF) Catalogs">
 <div class="card-content">
+
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+
+    <p>
+      <span style="color: rgb(0,0,0);">From <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>:</span>
+    </p>
+    <p>The Y1A1 coadded images provide deeper and more sensitive object detection than individual single-epoch images. However, the coaddition process averages across multiple images, resulting in a discontinuous PSF and correlated noise properties. Precision measurements that rely on an accurate PSF determination, such as galaxy shape measurements for cosmic shear, require a joint fit of pixel-level data from multiple single-epoch images.</p>
+    <p>We used the <strong>
+        <a href="https://github.com/esheldon/ngmix">ngmix</a>
+      </strong> code (<a href="http://adsabs.harvard.edu/abs/2014MNRAS.444L..25S">Sheldon 2014</a>; <a href="http://adsabs.harvard.edu/abs/2017ApJ...841...24S">Sheldon &amp; Huff 2017</a>; <a href="http://adsabs.harvard.edu/abs/2016MNRAS.460.2245J">Jarvis et al. 2016</a>) to reanalyze pixel-level data from multi-epoch postage stamps of each object in the Y1A1 GOLD coadd catalog. We used PSFEx (<a href="http://www.aspbooks.org/a/volumes/table_of_contents/?book_id=488">Bertin 2011</a>) to model and interpolate the PSF at the location of each object, and then we generated an image of the PSF using the python package, <strong>
+        <a href="https://www.astromatic.net/software/psfex">psfex</a>
+      </strong>. We then used the ngmix code to fit this reconstructed PSF image to a set of three free, independent Gaussians.</p>
+    <p>We used ngmix in multi-epoch and multi-band mode to simultaneously fit a model to all available epochs and bands. In this mode, a model is convolved by the local PSF in each single-epoch image, and a χ2 sum is calculated over all pixels in a postage stamp. This is repeated for each epoch and band, and a  total χ2 sum is calculated. We then find the parameters of the model that maximize the likelihood.</p>
+    <p>
+      <br>We took this procedure one step further, performing simultaneous multi-epoch, multi-band, and multi-object fit, which we call<strong> “MOF”. <br>
+      </strong>
+    </p>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <p>
+      <strong>MOF fluxes and flags</strong>
+    </p>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mof_catalogs/y1a1-gold-mof-badregion.fits">y1a1-gold-mof-badregion.fits</a>
+      </li>
+    </ul>
+    <p>
+      <strong>
+        <br>
+      </strong>
+    </p>
+    <p>
+      <strong>10sigma MOF depth maps</strong>
+    </p>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_cm_mof_001_nside4096_g_10sigma.fits.gz">y1a1_gold_1.0.2_cm_mof_001_nside4096_g_10sigma.fits.gz (26M)</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_cm_mof_001_nside4096_r_10sigma.fits.gz">y1a1_gold_1.0.2_cm_mof_001_nside4096_r_10sigma.fits.gz (25M)</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_cm_mof_001_nside4096_i_10sigma.fits.gz">y1a1_gold_1.0.2_cm_mof_001_nside4096_i_10sigma.fits.gz (24M)</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_cm_mof_001_nside4096_z_10sigma.fits.gz">y1a1_gold_1.0.2_cm_mof_001_nside4096_z_10sigma.fits.gz (25M)</a>
+      </li>
+    </ul>
+    <p>
+      <strong>
+        <br>
+      </strong>
+    </p>
+    <h2>
+      <strong>Catalog Description<br>
+        <br>
+      </strong>
+    </h2>
+    <h3>
+      <u>
+        <strong>MOF fluxes and flags</strong>
+      </u>
+    </h3>
+    <p>This is the description of the MOF table.<strong> </strong>Magnitudes can be obtained via mag = 30.0 - 2.5log10(flux)<span style="color: rgb(255,0,0);">
+        <strong>
+          <br>
+        </strong>
+      </span>
+    </p>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td colspan="1">COADD_OBJECTS_ID</td>
+          <td colspan="1">Identifier  assigned  to  each  object  in  the  co-add  DES  Y1  dataset,  reported  here  from  the Gold Catalog</td>
+        </tr>
+        <tr>
+          <td colspan="1">RA/DEC</td>
+          <td colspan="1">copies of alphawin_j2000 and deltawin_j2000 from the original SExtractor catalog. NOTE: These are more precise than the truncated values of the same name in the GOLD Catalog.</td>
+        </tr>
+        <tr>
+          <td colspan="1">EBV</td>
+          <td colspan="1">E(B-V) value from <a href="http://adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=1998ApJ...500..525S&amp;db_key=AST&amp;high=3290e5e17909355">Schlegel, Finkbeiner &amp; Davis 1998</a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">FLAGS_GOLD</td>
+          <td colspan="1">(See description in <strong>
+              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1A1+Gold+Data">Gold page</a>
+            </strong>)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MODEST_CLASS</td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Star/Galaxy classification. 1 = GALAXY, 2 = STAR</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">HPIX</td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Healpix index at the object position in nside= 16384, NESTED</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">MOF_FLAGS</td>
+          <td colspan="1">mof_flags is a combined flag for all mof processing. <br>It is based on the <code>flags</code> field from mof, which describes any problems that occured in the primary fitting. <br>It also is based on the flags related to the convergence of the overall iteration for the MOF group. <br>It is 0 where there was an mof measurement and the following holds: <br>(flags==0) &amp; ((cm_mof_flags &amp; 2**8) == 0) &amp; ((cm_mof_flags &amp; 2**9) == 0)<br>it is equal 1 otherwise.</td>
+        </tr>
+        <tr>
+          <td colspan="1">MOF_FLUX_{G|R|I|Z}</td>
+          <td colspan="1">The g,r,i,z fluxes from the MOF fitting</td>
+        </tr>
+        <tr>
+          <td colspan="1">MOF_FLUXERR_{G|R|I|Z}</td>
+          <td colspan="1">The marginalized flux errors for g,r,i,z from the MOF fitting.  The full covariance is available on request</td>
+        </tr>
+        <tr>
+          <td colspan="1">FLAGS_BADREGION</td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Any badregion information from GOLD footprint/bad regions (one value for all bands)</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">TILENAME</td>
+          <td colspan="1">The coadd tile name</td>
+        </tr>
+        <tr>
+          <td colspan="1">FLAGS_{G|R|I|Z}</td>
+          <td colspan="1">Copies of the original SExtractor flags from each band</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>
+      <br>
+      <u>10sigma MOF depth maps</u>
+    </h3>
+    <p>
+      <span style="color: rgb(0,0,0);">The <strong>10sigma depth</strong> maps are estimated for the <strong>MOF</strong> magnitudes, appropriate for galaxies, following the procedure of <a href="http://adsabs.harvard.edu/abs/2015arXiv150900870R">
+          <span style="color: rgb(0,0,0);">Rykoff et al. (2015)</span>
+        </a>
+      </span>.  Maps of the 10σ galaxy limiting magnitude were generated by fitting the magnitude error versus magnitude relationship on large pixels and correlating with small-scale spatially varying survey characteristics. <strong>The depth maps have the stellar locus regression zeropoint corrections applied which account for interstellar extinction.</strong>
+    </p>
+    <p>
+      <span style="color: rgb(0,0,0);">Coarse depth measurements were made with NISDE=1024 using secure galaxies selected by the MODEST_CLASS classificator, and good objects and all good region cuts.</span>
+    </p>
+    <p>For training, systematics maps (nside=4096) were averaged to NSIDE=1024. Only coarse pixels that were completely filled in the given band were used in training. Only pixels that had at least 100 galaxies were used in the training.</p>
+
+
 
 </div>
 </des-card>
@@ -37889,6 +38998,1367 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       static get is() { return 'des-y1a1-key-mof'; }
     }
     window.customElements.define(DesY1A1KeyMof.is, DesY1A1KeyMof);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-key-psf" assetpath="des-y1a1/key-catalogs/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 PSF Catalogs">
+<div class="card-content">
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>
+      <span style="color: rgb(51,51,51);">For the PSF estimation used for weak lensing, we used PSFEx with somewhat modified parameters compared to what was used for the main Y1A1 Gold catalogs.  Primarily, this was to alleviate some inaccuracies that were found in the <span style="color: rgb(51,51,51);">PSFEx solutions in the initial processing</span>.</span>
+    </p>
+    <p>
+      <span style="color: rgb(51,51,51);">The main change we made was to exclude bright stars, which were affected by the so-called brighter-fatter effect, whereby accumulated electrons repel subsequent electrons, making bright stars appear larger than the true PSF profile.  We excluded the brightest three magnitudes of unsaturated stars from the list of candidate PSF stars.  (Note that this is a different magnitude range for each exposure, since the saturation magnitude is a function of seeing, which varies.)  In addition, we excluded stars that overlapped parts of the CCD with anomalous electric field patterns (called "tape bumps") as well as stars that were considered outliers in the size or shape (most of which were found to be contaminated by other nearby objects or be very noisy). </span>
+    </p>
+    <p>We also used a slightly different choice of PSFEx parameters (described in more detail <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty2219" style="letter-spacing: 0.0px;">Zuntz et al, 2018</a>), which were designed to minimize the mean PSF size and shape residuals.  Most notably, we used BASIS_TYPE=PIXEL, rather than PIXEL_AUTO.  We found that that latter choice led to unacceptably large mean size residuals.</p>
+    <p>In addition to rejecting some stars, as described above, we also reserved a random 20% of the remaining "good" stars from the PSF solution.  This allows for more robust tests of the quality of the PSF models, since we have measurements of the size and shape residuals at locations that were not used for creating the PSF solution.</p>
+    <p>We provide the sizes and shapes, as measured by the <a href="http://adsabs.harvard.edu/abs/2003MNRAS.343..459H">HSM algorithm</a>, of both the stellar images and the PSF model images rendered by PSFEx for these reserved stars.  These objects are detected in the single-epoch images, and they do not have the COADD_OBJECTS_ID column that most of the rest of the Y1A1 catalogs have.  RA and DEC columns are provided and it should be possible to match these rows to rows in other catalogs via the sky position. </p>
+    <h2>
+      <strong>Reference</strong>
+    </h2>
+    <ul>
+      <li>
+        <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty2219">Zuntz et al, 2018</a>
+      </li>
+    </ul>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/psf_catalogs/psf_y1a1-v13.fits">psf_y1a1-v13.fits (1.5G)</a>
+      </li>
+    </ul>
+    <h2>
+      <strong>Description</strong>
+    </h2>
+    <table class="relative-table wrapped">
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">ra, dec</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Sky coordinates [degrees]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">x, y</td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Position on CCD</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">e1, e2</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Shape of observed star using HSM moments</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">size</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Size of observed star (as T = Ixx + Iyy) using HSM moments</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">psf_e1, psf_e2</span>
+          </td>
+          <td colspan="1">Shape of PSFEx model using HSM moments</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">psf_size </span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Size (Ixx + Iyy) of PSFEx model using HSM moments</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">exp</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Exposure number</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">ccd</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">CCD number 1-62</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">fov_x, fov_y</td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Position in field-of-view coordinates</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>
+              <span style="color: rgb(0,0,0);">filter</span>
+            </p>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Filter of the observation (grizY)</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">tiling</span>
+          </td>
+          <td colspan="1">
+            <span style="color: rgb(0,0,0);">Tiling number (usually 1-4) of the observation</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br>
+    </p>
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyPsf extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-psf'; }
+    }
+    window.customElements.define(DesY1A1KeyPsf.is, DesY1A1KeyPsf);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-key-shape" assetpath="des-y1a1/key-catalogs/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 Shape Catalogs">
+<div class="card-content">
+
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>From <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>:</p>
+    <p>We present two galaxy shape catalogues from the Dark Energy Survey Year 1 data set, covering ~1500 square degrees with a median redshift of 0.59. The catalogues cover two main fields: Stripe 82, and an area overlapping the South Pole Telescope survey region. We describe our data analysis process and in particular our shape measurement using two independent shear measurement pipelines, METACALIBRATION and IM3SHAPE. The METACALIBRATION catalogue uses a Gaussian model with an innovative internal calibration scheme, and was applied to riz-bands, yielding 34.8M objects. The IM3SHAPE catalogue uses a maximum-likelihood bulge/disc model calibrated using simulations, and was applied to r-band data, yielding 21.9M objects. Both catalogues pass a suite of null tests that demonstrate their fitness for use in weak lensing science. We estimate the 1 sigma uncertainties in multiplicative shear calibration to be 0.013 and 0.025 for the METACALIBRATION and IM3SHAPE catalogues, respectively. We further deliver a file containing redshift information, with the location of each object in the redshift bins shown in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a> and validated therein and in Davis et al. (2018) and <a href="http://adsabs.harvard.edu/abs/2018MNRAS.477.1664G">Gatti &amp; Vielzeuf et al. (2018)</a>.<strong> <br>
+      </strong>
+    </p>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <ul>
+      <li>
+        <strong>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/mcal-y1a1-combined-riz-unblind-v4-matched.fits">mcal-y1a1-combined-riz-unblind-v4-matched.fits</a>  (METACAL)</strong>
+      </li>
+      <li>
+        <strong>
+          <span>
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/y1a1-im3shape_v5_unblind_v2_matched_v4.fits">y1a1-im3shape_v5_unblind_v2_matched_v4.fits</a>
+          </span> (IM3SHAPE)</strong>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_source_redshift_binning_v1.fits">
+          <strong>y1_source_redshift_binning_v1.fits</strong>
+        </a>
+        <strong>(REDSHIFT BINNING INFORMATION)</strong>
+      </li>
+      <li>
+        <strong>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_redshift_distributions_v1.fits">y1_redshift_distributions_v1.fits</a> (REDSHIFT DISTRIBUTIONS OF EACH REDSHIFT BIN)</strong> </li>
+    </ul>
+    <h2>
+      <strong>Catalog Description</strong>
+    </h2>
+    <h3>
+      <span style="color: rgb(255,0,0);">
+        <span style="color: rgb(23,43,77);">
+          <strong>METACALIBRATION</strong>
+        </span>
+      </span>
+    </h3>
+    <p>For further information about the METACALIBRATION procedure and description of its implementation in DES, see <a href="https://arxiv.org/abs/1702.02600">Huff &amp; Mandelbaum 2017</a>, <a href="http://adsabs.harvard.edu/abs/2017ApJ...841...24S">Sheldon &amp; Huff 2017</a>, and <span style="color: rgb(255,0,0);">
+        <u> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+        </u>
+      </span>. It is important to note that the METACALIBRATION catalog contains information necessary to calibrate an arbitrary selection (based on properties measured in this or related METACALIBRATION catalogs - i.e., griz METACALIBRATION flux measurements for photometric redshifts), unlike other forms of shear calibration that are valid only for a particular ensemble selection. <strong>If making selections beyond the METACALIBRATION catalog flags_select, the shear calibration will no longer be correct. </strong>
+    </p>
+    <p>
+      <strong>
+        <br>
+      </strong>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>
+            <code>coadd_objects_id</code>
+          </td>
+          <td>Unique internal DES release object identifier. This can be used to match objects across catalogs within a DES release (here Y1A1).</td>
+        </tr>
+        <tr>
+          <td>flags</td>
+          <td>Quality flagging. See Table<strong>
+              <span style="color: rgb(255,0,0);"> ... where?</span>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td>mask_frac</td>
+          <td>The fraction of masked model flux.</td>
+        </tr>
+        <tr>
+          <td>psf_e1</td>
+          <td>The PSF model <span>ellipticity </span>e1 in WCS.</td>
+        </tr>
+        <tr>
+          <td>psf_e2</td>
+          <td>
+            <span>The PSF model <span>ellipticity </span>e2 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>psf_size</td>
+          <td>The PSF model size T (arcsec^2). See Eq. 3.1 of <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a> for definition of T.</td>
+        </tr>
+        <tr>
+          <td>mcal_psf_e1</td>
+          <td>The PSF model <span>ellipticity </span>e1 used in the metacal process. For typical null tests, use 'psf_e1'.</td>
+        </tr>
+        <tr>
+          <td>mcal_psf_e2</td>
+          <td>
+            <span>The PSF model <span>ellipticity </span>e2 used in the <span>metacal</span> process. For <span>typical </span>null tests, use 'psf_e2'.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>mcal_psf_size</td>
+          <td>
+            <span>The PSF model size T (arcsec^2)<span> used in the <span>metacal</span> process</span>. <span>For <span>typical </span>null tests, use 'psf_size'.</span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>e1</td>
+          <td>The measured ellipticity e1 in WCS.</td>
+        </tr>
+        <tr>
+          <td>e1_1p</td>
+          <td>The measured e1 after applying a shear of g1=0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>e1_1m</td>
+          <td>
+            <span>The measured e1 </span>after applying a shear of g1=-0.01 to the image<span> (in the metacal process)</span>.</td>
+        </tr>
+        <tr>
+          <td>e1_2p</td>
+          <td>
+            <span>The measured e1 </span>after applying a shear of g2=0.01 to the image<span> (in the metacal process)</span>.</td>
+        </tr>
+        <tr>
+          <td>e1_2m</td>
+          <td>
+            <span>The measured e1 </span>after applying a shear of g2=-0.01 to the image<span> (in the metacal process)</span>.</td>
+        </tr>
+        <tr>
+          <td>e2</td>
+          <td>
+            <span>The measured ellipticity e2 in WCS. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>e2_1p</td>
+          <td>
+            <span>The measured e2 </span>after applying a shear of g1=0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>e2_1m</td>
+          <td>
+            <span>The measured e2 </span>after applying a shear of g1=-0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>e2_2p</td>
+          <td>
+            <span>The measured e2 </span>after applying a shear of g2=0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>e2_2m</td>
+          <td>
+            <span>The measured e2 </span>after applying a shear of g2=-0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>The measured <span>object</span> size T (arcsec^2).</td>
+        </tr>
+        <tr>
+          <td>size_1p</td>
+          <td>
+            <span>The measured T <span>after applying a shear of g1=0.01 to the image (in the metacal process).</span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_1m</td>
+          <td>
+            <span>The measured T </span>
+            <span>after applying a shear of g1=-0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_2p</td>
+          <td>
+            <span>The measured T </span>
+            <span>after applying a shear of g2=0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_2m</td>
+          <td>
+            <span>The measured T </span>
+            <span>after applying a shear of g2=-0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err</td>
+          <td>
+            <span>The uncertainty in the <span>object</span> size T (arcsec^2).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err_1p</td>
+          <td>
+            <span>The uncertainty in T </span>
+            <span>after applying a shear of g1=0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err_1m</td>
+          <td>
+            <span>The uncertainty in T </span>
+            <span>after applying a shear of g1=-0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err_2p</td>
+          <td>
+            <span>The uncertainty in T </span>
+            <span>after applying a shear of g2=0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err_2m</td>
+          <td>
+            <span>The uncertainty in T </span>
+            <span>after applying a shear of g2=-0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr</td>
+          <td>
+            <span>The measured signal-to-noise (snr) of the <span>object</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr_1p</td>
+          <td>
+            <span>The snr of the object <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr_1m</td>
+          <td>
+            <span>The snr of the <span>object</span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr_2p</td>
+          <td>
+            <span>The snr of the <span>object</span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr_2m</td>
+          <td>
+            <span>The snr of the <span>object</span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_0</td>
+          <td>The e1-e1 covariance.</td>
+        </tr>
+        <tr>
+          <td>covmat_0_0_1p</td>
+          <td>
+            <span>The e1-e1 covariance <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
+              <span>.</span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_0_1m</td>
+          <td>
+            <span>The e1-e1 covariance </span>
+            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_0_2p</td>
+          <td>
+            <span>The e1-e1 covariance </span>
+            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_0_2m</td>
+          <td>
+            <span>The e1-e1 covariance </span>
+            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1</td>
+          <td>
+            <span>The e1-e2 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1_1p</td>
+          <td>
+            <span>The e1-e2 covariance </span>
+            <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1_1m</td>
+          <td>
+            <span>The e1-e2 covariance </span>
+            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1_2p</td>
+          <td>
+            <span>The e1-e2 covariance </span>
+            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1_2m</td>
+          <td>
+            <span>The e1-e2 covariance </span>
+            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1</td>
+          <td>
+            <span>The e2-e2 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1_1p</td>
+          <td>
+            <span>The e2-e2 covariance </span>
+            <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1_1m</td>
+          <td>
+            <span>The e2-e2 covariance </span>
+            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1_2p</td>
+          <td>
+            <span>The e2-e2 covariance </span>
+            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1_2m</td>
+          <td>
+            <span>The e2-e2 covariance </span>
+            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_r</td>
+          <td>The measured r-band flux of the object.</td>
+        </tr>
+        <tr>
+          <td>flux_r_1p</td>
+          <td>
+            <span>The measured <span>r-band </span>flux of the object <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_r_1m</td>
+          <td>
+            <span>The measured <span>r-band </span>flux of the object </span>
+            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_r_2p</td>
+          <td>
+            <span>The measured <span>r-band </span>flux of the object </span>
+            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_r_2m</td>
+          <td>
+            <span>The measured <span>r-band </span>flux of the object </span>
+            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_err_r</td>
+          <td>The uncertainty on the r-band flux.</td>
+        </tr>
+        <tr>
+          <td>flux_i</td>
+          <td>
+            <span>The measured i-band flux of the object. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_i_1p</td>
+          <td>
+            <span>The measured i</span>
+            <span>-band </span>
+            <span>flux of the object </span>
+            <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
+            <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_i_1m</td>
+          <td>
+            <span>The measured i</span>
+            <span>-band </span>
+            <span>flux of the object </span>
+            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
+            <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_i_2p</td>
+          <td>
+            <span>The measured i</span>
+            <span>-band </span>
+            <span>flux of the object </span>
+            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
+            <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_i_2m</td>
+          <td>
+            <span>The measured i</span>
+            <span>-band </span>
+            <span>flux of the object </span>
+            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
+            <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_err_i</td>
+          <td>
+            <span>The uncertainty on the i-band flux.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z</td>
+          <td>
+            <span>The measured z-band flux of the object. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z_1p</td>
+          <td>
+            <span>The measured z</span>
+            <span>-band </span>
+            <span>flux of the object </span>
+            <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
+            <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z_1m</td>
+          <td>
+            <span>The measured z</span>
+            <span>-band </span>
+            <span>flux of the object </span>
+            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
+            <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z_2p</td>
+          <td>
+            <span>The measured z</span>
+            <span>-band </span>
+            <span>flux of the object </span>
+            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
+            <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z_2m</td>
+          <td>
+            <span>The measured z</span>
+            <span>-band </span>
+            <span>flux of the object </span>
+            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
+            <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_err_z</td>
+          <td>
+            <div class="content-wrapper">
+              <span>The uncertainty on the z-band flux.</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>R11</td>
+          <td>
+            <div class="content-wrapper">The shear response matrix e1-e1 element. For details on calculation, see <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>. You must calculate the selection bias response to add to this.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>R12</td>
+          <td>
+            <div class="content-wrapper">
+              <span>The shear response matrix e1-e2 element.</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>R21</td>
+          <td>
+            <div class="content-wrapper">
+              <span>The shear response matrix e2-e1 element.</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>R22</td>
+          <td>
+            <div class="content-wrapper">
+              <span>The shear response matrix e2-e2 element.</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>region</td>
+          <td>Which footprint region of the catalog the object is in. 1=SPT (used in the key project papers), 2=Stripe 82, 3=D04.</td>
+        </tr>
+        <tr>
+          <td>ra</td>
+          <td>Right Ascension.</td>
+        </tr>
+        <tr>
+          <td>dec</td>
+          <td>Declination.</td>
+        </tr>
+        <tr>
+          <td>tilename</td>
+          <td>Tile name of tile the object lies within. Each tile is a square of 10,000 pixels on a side, which makes up the extent of the coadd image. The position of the tile on the sky is encoded in its name.</td>
+        </tr>
+        <tr>
+          <td>flags_select</td>
+          <td>Selection flag based on unshared quantities. 0 means use the object. <span>See Table</span>
+            <strong>
+              <span style="color: rgb(255,0,0);"> ... where?</span>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td>flags_select_1p</td>
+          <td>
+            <span>Selection flag<span> based on sheared (g1=0.01) quantities</span>. </span>0 means use the object.</td>
+        </tr>
+        <tr>
+          <td>flags_select_1m</td>
+          <td>
+            <span>Selection flag<span> based on <span>sheared (g1=-0.01)</span> quantities</span>. </span>0 means use the object.</td>
+        </tr>
+        <tr>
+          <td>flags_select_2p</td>
+          <td>
+            <span>Selection flag<span> based on <span>sheared (g2=0.01)</span> quantities</span>. </span>0 means use the object.</td>
+        </tr>
+        <tr>
+          <td>flags_select_2m</td>
+          <td>
+            <span>Selection flag<span> based on <span>sheared (g2=-0.01)</span> quantities</span>. </span>0 means use the object.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <strong>
+        <br>
+      </strong>
+    </p>
+    <h3>
+      <strong>IM3SHAPE</strong>
+    </h3>
+    <p>The Y1 IM3SHAPE catalog is similar to the SV IM3SHAPE catalog, but has calibrations based on substantially improved images simulations as described in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>.</p>
+    <p>
+      <br>
+    </p>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="1">Column Name</th>
+          <th colspan="1">Description</th>
+        </tr>
+        <tr>
+          <td>coadd_objects_id</td>
+          <td>
+            <span>Unique internal DES release object identifier. This can be used to match objects across catalogs within a DES release (here Y1A1).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>e1</td>
+          <td>
+            <span>The measured ellipticity e1 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>e2</td>
+          <td>
+            <span>The measured ellipticity e2 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>m</td>
+          <td>The multiplicative bias correction determined from image simulations. See details in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>.</td>
+        </tr>
+        <tr>
+          <td>c1</td>
+          <td>The additive bias correction c1 <span>determined from image simulations. See details in </span>
+            <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>c2</td>
+          <td>
+            <span>The additive bias correction c2 </span>
+            <span>determined from image simulations. See details in </span>
+            <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>weight</td>
+          <td>The object weight, which should be used in all ensemble calculations. Details of derivation are provided in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>radius</td>
+          <td>The half-light-radius of the object (arcsec).</td>
+        </tr>
+        <tr>
+          <td>snr</td>
+          <td>
+            <span>The measured signal-to-noise (snr) of the </span>
+            <span>object</span>
+            <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>likelihood</td>
+          <td>"Log-likelihood" i.e. -chi^2/2. What a "good" value is depends on the stamp_size column.</td>
+        </tr>
+        <tr>
+          <td>chi2_pixel</td>
+          <td>The chi^2 per pixel in the stamp.</td>
+        </tr>
+        <tr>
+          <td>flags</td>
+          <td>
+            <span>Quality flagging. See Table</span>
+            <strong>
+              <span style="color: rgb(255,0,0);"> ... where?</span>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_0</td>
+          <td>
+            <span>The e1-e1 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1</td>
+          <td>
+            <span>The e1-e2 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1</td>
+          <td>
+            <span>The e2-e2 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>rgpp_rp</td>
+          <td>PSF convolved galaxy size over PSF size, averaged over exposures.</td>
+        </tr>
+        <tr>
+          <td>psf_e1</td>
+          <td>
+            <span>The PSF model </span>
+            <span>ellipticity </span>
+            <span>e1 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>psf_e2</td>
+          <td>
+            <span>The PSF model </span>
+            <span>ellipticity </span>
+            <span>e2 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>psf_size</td>
+          <td>The PSF FWHM (arcsec).</td>
+        </tr>
+        <tr>
+          <td>nexp</td>
+          <td>Number of available exposures (i.e. number of postage stamps) for this object.</td>
+        </tr>
+        <tr>
+          <td>stamp_size</td>
+          <td>The size of the postage stamps used in image fitting (pixels).</td>
+        </tr>
+        <tr>
+          <td>mask_fraction</td>
+          <td>fraction of pixels with zero weight over all exposures</td>
+        </tr>
+        <tr>
+          <td>bulge_fraction</td>
+          <td>The fraction of flux contained in the bulge component.</td>
+        </tr>
+        <tr>
+          <td>flags_select</td>
+          <td>
+            <span>Selection flag. 0 means use the object. </span>
+            <span>See Table</span>
+            <strong>
+              <span style="color: rgb(255,0,0);"> ... where?</span>
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td>ra</td>
+          <td>
+            <span>Right Ascension (degrees).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>dec</td>
+          <td>Declination (degrees).</td>
+        </tr>
+        <tr>
+          <td>tilename</td>
+          <td>
+            <span>
+              <span>Tile name of tile the object lies within. Each tile is a square of 10,000 pixels on a side, which makes up the extent of the coadd image. The position of the tile on the sky is encoded in its name.</span>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 class="auto-cursor-target">REDSHIFT BINNING INFORMATION</h3>
+    <p>This table of integers indicates the tomographic redshift bin of each object based on the four bins defined in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a>. -1 means not in any bin (outside the range z=0.3-1.3). The tomographic bin placement is based on the mean redshift of the PDF, within the ranges (0.3-0.43, 0.43-0.63, 0.63-0.9, 0.9-1.3). Because of the use of photometric information for binning from MOF in im3shape and from metacalibration-measured fluxes in metacalibration, the binning differs between the two shape catalogs. The photometric information measured with metacalibration on artificially sheared images allows for the correction of photo-z based selection biases on shear signals.</p>
+    <table class="relative-table wrapped">
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="1">
+            <p>Column Name</p>
+          </th>
+          <th colspan="1">Description</th>
+        </tr>
+        <tr>
+          <td>coadd_objects_id</td>
+          <td>
+            <span>Unique internal DES release object identifier. This can be used to match objects across catalogs within a DES release (here Y1A1).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_im3</td>
+          <td>The tomographic bin identifier for IM3SHAPE (based on griz-band MOF fluxes).</td>
+        </tr>
+        <tr>
+          <td>zbin_mcal</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_mcal_1p</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_mcal_1m</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_mcal_2p</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_mcal_2m</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br>
+    </p>
+    <p class="auto-cursor-target">The source redshift distributions of the bins defined here can be found in the nz_source_mcal and nz_source_im3 extensions of <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_redshift_distributions_v1.fits">y1_redshift_distributions_v1.fits</a>. They are only valid if interpreted with the redshift bins and source selections made upon the METACALIBRATION or IM3SHAPE catalog flags_select and redshift bins defined in this catalog, and should be interpreted with the systematic uncertainties on mean redshift defined in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a>.<strong> If making selections of beyond this, the redshift distribution information and calibration will no longer be correct.</strong>
+    </p>
+    <p>The relevant extensions containing the source redshift distributions are described in the tables below.</p>
+    <table class="wrapped">
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 1 Name = nz_source_mcal (METACALIBRATION sources)</p>
+            <p>HDU 2 Name = nz_source_im3 (IM3SHAPE sources)</p>
+            <p>(Tomographic redshift distribution of the source galaxies)</p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br>
+          </td>
+          <td colspan="1">
+            <strong>
+              <strong>Header Value</strong>
+            </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="10">
+            <br>
+          </td>
+          <td>NGAL_{i}</td>
+          <td>
+            <p>The mean number density (gal/arcmin^2) of the tomographic bin (1-4)</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">SIG_E_{i}</td>
+          <td colspan="1">The total ellipticity dispersion of the tomographic bin (1-4)</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>Z_LOW</td>
+          <td>The lower z boundary of this z bin range</td>
+        </tr>
+        <tr>
+          <td>Z_MID</td>
+          <td>The central z <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Z_HIGH</td>
+          <td colspan="1">The upper z boundary <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN1</td>
+          <td colspan="1">The n(z) in this z bin range for tomographic bin 1</td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN2</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 2</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN3</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 3</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN4</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 4</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 3 Name = nz_lens</p>
+            <p>
+              <span>(<span>Tomographic r</span>edshift distribution of the lens galaxies)</span>
+            </p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br>
+          </td>
+          <td colspan="1">
+            <strong>
+              <strong>Header Value</strong>
+            </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="10">
+            <br>
+          </td>
+          <td>NGAL_{i}</td>
+          <td>
+            <p>The mean number density (gal/arcmin^2) of the tomographic bin (1-5)</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>Z_LOW</td>
+          <td>The lower z boundary of this z bin range</td>
+        </tr>
+        <tr>
+          <td>Z_MID</td>
+          <td>The central z <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Z_HIGH</td>
+          <td colspan="1">The upper z boundary <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN1</td>
+          <td colspan="1">The n(z) in this z bin range for tomographic bin 1</td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN2</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 2</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN3</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 3</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN4</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 4</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN5</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 5</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br>
+    </p>
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyShape extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-shape'; }
+    }
+    window.customElements.define(DesY1A1KeyShape.is, DesY1A1KeyShape);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-key-redmagic" assetpath="des-y1a1/key-catalogs/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 redMaGiC Catalogs">
+<div class="card-content">
+
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>In <strong>
+        <a href="https://arxiv.org/abs/1708.01536">Elvin-Poole et at. (2017)</a>
+      </strong> we studied the large-scale observational systematic and measured the clustering signal of a sample consisting of 6.6 x 10<sup>5</sup> luminous red galaxies selected from DES Year 1 using the redMaGiC algorithm over an area of 1321 square degrees. The sample was split into five tomographic redshift bins in the redshift range 0.15 &lt; z &lt; 0.9, has a mean redshift uncertainty per-galaxy of 0.017(1+z).</p>
+    <p>The systematic that we quantified and correct for, by assigning weights to individual galaxies, originate from spurious correlations induced by spatially varying survey properties.</p>
+    <p>This sample was later combined with weak lensing samples in order to produce precise cosmological constraints from the <br>joint analysis of large-scale structure and lensing correlations (galaxy clustering, galaxy-galaxy lensing and cosmic shear).</p>
+    <p>Here we make public all the data products and catalogs related to the lens sample.</p>
+    <p>At this stage we provide: the galaxy catalog, the footprint mask and random catalogs containing 52M objects.</p>
+    <p>In a future release we will further provide the data-vectors (angular correlation function in 5 tomographic bins) with their covariance and the estimated true redshift distributions (dn/dz) for those bins.</p>
+    <h2>
+      <strong>References</strong>
+    </h2>
+    <ol>
+      <li>
+        <a href="https://arxiv.org/abs/1708.01536">Elvin-Poole J. et al, 2017</a>, ArXiv e-prints 1708.01536: characterisation of the lensing sample (LSS systematics, clustering)</li>
+      <li>
+        <a href="https://arxiv.org/abs/1507.05460">Rozo E. et al. 2016</a>, MNRAS 461, 1431, ArXiv e-prints 1507.05460: description of the redMaGiC algorithm for DES</li>
+      <li>
+        <a href="https://arxiv.org/abs/1708.01530">DES Collaboration 2017</a>, ArXiv e-prints 1708.01530: main 3x2pt cosmological analysis paper</li>
+    </ol>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <p>Catalog, footprint mask, and associated randoms</p>
+    <ul>
+      <li>
+        <p>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits</a>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits">DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits</a>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_RANDOMS.fits">DES_Y1A1_3x2pt_redMaGiC_RANDOMS.fits</a>
+        </p>
+      </li>
+    </ul>
+    <h2>
+      <strong>Description</strong>
+    </h2>
+    <h3>Galaxy Catalog</h3>
+    <p>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits</a>
+    </p>
+    <p>This is the lens sample catalog of redMaGiC galaxies described in <a href="https://arxiv.org/abs/1708.01536">Elvin-Poole et al. (2017)</a>. <br>In our analysis, the sample was split into 5 tomographic bins.</p>
+    <p>bin 1 : 0.15 &lt; photo-z &lt; 0.30 - galaxies with luminosities L / L* &gt; 0.5<br>bin 2 : 0.30 &lt; photo-z &lt; 0.45 - galaxies with luminosities L / L* &gt; 0.5<br>bin 3 : 0.45 &lt; photo-z &lt; 0.60 - galaxies with luminosities L / L* &gt; 0.5<br>bin 4 : 0.60 &lt; photo-z &lt; 0.75 - galaxies with luminosities L / L* &gt; 1.0<br>bin 5 : 0.75 &lt; photo-z &lt; 0.90 - galaxies with luminosities L / L* &gt; 1.5</p>
+    <p>Note that if you select galaxies with different tomographic binning you might be mixing luminosities and samples (i.e. we do not include 1 &gt; L/L* &gt; 0.5 with photo-z &gt; 0.6)</p>
+    <p>The catalog format is</p>
+    <table class="wrapped">
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>
+            <strong>column name</strong>
+          </th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td>ID</td>
+          <td>Y1A1 unique object ID (Equivalent to COADD_OBJECTS_ID in other Gold products)</td>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right Ascension (RA) in degrees</td>
+        </tr>
+        <tr>
+          <td colspan="1">DEC</td>
+          <td colspan="1">Declination (DEC) in degrees</td>
+        </tr>
+        <tr>
+          <td>ZREDMAGIC</td>
+          <td>redmagic photometric redshift</td>
+        </tr>
+        <tr>
+          <td colspan="1">weight</td>
+          <td colspan="1">weight correcting for observational systematics</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Mask</h3>
+    <p>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits">DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits</a>
+    </p>
+    <p>This is the sample final mask, detailed in Elvin-Poole et al. (2017). It is a Healpix map in order = RING at nside = 4096. The map has as information the effective area per healpix pixel</p>
+    <h3>Randoms</h3>
+    <p>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_RANDOMS.fits">DES_Y1A1_3x2pt_redMaGiC_RANDOMS.fits</a>
+    </p>
+    <p>Random catalog associated with the sample. The redshift variable is such that the randoms follow the radial distribution of the data. For projected clustering the redshift variable is not relevant.</p>
+    <p>
+      <br>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>
+            <p>
+              <strong>column name</strong>
+            </p>
+          </th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right Ascension (RA) in degrees</td>
+        </tr>
+        <tr>
+          <td>DEC</td>
+          <td>Declination (DEC) in degrees</td>
+        </tr>
+        <tr>
+          <td colspan="1">z</td>
+          <td colspan="1">redshift</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br>
+    </p>
+
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyRedmagic extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-redmagic'; }
+    }
+    window.customElements.define(DesY1A1KeyRedmagic.is, DesY1A1KeyRedmagic);
   </script>
 
 </dom-module>
