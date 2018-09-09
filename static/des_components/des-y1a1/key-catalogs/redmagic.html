@@ -41,7 +41,7 @@
     <ul>
       <li>
         <p>
-          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits</a>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_zerr_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_zerr_CATALOG.fits</a>
         </p>
       </li>
       <li>
@@ -60,7 +60,7 @@
     </h2>
     <h3>Galaxy Catalog</h3>
     <p>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits</a>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_zerr_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_zerr_CATALOG.fits</a>
     </p>
     <p>This is the lens sample catalog of redMaGiC galaxies described in <a href="https://arxiv.org/abs/1708.01536">Elvin-Poole et al. (2017)</a>. <br/>In our analysis, the sample was split into 5 tomographic bins.</p>
     <p>bin 1 : 0.15 &lt; photo-z &lt; 0.30 - galaxies with luminosities L / L* &gt; 0.5<br/>bin 2 : 0.30 &lt; photo-z &lt; 0.45 - galaxies with luminosities L / L* &gt; 0.5<br/>bin 3 : 0.45 &lt; photo-z &lt; 0.60 - galaxies with luminosities L / L* &gt; 0.5<br/>bin 4 : 0.60 &lt; photo-z &lt; 0.75 - galaxies with luminosities L / L* &gt; 1.0<br/>bin 5 : 0.75 &lt; photo-z &lt; 0.90 - galaxies with luminosities L / L* &gt; 1.5</p>
@@ -84,15 +84,19 @@
         </tr>
         <tr>
           <td>RA</td>
-          <td>Right Ascension (RA) in degrees</td>
+          <td>Right Ascension (RA) in degrees (from Y1A1 Gold)</td>
         </tr>
         <tr>
           <td colspan="1">DEC</td>
-          <td colspan="1">Declination (DEC) in degrees</td>
+          <td colspan="1">Declination (DEC) in degrees (from Y1A1 Gold)</td>
         </tr>
         <tr>
           <td>ZREDMAGIC</td>
           <td>redmagic photometric redshift</td>
+        </tr>
+        <tr>
+          <td colspan="1">ZREDMAGIC_E</td>
+          <td colspan="1">redmagic photometric redshift error</td>
         </tr>
         <tr>
           <td colspan="1">weight</td>
@@ -141,11 +145,6 @@
         </tr>
       </tbody>
     </table>
-    <p class="auto-cursor-target">
-      <br/>
-    </p>
-
-
 
 
 </div>
