@@ -32301,7 +32301,7 @@ Custom property | Description | Default
               <!-- Y1 -->
               <app-submenu no-auto-close="">
                 <div class="sublist1" slot="submenu-trigger">
-                <a class="app-menu-item" name="y1a1" href="[[rootPath]]releases/y1a1">Y1A1 Gold<iron-icon icon="expand-more"></iron-icon></a>
+                <a class="app-menu-item" name="y1a1" href="[[rootPath]]releases/y1a1">Year 1<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
 
                 <app-menu class="sublist2" slot="submenu-content">
@@ -32325,14 +32325,8 @@ Custom property | Description | Default
                 </div>
                 <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="key-mof" href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">MOF Catalogs</a>
-                </app-menu>
-                <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="key-psf" href="[[rootPath]]releases/y1a1/key-catalogs/key-psf">PSF Catalogs</a>
-                </app-menu>
-                <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="key-shape" href="[[rootPath]]releases/y1a1/key-catalogs/key-shape">Shape Catalogs</a>
-                </app-menu>
-                <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="key-redmagic" href="[[rootPath]]releases/y1a1/key-catalogs/key-redmagic">redMaGiC Catalogs</a>
                 </app-menu>
                 </app-submenu>
@@ -32971,9 +32965,9 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
           <!--<a href="/releases/sva1" target="_self" >
           <img src="/static/sva1.jpg" class="img-circle" alt="sva1" height="120px" ></a> <h1>SVA1 Gold</h1>
           <img src="/static/footprint.png" class="img-circle" alt="future" height="120px"> <h1>Future Releases</h1> -->
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sva1"><paper-button noink="" raised="" class="desButton">SVA1 </paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/y1a1"><paper-button noink="" raised="" class="desButton">Year 1</paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/dr1"><paper-button noink="" raised="" class="desButton">DR1 </paper-button></a>
-            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sva1"><paper-button noink="" raised="" class="desButton">SVA1 Gold</paper-button></a>
-            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/y1a1"><paper-button noink="" raised="" class="desButton">Y1A1 Gold</paper-button></a>
             <div style="padding: 20px; text-decoration: none; display: inline;"><paper-button noink="" raised="" disabled="" class="desButton">Future Releases </paper-button></div>
           <!-- <paper-button noink disabled>Future Releases</paper-button> -->
           </div>
@@ -35513,9 +35507,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <div style="text-align: center">
 
           <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank"><paper-button raised="" class="desButton">Files</paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/gold"><paper-button raised="" class="desButton">Gold Products </paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/key"><paper-button raised="" class="desButton">Key Projects</paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/bao"><paper-button raised="" class="desButton"> BAO Products</paper-button></a>
+              <paper-button raised="" class="desButton" on-click="_scroll"> Data Summary</paper-button>
           <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
       </div>
       <hr>
@@ -35544,10 +35536,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <h3>
         <strong>Support</strong>
       </h3>
+        <div id="y1access">
       <p>Support for the Y1 data products is very limited. The primary sources of documentation are the papers that derived these data products, and questions can be addressed to the authors of those papers.</p>
       <p>
         <br>
       </p>
+
       <h2>
         <strong>Data Access</strong>
       </h2>
@@ -35664,10 +35658,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1KP catalogs</td>
             <td colspan="1">Multi-Object-Fitting Photometry</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Multi-Object-Fitting+%28MOF%29+Catalogs">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mof_catalogs/y1a1-gold-mof-badregion.fits">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mof_catalogs">Link</a>
             </td>
             <td colspan="1">
               <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">Drlica-Wagner et al. (2018)</a>
@@ -35677,7 +35671,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1KP catalogs</td>
             <td colspan="1">Shape Catalogs</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Shape+Catalogs">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-shape">Link</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/">Link</a>
@@ -35690,10 +35684,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1KP catalogs</td>
             <td colspan="1">PSF Catalog</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1A1+PSF+Catalog">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-psf">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://www.cosmo.bnl.gov/Private/gpfs/workarea/mjarvis/psfex_rerun/y1a1-v13/psf_y1a1-v13.fits">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/psf_catalogs/">Link</a>
             </td>
             <td colspan="1">
               <a href="http://adsabs.harvard.edu/abs/2018MNRAS.tmp.2129Z">Zuntz &amp; Sheldon et al. (2018)</a>
@@ -35712,10 +35706,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1KP catalogs</td>
             <td colspan="1">redMaGiC Catalogs</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1A1+Redmagic+Samples">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-redmagic">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/desprivate/y1a1_files/redmagic/">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/">Link</a>
             </td>
             <td colspan="1">
               <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01536">Elvin-Poole et al. (2018)</a>
@@ -35760,10 +35754,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1A1 Key Project</td>
             <td colspan="1">Redshift Distributions in Tomographic Bins</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products#Y1KPProducts-RedshiftDistributionsinTomographicBins.1">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-products">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/2pt_NG_mcal_1110.fits">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/">Link</a>
             </td>
             <td colspan="1">
               <a href="http://adsabs.harvard.edu/abs/2017arXiv170801530D">DES Collaboration (2018)</a>
@@ -35773,7 +35767,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1A1 Key Project</td>
             <td colspan="1">Likelihoods/Chains</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products#Y1KPProducts-CosmologyChains.1">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-products">Link</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/">Link</a>
@@ -35786,7 +35780,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <td colspan="1">Y1A1 Key Project</td>
             <td colspan="1">Mass Maps</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products#Y1KPProducts-WeakLensingMassMaps.1">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-products">Link</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/">Link</a>
@@ -35983,14 +35977,22 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 
       </div>
-      </des-card>
+      
 
 
-</template>
+</div></des-card></template>
 
 <script>
     class DesY1A1 extends Polymer.Element {
       static get is() { return 'des-y1a1'; }
+
+      _scroll() {
+
+    var elmnt = this.$.y1access;
+    console.log(elmnt);
+    elmnt.scrollIntoView();
+
+      }
     }
     window.customElements.define(DesY1A1.is, DesY1A1);
   </script>
@@ -36729,40 +36731,14 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <des-card heading="Y1 Density Split Statistics">
 <div class="card-content">
 
-    <p>
-      <br>
-    </p>
     <h2>
       <strong>Overview</strong>
     </h2>
-    <p>In <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3507G">Gruen et al. 2018</a> we derive cosmological constraints from the probability distribution function (PDF) of evolved large-scale matter density fluctuations using the modeling of <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3508F">Friedrich et al. 2018</a>. We do this by splitting lines of sight by density based on their count of tracer galaxies, and by measuring both gravitational shear around and counts-in-cells in overdense and underdense lines of sight, in Dark Energy Survey (DES) Y1 data. Our analysis uses a perturbation theory model and is validated using N-body simulation realizations and log-normal mocks. It allows us to constrain cosmology, bias and stochasticity of galaxies w.r.t. matter density and, in addition, the skewness of the matter density field.<br>From a Bayesian model comparison, we find that the data weakly prefer a connection of galaxies and matter that is stochastic beyond Poisson fluctuations on &lt;=20 arcmin angular smoothing scale. The two stochasticity models we fit yield DES constraints on the matter density <span class="MathJax">
-        <span class="math">
-          <span>
-            <span>
-              <span class="mrow">
-                <span class="msubsup">
-                  <span>
-                    <span>
-                      <span class="mi">Ω</span>
+    <p>In <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3507G">Gruen et al. 2018</a> we derive cosmological constraints from the probability distribution function (PDF) of evolved large-scale matter density fluctuations using the modeling of <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3508F">Friedrich et al. 2018</a>. We do this by splitting lines of sight by density based on their count of tracer galaxies, and by measuring both gravitational shear around and counts-in-cells in overdense and underdense lines of sight, in Dark Energy Survey (DES) Y1 data. Our analysis uses a perturbation theory model and is validated using N-body simulation realizations and log-normal mocks. It allows us to constrain cosmology, bias and stochasticity of galaxies w.r.t. matter density and, in addition, the skewness of the matter density field.<br>From a Bayesian model comparison, we find that the data weakly prefer a connection of galaxies and matter that is stochastic beyond Poisson fluctuations on &lt;=20 arcmin angular smoothing scale. The two stochasticity models we fit yield DES constraints on the matter density <span class="MathJax"> <span class="math"> <span> <span> <span class="mrow"> <span class="msubsup"> <span> <span> <span class="mi">Ω</span>
                     </span>
                     <sub>
                       <span>
-                        <span class="mi">m</span>
-                      </span>
-                    </sub>
-                  </span>
-                </span>
-                <span class="mo">=</span>
-                <span class="msubsup">
-                  <span>
-                    <span>
-                      <span class="mn">0.26</span>
-                    </span>
-                    <sup>
-                      <span>
-                        <span class="texatom">
-                          <span class="mrow">
-                            <span class="mo">+</span>
+                        <span class="mi">m</span> </span> </sub> </span> </span> <span class="mo">=</span> <span class="msubsup"> <span> <span> <span class="mn">0.26</span> </span> <sup> <span> <span class="texatom"> <span class="mrow"> <span class="mo">+</span>
                             <span class="mn">0.04</span>
                           </span>
                         </span>
@@ -36773,45 +36749,11 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
                         <span class="texatom">
                           <span class="mrow">
                             <span class="mo">−</span>
-                            <span class="mn">0.03</span>
-                          </span>
-                        </span>
-                      </span>
-                    </sub>
-                  </span>
-                </span>
-              </span>
-            </span>
-          </span>
-        </span>
-      </span> and <span class="MathJax">
-        <span class="math">
-          <span>
-            <span>
-              <span class="mrow">
-                <span class="msubsup">
-                  <span>
-                    <span>
-                      <span class="mi">Ω</span>
+                            <span class="mn">0.03</span> </span> </span> </span> </sub> </span> </span> </span> </span> </span> </span> </span> and <span class="MathJax"> <span class="math"> <span> <span> <span class="mrow"> <span class="msubsup"> <span> <span> <span class="mi">Ω</span>
                     </span>
                     <sub>
                       <span>
-                        <span class="mi">m</span>
-                      </span>
-                    </sub>
-                  </span>
-                </span>
-                <span class="mo">=</span>
-                <span class="msubsup">
-                  <span>
-                    <span>
-                      <span class="mn">0.28</span>
-                    </span>
-                    <sup>
-                      <span>
-                        <span class="texatom">
-                          <span class="mrow">
-                            <span class="mo">+</span>
+                        <span class="mi">m</span> </span> </sub> </span> </span> <span class="mo">=</span> <span class="msubsup"> <span> <span> <span class="mn">0.28</span> </span> <sup> <span> <span class="texatom"> <span class="mrow"> <span class="mo">+</span>
                             <span class="mn">0.05</span>
                           </span>
                         </span>
@@ -36822,60 +36764,11 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
                         <span class="texatom">
                           <span class="mrow">
                             <span class="mo">−</span>
-                            <span class="mn">0.04</span>
-                          </span>
-                        </span>
-                      </span>
-                    </sub>
-                  </span>
-                </span>
-              </span>
-            </span>
-          </span>
-        </span>
-      </span> that are consistent with each other. These values also agree with the DES analysis of galaxy and shear two-point functions (3x2pt), whose data products are released <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products">here</a>. Density Split Statistic constraints on <span class="MathJax">
-        <span class="math">
-          <span>
-            <span>
-              <span class="mrow">
-                <span class="msubsup">
-                  <span>
-                    <span>
-                      <span class="mi">σ</span>
+                            <span class="mn">0.04</span> </span> </span> </span> </sub> </span> </span> </span> </span> </span> </span> </span> that are consistent with each other. These values also agree with the DES analysis of galaxy and shear two-point functions (3x2pt), whose data products are released <a href="[[rootPath]]releases/y1a1/key-products">here</a>. Density Split Statistic constraints on <span class="MathJax"> <span class="math"> <span> <span> <span class="mrow"> <span class="msubsup"> <span> <span> <span class="mi">σ</span> </span> <sub> <span> <span class="mn">8</span> </span> </sub> </span> </span> </span> </span> </span> </span> </span> are model dependent, but consistent with each other and with the 3x2pt results if stochasticity is at the low end of the posterior range. As an additional test of gravity, counts and lensing in cells allow to compare the skewness <span class="MathJax"> <span class="math"> <span> <span> <span class="mrow"> <span class="msubsup"> <span> <span> <span class="mi">S</span>
                     </span>
                     <sub>
                       <span>
-                        <span class="mn">8</span>
-                      </span>
-                    </sub>
-                  </span>
-                </span>
-              </span>
-            </span>
-          </span>
-        </span>
-      </span> are model dependent, but consistent with each other and with the 3x2pt results if stochasticity is at the low end of the posterior range. As an additional test of gravity, counts and lensing in cells allow to compare the skewness <span class="MathJax">
-        <span class="math">
-          <span>
-            <span>
-              <span class="mrow">
-                <span class="msubsup">
-                  <span>
-                    <span>
-                      <span class="mi">S</span>
-                    </span>
-                    <sub>
-                      <span>
-                        <span class="mn">3</span>
-                      </span>
-                    </sub>
-                  </span>
-                </span>
-              </span>
-            </span>
-          </span>
-        </span>
-      </span> of the matter density PDF to its LambdaCDM prediction. We find no evidence of excess skewness in any model or data set, with better than 25 per cent relative precision in the skewness estimate.</p>
+                        <span class="mn">3</span> </span> </sub> </span> </span> </span> </span> </span> </span> </span> of the matter density PDF to its ΛCDM prediction. We find no evidence of excess skewness in any model or data set, with better than 25 per cent relative precision in the skewness estimate.</p>
     <p>For details of the analysis and the perturbation theory modeling, please see <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3507G">Gruen et al. 2018</a> and <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3508F">Friedrich et al. 2018</a> and feel free to contact the authors.</p>
     <h2>
       <strong>Download</strong>
@@ -36886,7 +36779,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <ul>
       <li>
         <p>
-          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/trough_maps.tar.gz">trough_maps.tar.gz</a> contains five healpix maps, where the value in each pixel describes the probability that this line of sight is in quintile 0 (lowest 20% in galaxy count) to quintile 4 (highest 20% in galaxy count) of all lines of sight. The full definition of the meaning of the pixel values is given as the weight w in section IIA of <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3507G">Gruen et al. 2018</a>. The filenames indicate the smoothing scale – 20' radius top-hat circular filters, with a redshift cut of z=0.2-0.45 of the tracer population – and the quintile, from *0.fits to *4.fits. </p>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/trough_maps.tar.gz">trough_maps.tar.gz</a> contains five Healpix maps, where the value in each pixel describes the probability that this line of sight is in quintile 0 (lowest 20% in galaxy count) to quintile 4 (highest 20% in galaxy count) of all lines of sight. The full definition of the meaning of the pixel values is given as the weight w in section IIA of <a href="http://adsabs.harvard.edu/abs/2018PhRvD..98b3507G">Gruen et al. 2018</a>. The filenames indicate the smoothing scale – 20' radius top-hat circular filters, with a redshift cut of z=0.2-0.45 of the tracer population – and the quintile, from *0.fits to *4.fits. </p>
       </li>
     </ul>
     <h3>Data Vectors</h3>
@@ -36899,17 +36792,63 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <li>
         <a href="http://cov_des_mcal_unblind_20_allbins_fullmodel.tab">cov_des_mcal_unblind_20_allbins_fullmodel.tab</a> in text format, 365x365 covariance of the above data vector estimated from 1000 realizations of the noise. Details are described in Section IV of Gruen et al. 2018.</li>
     </ul>
+    <h3>Redshift Distributions</h3>
     <p>
-      <br>
-    </p>
-    <p>Redshift Distributions in Tomographic Bins</p>
-    <ul>
-      <li>
-        <span style="color: rgb(255,0,0);">
-          <span style="color: rgb(23,43,77);">Coming soon</span>
-        </span>
-      </li>
-    </ul>
+      <span style="color: rgb(255,0,0);"> </span>The three source bins used are bin 2,3,4 of the metacalibration shape catalog. Their redshift distributions are described on the <ac:link>
+        <ri:page ri:content-title="Shape Catalogs">
+      </ri:page></ac:link> page.</p>
+    <p>The redshift distribution of the redMaGiC tracer galaxies used for splitting DES Y1 by density is contained in the extension nz_lens_dss of <strong>
+        <a class="external-link" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_redshift_distributions_v1.fits" rel="nofollow">y1_redshift_distributions_v1.fits</a>
+      </strong>. The contents of the table are described below.</p>
+    <table class="wrapped">
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 4 Name = nz_lens_dss</p>
+            <p>
+              <span>(<span>R</span>edshift distribution of the lens galaxies used for density split statistics)</span>
+            </p>
+          </th>
+        </tr>
+        <tr>
+          <td rowspan="5">
+            <br>
+          </td>
+          <td>
+            <strong>Column Name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>Z_LOW</td>
+          <td>The lower z boundary of this z bin range</td>
+        </tr>
+        <tr>
+          <td>Z_MID</td>
+          <td>The central z <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Z_HIGH</td>
+          <td colspan="1">The upper z boundary <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN2</td>
+          <td colspan="1">
+            <span>The n(z) of the tracer galaxies in this z bin range<br>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <h3>Cosmology Chains</h3>
     <p>There is a chain for each of a set of models of increasing complexity. See Section IIIC in Gruen et al. 2018 for details and Table I therein for priors.</p>
     <ul>
@@ -36926,7 +36865,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <li>
         <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/density_stats/datalike_unblind_run0_model5_nomn.tab.gz">Model 5</a>: linear bias and density dependent stochasticity, S<sub>3</sub> free</li>
     </ul>
-    <p>The evidence ratios mildly prefer models with stochasticity and show now need for a free S<sub>3</sub> parameter.</p>
+    <p>The evidence ratios mildly prefer models with stochasticity and show no need for a free S<sub>3</sub> parameter.</p>
     <p>The chains are already unblinded and burn-in has been removed. They include a header describing the structure in detail.</p>
     <h2>
       <strong>Analysis code</strong>
@@ -36942,27 +36881,18 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <p>
       <a href="https://arxiv.org/abs/1712.07298">https://arxiv.org/abs/1712.07298</a> Cawthon et al.</p>
     <p>
-      <a href="https://arxiv.org/abs/1710.02517" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1710.02517</a>
-      <span style="letter-spacing: 0.0px;"> Davis et al.</span>
+      <a href="https://arxiv.org/abs/1710.02517" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1710.02517</a> <span style="letter-spacing: 0.0px;"> Davis et al.</span>
     </p>
     <p>
-      <a href="https://arxiv.org/abs/1708.01536" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01536</a>
-      <span style="letter-spacing: 0.0px;"> Elvin-Poole et al.</span>
+      <a href="https://arxiv.org/abs/1708.01536" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01536</a> <span style="letter-spacing: 0.0px;"> Elvin-Poole et al.</span>
     </p>
     <p>
-      <a href="https://arxiv.org/abs/1709.00992">https://arxiv.org/abs/1709.00992</a>
-      <span> Gatti et al.</span>
+      <a href="https://arxiv.org/abs/1709.00992">https://arxiv.org/abs/1709.00992</a> <span> Gatti et al.</span>
     </p>
     <p>
       <a href="https://arxiv.org/abs/1708.01532">https://arxiv.org/abs/1708.01532</a> Hoyle et al.</p>
     <p>
-      <a href="https://arxiv.org/abs/1708.01533" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01533</a>
-      <span style="letter-spacing: 0.0px;"> Zuntz et al.</span>
-    </p>
-    <p>
-      <span style="letter-spacing: 0.0px;">
-        <br>
-      </span>
+      <a href="https://arxiv.org/abs/1708.01533" style="letter-spacing: 0.0px;">https://arxiv.org/abs/1708.01533</a> <span style="letter-spacing: 0.0px;"> Zuntz et al.</span>
     </p>
 
 
@@ -37388,7 +37318,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <h3>Cosmology Chains</h3>
     <p>Here we present the cosmological chains for the various models presented in the Y1A1 key papers. In all cases, 3 neutrinos were taken to be degenerate [appropriate to the mass range to which we are sensitive]. </p>
     <p>
-      <br>The chains are produced using multinest. When using the chains, you must weight the contribution of each sample according to the weight column. (<a href="https://opensource.ncsa.illinois.edu/confluence/download/attachments/132841548/read_DES_y1kp_chains.py?api=v2">see the python snippet attached</a>)</p>
+      <br>The chains are produced using multinest. When using the chains, you must weight the contribution of each sample according to the weight column. (<a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/read_DES_y1kp_chains.py">see the python snippet attached</a>)</p>
     <p>
       <br>
     </p>
@@ -39177,61 +39107,46 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <strong>Overview</strong>
     </h2>
     <p>From <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>:</p>
-    <p>We present two galaxy shape catalogues from the Dark Energy Survey Year 1 data set, covering ~1500 square degrees with a median redshift of 0.59. The catalogues cover two main fields: Stripe 82, and an area overlapping the South Pole Telescope survey region. We describe our data analysis process and in particular our shape measurement using two independent shear measurement pipelines, METACALIBRATION and IM3SHAPE. The METACALIBRATION catalogue uses a Gaussian model with an innovative internal calibration scheme, and was applied to riz-bands, yielding 34.8M objects. The IM3SHAPE catalogue uses a maximum-likelihood bulge/disc model calibrated using simulations, and was applied to r-band data, yielding 21.9M objects. Both catalogues pass a suite of null tests that demonstrate their fitness for use in weak lensing science. We estimate the 1 sigma uncertainties in multiplicative shear calibration to be 0.013 and 0.025 for the METACALIBRATION and IM3SHAPE catalogues, respectively. We further deliver a file containing redshift information, with the location of each object in the redshift bins shown in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a> and validated therein and in Davis et al. (2018) and <a href="http://adsabs.harvard.edu/abs/2018MNRAS.477.1664G">Gatti &amp; Vielzeuf et al. (2018)</a>.<strong> <br>
-      </strong>
+    <p>We present two galaxy shape catalogues from the Dark Energy Survey Year 1 data set, covering ~1500 square degrees with a median redshift of 0.59. The catalogues cover two main fields: Stripe 82, and an area overlapping the South Pole Telescope survey region. We describe our data analysis process and in particular our shape measurement using two independent shear measurement pipelines, METACALIBRATION and IM3SHAPE. The METACALIBRATION catalogue uses a Gaussian model with an innovative internal calibration scheme, and was applied to riz-bands, yielding 34.8M objects. The IM3SHAPE catalogue uses a maximum-likelihood bulge/disc model calibrated using simulations, and was applied to r-band data, yielding 21.9M objects. Both catalogues pass a suite of null tests that demonstrate their fitness for use in weak lensing science. We estimate the 1 sigma uncertainties in multiplicative shear calibration to be 0.013 and 0.025 for the METACALIBRATION and IM3SHAPE catalogues, respectively. We further deliver a file containing redshift information, with the location of each object in the redshift bins shown in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a> and validated therein and in Davis et al. (2018) and <a href="http://adsabs.harvard.edu/abs/2018MNRAS.477.1664G">Gatti &amp; Vielzeuf et al. (2018)</a>.<strong> <br> </strong>
     </p>
     <h2>
       <strong>Download</strong>
     </h2>
     <ul>
       <li>
-        <strong>
-          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/mcal-y1a1-combined-riz-unblind-v4-matched.fits">mcal-y1a1-combined-riz-unblind-v4-matched.fits</a>  (METACAL)</strong>
+        <strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/mcal-y1a1-combined-riz-unblind-v4-matched.fits">mcal-y1a1-combined-riz-unblind-v4-matched.fits</a>  (METACAL)</strong>
       </li>
       <li>
         <strong>
-          <span>
-            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/y1a1-im3shape_v5_unblind_v2_matched_v4.fits">y1a1-im3shape_v5_unblind_v2_matched_v4.fits</a>
-          </span> (IM3SHAPE)</strong>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/y1_metacal_flux_griz_release.fits">y1_metacal_flux_griz_release.fits</a> (METACAL griz FLUXES)</strong>
       </li>
       <li>
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_source_redshift_binning_v1.fits">
-          <strong>y1_source_redshift_binning_v1.fits</strong>
-        </a>
-        <strong>(REDSHIFT BINNING INFORMATION)</strong>
+        <strong> <span class="m_-2365888534823485024gmail-c-message__body"> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/y1a1-im3shape_v5_unblind_v2_matched_v4.fits">y1a1-im3shape_v5_unblind_v2_matched_v4.fits</a> </span> (IM3SHAPE)</strong>
       </li>
       <li>
-        <strong>
-          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_redshift_distributions_v1.fits">y1_redshift_distributions_v1.fits</a> (REDSHIFT DISTRIBUTIONS OF EACH REDSHIFT BIN)</strong> </li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_source_redshift_binning_v1.fits"> <strong>y1_source_redshift_binning_v1.fits</strong> </a> <strong>(REDSHIFT BINNING INFORMATION)</strong>
+      </li>
+      <li>
+        <strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_redshift_distributions_v1.fits">y1_redshift_distributions_v1.fits</a> (REDSHIFT DISTRIBUTIONS OF EACH REDSHIFT BIN)</strong> </li>
     </ul>
     <h2>
       <strong>Catalog Description</strong>
     </h2>
     <h3>
-      <span style="color: rgb(255,0,0);">
-        <span style="color: rgb(23,43,77);">
-          <strong>METACALIBRATION</strong>
-        </span>
-      </span>
+      <span style="color: rgb(255,0,0);"> <span style="color: rgb(23,43,77);"> <strong>METACALIBRATION</strong> </span> </span>
     </h3>
-    <p>For further information about the METACALIBRATION procedure and description of its implementation in DES, see <a href="https://arxiv.org/abs/1702.02600">Huff &amp; Mandelbaum 2017</a>, <a href="http://adsabs.harvard.edu/abs/2017ApJ...841...24S">Sheldon &amp; Huff 2017</a>, and <span style="color: rgb(255,0,0);">
-        <u> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
-        </u>
-      </span>. It is important to note that the METACALIBRATION catalog contains information necessary to calibrate an arbitrary selection (based on properties measured in this or related METACALIBRATION catalogs - i.e., griz METACALIBRATION flux measurements for photometric redshifts), unlike other forms of shear calibration that are valid only for a particular ensemble selection. <strong>If making selections beyond the METACALIBRATION catalog flags_select, the shear calibration will no longer be correct. </strong>
+    <p>For further information about the METACALIBRATION procedure and description of its implementation in DES, see <a href="https://arxiv.org/abs/1702.02600">Huff &amp; Mandelbaum 2017</a>, <a href="http://adsabs.harvard.edu/abs/2017ApJ...841...24S">Sheldon &amp; Huff 2017</a>, and <span style="color: rgb(255,0,0);"> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+      </span>. It is important to note that the METACALIBRATION catalog contains information necessary to calibrate an arbitrary selection (based on properties measured in this or related METACALIBRATION catalogs - i.e., griz METACALIBRATION flux measurements for photometric redshifts), unlike other forms of shear calibration that are valid only for a particular ensemble selection. <strong>If making selections beyond the METACALIBRATION catalog flags_select, the uncertainty on shear calibration given in  <span style="color: rgb(255,0,0);"> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+        </span> will no longer be correct. </strong>
     </p>
     <p>
-      <strong>
-        <br>
-      </strong>
+      <strong> <br> </strong>
     </p>
     <table class="wrapped">
-      <colgroup>
-        <col>
-        <col>
-      </colgroup>
+      <colgroup> <col> <col> </colgroup>
       <tbody>
         <tr>
-          <th>column name</th>
+          <th>Column name</th>
           <th>Description</th>
         </tr>
         <tr>
@@ -39242,9 +39157,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </tr>
         <tr>
           <td>flags</td>
-          <td>Quality flagging. See Table<strong>
-              <span style="color: rgb(255,0,0);"> ... where?</span>
-            </strong>
+          <td>Quality flagging used as bit 2<sup>3</sup> in flags_select. <span style="color: rgb(0,0,0);">See Table below. </span>
           </td>
         </tr>
         <tr>
@@ -39263,7 +39176,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </tr>
         <tr>
           <td>psf_size</td>
-          <td>The PSF model size T (arcsec^2). See Eq. 3.1 of <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a> for definition of T.</td>
+          <td>The PSF model size T (arcsec^2). See Eq. 3.1 of <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. (2018)</a> for definition of T.</td>
         </tr>
         <tr>
           <td>mcal_psf_e1</td>
@@ -39278,8 +39191,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>mcal_psf_size</td>
           <td>
-            <span>The PSF model size T (arcsec^2)<span> used in the <span>metacal</span> process</span>. <span>For <span>typical </span>null tests, use 'psf_size'.</span>
-            </span>
+            <span>The PSF model size T (arcsec^2)<span> used in the <span>metacal</span> process</span>. <span>For <span>typical </span>null tests, use 'psf_size'.</span> </span>
           </td>
         </tr>
         <tr>
@@ -39338,29 +39250,25 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>size_1p</td>
           <td>
-            <span>The measured T <span>after applying a shear of g1=0.01 to the image (in the metacal process).</span>
-            </span>
+            <span>The measured T <span>after applying a shear of g1=0.01 to the image (in the metacal process).</span> </span>
           </td>
         </tr>
         <tr>
           <td>size_1m</td>
           <td>
-            <span>The measured T </span>
-            <span>after applying a shear of g1=-0.01 to the image (in the metacal process).</span>
+            <span>The measured T </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process).</span>
           </td>
         </tr>
         <tr>
           <td>size_2p</td>
           <td>
-            <span>The measured T </span>
-            <span>after applying a shear of g2=0.01 to the image (in the metacal process).</span>
+            <span>The measured T </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process).</span>
           </td>
         </tr>
         <tr>
           <td>size_2m</td>
           <td>
-            <span>The measured T </span>
-            <span>after applying a shear of g2=-0.01 to the image (in the metacal process).</span>
+            <span>The measured T </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process).</span>
           </td>
         </tr>
         <tr>
@@ -39372,29 +39280,25 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>size_err_1p</td>
           <td>
-            <span>The uncertainty in T </span>
-            <span>after applying a shear of g1=0.01 to the image (in the metacal process).</span>
+            <span>The uncertainty in T </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process).</span>
           </td>
         </tr>
         <tr>
           <td>size_err_1m</td>
           <td>
-            <span>The uncertainty in T </span>
-            <span>after applying a shear of g1=-0.01 to the image (in the metacal process).</span>
+            <span>The uncertainty in T </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process).</span>
           </td>
         </tr>
         <tr>
           <td>size_err_2p</td>
           <td>
-            <span>The uncertainty in T </span>
-            <span>after applying a shear of g2=0.01 to the image (in the metacal process).</span>
+            <span>The uncertainty in T </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process).</span>
           </td>
         </tr>
         <tr>
           <td>size_err_2m</td>
           <td>
-            <span>The uncertainty in T </span>
-            <span>after applying a shear of g2=-0.01 to the image (in the metacal process).</span>
+            <span>The uncertainty in T </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process).</span>
           </td>
         </tr>
         <tr>
@@ -39434,33 +39338,25 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>covmat_0_0_1p</td>
           <td>
-            <span>The e1-e1 covariance <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
-              <span>.</span>
-            </span>
+            <span>The e1-e1 covariance <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>.</span> </span>
           </td>
         </tr>
         <tr>
           <td>covmat_0_0_1m</td>
           <td>
-            <span>The e1-e1 covariance </span>
-            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e1-e1 covariance </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>covmat_0_0_2p</td>
           <td>
-            <span>The e1-e1 covariance </span>
-            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e1-e1 covariance </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>covmat_0_0_2m</td>
           <td>
-            <span>The e1-e1 covariance </span>
-            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e1-e1 covariance </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
@@ -39472,33 +39368,25 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>covmat_0_1_1p</td>
           <td>
-            <span>The e1-e2 covariance </span>
-            <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e1-e2 covariance </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>covmat_0_1_1m</td>
           <td>
-            <span>The e1-e2 covariance </span>
-            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e1-e2 covariance </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>covmat_0_1_2p</td>
           <td>
-            <span>The e1-e2 covariance </span>
-            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e1-e2 covariance </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>covmat_0_1_2m</td>
           <td>
-            <span>The e1-e2 covariance </span>
-            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e1-e2 covariance </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
@@ -39510,33 +39398,25 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>covmat_1_1_1p</td>
           <td>
-            <span>The e2-e2 covariance </span>
-            <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e2-e2 covariance </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>covmat_1_1_1m</td>
           <td>
-            <span>The e2-e2 covariance </span>
-            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e2-e2 covariance </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>covmat_1_1_2p</td>
           <td>
-            <span>The e2-e2 covariance </span>
-            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e2-e2 covariance </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>covmat_1_1_2m</td>
           <td>
-            <span>The e2-e2 covariance </span>
-            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The e2-e2 covariance </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
@@ -39552,25 +39432,19 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>flux_r_1m</td>
           <td>
-            <span>The measured <span>r-band </span>flux of the object </span>
-            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The measured <span>r-band </span>flux of the object </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>flux_r_2p</td>
           <td>
-            <span>The measured <span>r-band </span>flux of the object </span>
-            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The measured <span>r-band </span>flux of the object </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>flux_r_2m</td>
           <td>
-            <span>The measured <span>r-band </span>flux of the object </span>
-            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
-            <span>.</span>
+            <span>The measured <span>r-band </span>flux of the object </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
           </td>
         </tr>
         <tr>
@@ -39586,41 +39460,25 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>flux_i_1p</td>
           <td>
-            <span>The measured i</span>
-            <span>-band </span>
-            <span>flux of the object </span>
-            <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
-            <span>. </span>
+            <span>The measured i</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>. </span>
           </td>
         </tr>
         <tr>
           <td>flux_i_1m</td>
           <td>
-            <span>The measured i</span>
-            <span>-band </span>
-            <span>flux of the object </span>
-            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
-            <span>. </span>
+            <span>The measured i</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>. </span>
           </td>
         </tr>
         <tr>
           <td>flux_i_2p</td>
           <td>
-            <span>The measured i</span>
-            <span>-band </span>
-            <span>flux of the object </span>
-            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
-            <span>. </span>
+            <span>The measured i</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>. </span>
           </td>
         </tr>
         <tr>
           <td>flux_i_2m</td>
           <td>
-            <span>The measured i</span>
-            <span>-band </span>
-            <span>flux of the object </span>
-            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
-            <span>. </span>
+            <span>The measured i</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>. </span>
           </td>
         </tr>
         <tr>
@@ -39638,41 +39496,25 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>flux_z_1p</td>
           <td>
-            <span>The measured z</span>
-            <span>-band </span>
-            <span>flux of the object </span>
-            <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>
-            <span>. </span>
+            <span>The measured z</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>. </span>
           </td>
         </tr>
         <tr>
           <td>flux_z_1m</td>
           <td>
-            <span>The measured z</span>
-            <span>-band </span>
-            <span>flux of the object </span>
-            <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>
-            <span>. </span>
+            <span>The measured z</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>. </span>
           </td>
         </tr>
         <tr>
           <td>flux_z_2p</td>
           <td>
-            <span>The measured z</span>
-            <span>-band </span>
-            <span>flux of the object </span>
-            <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>
-            <span>. </span>
+            <span>The measured z</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>. </span>
           </td>
         </tr>
         <tr>
           <td>flux_z_2m</td>
           <td>
-            <span>The measured z</span>
-            <span>-band </span>
-            <span>flux of the object </span>
-            <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>
-            <span>. </span>
+            <span>The measured z</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>. </span>
           </td>
         </tr>
         <tr>
@@ -39686,7 +39528,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>R11</td>
           <td>
-            <div class="content-wrapper">The shear response matrix e1-e1 element. For details on calculation, see <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>. You must calculate the selection bias response to add to this.</div>
+            <div class="content-wrapper">The shear response matrix e1-e1 element. For details on calculation, see <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. (2018)</a>. You must calculate the selection bias response to add to this.</div>
           </td>
         </tr>
         <tr>
@@ -39731,10 +39573,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </tr>
         <tr>
           <td>flags_select</td>
-          <td>Selection flag based on unshared quantities. 0 means use the object. <span>See Table</span>
-            <strong>
-              <span style="color: rgb(255,0,0);"> ... where?</span>
-            </strong>
+          <td>Selection flag based on unshared quantities. 0 means use the object. <span>See Table</span> <span style="color: rgb(0,0,0);">below. </span>
           </td>
         </tr>
         <tr>
@@ -39765,17 +39604,85 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       </strong>
     </p>
     <h3>
-      <strong>IM3SHAPE</strong>
+      <strong>METACAL FLUXES</strong>
     </h3>
-    <p>The Y1 IM3SHAPE catalog is similar to the SV IM3SHAPE catalog, but has calibrations based on substantially improved images simulations as described in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>.</p>
-    <p>
-      <br>
-    </p>
     <table>
       <colgroup>
         <col>
         <col>
       </colgroup>
+      <tbody>
+        <tr>
+          <th>Column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>coadd_objects_id</td>
+          <td>
+            <p>Unique internal DES release object identifier. This can be used to match objects across catalogs within a DES release (here Y1A1).</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flags</td>
+          <td colspan="1">Quality flagging used as bit 2<sup>3</sup> in flags_select. <span style="color: rgb(0,0,0);">See Table below. </span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}</td>
+          <td colspan="1">The measured {g|r|i|z}-band flux of the object.</td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}_1p</td>
+          <td colspan="1">
+            <span>The measured <span>{g|r|i|z}-band </span>flux of the object <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}_1m</td>
+          <td colspan="1">
+            <div class="content-wrapper">
+              <p>
+                <span>The measured </span>{g|r|i|z}<span>
+                  <span>-band </span>flux of the object <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>. </span>
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}_2p</td>
+          <td colspan="1">
+            <span>The measured <span>
+                <span> </span>{g|r|i|z}<span>
+                  <span>-band</span>
+                </span> </span>flux of the object </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}_2m</td>
+          <td colspan="1">
+            <span>The measured <span> </span>{g|r|i|z}<span>
+                <span>-band</span>
+              </span> flux of the object </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_err_{g|r|i|z}</td>
+          <td colspan="1">The uncertainty on the <span> </span>{g|r|i|z}<span>
+              <span>-band</span>
+            </span> flux.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>
+      <strong>IM3SHAPE</strong>
+    </h3>
+    <p>The Y1 IM3SHAPE catalog is similar to the SV IM3SHAPE catalog, but has calibrations based on substantially improved images simulations as described in <a href="http://adsabs.harvard.edu/abs/2018MNRAS.475.4524S">Samuroff et al. (2018)</a> and <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. (2018)</a>.</p>
+    <p>
+      <br>
+    </p>
+    <table>
+      <colgroup> <col>
+          <col> </colgroup>
       <tbody>
         <tr>
           <th colspan="1">Column Name</th>
@@ -39805,24 +39712,18 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </tr>
         <tr>
           <td>c1</td>
-          <td>The additive bias correction c1 <span>determined from image simulations. See details in </span>
-            <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
-            <span>.</span>
+          <td>The additive bias correction c1 <span>determined from image simulations. See details in </span> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>c2</td>
           <td>
-            <span>The additive bias correction c2 </span>
-            <span>determined from image simulations. See details in </span>
-            <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
-            <span>.</span>
+            <span>The additive bias correction c2 </span> <span>determined from image simulations. See details in </span> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>weight</td>
-          <td>The object weight, which should be used in all ensemble calculations. Details of derivation are provided in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
-            <span>.</span>
+          <td>The object weight, which should be used in all ensemble calculations. Details of derivation are provided in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a> <span>.</span>
           </td>
         </tr>
         <tr>
@@ -39832,27 +39733,21 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>snr</td>
           <td>
-            <span>The measured signal-to-noise (snr) of the </span>
-            <span>object</span>
-            <span>.</span>
+            <span>The measured signal-to-noise (snr) of the </span> <span>object</span> <span>.</span>
           </td>
         </tr>
         <tr>
           <td>likelihood</td>
-          <td>"Log-likelihood" i.e. -chi^2/2. What a "good" value is depends on the stamp_size column.</td>
+          <td>"Log-likelihood" i.e. -chi<sup>2</sup>/2. What a "good" value is depends on the stamp_size column.</td>
         </tr>
         <tr>
           <td>chi2_pixel</td>
-          <td>The chi^2 per pixel in the stamp.</td>
+          <td>The chi<sup>2</sup> per pixel in the stamp.</td>
         </tr>
         <tr>
           <td>flags</td>
           <td>
-            <span>Quality flagging. See Table</span>
-            <strong>
-              <span style="color: rgb(255,0,0);"> ... where?</span>
-            </strong>
-          </td>
+            <span>Quality flagging used for bit 2<sup>5</sup> in flags_select. See Table</span> below.</td>
         </tr>
         <tr>
           <td>covmat_0_0</td>
@@ -39879,17 +39774,13 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>psf_e1</td>
           <td>
-            <span>The PSF model </span>
-            <span>ellipticity </span>
-            <span>e1 in WCS.</span>
+            <span>The PSF model </span> <span>ellipticity </span> <span>e1 in WCS.</span>
           </td>
         </tr>
         <tr>
           <td>psf_e2</td>
           <td>
-            <span>The PSF model </span>
-            <span>ellipticity </span>
-            <span>e2 in WCS.</span>
+            <span>The PSF model </span> <span>ellipticity </span> <span>e2 in WCS.</span>
           </td>
         </tr>
         <tr>
@@ -39915,11 +39806,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>flags_select</td>
           <td>
-            <span>Selection flag. 0 means use the object. </span>
-            <span>See Table</span>
-            <strong>
-              <span style="color: rgb(255,0,0);"> ... where?</span>
-            </strong>
+            <span>Selection flag. 0 means use the object. </span> See Table below.<strong> </strong>
           </td>
         </tr>
         <tr>
@@ -39935,9 +39822,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>tilename</td>
           <td>
-            <span>
-              <span>Tile name of tile the object lies within. Each tile is a square of 10,000 pixels on a side, which makes up the extent of the coadd image. The position of the tile on the sky is encoded in its name.</span>
-            </span>
+            <span> <span>Tile name of tile the object lies within. Each tile is a square of 10,000 pixels on a side, which makes up the extent of the coadd image. The position of the tile on the sky is encoded in its name.</span> </span>
           </td>
         </tr>
       </tbody>
@@ -39945,10 +39830,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <h3 class="auto-cursor-target">REDSHIFT BINNING INFORMATION</h3>
     <p>This table of integers indicates the tomographic redshift bin of each object based on the four bins defined in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a>. -1 means not in any bin (outside the range z=0.3-1.3). The tomographic bin placement is based on the mean redshift of the PDF, within the ranges (0.3-0.43, 0.43-0.63, 0.63-0.9, 0.9-1.3). Because of the use of photometric information for binning from MOF in im3shape and from metacalibration-measured fluxes in metacalibration, the binning differs between the two shape catalogs. The photometric information measured with metacalibration on artificially sheared images allows for the correction of photo-z based selection biases on shear signals.</p>
     <table class="relative-table wrapped">
-      <colgroup>
-        <col>
-        <col>
-      </colgroup>
+      <colgroup> <col> <col> </colgroup>
       <tbody>
         <tr>
           <th colspan="1">
@@ -40005,11 +39887,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     </p>
     <p>The relevant extensions containing the source redshift distributions are described in the tables below.</p>
     <table class="wrapped">
-      <colgroup>
-        <col>
-        <col>
-        <col>
-      </colgroup>
+      <colgroup> <col> <col> <col> </colgroup>
       <tbody>
         <tr>
           <th colspan="3">
@@ -40023,9 +39901,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <br>
           </td>
           <td colspan="1">
-            <strong>
-              <strong>Header Value</strong>
-            </strong>
+            <strong> <strong>Header Value</strong> </strong>
           </td>
           <td colspan="1">
             <strong>Description</strong>
@@ -40094,11 +39970,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <br>
     </p>
     <table class="wrapped">
-      <colgroup>
-        <col>
-        <col>
-        <col>
-      </colgroup>
+      <colgroup> <col> <col> <col> </colgroup>
       <tbody>
         <tr>
           <th colspan="3">
@@ -40113,9 +39985,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <br>
           </td>
           <td colspan="1">
-            <strong>
-              <strong>Header Value</strong>
-            </strong>
+            <strong> <strong>Header Value</strong> </strong>
           </td>
           <td colspan="1">
             <strong>Description</strong>
@@ -40185,8 +40055,154 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <p class="auto-cursor-target">
       <br>
     </p>
-
-
+    <p>
+      <strong>DEFINITION OF FLAGS</strong>
+    </p>
+    <p>Objects useable for tomographic shear measurements are characterized by flags_select==0 in the METACALIBRATION or IM3SHAPE catalog, and zbin_[mcal/im3]&gt;=0 in the redshift binning table (both described above).</p>
+    <p>Definitions of the flags are given in the tables below.</p>
+    <table class="wrapped">
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <strong>METACALIBRATION flags_select</strong>
+          </td>
+        </tr>
+        <tr>
+          <th>Flag</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>2<sup>0</sup>
+          </td>
+          <td>Object south of dec=-60<sup>o</sup>
+          </td>
+        </tr>
+        <tr>
+          <td>2<sup>1</sup>
+          </td>
+          <td>Object in <a href="https://opensource.ncsa.illinois.edu/confluence/pages/viewpage.action?pageId=132841661">'bad region'</a>
+          </td>
+        </tr>
+        <tr>
+          <td>2<sup>2</sup>
+          </td>
+          <td>Extended gold flag &gt; 0 (see below and <span style="color: rgb(0,0,0);">
+              <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. 2018</a>
+            </span>)</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>3</sup>
+          </td>
+          <td colspan="1">METACALIBRATION procedure internal quality flag</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>4</sup>
+          </td>
+          <td colspan="1">Object fails size cut recommended in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>5</sup>
+          </td>
+          <td colspan="1">Object fails signal-to-noise ratio cut recommended in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>6</sup>
+          </td>
+          <td colspan="1">MOF photometry internal quality flag</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>7</sup>
+          </td>
+          <td colspan="1">MOF flux in any of g,r,i,z &lt; 0</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>8</sup>
+          </td>
+          <td colspan="1">METACALIBRATION flux in any of r,i,z &lt; 0</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>30</sup>
+          </td>
+          <td colspan="1">object not measured with METACALIBRATION</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note that flag bits 2<sup>4</sup>, 2<sup>5</sup> and 2<sup>8</sup> are re-measured on the sheared versions of the galaxy images, producing flags_select_[12][pm], that must be used to correct for selection biases.</p>
+    <table class="wrapped">
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <strong>IM3SHAPE flags_select</strong>
+          </td>
+        </tr>
+        <tr>
+          <th>Flag</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>2<sup>0</sup>
+          </td>
+          <td>Object south of dec=-60<sup>o</sup>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>1</sup>
+          </td>
+          <td colspan="1">Object classified as star by MODEST_CLASS (<span style="color: rgb(0,0,0);">
+              <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. 2018</a>
+            </span>)</td>
+        </tr>
+        <tr>
+          <td>2<sup>2</sup>
+          </td>
+          <td>Object in <a href="https://opensource.ncsa.illinois.edu/confluence/pages/viewpage.action?pageId=132841661">'bad region'</a>
+          </td>
+        </tr>
+        <tr>
+          <td>2<sup>3</sup>
+          </td>
+          <td>Extended gold flag &gt; 0 (see below and <span style="color: rgb(0,0,0);">
+              <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. 2018</a>
+            </span>)</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>4</sup>
+          </td>
+          <td colspan="1">MOF photometry internal quality flag</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>5</sup>
+          </td>
+          <td colspan="1">IM3SHAPE internal quality flag (without the bits that correspond to bit 2<sup>3</sup> and 2<sup>4</sup> here)</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>5</sup>
+          </td>
+          <td colspan="1">Object fails signal-to-noise ratio cut recommended in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>6</sup>
+          </td>
+          <td colspan="1">MOF flux in any of g,r,i,z &lt; 0</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>7</sup>
+          </td>
+          <td colspan="1">no valid noise bias calibration available</td>
+        </tr>
+      </tbody>
+    </table>
 
 </div>
 </des-card>
@@ -40243,7 +40259,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <ul>
       <li>
         <p>
-          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits</a>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_zerr_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_zerr_CATALOG.fits</a>
         </p>
       </li>
       <li>
@@ -40262,7 +40278,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     </h2>
     <h3>Galaxy Catalog</h3>
     <p>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_CATALOG.fits</a>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_zerr_CATALOG.fits">DES_Y1A1_3x2pt_redMaGiC_zerr_CATALOG.fits</a>
     </p>
     <p>This is the lens sample catalog of redMaGiC galaxies described in <a href="https://arxiv.org/abs/1708.01536">Elvin-Poole et al. (2017)</a>. <br>In our analysis, the sample was split into 5 tomographic bins.</p>
     <p>bin 1 : 0.15 &lt; photo-z &lt; 0.30 - galaxies with luminosities L / L* &gt; 0.5<br>bin 2 : 0.30 &lt; photo-z &lt; 0.45 - galaxies with luminosities L / L* &gt; 0.5<br>bin 3 : 0.45 &lt; photo-z &lt; 0.60 - galaxies with luminosities L / L* &gt; 0.5<br>bin 4 : 0.60 &lt; photo-z &lt; 0.75 - galaxies with luminosities L / L* &gt; 1.0<br>bin 5 : 0.75 &lt; photo-z &lt; 0.90 - galaxies with luminosities L / L* &gt; 1.5</p>
@@ -40286,15 +40302,19 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </tr>
         <tr>
           <td>RA</td>
-          <td>Right Ascension (RA) in degrees</td>
+          <td>Right Ascension (RA) in degrees (from Y1A1 Gold)</td>
         </tr>
         <tr>
           <td colspan="1">DEC</td>
-          <td colspan="1">Declination (DEC) in degrees</td>
+          <td colspan="1">Declination (DEC) in degrees (from Y1A1 Gold)</td>
         </tr>
         <tr>
           <td>ZREDMAGIC</td>
           <td>redmagic photometric redshift</td>
+        </tr>
+        <tr>
+          <td colspan="1">ZREDMAGIC_E</td>
+          <td colspan="1">redmagic photometric redshift error</td>
         </tr>
         <tr>
           <td colspan="1">weight</td>
@@ -40343,9 +40363,6 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </tr>
       </tbody>
     </table>
-    <p class="auto-cursor-target">
-      <br>
-    </p>
 
 
 
