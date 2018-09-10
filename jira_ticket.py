@@ -9,6 +9,7 @@ from email.header import Header
 from email.utils import formataddr
 import smtplib
 import urllib
+import yaml
 
 def send_email():
     subject="New Ticket in DESRELEASE"
