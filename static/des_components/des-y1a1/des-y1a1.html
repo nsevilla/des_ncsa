@@ -19,9 +19,7 @@
       <div style="text-align: center">
 
           <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank"><paper-button   raised  class="desButton">Files</paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/gold"><paper-button   raised  class="desButton" >Gold Products </paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/key"><paper-button   raised  class="desButton" >Key Projects</paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/y1a1/bao"><paper-button   raised  class="desButton" > BAO Products</paper-button></a>
+              <paper-button   raised  class="desButton" on-click="_scroll"> Data Summary</paper-button>
           <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button   raised class="desButton">Help</paper-button></a>
       </div>
       <hr />
@@ -50,10 +48,12 @@
       <h3>
         <strong>Support</strong>
       </h3>
+        <div id="y1access" />
       <p>Support for the Y1 data products is very limited. The primary sources of documentation are the papers that derived these data products, and questions can be addressed to the authors of those papers.</p>
       <p>
         <br/>
       </p>
+
       <h2>
         <strong>Data Access</strong>
       </h2>
@@ -170,10 +170,10 @@
             <td colspan="1">Y1KP catalogs</td>
             <td colspan="1">Multi-Object-Fitting Photometry</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Multi-Object-Fitting+%28MOF%29+Catalogs">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mof_catalogs/y1a1-gold-mof-badregion.fits">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mof_catalogs">Link</a>
             </td>
             <td colspan="1">
               <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">Drlica-Wagner et al. (2018)</a>
@@ -183,7 +183,7 @@
             <td colspan="1">Y1KP catalogs</td>
             <td colspan="1">Shape Catalogs</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Shape+Catalogs">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-shape">Link</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/">Link</a>
@@ -196,10 +196,10 @@
             <td colspan="1">Y1KP catalogs</td>
             <td colspan="1">PSF Catalog</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1A1+PSF+Catalog">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-psf">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://www.cosmo.bnl.gov/Private/gpfs/workarea/mjarvis/psfex_rerun/y1a1-v13/psf_y1a1-v13.fits">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/psf_catalogs/">Link</a>
             </td>
             <td colspan="1">
               <a href="http://adsabs.harvard.edu/abs/2018MNRAS.tmp.2129Z">Zuntz &amp; Sheldon et al. (2018)</a>
@@ -218,10 +218,10 @@
             <td colspan="1">Y1KP catalogs</td>
             <td colspan="1">redMaGiC Catalogs</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1A1+Redmagic+Samples">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-redmagic">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/desprivate/y1a1_files/redmagic/">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/">Link</a>
             </td>
             <td colspan="1">
               <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01536">Elvin-Poole et al. (2018)</a>
@@ -266,10 +266,10 @@
             <td colspan="1">Y1A1 Key Project</td>
             <td colspan="1">Redshift Distributions in Tomographic Bins</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products#Y1KPProducts-RedshiftDistributionsinTomographicBins.1">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-products">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/y1/2pt_NG_mcal_1110.fits">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/">Link</a>
             </td>
             <td colspan="1">
               <a href="http://adsabs.harvard.edu/abs/2017arXiv170801530D">DES Collaboration (2018)</a>
@@ -279,7 +279,7 @@
             <td colspan="1">Y1A1 Key Project</td>
             <td colspan="1">Likelihoods/Chains</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products#Y1KPProducts-CosmologyChains.1">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-products">Link</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/">Link</a>
@@ -292,7 +292,7 @@
             <td colspan="1">Y1A1 Key Project</td>
             <td colspan="1">Mass Maps</td>
             <td colspan="1">
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1KP+Products#Y1KPProducts-WeakLensingMassMaps.1">Link</a>
+              <a href="[[rootPath]]releases/y1a1/key-products">Link</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/">Link</a>
@@ -497,6 +497,14 @@
 <script>
     class DesY1A1 extends Polymer.Element {
       static get is() { return 'des-y1a1'; }
+
+      _scroll() {
+
+    var elmnt = this.$.y1access;
+    console.log(elmnt);
+    elmnt.scrollIntoView();
+
+      }
     }
     window.customElements.define(DesY1A1.is, DesY1A1);
   </script>
