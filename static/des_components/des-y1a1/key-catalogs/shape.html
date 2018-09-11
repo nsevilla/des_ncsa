@@ -16,7 +16,7 @@
       <strong>Overview</strong>
     </h2>
     <p>From <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>:</p>
-    <p>We present two galaxy shape catalogues from the Dark Energy Survey Year 1 data set, covering ~1500 square degrees with a median redshift of 0.59. The catalogues cover two main fields: Stripe 82, and an area overlapping the South Pole Telescope survey region. We describe our data analysis process and in particular our shape measurement using two independent shear measurement pipelines, METACALIBRATION and IM3SHAPE. The METACALIBRATION catalogue uses a Gaussian model with an innovative internal calibration scheme, and was applied to riz-bands, yielding 34.8M objects. The IM3SHAPE catalogue uses a maximum-likelihood bulge/disc model calibrated using simulations, and was applied to r-band data, yielding 21.9M objects. Both catalogues pass a suite of null tests that demonstrate their fitness for use in weak lensing science. We estimate the 1 sigma uncertainties in multiplicative shear calibration to be 0.013 and 0.025 for the METACALIBRATION and IM3SHAPE catalogues, respectively. We further deliver a file containing redshift information, with the location of each object in the redshift bins shown in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a> and validated therein and in Davis et al. (2018) and <a href="http://adsabs.harvard.edu/abs/2018MNRAS.477.1664G">Gatti &amp; Vielzeuf et al. (2018)</a>.<strong> <br/> </strong>
+    <p>We present two galaxy shape catalogues from the Dark Energy Survey Year 1 data set, covering ~1500 square degrees with a median redshift of 0.59. The catalogues cover two main fields: Stripe 82, and an area overlapping the South Pole Telescope survey region. We describe our data analysis process and in particular our shape measurement using two independent shear measurement pipelines, METACALIBRATION and IM3SHAPE. The METACALIBRATION catalogue uses a Gaussian model with an innovative internal calibration scheme, and was applied to riz-bands, yielding 34.8M objects. The IM3SHAPE catalogue uses a maximum-likelihood bulge/disc model calibrated using simulations, and was applied to r-band data, yielding 21.9M objects. Both catalogues pass a suite of null tests that demonstrate their fitness for use in weak lensing science. We estimate the 1 sigma uncertainties in multiplicative shear calibration to be 0.013 and 0.025 for the METACALIBRATION and IM3SHAPE catalogues, respectively. We further deliver a file containing redshift information, with the assignment of each object to the redshift bins shown in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a> and validated therein and in Davis et al. (2018) and <a href="http://adsabs.harvard.edu/abs/2018MNRAS.477.1664G">Gatti &amp; Vielzeuf et al. (2018)</a>.<strong> <br/> </strong>
     </p>
     <h2>
       <strong>Download</strong>
@@ -470,11 +470,11 @@
         </tr>
         <tr>
           <td>ra</td>
-          <td>Right Ascension.</td>
+          <td>Right Ascension (degrees) from the MOF catalog.</td>
         </tr>
         <tr>
           <td>dec</td>
-          <td>Declination.</td>
+          <td>Declination (degrees) from the MOF catalog.</td>
         </tr>
         <tr>
           <td>tilename</td>
@@ -515,6 +515,12 @@
     <h3>
       <strong>METACAL FLUXES</strong>
     </h3>
+    <p>For further information about the METACALIBRATION procedure and description of its implementation in DES, see <a href="https://arxiv.org/abs/1702.02600">Huff &amp; Mandelbaum 2017</a>, <a href="http://adsabs.harvard.edu/abs/2017ApJ...841...24S">Sheldon &amp; Huff 2017</a>, and <span style="color: rgb(255,0,0);">
+    <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+  </span>. It is important to note that the METACALIBRATION catalog contains information necessary to calibrate an arbitrary selection (based on properties measured in this or related METACALIBRATION catalogs - i.e., griz METACALIBRATION flux measurements for photometric redshifts), unlike other forms of shear calibration that are valid only for a particular ensemble selection. <strong>If making selections beyond the METACALIBRATION catalog flags_select, the uncertainty on shear calibration given in  <span style="color: rgb(255,0,0);">
+      <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+    </span> will no longer be correct. </strong>
+</p>
     <table >
       <colgroup>
         <col />
@@ -721,12 +727,12 @@
         <tr>
           <td>ra</td>
           <td>
-            <span>Right Ascension (degrees).</span>
+            <span>Right Ascension (degrees) from the MOF catalog.</span>
           </td>
         </tr>
         <tr>
           <td>dec</td>
-          <td>Declination (degrees).</td>
+          <td>Declination (degrees) from the MOF catalog.</td>
         </tr>
         <tr>
           <td>tilename</td>
