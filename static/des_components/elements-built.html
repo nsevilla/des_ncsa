@@ -32301,7 +32301,7 @@ Custom property | Description | Default
               <!-- Y1 -->
               <app-submenu no-auto-close="">
                 <div class="sublist1" slot="submenu-trigger">
-                <a class="app-menu-item" name="y1a1" href="[[rootPath]]releases/y1a1">Year 1<iron-icon icon="expand-more"></iron-icon></a>
+                <a class="app-menu-item" name="y1a1" href="[[rootPath]]releases/y1a1">Y1 Gold<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
 
                 <app-menu class="sublist2" slot="submenu-content">
@@ -32965,8 +32965,8 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
           <!--<a href="/releases/sva1" target="_self" >
           <img src="/static/sva1.jpg" class="img-circle" alt="sva1" height="120px" ></a> <h1>SVA1 Gold</h1>
           <img src="/static/footprint.png" class="img-circle" alt="future" height="120px"> <h1>Future Releases</h1> -->
-            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sva1"><paper-button noink="" raised="" class="desButton">SVA1 </paper-button></a>
-            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/y1a1"><paper-button noink="" raised="" class="desButton">Year 1</paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sva1"><paper-button noink="" raised="" class="desButton">SVA1 Gold</paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/y1a1"><paper-button noink="" raised="" class="desButton">Y1 Gold</paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/dr1"><paper-button noink="" raised="" class="desButton">DR1 </paper-button></a>
             <div style="padding: 20px; text-decoration: none; display: inline;"><paper-button noink="" raised="" disabled="" class="desButton">Future Releases </paper-button></div>
           <!-- <paper-button noink disabled>Future Releases</paper-button> -->
@@ -35533,6 +35533,11 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </strong> constitute an official DES data release and are provided on an <strong class="style-scope des-docs">
           <span class="style-scope des-docs" style="color: rgb(0,0,0);">"as is"</span>
         </strong> basis in support of DES publications based on Y1 data.</p>
+        <p>
+          Note that the object catalogs distributed as part of this release <strong>do not</strong> all report identical values for the equatorial coordinates (RA, DEC) of individual objects due to differences in the precision of coordinate values recorded in the catalogs. Most of the catalogs based on multi-object fitting (MOF) report the (RA, DEC) coordinates at double precision, whereas the Gold catalog and several catalogs derived from the Gold catalog report truncated values at float precision. The coordinate precision is specified in the documentation for each object catalog. Users may also consider using the DES DR1 based on three years of survey operations for improved astrometric accuracy and precision.
+        </p>
+
+
       <h3>
         <strong>Support</strong>
       </h3>
@@ -35592,7 +35597,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
                  <a href="[[rootPath]]releases/y1a1/gold/morphology">Morphological Catalogs</a>
             </td>
             <td>
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/">Link</a>
             </td>
             <td>
               <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a>
@@ -37926,25 +37931,25 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <h2>
     <strong>Download</strong>
   </h2>
-  <p>The whole catalog was split in 6 files of ~ 3GB each, here is a list of all the files. which can also be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/all_files.txt">here</a>&nbsp;</p>
+  <p>The whole catalog was split in 6 files of ~ 3GB each, here is a list of all the files. which can also be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/all.txt">here</a>&nbsp;</p>
   <ul>
     <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000001.fits">Y1A1_morphological_000001.fits (3.0 GB)</a>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/Y1A1_morphological_000001.fits">Y1A1_morphological_000001.fits (3.0 GB)</a>
     </li>
     <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000002.fits">Y1A1_morphological_000002.fits (3.0 GB)</a>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/Y1A1_morphological_000002.fits">Y1A1_morphological_000002.fits (3.0 GB)</a>
     </li>
     <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000003.fits">Y1A1_morphological_000003.fits (3.0 GB)</a>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/Y1A1_morphological_000003.fits">Y1A1_morphological_000003.fits (3.0 GB)</a>
     </li>
     <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000004.fits">Y1A1_morphological_000004.fits (3.0 GB)</a>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/Y1A1_morphological_000004.fits">Y1A1_morphological_000004.fits (3.0 GB)</a>
     </li>
     <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000005.fits">Y1A1_morphological_000005.fits (3.0 GB)</a>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/Y1A1_morphological_000005.fits">Y1A1_morphological_000005.fits (3.0 GB)</a>
     </li>
     <li>
-      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morphological/Y1A1_morphological_000006.fits">Y1A1_morphological_000006.fits (2.4 GB)</a>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/Y1A1_morphological_000006.fits">Y1A1_morphological_000006.fits (2.4 GB)</a>
     </li>
   </ul>
   <h2>
@@ -37974,7 +37979,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       </tr>
       <tr>
         <td colspan="1">RA/DEC</td>
-        <td colspan="1">Coordinates for the objects.</td>
+        <td colspan="1">Right ascension and declination (degrees) taken from the GOLD catalog.</td>
       </tr>
       <tr>
         <td colspan="1">SG</td>
@@ -38172,6 +38177,8 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <strong>Catalog Description</strong>
     </h2>
     <p>The following columns describe the information in the calibration catalogs. NB some of the columns might be absent in some catalogs. See <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. 2018</a> for a full description of the classifiers included here.</p>
+    <p>
+  <strong>Note</strong>: There is a slight inconsistency in the naming of the coadd objects id below.</p>
     <table>
       <colgroup>
         <col>
@@ -38849,7 +38856,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </tr>
         <tr>
           <td colspan="1">RA/DEC</td>
-          <td colspan="1">copies of alphawin_j2000 and deltawin_j2000 from the original SExtractor catalog. NOTE: These are more precise than the truncated values of the same name in the GOLD Catalog.</td>
+          <td colspan="1">RA/DEC (degrees) calculated from the coadd detection image and transformed using the image WCS. NOTE: These are slightly more precise than the truncated values of the same name in the GOLD Catalog.</td>
         </tr>
         <tr>
           <td colspan="1">EBV</td>
@@ -38859,7 +38866,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td colspan="1">FLAGS_GOLD</td>
           <td colspan="1">(See description in <strong>
-              <a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/Y1A1+Gold+Data">Gold page</a>
+              <a href="[[rootPath]]releases/y1a1/gold">Gold page</a>
             </strong>)</td>
         </tr>
         <tr>
@@ -38990,7 +38997,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <span style="color: rgb(0,0,0);">ra, dec</span>
           </td>
           <td colspan="1">
-            <span style="color: rgb(0,0,0);">Sky coordinates [degrees]</span>
+            <span style="color: rgb(0,0,0);">Sky coordinates [degrees] . ALPHAWIN_J2000,  DELTAWIN_J2000 from single-exposure SExtractor runs</span>
           </td>
         </tr>
         <tr>
@@ -39107,7 +39114,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <strong>Overview</strong>
     </h2>
     <p>From <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>:</p>
-    <p>We present two galaxy shape catalogues from the Dark Energy Survey Year 1 data set, covering ~1500 square degrees with a median redshift of 0.59. The catalogues cover two main fields: Stripe 82, and an area overlapping the South Pole Telescope survey region. We describe our data analysis process and in particular our shape measurement using two independent shear measurement pipelines, METACALIBRATION and IM3SHAPE. The METACALIBRATION catalogue uses a Gaussian model with an innovative internal calibration scheme, and was applied to riz-bands, yielding 34.8M objects. The IM3SHAPE catalogue uses a maximum-likelihood bulge/disc model calibrated using simulations, and was applied to r-band data, yielding 21.9M objects. Both catalogues pass a suite of null tests that demonstrate their fitness for use in weak lensing science. We estimate the 1 sigma uncertainties in multiplicative shear calibration to be 0.013 and 0.025 for the METACALIBRATION and IM3SHAPE catalogues, respectively. We further deliver a file containing redshift information, with the location of each object in the redshift bins shown in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a> and validated therein and in Davis et al. (2018) and <a href="http://adsabs.harvard.edu/abs/2018MNRAS.477.1664G">Gatti &amp; Vielzeuf et al. (2018)</a>.<strong> <br> </strong>
+    <p>We present two galaxy shape catalogues from the Dark Energy Survey Year 1 data set, covering ~1500 square degrees with a median redshift of 0.59. The catalogues cover two main fields: Stripe 82, and an area overlapping the South Pole Telescope survey region. We describe our data analysis process and in particular our shape measurement using two independent shear measurement pipelines, METACALIBRATION and IM3SHAPE. The METACALIBRATION catalogue uses a Gaussian model with an innovative internal calibration scheme, and was applied to riz-bands, yielding 34.8M objects. The IM3SHAPE catalogue uses a maximum-likelihood bulge/disc model calibrated using simulations, and was applied to r-band data, yielding 21.9M objects. Both catalogues pass a suite of null tests that demonstrate their fitness for use in weak lensing science. We estimate the 1 sigma uncertainties in multiplicative shear calibration to be 0.013 and 0.025 for the METACALIBRATION and IM3SHAPE catalogues, respectively. We further deliver a file containing redshift information, with the assignment of each object to the redshift bins shown in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a> and validated therein and in Davis et al. (2018) and <a href="http://adsabs.harvard.edu/abs/2018MNRAS.477.1664G">Gatti &amp; Vielzeuf et al. (2018)</a>.<strong> <br> </strong>
     </p>
     <h2>
       <strong>Download</strong>
@@ -39561,11 +39568,11 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </tr>
         <tr>
           <td>ra</td>
-          <td>Right Ascension.</td>
+          <td>Right Ascension (degrees) from the MOF catalog.</td>
         </tr>
         <tr>
           <td>dec</td>
-          <td>Declination.</td>
+          <td>Declination (degrees) from the MOF catalog.</td>
         </tr>
         <tr>
           <td>tilename</td>
@@ -39606,6 +39613,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <h3>
       <strong>METACAL FLUXES</strong>
     </h3>
+    <p>For further information about the METACALIBRATION&nbsp;procedure and description of its implementation in DES, see&nbsp;<a href="https://arxiv.org/abs/1702.02600">Huff &amp; Mandelbaum 2017</a>,&nbsp;<a href="http://adsabs.harvard.edu/abs/2017ApJ...841...24S">Sheldon &amp; Huff 2017</a>, and&nbsp;<span style="color: rgb(255,0,0);">
+    <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+  </span>. It is important to note that the&nbsp;METACALIBRATION&nbsp;catalog contains information necessary to calibrate an arbitrary selection (based on properties measured in this or related METACALIBRATION&nbsp;catalogs - i.e., griz METACALIBRATION&nbsp;flux measurements for photometric redshifts), unlike other forms of shear calibration that are valid only for a particular ensemble selection.&nbsp;<strong>If making selections beyond the&nbsp;METACALIBRATION catalog flags_select, the uncertainty on shear calibration given in&nbsp;&nbsp;<span style="color: rgb(255,0,0);">
+      <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+    </span>&nbsp;will no longer be correct.&nbsp;</strong>
+</p>
     <table>
       <colgroup>
         <col>
@@ -39812,12 +39825,12 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <tr>
           <td>ra</td>
           <td>
-            <span>Right Ascension (degrees).</span>
+            <span>Right Ascension (degrees) from the MOF catalog.</span>
           </td>
         </tr>
         <tr>
           <td>dec</td>
-          <td>Declination (degrees).</td>
+          <td>Declination (degrees) from the MOF catalog.</td>
         </tr>
         <tr>
           <td>tilename</td>
