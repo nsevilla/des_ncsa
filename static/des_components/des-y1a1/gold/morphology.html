@@ -17,7 +17,7 @@
   <p>In <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a> w<span style="color: rgb(0,0,0);">e present a structural and morphological catalogue for 45 million objects selected from the first year data of the Dark Energy Survey (DES). Single Sérsic fits and non-parametric measurements are produced for g, r and i filters. The parameters from the best-fitting Sérsic model (total magnitude, half-light radius, Sérsic index, axis ratio and position angle) are measured with GALFIT; the non-parametric coefficients (concentration, asymmetry, clumpiness, Gini, M20) are provided using the Zurich Estimator of Structural Types (ZEST+).</span>
   </p>
   <p>
-    <span style="color: rgb(0,0,0);"> To study the statistical uncertainties, we consider a sample of state-of-the-art image simulations (not included in the released) with a realistic distribution in the input parameter space and then process and analyse them as we do with real data: this enables us to quantify the observational biases due to PSF blurring and magnitude effects and correct the measurements as a function of magnitude, galaxy size, Sérsic index (concentration for the analysis of the non-parametric measurements) and ellipticity. </span>
+    <span style="color: rgb(0,0,0);"> To study the statistical uncertainties, we consider a sample of state-of-the-art image simulations (not included in this release) with a realistic distribution in the input parameter space and then process and analyse them as we do with real data: this enables us to quantify the observational biases due to PSF blurring and magnitude effects and correct the measurements as a function of magnitude, galaxy size, Sérsic index (concentration for the analysis of the non-parametric measurements) and ellipticity. </span>
   </p>
   <p>
     <span style="color: rgb(0,0,0);">We present the largest structural catalog to date: we find that accurate and complete measurements for all the structural parameters are typically obtained for galaxies with SEXTRACTOR MAG_AUTO_I ≤ 21. Indeed, the parameters in the filters i and r can be overall well recovered up to MAG_AUTO ≤ 21.5, corresponding to a fitting completeness of ~90% below this threshold, for a total of 25 million galaxies. The combination of parametric and non-parametric structural measurements makes this catalog an important instrument to explore and understand how galaxies form and evolve. </span>
@@ -25,7 +25,7 @@
   <h2>
     <strong>Download</strong>
   </h2>
-  <p>The whole catalog was split in 6 files of ~ 3GB each, here is a list of all the files. which can also be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/all.txt">here</a> </p>
+  <p>The whole catalog was split in 6 files of ~ 3GB each (not in special order or special partition), here is a list of all the files, which can also be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/all.txt">here</a> </p>
   <ul>
     <li>
       <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/Y1A1_morphological_000001.fits">Y1A1_morphological_000001.fits (3.0 GB)</a>
@@ -69,7 +69,7 @@
       </tr>
       <tr>
         <td colspan="1">ID</td>
-        <td colspan="1">Rows enumerator, running for 1 to the total number of entries in the catalog.</td>
+        <td colspan="1">Rows enumerator, running from 1 to the total number of entries in the catalog.</td>
       </tr>
       <tr>
         <td colspan="1">RA/DEC</td>
@@ -77,7 +77,7 @@
       </tr>
       <tr>
         <td colspan="1">SG</td>
-        <td colspan="1">Linear combination of the star-galaxy classifier SPREAD_MODEL and its uncertainty, SPREADERR_MODEL, according to Equation 4 in <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a>. <br/>A cut in SG &gt; 0.005 is recommended</td>
+        <td colspan="1">Linear combination of the star-galaxy classifier SPREAD_MODEL and its uncertainty, SPREADERR_MODEL, according to Equation 4 in <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a>. <br/>A cut in SG &gt; 0.005 is recommended, see paper for more information regarding this value.</td>
       </tr>
       <tr>
         <td colspan="1">SN_X</td>
@@ -114,7 +114,7 @@
       </tr>
       <tr>
         <td colspan="1">MAX_OVERLAP_PERC_X</td>
-        <td colspan="1">Percentage of the central galaxy isophotes overlapping with the closest neighbour. If there are noneighbours or no overlapping neighbours, then it is set to 0. <br/>A cut in MAX_OVERLAP_PERC_X &lt; 50 is recommended</td>
+        <td colspan="1">Percentage of the central galaxy isophotes overlapping with the closest neighbour. If there are no neighbours or no overlapping neighbours, then it is set to 0. <br/>A cut in MAX_OVERLAP_PERC_X &lt; 50 is recommended</td>
       </tr>
       <tr>
         <td colspan="1">
