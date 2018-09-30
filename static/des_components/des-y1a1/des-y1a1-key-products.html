@@ -369,18 +369,15 @@
     <h2>
       <strong>Download</strong>
     </h2>
-    <p>Here you can download the Data Vectors (coming soon) used in the main 3x2pt Y1A1 DES analysis, as well as the cosmology chains. The full listing of downloadable files can be found<strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/">here</a>. <br/>
+    <p>Here you can download the Data Vectors used in the main 3x2pt Y1A1 DES analysis, as well as the cosmology chains. The full listing of downloadable files can be found<strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/">here</a>. <br/>
       </strong>Also you can download the weak lensing mass maps (full listing <strong>
         <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/">here</a>
       </strong>).</p>
-    <p>
-      <br/>
-    </p>
     <h3>
       Data Vectors
     </h3>
     <ul>
-      <li>Coming soon</li>
+      <li><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/2pt_NG_mcal_1110.fits">3x2pt data vector</a></li>
     </ul>
     <h3>Redshift Distributions</h3>
     <ul>
@@ -406,6 +403,642 @@
     <h2>
       <strong>Description</strong>
     </h2>
+
+      <h3>Data Vectors</h3>
+    <p>This <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/2pt_NG_mcal_1110.fits">file</a> includes all the 3x2pt data vectors, redshift distributions, and covariance matrix. They are included in a single FITS binary file, with 7 HDU extensions. Please note that metadata is stored as values in the header of each HDU, as described below, and may be necessary to understand the contents of the HDU.</p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 1 Name = COVMAT</p>
+            <p>(Covariance matrix)</p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br/>
+          </td>
+          <td colspan="1">
+            <strong>Image HDU</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">
+            <br/>
+          </td>
+          <td>Image array</td>
+          <td>
+            <p>900x900 array of covariance matrix</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Header Value</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>NAME_{i} (in header)</td>
+          <td>The order of the covariance blocks (0-3), corresponding to the names of other HDUs that hold the data vector.</td>
+        </tr>
+        <tr>
+          <td>STRT_{i} (in header)</td>
+          <td>The length of each covariance block (0-3).</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 2 Name = xip</p>
+            <p>(Cosmic shear xi<span>+</span>
+              <span> correlation function</span>)</p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br/>
+          </td>
+          <td colspan="1">
+            <strong>
+              <strong>Header Value</strong>
+            </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="12">
+            <br/>
+          </td>
+          <td>KERNEL_1</td>
+          <td>
+            <p>The HDU name of the corresponding first (source) redshift distribution</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">KERNEL_2</td>
+          <td colspan="1">
+            <span>The HDU name of the corresponding second (source) redshift distribution</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ZBIN_1</td>
+          <td colspan="1">The number of <span>first (source) tomographic bins</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ZBIN_2</td>
+          <td colspan="1">
+            <span>The number of second</span>
+            <span> (source) tomographic bins</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ANG</td>
+          <td colspan="1">The number of angular bins</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>BIN1</td>
+          <td>Index of first (source) redshift bin</td>
+        </tr>
+        <tr>
+          <td>BIN2</td>
+          <td>
+            <span>Index of second (source) redshift bin</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">ANGBIN</td>
+          <td colspan="1">Index of the angular bin</td>
+        </tr>
+        <tr>
+          <td colspan="1">VALUE</td>
+          <td colspan="1">
+            <span>Measured value</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">ANG</td>
+          <td colspan="1">Mean angular separation: e^(&lt;ln R&gt;)</td>
+        </tr>
+        <tr>
+          <td colspan="1">NPAIRS</td>
+          <td colspan="1">Number of galaxy pairs in the bin</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 3 Name = xim</p>
+            <p>(Cosmic shear xi<span>+</span>
+              <span> correlation function</span>)</p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br/>
+          </td>
+          <td colspan="1">
+            <strong>
+              <strong>Header Value</strong>
+            </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="12">
+            <br/>
+          </td>
+          <td>KERNEL_1</td>
+          <td>
+            <p>The HDU name of the corresponding first (source) redshift distribution</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">KERNEL_2</td>
+          <td colspan="1">
+            <span>The HDU name of the corresponding second (source) redshift distribution</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ZBIN_1</td>
+          <td colspan="1">The number of <span>first (source) tomographic bins</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ZBIN_2</td>
+          <td colspan="1">
+            <span>The number of second</span>
+            <span> (source) tomographic bins</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ANG</td>
+          <td colspan="1">The number of angular bins</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>BIN1</td>
+          <td>Index of first (source) redshift bin</td>
+        </tr>
+        <tr>
+          <td>BIN2</td>
+          <td>
+            <span>Index of second (source) redshift bin</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">ANGBIN</td>
+          <td colspan="1">Index of the angular bin</td>
+        </tr>
+        <tr>
+          <td colspan="1">VALUE</td>
+          <td colspan="1">
+            <span>Measured value</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">ANG</td>
+          <td colspan="1">Mean angular separation: e^(&lt;ln R&gt;)</td>
+        </tr>
+        <tr>
+          <td colspan="1">NPAIRS</td>
+          <td colspan="1">Number of galaxy pairs in the bin</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 4 Name = gammat</p>
+            <p>
+              <span>(Galaxy-galaxy lensing correlation function)</span>
+            </p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br/>
+          </td>
+          <td colspan="1">
+            <strong>
+              <strong>Header Value</strong>
+            </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="12">
+            <br/>
+          </td>
+          <td>KERNEL_1</td>
+          <td>
+            <p>The HDU name of the corresponding first (source) redshift distribution</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">KERNEL_2</td>
+          <td colspan="1">
+            <span>The HDU name of the corresponding second (source) redshift distribution</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ZBIN_1</td>
+          <td colspan="1">The number of <span>first (source) tomographic bins</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ZBIN_2</td>
+          <td colspan="1">
+            <span>The number of second</span>
+            <span> (source) tomographic bins</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ANG</td>
+          <td colspan="1">The number of angular bins</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>BIN1</td>
+          <td>Index of first (source) redshift bin</td>
+        </tr>
+        <tr>
+          <td>BIN2</td>
+          <td>
+            <span>Index of second (source) redshift bin</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">ANGBIN</td>
+          <td colspan="1">Index of the angular bin</td>
+        </tr>
+        <tr>
+          <td colspan="1">VALUE</td>
+          <td colspan="1">
+            <span>Measured value</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">ANG</td>
+          <td colspan="1">Mean angular separation: e^(&lt;ln R&gt;)</td>
+        </tr>
+        <tr>
+          <td colspan="1">NPAIRS</td>
+          <td colspan="1">Number of galaxy pairs in the bin</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 5 Name = wtheta</p>
+            <p>
+              <span>(Angular clustering correlation function)</span>
+            </p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br/>
+          </td>
+          <td colspan="1">
+            <strong>
+              <strong>Header Value</strong>
+            </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="12">
+            <br/>
+          </td>
+          <td>KERNEL_1</td>
+          <td>
+            <p>The HDU name of the corresponding first (source) redshift distribution</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">KERNEL_2</td>
+          <td colspan="1">
+            <span>The HDU name of the corresponding second (source) redshift distribution</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ZBIN_1</td>
+          <td colspan="1">The number of <span>first (source) tomographic bins</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ZBIN_2</td>
+          <td colspan="1">
+            <span>The number of second</span>
+            <span> (source) tomographic bins</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">N_ANG</td>
+          <td colspan="1">The number of angular bins</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>BIN1</td>
+          <td>Index of first (source) redshift bin</td>
+        </tr>
+        <tr>
+          <td>BIN2</td>
+          <td>
+            <span>Index of second (source) redshift bin</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">ANGBIN</td>
+          <td colspan="1">Index of the angular bin</td>
+        </tr>
+        <tr>
+          <td colspan="1">VALUE</td>
+          <td colspan="1">
+            <span>Measured value</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">ANG</td>
+          <td colspan="1">Mean angular separation: e^(&lt;ln R&gt;)</td>
+        </tr>
+        <tr>
+          <td colspan="1">NPAIRS</td>
+          <td colspan="1">Number of galaxy pairs in the bin</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 6 Name = nz_source</p>
+            <p>(Tomographic redshift distribution of the source galaxies)</p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br/>
+          </td>
+          <td colspan="1">
+            <strong>
+              <strong>Header Value</strong>
+            </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="10">
+            <br/>
+          </td>
+          <td>NGAL_{i}</td>
+          <td>
+            <p>The mean number density (gal/arcmin^2) of the tomographic bin (1-4)</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">SIG_E_{i}</td>
+          <td colspan="1">The total ellipticity dispersion of the tomographic bin (1-4)</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>Z_LOW</td>
+          <td>The lower z boundary of this z bin range</td>
+        </tr>
+        <tr>
+          <td>Z_MID</td>
+          <td>The central z <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Z_HIGH</td>
+          <td colspan="1">The upper z boundary <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN1</td>
+          <td colspan="1">The n(z) in this z bin range for tomographic bin 1</td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN2</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 2</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN3</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 3</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN4</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 4</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 7 Name = nz_lens</p>
+            <p>
+              <span>(<span>Tomographic r</span>edshift distribution of the lens galaxies)</span>
+            </p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br/>
+          </td>
+          <td colspan="1">
+            <strong>
+              <strong>Header Value</strong>
+            </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="10">
+            <br/>
+          </td>
+          <td>NGAL_{i}</td>
+          <td>
+            <p>The mean number density (gal/arcmin^2) of the tomographic bin (1-5)</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>Z_LOW</td>
+          <td>The lower z boundary of this z bin range</td>
+        </tr>
+        <tr>
+          <td>Z_MID</td>
+          <td>The central z <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Z_HIGH</td>
+          <td colspan="1">The upper z boundary <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN1</td>
+          <td colspan="1">The n(z) in this z bin range for tomographic bin 1</td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN2</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 2</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN3</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 3</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN4</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 4</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN5</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 5</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
     <h3>Cosmology Chains</h3>
     <p>Here we present the cosmological chains for the various models presented in the Y1A1 key papers. In all cases, 3 neutrinos were taken to be degenerate [appropriate to the mass range to which we are sensitive]. </p>
     <p>
