@@ -41045,29 +41045,36 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </h2>
   <p>All the files can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/">here</a>, each one is&nbsp;~ 13GB.&nbsp;</p>
   <ul>
+
     <li>
       <span class="nolink">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched_BPZbase.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZbase.fits</a>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched_BPZbase.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZbase.fits</a> (MOF based)
+      </span>
+    </li>
+
+    <li>
+      <span class="nolink">
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched_BPZbase.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZbase.fits</a> (METACAL based)
       </span>
     </li>
     <li>
       <span class="nolink">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ1m.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ1m.fits</a>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ1m.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ1m.fits</a> (METACAL based)
       </span>
     </li>
     <li>
       <span class="nolink">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ2m.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ2m.fits</a>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ2m.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ2m.fits</a> (METACAL based)
       </span>
     </li>
     <li>
       <span class="nolink">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ1p.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ1p.fits</a>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ1p.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ1p.fits</a> (METACAL based)
       </span>
     </li>
     <li>
       <span class="nolink">
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ2p.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ2p.fits</a>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ2p.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ2p.fits</a> (METACAL based)
       </span>
     </li>
   </ul>
@@ -41075,6 +41082,75 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <strong>Catalog Description<br>
     </strong>
   </h2>
+
+  <h4>MOF_BPZ</h4>
+  <p>This is the photo-z based on MOF photometry</p>
+  <table class="relative-table">
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>TEMPLATE_ID</p>
+        </td>
+        <td colspan="1">Best fit BPZ template ID</td>
+      </tr>
+      <tr>
+        <td colspan="1">COADD_OBJECTS_ID</td>
+        <td colspan="1">
+          <p>
+            <span style="color: rgb(0,0,0);">Y1A1 unique object ID</span>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">TEMPLATE_TYPE</td>
+        <td colspan="1">Best fit BPZ template type</td>
+      </tr>
+      <tr>
+        <td colspan="1">MEDIAN_Z</td>
+        <td colspan="1">Median photometric redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">MEAN_Z</td>
+        <td colspan="1">Mean photometric redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">MINCHI2</td>
+        <td colspan="1">Best fit BPZ chi2</td>
+      </tr>
+      <tr>
+        <td colspan="1">MODE_Z</td>
+        <td colspan="1">Mode photometric redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_SIGMA68</td>
+        <td colspan="1">sigma68 photometric redshift error</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_SIGMA</td>
+        <td colspan="1">sigma photometric redshift error</td>
+      </tr>
+      <tr>
+        <td colspan="1">KL_POST_PRIOR</td>
+        <td colspan="1">The Kullback Leibler divergence, between the prior and posterior. How much information has this galaxy's pdf obtained from the photo-z analysis.</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_MC</td>
+        <td colspan="1">Montecarlo realization of the photometric redshift PDF</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4>METACAL_BPZ</h4>
+  <p>This is the photo-z based on MOF photometry</p>
   <p>
     <strong>
       <br>
