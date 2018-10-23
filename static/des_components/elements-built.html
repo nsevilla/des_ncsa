@@ -12,6 +12,7 @@
 <!-- DES SVA1 -->
 <!-- DES Y1A1 -->
 <!-- DES DR1 -->
+<!-- DES SN -->
 </head><body><div hidden="" by-vulcanize=""><!--
 @license
 Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -32269,6 +32270,7 @@ Custom property | Description | Default
               <a class="app-menu-item" name="releases" href="[[rootPath]]releases">Releases<iron-icon icon="expand-more"></iron-icon></a>
             </div>
             <app-menu slot="submenu-content">
+                <!--  SVA1 -->
               <app-submenu no-auto-close="">
                 <div class="sublist1" slot="submenu-trigger">
                 <a class="app-menu-item" name="sva1" href="[[rootPath]]releases/sva1">SVA1 Gold<iron-icon icon="expand-more"></iron-icon></a>
@@ -32354,6 +32356,26 @@ Custom property | Description | Default
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id="needindent" name="file-content" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank">Files</a>
+                </div>
+                </app-submenu>
+
+                </app-menu>
+
+              </app-submenu>
+
+
+              <!-- SN -->
+
+              <app-submenu no-auto-close="">
+                <div class="sublist1" slot="submenu-trigger">
+                <a class="app-menu-item" name="sn" href="[[rootPath]]releases/sn">SN Products<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+
+                <app-menu class="sublist2" slot="submenu-content">
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="file-content" href="[[rootPath]]releases/sn/files">Files</a>
                 </div>
                 </app-submenu>
 
@@ -32460,6 +32482,9 @@ Custom property | Description | Default
               <des-y1a1-bao name="bao"></des-y1a1-bao>
               <des-y1a1-density name="density"></des-y1a1-density>
               <des-y1a1-key-products name="key-products"></des-y1a1-key-products>
+          <!-- SN PAGES -->
+              <des-sn name="sn"></des-sn>
+
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
             <des-dr1docs name="dr1-docs"></des-dr1docs>
@@ -32970,6 +32995,7 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sva1"><paper-button noink="" raised="" class="desButton">SVA1 Gold</paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/y1a1"><paper-button noink="" raised="" class="desButton">Y1 Gold</paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/dr1"><paper-button noink="" raised="" class="desButton">DR1 </paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sn"><paper-button noink="" raised="" class="desButton">SN </paper-button></a>
             <div style="padding: 20px; text-decoration: none; display: inline;"><paper-button noink="" raised="" disabled="" class="desButton">Future Releases </paper-button></div>
           <!-- <paper-button noink disabled>Future Releases</paper-button> -->
           </div>
@@ -46703,6 +46729,34 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
       }
     }
     window.customElements.define(DesDr1LINEA.is, DesDr1LINEA);
+  </script>
+
+</dom-module>
+<dom-module id="des-sn" assetpath="des-sn/">
+
+<template>
+
+    <style include="shared-styles">
+
+
+</style>
+
+
+
+    <des-card heading="DES SN Products">
+
+      <div class="card-content">
+          DES-SN3YR papers and data release will appear soon...
+      </div>
+      </des-card>
+
+
+</template>
+<script>
+    class DesSn extends Polymer.Element {
+      static get is() { return 'des-sn'; }
+    }
+    window.customElements.define(DesSn.is, DesSn);
   </script>
 
 </dom-module>
