@@ -195,6 +195,7 @@
               <a class="app-menu-item" name="releases" href="[[rootPath]]releases" >Releases<iron-icon icon="expand-more"></iron-icon></a>
             </div>
             <app-menu slot="submenu-content" >
+                <!--  SVA1 -->
               <app-submenu no-auto-close>
                 <div class="sublist1" slot="submenu-trigger">
                 <a class="app-menu-item" name="sva1" href="[[rootPath]]releases/sva1">SVA1 Gold<iron-icon icon="expand-more"></iron-icon></a>
@@ -280,6 +281,26 @@
                   <app-submenu no-auto-close>
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id="needindent" name="file-content" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank">Files</a>
+                </div>
+                </app-submenu>
+
+                </app-menu>
+
+              </app-submenu>
+
+
+              <!-- SN -->
+
+              <app-submenu no-auto-close>
+                <div class="sublist1" slot="submenu-trigger">
+                <a class="app-menu-item" name="sn" href="[[rootPath]]releases/sn">SN Products<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+
+                <app-menu class="sublist2" slot="submenu-content">
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="file-content" href="[[rootPath]]releases/sn/files">Files</a>
                 </div>
                 </app-submenu>
 
@@ -391,6 +412,9 @@
               <des-y1a1-bao name="bao"></des-y1a1-bao>
               <des-y1a1-density name="density"></des-y1a1-density>
               <des-y1a1-key-products name="key-products"></des-y1a1-key-products>
+          <!-- SN PAGES -->
+              <des-sn name="sn"></des-sn>
+
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
             <des-dr1docs name="dr1-docs"></des-dr1docs>
