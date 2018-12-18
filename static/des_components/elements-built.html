@@ -13,6 +13,7 @@
 <!-- DES Y1A1 -->
 <!-- DES DR1 -->
 <!-- DES SN -->
+<!-- DES Other -->
 </head><body><div hidden="" by-vulcanize=""><!--
 @license
 Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -32439,6 +32440,26 @@ Custom property | Description | Default
 
                 </app-menu>
                </app-submenu>
+
+              <!-- OTHERS -->
+              <app-submenu no-auto-close="">
+                <div class="sublist1" slot="submenu-trigger">
+                <a class="app-menu-item" name="other" href="[[rootPath]]releases/other">Other<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+
+                <app-menu class="sublist2" slot="submenu-content">
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="y3-rrl" href="[[rootPath]]releases/other/y3-rrl">Y3 RR Lyrae</a>
+                </div>
+                </app-submenu>
+
+                </app-menu>
+
+              </app-submenu>
+
+
                 <!-- <div class="sublist1" >
                <a class ="app-menu-item" disabled>Y1A1 Gold</a>
                 </div> -->
@@ -32500,6 +32521,11 @@ Custom property | Description | Default
             <des-dr1-linea name="dr1-linea"></des-dr1-linea>
             <des-dr1-faq name="dr1-faq"></des-dr1-faq>
             <des-dr1-team name="dr1-team"></des-dr1-team>
+
+           <!-- Other Releases -->
+              <des-other name="other"></des-other>
+              <des-y3-rrl name="y3-rrl"></des-y3-rrl>
+
           <!-- Other pages -->
           <des-help name="help"></des-help>
           <des-thankyou name="thanks"></des-thankyou>
@@ -32996,6 +33022,7 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/y1a1"><paper-button noink="" raised="" class="desButton">Y1 Gold</paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/dr1"><paper-button noink="" raised="" class="desButton">DR1 </paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sn"><paper-button noink="" raised="" class="desButton">SN </paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/other"><paper-button noink="" raised="" class="desButton">Other </paper-button></a>
             <div style="padding: 20px; text-decoration: none; display: inline;"><paper-button noink="" raised="" disabled="" class="desButton">Future Releases </paper-button></div>
           <!-- <paper-button noink disabled>Future Releases</paper-button> -->
           </div>
@@ -46739,7 +46766,15 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
     <style include="shared-styles">
 
 </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-98454219-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-98454219-2');
+</script>
 
     <des-card heading="First Cosmology Results Using Type Ia Supernovae From the Dark Energy Survey (DES-SN3YR)">
         <div style="text-align: center">
@@ -46753,14 +46788,17 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 
           </p>
 
+<hr>
+
+
           <h2 id="papers">Papers</h2>
 	  The data products and cosmological results are built on a series of 9 DES papers. Follow the hyperlinks below for more detail.
 
           <ol type="I">
 <li><strong><a href="https://arxiv.org/abs/1811.02374"> DES-SN3YR: Constraints on Cosmological Parameters</a></strong>
-<div style="float:right;">DES Collaboration, et al. 2018</div></li>
+<div style="float:right;">DES, et al. 2018</div></li>
 <li><strong><a href="https://arxiv.org/abs/1811.02375"> DES Combined Probes: Constraints on Cosmological Parameters</a></strong>
-<div style="float:right;">DES Collaboration, et al. 2018</div></li>
+<div style="float:right;">DES, et al. 2018</div></li>
 <li><strong><a href="https://arxiv.org/abs/1811.02376"> Measurement of the Hubble Constant </a></strong>
 <div style="float:right;">E. Macaulay, et al. 2018</div></li>
 <li><strong><a href="https://arxiv.org/abs/1811.02377"> Analysis, Systematic Uncertainties, and Validation</a></strong>
@@ -46778,23 +46816,30 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 
           </ol>
 
+<hr>
+
+
           <h2 id="dataproducts">Data Products</h2>
 	  <ul>
-          <p>------------------------------------------------- All data products (<a href="https://www.dropbox.com/s/xvavtz0gc7fc21q/PublicDataRelease.tar?raw=1" download="">Download 492MB</a>) -------------------------------------------------
+          <p>------------------------------------------------- All data products (<a href="https://www.dropbox.com/s/9yebon5yhds2q7u/PublicDataRelease.tar.gz?raw=1" onclick="var that=this;gtag('event', 'All data products', {'event_category' : 'download','event_label' : 'All data products'});setTimeout(function(){location.href=that.href;},200);return false;" download="">Download 492MB</a>) -------------------------------------------------
             </p>
 
-	  <p>  Filter Transmission Functions + Atmosphere <br> (<a href="https://www.dropbox.com/s/r48zbc3mlx46fw6/01-FILTERS.tar?raw=1" download="">Download 42KB</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1706.01542">Burke et al. 2017</a>)</p>
+	  <p>  Filter Transmission Functions + Atmosphere <br> (<a href="https://www.dropbox.com/s/zxa38cg2ar2sa8y/01-FILTERS.tar.gz?raw=1" onclick="var that=this;gtag('event', 'Filter Transmission Funtion', {'event_category' : 'download','event_label' : 'Filter Transmission Function'});setTimeout(function(){location.href=that.href;},200);return false;" download="">Download 42KB</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1706.01542">Burke et al. 2017</a>)</p>
 
-<p> The Dataset</p>
-<p><span style="opacity:0;">move</span> - Light Curve Photometry &amp; SN/Host Metadata <br>    (<a href="https://www.dropbox.com/s/itice3g0wnys5i4/02-DATA_PHOTOMETRY.tar?raw=1" download="">Download 1MB</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02378">Brout, et al. 2018-SMP</a>)</p>
+<p> Light Curve Photometry &amp; SN/Host Metadata <br> (<a href="https://www.dropbox.com/s/bqfvow4rq6ei1v1/02-DATA_PHOTOMETRY.tar.gz?raw=1" onclick="var that=this;gtag('event', 'Light Curves', {'event_category' : 'download','event_label' : 'Light Curves'});setTimeout(function(){location.href=that.href;},200);return false;" download="">Download 1MB</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02378">Brout, et al. 2018-SMP</a>)</p>
 
-<p><span style="opacity:0;">move</span> - Redshifts &amp; Spectroscopic Observations <br>    (<a href="/releases/sn" download="">Coming Soon</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.09565">D'Andrea, et al. 2018</a>)</p>
+<p> Redshifts &amp; Spectroscopic Observations <br> (<a href="/releases/sn" download="">Coming Soon</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.09565">D'Andrea, et al. 2018</a>)</p>
 
-<p> Large (~1,000,000 SNe) Simulation <br> (<a href="https://www.dropbox.com/s/v41840tow585lan/02-DATA_SPECTRA.tar?raw=1" download="">Download 382MB</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02379">Kessler, et al. 2018</a>)</p>
+<p> Large (~1,000,000 SNe) Simulation <br> (<a href="https://www.dropbox.com/s/ltufsqkb4a01x1w/03-SIM_BIASCOR.tar.gz?raw=1" onclick="var that=this;gtag('event', 'Big Simulation', {'event_category' : 'download','event_label' : 'Big Simulation'});setTimeout(function(){location.href=that.href;},200);return false;" download="">Download 382MB</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02379">Kessler, et al. 2018</a>)</p>
 
-<p>  Light Curve Fit Parameters &amp; Bias Corrections <br> (<a href="https://www.dropbox.com/s/ytj3xq67ugtjq86/04-BBCFITS.tar?raw=1" download="">Download 120KB</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02377">Brout et al. 2018-SYS</a>)</p>
+<p>  Light Curve Fit Parameters &amp; Bias Corrections <br> (<a href="https://www.dropbox.com/s/58ptmmxc6qxxjsg/04-BBCFITS.tar.gz?raw=1" onclick="var that=this;gtag('event', 'LC Fit Params', {'event_category' : 'download','event_label' : 'LC Fit Params'});setTimeout(function(){location.href=that.href;},200);return false;" download="">Download 120KB</a>; Citation: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02377">Brout et al. 2018-SYS</a>)</p>
 
-<p>  Binned Distances, Cosmology Covariance Matrix, &amp; COSMOMC Chains <br> (<a href="https://www.dropbox.com/s/71czb7cwn1wm3rl/05-COSMOLOGY.tar?raw=1" download="">Download 108MB</a>; Citations: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02374">DES Collaboration et al. 2018</a> and <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02377">Brout et al. 2018-SYS</a>)</p>
+<p>  Binned Distances, Cosmology Covariance Matrix, &amp; COSMOMC Chains <br> (<a href="https://www.dropbox.com/s/ki4bwqc5mwl91nm/05-COSMOLOGY.tar.gz?raw=1" onclick="var that=this;gtag('event', 'Distances, Cov, Chains', {'event_category' : 'download','event_label' : 'Distances, Cov, Chains'});setTimeout(function(){location.href=that.href;},200);return false;" download="">Download 108MB</a>; Citations: <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02374">DES et al. 2018</a> and <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1811.02377">Brout et al. 2018-SYS</a>)</p>
+
+<hr>
+
+<p> </p>
+For questions and data requests, please contact Dillon Brout: dbrout@physics.upenn.edu
 
 </ul>
 <p></p>
@@ -46814,6 +46859,699 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
       static get is() { return 'des-sn'; }
     }
     window.customElements.define(DesSn.is, DesSn);
+  </script>
+
+</dom-module>
+<dom-module id="des-other" assetpath="des-other/">
+
+<template>
+
+    <style include="shared-styles">
+
+</style>
+
+
+    <des-card heading="Other Releases">
+      
+
+      </des-card>
+
+
+</template>
+<script>
+    class DesOther extends Polymer.Element {
+      static get is() { return 'des-other'; }
+    }
+    window.customElements.define(DesOther.is, DesOther);
+  </script>
+
+</dom-module>
+<dom-module id="des-y3-rrl" assetpath="des-other/">
+
+<template>
+
+    <style include="shared-styles">
+
+</style>
+
+
+    <des-card heading="Year 3 RR Lyrae Catalog">
+        <div style="text-align: center">
+        <iron-image style="width:445px; height:375px; padding:40px;" sizing="contain" src="/static/images/other/y3-rrl.png"></iron-image>
+            </div>
+
+      <div class="card-content">
+
+        <h2>
+          <strong>Overview</strong>
+        </h2>
+        <p>In Stringer et al. 2018, we identified 5783 RRab from the sparsely sampled multiband DES Y3Q2 wide field data using a multiband template fitting method (<a href="https://github.com/longjp/rr-templates" style="letter-spacing: 0.0px;">github link</a>) and a Random Forest classifier trained on DES light curves for RRab identified by&nbsp;<a href="http://adsabs.harvard.edu/abs/2010ApJ...708..717S" style="letter-spacing: 0.0px;">Sesar et al. 2010&nbsp;</a>and&nbsp;<a href="http://adsabs.harvard.edu/abs/2012MNRAS.424.2528S" style="letter-spacing: 0.0px;">Süveges et al. 2012</a>.&nbsp;&nbsp;Here, we present our catalog, light curves, and extended versions of selected tables in the text. In our full catalog file, we include the values used to select for variability prior to the template fitting, the light curve parameter estimates from the template fitting, the features used to determine its classification as an RRab or not, and cross-match information with external catalogs for all ~714,000 objects which passed our initial variability cuts (see Section 3.2 of the text). The DES Y3 light curves for all these catalog objects are included and subdivided as described on this page.&nbsp; Lastly, extended versions of Tables 1 and 5 from the text are included. These contents are further described on this page and in the included README file.</p>
+        <p>The data products can be accessed&nbsp;<a href="https://drive.google.com/open?id=1qSq0l7xlrjVWmMKp3GjTMyeTP1q-H81f">here</a>. Please contact&nbsp;<a href="mailto:kstringer@tamu.edu">kstringer@tamu.edu</a>&nbsp;with any questions or concerns.</p>
+        <h2>
+          <strong>Table of Contents:</strong>
+        </h2>
+        <hr>
+        <h3>A. Catalog Column Descriptions</h3>
+        <h3>B. Suggestions for Catalog Selection</h3>
+        <h3>C. Light Curve Folder Descriptions</h3>
+        <h3>D. Light Curve Description</h3>
+        <h3>E. Table Descriptions</h3>
+        <hr>
+        <h2>
+          <strong>A. Catalog Column Descriptions</strong> (fullcatalog_v1.5.csv)</h2>
+        <p>Column descriptions for the ~714,000 objects with template fits. Values used for initial variability cuts and Random Forest features are marked with bold labels.&nbsp;&nbsp;</p>
+        <table>
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Column Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>QUICK_OBJECT_ID</td>
+              <td>DES Y3Q2 ID Number</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>
+                <p>DES DR1 ID Number</p>
+                <p>0 = not found in DES DR1 coadd catalog</p>
+              </td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right Ascension in degrees (J2000)</td>
+            </tr>
+            <tr>
+              <td>DEC</td>
+              <td>Declination in degrees (J2000)</td>
+            </tr>
+            <tr>
+              <td colspan="1">p_ab</td>
+              <td colspan="1">
+                <p>
+                  <span>Classifier probability that object is a RRab</span>
+                </p>
+                <p>
+                  <span> *Cutoff was made at 0.35 for this work</span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>EBV</td>
+              <td>
+                <p>Extinction value from Schlegel, Finkbeiner, &amp; Davis 1998</p>
+                <p>To convert to extinction in DES filters:</p>
+                <p>A_g = 3.6830 * EBV</p>
+                <p>A_r = 2.6048 * EBV&nbsp;</p>
+                <p>A_i = 1.9401 * EBV&nbsp;</p>
+                <p>A_z = 1.4505 * EBV&nbsp;</p>
+                <p>A_Y = 1.2774 * EBV</p>
+              </td>
+            </tr>
+            <tr>
+              <td>&lt;g&gt;&nbsp;</td>
+              <td>mean g magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
+            </tr>
+            <tr>
+              <td>&lt;r&gt;</td>
+              <td>
+                <span>mean r magnitude measured in light curves <span>(not corrected for Galactic dust extinction)</span>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>&lt;i&gt;</td>
+              <td>
+                <span>mean i magnitude measured in light curves <span>(not corrected for Galactic dust extinction)</span>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>&lt;z&gt;</td>
+              <td>
+                <span>mean z magnitude measured in light curves <span>(not corrected for Galactic dust extinction)</span>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>&lt;Y&gt;</td>
+              <td>
+                <span>mean Y magnitude measured in light curves <span>(not corrected for Galactic dust extinction)</span>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>nobs_g&nbsp;</td>
+              <td>Number of observations in DES g</td>
+            </tr>
+            <tr>
+              <td>nobs_r</td>
+              <td>Number of observations in DES r</td>
+            </tr>
+            <tr>
+              <td>nobs_i</td>
+              <td>Number of observations in DES i</td>
+            </tr>
+            <tr>
+              <td>nobs_z</td>
+              <td>Number of observations in DES z</td>
+            </tr>
+            <tr>
+              <td>nobs_Y&nbsp;</td>
+              <td>Number of observations in DES y</td>
+            </tr>
+            <tr>
+              <td>nobs</td>
+              <td>Total number of observations across all bands</td>
+            </tr>
+            <tr>
+              <td>period_0</td>
+              <td>Period of best fitting template (days)</td>
+            </tr>
+            <tr>
+              <td colspan="1">period_1</td>
+              <td colspan="1">Period of 2nd best fitting template (days)</td>
+            </tr>
+            <tr>
+              <td colspan="1">period_2</td>
+              <td colspan="1">Period of 3rd best fitting template (days)</td>
+            </tr>
+            <tr>
+              <td colspan="1">amp_0</td>
+              <td colspan="1">
+                <strong>Feature:</strong> Amplitude of best fitting template (mag)</td>
+            </tr>
+            <tr>
+              <td colspan="1">amp_1</td>
+              <td colspan="1">Amplitude of 2nd best fitting template (mag)</td>
+            </tr>
+            <tr>
+              <td colspan="1">amp_2</td>
+              <td colspan="1">Amplitude of 3rd best fitting template (mag)</td>
+            </tr>
+            <tr>
+              <td colspan="1">mu_0</td>
+              <td colspan="1">Distance Modulus of best fitting template (mag)</td>
+            </tr>
+            <tr>
+              <td colspan="1">mu_1</td>
+              <td colspan="1">Distance Modulus of 2nd best fitting template (mag)</td>
+            </tr>
+            <tr>
+              <td colspan="1">mu_2</td>
+              <td colspan="1">Distance Modulus of 3rd best fitting template (mag)</td>
+            </tr>
+            <tr>
+              <td colspan="1">phase_0</td>
+              <td colspan="1">Phase offset of best fitting template</td>
+            </tr>
+            <tr>
+              <td colspan="1">phase_1</td>
+              <td colspan="1">Phase offset of 2nd best fitting template</td>
+            </tr>
+            <tr>
+              <td colspan="1">phase_2</td>
+              <td colspan="1">Phase offset of 3rd best fitting template</td>
+            </tr>
+            <tr>
+              <td colspan="1">rss_0</td>
+              <td colspan="1">Residual Sum of Squares (RSS) of best fit template</td>
+            </tr>
+            <tr>
+              <td colspan="1">rss_1</td>
+              <td colspan="1">Residual Sum of Squares (RSS) of 2nd best fit template</td>
+            </tr>
+            <tr>
+              <td colspan="1">rss_2</td>
+              <td colspan="1">Residual Sum of Squares (RSS) of 3rd best fit template</td>
+            </tr>
+            <tr>
+              <td colspan="1">chi2_g</td>
+              <td colspan="1">
+                <strong>Initial Variability Cut:</strong> Reduced chi squared of light curve from constant in DES g</td>
+            </tr>
+            <tr>
+              <td colspan="1">chi2_r</td>
+              <td colspan="1">
+                <span>
+                  <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant </span>
+                <span>in DES r</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">chi2_i</td>
+              <td colspan="1">
+                <span>
+                  <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant </span>
+                <span>in DES i</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">chi2_z</td>
+              <td colspan="1">
+                <span>
+                  <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant </span>
+                <span>in DES z</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">chi2_Y&nbsp;</td>
+              <td colspan="1">
+                <span>
+                  <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant </span>
+                <span>in DES Y</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">sig_g</td>
+              <td colspan="1">
+                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES g</td>
+            </tr>
+            <tr>
+              <td colspan="1">sig_r</td>
+              <td colspan="1">
+                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES r</td>
+            </tr>
+            <tr>
+              <td colspan="1">sig_i</td>
+              <td colspan="1">
+                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES i</td>
+            </tr>
+            <tr>
+              <td colspan="1">sig_z</td>
+              <td colspan="1">
+                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES z</td>
+            </tr>
+            <tr>
+              <td colspan="1">sig_Y</td>
+              <td colspan="1">
+                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES Y</td>
+            </tr>
+            <tr>
+              <td colspan="1">rss_dof_0&nbsp;</td>
+              <td colspan="1">
+                <strong>Feature:</strong> Residual Sum of Squares (RSS) per degree of freedom of best fitting template</td>
+            </tr>
+            <tr>
+              <td colspan="1">rss_dof_1</td>
+              <td colspan="1">
+                <span>Residual Sum of Squares (RSS) per degree of freedom of 2nd best fitting template</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">rss_dof_2</td>
+              <td colspan="1">
+                <span>Residual Sum of Squares (RSS) per degree of freedom of 3rd best fitting template</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">lchi_med&nbsp;</td>
+              <td colspan="1">
+                <strong>Feature:</strong> Median Log(reduced chi squared) across DES grizY</td>
+            </tr>
+            <tr>
+              <td colspan="1">rss_lchi_med</td>
+              <td colspan="1">
+                <p>
+                  <strong>Feature:</strong> (RSS/dof)/ Median Log(reduced chi squared) across DES grizY</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">amp_rss_0</td>
+              <td colspan="1">
+                <strong>Feature:</strong> Amplitude/(RSS/dof) for best fitting template</td>
+            </tr>
+            <tr>
+              <td colspan="1">f_dist1_0</td>
+              <td colspan="1">
+                <p>
+                  <strong>Feature:</strong> Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff I relation for best fit template</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">f_dist1_1</td>
+              <td colspan="1">
+                <span>Distance of Amplitude/Period from Sesar et al. 2010 </span>
+                <span>Oosterhoff I relation for 2nd best fit template</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">f_dist1_2</td>
+              <td colspan="1">
+                <span>Distance of Amplitude/Period from Sesar et al. 2010 </span>
+                <span>Oosterhoff I relation for 3rd best fit template</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">f_dist2_0</td>
+              <td colspan="1">
+                <strong>Feature:</strong>
+                <span> Distance of Amplitude/Period from Sesar et al. 2010 </span>
+                <span>Oosterhoff II relation for best fit template</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">f_dist2_1</td>
+              <td colspan="1">
+                <span>Distance of Amplitude/Period from Sesar et al. 2010 </span>
+                <span>Oosterhoff II relation for 2nd best fit template</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">f_dist2_2</td>
+              <td colspan="1">
+                <span>Distance of Amplitude/Period from Sesar et al. 2010 </span>
+                <span>Oosterhoff II relation for 3rd best fit template</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">kappa_0</td>
+              <td colspan="1">
+                <p>
+                  <strong>Feature:</strong> von Mises-Fisher concentration parameter of phases for best fitting template</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">kappa_1</td>
+              <td colspan="1">
+                <span>von Mises-Fisher concentration parameter of phases </span>
+                <span>for 2nd best fitting template</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">kappa_2</td>
+              <td colspan="1">
+                <span>von Mises-Fisher concentration parameter of phases </span>
+                <span>for 3rd best fitting template</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">GaiaDR2_ID</td>
+              <td colspan="1">
+                <p>Gaia DR2 source_id for cross-matched RRab in Clementini et al. 2018</p>
+                <p>0 = not found in this catalog</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">PS1_RRab</td>
+              <td colspan="1">
+                <p>Present in Sesar et al. 2017 RRab catalog?</p>
+                <p>0 = no</p>
+                <p>1 = yes</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">CRTS_ID</td>
+              <td colspan="1">
+                <p>ID number from associated CRTS DR2 RRab catalogs&nbsp;</p>
+                <p>
+                  <span>0 = </span>
+                  <span>not found in this catalog</span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">ATLAS_ID</td>
+              <td colspan="1">
+                <p>ID from Heinze et al. 2018 ATLAS RRab catalog</p>
+                <p>0 = not found in this catalog</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">SDSS_ID</td>
+              <td colspan="1">
+                <p>SDSS DR7 ID</p>
+                <p>0 = not found in this catalog</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">SDSS_class</td>
+              <td colspan="1">
+                <p>classification from SDSS stripe 82 studies from Sesar et al. 2010 or Ivezic et al. 2007:</p>
+                <p>'ab' = RRab</p>
+                <p>'c' = RRc</p>
+                <p>'var' = variable</p>
+                <p>'std' = standard source</p>
+                <p>0 = n<span>ot found in these catalogs</span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">Simbad_ID</td>
+              <td colspan="1">
+                <p>Object identifier in SIMBAD database</p>
+                <p>0 = not found in this catalog</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">Simbad_class</td>
+              <td colspan="1">
+                <p>Object classification in SIMBAD database (See <a href="http://cds.u-strasbg.fr/cgi-bin/Otype?Unknown" style="letter-spacing: 0.0px;">http://cds.u-strasbg.fr/cgi-bin/Otype?Unknown</a> for classification codes)</p>
+                <p>0 = not found in this catalog</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">OGLE_ID</td>
+              <td colspan="1">
+                <p>OGLE ID from LMC and SMC RRAb catalogs from Soszynski et al. 2016</p>
+                <p>
+                  <span>0 = not found in this catalog</span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">CEMV_ID</td>
+              <td colspan="1">
+                <p>ID from Martinez-Vazquez et al. 2016</p>
+                <p>0 = not found in this catalog</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">hpx32</td>
+              <td colspan="1">Object's Healpix (nside=32) used to subdivide the&nbsp;light curves</td>
+            </tr>
+            <tr>
+              <td colspan="1">train</td>
+              <td colspan="1">
+                <p>Identifies objects used to train the Random Forest</p>
+                <p>0 = not in training set</p>
+                <p>1 = in training set</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">rrab</td>
+              <td colspan="1">
+                <p>Identified as a high confidence RRab in this study</p>
+                <p>0 = not identified as high confidence RRab</p>
+                <p>1 = identified as high confidence RRab</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">filepath</td>
+              <td colspan="1">
+                <p>Filepath to the object's light curve. The user should prepend the&nbsp;directory containing the lc folder to access.</p>
+                <p>Ex: '/home/user/stringer2018_data_v1.4/'+filepath&nbsp;</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="1">comments</td>
+              <td colspan="1">
+                <p>Comments from first author during visual validation</p>
+                <p>confirmed&nbsp; = convincing RRab</p>
+                <p>no_: = rejected followed by a reason code</p>
+                <p>galaxy&nbsp; &nbsp; = DES image showed galaxy</p>
+                <p>
+                  <span> bad_fit&nbsp;&nbsp; = poor template fit</span>
+                </p>
+                <p>misc = miscellaneous reasons</p>
+                <p>maybe_: = possible RRab followed by reason code</p>
+                <p>crowding = object is very close to another object</p>
+                <p>bad_fit = poor template fit</p>
+                <p>n_points = few observations/ poor phase coverage</p>
+                <p>galaxy = star/galaxy classification ambiguous</p>
+                <p>
+                  <span>misc = miscellaneous reasons</span>
+                </p>
+                <p>missing_image = missing coadd image in SkyViewer</p>
+                <p>0 = not visually checked</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <br>
+        </p>
+        <hr>
+        <h2>
+          <strong>B. Suggestions for Catalog Selection</strong>
+        </h2>
+        <table>
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>To Select</th>
+              <th>Choose</th>
+            </tr>
+            <tr>
+              <td>Objects that were identified as RRab in this study</td>
+              <td>rrab = 1</td>
+            </tr>
+            <tr>
+              <td>RRab in Gaia DR2</td>
+              <td>GaiaDR2_ID &gt; 0</td>
+            </tr>
+            <tr>
+              <td>Objects found in&nbsp;SDSS stripe 82</td>
+              <td>SDSS_class != 0</td>
+            </tr>
+            <tr>
+              <td>Objects found in&nbsp;Sesar et al. 2017 Pan-STARRS catalog</td>
+              <td>PS1_RRab &gt; 0</td>
+            </tr>
+            <tr>
+              <td colspan="1">Objects found in the CRTS RRab catalog v2</td>
+              <td colspan="1">CRTS_ID &gt; 0</td>
+            </tr>
+            <tr>
+              <td>Objects found in&nbsp;ATLAS RRab catalog</td>
+              <td>ATLAS_ID != 0</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <br>
+        </p>
+        <hr>
+        <p>
+          <strong style="font-size: 20.0px;letter-spacing: 0.0px;">
+            <br>
+          </strong>
+        </p>
+        <p>
+          <strong style="font-size: 20.0px;letter-spacing: 0.0px;">C. Light Curve Folder Descriptions:</strong>
+        </p>
+        <p>
+          <span>The following is a map of the directory structure containing the DES light curves. In each subdirectory, the individual light curves are separated into smaller folders by their 5 digit HEALPix (nside = 32) value for their location. Filepaths to each light curve are included in the full catalog file.</span>
+        </p>
+        <table>
+          <colgroup>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Directory</th>
+              <th>Subdirectory</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>/lc</td>
+              <td>
+                <br>
+              </td>
+              <td>All DES Y3 light curves for objects passing initial<br>variability cuts</td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td>rrab/</td>
+              <td>Light curves of objects identified as RRab by this<br>analysis and confirmed through visual checks</td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td>train/</td>
+              <td>All cross-matched light curves from SDSS stripe 82<br>which were used to train the classifier</td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td>other/</td>
+              <td>All remaining light curves with template fit values<br>that were not used to train or identified as RRab</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <br>
+        </p>
+        <hr>
+        <h2>
+          <strong>D. Light Curve Description:</strong>
+        </h2>
+        <p>The columns contained in each light curve file are:</p>
+        <table>
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Column Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>MJD_OBS</td>
+              <td>Modified Julian Date of observation (J2000)</td>
+            </tr>
+            <tr>
+              <td>BAND</td>
+              <td>DES filter band of observation <em>grizY</em>
+              </td>
+            </tr>
+            <tr>
+              <td>MAG_CORR</td>
+              <td>Extinction-corrected psf magnitude</td>
+            </tr>
+            <tr>
+              <td>MAGERR_PSF</td>
+              <td>Rescaled photometric error</td>
+            </tr>
+            <tr>
+              <td>MAG_PSF</td>
+              <td>PSF magnitude not corrected for extinction</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <br>
+        </p>
+        <hr>
+        <h2>
+          <strong>E. Table Descriptions</strong>
+        </h2>
+        <p>
+          <strong>Table 1:&nbsp;&nbsp;</strong>The full version of Table 1 contains the coefficients of the equation used to rescale the light curve uncertainties in each HEALPix and filter (see Section 3.1 in text).&nbsp;</p>
+        <p>
+          <strong>Table 5:&nbsp;&nbsp;</strong>Table 5 contains the purity and completeness values of the Random Forest classifier for a finer grid of probability cut values (increments of 0.01 instead of the 0.05 in the text).&nbsp; In Stringer et al. 2018, we chose the value p = 0.35 as the cutoff where the purity is ~85% and the completeness is ~76%, but any other value may be used to select a more pure or more complete sample than we used.&nbsp;</p>
+        <p>
+          <br>
+        </p>
+
+
+
+
+
+      </div>
+      </des-card>
+
+
+</template>
+<script>
+    class DesOtherY3rrl extends Polymer.Element {
+      static get is() { return 'des-y3-rrl'; }
+    }
+    window.customElements.define(DesOtherY3rrl.is, DesOtherY3rrl);
   </script>
 
 </dom-module>
