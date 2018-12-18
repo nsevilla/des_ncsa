@@ -364,6 +364,26 @@
 
                 </app-menu>
                </app-submenu no-auto-close>
+
+              <!-- OTHERS -->
+              <app-submenu no-auto-close>
+                <div class="sublist1" slot="submenu-trigger">
+                <a class="app-menu-item" name="sn" href="[[rootPath]]releases/other">Other<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+
+                <app-menu class="sublist2" slot="submenu-content">
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="file-content" href="[[rootPath]]releases/other/y3-rrl">Y3 RR Lyrae</a>
+                </div>
+                </app-submenu>
+
+                </app-menu>
+
+              </app-submenu>
+
+
                 <!-- <div class="sublist1" >
                <a class ="app-menu-item" disabled>Y1A1 Gold</a>
                 </div> -->
