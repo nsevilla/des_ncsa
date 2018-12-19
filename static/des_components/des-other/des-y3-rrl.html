@@ -28,13 +28,14 @@
           <strong>Table of Contents:</strong>
         </h2>
         <hr/>
-        <h3>A. Catalog Column Descriptions</h3>
-        <h3>B. Suggestions for Catalog Selection</h3>
-        <h3>C. Light Curve Folder Descriptions</h3>
-        <h3>D. Light Curve Description</h3>
-        <h3>E. Table Descriptions</h3>
+        <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="A">A. Catalog Column Descriptions</a></h3>
+        <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="B">B. Suggestions for Catalog Selection</a></h3>
+        <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="C">C. Light Curve Folder Descriptions</a></h3>
+        <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="D">D. Light Curve Description</a></h3>
+        <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="E">E. Table Descriptions</a></h3>
         <hr/>
-        <h2>
+        <div class="fixup" id="rrlA"></div>
+        <h2 class="fixdown">
           <strong>A. Catalog Column Descriptions</strong> (fullcatalog_v1.5.csv)</h2>
         <p>Column descriptions for the ~714,000 objects with template fits. Values used for initial variability cuts and Random Forest features are marked with bold labels.  </p>
         <table >
@@ -503,7 +504,8 @@
           <br/>
         </p>
         <hr/>
-        <h2>
+        <div class="fixup" id="rrlB"></div>
+        <h2 class="fixdown">
           <strong>B. Suggestions for Catalog Selection</strong>
         </h2>
         <table >
@@ -551,8 +553,11 @@
             <br/>
           </strong>
         </p>
+        <div class="fixup" id="rrlC"></div>
         <p>
-          <strong style="font-size: 20.0px;letter-spacing: 0.0px;">C. Light Curve Folder Descriptions:</strong>
+          <h2 class="fixdown">
+            <strong>C. Light Curve Folder Descriptions:</strong>
+          </h2>
         </p>
         <p>
           <span>The following is a map of the directory structure containing the DES light curves. In each subdirectory, the individual light curves are separated into smaller folders by their 5 digit HEALPix (nside = 32) value for their location. Filepaths to each light curve are included in the full catalog file.</span>
@@ -603,7 +608,8 @@
           <br/>
         </p>
         <hr/>
-        <h2>
+        <div class="fixup" id="rrlD"></div>
+        <h2 class="fixdown">
           <strong>D. Light Curve Description:</strong>
         </h2>
         <p>The columns contained in each light curve file are:</p>
@@ -644,7 +650,8 @@
           <br/>
         </p>
         <hr/>
-        <h2>
+        <div class="fixup" id="rrlE"></div>
+        <h2 class="fixdown">
           <strong>E. Table Descriptions</strong>
         </h2>
         <p>
@@ -667,6 +674,12 @@
 <script>
     class DesOtherY3rrl extends Polymer.Element {
       static get is() { return 'des-y3-rrl'; }
+      _scroll(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#rrl'+temp).scrollIntoView();
+          }
     }
     window.customElements.define(DesOtherY3rrl.is, DesOtherY3rrl);
   </script>
