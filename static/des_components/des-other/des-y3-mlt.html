@@ -1,0 +1,40 @@
+<dom-module id="des-y3-mlt">
+
+<template>
+
+    <style include="shared-styles">
+
+</style>
+
+
+    <des-card heading ="Year 3 RR Lyrae Catalog">
+        <div style="text-align: center">
+        <iron-image style="width:760px; height:375px; padding:40px;" sizing="contain"
+                src="/static/images/other/y3-rrl.png"></iron-image>
+            </div>
+        <div style="text-align: center">
+          <a style="padding: 20px; text-decoration: none" href="[[rootpath]]releases/other/y3-rrl"><paper-button   raised class="desButton">Documentation</paper-button></a>
+    <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/"><paper-button   raised class="desButton">Files</paper-button></a>
+</div>
+      <div class="card-content">
+
+
+      </div>
+      </des-card>
+
+
+</template>
+<script>
+    class DesOtherY3mlt extends Polymer.Element {
+      static get is() { return 'des-y3-mlt'; }
+      _scroll(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#mlt'+temp).scrollIntoView();
+          }
+    }
+    window.customElements.define(DesOtherY3mlt.is, DesOtherY3mlt);
+  </script>
+
+</dom-module>
