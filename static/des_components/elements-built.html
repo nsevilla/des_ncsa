@@ -32449,6 +32449,13 @@ Custom property | Description | Default
 
                 <app-menu class="sublist2" slot="submenu-content">
 
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="paper-data" href="[[rootPath]]releases/other/paper-data">Ancillary paper data</a>
+                </div>
+                </app-submenu>
+
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id="needindent" name="y3-rrl" href="[[rootPath]]releases/other/y3-rrl">Y3 RR Lyrae</a>
@@ -32457,10 +32464,14 @@ Custom property | Description | Default
 
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="paper-data" href="[[rootPath]]releases/other/paper-data">Ancillary paper data</a>
+                  <a class="app-menu-item" id="needindent" name="y3-mlt" href="[[rootPath]]releases/other/y3-mlt">Y3 LT,M dwarfs</a>
                 </div>
                 </app-submenu>
+
+
+
                 </app-menu>
+
 
               </app-submenu>
 
@@ -32531,6 +32542,7 @@ Custom property | Description | Default
            <!-- Other Releases -->
               <des-other name="other"></des-other>
               <des-y3-rrl name="y3-rrl"></des-y3-rrl>
+              <des-y3-mlt name="y3-mlt"></des-y3-mlt>
               <des-paper-data name="paper-data"></des-paper-data>
 
           <!-- Other pages -->
@@ -46884,8 +46896,9 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
         <br>
         <h2>
         <ul>
-          <li><a href="[[rootPath]]releases/other/y3-rrl">Y3 RR Lyrae Catalog</a>: Catalog data and light curves for all RRab stars identified in Y3 data. </li>
           <li><a href="[[rootPath]]releases/other/paper-data">Paper data</a>: Ancillary data from DES papers. </li>
+          <li><a href="[[rootPath]]releases/other/y3-rrl">Y3 RR Lyrae Catalog</a>: Catalog data and light curves for all RRab stars identified in Y3 data. </li>
+          <li><a href="[[rootPath]]releases/other/y3-mlt">Y3 substellar LT and M catalogs</a>: Catalog data for brown dwarfs and M dwarf in the Y3 data.  </li>
         </ul>
       </h2>
       </div>
@@ -47498,6 +47511,193 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
           }
     }
     window.customElements.define(DesOtherY3rrl.is, DesOtherY3rrl);
+  </script>
+
+</dom-module>
+<dom-module id="des-y3-mlt" assetpath="des-other/">
+
+<template>
+
+    <style include="shared-styles">
+
+</style>
+
+
+    <des-card heading="DES Y3 substellar LT and M catalogs">
+        <div style="text-align: center">
+        <iron-image style="width:760px; height:375px; padding:40px;" sizing="contain" src="/static/images/other/y3-mlt.png"></iron-image>
+            </div>
+        <div style="text-align: center">
+          <a style="padding: 20px; text-decoration: none" href="[[rootpath]]releases/other/y3-mlt"><paper-button raised="" class="desButton">Documentation</paper-button></a>
+    <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-mlt/"><paper-button raised="" class="desButton">Files</paper-button></a>
+</div>
+      <div class="card-content">
+        <h2>
+          <strong>Overview</strong>
+        </h2>
+        <p>In Carnero et al. 2019, we apply a photometric brown dwarf classification scheme based on <a href="http://adsabs.harvard.edu/abs/2015A%26A...574A..78S">Skrzypek et at. 2015</a> to DES + VHS + AllWISE data using 8 bands covering a wavelength range between 0.7 mu and 4.6 mu. Since several degeneracies are found in colour space between spectral types M,L and T, the use of multiple bands is required for a good spectral type calibration.<br>
+          <br>In comparison with <a href="https://ui.adsabs.harvard.edu/#abs/2016A&amp;A...589A..49S/">Skrzypek et at. 2016</a> , we are able to go to greater distances in the L regime due to the deeper DES and VHS samples, in comparison with the SDSS + UKIDSS design. This way, we classify 11,745 brown dwarfs in the spectral regime from L0 to T9 in approx 2,400 square degrees, with a similar spectral resolution of 1 spectral type. This is the biggest LT sample ever published. We further estimate the contamination and completeness of the sample. We estimate the sample to be 77% complete and 98%.</p>
+        <p>For completeness, we also publish in a separate table a catalog of 20,863 M dwarfs that passed our colour cut with spectral types greater than M6.<br>
+          <br>The data products can be accessed&nbsp;here.</p>
+        <p>
+          <br>
+        </p>
+        <p>Please contact <a href="mailto:aurelio.carnero@ciemat.es">aurelio.carnero@ciemat.es</a>,&nbsp;<a href="mailto:basilio.santiago@ufrgs.br">basilio.santiago@ufrgs.br</a>,&nbsp;<a href="mailto:mari.dalponte@gmail.com">mari.dalponte@gmail.com</a> or&nbsp;<a href="mailto:b.burningham@herts.ac.uk">b.burningham@herts.ac.uk</a> for questions.</p>
+        <p>
+          <br>
+        </p>
+        <hr>
+        <h2>
+          <strong>&nbsp;Catalog Descriptions</strong> (DESY3_LTcatalog.fits, DESY3_Mcatalog.fits)<ac:structured-macro ac:macro-id="429c417e-d029-4664-94ad-c57767c8da0e" ac:name="anchor" ac:schema-version="1">
+            <ac:parameter ac:name="">columns</ac:parameter>
+          </ac:structured-macro>
+        </h2>
+        <p>We publish separately the M types and the LT types.</p>
+        <p>Three columns are not present in the M catalog, and appear only in the LT catalog: 2 columns corresponding to photometric distance estimates and one relative to having peculiar colors.</p>
+        <p>Next we describe the columns found in the catalogs.</p>
+        <p>
+          <br>
+        </p>
+        <table>
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Column Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>
+                <p>DES DR1 ID Number</p>
+              </td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right Ascension in degrees (J2000).</td>
+            </tr>
+            <tr>
+              <td>DEC</td>
+              <td>Declination in degrees (J2000).</td>
+            </tr>
+            <tr>
+              <td colspan="1">SPT_PHOT</td>
+              <td colspan="1">
+                <p>Numeric value representing the photometric spectral type ranging L0 to T9, with L0 = 10 and T9 = 29 in the LT catalog, and with M7=7 to M9=9 in the M catalog.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>NBANDS</td>
+              <td>Number of bands used for classification</td>
+            </tr>
+            <tr>
+              <td>XI2_CLASSIF</td>
+              <td>xi2 for the best fit in MLT spectral type (always smaller than extragalactic xi2)</td>
+            </tr>
+            <tr>
+              <td>DISTANCE_AVG</td>
+              <td>Average distance calculated from apparent magnitudes in all the available bands (in parsecs). <strong>Only present in the LT catalog.</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>DISTANCE_Z</td>
+              <td>Distance calculated from the apparent magnitude in DES z band (in parsecs). <strong>Only present in the LT catalog.</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>HPIX_512</td>
+              <td>Healpix pixel ID for order=Nest and nside=512</td>
+            </tr>
+            <tr>
+              <td colspan="1">PECULIAR</td>
+              <td colspan="1">1 = peculiar,&nbsp; 0 = no peculiar. Category given if it has a chi2 &gt; 3.5sigma median absolute deviations. <strong>Only present in the LT catalog.</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>PSF_MAG_I</td>
+              <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
+            </tr>
+            <tr>
+              <td>PSF_MAGERR_I</td>
+              <td>Error in the DES Y3 i band psf magnitude</td>
+            </tr>
+            <tr>
+              <td>PSF_MAG_Z</td>
+              <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
+            </tr>
+            <tr>
+              <td>PSF_MAGERR_Z</td>
+              <td>Error in the DES Y3 z band psf magnitude</td>
+            </tr>
+            <tr>
+              <td>AUTO_MAG_Y</td>
+              <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
+            </tr>
+            <tr>
+              <td>AUTO_MAGERR_Y</td>
+              <td>Error in the DES Y3 Y band auto magnitude</td>
+            </tr>
+            <tr>
+              <td>JAPERMAG3</td>
+              <td>VHS DR3 J band aper3 magnitude in Vega</td>
+            </tr>
+            <tr>
+              <td colspan="1">JAPERMAG3ERR</td>
+              <td colspan="1">Error in the VHS DR3 J band aper3 magnitude</td>
+            </tr>
+            <tr>
+              <td colspan="1">HAPERMAG3</td>
+              <td colspan="1">VHS DR3 H band aper3 magnitude in Vega</td>
+            </tr>
+            <tr>
+              <td colspan="1">HAPERMAG3ERR</td>
+              <td colspan="1">Error in the VHS DR3 H band aper3 magnitude</td>
+            </tr>
+            <tr>
+              <td colspan="1">KSAPERMAG3</td>
+              <td colspan="1">VHS DR3 Ks band aper3 magnitude in Vega</td>
+            </tr>
+            <tr>
+              <td colspan="1">KSAPERMAG3ERR</td>
+              <td colspan="1">Error in the VHS DR3 Ks band aper3 magnitude</td>
+            </tr>
+            <tr>
+              <td colspan="1">W1MPRO</td>
+              <td colspan="1">AllWISE W1 band pro magnitude in Vega</td>
+            </tr>
+            <tr>
+              <td colspan="1">W1SIGMPRO</td>
+              <td colspan="1">Error in the AllWISE W1 band pro magnitude</td>
+            </tr>
+            <tr>
+              <td colspan="1">W2MPRO</td>
+              <td colspan="1">AllWISE W2 band pro magnitude in Vega</td>
+            </tr>
+            <tr>
+              <td colspan="1">W2SIGMPRO</td>
+              <td colspan="1">Error in the AllWISE W2 band pro magnitude</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      </des-card>
+
+
+</template>
+<script>
+    class DesOtherY3mlt extends Polymer.Element {
+      static get is() { return 'des-y3-mlt'; }
+      _scroll(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#mlt'+temp).scrollIntoView();
+          }
+    }
+    window.customElements.define(DesOtherY3mlt.is, DesOtherY3mlt);
   </script>
 
 </dom-module>
