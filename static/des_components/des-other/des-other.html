@@ -1,0 +1,34 @@
+<dom-module id="des-other">
+
+<template>
+
+    <style include="shared-styles">
+
+</style>
+
+
+    <des-card heading ="Other Releases">
+      <div class="card-content">
+        This section contains all minor data releases not included in the yearly or major releases.
+        <br>
+        <h2>
+        <ul>
+          <li><a href="[[rootPath]]releases/other/paper-data">Paper data</a>: Ancillary data from DES papers. </li>
+          <li><a onclick="return false;" href="">Y3 RR Lyrae Catalogs (soon)</a>: Catalog data and light curves for all RRab stars identified in Y3 data. </li>
+          <li><a href="[[rootPath]]releases/other/y3-mlt">Y3 substellar LT and M catalogs</a>: Catalog data for brown dwarfs and M dwarf in the Y3 data.  </li>
+        </ul>
+      </h2>
+      </div>
+
+      </des-card>
+
+
+</template>
+<script>
+    class DesOther extends Polymer.Element {
+      static get is() { return 'des-other'; }
+    }
+    window.customElements.define(DesOther.is, DesOther);
+  </script>
+
+</dom-module>

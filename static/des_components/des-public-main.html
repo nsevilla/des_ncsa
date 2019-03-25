@@ -300,7 +300,7 @@
 
                   <app-submenu no-auto-close>
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="file-content" href="[[rootPath]]releases/sn/files">Files</a>
+                  <a class="app-menu-item" id="needindent" name="file-content" href="http://desdr-server.ncsa.illinois.edu/despublic/sn_files/y3" target="_blank">Files</a>
                 </div>
                 </app-submenu>
 
@@ -364,6 +364,43 @@
 
                 </app-menu>
                </app-submenu no-auto-close>
+
+              <!-- OTHERS -->
+              <app-submenu no-auto-close>
+                <div class="sublist1" slot="submenu-trigger">
+                <a class="app-menu-item" name="other" href="[[rootPath]]releases/other">Other<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+
+                <app-menu class="sublist2" slot="submenu-content">
+
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="paper-data" href="[[rootPath]]releases/other/paper-data">Ancillary paper data</a>
+                </div>
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="y3-rrl" href="" onclick="return false;" >Y3 RR Lyrae (soon)</a>
+                </div>
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="y3-mlt" href="[[rootPath]]releases/other/y3-mlt">Y3 LT,M dwarfs</a>
+                </div>
+                </app-submenu>
+
+
+
+                </app-menu>
+
+
+              </app-submenu>
+
+
+
                 <!-- <div class="sublist1" >
                <a class ="app-menu-item" disabled>Y1A1 Gold</a>
                 </div> -->
@@ -430,6 +467,13 @@
             <des-dr1-linea name="dr1-linea"></des-dr1-linea>
             <des-dr1-faq name="dr1-faq"></des-dr1-faq>
             <des-dr1-team name="dr1-team"></des-dr1-team>
+
+           <!-- Other Releases -->
+              <des-other name="other"></des-other>
+              <!--<des-y3-rrl name="y3-rrl"></des-y3-rrl>-->
+              <des-y3-mlt name="y3-mlt"></des-y3-mlt>
+              <des-paper-data name="paper-data"></des-paper-data>
+
           <!-- Other pages -->
           <des-help name="help"></des-help>
           <des-thankyou name="thanks"></des-thankyou>
