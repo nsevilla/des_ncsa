@@ -20,10 +20,9 @@
         <h2>
           <strong>Overview</strong>
         </h2>
-        <p>In <a >Stringer et al. 2018</a>, we identified 5783 RRab from the sparsely sampled multiband DES Y3Q2 wide field data using a multiband template fitting method (<a href="https://github.com/longjp/rr-templates">github link</a>) and a Random Forest classifier trained on DES light curves for RRab identified by <a href="http://adsabs.harvard.edu/abs/2010ApJ...708..717S">Sesar et al. 2010 </a>and <a href="http://adsabs.harvard.edu/abs/2012MNRAS.424.2528S">Süveges et al. 2012</a>.  Here, we present our catalog, light curves, and extended versions of selected tables in the text. In our full catalog file, we include the values used to select for variability prior to the template fitting, the light curve parameter estimates from the template fitting, the features used to determine its classification as an RRab or not, and cross-match information with external catalogs for all ~714,000 objects which passed our initial variability cuts (see Section 3.2 of the text). The DES Y3 light curves for all the RRab and training catalog objects are included and subdivided as described on this page.  Lastly, extended versions of Tables 1 and 5 from the text are included. These contents are further described on this page and in the included README file.</p>
-              <p>The data products can be accessed <a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/">here</a>. Please contact <a href="mailto:kstringer@tamu.edu">kstringer@tamu.edu</a> with any questions or concerns.</p>
-
-        <h2>
+            <p>In <a href="" onclick="return false;">Stringer, Long, Macri et al. 2019</a>, we identified 5783 RRab from the sparsely sampled multiband DES Y3Q2 wide field data using a multiband template fitting method (<a href="https://github.com/longjp/rr-templates">github link</a>) and a Random Forest classifier trained on DES light curves for RRab identified by <a href="http://adsabs.harvard.edu/abs/2010ApJ...708..717S">Sesar et al. 2010 </a>and <a href="http://adsabs.harvard.edu/abs/2012MNRAS.424.2528S">Süveges et al. 2012</a>.  Here, we present our catalog, light curves, and extended versions of selected tables in the text. In our full catalog file, we include the values used to select for variability prior to the template fitting, the light curve parameter estimates from the template fitting, the features used to determine its classification as an RRab or not, and cross-match information with external catalogs for all ~714,000 objects which passed our initial variability cuts (see Section 3.2 of the text). The DES Y3 light curves for all the RRab and training catalog objects are included and subdivided as described on this page.  Lastly, extended versions of Tables 1 and 5 from the text are included. These contents are further described on this page.</p>
+            <p>The data products can be accessed <a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/">here</a> or at <a href="https://drive.google.com/drive/folders/1xJ1xQGog94Ds0WMatadWPI8QL7AaSSja?usp=sharing">(Google drive link)</a>. Please contact <a href="mailto:kstringer@tamu.edu">kstringer[at]tamu.edu</a> with any questions or concerns.</p>
+            <h2>
           <strong>Table of Contents:</strong>
         </h2>
         <hr/>
@@ -35,406 +34,515 @@
         <hr/>
         <div class="fixup" id="rrlA"></div>
         <h2 class="fixdown">
-          <strong>A. Catalog Column Descriptions</strong> (<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/fullcatalog_v1.6.csv" target="_blank">fullcatalog_v1.6.csv</a>)</h2>
-        <p>Column descriptions for the ~714,000 objects with template fits. Values used for initial variability cuts and Random Forest features are marked with bold labels.  </p>
+          <strong>A. Catalog Column Descriptions</strong> (<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/fullcatalog_v1.93.csv" target="_blank">fullcatalog_v1.93.csv</a>)</h2>
+           <p>Column descriptions for the ~714,000 objects with template fits. Values used for initial variability cuts and Random Forest features are marked with bold labels.  </p>
+      <p>All null values are indicated with -99 unless otherwise specified.</p>
         <table >
           <colgroup>
             <col />
             <col />
           </colgroup>
-          <tbody>
-            <tr>
-              <th>Column Name</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>QUICK_OBJECT_ID</td>
-              <td>DES Y3Q2 ID Number</td>
-            </tr>
-            <tr>
-              <td>COADD_OBJECT_ID</td>
-              <td>
-                <p>DES DR1 ID Number</p>
-                <p>0 = not found in DES DR1 coadd catalog</p>
-              </td>
-            </tr>
-            <tr>
-              <td>RA</td>
-              <td>Right Ascension in degrees (J2000)</td>
-            </tr>
-            <tr>
-              <td>DEC</td>
-              <td>Declination in degrees (J2000)</td>
-            </tr>
-            <tr>
-              <td colspan="1">p_ab</td>
-              <td colspan="1">
-                <p>Classifier probability that object is a RRab</p>
-                <p>*Cutoff was made at 0.35 for this work</p>
-              </td>
-            </tr>
-            <tr>
-              <td>EBV</td>
-              <td>
-                <p>Extinction value from Schlegel, Finkbeiner, &amp; Davis 1998</p>
-                <p>To convert to extinction in DES filters:</p>
-                <p>A_g = 3.6830 * EBV</p>
-                <p>A_r = 2.6048 * EBV </p>
-                <p>A_i = 1.9401 * EBV </p>
-                <p>A_z = 1.4505 * EBV </p>
-                <p>A_Y = 1.2774 * EBV</p>
-              </td>
-            </tr>
-            <tr>
-              <td>&lt;g&gt; </td>
-              <td>mean g magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
-            </tr>
-            <tr>
-              <td>&lt;r&gt;</td>
-              <td>mean r magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
-            </tr>
-            <tr>
-              <td>&lt;i&gt;</td>
-              <td>mean i magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
-            </tr>
-            <tr>
-              <td>&lt;z&gt;</td>
-              <td>mean z magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
-            </tr>
-            <tr>
-              <td>&lt;Y&gt;</td>
-              <td>mean Y magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
-            </tr>
-            <tr>
-              <td>nobs_g </td>
-              <td>Number of observations in DES g</td>
-            </tr>
-            <tr>
-              <td>nobs_r</td>
-              <td>Number of observations in DES r</td>
-            </tr>
-            <tr>
-              <td>nobs_i</td>
-              <td>Number of observations in DES i</td>
-            </tr>
-            <tr>
-              <td>nobs_z</td>
-              <td>Number of observations in DES z</td>
-            </tr>
-            <tr>
-              <td>nobs_Y </td>
-              <td>Number of observations in DES y</td>
-            </tr>
-            <tr>
-              <td>nobs</td>
-              <td>Total number of observations across all bands</td>
-            </tr>
-            <tr>
-              <td>period_0</td>
-              <td>Period of best fitting template (days)</td>
-            </tr>
-            <tr>
-              <td colspan="1">period_1</td>
-              <td colspan="1">Period of 2nd best fitting template (days)</td>
-            </tr>
-            <tr>
-              <td colspan="1">period_2</td>
-              <td colspan="1">Period of 3rd best fitting template (days)</td>
-            </tr>
-            <tr>
-              <td colspan="1">amp_0</td>
-              <td colspan="1">
-                <strong>Feature:</strong> Amplitude of best fitting template (mag)</td>
-            </tr>
-            <tr>
-              <td colspan="1">amp_1</td>
-              <td colspan="1">Amplitude of 2nd best fitting template (mag)</td>
-            </tr>
-            <tr>
-              <td colspan="1">amp_2</td>
-              <td colspan="1">Amplitude of 3rd best fitting template (mag)</td>
-            </tr>
-            <tr>
-              <td colspan="1">mu_0</td>
-              <td colspan="1">Distance Modulus of best fitting template (mag)</td>
-            </tr>
-            <tr>
-              <td colspan="1">mu_1</td>
-              <td colspan="1">Distance Modulus of 2nd best fitting template (mag)</td>
-            </tr>
-            <tr>
-              <td colspan="1">mu_2</td>
-              <td colspan="1">Distance Modulus of 3rd best fitting template (mag)</td>
-            </tr>
-            <tr>
-              <td colspan="1">phase_0</td>
-              <td colspan="1">Phase offset of best fitting template</td>
-            </tr>
-            <tr>
-              <td colspan="1">phase_1</td>
-              <td colspan="1">Phase offset of 2nd best fitting template</td>
-            </tr>
-            <tr>
-              <td colspan="1">phase_2</td>
-              <td colspan="1">Phase offset of 3rd best fitting template</td>
-            </tr>
-            <tr>
-              <td colspan="1">rss_0</td>
-              <td colspan="1">Residual Sum of Squares (RSS) of best fit template</td>
-            </tr>
-            <tr>
-              <td colspan="1">rss_1</td>
-              <td colspan="1">Residual Sum of Squares (RSS) of 2nd best fit template</td>
-            </tr>
-            <tr>
-              <td colspan="1">rss_2</td>
-              <td colspan="1">Residual Sum of Squares (RSS) of 3rd best fit template</td>
-            </tr>
-            <tr>
-              <td colspan="1">chi2_g</td>
-              <td colspan="1">
-                <strong>Initial Variability Cut:</strong> Reduced chi squared of light curve from constant in DES g</td>
-            </tr>
-            <tr>
-              <td colspan="1">chi2_r</td>
-              <td colspan="1">
-                <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant in DES r</td>
-            </tr>
-            <tr>
-              <td colspan="1">chi2_i</td>
-              <td colspan="1">
-                <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant in DES i</td>
-            </tr>
-            <tr>
-              <td colspan="1">chi2_z</td>
-              <td colspan="1">
-                <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant in DES z</td>
-            </tr>
-            <tr>
-              <td colspan="1">chi2_Y </td>
-              <td colspan="1">
-                <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant in DES Y</td>
-            </tr>
-            <tr>
-              <td colspan="1">sig_g</td>
-              <td colspan="1">
-                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES g</td>
-            </tr>
-            <tr>
-              <td colspan="1">sig_r</td>
-              <td colspan="1">
-                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES r</td>
-            </tr>
-            <tr>
-              <td colspan="1">sig_i</td>
-              <td colspan="1">
-                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES i</td>
-            </tr>
-            <tr>
-              <td colspan="1">sig_z</td>
-              <td colspan="1">
-                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES z</td>
-            </tr>
-            <tr>
-              <td colspan="1">sig_Y</td>
-              <td colspan="1">
-                <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES Y</td>
-            </tr>
-            <tr>
-              <td colspan="1">rss_dof_0 </td>
-              <td colspan="1">
-                <strong>Feature:</strong> Residual Sum of Squares (RSS) per degree of freedom of best fitting template</td>
-            </tr>
-            <tr>
-              <td colspan="1">rss_dof_1</td>
-              <td colspan="1">Residual Sum of Squares (RSS) per degree of freedom of 2nd best fitting template</td>
-            </tr>
-            <tr>
-              <td colspan="1">rss_dof_2</td>
-              <td colspan="1">Residual Sum of Squares (RSS) per degree of freedom of 3rd best fitting template</td>
-            </tr>
-            <tr>
-              <td colspan="1">lchi_med </td>
-              <td colspan="1">
-                <strong>Feature:</strong> Median Log(reduced chi squared) across DES grizY</td>
-            </tr>
-            <tr>
-              <td colspan="1">rss_lchi_med</td>
-              <td colspan="1">
-                <p>
-                  <strong>Feature:</strong> (RSS/dof)/ Median Log(reduced chi squared) across DES grizY</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">amp_rss_0</td>
-              <td colspan="1">
-                <strong>Feature:</strong> Amplitude/(RSS/dof) for best fitting template</td>
-            </tr>
-            <tr>
-              <td colspan="1">f_dist1_0</td>
-              <td colspan="1">
-                <p>
-                  <strong>Feature:</strong> Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff I relation for best fit template</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">f_dist1_1</td>
-              <td colspan="1">Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff I relation for 2nd best fit template</td>
-            </tr>
-            <tr>
-              <td colspan="1">f_dist1_2</td>
-              <td colspan="1">Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff I relation for 3rd best fit template</td>
-            </tr>
-            <tr>
-              <td colspan="1">f_dist2_0</td>
-              <td colspan="1">
-                <strong>Feature:</strong> Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff II relation for best fit template</td>
-            </tr>
-            <tr>
-              <td colspan="1">f_dist2_1</td>
-              <td colspan="1">Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff II relation for 2nd best fit template</td>
-            </tr>
-            <tr>
-              <td colspan="1">f_dist2_2</td>
-              <td colspan="1">Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff II relation for 3rd best fit template</td>
-            </tr>
-            <tr>
-              <td colspan="1">kappa_0</td>
-              <td colspan="1">
-                <p>
-                  <strong>Feature:</strong> von Mises-Fisher concentration parameter of phases for best fitting template</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">kappa_1</td>
-              <td colspan="1">von Mises-Fisher concentration parameter of phases for 2nd best fitting template</td>
-            </tr>
-            <tr>
-              <td colspan="1">kappa_2</td>
-              <td colspan="1">von Mises-Fisher concentration parameter of phases for 3rd best fitting template</td>
-            </tr>
-            <tr>
-              <td colspan="1">GaiaDR2_ID</td>
-              <td colspan="1">
-                <p>Gaia DR2 source_id for cross-matched RRab in Clementini et al. 2018</p>
-                <p>0 = not found in this catalog</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">PS1_RRab</td>
-              <td colspan="1">
-                <p>Present in Sesar et al. 2017 RRab catalog?</p>
-                <p>0 = no</p>
-                <p>1 = yes</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">CRTS_ID</td>
-              <td colspan="1">
-                <p>ID number from associated CRTS DR2 RRab catalogs </p>
-                <p>0 = not found in this catalog</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">ATLAS_ID</td>
-              <td colspan="1">
-                <p>ID from Heinze et al. 2018 ATLAS RRab catalog</p>
-                <p>0 = not found in this catalog</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">SDSS_ID</td>
-              <td colspan="1">
-                <p>SDSS DR7 ID</p>
-                <p>0 = not found in this catalog</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">SDSS_class</td>
-              <td colspan="1">
-                <p>classification from SDSS stripe 82 studies from Sesar et al. 2010 or Ivezic et al. 2007:</p>
-                <p>'ab' = RRab</p>
-                <p>'c' = RRc</p>
-                <p>'var' = variable</p>
-                <p>'std' = standard source</p>
-                <p>0 = not found in these catalogs</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">Simbad_ID</td>
-              <td colspan="1">
-                <p>Object identifier in SIMBAD database</p>
-                <p>0 = not found in this catalog</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">Simbad_class</td>
-              <td colspan="1">
-                <p>Object classification in SIMBAD database (See <a href="http://cds.u-strasbg.fr/cgi-bin/Otype?Unknown">http://cds.u-strasbg.fr/cgi-bin/Otype?Unknown</a> for classification codes)</p>
-                <p>0 = not found in this catalog</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">OGLE_ID</td>
-              <td colspan="1">
-                <p>OGLE ID from LMC and SMC RRAb catalogs from Soszynski et al. 2016</p>
-                <p>0 = not found in this catalog</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">CEMV_ID</td>
-              <td colspan="1">
-                <p>ID from Martinez-Vazquez et al. 2016</p>
-                <p>0 = not found in this catalog</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">hpx32</td>
-              <td colspan="1">Object's Healpix (nside=32) used to subdivide the light curves</td>
-            </tr>
-            <tr>
-              <td colspan="1">train</td>
-              <td colspan="1">
-                <p>Identifies objects used to train the Random Forest</p>
-                <p>0 = not in training set</p>
-                <p>1 = in training set</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">rrab</td>
-              <td colspan="1">
-                <p>Identified as a high confidence RRab in this study</p>
-                <p>0 = not identified as high confidence RRab</p>
-                <p>1 = identified as high confidence RRab</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">filepath</td>
-              <td colspan="1">
-                <p>Filepath to the object's light curve. The user should prepend the directory containing the lc folder to access.</p>
-                <p>Ex: '/home/user/stringer2018_data_v1.6/'+filepath </p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1">comments</td>
-              <td colspan="1">
-                <p>Comments from first author during visual validation</p>
-                <p>confirmed  = convincing RRab</p>
-                <p>no_: = rejected followed by a reason code</p>
-                <p>galaxy    = DES image showed galaxy</p>
-                <p>bad_fit   = poor template fit</p>
-                <p>misc = miscellaneous reasons</p>
-                <p>maybe_: = possible RRab followed by reason code</p>
-                <p>crowding = object is very close to another object</p>
-                <p>bad_fit = poor template fit</p>
-                <p>n_points = few observations/ poor phase coverage</p>
-                <p>galaxy = star/galaxy classification ambiguous</p>
-                <p>misc = miscellaneous reasons</p>
-                <p>missing_image = missing coadd image in SkyViewer</p>
-                <p>0 = not visually checked</p>
-              </td>
-            </tr>
-          </tbody>
+        <tbody>
+          <tr>
+            <th>Column Name</th>
+            <th>Description</th>
+            <th colspan="1">DataType</th>
+          </tr>
+          <tr>
+            <td>QUICK_OBJECT_ID</td>
+            <td>DES Y3Q2 ID Number</td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>COADD_OBJECT_ID</td>
+            <td>
+              <p>DES DR1 ID Number</p>
+              <p>0 = not found in DES DR1 coadd catalog</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>RA</td>
+            <td>Right Ascension in degrees (J2000)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>DEC</td>
+            <td>Declination in degrees (J2000)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">p_ab</td>
+            <td colspan="1">
+              <p>Classifier score for RRab class</p>
+              <p>*Cutoff was made at 0.35 for this work</p>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>EBV</td>
+            <td>
+              <p>Extinction value from Schlegel, Finkbeiner, &amp; Davis 1998</p>
+              <p>To convert to extinction in DES filters:</p>
+              <p>A_g = 3.6830 * EBV</p>
+              <p>A_r = 2.6048 * EBV </p>
+              <p>A_i = 1.9401 * EBV </p>
+              <p>A_z = 1.4505 * EBV </p>
+              <p>A_Y = 1.2774 * EBV</p>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;g&gt; </td>
+            <td>mean g magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;r&gt;</td>
+            <td>mean r magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;i&gt;</td>
+            <td>mean i magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;z&gt;</td>
+            <td>mean z magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;Y&gt;</td>
+            <td>mean Y magnitude measured in light curves (not corrected for Galactic dust extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>nobs_g </td>
+            <td>Number of observations in DES g</td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>nobs_r</td>
+            <td>Number of observations in DES r</td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>nobs_i</td>
+            <td>Number of observations in DES i</td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>nobs_z</td>
+            <td>Number of observations in DES z</td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>nobs_Y </td>
+            <td>Number of observations in DES y</td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>nobs</td>
+            <td>Total number of observations across all bands</td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>period_0</td>
+            <td>Period of best fitting template (days)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">period_1</td>
+            <td colspan="1">Period of 2nd best fitting template (days)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">period_2</td>
+            <td colspan="1">Period of 3rd best fitting template (days)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">sigma_dp_p</td>
+            <td colspan="1">Uncertainty in (P_est - P_true) / P of the best fit period</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">amp_0</td>
+            <td colspan="1">
+              <strong>Feature:</strong> Amplitude of best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">amp_1</td>
+            <td colspan="1">Amplitude of 2nd best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">amp_2</td>
+            <td colspan="1">Amplitude of 3rd best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">sigma_da</td>
+            <td colspan="1">Uncertainty in (a_est - a_true) of the best fit amplitude (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_0</td>
+            <td colspan="1">Distance Modulus of best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_1</td>
+            <td colspan="1">Distance Modulus of 2nd best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_2</td>
+            <td colspan="1">Distance Modulus of 3rd best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">phase_0</td>
+            <td colspan="1">Phase offset of best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">phase_1</td>
+            <td colspan="1">Phase offset of 2nd best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">phase_2</td>
+            <td colspan="1">Phase offset of 3rd best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">rss_0</td>
+            <td colspan="1">Residual Sum of Squares (RSS) of best fit template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">rss_1</td>
+            <td colspan="1">Residual Sum of Squares (RSS) of 2nd best fit template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">rss_2</td>
+            <td colspan="1">Residual Sum of Squares (RSS) of 3rd best fit template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">chi2_g</td>
+            <td colspan="1">
+              <strong>Initial Variability Cut:</strong> Reduced chi squared of light curve from constant in DES g</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">chi2_r</td>
+            <td colspan="1">
+              <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant in DES r</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">chi2_i</td>
+            <td colspan="1">
+              <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant in DES i</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">chi2_z</td>
+            <td colspan="1">
+              <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant in DES z</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">chi2_Y </td>
+            <td colspan="1">
+              <strong>Initial Variability Cut: </strong>Reduced chi squared of light curve from constant in DES Y</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">sig_g</td>
+            <td colspan="1">
+              <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES g</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">sig_r</td>
+            <td colspan="1">
+              <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES r</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">sig_i</td>
+            <td colspan="1">
+              <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES i</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">sig_z</td>
+            <td colspan="1">
+              <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES z</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">sig_Y</td>
+            <td colspan="1">
+              <strong>Initial Variability Cut: </strong>"Significance" of light curve in DES Y</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">rss_dof_0 </td>
+            <td colspan="1">
+              <strong>Feature:</strong> Residual Sum of Squares (RSS) per degree of freedom of best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">rss_dof_1</td>
+            <td colspan="1">Residual Sum of Squares (RSS) per degree of freedom of 2nd best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">rss_dof_2</td>
+            <td colspan="1">Residual Sum of Squares (RSS) per degree of freedom of 3rd best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">lchi_med </td>
+            <td colspan="1">
+              <strong>Feature:</strong> Median Log(reduced chi squared) across DES grizY</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">rss_lchi_med</td>
+            <td colspan="1">
+              <p>
+                <strong>Feature:</strong> (RSS/dof)/ Median Log(reduced chi squared) across DES grizY</p>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">amp_rss_0</td>
+            <td colspan="1">
+              <strong>Feature:</strong> Amplitude/(RSS/dof) for best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">f_dist1_0</td>
+            <td colspan="1">
+              <p>
+                <strong>Feature:</strong> Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff I relation for best fit template</p>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">f_dist1_1</td>
+            <td colspan="1">Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff I relation for 2nd best fit template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">f_dist1_2</td>
+            <td colspan="1">Distance of Amplitude/Period from Sesar et al. 2010 Oosterhoff I relation for 3rd best fit template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">f_dist2_0</td>
+            <td colspan="1">
+              <strong>Feature:</strong> Distance of Amplitude/Period from Sesar et al. 2010 curve separating the Oosterhoff I and II groups for best fit template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">f_dist2_1</td>
+            <td colspan="1">Distance of Amplitude/Period from <span>Sesar et al. 2010 curve separating the Oosterhoff I and II groups</span> for 2nd best fit template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">f_dist2_2</td>
+            <td colspan="1">Distance of Amplitude/Period from <span>Sesar et al. 2010 curve separating the Oosterhoff I and II groups</span> for 3rd best fit template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">kappa_0</td>
+            <td colspan="1">
+              <p>
+                <strong>Feature:</strong> von Mises-Fisher concentration parameter of phases for best fitting template</p>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">kappa_1</td>
+            <td colspan="1">von Mises-Fisher concentration parameter of phases for 2nd best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">kappa_2</td>
+            <td colspan="1">von Mises-Fisher concentration parameter of phases for 3rd best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">flag_minmax</td>
+            <td colspan="1">
+              <p>Flag for observations missing near maximum and minimum light</p>
+              <p>0 = at least 2 observations near maximum and minimum light</p>
+              <p>1 = fewer than 2 observations near minimum only</p>
+              <p>2 = fewer than 2 observations near maximum only</p>
+              <p>3 = fewer than 2 observations near both maximum and minimum light</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">GaiaDR2_ID</td>
+            <td colspan="1">
+              <p>Gaia DR2 source_id for cross-matched RRab in Clementini et al. 2018</p>
+              <p>0 = not found in this catalog</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">PS1_RRab</td>
+            <td colspan="1">
+              <p>Present in Sesar et al. 2017 RRab catalog?</p>
+              <p>0 = no</p>
+              <p>1 = yes</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">CSDR2_ID</td>
+            <td colspan="1">
+              <p>ID number from associated Catalina Surveys DR2 RRab catalogs </p>
+              <p>0 = not found in this catalog</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">ATLAS_ID</td>
+            <td colspan="1">
+              <p>ID from Heinze et al. 2018 ATLAS RRab catalog</p>
+              <p>0 = not found in this catalog</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">SDSS_ID</td>
+            <td colspan="1">
+              <p>SDSS DR7 ID</p>
+              <p>0 = not found in this catalog</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">SDSS_class</td>
+            <td colspan="1">
+              <p>classification from SDSS stripe 82 studies from Sesar et al. 2010 or Ivezic et al. 2007:</p>
+              <p>'ab' = RRab</p>
+              <p>'c' = RRc</p>
+              <p>'var' = variable</p>
+              <p>'std' = standard source</p>
+              <p>0 = not found in these catalogs</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">Simbad_ID</td>
+            <td colspan="1">
+              <p>Object identifier in SIMBAD database</p>
+              <p>0 = not found in this catalog</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">Simbad_class</td>
+            <td colspan="1">
+              <p>Object classification in SIMBAD database (See <a href="http://cds.u-strasbg.fr/cgi-bin/Otype?Unknown">http://cds.u-strasbg.fr/cgi-bin/Otype?Unknown</a> for classification codes)</p>
+              <p>0 = not found in this catalog</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">OGLE_ID</td>
+            <td colspan="1">
+              <p>OGLE ID from LMC and SMC RRAb catalogs from Soszynski et al. 2016</p>
+              <p>0 = not found in this catalog</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">CEMV_ID</td>
+            <td colspan="1">
+              <p>ID from Martinez-Vazquez et al. 2016</p>
+              <p>0 = not found in this catalog</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">GCVS5_ID</td>
+            <td colspan="1">
+              <p>Cross matched ID with the General Catalogue of Variable Stars v5.1 from Samus et al. 2017</p>
+              <p>0 = not found in this catalog</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">GCVS5_Type</td>
+            <td colspan="1">Variable type for cross matched object as listed in the General Catalogue of Variable Stars v5.1 (<span>Samus et al. 2017)</span>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">hpx32</td>
+            <td colspan="1">Object's Healpix (nside=32) used to subdivide the light curves</td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">train</td>
+            <td colspan="1">
+              <p>Identifies objects used to train the Random Forest</p>
+              <p>0 = not in training set</p>
+              <p>1 = in training set</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">rrab</td>
+            <td colspan="1">
+              <p>Identified as a high confidence RRab in this study</p>
+              <p>0 = not identified as high confidence RRab</p>
+              <p>1 = identified as high confidence RRab</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">filepath</td>
+            <td colspan="1">
+              <p>Filepath to the object's light curve. The user should prepend the directory containing the lc folder to access.</p>
+              <p>Ex: '/home/user/slm2019_data_v1.93/'+filepath </p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">comments</td>
+            <td colspan="1">
+              <p>Comments from first author during visual validation</p>
+              <p>confirmed  = convincing RRab</p>
+              <p>no_: = rejected followed by a reason code</p>
+              <p>galaxy    = DES image showed galaxy</p>
+              <p>bad_fit   = poor template fit</p>
+              <p>misc = miscellaneous reasons</p>
+              <p>maybe_: = possible RRab followed by reason code</p>
+              <p>crowding = object is very close to another object</p>
+              <p>bad_fit = poor template fit</p>
+              <p>n_points = few observations/ poor phase coverage</p>
+              <p>galaxy = star/galaxy classification ambiguous</p>
+              <p>misc = miscellaneous reasons</p>
+              <p>missing_image = missing coadd image in SkyViewer</p>
+              <p>0 = not visually checked</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+        </tbody>
         </table>
         <p>
           <br/>
@@ -449,36 +557,36 @@
          <col/>
          <col />
        </colgroup>
-       <tbody>
-         <tr>
-           <th>To Select</th>
-           <th>Choose</th>
-         </tr>
-         <tr>
-           <td>Objects that were identified as RRab in this study</td>
-           <td>rrab = 1</td>
-         </tr>
-         <tr>
-           <td>RRab in Gaia DR2</td>
-           <td>GaiaDR2_ID &gt; 0</td>
-         </tr>
-         <tr>
-           <td>Objects found in SDSS stripe 82</td>
-           <td>SDSS_class != 0</td>
-         </tr>
-         <tr>
-           <td>Objects found in Sesar et al. 2017 Pan-STARRS catalog</td>
-           <td>PS1_RRab &gt; 0</td>
-         </tr>
-         <tr>
-           <td colspan="1">Objects found in the CRTS RRab catalog v2</td>
-           <td colspan="1">CRTS_ID &gt; 0</td>
-         </tr>
-         <tr>
-           <td>Objects found in ATLAS RRab catalog</td>
-           <td>ATLAS_ID != 0</td>
-         </tr>
-       </tbody>
+          <tbody>
+          <tr>
+            <th>To Select</th>
+            <th>Choose</th>
+          </tr>
+          <tr>
+            <td>Objects that were identified as RRab in this study</td>
+            <td>rrab = 1</td>
+          </tr>
+          <tr>
+            <td>RRab in Gaia DR2</td>
+            <td>GaiaDR2_ID &gt; 0</td>
+          </tr>
+          <tr>
+            <td>Objects found in SDSS stripe 82</td>
+            <td>SDSS_class != 0</td>
+          </tr>
+          <tr>
+            <td>Objects found in Sesar et al. 2017 Pan-STARRS catalog</td>
+            <td>PS1_RRab &gt; 0</td>
+          </tr>
+          <tr>
+            <td colspan="1">Objects found in the Catalina Surveys RRab catalog v2</td>
+            <td colspan="1">CSDR2_ID &gt; 0</td>
+          </tr>
+          <tr>
+            <td>Objects found in ATLAS RRab catalog</td>
+            <td>ATLAS_ID != 0</td>
+          </tr>
+        </tbody>
      </table>
         <p>
           <br/>
@@ -492,29 +600,29 @@
         <div class="fixup" id="rrlC"></div>
         <p>
           <h2 class="fixdown">
-            <strong>C. Light Curve Folder Descriptions </strong> (<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/stringer2018_lightcurves.tar.gz" target="_blank">stringer2018_lightcurves.tar.gz</a>):
+            <strong>C. Light Curve Folder Descriptions </strong> (<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/slm2019_lightcurves.tar.gz" target="_blank">slm2019_lightcurves.tar.gz</a>):
           </h2>
         </p>
-        <p>The following is a map of the directory structure containing the DES light curves. In each subdirectory, the individual light curves are separated into smaller folders by their 5 digit HEALPix (nside = 32) value for their location. Filepaths to each light curve are included in the full catalog file.</p>
+             <p>The following is a map of the directory structure containing the DES light curves. In each subdirectory, the individual light curves are separated into smaller folders by their 5 digit HEALPix (nside = 32) value for their location. Filepaths to each light curve are included in the full catalog file.</p>
         <table>
           <colgroup>
             <col />
             <col />
           </colgroup>
-          <tbody>
-            <tr>
-              <th>Directory</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>/lc/rrab</td>
-              <td>Light curves of objects identified as RRab by this<br/>analysis and confirmed through visual checks</td>
-            </tr>
-            <tr>
-              <td>/lc/train</td>
-              <td>All cross-matched light curves from SDSS stripe 82<br/>which were used to train the classifier</td>
-            </tr>
-          </tbody>
+                  <tbody>
+          <tr>
+            <th>Directory</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>/lc/rrab</td>
+            <td>Light curves of objects identified as RRab by this<br/>analysis and confirmed through visual checks</td>
+          </tr>
+          <tr>
+            <td>/lc/train</td>
+            <td>All cross-matched light curves from SDSS stripe 82<br/>which were used to train the classifier</td>
+          </tr>
+        </tbody>
         </table>
         <p>
           <br/>
@@ -530,33 +638,33 @@
          <col />
          <col />
        </colgroup>
-       <tbody>
-         <tr>
-           <th>Column Name</th>
-           <th>Description</th>
-         </tr>
-         <tr>
-           <td>MJD_OBS</td>
-           <td>Modified Julian Date of observation (J2000)</td>
-         </tr>
-         <tr>
-           <td>BAND</td>
-           <td>DES filter band of observation <em>grizY</em>
-           </td>
-         </tr>
-         <tr>
-           <td>MAG_CORR</td>
-           <td>Extinction-corrected psf magnitude</td>
-         </tr>
-         <tr>
-           <td>MAGERR_PSF</td>
-           <td>Rescaled photometric error</td>
-         </tr>
-         <tr>
-           <td>MAG_PSF</td>
-           <td>PSF magnitude not corrected for extinction</td>
-         </tr>
-       </tbody>
+               <tbody>
+          <tr>
+            <th>Column Name</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>MJD_OBS</td>
+            <td>Modified Julian Date of observation (J2000)</td>
+          </tr>
+          <tr>
+            <td>BAND</td>
+            <td>DES filter band of observation <em>grizY</em>
+            </td>
+          </tr>
+          <tr>
+            <td>MAG_CORR</td>
+            <td>Extinction-corrected psf magnitude</td>
+          </tr>
+          <tr>
+            <td>MAGERR_PSF</td>
+            <td>Rescaled photometric error</td>
+          </tr>
+          <tr>
+            <td>MAG_PSF</td>
+            <td>PSF magnitude not corrected for extinction</td>
+          </tr>
+        </tbody>
      </table>
         <p>
           <br/>
@@ -566,10 +674,10 @@
         <h2 class="fixdown">
           <strong>E. Table Descriptions</strong>
         </h2>
-        <p>
-     <strong>Table 1 (<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/table1.csv" target="_blank">table1.csv</a>):  </strong>The full version of Table 1 contains the coefficients of the equation used to rescale the light curve uncertainties in each HEALPix and filter (see Section 3.1 in text). </p>
-   <p>
-     <strong>Table 5 (<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/table5.csv" target="_blank">table5.csv</a>):  </strong>Table 5 contains the purity and completeness values of the Random Forest classifier for a finer grid of probability cut values (increments of 0.01 instead of the 0.05 in the text).  In Stringer et al. 2018, we chose the value p = 0.35 as the cutoff where the purity is ~85% and the completeness is ~76%, but any other value may be used to select a more pure or more complete sample than we used. </p>
+     <p>
+        <strong>Table 1 </strong>(<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/table1_v1.93.csv">table1_v1.93.csv</a>)<strong> :  </strong>The full version of Table 1 contains the coefficients of the equation used to rescale the light curve uncertainties in each HEALPix and filter (see Section 3.1 in text). </p>
+      <p>
+        <strong>Table 5 </strong>(<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/table5.csv">table5.csv</a>)<strong> :  </strong>Table 5 contains the purity and completeness values of the Random Forest classifier for a finer grid of score cutoff values (increments of 0.01 instead of the 0.05 in the text).  In Stringer, Long, Macri et al. 2019, we chose the value p = 0.35 as the cutoff where the purity is ~85% and the completeness is ~76%, but any other value may be used to select a more pure or more complete sample than we used. </p>
 
         <p>
           <br/>
