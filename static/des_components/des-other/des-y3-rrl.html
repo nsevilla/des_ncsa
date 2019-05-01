@@ -14,14 +14,14 @@
             </div>
         <div style="text-align: center">
           <a style="padding: 20px; text-decoration: none" href="[[rootpath]]releases/other/y3-rrl"><paper-button   raised class="desButton">Documentation</paper-button></a>
-    <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/"><paper-button   raised class="desButton">Files</paper-button></a>
+    <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-rrl/"><paper-button   raised class="desButton">Files</paper-button></a>
 </div>
       <div class="card-content">
         <h2>
           <strong>Overview</strong>
         </h2>
             <p>In <a href="" onclick="return false;">Stringer, Long, Macri et al. 2019</a>, we identified 5783 RRab from the sparsely sampled multiband DES Y3Q2 wide field data using a multiband template fitting method (<a href="https://github.com/longjp/rr-templates">github link</a>) and a Random Forest classifier trained on DES light curves for RRab identified by <a href="http://adsabs.harvard.edu/abs/2010ApJ...708..717S">Sesar et al. 2010 </a>and <a href="http://adsabs.harvard.edu/abs/2012MNRAS.424.2528S">Süveges et al. 2012</a>.  Here, we present our catalog, light curves, and extended versions of selected tables in the text. In our full catalog file, we include the values used to select for variability prior to the template fitting, the light curve parameter estimates from the template fitting, the features used to determine its classification as an RRab or not, and cross-match information with external catalogs for all ~714,000 objects which passed our initial variability cuts (see Section 3.2 of the text). The DES Y3 light curves for all the RRab and training catalog objects are included and subdivided as described on this page.  Lastly, extended versions of Tables 1 and 5 from the text are included. These contents are further described on this page.</p>
-            <p>The data products can be accessed <a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/">here</a> or at <a href="https://drive.google.com/drive/folders/1xJ1xQGog94Ds0WMatadWPI8QL7AaSSja?usp=sharing">(Google drive link)</a>. Please contact <a href="mailto:kstringer@tamu.edu">kstringer[at]tamu.edu</a> with any questions or concerns.</p>
+            <p>The data products can be accessed <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-rrl/">here</a>. Please contact <a href="mailto:kstringer@tamu.edu">kstringer[at]tamu.edu</a> with any questions or concerns.</p>
             <h2>
           <strong>Table of Contents:</strong>
         </h2>
@@ -34,7 +34,7 @@
         <hr/>
         <div class="fixup" id="rrlA"></div>
         <h2 class="fixdown">
-          <strong>A. Catalog Column Descriptions</strong> (<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/fullcatalog_v1.93.csv" target="_blank">fullcatalog_v1.93.csv</a>)</h2>
+          <strong>A. Catalog Column Descriptions</strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-rrl/fullcatalog_v1.93.csv" target="_blank">fullcatalog_v1.93.csv</a>)</h2>
            <p>Column descriptions for the ~714,000 objects with template fits. Values used for initial variability cuts and Random Forest features are marked with bold labels.  </p>
       <p>All null values are indicated with -99 unless otherwise specified.</p>
         <table >
@@ -600,7 +600,7 @@
         <div class="fixup" id="rrlC"></div>
         <p>
           <h2 class="fixdown">
-            <strong>C. Light Curve Folder Descriptions </strong> (<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/slm2019_lightcurves.tar.gz" target="_blank">slm2019_lightcurves.tar.gz</a>):
+            <strong>C. Light Curve Folder Descriptions </strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-rrl/slm2019_lightcurves.tar.gz" target="_blank">slm2019_lightcurves.tar.gz</a>):
           </h2>
         </p>
              <p>The following is a map of the directory structure containing the DES light curves. In each subdirectory, the individual light curves are separated into smaller folders by their 5 digit HEALPix (nside = 32) value for their location. Filepaths to each light curve are included in the full catalog file.</p>
@@ -675,9 +675,9 @@
           <strong>E. Table Descriptions</strong>
         </h2>
      <p>
-        <strong>Table 1 </strong>(<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/table1_v1.93.csv">table1_v1.93.csv</a>)<strong> :  </strong>The full version of Table 1 contains the coefficients of the equation used to rescale the light curve uncertainties in each HEALPix and filter (see Section 3.1 in text). </p>
+        <strong>Table 1 </strong>(<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-rrl/table1_v1.93.csv">table1_v1.93.csv</a>)<strong> :  </strong>The full version of Table 1 contains the coefficients of the equation used to rescale the light curve uncertainties in each HEALPix and filter (see Section 3.1 in text). </p>
       <p>
-        <strong>Table 5 </strong>(<a href="http://desdr-server.ncsa.illinois.edu/desprivate/other_files/y3-rrl/table5.csv">table5.csv</a>)<strong> :  </strong>Table 5 contains the purity and completeness values of the Random Forest classifier for a finer grid of score cutoff values (increments of 0.01 instead of the 0.05 in the text).  In Stringer, Long, Macri et al. 2019, we chose the value p = 0.35 as the cutoff where the purity is ~85% and the completeness is ~76%, but any other value may be used to select a more pure or more complete sample than we used. </p>
+        <strong>Table 5 </strong>(<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-rrl/table5.csv">table5.csv</a>)<strong> :  </strong>Table 5 contains the purity and completeness values of the Random Forest classifier for a finer grid of score cutoff values (increments of 0.01 instead of the 0.05 in the text).  In Stringer, Long, Macri et al. 2019, we chose the value p = 0.35 as the cutoff where the purity is ~85% and the completeness is ~76%, but any other value may be used to select a more pure or more complete sample than we used. </p>
 
         <p>
           <br/>
