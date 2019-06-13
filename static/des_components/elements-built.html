@@ -40010,6 +40010,9 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
     <p>For further information about the METACALIBRATION procedure and description of its implementation in DES, see <a href="https://arxiv.org/abs/1702.02600">Huff &amp; Mandelbaum 2017</a>, <a href="http://adsabs.harvard.edu/abs/2017ApJ...841...24S">Sheldon &amp; Huff 2017</a>, and <span style="color: rgb(255,0,0);"> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
       </span>. It is important to note that the METACALIBRATION catalog contains information necessary to calibrate an arbitrary selection (based on properties measured in this or related METACALIBRATION catalogs - i.e., griz METACALIBRATION flux measurements for photometric redshifts), unlike other forms of shear calibration that are valid only for a particular ensemble selection. <strong>If making selections beyond the METACALIBRATION catalog flags_select, the uncertainty on shear calibration given in  <span style="color: rgb(255,0,0);"> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
         </span> will no longer be correct. </strong>
+        <br>
+        Note: To reproduce the lensing measurements used in the DES Y1 3x2pt analyses, please apply the redMaGiC <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits" target="_blank"> mask </a> to the shape catalog.
+
     </p>
     <p>
       <strong> <br> </strong>
@@ -40555,6 +40558,9 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <strong>IM3SHAPE</strong>
     </h3>
     <p>The Y1 IM3SHAPE catalog is similar to the SV IM3SHAPE catalog, but has calibrations based on substantially improved images simulations as described in <a href="http://adsabs.harvard.edu/abs/2018MNRAS.475.4524S">Samuroff et al. (2018)</a> and <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. (2018)</a>.</p>
+      <p>
+        Note: To reproduce the lensing measurements used in the DES Y1 3x2pt analyses, please apply the redMaGiC <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits" target="_blank"> mask </a> to the shape catalog.
+        </p>
     <p>
       <br>
     </p>
