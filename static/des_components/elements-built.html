@@ -32972,20 +32972,18 @@ Based in part on observations at Cerro Tololo Inter-American Observatory, Nation
 <p>Please see the details below if you need to contact anyone specifically at DESDM.</p>
 <ul>
 <li>Donald Petravick,&nbsp;<em>Senior Project Manager and Principal Investigator</em>.&nbsp;<em><a href="mailto:petravic@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
-<li>Matias Carrasco Kind, <em>Senior Research and Release Scientist. <a href="mailto:mcarras2@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a> <a href="http://matias-ck.com/" target="_blank" style="color: dimgrey;"><iron-icon icon="hardware:desktop-windows"></iron-icon></a></em></li>
+<li>Matias Carrasco Kind, <em>Senior Research and Release Scientist. Assistant Research Professor  <a href="mailto:mcarras2@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a> <a href="http://matias-ck.com/" target="_blank" style="color: dimgrey;"><iron-icon icon="hardware:desktop-windows"></iron-icon></a></em></li>
 <li>Gregory Daues, <em>Research Programmer.</em> <a href="mailto:daues@illinois.edu" style="color: dimgrey;"><em><iron-icon icon="communication:email"></iron-icon></em></a></li>
 <li>Douglas Friedel, <em>Research Programmer</em>. <em><a href="mailto:friedel@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
 <li>Margaret Gelman, <em>Research Scientist.</em> <a href="mailto:mgelman2@illinois.edu" style="color: dimgrey;"><em><iron-icon icon="communication:email"></iron-icon></em></a></li>
 <li>Michelle Gower, <em>Senior Research Programmer.</em> <a href="mailto:mgower@illinois.edu" style="color: dimgrey;"><em><iron-icon icon="communication:email"></iron-icon></em></a></li>
 <li>Robert Gruendl, <em>Research Scientist and Associate Research Professor of Astronomy.</em> <a href="mailto:gruendl@illinois.edu" style="color: dimgrey;"><em><iron-icon icon="communication:email"></iron-icon></em></a></li>
 <li>Michael Johnson, <em>Research Scientist.</em> <a href="mailto:mjohns44@illinois.edu"><em><iron-icon icon="communication:email" style="color: dimgrey;"></iron-icon></em></a></li>
+<li>T. Andrew Manning, <em>Senior Research Programmer.</em> <a href="mailto:manninga@illinois.edu" style="color: dimgrey;"><em><iron-icon icon="communication:email"></iron-icon></em></a></li>
 <li>J.D. Maloney, <em>Storage Engineer</em>. <a href="mailto:malone12@illinois.edu"><em><iron-icon icon="communication:email" style="color: dimgrey;"></iron-icon></em></a></li>
 <li>Felipe Menanteau, <em>Research Scientist and Associate Research Professor of Astronomy.</em> <a href="mailto:felipe@illinois.edu" style="color: dimgrey;"><em><iron-icon icon="communication:email"></iron-icon></em></a> <em><a href="http://cosmology.illinois.edu/~felipe" target="_blank" style="color: dimgrey;"><iron-icon icon="hardware:desktop-windows"></iron-icon></a></em></li>
 <li>Eric Morganson, <em>Research Scientist. </em><a href="mailto:ericm@illinois.edu"><em><iron-icon icon="communication:email" style="color: dimgrey;"></iron-icon></em></a></li>
-<li> Francisco Paz-Chinchon,&nbsp;<em>Postdoctoral Reserach Associate</em>. <em><a href="mailto:fpazch@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
 <li>Christopher Pond,&nbsp;<em>Senior Database Administrator</em>. <em><a href="mailto:pond1@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
-<li>Audrey Koziol, <em>Intern. </em><em><a href="mailto:audrey@koziol.cc" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
-<li>Ruiqi Li, <em>Intern. </em><em><a href="mailto:ruiqili2@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
 </ul>
 <h3><strong>Funding and Collaborations</strong></h3>
     <p>
@@ -39820,10 +39818,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <strong>Overview</strong>
     </h2>
     <p>
-      <span style="color: rgb(51,51,51);">For the PSF estimation used for weak lensing, we used PSFEx with somewhat modified parameters compared to what was used for the main Y1A1 Gold catalogs.  Primarily, this was to alleviate some inaccuracies that were found in the <span style="color: rgb(51,51,51);">PSFEx solutions in the initial processing</span>.</span>
+      <span>For the PSF estimation used for weak lensing, we used PSFEx with somewhat modified parameters compared to what was used for the main Y1A1 Gold catalogs.  Primarily, this was to alleviate some inaccuracies that were found in the <span style="color: rgb(51,51,51);">PSFEx solutions in the initial processing</span>.</span>
     </p>
     <p>
-      <span style="color: rgb(51,51,51);">The main change we made was to exclude bright stars, which were affected by the so-called brighter-fatter effect, whereby accumulated electrons repel subsequent electrons, making bright stars appear larger than the true PSF profile.  We excluded the brightest three magnitudes of unsaturated stars from the list of candidate PSF stars.  (Note that this is a different magnitude range for each exposure, since the saturation magnitude is a function of seeing, which varies.)  In addition, we excluded stars that overlapped parts of the CCD with anomalous electric field patterns (called "tape bumps") as well as stars that were considered outliers in the size or shape (most of which were found to be contaminated by other nearby objects or be very noisy). </span>
+      <span>The main change we made was to exclude bright stars, which were affected by the so-called brighter-fatter effect, whereby accumulated electrons repel subsequent electrons, making bright stars appear larger than the true PSF profile.  We excluded the brightest three magnitudes of unsaturated stars from the list of candidate PSF stars.  (Note that this is a different magnitude range for each exposure, since the saturation magnitude is a function of seeing, which varies.)  In addition, we excluded stars that overlapped parts of the CCD with anomalous electric field patterns (called "tape bumps") as well as stars that were considered outliers in the size or shape (most of which were found to be contaminated by other nearby objects or be very noisy). </span>
     </p>
     <p>We also used a slightly different choice of PSFEx parameters (described in more detail <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty2219" style="letter-spacing: 0.0px;">Zuntz et al, 2018</a>), which were designed to minimize the mean PSF size and shape residuals.  Most notably, we used BASIS_TYPE=PIXEL, rather than PIXEL_AUTO.  We found that that latter choice led to unacceptably large mean size residuals.</p>
     <p>In addition to rejecting some stars, as described above, we also reserved a random 20% of the remaining "good" stars from the PSF solution.  This allows for more robust tests of the quality of the PSF models, since we have measurements of the size and shape residuals at locations that were not used for creating the PSF solution.</p>
@@ -39884,7 +39882,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <span style="color: rgb(0,0,0);">size</span>
           </td>
           <td colspan="1">
-            <span style="color: rgb(0,0,0);">Size of observed star (as T = Ixx + Iyy) using HSM moments</span>
+            <span style="color: rgb(0,0,0);">   Size of observed star (as sigma, the scale of the best fit Gaussian) using HSM moments star. </span>
           </td>
         </tr>
         <tr>
@@ -39898,7 +39896,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <span style="color: rgb(0,0,0);">psf_size </span>
           </td>
           <td colspan="1">
-            <span style="color: rgb(0,0,0);">Size (Ixx + Iyy) of PSFEx model using HSM moments</span>
+            <span style="color: rgb(0,0,0);">Size (as sigma) of PSFEx model using HSM moments.</span>
           </td>
         </tr>
         <tr>
