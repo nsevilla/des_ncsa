@@ -8,19 +8,19 @@
 
 
 <paper-dialog id="dialogfig1">
-   <des-img-big src="/static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig2">
-   <des-img-big src="/static/images/fig5_desdm_paper.png">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/fig5_desdm_paper.png">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig3">
-   <des-img-big src="/static/images/processing.gif">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/processing.gif">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
@@ -67,15 +67,15 @@
   <br/>
   <br/>
 
-   <des-img-big  src="/static/images/fig4_desdm_paper.png" on-tap="_dialog" data-item="1">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+   <des-img-big  src="{{rootPath}}static/images/fig4_desdm_paper.png" on-tap="_dialog" data-item="1">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
 
-   <des-img-big src="/static/images/fig5_desdm_paper.png" on-tap="_dialog" data-item="2">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/fig5_desdm_paper.png" on-tap="_dialog" data-item="2">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
  <p>
   <br/>
  </p>
 <p>One strength of the DESDM pipeline is that it performs incremental refinement to the image products, allowing for investigation at each stage of processing. <a href="javascript:void(0)" on-tap="_dialog" data-item="3"/>Figure 3</a> shows the incremental steps in image processing for a single patch of sky. It starts with a raw exposure and finishes with a deep, multi-band coadd image of the sky.</p>
 
-   <des-img-big src="/static/images/processing.gif" on-tap="_dialog" data-item="3">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/processing.gif" on-tap="_dialog" data-item="3">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
 
         <p><br /></p>
         <div class="fixup" id="soft_single"></div>

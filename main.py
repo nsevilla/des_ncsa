@@ -29,7 +29,7 @@ class MainHandler(tornado.web.RequestHandler):
     """
     @tornado.web.asynchronous
     def get(self):
-        self.render('index.html')
+        self.render('index.html', rootPath = Settings.APP_ROOT)
 
         #passwords = read_passwd_file()
         #if verify_password(passwords, basicauth_user, basicauth_pass):
@@ -75,14 +75,13 @@ class Application(tornado.web.Application):
     """
     def __init__(self):
         handlers = [
-            (r"/", MainHandler),
-            (r"/help/", HelpHandler),
-            (r"/releases/sva1/content/(.*)", tornado.web.StaticFileHandler,\
-            {'path':Settings.SVA1_PATH}),
+            (r"{}".format(Settings.APP_ROOT), MainHandler),
+            (r"{}help/".format(Settings.APP_ROOT), HelpHandler),
+            (r"{}static/(.*)".format(Settings.APP_ROOT), tornado.web.StaticFileHandler, {'path':Settings.STATIC_PATH}),
+            (r"{}releases/sva1/content/(.*)".format(Settings.APP_ROOT), tornado.web.StaticFileHandler, {'path':Settings.SVA1_PATH}),
             ]
         settings = {
             "template_path":Settings.TEMPLATE_PATH,
-            "static_path":Settings.STATIC_PATH,
             "debug":Settings.DEBUG,
             "default_handler_class": My404Handler,
         }

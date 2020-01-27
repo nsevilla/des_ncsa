@@ -19,7 +19,7 @@
 
 
 <paper-dialog id="dialogfig1">
-            <des-img-big  src="/static/images/dr1/footprint_h32_tiles.png">
+            <des-img-big  src="{{rootPath}}static/images/dr1/footprint_h32_tiles.png">
                 Figure 1. DES footprint subdivisions. This figure shows the 10,338 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR1.
             </des-img-big>
   <div class="buttons">
@@ -27,7 +27,7 @@
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig2">
-            <des-img-big  src="/static/images/dr1/dr1_bandpass.png">
+            <des-img-big  src="{{rootPath}}static/images/dr1/dr1_bandpass.png">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
@@ -60,7 +60,7 @@
         <h3 class="fixdown">Introduction  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>Here we present a summary and description of the individual products included in DES DR1. The primary components of DES DR1 are derived from the union of 10,338 coadd tiles covering the DES footprint. The tile distribution is shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a  > and a HEALPix map (NSIDE = 32) of 1753 pixels covering the entire DR1 release is also provided for reference. This map is useful for cross matching sections of the DES footprint with other surveys.</p>
         <p>In order to provide a convenient way to download all the catalog data at once, and noting that the tile is the basic processing unit for the survey, we have created FITS file versions<br/>of the catalog tables grouped by coadd tile. This amounts to 31,014 total files (for the DR1_MAIN, DR1_MAGNITUDE, and DR1_FLUX tables) with almost 2.5 TB of catalog data. Both the catalog and corresponding image file paths can beobtained from the DR1_TILE_INFO table  and can be accessed through the interfaces.</p>
-            <des-img-big  src="/static/images/dr1/footprint_h32_tiles.png" on-tap="_dialog" data-item="1">
+            <des-img-big  src="{{rootPath}}static/images/dr1/footprint_h32_tiles.png" on-tap="_dialog" data-item="1">
                 Figure 1. DES footprint subdivisions. This figure shows the 10,338 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR1.
             </des-img-big>
 
@@ -209,7 +209,7 @@
 
 <p>These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information">Here</a>. Note that, as described in the <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>, Y3A1 Standard Bandpasses have some minor inaccuracies and are not being released in favor of the DR1 set, but can be requested by sending an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
 
-            <des-img-big  src="/static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
+            <des-img-big  src="{{rootPath}}static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
