@@ -24,7 +24,7 @@ class BaseHandler(tornado.web.RequestHandler):
 
 class MainHandler(tornado.web.RequestHandler):
     """
-    Class that handle most of the request, all the rest og the handling is done
+    Class that handle most of the request, all the rest of the handling is done
     by page.js
     """
     @tornado.web.asynchronous
