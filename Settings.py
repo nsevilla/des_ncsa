@@ -2,9 +2,12 @@
 import os
 DEBUG = False
 DIRNAME = os.path.dirname(__file__)
-APP_ROOT = r'/{}/'.format(os.environ['APP_ROOT'])
-if APP_ROOT == '//':
-    APP_ROOT = '/'
+if os.environ['APP_ROOT'] == '' or os.environ['APP_ROOT'] == '/':
+    APP_ROOT = ''
+else:
+    APP_ROOT = r'/{}/'.format(os.environ['APP_ROOT'])
+    # Ensure string is like "/APP_ROOT" without trailing slash :
+    APP_ROOT = os.path.normpath(APP_ROOT)
 STATIC_PATH = os.path.join(DIRNAME, 'static')
 TEMPLATE_PATH = os.path.join(DIRNAME, 'templates')
 SVA1_PATH = os.path.join(STATIC_PATH, 'files/SVA1')
