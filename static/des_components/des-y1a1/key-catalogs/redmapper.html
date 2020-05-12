@@ -1,0 +1,351 @@
+<dom-module id="des-y1a1-key-redmapper">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 redMaPPer Catalogs">
+<div class="card-content">
+
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+
+    <p>In <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.482.1352M/abstract">McClintock et al. (2018)</a>, 
+      we studied the weak lensing mass calibration of the Y1A1 redMaPPer cluster catalog, and in
+       <a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200211124D/abstract">DES et al. (2020)</a> 
+       we studied the cosmological parameter constraints from the WL mass calibration and cluster number count statistics. 
+        Here we make public the data products related to the cluster catalog. 
+         At this stage we provide: the cluster and member catalogs, the footprint mask, and the associated 
+         random catalog for the lambda&gt;20 "cosmology" sample.</p>
+    
+    <h2>
+      <strong>References</strong>
+    </h2>
+
+    <ol>
+      <li>
+        <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.482.1352M/abstract">McClintock et al. (2018)</a>
+      </li>
+      <li>
+        <a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200211124D/abstract">DES et al. (2020)</a>
+      </li>
+      <li>
+        <a href="https://ui.adsabs.harvard.edu/abs/2014ApJ...785..104R/abstract">Rykoff et al. (2014)</a>
+      </li>
+      <li>
+        <a href="https://ui.adsabs.harvard.edu/abs/2016ApJS..224....1R/abstract">Rykoff et al. (2016)</a>
+      </li>
+    </ol>
+
+    <h2>
+      <strong>Download</strong>
+    </h2>
+
+    <p>Catalog, footprint mask, and associated randoms:</p>
+<ul>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_catalog.fits.gz">Link to cluster catalog</a> (2.1 MB)
+  </li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_members.fits.gz">Link to member catalog</a> (22MB)
+  </li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_zmask.fits.gz">Link to footprint</a> (30MB)
+  </li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_randoms.fits.gz">Link to randoms</a> (62MB)
+  </li>
+</ul>
+
+    <h2>
+      <strong>Description</strong>
+    </h2>
+    <h3><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_catalog.fits.gz">Cluster Catalog</a></h3>
+    <p>The catalog format is:</p>
+    <table >
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>ID</td>
+          <td>redMaPPer Cluster Identification Number</td>
+        </tr>
+        <tr>
+          <td>VLIM</td>
+          <td>One if in cosmology catalog, 0 otherwise</td>
+        </tr>
+        <tr>
+          <td>NAME</td>
+          <td>redMaPPer Cluster Name</td>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right ascension in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>DEC</td>
+          <td>Declination in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>Z_LAMBDA</td>
+          <td>Cluster photo-z (z_λ)</td>
+        </tr>
+        <tr>
+          <td>Z_LAMBDA_ERR</td>
+          <td>Gaussian error estimate for z_λ</td>
+        </tr>
+        <tr>
+          <td>LAMBDA</td>
+          <td>Richness estimate λ</td>
+        </tr>
+        <tr>
+          <td>LAMBDA_ERR</td>
+          <td>Gaussian error estimate for λ</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>Richness scale factor</td>
+        </tr>
+        <tr>
+          <td>Z_SPEC</td>
+          <td>Spectroscopic redshift for most likely center (-1.0 if not available)</td>
+        </tr>
+        <tr>
+          <td>COADD_OBJECTS_ID</td>
+          <td>DES COADD_OBJECTS_ID identification number</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_G</td>
+          <td colspan="1">g MAG_CM magnitude for most likely central galaxy (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_G</td>
+          <td colspan="1">error on g MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_R</td>
+          <td colspan="1">r MAG_CM magnitude for most likely central galaxy (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_R</td>
+          <td colspan="1">error on r MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_I</td>
+          <td colspan="1">i MAG_CM magnitude for most likely central galaxy (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_I</td>
+          <td colspan="1">error on i MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_Z</td>
+          <td colspan="1">z MAG_CM magnitude for most likely central galaxy (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_Z</td>
+          <td colspan="1">error on z MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">ZLUM</td>
+          <td colspan="1">Total membership-weighted z-band luminosity (units of L∗)</td>
+        </tr>
+        <tr>
+          <td colspan="1">P_CEN[5]</td>
+          <td colspan="1">Centering probability P_cen for 5 most likely centrals</td>
+        </tr>
+        <tr>
+          <td colspan="1">RA_CEN[5]</td>
+          <td colspan="1">R.A. for 5 most likely centrals</td>
+        </tr>
+        <tr>
+          <td colspan="1">DEC_CEN[5]</td>
+          <td colspan="1">Decl. for 5 most likely centrals</td>
+        </tr>
+        <tr>
+          <td colspan="1">ID_CEN[5]</td>
+          <td colspan="1">DES COADD_OBJECTS_ID identification number for 5 most likely centrals</td>
+        </tr>
+        <tr>
+          <td colspan="1">PZBINS[21]</td>
+          <td colspan="1">Redshift points at which P(z) is evaluated</td>
+        </tr>
+        <tr>
+          <td colspan="1">PZ[21]</td>
+          <td colspan="1">P(z) evaluated at redshift points given by PZBINS</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_members.fits.gz">Member Catalog</a></h3>
+    <p>The catalog format is:</p>
+    <table >
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>ID</td>
+          <td>redMaPPer Cluster Identification Number</td>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right ascension in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>DEC</td>
+          <td>Declination in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>Distance from cluster center (h^−1 Mpc)</td>
+        </tr>
+        <tr>
+          <td>P</td>
+          <td>Membership probability</td>
+        </tr>
+        <tr>
+          <td>P_FREE</td>
+          <td>Probability that member is not a member of a higher ranked cluster</td>
+        </tr>
+        <tr>
+          <td>THETA_L</td>
+          <td>Luminosity (z-band) weight</td>
+        </tr>
+        <tr>
+          <td>THETA_R</td>
+          <td>Radial weight</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_G</td>
+          <td colspan="1">g MAG_CM magnitude (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_G</td>
+          <td colspan="1">error on g MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_R</td>
+          <td colspan="1">r MAG_CM magnitude (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_R</td>
+          <td colspan="1">error on r MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_I</td>
+          <td colspan="1">i MAG_CM magnitude (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_I</td>
+          <td colspan="1">error on i MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_Z</td>
+          <td colspan="1">z MAG_CM magnitude (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_Z</td>
+          <td colspan="1">error on z MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">Z_SPEC</td>
+          <td colspan="1">Spectroscopic redshift (-1.0 if not available)</td>
+        </tr>
+        <tr>
+          <td colspan="1">COADD_OBJECTS_ID</td>
+          <td colspan="1">DES COADD_OBJECTS_ID identification number</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_zmask.fits.gz">Footprint</a></h3>
+    <p>The footprint format is:</p>
+    <table >
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>HPIX</td>
+          <td>HEALPIX ring-ordered pixel number (NSIDE = 4096)</td>
+        </tr>
+        <tr>
+          <td>ZMAX</td>
+          <td>Maximum redshift of a cluster centered in this pixel</td>
+        </tr>
+        <tr>
+          <td>FRACGOOD</td>
+          <td>Fraction f pixel area that is not masked</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_randoms.fits.gz">Random points</a></h3>
+    <p>The random point format is:</p>
+    <table >
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right ascension in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>DEC</td>
+          <td>Declination in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>Z</td>
+          <td>Redshift of random point</td>
+        </tr>
+        <tr>
+          <td>LAMBDA</td>
+          <td>Richness of random point</td>
+        </tr>
+        <tr>
+          <td>WEIGHT</td>
+          <td>Weight of random point</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyRedmapper extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-redmapper'; }
+    }
+    window.customElements.define(DesY1A1KeyRedmapper.is, DesY1A1KeyRedmapper);
+  </script>
+
+</dom-module>
