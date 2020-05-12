@@ -27,26 +27,37 @@
         <h2>
   <strong>Overview</strong>
 </h2>
-
-<p>Using the brown dwarf sample presented in <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.5301C/abstract">Carnero Rosell et al. 2019</a>, we search for wide binary systems composed of a brown dwarf companion to a main sequence star in the Gaia DR2 and DES DR1 data.  We also search for systems composed of two brown dwarfs.</p>
-<p>Our final catalog contains 255 binary and 6 multiple system candidates with wide (&gt; 5") separation composed by L or T dwarfs companions to stars, plus 9 double brown dwarf systems. Our search is based on a common distance criterion with no proper motion information.  To compute the distances for the stars, we used the StarHorse code (<a href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.476.2556Q/abstract">Queiroz et al. 2018</a>).  For the L and T dwarfs, the distance is based on empirical templates ranging from L0 to T9. We also compute the chance alignment probabilities in order to assess the physical nature of each pair. All the systems with probability &gt; 5% were not included in the final sample. The typical wide binary fraction found in our sample over the L and T spectral types is 2-4%. The significant leap provided by this sample will enable constraints on the formation and evolution as well as atmosphere models of L and T dwarfs.</p>
+<p>Using the L and T dwarf sample presented in <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.5301C/abstract">Carnero Rosell et al. 2019</a>, we search for wide binary systems composed of a L or T dwarf companion to main sequence stars in the Gaia DR2 and DES DR1 data.  We also search for systems composed of two cool dwarfs.</p>
+<p>Our final catalog contains 255 binary and 6 multiple system candidates with wide (&gt; 5") separation composed by L or T dwarfs companions to stars, plus 9 double L and/or T dwarf systems. These systems were selected based on common distance criteria. We also compute the chance alignment probabilities in order to assess the physical nature of each pair. The typical wide binary fraction found in our sample over the L and T spectral types is 2-4%. The significant leap provided by this sample will enable constraints on the formation and evolution as well as atmosphere models of L and T dwarfs.</p>
 <p>
   <br/>
 </p>
-<p>Please contact <a  href="mailto:mari.dalponte@gmail.com" rel="nofollow">mari.dalponte@gmail.com</a>, <a href="mailto:basilio.santiago@ufrgs.br" rel="nofollow">basilio.santiago@ufrgs.br</a>, <a href="mailto:aurelio.carnero@ciemat.es" rel="nofollow">aurelio.carnero@ciemat.es</a> or <a href="mailto:b.burningham@herts.ac.uk" rel="nofollow">b.burningham@herts.ac.uk</a> for questions.</p>
+<p>Please contact <a class="external-link" href="mailto:mari.dalponte@gmail.com" rel="nofollow">mari.dalponte@gmail.com</a>, <a class="external-link" href="mailto:basilio.santiago@ufrgs.br" rel="nofollow">basilio.santiago@ufrgs.br</a>, <a class="external-link" href="mailto:aurelio.carnero@ciemat.es" rel="nofollow">aurelio.carnero@ciemat.es</a> or <a class="external-link" href="mailto:b.burningham@herts.ac.uk" rel="nofollow">b.burningham@herts.ac.uk</a> for questions.</p>
+<h2>
+
 <h2>
   <strong>Catalog Description</strong>
 </h2>
-<p>Our sample is composed of 3 catalogs. Above there is a description of each catalog and their columns.</p>
-<h4>
-  <strong>1)</strong> Wide binary systems composed by brown dwarfs companion to stars from Gaia DR2 and DES DR1.</h4>
-<p>
-  <strong>Comments</strong>: The letters A represents the primary star and B the secondary.  The ID with a * symbol indicates that the primary distance for Gaia DR2 stars was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.</p>
 
-  <h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_gaia_bd_des_bd_J2000.fits" target="_blank"> pairs_gaia_bd_des_bd_J2000.fits </a></h5>
+<p>Our sample is composed of 3 catalogs. Above there is a description of each catalog and their columns.</p>
+<p>
+  <strong>1)</strong> Wide binary systems composed by L or T companion to stars from Gaia DR2 and DES DR1.</p>
+<p>
+  <br/>
+</p>
+<p>
+  <h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_gaia_bd_des_bd_J2000_all_2020_final.fits" target="_blank"> pairs_gaia_bd_des_bd_J2000_all_2020_final.fits </a></h5>
+</p>
+<p>
+  <strong>Comments</strong>: The letters A represents the primary star and B are the L or T dwarf.  
+  The ID with a * symbol indicates that the primary distance for Gaia DR2 stars was published by
+   <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>. 
+   Only the common proper motion systems have proper motion measurements in this catalog. 
+   For the primaries, the proper motions are mostly from Gaia DR2 and for the secondaries, 
+   the proper motion are from CatWISE catalog.</p>
 <table >
   <colgroup>
-    <col />
+    <col/>
     <col />
   </colgroup>
   <tbody>
@@ -77,19 +88,19 @@
       <td>Declination in dms (J2000)</td>
     </tr>
     <tr>
-      <td>ra_bd_B</td>
+      <td>ra_LT_B</td>
       <td>Right Ascension in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_B</td>
+      <td>dec_LT_B</td>
       <td>Declination in degrees (J2000)</td>
     </tr>
     <tr>
-      <td colspan="1">ra_bd_B_hms</td>
+      <td colspan="1">ra_LT_B_hms</td>
       <td colspan="1">Right Ascension in hms (J2000)</td>
     </tr>
     <tr>
-      <td colspan="1">dec_bd_B_dms</td>
+      <td colspan="1">dec_LT_B_dms</td>
       <td colspan="1">Declination in dms (J2000)</td>
     </tr>
     <tr>
@@ -121,27 +132,27 @@
       <td>Error in the DES Y3 i band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_i_des_bd_B</td>
+      <td>mag_i_des_LT_B</td>
       <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_i_des_bd_B</td>
+      <td>magerr_i_des_LT_B</td>
       <td>Error in the DES Y3 i band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_z_des_bd_B</td>
+      <td>mag_z_des_LT_B</td>
       <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td colspan="1">magerr_z_des_bd_B</td>
+      <td colspan="1">magerr_z_des_LT_B</td>
       <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
     </tr>
     <tr>
-      <td colspan="1">mag_Y_des_bd_B</td>
+      <td colspan="1">mag_Y_des_LT_B</td>
       <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
     </tr>
     <tr>
-      <td colspan="1">magerr_Y_des_bd_B</td>
+      <td colspan="1">magerr_Y_des_LT_B</td>
       <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
     </tr>
     <tr>
@@ -153,16 +164,52 @@
       <td colspan="1">Distance uncertainty (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">distance_bd_B</td>
+      <td colspan="1">distance_LT_B</td>
       <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">inc_distance_bd_B</td>
+      <td colspan="1">inc_distance_LT_B</td>
       <td colspan="1">Distance uncertainty (in parsecs)</td>
     </tr>
     <tr>
+      <td colspan="1">spt_type_A</td>
+      <td colspan="1">Spectral type from SIMBAD</td>
+    </tr>
+    <tr>
       <td colspan="1">spt_type_B</td>
-      <td colspan="1">Brown dwarf spectral type</td>
+      <td colspan="1">Cool dwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_star_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_error_star_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_star_A</td>
+      <td colspan="1">Proper motion in declination direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_error_star_A</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_LT_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_error_LT_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_LT_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_error_LT_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
     </tr>
     <tr>
       <td colspan="1">angular_separation</td>
@@ -178,17 +225,26 @@
     </tr>
   </tbody>
 </table>
+
 <p>
   <br/>
 </p>
-<h4>
-  <strong>2)</strong> Wide binary systems composed of two brown dwarfs.</h4>
-
 <p>
-  <strong>Comments</strong>: The letters A and B represent a different brown dwarf</p>
+  <strong>2)</strong> Wide binary systems composed of two cool dwarfs.</p>
+<p>
+  <br/>
+</p>
+<p>
+  <ac:link>
+    <ri:attachment ri:filename="pairs_bd_bd_J2000_PM_final.fits"/>
+    <ac:plain-text-link-body><![CDATA[Wide binary cool dwarf candidates catalog here]]></ac:plain-text-link-body>
+  </ac:link>
 
-  <h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_bd_bd_J2000.fits" target="_blank"> pairs_bd_bd_J2000.fits </a></h5>
+  <h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_bd_bd_J2000_PM_final.fits" target="_blank"> pairs_bd_bd_J2000_PM_final.fits </a></h5>
 
+</p>
+<p>
+  <strong>Comments</strong>: The letters A and B represent a different L or T dwarf.  Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements are from CatWISE catalog.</p>
 <table >
   <colgroup>
     <col/>
@@ -206,108 +262,140 @@
       </td>
     </tr>
     <tr>
-      <td>ra_bd_A</td>
+      <td>ra_A</td>
       <td>Right Ascension in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_A</td>
+      <td>dec_A</td>
       <td>Declination in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>ra_bd_A_hms</td>
+      <td>ra_A_hms</td>
       <td>Right Ascension in hms (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_A_dms</td>
+      <td>dec_A_dms</td>
       <td>Declination in hms (J2000)</td>
     </tr>
     <tr>
-      <td>ra_bd_B</td>
+      <td>ra_B</td>
       <td>Right Ascension in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_B</td>
+      <td>dec_B</td>
       <td>Declination in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>ra_bd_B_hms</td>
+      <td>ra_B_hms</td>
       <td>Right Ascension in hms (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_B_dms</td>
+      <td>dec_B_dms</td>
       <td>Declination in hms (J2000)</td>
     </tr>
     <tr>
-      <td>mag_i_des_bd_A</td>
+      <td>mag_i_des_A</td>
       <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_i_des_bd_A</td>
+      <td>magerr_i_des_A</td>
       <td>Error in the DES Y3 i band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_z_des_bd_A</td>
+      <td>mag_z_des_A</td>
       <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_z_des_bd_A</td>
+      <td>magerr_z_des_A</td>
       <td>Error in the DES Y3 z band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_Y_des_bd_A</td>
+      <td>mag_Y_des_A</td>
       <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
     </tr>
     <tr>
-      <td>magerr_Y_des_bd_A</td>
+      <td>magerr_Y_des_A</td>
       <td>Error in the DES Y3 Y band auto magnitude</td>
     </tr>
     <tr>
-      <td>mag_i_des_bd_B</td>
+      <td>mag_i_des_B</td>
       <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_i_des_bd_B</td>
+      <td>magerr_i_des_B</td>
       <td>Error in the DES Y3 i band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_z_des_bd_B</td>
+      <td>mag_z_des_B</td>
       <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_z_des_bd_B</td>
+      <td>magerr_z_des_B</td>
       <td>Error in the DES Y3 z band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_Y_des_bd_B</td>
+      <td>mag_Y_des_B</td>
       <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
     </tr>
     <tr>
-      <td>magerr_Y_des_bd_B</td>
+      <td>magerr_Y_des_B</td>
       <td>Error in the DES Y3 Y band auto magnitude</td>
     </tr>
     <tr>
-      <td colspan="1">distance_bd_A</td>
+      <td colspan="1">distance_A</td>
       <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">inc_distance_bd_A</td>
+      <td colspan="1">inc_distance_A</td>
       <td colspan="1">Distance uncertainty (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">distance_bd_B</td>
+      <td colspan="1">distance_B</td>
       <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">inc_distance_bd_B</td>
+      <td colspan="1">inc_distance_B</td>
       <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_A</td>
+      <td colspan="1">Proper motion in declination direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_A</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
     </tr>
     <tr>
       <td colspan="1">spt_type_A</td>
-      <td colspan="1">Brown dwarf A spectral type</td>
+      <td colspan="1">Cool dwarf A spectral type</td>
     </tr>
     <tr>
       <td colspan="1">spt_type_B</td>
-      <td colspan="1">Brown dwarf B spectral type</td>
+      <td colspan="1">Cool dwarf B spectral type</td>
     </tr>
     <tr>
       <td colspan="1">angular_separation</td>
@@ -326,14 +414,18 @@
 <p>
   <br/>
 </p>
-<h4>
-  <strong>3)</strong> Multiple systems composed of stellar and substellar components.</h4>
-
 <p>
-  <strong>Comments</strong>: The letter A and B represent a star from Gaia DR2 or DES DR1 and C the brown dwarf candidate.  Only for the system J2342-6135, the B and C represent a different brown dwarf.  The ID with a * symbol indicates that for Gaia DR2 members, the distance was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.</p>
+  <strong>3)</strong> Multiple systems composed of stellar and substellar components.</p>
+<p>
+  <br/>
+</p>
+<p>
 
+  <h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/multiple_systems_PM_final.fits" target="_blank"> multiple_systems_PM_final.fits</a></h5>
 
-  <h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/multiple_systems.fits" target="_blank">multiple_systems.fits </a></h5>
+</p>
+<p>
+  <strong>Comments</strong>: The letter A and B represent a star from Gaia DR2 or DES DR1 and C the cool dwarf candidate.  Only for the system J2342-6135, the B and C represent a different cool dwarf.  The ID with a * symbol indicates that for Gaia DR2 members, the distance was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.  Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements for the L or T dwarf are from CatWISE catalog.</p>
 <table >
   <colgroup>
     <col />
@@ -347,7 +439,7 @@
     <tr>
       <td>ID</td>
       <td>
-        <div >
+        <div class="content-wrapper">
           <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
         </div>
       </td>
@@ -506,11 +598,59 @@
     </tr>
     <tr>
       <td colspan="1">spt_type_B</td>
-      <td colspan="1">Brown dwarf spectral type</td>
+      <td colspan="1">Cool dwarf spectral type</td>
     </tr>
     <tr>
       <td colspan="1">spt_type_C</td>
-      <td colspan="1">Brown dwarf spectral type</td>
+      <td colspan="1">Cool dwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_A</td>
+      <td colspan="1">Proper motion in declination direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_A</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_C</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_C</td>
+      <td colspan="1">Error of proper motion in right ascension direction  (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_C</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_C</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
     </tr>
     <tr>
       <td colspan="1">angular_separation</td>
@@ -536,12 +676,9 @@
       <td colspan="1">projected_separation</td>
       <td colspan="1">Separation in astronomical units between the B and C members</td>
     </tr>
-    <tr>
-      <td colspan="1">chance_alignment</td>
-      <td colspan="1">Chance alignment probability (in %)</td>
-    </tr>
   </tbody>
 </table>
+
 
 
       </div>
