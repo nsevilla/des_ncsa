@@ -32332,6 +32332,7 @@ Custom property | Description | Default
                   <a class="app-menu-item" id="needsindent2" name="key-shape" href="[[rootPath]]releases/y1a1/key-catalogs/key-shape">Shape Catalogs</a>
                   <a class="app-menu-item" id="needsindent2" name="key-photoz" href="[[rootPath]]releases/y1a1/key-catalogs/key-photoz">Photo-z Catalogs</a>
                   <a class="app-menu-item" id="needsindent2" name="key-redmagic" href="[[rootPath]]releases/y1a1/key-catalogs/key-redmagic">redMaGiC Catalogs</a>
+                  <a class="app-menu-item" id="needsindent2" name="key-redmapper" href="[[rootPath]]releases/y1a1/key-catalogs/key-redmapper">redMaPPer Catalogs</a>
                 </app-menu>
                 </app-submenu>
 
@@ -32522,6 +32523,7 @@ Custom property | Description | Default
                 <des-y1a1-key-shape name="key-shape"></des-y1a1-key-shape>
                 <des-y1a1-key-photoz name="key-photoz"></des-y1a1-key-photoz>
                 <des-y1a1-key-redmagic name="key-redmagic"></des-y1a1-key-redmagic>
+                <des-y1a1-key-redmapper name="key-redmapper"></des-y1a1-key-redmapper>
               <des-y1a1-bao name="bao"></des-y1a1-bao>
               <des-y1a1-density name="density"></des-y1a1-density>
               <des-y1a1-key-products name="key-products"></des-y1a1-key-products>
@@ -32978,6 +32980,7 @@ Based in part on observations at Cerro Tololo Inter-American Observatory, Nation
 <p>Please see the details below if you need to contact anyone specifically at DESDM.</p>
 <ul>
 <li>Donald Petravick,&nbsp;<em>Senior Project Manager and Principal Investigator</em>.&nbsp;<em><a href="mailto:petravic@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
+<li>Monika Adamow, <em>Research Scientist  <a href="mailto:madamow@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a> </em></li>
 <li>Matias Carrasco Kind, <em>Senior Research and Release Scientist. Assistant Research Professor  <a href="mailto:mcarras2@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a> <a href="http://matias-ck.com/" target="_blank" style="color: dimgrey;"><iron-icon icon="hardware:desktop-windows"></iron-icon></a></em></li>
 <li>Gregory Daues, <em>Research Programmer.</em> <a href="mailto:daues@illinois.edu" style="color: dimgrey;"><em><iron-icon icon="communication:email"></iron-icon></em></a></li>
 <li>Douglas Friedel, <em>Research Programmer</em>. <em><a href="mailto:friedel@illinois.edu" style="color: dimgrey;"><iron-icon icon="communication:email"></iron-icon></a></em></li>
@@ -38761,9 +38764,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <li>
        <a href="[[rootPath]]releases/y1a1/key-catalogs/key-redmagic">redMaGiC Catalogs</a>
       </li>
-      <li>redMaPPer Catalogs (To be released soon)</li>
+      <li>
+       <a href="[[rootPath]]releases/y1a1/key-catalogs/key-redmapper">redMaPPer Catalogs</a>
+      </li>
     </ul>
-    <p>Further information on individual galaxies’ photometric redshifts will be released in October 2018.</p>
     <p>
       <br>
     </p>
@@ -41504,6 +41508,357 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       static get is() { return 'des-y1a1-key-redmagic'; }
     }
     window.customElements.define(DesY1A1KeyRedmagic.is, DesY1A1KeyRedmagic);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-key-redmapper" assetpath="des-y1a1/key-catalogs/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 redMaPPer Catalogs">
+<div class="card-content">
+
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+
+    <p>In <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.482.1352M/abstract">McClintock et al. (2018)</a>, 
+      we studied the weak lensing mass calibration of the Y1A1 redMaPPer cluster catalog, and in
+       <a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200211124D/abstract">DES et al. (2020)</a> 
+       we studied the cosmological parameter constraints from the WL mass calibration and cluster number count statistics.&nbsp;
+        Here we make public the data products related to the cluster catalog.&nbsp;
+         At this stage we provide: the cluster and member catalogs, the footprint mask, and the associated 
+         random catalog for the lambda&gt;20 "cosmology" sample.</p>
+    
+    <h2>
+      <strong>References</strong>
+    </h2>
+
+    <ol>
+      <li>
+        <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.482.1352M/abstract">McClintock et al. (2018)</a>
+      </li>
+      <li>
+        <a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200211124D/abstract">DES et al. (2020)</a>
+      </li>
+      <li>
+        <a href="https://ui.adsabs.harvard.edu/abs/2014ApJ...785..104R/abstract">Rykoff et al. (2014)</a>
+      </li>
+      <li>
+        <a href="https://ui.adsabs.harvard.edu/abs/2016ApJS..224....1R/abstract">Rykoff et al. (2016)</a>
+      </li>
+    </ol>
+
+    <h2>
+      <strong>Download</strong>
+    </h2>
+
+    <p>Catalog, footprint mask, and associated randoms:</p>
+<ul>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_catalog.fits.gz">Link to cluster catalog</a> (2.1 MB)
+  </li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_members.fits.gz">Link to member catalog</a> (22MB)
+  </li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_zmask.fits.gz">Link to footprint</a> (30MB)
+  </li>
+  <li>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_randoms.fits.gz">Link to randoms</a> (62MB)
+  </li>
+</ul>
+
+    <h2>
+      <strong>Description</strong>
+    </h2>
+    <h3><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_catalog.fits.gz">Cluster Catalog</a></h3>
+    <p>The catalog format is:</p>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>ID</td>
+          <td>redMaPPer Cluster Identification Number</td>
+        </tr>
+        <tr>
+          <td>VLIM</td>
+          <td>One if in cosmology catalog, 0 otherwise</td>
+        </tr>
+        <tr>
+          <td>NAME</td>
+          <td>redMaPPer Cluster Name</td>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right ascension in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>DEC</td>
+          <td>Declination in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>Z_LAMBDA</td>
+          <td>Cluster photo-z (z_λ)</td>
+        </tr>
+        <tr>
+          <td>Z_LAMBDA_ERR</td>
+          <td>Gaussian error estimate for z_λ</td>
+        </tr>
+        <tr>
+          <td>LAMBDA</td>
+          <td>Richness estimate λ</td>
+        </tr>
+        <tr>
+          <td>LAMBDA_ERR</td>
+          <td>Gaussian error estimate for&nbsp;λ</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>Richness scale factor</td>
+        </tr>
+        <tr>
+          <td>Z_SPEC</td>
+          <td>Spectroscopic redshift for most likely center (-1.0 if not available)</td>
+        </tr>
+        <tr>
+          <td>COADD_OBJECTS_ID</td>
+          <td>DES COADD_OBJECTS_ID identification number</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_G</td>
+          <td colspan="1">g MAG_CM magnitude for most likely central galaxy (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_G</td>
+          <td colspan="1">error on g MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_R</td>
+          <td colspan="1">r MAG_CM magnitude for most likely central galaxy (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_R</td>
+          <td colspan="1">error on r MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_I</td>
+          <td colspan="1">i MAG_CM magnitude for most likely central galaxy (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_I</td>
+          <td colspan="1">error on i MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_Z</td>
+          <td colspan="1">z MAG_CM magnitude for most likely central galaxy (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_Z</td>
+          <td colspan="1">error on z MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">ZLUM</td>
+          <td colspan="1">Total membership-weighted z-band luminosity (units of L∗)</td>
+        </tr>
+        <tr>
+          <td colspan="1">P_CEN[5]</td>
+          <td colspan="1">Centering probability P_cen for 5 most likely centrals</td>
+        </tr>
+        <tr>
+          <td colspan="1">RA_CEN[5]</td>
+          <td colspan="1">R.A. for 5 most likely centrals</td>
+        </tr>
+        <tr>
+          <td colspan="1">DEC_CEN[5]</td>
+          <td colspan="1">Decl. for 5 most likely centrals</td>
+        </tr>
+        <tr>
+          <td colspan="1">ID_CEN[5]</td>
+          <td colspan="1">DES COADD_OBJECTS_ID identification number for 5 most likely centrals</td>
+        </tr>
+        <tr>
+          <td colspan="1">PZBINS[21]</td>
+          <td colspan="1">Redshift points at which P(z) is evaluated</td>
+        </tr>
+        <tr>
+          <td colspan="1">PZ[21]</td>
+          <td colspan="1">P(z) evaluated at redshift points given by PZBINS</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_members.fits.gz">Member Catalog</a></h3>
+    <p>The catalog format is:</p>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>ID</td>
+          <td>redMaPPer Cluster Identification Number</td>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right ascension in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>DEC</td>
+          <td>Declination in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>Distance from cluster center (h^−1 Mpc)</td>
+        </tr>
+        <tr>
+          <td>P</td>
+          <td>Membership probability</td>
+        </tr>
+        <tr>
+          <td>P_FREE</td>
+          <td>Probability that member is not a member of a higher ranked cluster</td>
+        </tr>
+        <tr>
+          <td>THETA_L</td>
+          <td>Luminosity (z-band) weight</td>
+        </tr>
+        <tr>
+          <td>THETA_R</td>
+          <td>Radial weight</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_G</td>
+          <td colspan="1">g MAG_CM magnitude (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_G</td>
+          <td colspan="1">error on g MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_R</td>
+          <td colspan="1">r MAG_CM magnitude (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_R</td>
+          <td colspan="1">error on r MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_I</td>
+          <td colspan="1">i MAG_CM magnitude (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_I</td>
+          <td colspan="1">error on i MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAG_CM_Z</td>
+          <td colspan="1">z MAG_CM magnitude (SLR corrected)</td>
+        </tr>
+        <tr>
+          <td colspan="1">MAGERR_CM_Z</td>
+          <td colspan="1">error on z MAG_CM magnitude</td>
+        </tr>
+        <tr>
+          <td colspan="1">Z_SPEC</td>
+          <td colspan="1">Spectroscopic redshift (-1.0 if not available)</td>
+        </tr>
+        <tr>
+          <td colspan="1">COADD_OBJECTS_ID</td>
+          <td colspan="1">DES COADD_OBJECTS_ID identification number</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_zmask.fits.gz">Footprint</a></h3>
+    <p>The footprint format is:</p>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>HPIX</td>
+          <td>HEALPIX ring-ordered pixel number (NSIDE = 4096)</td>
+        </tr>
+        <tr>
+          <td>ZMAX</td>
+          <td>Maximum redshift of a cluster centered in this pixel</td>
+        </tr>
+        <tr>
+          <td>FRACGOOD</td>
+          <td>Fraction f pixel area that is not masked</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmapper/redmapper_y1a1_public_v6.4_randoms.fits.gz">Random points</a></h3>
+    <p>The random point format is:</p>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>RA</td>
+          <td>Right ascension in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>DEC</td>
+          <td>Declination in decimal degrees (J2000)</td>
+        </tr>
+        <tr>
+          <td>Z</td>
+          <td>Redshift of random point</td>
+        </tr>
+        <tr>
+          <td>LAMBDA</td>
+          <td>Richness of random point</td>
+        </tr>
+        <tr>
+          <td>WEIGHT</td>
+          <td>Weight of random point</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyRedmapper extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-redmapper'; }
+    }
+    window.customElements.define(DesY1A1KeyRedmapper.is, DesY1A1KeyRedmapper);
   </script>
 
 </dom-module>
@@ -47841,23 +48196,34 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
         <h2>
   <strong>Overview</strong>
 </h2>
-
-<p>Using the brown dwarf sample presented in <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.5301C/abstract">Carnero Rosell et al. 2019</a>, we search for wide binary systems composed of a brown dwarf companion to a main sequence star in the Gaia DR2 and DES DR1 data.&nbsp; We also search for systems composed of two brown dwarfs.</p>
-<p>Our final catalog contains 255 binary and 6 multiple system candidates with wide (&gt; 5") separation composed by L or T dwarfs companions to stars, plus 9 double brown dwarf systems. Our search is based on a common distance criterion with no proper motion information.&nbsp; To compute the distances for the stars, we used the StarHorse code (<a href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.476.2556Q/abstract">Queiroz et al. 2018</a>).&nbsp; For the L and T dwarfs, the distance is based on empirical templates ranging from L0 to T9. We also compute the chance alignment probabilities in order to assess the physical nature of each pair. All the systems with probability &gt; 5% were not included in the final sample. The typical wide binary fraction found in our sample over the L and T spectral types is 2-4%. The significant leap provided by this sample will enable constraints on the formation and evolution as well as atmosphere models of L and T dwarfs.</p>
+<p>Using the L and T dwarf sample presented in <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.5301C/abstract">Carnero Rosell et al. 2019</a>, we search for wide binary systems composed of a L or T dwarf companion to main sequence stars in the Gaia DR2 and DES DR1 data.&nbsp; We also search for systems composed of two cool dwarfs.</p>
+<p>Our final catalog contains 255 binary and 6 multiple system candidates with wide (&gt; 5") separation composed by L or T dwarfs companions to stars, plus 9 double L and/or T dwarf systems. These systems were selected based on common distance criteria. We also compute the chance alignment probabilities in order to assess the physical nature of each pair. The typical wide binary fraction found in our sample over the L and T spectral types is 2-4%. The significant leap provided by this sample will enable constraints on the formation and evolution as well as atmosphere models of L and T dwarfs.</p>
 <p>
   <br>
 </p>
-<p>Please contact <a href="mailto:mari.dalponte@gmail.com" rel="nofollow">mari.dalponte@gmail.com</a>, <a href="mailto:basilio.santiago@ufrgs.br" rel="nofollow">basilio.santiago@ufrgs.br</a>,&nbsp;<a href="mailto:aurelio.carnero@ciemat.es" rel="nofollow">aurelio.carnero@ciemat.es</a> or&nbsp;<a href="mailto:b.burningham@herts.ac.uk" rel="nofollow">b.burningham@herts.ac.uk</a> for questions.</p>
+<p>Please contact <a class="external-link" href="mailto:mari.dalponte@gmail.com" rel="nofollow">mari.dalponte@gmail.com</a>, <a class="external-link" href="mailto:basilio.santiago@ufrgs.br" rel="nofollow">basilio.santiago@ufrgs.br</a>,&nbsp;<a class="external-link" href="mailto:aurelio.carnero@ciemat.es" rel="nofollow">aurelio.carnero@ciemat.es</a> or&nbsp;<a class="external-link" href="mailto:b.burningham@herts.ac.uk" rel="nofollow">b.burningham@herts.ac.uk</a> for questions.</p>
 <h2>
+
+</h2><h2>
   <strong>Catalog Description</strong>
 </h2>
-<p>Our sample is composed of 3 catalogs. Above there is a description of each catalog and their columns.</p>
-<h4>
-  <strong>1)</strong> Wide binary systems composed by brown dwarfs companion to stars from Gaia DR2 and DES DR1.</h4>
-<p>
-  <strong>Comments</strong>: The letters A represents the primary star and B the secondary.&nbsp; The ID with a * symbol indicates that the primary distance for Gaia DR2 stars was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.</p>
 
-  <h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_gaia_bd_des_bd_J2000.fits" target="_blank"> pairs_gaia_bd_des_bd_J2000.fits </a></h5>
+<p>Our sample is composed of 3 catalogs. Above there is a description of each catalog and their columns.</p>
+<p>
+  <strong>1)</strong> Wide binary systems composed by L or T companion to stars from Gaia DR2 and DES DR1.</p>
+<p>
+  <br>
+</p>
+<p>
+  </p><h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_gaia_bd_des_bd_J2000_all_2020_final.fits" target="_blank"> pairs_gaia_bd_des_bd_J2000_all_2020_final.fits </a></h5>
+<p></p>
+<p>
+  <strong>Comments</strong>: The letters A represents the primary star and B are the L or T dwarf.&nbsp; 
+  The ID with a * symbol indicates that the primary distance for Gaia DR2 stars was published by
+   <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>. 
+   Only the common proper motion systems have proper motion measurements in this catalog. 
+   For the primaries, the proper motions are mostly from Gaia DR2 and for the secondaries, 
+   the proper motion are from CatWISE catalog.</p>
 <table>
   <colgroup>
     <col>
@@ -47891,19 +48257,19 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
       <td>Declination in dms (J2000)</td>
     </tr>
     <tr>
-      <td>ra_bd_B</td>
+      <td>ra_LT_B</td>
       <td>Right Ascension in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_B</td>
+      <td>dec_LT_B</td>
       <td>Declination in degrees (J2000)</td>
     </tr>
     <tr>
-      <td colspan="1">ra_bd_B_hms</td>
+      <td colspan="1">ra_LT_B_hms</td>
       <td colspan="1">Right Ascension in hms (J2000)</td>
     </tr>
     <tr>
-      <td colspan="1">dec_bd_B_dms</td>
+      <td colspan="1">dec_LT_B_dms</td>
       <td colspan="1">Declination in dms (J2000)</td>
     </tr>
     <tr>
@@ -47935,27 +48301,27 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
       <td>Error in the DES Y3 i band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_i_des_bd_B</td>
+      <td>mag_i_des_LT_B</td>
       <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_i_des_bd_B</td>
+      <td>magerr_i_des_LT_B</td>
       <td>Error in the DES Y3 i band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_z_des_bd_B</td>
+      <td>mag_z_des_LT_B</td>
       <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td colspan="1">magerr_z_des_bd_B</td>
+      <td colspan="1">magerr_z_des_LT_B</td>
       <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
     </tr>
     <tr>
-      <td colspan="1">mag_Y_des_bd_B</td>
+      <td colspan="1">mag_Y_des_LT_B</td>
       <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
     </tr>
     <tr>
-      <td colspan="1">magerr_Y_des_bd_B</td>
+      <td colspan="1">magerr_Y_des_LT_B</td>
       <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
     </tr>
     <tr>
@@ -47967,16 +48333,52 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
       <td colspan="1">Distance uncertainty (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">distance_bd_B</td>
+      <td colspan="1">distance_LT_B</td>
       <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">inc_distance_bd_B</td>
+      <td colspan="1">inc_distance_LT_B</td>
       <td colspan="1">Distance uncertainty (in parsecs)</td>
     </tr>
     <tr>
+      <td colspan="1">spt_type_A</td>
+      <td colspan="1">Spectral type from SIMBAD</td>
+    </tr>
+    <tr>
       <td colspan="1">spt_type_B</td>
-      <td colspan="1">Brown dwarf spectral type</td>
+      <td colspan="1">Cool dwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_star_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_error_star_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_star_A</td>
+      <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_error_star_A</td>
+      <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_LT_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_error_LT_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_LT_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_error_LT_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
     </tr>
     <tr>
       <td colspan="1">angular_separation</td>
@@ -47992,17 +48394,26 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
     </tr>
   </tbody>
 </table>
+
 <p>
   <br>
 </p>
-<h4>
-  <strong>2)</strong> Wide binary systems composed of two brown dwarfs.</h4>
-
 <p>
-  <strong>Comments</strong>: The letters A and B represent a different brown dwarf</p>
+  <strong>2)</strong> Wide binary systems composed of two cool dwarfs.</p>
+<p>
+  <br>
+</p>
+<p>
+  <ac:link>
+    <ri:attachment ri:filename="pairs_bd_bd_J2000_PM_final.fits">
+    <ac:plain-text-link-body><!--[CDATA[Wide binary cool dwarf candidates catalog here]]--></ac:plain-text-link-body>
+  </ri:attachment></ac:link>
 
-  <h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_bd_bd_J2000.fits" target="_blank"> pairs_bd_bd_J2000.fits </a></h5>
+  </p><h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_bd_bd_J2000_PM_final.fits" target="_blank"> pairs_bd_bd_J2000_PM_final.fits </a></h5>
 
+<p></p>
+<p>
+  <strong>Comments</strong>: The letters A and B represent a different L or T dwarf.&nbsp; Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements are from CatWISE catalog.</p>
 <table>
   <colgroup>
     <col>
@@ -48020,108 +48431,140 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
       </td>
     </tr>
     <tr>
-      <td>ra_bd_A</td>
+      <td>ra_A</td>
       <td>Right Ascension in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_A</td>
+      <td>dec_A</td>
       <td>Declination in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>ra_bd_A_hms</td>
+      <td>ra_A_hms</td>
       <td>Right Ascension in hms (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_A_dms</td>
+      <td>dec_A_dms</td>
       <td>Declination in hms (J2000)</td>
     </tr>
     <tr>
-      <td>ra_bd_B</td>
+      <td>ra_B</td>
       <td>Right Ascension in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_B</td>
+      <td>dec_B</td>
       <td>Declination in degrees (J2000)</td>
     </tr>
     <tr>
-      <td>ra_bd_B_hms</td>
+      <td>ra_B_hms</td>
       <td>Right Ascension in hms (J2000)</td>
     </tr>
     <tr>
-      <td>dec_bd_B_dms</td>
+      <td>dec_B_dms</td>
       <td>Declination in hms (J2000)</td>
     </tr>
     <tr>
-      <td>mag_i_des_bd_A</td>
+      <td>mag_i_des_A</td>
       <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_i_des_bd_A</td>
+      <td>magerr_i_des_A</td>
       <td>Error in the DES Y3 i band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_z_des_bd_A</td>
+      <td>mag_z_des_A</td>
       <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_z_des_bd_A</td>
+      <td>magerr_z_des_A</td>
       <td>Error in the DES Y3 z band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_Y_des_bd_A</td>
+      <td>mag_Y_des_A</td>
       <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
     </tr>
     <tr>
-      <td>magerr_Y_des_bd_A</td>
+      <td>magerr_Y_des_A</td>
       <td>Error in the DES Y3 Y band auto magnitude</td>
     </tr>
     <tr>
-      <td>mag_i_des_bd_B</td>
+      <td>mag_i_des_B</td>
       <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_i_des_bd_B</td>
+      <td>magerr_i_des_B</td>
       <td>Error in the DES Y3 i band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_z_des_bd_B</td>
+      <td>mag_z_des_B</td>
       <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
     </tr>
     <tr>
-      <td>magerr_z_des_bd_B</td>
+      <td>magerr_z_des_B</td>
       <td>Error in the DES Y3 z band psf magnitude</td>
     </tr>
     <tr>
-      <td>mag_Y_des_bd_B</td>
+      <td>mag_Y_des_B</td>
       <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
     </tr>
     <tr>
-      <td>magerr_Y_des_bd_B</td>
+      <td>magerr_Y_des_B</td>
       <td>Error in the DES Y3 Y band auto magnitude</td>
     </tr>
     <tr>
-      <td colspan="1">distance_bd_A</td>
+      <td colspan="1">distance_A</td>
       <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">inc_distance_bd_A</td>
+      <td colspan="1">inc_distance_A</td>
       <td colspan="1">Distance uncertainty (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">distance_bd_B</td>
+      <td colspan="1">distance_B</td>
       <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
     </tr>
     <tr>
-      <td colspan="1">inc_distance_bd_B</td>
+      <td colspan="1">inc_distance_B</td>
       <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_A</td>
+      <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_A</td>
+      <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
     </tr>
     <tr>
       <td colspan="1">spt_type_A</td>
-      <td colspan="1">Brown dwarf A spectral type</td>
+      <td colspan="1">Cool dwarf A spectral type</td>
     </tr>
     <tr>
       <td colspan="1">spt_type_B</td>
-      <td colspan="1">Brown dwarf B spectral type</td>
+      <td colspan="1">Cool dwarf B spectral type</td>
     </tr>
     <tr>
       <td colspan="1">angular_separation</td>
@@ -48140,14 +48583,18 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
 <p>
   <br>
 </p>
-<h4>
-  <strong>3)</strong> Multiple systems composed of stellar and substellar components.</h4>
-
 <p>
-  <strong>Comments</strong>: The letter A and B represent a star from Gaia DR2 or DES DR1 and C the brown dwarf candidate.&nbsp; Only for the system J2342-6135, the B and C represent a different brown dwarf.&nbsp; The ID with a * symbol indicates that for Gaia DR2 members, the distance was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.</p>
+  <strong>3)</strong> Multiple systems composed of stellar and substellar components.</p>
+<p>
+  <br>
+</p>
+<p>
 
+  </p><h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/multiple_systems_PM_final.fits" target="_blank"> multiple_systems_PM_final.fits</a></h5>
 
-  <h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/multiple_systems.fits" target="_blank">multiple_systems.fits </a></h5>
+<p></p>
+<p>
+  <strong>Comments</strong>: The letter A and B represent a star from Gaia DR2 or DES DR1 and C the cool dwarf candidate.&nbsp; Only for the system J2342-6135, the B and C represent a different cool dwarf.&nbsp; The ID with a * symbol indicates that for Gaia DR2 members, the distance was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.&nbsp; Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements for the L or T dwarf are from CatWISE catalog.</p>
 <table>
   <colgroup>
     <col>
@@ -48161,7 +48608,7 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
     <tr>
       <td>ID</td>
       <td>
-        <div>
+        <div class="content-wrapper">
           <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
         </div>
       </td>
@@ -48320,11 +48767,59 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
     </tr>
     <tr>
       <td colspan="1">spt_type_B</td>
-      <td colspan="1">Brown dwarf spectral type</td>
+      <td colspan="1">Cool dwarf spectral type</td>
     </tr>
     <tr>
       <td colspan="1">spt_type_C</td>
-      <td colspan="1">Brown dwarf spectral type</td>
+      <td colspan="1">Cool dwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_A</td>
+      <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_A</td>
+      <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_C</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_C</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_C</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_C</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
     </tr>
     <tr>
       <td colspan="1">angular_separation</td>
@@ -48350,12 +48845,9 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
       <td colspan="1">projected_separation</td>
       <td colspan="1">Separation in astronomical units between the B and C members</td>
     </tr>
-    <tr>
-      <td colspan="1">chance_alignment</td>
-      <td colspan="1">Chance alignment probability (in %)</td>
-    </tr>
   </tbody>
 </table>
+
 
 
       </div>
