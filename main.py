@@ -24,12 +24,12 @@ class BaseHandler(tornado.web.RequestHandler):
 
 class MainHandler(tornado.web.RequestHandler):
     """
-    Class that handle most of the request, all the rest og the handling is done
+    Class that handle most of the request, all the rest of the handling is done
     by page.js
     """
     @tornado.web.asynchronous
-    def get(self):
-        self.render('index.html')
+    def get(self, path = ''):
+        self.render('index.html', rootPath = r'{}/'.format(Settings.APP_ROOT))
 
         #passwords = read_passwd_file()
         #if verify_password(passwords, basicauth_user, basicauth_pass):
@@ -74,15 +74,16 @@ class Application(tornado.web.Application):
     The tornado application  class
     """
     def __init__(self):
+        # The order of the route handlers matters!
         handlers = [
-            (r"/", MainHandler),
-            (r"/help/", HelpHandler),
-            (r"/releases/sva1/content/(.*)", tornado.web.StaticFileHandler,\
-            {'path':Settings.SVA1_PATH}),
+            (r"{}".format(Settings.APP_ROOT), MainHandler),
+            (r"{}/static/(.*)".format(Settings.APP_ROOT), tornado.web.StaticFileHandler, {'path':Settings.STATIC_PATH}),
+            (r"{}/help/".format(Settings.APP_ROOT), HelpHandler),
+            (r"{}/releases/sva1/content/(.*)".format(Settings.APP_ROOT), tornado.web.StaticFileHandler, {'path':Settings.SVA1_PATH}),
+            (r"{}/(.*)".format(Settings.APP_ROOT), MainHandler),
             ]
         settings = {
             "template_path":Settings.TEMPLATE_PATH,
-            "static_path":Settings.STATIC_PATH,
             "debug":Settings.DEBUG,
             "default_handler_class": My404Handler,
         }

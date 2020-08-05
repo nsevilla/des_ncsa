@@ -32243,7 +32243,7 @@ Custom property | Description | Default
      <app-header condenses="" slot="header" fixed="">
           <app-toolbar>
             <paper-icon-button class="smallScreen" icon="icons:menu" on-tap="_openDrawer"></paper-icon-button>
-              <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image class="wideScreen" style="width:63px; height:60px; margin-right:10px;" sizing="cover" src="/static/images/DESDM_logo.png"></iron-image></a>
+              <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image class="wideScreen" style="width:63px; height:60px; margin-right:10px;" sizing="cover" src="{{rootPath}}static/images/DESDM_logo.png"></iron-image></a>
             <a href="/" style="text-decoration: none;color:white "><paper-item main-title="" class="toolbar">DES Data Management</paper-item></a>
 
             <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
@@ -32798,22 +32798,22 @@ Custom property | Description | Default
  <l2t-paper-slider total-slides="4" class="slides" auto-progress="" slide-duration="8">
    <paper-slide>
         <div style="text-align: center" class="im-slide">
-        <iron-image class="homeImages" sizing="contain" src="/static/images/Decam1.jpg"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/Decam1.jpg"></iron-image>
           </div>
       </paper-slide>
    <paper-slide>
         <div style="text-align: center" class="im-slide">
-        <iron-image class="homeImages" sizing="contain" src="/static/images/CometLovejoy.png"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/CometLovejoy.png"></iron-image>
           </div>
    </paper-slide>
    <paper-slide>
         <div style="text-align: center" class="im-slide">
-        <iron-image class="homeImages" sizing="contain" src="/static/images/DECam2.jpg"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/DECam2.jpg"></iron-image>
           </div>
    </paper-slide>
    <paper-slide>
         <div style="text-align: center" class="im-slide">
-        <iron-image class="homeImages" sizing="contain" src="/static/images/BlancoTelescope.jpg"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/BlancoTelescope.jpg"></iron-image>
           </div>
  </paper-slide></l2t-paper-slider>
     </div>
@@ -32821,46 +32821,46 @@ Custom property | Description | Default
 <!--
     <mp-slider id="mptest" controls class="slider">
     <div>
-        <iron-image class="homeImages" sizing="contain" src="/static/images/Decam1.jpg"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/Decam1.jpg"></iron-image>
          <mp-caption style='text-align: center' slider-content="DECam Focal Plane Detector (Reidar Hahn, Fermilab)">
         </mp-caption>
 
     </div>
 
          <div>
-        <iron-image class="homeImages"  sizing="contain" src="/static/images/CometLovejoy.png"></iron-image>
+        <iron-image class="homeImages"  sizing="contain" src="{{rootPath}}static/images/CometLovejoy.png"></iron-image>
           <mp-caption style='text-align: center' slider-content="Comet Loveyjoy (DECam, DES Collaboration)">
         </mp-caption>
     </div>
 
          <div>
-        <iron-image class="homeImages"  sizing="contain" src="/static/images/DECam2.jpg"></iron-image>
+        <iron-image class="homeImages"  sizing="contain" src="{{rootPath}}static/images/DECam2.jpg"></iron-image>
               <mp-caption style='text-align: center' slider-content="Dark Energy Camera (DECam) on Blanco Telescope (Reidar Hahn, Fermilab)">
         </mp-caption>
     </div>
 
     <div>
-        <iron-image class="homeImages" sizing="contain" src="/static/images/BlancoTelescope.jpg"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/BlancoTelescope.jpg"></iron-image>
         <mp-caption style='text-align: center' slider-content="Blanco telescope and star trails (Reidar Hahn, Fermilab)">
         </mp-caption>
     </div>
 
     <div>
-        <iron-image class="homeImages" sizing="contain" src="/static/images/TN_TN_47Tuc_adj.png"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/TN_TN_47Tuc_adj.png"></iron-image>
         <mp-caption style='text-align: center' slider-content="Mosaic image of the Fornax cluster of galaxies"></mp-caption>
     </div>
     </mp-slider>
 -->
         <!--
-        <iron-image class="homeImages" sizing="contain" src="/static/images/Decam1.jpg"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/Decam1.jpg"></iron-image>
 
-        <iron-image class="homeImages"  sizing="contain" src="/static/images/CometLovejoy.png"></iron-image>
+        <iron-image class="homeImages"  sizing="contain" src="{{rootPath}}static/images/CometLovejoy.png"></iron-image>
 
-        <iron-image class="homeImages"  sizing="contain" src="/static/images/DECam2.jpg"></iron-image>
+        <iron-image class="homeImages"  sizing="contain" src="{{rootPath}}static/images/DECam2.jpg"></iron-image>
 
-        <iron-image class="homeImages" sizing="contain" src="/static/images/BlancoTelescope.jpg"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/BlancoTelescope.jpg"></iron-image>
 
-        <iron-image class="homeImages" sizing="contain" src="/static/images/TN_TN_47Tuc_adj.png"></iron-image>
+        <iron-image class="homeImages" sizing="contain" src="{{rootPath}}static/images/TN_TN_47Tuc_adj.png"></iron-image>
     -->
 
           <h3><strong>Overview of the Dark Energy Survey (DES)</strong> </h3>
@@ -32947,7 +32947,7 @@ Based in part on observations at Cerro Tololo Inter-American Observatory, Nation
 
 </div>
 <br><br>
-        <a href="[[rootpath]]/terms">Terms and Conditions</a>
+        <a href="[[rootPath]]/terms">Terms and Conditions</a>
          </div>
 
     </des-card>
@@ -33111,11 +33111,11 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
             NSF AST 07-15036 and NSF AST 08-13543 </p>
         <div style="text-align: center">
          <a href="http://www.ncsa.illinois.edu/" target="_blank" style="padding:20px">
-        <img src="/static/images/ncsa_logo.jpg" height="30px" style=" background-color: #eeeeee;"> </a>
+        <img src="{{rootPath}}static/images/ncsa_logo.jpg" height="30px" style=" background-color: #eeeeee;"> </a>
     <a href="http://illinois.edu/" target="_blank" style="padding:20px">
-        <img src="/static/images/ui_logo.jpg" height="30px" style=" background-color: #eeeeee"></a>
+        <img src="{{rootPath}}static/images/ui_logo.jpg" height="30px" style=" background-color: #eeeeee"></a>
     <a href="http://www.nsf.gov/" target="_blank" style="padding:20px">
-        <img src="/static/images/nsf1sm.gif" height="30px" style=" background-color: #eeeeee"></a>
+        <img src="{{rootPath}}static/images/nsf1sm.gif" height="30px" style=" background-color: #eeeeee"></a>
 
         </div>
         </div>
@@ -33606,8 +33606,8 @@ Indicating one or more relevant topics will help us to properly answer your ques
 
 <des-card heading="DES SVA1 GOLD RELEASE">
         <div style="text-align: center">
-        <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="/static/images/DESDarkMatterCutouts.jpg"></iron-image>
-            <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="/static/images/sva1_gold_footprint.png"></iron-image>
+        <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/DESDarkMatterCutouts.jpg"></iron-image>
+            <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/sva1_gold_footprint.png"></iron-image>
             </div>
       <div class="card-content">
           This is the unofficial release of the DES Science Verification (SV) data products. For
@@ -33620,7 +33620,7 @@ Indicating one or more relevant topics will help us to properly answer your ques
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/sva1/file-content"><paper-button raised="" class="desButton">Files</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/sva1/docs"><paper-button raised="" class="desButton">Documentation</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/sva1/docs/docs-svmaps"><paper-button raised="" class="desButton">Mass Maps</paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
 
 
       </div>
@@ -34095,7 +34095,7 @@ contains a list of urls for all files </div>
           <p>The SVA1 GOLD data products cover <span style="color: rgb(51,51,51);">~&nbsp;250 square degrees&nbsp;</span>with non-uniform depth and data quality. The non-uniform survey depth is estimated in detail via&nbsp;<a href="https://opensource.ncsa.illinois.edu/confluence/display/DESDM/SVA1+GOLD+Catalog#SVA1GOLDCatalog-LimitingMagnitudeMaps">Limiting Magnitude Maps</a>; however, for convenience, the median&nbsp;10σ limiting magnitude for galaxies in SVA1 GOLD is approximate:&nbsp;<em>g</em> = 24.0, <em>r</em> = 23.8,<em> i</em> = 23.0, <em>z</em> = 22.3.&nbsp;The primary science data set can be broken into several fields (plotted below in Cartesian projection):</p>
 
 <div style="text-align: center">
-<iron-image src="/static/images/sva1_gold_footprint.png" style="width:700px; height:700px;" sizing="contain"></iron-image>
+<iron-image src="{{rootPath}}static/images/sva1_gold_footprint.png" style="width:700px; height:700px;" sizing="contain"></iron-image>
 </div>
 
           <ul>
@@ -35589,8 +35589,8 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <des-card heading="DES Y1 RELEASE">
         <div style="text-align: center">
-        <iron-image style="width:395px; height:395px; padding:40px;" sizing="contain" src="/static/images/y1a1/mass.png"></iron-image>
-            <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="/static/images/y1a1/y1a1_footprint.png"></iron-image>
+        <iron-image style="width:395px; height:395px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/y1a1/mass.png"></iron-image>
+            <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/y1a1/y1a1_footprint.png"></iron-image>
             </div>
       <div class="card-content">
           <span>
@@ -35601,7 +35601,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
           <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank"><paper-button raised="" class="desButton">Files</paper-button></a>
               <paper-button raised="" class="desButton" on-click="_scroll"> Data Summary</paper-button>
-          <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
       </div>
       <hr>
       <h2>
@@ -42023,7 +42023,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
     <des-card heading="DES DR1 RELEASE">
         <div style="text-align: center">
-        <iron-image style="width:653px; height:312px; padding:40px;" sizing="contain" src="/static/images/dr1/des_footprint_mbtpq.png"></iron-image>
+        <iron-image style="width:653px; height:312px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/dr1/des_footprint_mbtpq.png"></iron-image>
             </div>
 
 
@@ -42035,11 +42035,11 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <div style="text-align: center">
           <br>
 
-          <a style="padding: 20px; text-decoration: none" href="[[rootpath]]releases/dr1/dr1-docs"><paper-button raised="" class="desButton">Overview</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-docs"><paper-button raised="" class="desButton">Overview</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-products"><paper-button raised="" class="desButton">Products</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-access"><paper-button raised="" class="desButton">Data Access</paper-button></a>
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-faq"><paper-button raised="" class="desButton">FAQ</paper-button></a>
-          <a style="padding: 20px; text-decoration: none" href="[[rootpath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
 
 
       </div>
@@ -42085,22 +42085,22 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <ul>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-docs/acquisition">Data Acquisition</a>
+              <a href="[[rootPath]]releases/dr1/dr1-docs/acquisition">Data Acquisition</a>
             </h3>
           </li>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-docs/processing">Data Processing</a>
+              <a href="[[rootPath]]releases/dr1/dr1-docs/processing">Data Processing</a>
             </h3>
           </li>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-docs/quality">Data Quality</a>
+              <a href="[[rootPath]]releases/dr1/dr1-docs/quality">Data Quality</a>
             </h3>
           </li>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>
+              <a href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>
             </h3>
           </li>
         </ul>
@@ -42425,7 +42425,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 
 <paper-dialog id="dialogfig1">
-            <des-img-big src="/static/images/dr1/footprint_h32_tiles.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/footprint_h32_tiles.png">
                 Figure 1. DES footprint subdivisions. This figure shows the 10,338 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR1.
             </des-img-big>
   <div class="buttons">
@@ -42433,7 +42433,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig2">
-            <des-img-big src="/static/images/dr1/dr1_bandpass.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_bandpass.png">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
@@ -42454,7 +42454,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
           <li><a href="javascript:void(0)" on-tap="_catalogs">Catalogs</a></li>
           <ul>
               <li>
-                  <a href="[[rootpath]]releases/dr1/dr1-products/dr1-schema">DR1 Table Schema</a>
+                  <a href="[[rootPath]]releases/dr1/dr1-products/dr1-schema">DR1 Table Schema</a>
               </li>
           </ul>
           <li><a href="javascript:void(0)" on-tap="_filters">DR1 Standard Bandpasses</a></li>
@@ -42466,7 +42466,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <h3 class="fixdown">Introduction  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>Here we present a summary and description of the individual products included in DES DR1. The primary components of DES DR1 are derived from the union of 10,338 coadd tiles covering the DES footprint. The tile distribution is shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> and a HEALPix map (NSIDE = 32) of 1753 pixels covering the entire DR1 release is also provided for reference. This map is useful for cross matching sections of the DES footprint with other surveys.</p>
         <p>In order to provide a convenient way to download all the catalog data at once, and noting that the tile is the basic processing unit for the survey, we have created FITS file versions<br>of the catalog tables grouped by coadd tile. This amounts to 31,014 total files (for the DR1_MAIN, DR1_MAGNITUDE, and DR1_FLUX tables) with almost 2.5 TB of catalog data. Both the catalog and corresponding image file paths can beobtained from the DR1_TILE_INFO table &nbsp;and can be accessed through the interfaces.</p>
-            <des-img-big src="/static/images/dr1/footprint_h32_tiles.png" on-tap="_dialog" data-item="1">
+            <des-img-big src="{{rootPath}}static/images/dr1/footprint_h32_tiles.png" on-tap="_dialog" data-item="1">
                 Figure 1. DES footprint subdivisions. This figure shows the 10,338 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR1.
             </des-img-big>
 
@@ -42475,14 +42475,14 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <h3 class="fixdown">Images  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>DES DR1 images can be separated into two categories:</p>
         <p><b>a)</b> <u>Calibrated Single Exposures</u>: 38,850 exposures with photometric calibration, corresponding to 4,124,753 individual CCD images. The number of exposures per band are N<sub>g</sub> = 7626, N<sub>r</sub> = 7470, N<sub>i</sub> = 7470, N<sub>z</sub> = 7753 and N<sub>Y</sub> = 8531, respectively. Each exposure is roughly 500 MB in size. These images can be accessed through <a href="http://datalab.noao.edu/">NOAO Data Lab</a>.</p>
-        <p><b>b)</b> <u>Coadd Images</u>: As a result of the Multi-Epoch Pipeline described in <a href="[[rootpath]]releases/dr1/dr1-docs/processing">Data Processing</a>, a total of 10,338 tiles of 10k x 10k pixels spanning 0.7306deg on a side at a resolution of 0.263 arcsec/pixel (see <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> ) were produced in each of the 5 bands. These images along with the <em>r + i + z</em> combined detection image used are publicly available with a total of 62,028 images constituting ~11 TB of data.</p>
+        <p><b>b)</b> <u>Coadd Images</u>: As a result of the Multi-Epoch Pipeline described in <a href="[[rootPath]]releases/dr1/dr1-docs/processing">Data Processing</a>, a total of 10,338 tiles of 10k x 10k pixels spanning 0.7306deg on a side at a resolution of 0.263 arcsec/pixel (see <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> ) were produced in each of the 5 bands. These images along with the <em>r + i + z</em> combined detection image used are publicly available with a total of 62,028 images constituting ~11 TB of data.</p>
 
 
         <p><br></p>
         <div class="fixup" id="products_catalogs"></div>
         <h3 class="fixdown">Catalogs  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>
-        <a href="[[rootpath]]releases/dr1/dr1-products/dr1-schema">DR1 Table Schema</a>    
+        <a href="[[rootPath]]releases/dr1/dr1-products/dr1-schema">DR1 Table Schema</a>    
         </p>
         <p>The coadd source extraction process detected and cataloged 399,263,026 distinct objects. Morphological object information includes object centroids, shape parameters, HEALPix indices, and processing flags. Several different photometric measurements and associated uncertainties are provided including AUTO, PETRO, WAVG_PSF, and assorted aperture magnitudes (Table 1) These measurments are distributed in three database tables: DR1_MAIN, DR1_MAGNITUDE, and DR1_FLUX served from an Oracle database at NCSA. The DR1_MAIN table contains all object information that is not a photometric measurement or uncertainty, augmented by MAG_AUTO and MAG_PETRO (and associated uncertainties) and an extinction corrected versions. The other two tables contain auxiliary magnitude and flux measurements (with associated uncertainties) in addition to extra information which is present in all three tables, like coordinates, flags, and HEALPix indexes. Additionally, the table DR1_TILE_INFO contains information about the processed tiles, such as sky location, geometry, number of objects and file paths to access the images and catalogs generated.&nbsp;</p>
         <table>
@@ -42611,11 +42611,11 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <p><br></p>
         <div class="fixup" id="products_filters"></div>
         <h3 class="fixdown">DR1 Standard Bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <p>DES DR1 includes an updated characterization of the Blanco/DECam total system response (instrument and at mosphere) for the g, r, i, z, Y bands. The DES DR1 Standard Bandpasses are defined as the average CCD response across the focal plane as measured with the DECal system (<a href="http://adsabs.harvard.edu/abs/2013arXiv1302.5720M">Marshall et al. 2013</a>), together with a standard atmospheric transmission computed with the <code>MODTRAN IV</code> code (<a href="http://adsabs.harvard.edu/abs/1999SPIE.3756..348B">Berk et al. 1999</a>) using parameters typical of the environmental conditions encountered during DES observations (for details, see<a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B"> Burke et al. 2017</a>). For example, the airmass adopted for the standard atmosphere, 1.2, is well matched to the median airmass of exposures entering the coadd, 1.22. The system response is defined in steps of 5 Å from 3800 Å to 11000 Å. Out-of-band light leakage has been directly measured with DECal to be roughly less than 10<sup>-3</sup> relative to the in-band response, and vendor measurements of witness samples suggest that the out-of-band leakage is typically at the 10<sup>-5</sup> to 10<sup>-4</sup> level. While detailed characterization of the out-of band response is ongoing, the throughput of the DES DR1 Standard Bandpasses are defined as zero for out-of-band wavelengths (see <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>).</p>
+        <p>DES DR1 includes an updated characterization of the Blanco/DECam total system response (instrument and at mosphere) for the g, r, i, z, Y bands. The DES DR1 Standard Bandpasses are defined as the average CCD response across the focal plane as measured with the DECal system (<a href="http://adsabs.harvard.edu/abs/2013arXiv1302.5720M">Marshall et al. 2013</a>), together with a standard atmospheric transmission computed with the <code>MODTRAN IV</code> code (<a href="http://adsabs.harvard.edu/abs/1999SPIE.3756..348B">Berk et al. 1999</a>) using parameters typical of the environmental conditions encountered during DES observations (for details, see<a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B"> Burke et al. 2017</a>). For example, the airmass adopted for the standard atmosphere, 1.2, is well matched to the median airmass of exposures entering the coadd, 1.22. The system response is defined in steps of 5 Å from 3800 Å to 11000 Å. Out-of-band light leakage has been directly measured with DECal to be roughly less than 10<sup>-3</sup> relative to the in-band response, and vendor measurements of witness samples suggest that the out-of-band leakage is typically at the 10<sup>-5</sup> to 10<sup>-4</sup> level. While detailed characterization of the out-of band response is ongoing, the throughput of the DES DR1 Standard Bandpasses are defined as zero for out-of-band wavelengths (see <a href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>).</p>
 
-<p>These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information">Here</a>. Note that, as described in the <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>, Y3A1 Standard Bandpasses have some minor inaccuracies and are not being released in favor of the DR1 set, but can be requested by sending an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
+<p>These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information">Here</a>. Note that, as described in the <a href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>, Y3A1 Standard Bandpasses have some minor inaccuracies and are not being released in favor of the DR1 set, but can be requested by sending an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
 
-            <des-img-big src="/static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
@@ -43668,19 +43668,19 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 
 <paper-dialog id="dialogfig1">
-   <des-img-big src="/static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig2">
-   <des-img-big src="/static/images/fig5_desdm_paper.png">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/fig5_desdm_paper.png">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig3">
-   <des-img-big src="/static/images/processing.gif">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/processing.gif">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
@@ -43727,15 +43727,15 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   <br>
   <br>
 
-   <des-img-big src="/static/images/fig4_desdm_paper.png" on-tap="_dialog" data-item="1">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/fig4_desdm_paper.png" on-tap="_dialog" data-item="1">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
 
-   <des-img-big src="/static/images/fig5_desdm_paper.png" on-tap="_dialog" data-item="2">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/fig5_desdm_paper.png" on-tap="_dialog" data-item="2">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
  <p>
   <br>
  </p>
 <p>One strength of the DESDM pipeline is that it performs incremental refinement to the image products, allowing for investigation at each stage of processing. <a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a> shows the incremental steps in image processing for a single patch of sky. It starts with a raw exposure and finishes with a deep, multi-band coadd image of the sky.</p>
 
-   <des-img-big src="/static/images/processing.gif" on-tap="_dialog" data-item="3">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
+   <des-img-big src="{{rootPath}}static/images/processing.gif" on-tap="_dialog" data-item="3">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
 
         <p><br></p>
         <div class="fixup" id="soft_single"></div>
@@ -45374,14 +45374,14 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 <!-- FIGURES
 -->
 <paper-dialog id="dialogfig1">
-            <des-img-big src="/static/images/dr1/DECam_chips.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/DECam_chips.png">
             Figure 1. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig2">
-            <des-img-big src="/static/images/dr1/dr1_bandpass.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_bandpass.png">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
@@ -45391,32 +45391,32 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig3">
-            <des-img-big src="/static/images/dr1/des_footprint_inset_mbtpq.png" on-tap="_dialog" data-item="3"> Figure 3. A plot of the DES survey area in celestial coordinates. The ~5000 deg2 wide-area survey footprint is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b = ± 10deg. The Galactic center ('x') and south Galactic pole ('+') are also marked. The Large and Small Magellanic Clouds are indicated in gray. The inset panel shows an overlay of the coadd processing unit, a coadd tile, on top of the SDSS Stripe 82 area.</des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/des_footprint_inset_mbtpq.png" on-tap="_dialog" data-item="3"> Figure 3. A plot of the DES survey area in celestial coordinates. The ~5000 deg2 wide-area survey footprint is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b = ± 10deg. The Galactic center ('x') and south Galactic pole ('+') are also marked. The Large and Small Magellanic Clouds are indicated in gray. The inset panel shows an overlay of the coadd processing unit, a coadd tile, on top of the SDSS Stripe 82 area.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig4">
 
-            <des-img-big src="/static/images/dr1/dr1_fwhm_hist.png" on-tap="_dialog" data-item="4">Figure 4. Normalized histograms showing the distribution of PSF FHWM for single-epoch images that form the DR1 coadd.<br> </des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_fwhm_hist.png" on-tap="_dialog" data-item="4">Figure 4. Normalized histograms showing the distribution of PSF FHWM for single-epoch images that form the DR1 coadd.<br> </des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig5">
-            <des-img-big src="/static/images/dr1/dr1_sky_brightness_hist.png" on-tap="_dialog" data-item="5">Figure 5. Normalized histograms showing the distribution of sky brightness for single-epoch images that form the DR1 coadd.<br> <br></des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_sky_brightness_hist.png" on-tap="_dialog" data-item="5">Figure 5. Normalized histograms showing the distribution of sky brightness for single-epoch images that form the DR1 coadd.<br> <br></des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig6">
-            <des-img-big src="/static/images/dr1/dr1_nimages_hist.png" on-tap="_dialog" data-item="6">Figure&nbsp;6. Histograms showing the distribution of overlapping images in each of the grizY bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images. Most regions of the footprint are covered with 3–5 images.</des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_nimages_hist.png" on-tap="_dialog" data-item="6">Figure&nbsp;6. Histograms showing the distribution of overlapping images in each of the grizY bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images. Most regions of the footprint are covered with 3–5 images.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig7">
-            <des-img-big src="/static/images/dr1/nimages_i.png" on-tap="_dialog" data-item="7">Figure 7. &nbsp;Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 degrees.<br></des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/nimages_i.png" on-tap="_dialog" data-item="7">Figure 7. &nbsp;Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 degrees.<br></des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
@@ -45459,10 +45459,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         </p>
 
 
-            <des-img src="/static/images/dr1/DECam_chips.png" on-tap="_dialog" data-item="1">
+            <des-img src="{{rootPath}}static/images/dr1/DECam_chips.png" on-tap="_dialog" data-item="1">
             Figure 1. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img>
 
-            <des-img src="/static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
+            <des-img src="{{rootPath}}static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
@@ -45475,7 +45475,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <p>The target footprint of the DES wide-area and supernova surveys are shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a>. All RA, DEC coordinates in this paper refer to the J2000 epoch. The wide-area footprint shape was selected to obtain a large overlap with the South Pole Telescope survey (<a href="http://adsabs.harvard.edu/abs/2011PASP..123..568C">Carlstrom et al. 2011</a>) and Stripe 82 from SDSS (<a href="http://cdsads.u-strasbg.fr/abs/2009ApJS..182..543A">Abazajian et al. 2009</a>), plus a connection region to enhance overall calibration. Given the cosmological goals of the survey, DES avoids the Galactic plane to minimize stellar foregrounds and extinction from interstellar dust.<br></p>
 
-            <des-img-big src="/static/images/dr1/des_footprint_inset_mbtpq.png" on-tap="_dialog" data-item="3"> Figure 3. A plot of the DES survey area in celestial coordinates. The ~5000 deg2 wide-area survey footprint is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b = ± 10deg. The Galactic center ('x') and south Galactic pole ('+') are also marked. The Large and Small Magellanic Clouds are indicated in gray. The inset panel shows an overlay of the coadd processing unit, a coadd tile, on top of the SDSS Stripe 82 area.</des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/des_footprint_inset_mbtpq.png" on-tap="_dialog" data-item="3"> Figure 3. A plot of the DES survey area in celestial coordinates. The ~5000 deg2 wide-area survey footprint is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b = ± 10deg. The Galactic center ('x') and south Galactic pole ('+') are also marked. The Large and Small Magellanic Clouds are indicated in gray. The inset panel shows an overlay of the coadd processing unit, a coadd tile, on top of the SDSS Stripe 82 area.</des-img-big>
 
     <p>The wide-field survey uses exposure times of 90s for <em>griz</em> and 45s for Y band, yielding a typical single-epoch depth at S/N = 10 of g = 23.57, r = 23.34, i = 22.78, i = 22.10 and Y = 20.69 (<a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>). The completed survey is expected to be roughly one magnitude deeper, through the coaddition of 10 images in each of the bands for a cumulative exposure time of 900 s in<em> griz</em> and 450 s in Y.</p>
 
@@ -45486,16 +45486,16 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <p>A single raw DECam exposure is ~0.5 GB in size, and DES collects ~300 science exposures per night. These data are transferred to NOAO for archiving (<a href="http://adsabs.harvard.edu/abs/2010ASPC..434..260F">Fitzpatrick 2010</a>) and to NCSA for further evaluation and processing by the <a href="http://processing">DESDM system</a>. These raw and calibrated single-epoch images are made available by NOAO.&nbsp;</p>
         <p>
 
-            <des-img src="/static/images/dr1/dr1_fwhm_hist.png" on-tap="_dialog" data-item="4">Figure 4. Normalized histograms showing the distribution of PSF FHWM for single-epoch images that form the DR1 coadd.<br> <br><br><br></des-img>
+            <des-img src="{{rootPath}}static/images/dr1/dr1_fwhm_hist.png" on-tap="_dialog" data-item="4">Figure 4. Normalized histograms showing the distribution of PSF FHWM for single-epoch images that form the DR1 coadd.<br> <br><br><br></des-img>
 
-            <des-img src="/static/images/dr1/dr1_sky_brightness_hist.png" on-tap="_dialog" data-item="5">Figure 5. Normalized histograms showing the distribution of sky brightness for single-epoch images that form the DR1 coadd.<br> <br><br><br></des-img>
+            <des-img src="{{rootPath}}static/images/dr1/dr1_sky_brightness_hist.png" on-tap="_dialog" data-item="5">Figure 5. Normalized histograms showing the distribution of sky brightness for single-epoch images that form the DR1 coadd.<br> <br><br><br></des-img>
 
 
             </p><p>Between Y1 and Y3, 38,850 wide-field exposures passed baseline survey quality thresholds (<a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>, section 4.7) and are included in coadd processing by DESDM (<a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>). The total number of exposures including the SN fields during the Y1–Y3 period was 61,828. The median airmass of DR1 survey-quality exposures was 1.22, with &gt;99% of exposures taken at airmass &lt; 1.4. Meanwhile, the median delivered seeing (FWHM) was g = 1.12, r = 0.96, i = 0.88, z = 0.84, and Y = 0.90 arcsec (<a href="javascript:void(0)" on-tap="_dialog" data-item="4">Figure 4</a>).</p>
         <p>Note that ObsTac prioritizes observations in the riz bandsduring periods of good seeing to advance the main science goals of DES (e.g., cosmological constraints from weak gravitational lensing). <a href="javascript:void(0)" on-tap="_dialog" data-item="5">Figure 5</a> shows the distribution of sky brightness levels for single-epoch images; the median sky brightness is g = 22.01, r = 21.15, i = 19.89, z = 18.72, and Y = 17.96 mag arcsec<sup>-2</sup>. The resulting median single-epoch effective image noise level (square root of the calibrated image variance), including additional contributions from read noise and shot noise of the dome flat, is g = 25.25, r = 24.94, i = 24.31, z = 23.58, and Y = 22.28 mag arcsec<sup>-2</sup>.</p>
 
-            <des-img src="/static/images/dr1/dr1_nimages_hist.png" on-tap="_dialog" data-item="6">Figure&nbsp;6. Histograms showing the distribution of overlapping images in each of the grizY bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images. Most regions of the footprint are covered with 3–5 images.</des-img>
-            <des-img src="/static/images/dr1/nimages_i.png" on-tap="_dialog" data-item="7">Figure 7. &nbsp;Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 degrees.<br></des-img>
+            <des-img src="{{rootPath}}static/images/dr1/dr1_nimages_hist.png" on-tap="_dialog" data-item="6">Figure&nbsp;6. Histograms showing the distribution of overlapping images in each of the grizY bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images. Most regions of the footprint are covered with 3–5 images.</des-img>
+            <des-img src="{{rootPath}}static/images/dr1/nimages_i.png" on-tap="_dialog" data-item="7">Figure 7. &nbsp;Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 degrees.<br></des-img>
         <p></p>
 
         <p><br></p>
@@ -45555,79 +45555,79 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 </style>
 
 <paper-dialog id="dialogfig1">
-        <des-img-big src="/static/images/dr1/gaia_astro_residual.png">Figure 1. Absolute astrometric precision (total distance) measured using Gaia DR1 stars with G<sub>Gaia</sub> ~ 16 as an external reference. Left: Mean value of the astrometric discrepancy with respect to Gaia versus sky position computed within HEALPix cells of resolution nside = 256. Right: Normalized histogram showing the distribution of astrometric offsets.</des-img-big>
+        <des-img-big src="{{rootPath}}static/images/dr1/gaia_astro_residual.png">Figure 1. Absolute astrometric precision (total distance) measured using Gaia DR1 stars with G<sub>Gaia</sub> ~ 16 as an external reference. Left: Mean value of the astrometric discrepancy with respect to Gaia versus sky position computed within HEALPix cells of resolution nside = 256. Right: Normalized histogram showing the distribution of astrometric offsets.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig2">
-       <des-img-big src="/static/images/dr1/fgcm_calib_error_i_nozpcorr.png">Figure 2. Statistical uncertainty of coadd zeropoints in the i-band estimated from the FGCM photometric calibration. Left: Mean value of the uncertainty vs. sky position, computed within HEALPix cells of resolution nside = 256. Right: Normalized histogram showing the distribution of zeropoint uncertainties over the footprint.</des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/fgcm_calib_error_i_nozpcorr.png">Figure 2. Statistical uncertainty of coadd zeropoints in the i-band estimated from the FGCM photometric calibration. Left: Mean value of the uncertainty vs. sky position, computed within HEALPix cells of resolution nside = 256. Right: Normalized histogram showing the distribution of zeropoint uncertainties over the footprint.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig3">
-       <des-img-big src="/static/images/dr1/gaia_phot_residual_nozpcorr.png">Figure 3. The distribution of photometric residuals against Gaia’s G band (mag units) across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. Left: Mean value of this residual vs sky position in a HEALPix cell of nside = 256. Right: Normalized histogram of photometric residuals over the footprint.</des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/gaia_phot_residual_nozpcorr.png">Figure 3. The distribution of photometric residuals against Gaia’s G band (mag units) across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. Left: Mean value of this residual vs sky position in a HEALPix cell of nside = 256. Right: Normalized histogram of photometric residuals over the footprint.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig4">
-       <des-img-big src="/static/images/dr1/dr1_magauto.png">Figure 4.  Normalized histograms of source counts binned by SExtractor’s MAG_AUTO quantity showing the flux distribution of detected sources.</des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/dr1_magauto.png">Figure 4.  Normalized histograms of source counts binned by SExtractor’s MAG_AUTO quantity showing the flux distribution of detected sources.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig5">
-       <des-img-big src="/static/images/dr1/dr1_coadd_depth_sn10.png">Figure 5. Catalog depth estimated for MAG_AUTO using catalog objects with S/N = 10 (MAGERR_AUTO = 0.10857.</des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/dr1_coadd_depth_sn10.png">Figure 5. Catalog depth estimated for MAG_AUTO using catalog objects with S/N = 10 (MAGERR_AUTO = 0.10857.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig6">
-       <des-img-big src="/static/images/dr1/dr1_maglim_hist.png">Figure 6.&nbsp;Catalog depth estimated for a 1.95'' aperture (MAG_APER_4) using mangle.<br></des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/dr1_maglim_hist.png">Figure 6.&nbsp;Catalog depth estimated for a 1.95'' aperture (MAG_APER_4) using mangle.<br></des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig7">
-       <des-img-big src="/static/images/dr1/dr1_efficiency_contamination_band.png">Figure 7. &nbsp;DES DR1 detection efficiency and contamination relative to deeper imaging from CFHTLenS. Solid color curves represent the detection efficiency, while dashed color curves show the fraction of unmatched objects appearing only in DES. For visual reference, gray dashed lines indicate 5% and 95% of objects</des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/dr1_efficiency_contamination_band.png">Figure 7. &nbsp;DES DR1 detection efficiency and contamination relative to deeper imaging from CFHTLenS. Solid color curves represent the detection efficiency, while dashed color curves show the fraction of unmatched objects appearing only in DES. For visual reference, gray dashed lines indicate 5% and 95% of objects</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig8">
-       <des-img-big src="/static/images/dr1/y3a2_ext_coadd_scatter.png">Figure 8. Stars and galaxies occupy distinct regions of spreadmodel-space at bright magnitudes, but become more difficult to distinguish at faint magnitudes<br><br></des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/y3a2_ext_coadd_scatter.png">Figure 8. Stars and galaxies occupy distinct regions of spreadmodel-space at bright magnitudes, but become more difficult to distinguish at faint magnitudes<br><br></des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig9">
-       <des-img-big src="/static/images/dr1/y3a2_ext_coadd_stellar_selection.png">Figure 9. &nbsp;DES DR1 object classification accuracy versus HSC-SSP for the stellar sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/y3a2_ext_coadd_stellar_selection.png">Figure 9. &nbsp;DES DR1 object classification accuracy versus HSC-SSP for the stellar sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig10">
-       <des-img-big src="/static/images/dr1/stellar_density_1024.png">Figure 10. Stellar density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 0 selection described above. Discrete peaks in the stellar density correspond to globular clusters and dwarf galaxies in the Milky Way halo. <br></des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/stellar_density_1024.png">Figure 10. Stellar density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 0 selection described above. Discrete peaks in the stellar density correspond to globular clusters and dwarf galaxies in the Milky Way halo. <br></des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig11">
-       <des-img-big src="/static/images/dr1/y3a2_ext_coadd_galaxy_selection.png">Figure 11. &nbsp;&nbsp;DES DR1 object classification accuracy versus HSC-SSP for the galaxy sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/y3a2_ext_coadd_galaxy_selection.png">Figure 11. &nbsp;&nbsp;DES DR1 object classification accuracy versus HSC-SSP for the galaxy sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig12">
-       <des-img-big src="/static/images/dr1/galaxy_density_1024.png">Figure 12. &nbsp;Galaxy density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 3 selection described above. <br><br></des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/galaxy_density_1024.png">Figure 12. &nbsp;Galaxy density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 3 selection described above. <br><br></des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig13">
-    <des-img-big src="/static/images/dr1/dr1_roc_22.0_22.5.png">Figure 13. Receiver operating characteristic (ROC) curve for a stellar selection in the magnitude range 22.0 &lt; MAG_AUTO_I &lt; 22.5. The SPREAD_MODEL outperforms CLASS_STAR in classification accuracy of DES DR1 objects with respect to HSC-SSP.</des-img-big>
+    <des-img-big src="{{rootPath}}static/images/dr1/dr1_roc_22.0_22.5.png">Figure 13. Receiver operating characteristic (ROC) curve for a stellar selection in the magnitude range 22.0 &lt; MAG_AUTO_I &lt; 22.5. The SPREAD_MODEL outperforms CLASS_STAR in classification accuracy of DES DR1 objects with respect to HSC-SSP.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
@@ -45678,7 +45678,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <br><a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> shows that the residuals are smallest in regions with with larger stellar densities closer to the Galactic plane (for comparison, see <a href="javascript:void(0)" on-tap="_dialog" data-item="10">Figure 10</a> ), and the mean over the footprint is ~145 mas. Further details of astrometric calibration, including ongoing development using Gaia as a reference catalog, are provided in <a href="http://adsabs.harvard.edu/abs/2017PASP..129g4503B">Bernstein et al. (2017b</a>).</p>
         <p><br> </p>
 
-        <des-img-big src="/static/images/dr1/gaia_astro_residual.png" on-tap="_dialog" data-item="1">Figure 1.  Absolute astrometric precision (total distance) measured using Gaia DR1 stars with G<sub>Gaia</sub> ~ 16 as an external reference. Left: Mean value of the astrometric discrepancy with respect to Gaia versus sky position computed within HEALPix cells of resolution nside = 256. Right: Normalized histogram showing the distribution of astrometric offsets</des-img-big>
+        <des-img-big src="{{rootPath}}static/images/dr1/gaia_astro_residual.png" on-tap="_dialog" data-item="1">Figure 1.  Absolute astrometric precision (total distance) measured using Gaia DR1 stars with G<sub>Gaia</sub> ~ 16 as an external reference. Left: Mean value of the astrometric discrepancy with respect to Gaia versus sky position computed within HEALPix cells of resolution nside = 256. Right: Normalized histogram showing the distribution of astrometric offsets</des-img-big>
 
         <div class="fixup" id="quality_photo"></div>
         <h3 class="fixdown">Photometry  &nbsp; &nbsp; <a style="font-size:13px" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
@@ -45687,10 +45687,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <br>
         </p>
 
-       <des-img src="/static/images/dr1/fgcm_calib_error_i_nozpcorr.png" on-tap="_dialog" data-item="2">Figure 2. Statistical uncertainty of coadd zeropoints in the i-band estimated from the FGCM photometric calibration. Left: Mean value of the uncertainty vs. sky position, computed within HEALPix cells of resolution nside = 256. Right: Normalized histogram showing the distribution of zeropoint uncertainties over the footprint. <br></des-img>
+       <des-img src="{{rootPath}}static/images/dr1/fgcm_calib_error_i_nozpcorr.png" on-tap="_dialog" data-item="2">Figure 2. Statistical uncertainty of coadd zeropoints in the i-band estimated from the FGCM photometric calibration. Left: Mean value of the uncertainty vs. sky position, computed within HEALPix cells of resolution nside = 256. Right: Normalized histogram showing the distribution of zeropoint uncertainties over the footprint. <br></des-img>
 
 
-       <des-img src="/static/images/dr1/gaia_phot_residual_nozpcorr.png" on-tap="_dialog" data-item="3">Figure 3. &nbsp;The distribution of photometric residuals against Gaia’s G band (mag units) across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. Left: Mean value of this residual vs sky position in a HEALPix cell of nside = 256. Right: Normalized histogram of photometric residuals over the footprint.</des-img>
+       <des-img src="{{rootPath}}static/images/dr1/gaia_phot_residual_nozpcorr.png" on-tap="_dialog" data-item="3">Figure 3. &nbsp;The distribution of photometric residuals against Gaia’s G band (mag units) across the DES footprint is used the evaluate the uniformity of the coadd FGCM calibration. Left: Mean value of this residual vs sky position in a HEALPix cell of nside = 256. Right: Normalized histogram of photometric residuals over the footprint.</des-img>
 
         <p>The single-epoch photometric statistical precision (associated with random errors in the FGCM fit parameters) derived from repeated measurements of FGCM calibration stars is 7.3, 6.1, 5.9, 7.3, 7.8 mmag in the g, r, i, z, and Y bands, respectively. Under the assumption that successive tiled observations of the same fields yield largely independent model fit parameters (as would be expected from the widely spaced observations in DES), we estimate the statistical precision of coadd zeropoints by combining the fit results from overlapping exposures. The median coadd zeropoint statistical uncertainty for the g, r, i, z, and Y band is 5, 4, 5, 6, and 5 mmag, respectively.  <a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a> shows an example distribution for the i band. As a validation, we compare the photometric uniformity of DES DR1 to the space-based Gaia G-band&nbsp;photometry (<a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a>). Variations in uniformity are found to be 6.6 mmag, as estimated from a Gaussian fit to the offset distribution between G<sub>Gaia</sub> and G<sub>pred</sub>(r) predicted from the DES r-band.</p>
         <p>To account for extinction from interstellar dust, we include an additional column in the DR1 photometry tables for E(B - V) values from the reddening map of <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel et al. (1998)</a> (SFD98) at the location of each catalog object. The E(B -V) values were obtained using a linear interpolation of the Zenithal Equal Area projected map distributed by SFD98. We computed fiducial interstellar extinction coefficients, R<sub>b</sub>, for each band so that the corrections to the FGCM calibrated source magnitudes are A<sub>b</sub> = E(B -V)R<sub>b</sub>. Fiducial coefficients are derived using the <a href="http://adsabs.harvard.edu/abs/1999PASP..111...63F">Fitzpatrick (1999)</a> reddening law with R<sub>V</sub> = 3.1 and the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment to the original SFD98 reddening map (N = 0.78). Note that the <a href="http://adsabs.harvard.edu/abs/2011ApJ...737..103S">Schlafly &amp; Finkbeiner (2011)</a> calibration adjustment is included in our fiducial reddening coefficients; these coefficients are intended to be used directly with E(B -V) values from the original SFD98 reddening map. We integrated over the DR1 Standard Bandpasses considering a fixed source spectrum that is constant in spectral flux density per unit wavelength, and adopted the low-extinction limit. The latter simplification is appropriate for DES, for which E(B-V) &lt; 0.1 mag over ~99% of the footprint. The resulting multiplicative coefficients for each band, R<sub>b</sub>, are 3.186, 2.140, 1.569, 1.196 and 1.048 in the g, r, i, z and Y bands, respectively. The DES science team continues to explore systematic uncertainties associated with interstellar extinction modeling.</p>
@@ -45772,7 +45772,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 </tbody>
         </table>
 
-       <des-img-big src="/static/images/dr1/dr1_magauto.png" on-tap="_dialog" data-item="4">Figure 4.  Normalized histograms of source counts binned by SExtractor’s MAG_AUTO quantity showing the flux distribution of detected sources.</des-img-big>
+       <des-img-big src="{{rootPath}}static/images/dr1/dr1_magauto.png" on-tap="_dialog" data-item="4">Figure 4.  Normalized histograms of source counts binned by SExtractor’s MAG_AUTO quantity showing the flux distribution of detected sources.</des-img-big>
 
 
         <p><br> </p>
@@ -45797,9 +45797,9 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
           <br>
         </p>
 
-       <des-img src="/static/images/dr1/dr1_coadd_depth_sn10.png" on-tap="_dialog" data-item="5">Figure 5. Catalog depth estimated for MAG_AUTO using catalog objects with S/N = 10 (MAGERR_AUTO = 0.10857.</des-img>
+       <des-img src="{{rootPath}}static/images/dr1/dr1_coadd_depth_sn10.png" on-tap="_dialog" data-item="5">Figure 5. Catalog depth estimated for MAG_AUTO using catalog objects with S/N = 10 (MAGERR_AUTO = 0.10857.</des-img>
 
-       <des-img src="/static/images/dr1/dr1_maglim_hist.png" on-tap="_dialog" data-item="6">Figure 6.&nbsp;Catalog depth estimated for a 1.95'' aperture (MAG_APER_4) using mangle.<br></des-img>
+       <des-img src="{{rootPath}}static/images/dr1/dr1_maglim_hist.png" on-tap="_dialog" data-item="6">Figure 6.&nbsp;Catalog depth estimated for a 1.95'' aperture (MAG_APER_4) using mangle.<br></des-img>
 
         <p><br> </p>
         <div class="fixup" id="quality_complete"></div>
@@ -45821,18 +45821,18 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
           <br>Note that EXTENDED_COADD is defined by a sequence of boolean conditions that, when true, add a unit to the classifier. This classifier results in a value of 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies). &nbsp;</p>
 
           <p><br></p>
-       <des-img src="/static/images/dr1/dr1_efficiency_contamination_band.png" on-tap="_dialog" data-item="7">Figure 7. &nbsp;DES DR1 detection efficiency and contamination relative to deeper imaging from CFHTLenS. Solid color curves represent the detection efficiency, while dashed color curves show the fraction of unmatched objects appearing only in DES. For visual reference, gray dashed lines indicate 5% and 95% of objects</des-img>
-       <des-img src="/static/images/dr1/y3a2_ext_coadd_scatter.png" on-tap="_dialog" data-item="8">Figure 8. Stars and galaxies occupy distinct regions of spreadmodel-space at bright magnitudes, but become more difficult to distinguish at faint magnitudes<br><br></des-img>
+       <des-img src="{{rootPath}}static/images/dr1/dr1_efficiency_contamination_band.png" on-tap="_dialog" data-item="7">Figure 7. &nbsp;DES DR1 detection efficiency and contamination relative to deeper imaging from CFHTLenS. Solid color curves represent the detection efficiency, while dashed color curves show the fraction of unmatched objects appearing only in DES. For visual reference, gray dashed lines indicate 5% and 95% of objects</des-img>
+       <des-img src="{{rootPath}}static/images/dr1/y3a2_ext_coadd_scatter.png" on-tap="_dialog" data-item="8">Figure 8. Stars and galaxies occupy distinct regions of spreadmodel-space at bright magnitudes, but become more difficult to distinguish at faint magnitudes<br><br></des-img>
 
 <p>We evaluate the performance of the example classifier above using three regions in the main body of the DES footprint that overlap fields from HSC-SSP DR1 (<a href="http://adsabs.harvard.edu/abs/2017arXiv170208449A">Aihara et al. 2017b</a>) with typical seeing in the i-band FWHM ~ 0.7'': SXDS (Ultra Deep layer), DEEP2_3 (Deep layer), and portions of VVDS (Wide layer). The areal overlap between these HSC-SSP data sets and DES is ~18 deg<sup>2</sup>. The HSC-SSP data are of sufficient depth and image quality that a distinct stellar locus is clearly visible in the HSC concentration parameter IMAG_PSF - ICMODEL_MAG to an i-band magnitude of ~24.0. We choose empirically an interval of EXTENDED_COADD values to select stellar or galactic samples with a balance of classification efficiency and purity appropriate for different science cases (<a href="javascript:void(0)" on-tap="_dialog" data-item="8">Figure 8</a>, <a href="javascript:void(0)" on-tap="_dialog" data-item="9">Figure 9</a>, <a href="javascript:void(0)" on-tap="_dialog" data-item="10">Figure 10</a>, <a href="javascript:void(0)" on-tap="_dialog" data-item="11">Figure 11</a> and <a href="javascript:void(0)" on-tap="_dialog" data-item="12">Figure 12</a>). For instance, one can define galaxy (EXTENDED_COADD &gt;= 2) and stellar samples (EXTENDED_COADD &lt;= 1) having ~310M and ~80M objects, respectively, following the standard object quality selection.</p>
 
         <p><br></p>
 
-       <des-img src="/static/images/dr1/y3a2_ext_coadd_stellar_selection.png" on-tap="_dialog" data-item="9">Figure 9. &nbsp;DES DR1 object classification accuracy versus HSC-SSP for the stellar sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img>
-       <des-img src="/static/images/dr1/stellar_density_1024.png" on-tap="_dialog" data-item="10">Figure 10. Stellar density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 0 selection described above. Discrete peaks in the stellar density correspond to globular clusters and dwarf galaxies in the Milky Way halo. <br></des-img>
+       <des-img src="{{rootPath}}static/images/dr1/y3a2_ext_coadd_stellar_selection.png" on-tap="_dialog" data-item="9">Figure 9. &nbsp;DES DR1 object classification accuracy versus HSC-SSP for the stellar sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img>
+       <des-img src="{{rootPath}}static/images/dr1/stellar_density_1024.png" on-tap="_dialog" data-item="10">Figure 10. Stellar density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 0 selection described above. Discrete peaks in the stellar density correspond to globular clusters and dwarf galaxies in the Milky Way halo. <br></des-img>
         <p><br></p>
-       <des-img src="/static/images/dr1/y3a2_ext_coadd_galaxy_selection.png" on-tap="_dialog" data-item="11">Figure 11. &nbsp;&nbsp;DES DR1 object classification accuracy versus HSC-SSP for the galaxy sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img>
-       <des-img src="/static/images/dr1/galaxy_density_1024.png" on-tap="_dialog" data-item="12">Figure 12. &nbsp;Galaxy density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 3 selection described above. <br><br></des-img>
+       <des-img src="{{rootPath}}static/images/dr1/y3a2_ext_coadd_galaxy_selection.png" on-tap="_dialog" data-item="11">Figure 11. &nbsp;&nbsp;DES DR1 object classification accuracy versus HSC-SSP for the galaxy sample. &nbsp;By using an interval of EXTENDED_COADD values, the balance of classification efficiency and purity can be adjusted as appropriate for specific science cases.</des-img>
+       <des-img src="{{rootPath}}static/images/dr1/galaxy_density_1024.png" on-tap="_dialog" data-item="12">Figure 12. &nbsp;Galaxy density map at HEALPix NSIDE = 1024 resolution created with the EXTENDED_COADD = 3 selection described above. <br><br></des-img>
 
   <br><br>
 <table>
@@ -45885,7 +45885,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <p>
           <br>
         </p>
-         <des-img-big src="/static/images/dr1/dr1_roc_22.0_22.5.png" on-tap="_dialog" data-item="13">Figure 13. &nbsp;Receiver operating characteristic (ROC) curve for a stellar selection in the magnitude range 22.0 &lt; MAG_AUTO_I &lt; 22.5. The SPREAD_MODEL outperforms CLASS_STAR in classification accuracy of DES DR1 objects with respect to HSC-SSP.</des-img-big>
+         <des-img-big src="{{rootPath}}static/images/dr1/dr1_roc_22.0_22.5.png" on-tap="_dialog" data-item="13">Figure 13. &nbsp;Receiver operating characteristic (ROC) curve for a stellar selection in the magnitude range 22.0 &lt; MAG_AUTO_I &lt; 22.5. The SPREAD_MODEL outperforms CLASS_STAR in classification accuracy of DES DR1 objects with respect to HSC-SSP.</des-img-big>
         <p>
           <br>
         </p>
@@ -45940,7 +45940,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 
 <paper-dialog id="dialogfig1">
-            <des-img-big src="/static/images/dr1/dr1_globular_cluster.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_globular_cluster.png">
             Figure 1. Color-magnitude diagram for a stellar sample selected within a 15' x 15' box centered on the M2 globular cluster. The weighted-average PSF photometry from WAVG_MAG_PSF (left) yields a tighter locus but does not extend as deep as the MAG_AUTO photometry (right).
             </des-img-big>
   <div class="buttons">
@@ -45948,7 +45948,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig2">
-            <des-img-big src="/static/images/dr1/saturated.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/saturated.png">
             Figure 2. Composite<em> gri</em> 1' cutouts of saturated stars with IMAFLAGS_ISO =1.
         </des-img-big>
   <div class="buttons">
@@ -45956,7 +45956,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig3">
-            <des-img-big src="/static/images/dr1/niter.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/niter.png">
             Figure 3. &nbsp;Composite <em>gri</em> 1' cutouts of objects with IMAFLAGS_ISO =1 and NITER_MODEL = 0 shows than in their majority, however not exclusively, are missing data.
         </des-img-big>
   <div class="buttons">
@@ -45964,7 +45964,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig4">
-            <des-img-big src="/static/images/dr1/bright.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/bright.png">
                 Figure 4. &nbsp;Examples of very bright stars, R Dor (30' cutout; top left) and α&nbsp;Phe (14' cutout; top right) and globular clusters, NGC 288 (8' cutout; bottom left) and NGC 1904 (2.5' cutout; bottom right), found within the DES DR1 footprint.
             </des-img-big>
   <div class="buttons">
@@ -45973,7 +45973,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 </paper-dialog>
 
 <paper-dialog id="dialogfig5">
-            <des-img-big src="/static/images/dr1/DECam_chips.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/DECam_chips.png">
             Figure 5. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
@@ -46000,7 +46000,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <p>The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications (i.e., SPREAD_MODEL, CLASS_STAR) and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Using the i-band as an example, we identified such &nbsp;coadd PSF failures by searching for regions with anomalous coadd SPREAD_MODEL_I distributions and estimate that ~0.4% of the footprint is substantially affected. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources (<a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a>). Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources, we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO and MAG_APER (faint sources).</p>
 
 
-            <des-img-big src="/static/images/dr1/dr1_globular_cluster.png" on-tap="_dialog" data-item="1">
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_globular_cluster.png" on-tap="_dialog" data-item="1">
             Figure 1. Color-magnitude diagram for a stellar sample selected within a 15' x 15' box centered on the M2 globular cluster. The weighted-average PSF photometry from WAVG_MAG_PSF (left) yields a tighter locus but does not extend as deep as the MAG_AUTO photometry (right).
             </des-img-big>
         <p><br></p>
@@ -46010,10 +46010,10 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             <p>
                 <br>
             </p>
-            <des-img src="/static/images/dr1/saturated.png" on-tap="_dialog" data-item="2">
+            <des-img src="{{rootPath}}static/images/dr1/saturated.png" on-tap="_dialog" data-item="2">
             Figure 2. Composite<em> gri</em> 1' cutouts of saturated stars with IMAFLAGS_ISO =1.<br><br>
             </des-img>
-            <des-img src="/static/images/dr1/niter.png" on-tap="_dialog" data-item="3">
+            <des-img src="{{rootPath}}static/images/dr1/niter.png" on-tap="_dialog" data-item="3">
             Figure 3. &nbsp;Composite <em>gri</em> 1' cutouts of objects with IMAFLAGS_ISO =1 and NITER_MODEL = 0 shows than in their majority, however not exclusively, are missing data.
             </des-img>
 
@@ -46022,7 +46022,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
         <h3 class="fixdown">Bright Objects  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>Scattered light from very bright stars can impact the photometry of nearby objects. Table 1 lists the coordinates and magnitudes of bright stars in the DES footprint. These stars generally cause ragged holes in the imaging coverage of DES DR1 due to image-level blacklisting of scattered light artifacts (<a href="javascript:void(0)" on-tap="_dialog" data-item="4">Figure 4</a>). Scattered light from these stars extends beyond image- and catalog-level masking, and can be observed at &gt; 1<sup>o</sup> in the number counts of objects with extreme colors, i.e. (g-r) &gt; 4 or (i-z) &gt; 4 (<a href="http://adsabs.harvard.edu/abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>). Additional care must be taken for analyses close to bright stars.<br>The DESDM processing pipeline is optimized for extragalactic science at high-Galactic latitudes. As such, it is not optimized to detect or measure sources in extremely crowded regions. Failures in source deblending are most noticeable in the cores of Galactic globular clusters, where source confusion and saturation reduce the catalog completeness appreciably. Table 2 lists 5 classical globular clusters within the DES DR1 footprint with integrated V-band magnitude brighter than 10 (<a href="http://adsabs.harvard.edu/abs/1996AJ....112.1487H">Harris 1996</a>, 2010 edition). The bottom panels of <a href="javascript:void(0)" on-tap="_dialog" data-item="4">Figure 4</a> show two of these clusters, NGC 288 and NGC 1904, where saturation and source confusion can greatly impact source detection and photometric measurements.</p>
 
-            <des-img-big src="/static/images/dr1/bright.png" on-tap="_dialog" data-item="4">
+            <des-img-big src="{{rootPath}}static/images/dr1/bright.png" on-tap="_dialog" data-item="4">
                 Figure 4. &nbsp;Examples of very bright stars, R Dor (30' cutout; top left) and α&nbsp;Phe (14' cutout; top right) and globular clusters, NGC 288 (8' cutout; bottom left) and NGC 1904 (2.5' cutout; bottom right), found within the DES DR1 footprint.
             </des-img-big>
         <p>
@@ -46280,7 +46280,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
             From all 62 science CCDs from DECam, CCD 61, which failed in 2012. Similarly, CCD 2 was not processed between November 2013 and December 2016, during which time it was not functional. Amplifier A of CCD 31 has an unpredictable, time-variable gain and is not processed or used for DES science. Amplifier B of CCD 31 functions normally and is processed. The rest of the science CCDs are performing within specifications and are usable for science (<a href="javascript:void(0)" on-tap="_dialog" data-item="5">Figure 5</a>).
         </p>
 
-            <des-img-big src="/static/images/dr1/DECam_chips.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/DECam_chips.png">
             Figure 5. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
 
         <p>
@@ -46344,7 +46344,7 @@ font-family:  "Courier New", Courier, monospace;
 
 
 <paper-dialog id="dialogfig1">
-            <des-img-big src="/static/images/faq/theta_image_spikes.png" on-tap="_dialog" data-item="1">
+            <des-img-big src="{{rootPath}}static/images/faq/theta_image_spikes.png" on-tap="_dialog" data-item="1">
             Figure 1. Histograms of THETAWIN_IMAGE for a sample of objects with no filters applied(top) and with selection filters applied (bottom)
         </des-img-big>
   <div class="buttons">
@@ -46353,7 +46353,7 @@ font-family:  "Courier New", Courier, monospace;
 </paper-dialog>
 
 <paper-dialog id="dialogfig2">
-            <des-img src="/static/images/faq/spikes.png" on-tap="_dialog" data-item="2">
+            <des-img src="{{rootPath}}static/images/faq/spikes.png" on-tap="_dialog" data-item="2">
             Figure 2. The represented 5-edge-contiguous-pixel configurations in a 9 x 9 box. <br>
         </des-img>
   <div class="buttons">
@@ -46361,7 +46361,7 @@ font-family:  "Courier New", Courier, monospace;
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig3">
-        <des-img-big src="/static/images/faq/regellipses.png" on-tap="_dialog" data-item="3">
+        <des-img-big src="{{rootPath}}static/images/faq/regellipses.png" on-tap="_dialog" data-item="3">
         Figure 3.  DS9 snapshot of the i-band fits image for tile DES0203-4914 (retrieved from the DR1 footprint tool
     </des-img-big>
   <div class="buttons">
@@ -46369,31 +46369,31 @@ font-family:  "Courier New", Courier, monospace;
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig4">
-<des-img-big src="/static/images/faq/figa1063.gif" on-tap="_dialog" data-item="4"> Figure 4.</des-img-big>
+<des-img-big src="{{rootPath}}static/images/faq/figa1063.gif" on-tap="_dialog" data-item="4"> Figure 4.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig5">
-<des-img-big src="/static/images/faq/as1063.png" on-tap="_dialog" data-item="5"> Figure 5.</des-img-big>
+<des-img-big src="{{rootPath}}static/images/faq/as1063.png" on-tap="_dialog" data-item="5"> Figure 5.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig6">
-<des-img-big src="/static/images/faq/snapaladin.png" on-tap="_dialog" data-item="6"> Figure 6.</des-img-big>
+<des-img-big src="{{rootPath}}static/images/faq/snapaladin.png" on-tap="_dialog" data-item="6"> Figure 6.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig7">
-<des-img-big src="/static/images/faq/visio.jpg" on-tap="_dialog" data-item="7"> Figure 7.</des-img-big>
+<des-img-big src="{{rootPath}}static/images/faq/visio.jpg" on-tap="_dialog" data-item="7"> Figure 7.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig8">
-<des-img-big src="/static/images/faq/lineaa1063.png" on-tap="_dialog" data-item="8"> Figure 8.</des-img-big>
+<des-img-big src="{{rootPath}}static/images/faq/lineaa1063.png" on-tap="_dialog" data-item="8"> Figure 8.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
   </div>
@@ -46497,10 +46497,10 @@ font-family:  "Courier New", Courier, monospace;
 <p>What's going on?&nbsp;&nbsp; In short, object detection in sextractor requires about 5 contiguous pixels to be above background for an object detction. Some configurations of these 5 contiguous pixels are not allowed, such as pixels that only touch at the corners, full edge continuity is required.&nbsp; For faint objects, allowed patterns in the pixel checkerboard of 5 touching pixels result in a measured position angle (THETAWIN_IMAGE) of certain angles, like 0, 90, 45, 90-45 degrees, and to a lessor extent 18.4, 90-18.4 degrees to be much more common (see upper panel of first figure).&nbsp;&nbsp; If one selects a subset of objects with:</p>
 <p>b_image &gt; 0.9 .AND. ( (mag_auto_i &lt; 19 and 1-b_image/a_image &lt; 0.2) OR (1-b_image/a_image &lt; 0.2 + (mag_auto_i-19)/5 )), one rejects very small objects and also objects which are bright and very elongated or somewhat fainter and slightly more elongated), one can get rid of most of the spikes in the histogram (lower panel of <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a>).&nbsp; The over-represented 5-edge-contiguous-pixel configurations are shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a>.</p>
 
-            <des-img src="/static/images/faq/theta_image_spikes.png" on-tap="_dialog" data-item="1">
+            <des-img src="{{rootPath}}static/images/faq/theta_image_spikes.png" on-tap="_dialog" data-item="1">
             Figure 1. Histograms of THETAWIN_IMAGE for a sample of objects with no filters applied(top) and with selection filters applied (bottom)
             </des-img>
-            <des-img src="/static/images/faq/spikes.png" on-tap="_dialog" data-item="2">
+            <des-img src="{{rootPath}}static/images/faq/spikes.png" on-tap="_dialog" data-item="2">
             Figure 2. The represented 5-edge-contiguous-pixel configurations in a 9 x 9 box. <br>
             </des-img>
 </div>
@@ -46534,7 +46534,7 @@ font-family:  "Courier New", Courier, monospace;
 <p>will draw red and yellow ellipses around the objects.&nbsp; Note that the A_IMAGE/B_IMAGE unit is in pixels of 0.263'' each but the units in the .reg file are arcsec. A rough factor of 1 pixel per image ''&nbsp; is used to give a pleasing object-encircling radius for your ellipse (you may wish to adjust).&nbsp; The double quote mark (") should follow the a/b sizes and one decimal place should be enough.</p>
 <p>Figure 3 shows  a DS9 snapshot of the i-band fits image for tile DES0203-4914 (retrieved from the DR1 footprint tool).&nbsp; The above .reg file is then loaded as a region.</p>
 
-        <des-img-big src="/static/images/faq/regellipses.png" on-tap="_dialog" data-item="3">
+        <des-img-big src="{{rootPath}}static/images/faq/regellipses.png" on-tap="_dialog" data-item="3">
         Figure 3.  DS9 snapshot of the i-band fits image for tile DES0203-4914 (retrieved from the DR1 footprint tool
     </des-img-big>
 
@@ -46544,7 +46544,7 @@ font-family:  "Courier New", Courier, monospace;
 <h3 class="fixdown">5. Where are <code>FLUX_PSF</code> and <code>MAG_PSF</code>?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p class="answer">
   <span style="color: rgb(0,0,0);">The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications &nbsp;and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources</span>
-  <span style="color: rgb(0,0,0);">. Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources). Check  <a href="[[rootpath]]releases/dr1/dr1-docs/known-issues">Known Issues</a> for more information.</span>
+  <span style="color: rgb(0,0,0);">. Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources). Check  <a href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a> for more information.</span>
 
 </p>
 
@@ -46636,8 +46636,8 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 <p>This query may be run in quick mode, as it takes less than a minute to select 7030 high confidence extended objects (galaxies) with imaflags_iso_r = 0 (no very bright saturated stars) and flags_r &lt; 4 (no saturated objects or other sextractor flags &gt;=4), however, close pairs and deblends, with flag values 1 and 2, are allowed.&nbsp; The Case expression performs the star/galaxy separation, with &gt;2 indicating we select only high confidence extended objects and the wavg_spread_model quantities indicating we are not interested in objects fainter than about r~23.&nbsp; The i-band spread_model gives slightly better results than g, r or z spread model.&nbsp; Note that we convert the magnitudes to dereddeneded quantities on-the-fly by subtracting off R_filter * E(B-V) for each object.&nbsp; R_filter is a fixed coefficient which gives Absorption&nbsp; in a given band from dust in the Galaxy toward a particular sightline.&nbsp; The E(B-V) values from SFD98 are tablulated in DR1 for each object and may be extracted from the database. The recommended R_filter values for DES DR1 are R(g,r,i,z,Y) = (3.184, 2.130, 1.568, 1.196, 1.048).&nbsp;&nbsp; Note that for magnitudes in the DR1_MAIN table, dereddened versions of the magnitudes are already available, for instance as MAG_AUTO_R_DERED = MAG_AUTO_R - 2.130*ebv_sfd98, and thus the subtraction of R*E(B-V) need only be done for the MAG_APER quantities in the DR1_MAGNITUDES table.&nbsp; Both ways of obtaining the dereddened magnitudes are shown here for completeness.</p>
 <p>Using the results of this query one may further select, using the distance to the cluster center parameter calculated within the query and plot MAG_AUTO_R_0 (dereddened) vs. MAG_AUTO(R-I) dereddened for all 2276 galaxies within 0.15 degrees (9') of the cluster center (<a href="javascript:void(0)" on-tap="_dialog" data-item="4">Figure 4</a>)</p>
 
-<des-img src="/static/images/faq/figa1063.gif" on-tap="_dialog" data-item="4"> Figure 4.</des-img>
-<des-img src="/static/images/faq/as1063.png" on-tap="_dialog" data-item="5"> Figure 5.</des-img>
+<des-img src="{{rootPath}}static/images/faq/figa1063.gif" on-tap="_dialog" data-item="4"> Figure 4.</des-img>
+<des-img src="{{rootPath}}static/images/faq/as1063.png" on-tap="_dialog" data-item="5"> Figure 5.</des-img>
 
 <p>The concentration of objects at about (r-i)(dereddened) ~ 0.55 represent the red sequence for this cluster at a redshift of 0.35. One may select just those objects within 0.05 of (r-i)(dered) = 0.55 and within 0.02 deg of the cluster center make these 179 red sequence candidates into a target list csv file (pairs of ra,decs separated by a comma) for further exploration.&nbsp; One also has available from the query the A_IMAGE, B_IMAGE, and theta_j2000 values which may be used to draw ellipses around selected objects.&nbsp; How do the MAG_AUTO magnitudes of the red sequence compare with the MAG_APER_4 and MAG_APER_5 loci?&nbsp; In general, there are slight magnitude-dependent offsets in color for the fixed aperture magnitudes compared with MAG_AUTO.&nbsp;</p>
 <p>Using the NCSA interface's 'DR1 footprint' menu, one may enter the coordinates of the center of the cluster and find tile DES2247-4414 contains the cluster center.&nbsp; One may download the FITS image in the i-band.&nbsp; One has several options to display the image and selected subsets of objects.</p>
@@ -46648,12 +46648,12 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 <p>One may also use the LIneA Sky Viewer DR1 interface to explore DES images of this region of sky.</p>
 <p>The Aladin interface to the Sky Viewer allows one to visualize large area footprints, which may span tile boundaries (<a href="javascript:void(0)" on-tap="_dialog" data-item="6">Figure 6</a>)</p>
 
-<des-img-big src="/static/images/faq/snapaladin.png" on-tap="_dialog" data-item="6"> Figure 6.</des-img-big>
+<des-img-big src="{{rootPath}}static/images/faq/snapaladin.png" on-tap="_dialog" data-item="6"> Figure 6.</des-img-big>
 
 <p>Using the Sky Viewer's Visiomatic interface within one specific tile, DES2247-4414 in this case, one may tune the color map settings across all five filters (grizY, rather than the traditional irg to RGB mapping) (<a href="javascript:void(0)" on-tap="_dialog" data-item="7">Figure 7</a>). One may further use the catalog overlay features within the Sky Viewer to overlay ellipses of all or subsets of DES DR1 detected objects on top of a tile (<a href="javascript:void(0)" on-tap="_dialog" data-item="8">Figure 8</a>)</p>
 
-<des-img src="/static/images/faq/visio.jpg" on-tap="_dialog" data-item="7"> Figure 7.</des-img>
-<des-img src="/static/images/faq/lineaa1063.png" on-tap="_dialog" data-item="8"> Figure 8.</des-img>
+<des-img src="{{rootPath}}static/images/faq/visio.jpg" on-tap="_dialog" data-item="7"> Figure 7.</des-img>
+<des-img src="{{rootPath}}static/images/faq/lineaa1063.png" on-tap="_dialog" data-item="8"> Figure 8.</des-img>
 
 <p>Note that deblending of overlapping galaxies within DES DR1 is not perfect, in this case several galaxies close to the BCG (Brightest cluster galaxy) remain blended with the extended BCG light.&nbsp; This is a general feature of the tuning of the deblending within DES DR1.</p>
 <p>One may modify the query above to select, for instance, stars instead of galaxies (i.e. use EXTENDED_COADD &lt; 2) and to explore other areas of the footprint.&nbsp; The DR1_MAIN table is indexed on RA, DEC, COADD_OBJECT_ID and TILENAME, along with indicies on MAG_AUTO_grizY and other commonly used quantities.&nbsp; You may wish to try a complex query out first on the DR1_MAIN_SAMPLE (1% subsample) versions of tables which have many fewer rows, and where performance of your query may be tuned before running it on the full 399 million row table.</p>
@@ -46689,17 +46689,17 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 <p><br></p>
 <div class="fixup" id="faq12"></div>
 <h3 class="fixdown">12. How to acknowledge the usage of the data? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<p class="answer">Please check our <a href="[[rootpath]]thanks">Acknowledgements</a> page for more information.&nbsp;</p>
+<p class="answer">Please check our <a href="[[rootPath]]thanks">Acknowledgements</a> page for more information.&nbsp;</p>
 
 <p><br></p>
 <div class="fixup" id="faq13"></div>
 <h3 class="fixdown">13. What are the Terms and Conditions? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<p class="answer">Please check our <a href="[[rootpath]]terms">Terms and Conditions</a> page for more information
+<p class="answer">Please check our <a href="[[rootPath]]terms">Terms and Conditions</a> page for more information
 
 </p><p><br></p>
 <div class="fixup" id="faq14"></div>
 <h3 class="fixdown">14. What to do if a question is not listed in here? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<p class="answer">Please our <a href="[[rootpath]]help">Help Form</a> or send an email to&nbsp;<a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
+<p class="answer">Please our <a href="[[rootPath]]help">Help Form</a> or send an email to&nbsp;<a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
 
 </p></div>
 
@@ -46793,28 +46793,28 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
         <p>
         If you'd like to access the images and catalogs from DES DR1, please use the complementary set of tools
         created by a collaborative effort between NCSA, NOAO, and LIneA. These tools allow the users to access, obtain, visualize, and explore DES DR1 products.<br>
-        When using DES data and/or DES access tools please consider the notes in the <a href="[[rootpath]]thanks">Acknowledgement</a> page.
+        When using DES data and/or DES access tools please consider the notes in the <a href="[[rootPath]]thanks">Acknowledgement</a> page.
         <br>
         Click on the logos below to start exploring DES data tools. Follow the links below to learn more about each tool and their functionalities. <br></p>
 
         <div class="testcards">
     <paper-card on-tap="_goncsa">
         <div class="card-content">
-            <img class="card-image" src="/static/images/ea_icon.png">
+            <img class="card-image" src="{{rootPath}}static/images/ea_icon.png">
             <div class="access-header">NCSA DESaccess</div>
         </div>
     </paper-card>
 
     <paper-card on-tap="_gonoao">
         <div class="card-content">
-            <img class="card-image" src="/static/images/datalab3.png">
+            <img class="card-image" src="{{rootPath}}static/images/datalab3.png">
             <div class="access-header">NOAO DataLab</div>
         </div>
 
     </paper-card>
     <paper-card on-tap="_golinea">
         <div class="card-content">
-            <img class="card-image" src="/static/images/des_logo_oficial.jpg">
+            <img class="card-image" src="{{rootPath}}static/images/des_logo_oficial.jpg">
             <div class="access-header">LIneA Science Server </div>
         </div>
 
@@ -46836,17 +46836,17 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
         <ul>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-access/dr1-ncsa">NCSA DESaccess</a>
+              <a href="[[rootPath]]releases/dr1/dr1-access/dr1-ncsa">NCSA DESaccess</a>
             </h3>
           </li>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-access/dr1-linea">LIneA Science Server</a>
+              <a href="[[rootPath]]releases/dr1/dr1-access/dr1-linea">LIneA Science Server</a>
             </h3>
           </li>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-access/dr1-noao">NOAO DataLab</a>
+              <a href="[[rootPath]]releases/dr1/dr1-access/dr1-noao">NOAO DataLab</a>
             </h3>
           </li>
         </ul>
@@ -46898,7 +46898,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 <div class="fixup" id="ncsa_top"></div>
 <div class="fixdown"></div>
 <paper-dialog id="dialogfig3">
-            <des-img-big src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
+            <des-img-big src="{{rootPath}}static/images/DESaccess.png" on-tap="_dialog" data-item="3">
             Figure 3. Schema for DESaccess arquitecture
             </des-img-big>
   <div class="buttons">
@@ -46912,7 +46912,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
     <paper-button class="desButton" raised="" on-tap="_goncsa">Go to DESaccess</paper-button>
     <br>
 
-         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an &nbsp;Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. Please read the <a href="[[rootpath]]terms">Terms and Conditions</a> before using these interfaces. <br>
+         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an &nbsp;Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. Please read the <a href="[[rootPath]]terms">Terms and Conditions</a> before using these interfaces. <br>
 
              The main services can be summarized as follows:</p>
              <p>
@@ -46924,7 +46924,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
              <p>
                <a href="https://github.com/mgckind/desaccess">DESaccess code</a> as well as the <a href="https://github.com/mgckind/des_public_new">release page</a> are open sourced. The frontend was developed using web components, HTML, JS and <a href="https://www.polymer-project.org/">Polymer</a> which allows the re-use of already existing elements. The backend is mainly developed using the Python <a href="http://www.tornadoweb.org/en/stable/">Tornado web framework</a>. The submission jobs are handled by <a href="http://www.celeryproject.org/">Celery</a> which is a distributed queue manager written in Python. All of these applications are containerized using <a href="https://www.docker.com/">Docker</a> and all the nodes resources and scheduling, as well as all the deployment, is managed by <a href="https://kubernetes.io/">Kubernetes</a> which allows to run, manage and scale containerized applications in a robust and efficient manner.</p>
 
-            <des-img-big src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
+            <des-img-big src="{{rootPath}}static/images/DESaccess.png" on-tap="_dialog" data-item="3">
             Figure 3. Schema for DESaccess arquitecture
             </des-img-big>
 
@@ -47019,7 +47019,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
         <div class="who">• William Wester (Fermilab)</div>
         <div class="who">• Yuanyuan Zhang (Fermilab)</div>
 
-    <div class="what"> <a href="[[rootpath]]about">DESDM Release Team</a></div>
+    <div class="what"> <a href="[[rootPath]]about">DESDM Release Team</a></div>
         <div class="who">• Michael Johnson (NCSA)</div>
         <div class="who">• JD Maloney (NCSA)</div>
         <div class="who">• Felipe Menanteau (NCSA)</div>
@@ -47170,8 +47170,8 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 
     <des-card heading="First Cosmology Results Using Type Ia Supernovae From the Dark Energy Survey (DES-SN3YR)">
         <div style="text-align: center">
-        <iron-image style="width:445px; height:375px; padding:40px;" sizing="contain" src="/static/images/sn/hubble.png"></iron-image>
-            <iron-image style="width:305px; height:375px; padding:40px;" sizing="contain" src="/static/images/sn/money.png"></iron-image>
+        <iron-image style="width:445px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/sn/hubble.png"></iron-image>
+            <iron-image style="width:305px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/sn/money.png"></iron-image>
             </div>
 
       <div class="card-content">
@@ -47301,7 +47301,7 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
 
     <des-card heading="Year 3 RR Lyrae Catalog">
         <div style="text-align: center">
-        <iron-image style="width:760px; height:375px; padding:40px;" sizing="contain" src="/static/images/other/y3-rrl.png"></iron-image>
+        <iron-image style="width:760px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/y3-rrl.png"></iron-image>
             </div>
         <div style="text-align: center">
           <a style="padding: 20px; text-decoration: none" href="https://arxiv.org/abs/1905.00428"><paper-button raised="" class="desButton">Documentation</paper-button></a>
@@ -48008,11 +48008,11 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
 
     <des-card heading="DES Y3 substellar LT and M catalogs">
         <div style="text-align: center">
-        <iron-image style="width:450px; height:375px; padding:40px;" sizing="contain" src="/static/images/other/y3-mlt-gagne.png"></iron-image>
-        <iron-image style="width:450px; height:375px; padding:40px;" sizing="contain" src="/static/images/other/y3-mlt.png"></iron-image>
+        <iron-image style="width:450px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/y3-mlt-gagne.png"></iron-image>
+        <iron-image style="width:450px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/y3-mlt.png"></iron-image>
             </div>
         <div style="text-align: center">
-          <a style="padding: 20px; text-decoration: none" href="[[rootpath]]releases/other/y3-mlt"><paper-button raised="" class="desButton">Documentation</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/other/y3-mlt"><paper-button raised="" class="desButton">Documentation</paper-button></a>
     <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-mlt/"><paper-button raised="" class="desButton">Files</paper-button></a>
 </div>
       <div class="card-content">
@@ -48193,9 +48193,9 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
           <h5>
             L and T dwarfs in wide binary and multiple systems using Dark Energy Survey DR1 and Gaia DR2 data (dal Ponte et al. 2020)
           </h5>
-        <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="/static/images/other/distance_gaia_LT_new.png"></iron-image>
-        <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="/static/images/other/dist_des_LT.png"></iron-image>
-        <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="/static/images/other/distance_LT_LT.png"></iron-image>
+        <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/distance_gaia_LT_new.png"></iron-image>
+        <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/dist_des_LT.png"></iron-image>
+        <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/distance_LT_LT.png"></iron-image>
             </div>
         <div style="text-align: center">
           <a style="padding: 20px; text-decoration: none" href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.5301C/abstract" target="_blank"><paper-button raised="" class="desButton">Documentation</paper-button></a>
@@ -48881,7 +48881,7 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
 
     <des-card heading="Year 3 Low-Surface-Brightness Galaxies">
         <div style="text-align: center">
-        <iron-image style="width:760px; height:375px; padding:40px;" sizing="contain" src="/static/images/other/KDE_peaks.jpg"></iron-image>
+        <iron-image style="width:760px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/KDE_peaks.jpg"></iron-image>
             </div>
         <div style="text-align: center">
           <a style="padding: 20px; text-decoration: none" href="https://arxiv.org/abs/2006.04294"><paper-button raised="" class="desButton">Documentation</paper-button></a>

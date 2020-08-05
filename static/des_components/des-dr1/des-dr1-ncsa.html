@@ -13,7 +13,7 @@
 <div class="fixup" id="ncsa_top"></div>
 <div class="fixdown"></div>
 <paper-dialog id="dialogfig3">
-            <des-img-big  src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
+            <des-img-big  src="{{rootPath}}static/images/DESaccess.png" on-tap="_dialog" data-item="3">
             Figure 3. Schema for DESaccess arquitecture
             </des-img-big>
   <div class="buttons">
@@ -27,7 +27,7 @@
     <paper-button class="desButton" raised on-tap="_goncsa">Go to DESaccess</paper-button>
     <br />
 
-         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an  Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. Please read the <a href="[[rootpath]]terms">Terms and Conditions</a> before using these interfaces. <br />
+         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an  Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. Please read the <a href="[[rootPath]]terms">Terms and Conditions</a> before using these interfaces. <br />
 
              The main services can be summarized as follows:</p>
              <p>
@@ -39,7 +39,7 @@
              <p>
                <a href="https://github.com/mgckind/desaccess">DESaccess code</a> as well as the <a href="https://github.com/mgckind/des_public_new">release page</a> are open sourced. The frontend was developed using web components, HTML, JS and <a href="https://www.polymer-project.org/">Polymer</a> which allows the re-use of already existing elements. The backend is mainly developed using the Python <a href="http://www.tornadoweb.org/en/stable/">Tornado web framework</a>. The submission jobs are handled by <a href="http://www.celeryproject.org/">Celery</a> which is a distributed queue manager written in Python. All of these applications are containerized using <a href="https://www.docker.com/">Docker</a> and all the nodes resources and scheduling, as well as all the deployment, is managed by <a href="https://kubernetes.io/">Kubernetes</a> which allows to run, manage and scale containerized applications in a robust and efficient manner.</p>
 
-            <des-img-big  src="/static/images/DESaccess.png" on-tap="_dialog" data-item="3">
+            <des-img-big  src="{{rootPath}}static/images/DESaccess.png" on-tap="_dialog" data-item="3">
             Figure 3. Schema for DESaccess arquitecture
             </des-img-big>
 

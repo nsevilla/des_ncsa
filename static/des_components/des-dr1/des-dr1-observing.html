@@ -12,14 +12,14 @@
 <!-- FIGURES
 -->
 <paper-dialog id="dialogfig1">
-            <des-img-big src="/static/images/dr1/DECam_chips.png">
+            <des-img-big src="{{rootPath}}static/images/dr1/DECam_chips.png">
             Figure 1. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig2">
-            <des-img-big  src="/static/images/dr1/dr1_bandpass.png">
+            <des-img-big  src="{{rootPath}}static/images/dr1/dr1_bandpass.png">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
@@ -29,32 +29,32 @@
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig3">
-            <des-img-big src="/static/images/dr1/des_footprint_inset_mbtpq.png" on-tap="_dialog" data-item="3"> Figure 3. A plot of the DES survey area in celestial coordinates. The ~5000 deg2 wide-area survey footprint is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b = ± 10deg. The Galactic center ('x') and south Galactic pole ('+') are also marked. The Large and Small Magellanic Clouds are indicated in gray. The inset panel shows an overlay of the coadd processing unit, a coadd tile, on top of the SDSS Stripe 82 area.</des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/des_footprint_inset_mbtpq.png" on-tap="_dialog" data-item="3"> Figure 3. A plot of the DES survey area in celestial coordinates. The ~5000 deg2 wide-area survey footprint is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b = ± 10deg. The Galactic center ('x') and south Galactic pole ('+') are also marked. The Large and Small Magellanic Clouds are indicated in gray. The inset panel shows an overlay of the coadd processing unit, a coadd tile, on top of the SDSS Stripe 82 area.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig4">
 
-            <des-img-big src="/static/images/dr1/dr1_fwhm_hist.png" on-tap="_dialog" data-item="4">Figure 4. Normalized histograms showing the distribution of PSF FHWM for single-epoch images that form the DR1 coadd.<br /> </des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_fwhm_hist.png" on-tap="_dialog" data-item="4">Figure 4. Normalized histograms showing the distribution of PSF FHWM for single-epoch images that form the DR1 coadd.<br /> </des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig5">
-            <des-img-big src="/static/images/dr1/dr1_sky_brightness_hist.png" on-tap="_dialog" data-item="5">Figure 5. Normalized histograms showing the distribution of sky brightness for single-epoch images that form the DR1 coadd.<br /> <br /></des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_sky_brightness_hist.png" on-tap="_dialog" data-item="5">Figure 5. Normalized histograms showing the distribution of sky brightness for single-epoch images that form the DR1 coadd.<br /> <br /></des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig6">
-            <des-img-big src="/static/images/dr1/dr1_nimages_hist.png" on-tap="_dialog" data-item="6">Figure 6. Histograms showing the distribution of overlapping images in each of the grizY bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images. Most regions of the footprint are covered with 3–5 images.</des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_nimages_hist.png" on-tap="_dialog" data-item="6">Figure 6. Histograms showing the distribution of overlapping images in each of the grizY bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images. Most regions of the footprint are covered with 3–5 images.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
 </paper-dialog>
 <paper-dialog id="dialogfig7">
-            <des-img-big src="/static/images/dr1/nimages_i.png" on-tap="_dialog" data-item="7">Figure 7.  Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 degrees.<br /></des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/nimages_i.png" on-tap="_dialog" data-item="7">Figure 7.  Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 degrees.<br /></des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
@@ -97,10 +97,10 @@
         </p>
 
 
-            <des-img src="/static/images/dr1/DECam_chips.png" on-tap="_dialog" data-item="1">
+            <des-img src="{{rootPath}}static/images/dr1/DECam_chips.png" on-tap="_dialog" data-item="1">
             Figure 1. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img>
 
-            <des-img  src="/static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
+            <des-img  src="{{rootPath}}static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
             Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
@@ -113,7 +113,7 @@
 
 <p>The target footprint of the DES wide-area and supernova surveys are shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="3"/>Figure 3</a>. All RA, DEC coordinates in this paper refer to the J2000 epoch. The wide-area footprint shape was selected to obtain a large overlap with the South Pole Telescope survey (<a href="http://adsabs.harvard.edu/abs/2011PASP..123..568C">Carlstrom et al. 2011</a>) and Stripe 82 from SDSS (<a href="http://cdsads.u-strasbg.fr/abs/2009ApJS..182..543A">Abazajian et al. 2009</a>), plus a connection region to enhance overall calibration. Given the cosmological goals of the survey, DES avoids the Galactic plane to minimize stellar foregrounds and extinction from interstellar dust.<br/></p>
 
-            <des-img-big src="/static/images/dr1/des_footprint_inset_mbtpq.png" on-tap="_dialog" data-item="3"> Figure 3. A plot of the DES survey area in celestial coordinates. The ~5000 deg2 wide-area survey footprint is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b = ± 10deg. The Galactic center ('x') and south Galactic pole ('+') are also marked. The Large and Small Magellanic Clouds are indicated in gray. The inset panel shows an overlay of the coadd processing unit, a coadd tile, on top of the SDSS Stripe 82 area.</des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/des_footprint_inset_mbtpq.png" on-tap="_dialog" data-item="3"> Figure 3. A plot of the DES survey area in celestial coordinates. The ~5000 deg2 wide-area survey footprint is shown in red. The 8 shallow supernova fields are shown as blue circles, and the 2 deep supernova fields are shown as red circles. The Milky Way plane is shown as a solid line, with dashed lines at b = ± 10deg. The Galactic center ('x') and south Galactic pole ('+') are also marked. The Large and Small Magellanic Clouds are indicated in gray. The inset panel shows an overlay of the coadd processing unit, a coadd tile, on top of the SDSS Stripe 82 area.</des-img-big>
 
     <p>The wide-field survey uses exposure times of 90s for <em>griz</em> and 45s for Y band, yielding a typical single-epoch depth at S/N = 10 of g = 23.57, r = 23.34, i = 22.78, i = 22.10 and Y = 20.69 (<a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>). The completed survey is expected to be roughly one magnitude deeper, through the coaddition of 10 images in each of the bands for a cumulative exposure time of 900 s in<em> griz</em> and 450 s in Y.</p>
 
@@ -124,16 +124,16 @@
         <p>A single raw DECam exposure is ~0.5 GB in size, and DES collects ~300 science exposures per night. These data are transferred to NOAO for archiving (<a href="http://adsabs.harvard.edu/abs/2010ASPC..434..260F">Fitzpatrick 2010</a>) and to NCSA for further evaluation and processing by the <a href="http://processing">DESDM system</a>. These raw and calibrated single-epoch images are made available by NOAO. </p>
         <p>
 
-            <des-img src="/static/images/dr1/dr1_fwhm_hist.png" on-tap="_dialog" data-item="4">Figure 4. Normalized histograms showing the distribution of PSF FHWM for single-epoch images that form the DR1 coadd.<br /> <br /><br /><br /></des-img>
+            <des-img src="{{rootPath}}static/images/dr1/dr1_fwhm_hist.png" on-tap="_dialog" data-item="4">Figure 4. Normalized histograms showing the distribution of PSF FHWM for single-epoch images that form the DR1 coadd.<br /> <br /><br /><br /></des-img>
 
-            <des-img src="/static/images/dr1/dr1_sky_brightness_hist.png" on-tap="_dialog" data-item="5">Figure 5. Normalized histograms showing the distribution of sky brightness for single-epoch images that form the DR1 coadd.<br /> <br /><br /><br /></des-img>
+            <des-img src="{{rootPath}}static/images/dr1/dr1_sky_brightness_hist.png" on-tap="_dialog" data-item="5">Figure 5. Normalized histograms showing the distribution of sky brightness for single-epoch images that form the DR1 coadd.<br /> <br /><br /><br /></des-img>
 
 
             <p>Between Y1 and Y3, 38,850 wide-field exposures passed baseline survey quality thresholds (<a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>, section 4.7) and are included in coadd processing by DESDM (<a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>). The total number of exposures including the SN fields during the Y1–Y3 period was 61,828. The median airmass of DR1 survey-quality exposures was 1.22, with &gt;99% of exposures taken at airmass &lt; 1.4. Meanwhile, the median delivered seeing (FWHM) was g = 1.12, r = 0.96, i = 0.88, z = 0.84, and Y = 0.90 arcsec (<a href="javascript:void(0)" on-tap="_dialog" data-item="4"/>Figure 4</a>).</p>
         <p>Note that ObsTac prioritizes observations in the riz bandsduring periods of good seeing to advance the main science goals of DES (e.g., cosmological constraints from weak gravitational lensing). <a href="javascript:void(0)" on-tap="_dialog" data-item="5"/>Figure 5</a> shows the distribution of sky brightness levels for single-epoch images; the median sky brightness is g = 22.01, r = 21.15, i = 19.89, z = 18.72, and Y = 17.96 mag arcsec<sup>-2</sup>. The resulting median single-epoch effective image noise level (square root of the calibrated image variance), including additional contributions from read noise and shot noise of the dome flat, is g = 25.25, r = 24.94, i = 24.31, z = 23.58, and Y = 22.28 mag arcsec<sup>-2</sup>.</p>
 
-            <des-img src="/static/images/dr1/dr1_nimages_hist.png" on-tap="_dialog" data-item="6">Figure 6. Histograms showing the distribution of overlapping images in each of the grizY bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images. Most regions of the footprint are covered with 3–5 images.</des-img>
-            <des-img src="/static/images/dr1/nimages_i.png" on-tap="_dialog" data-item="7">Figure 7.  Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 degrees.<br /></des-img>
+            <des-img src="{{rootPath}}static/images/dr1/dr1_nimages_hist.png" on-tap="_dialog" data-item="6">Figure 6. Histograms showing the distribution of overlapping images in each of the grizY bands normalized over the DR1 footprint. Most regions of the footprint are covered with 3–5 images. Most regions of the footprint are covered with 3–5 images.</des-img>
+            <des-img src="{{rootPath}}static/images/dr1/nimages_i.png" on-tap="_dialog" data-item="7">Figure 7.  Map of the DES footprint showing the number of overlapping i-band exposures. Regions of above-average coverage are a feature of the DES hexagonal layout scheme and can be found at intervals of ΔRA = 30 degrees.<br /></des-img>
         </p>
 
         <p><br /></p>
