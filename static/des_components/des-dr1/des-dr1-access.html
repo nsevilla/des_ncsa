@@ -100,7 +100,7 @@
     From these institutions, a rich and complementary set of tools and interfaces were developed to access and interact with DES data in different ways that cover a broad set of use cases which enable scientific discovery.
     For the moment, NCSA and LIneA services are linked to the same account. <br />
     To <b>register</b> visit:
-    <a href="https://des.ncsa.illinois.edu/easyweb/signup/" target="_blank">https://des.ncsa.illinois.edu/easyweb/signup/</a>
+    <a href="https://des.ncsa.illinois.edu/desaccess/login/" target="_blank">https://des.ncsa.illinois.edu/desaccess/login/</a>
     </p>
     <p>
         To learn more about the DES DR1 services use the following links:
@@ -132,7 +132,7 @@
     class desDr1Access extends Polymer.Element {
       static get is() { return 'des-dr1-access'; }
       _goncsa() {
-          var win = window.open('/easyweb/', '_blank');
+          var win = window.open('/desaccess/', '_blank');
           win.focus();
       }
       _gonoao() {
@@ -144,7 +144,7 @@
           win.focus();
       }
       _goregister(e) {
-          var win = window.open('/easyweb/signup/', '_blank');
+          var win = window.open('/desaccess/login/', '_blank');
           win.focus();
       }
       _goregisterNOAO(e) {
