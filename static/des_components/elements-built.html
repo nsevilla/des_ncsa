@@ -32243,8 +32243,8 @@ Custom property | Description | Default
      <app-header condenses="" slot="header" fixed="">
           <app-toolbar>
             <paper-icon-button class="smallScreen" icon="icons:menu" on-tap="_openDrawer"></paper-icon-button>
-              <a href="/" style="text-decoration: none;color: white; padding-top:9px"><iron-image class="wideScreen" style="width:63px; height:60px; margin-right:10px;" sizing="cover" src="{{rootPath}}static/images/DESDM_logo.png"></iron-image></a>
-            <a href="/" style="text-decoration: none;color:white "><paper-item main-title="" class="toolbar">DES Data Management</paper-item></a>
+              <a href="[[rootPath]]" style="text-decoration: none;color: white; padding-top:9px"><iron-image class="wideScreen" style="width:63px; height:60px; margin-right:10px;" sizing="cover" src="{{rootPath}}static/images/DESDM_logo.png"></iron-image></a>
+            <a href="[[rootPath]]" style="text-decoration: none;color:white "><paper-item main-title="" class="toolbar">DES Data Management</paper-item></a>
 
             <!--Extra javascript needs to be added later once the site is live for the search bar to work correctly. -->
             <!-- This is good, we can add it later when with a proper function when ready
@@ -32352,6 +32352,18 @@ Custom property | Description | Default
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id="needindent" name="density" href="[[rootPath]]releases/y1a1/density">Y1 Density Split</a>
+                </div>
+                </app-submenu>
+                
+                <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="voids" href="[[rootPath]]releases/y1a1/voids">Y1 Voids</a>
+                </div>
+                </app-submenu>
+                
+                <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="voids" href="[[rootPath]]releases/y1a1/photoz">Y1 Photo-z</a>
                 </div>
                 </app-submenu>
 
@@ -32533,6 +32545,8 @@ Custom property | Description | Default
                 <des-y1a1-key-redmapper name="key-redmapper"></des-y1a1-key-redmapper>
               <des-y1a1-bao name="bao"></des-y1a1-bao>
               <des-y1a1-density name="density"></des-y1a1-density>
+              <des-y1a1-voids name="voids"></des-y1a1-voids>
+              <des-y1a1-photoz name="photoz"></des-y1a1-photoz>
               <des-y1a1-key-products name="key-products"></des-y1a1-key-products>
           <!-- SN PAGES -->
               <des-sn name="sn"></des-sn>
@@ -32566,6 +32580,7 @@ Custom property | Description | Default
           <des-thankyou name="thanks"></des-thankyou>
           <des-terms name="terms"></des-terms>
           <des-about name="about"></des-about>
+          <des-easyweb name="easyweb"></des-easyweb>
           <des-limited name="limited"></des-limited>
           <des-view404 name="view404"></des-view404>
         </iron-pages>
@@ -32865,12 +32880,12 @@ Custom property | Description | Default
 
           <h3><strong>Overview of the Dark Energy Survey (DES)</strong> </h3>
 
-<p>The DES is a 5000 square degree <em>grizY</em> photometric survey of the Southern sky aimed at understanding the accelerating expansion rate of the universe using four complementary methods: weak gravitational lensing, galaxy cluster counts, baryon acoustic oscillations, and Type Ia supernovae. DES uses the new 3 square degree Dark Energy Camera (DECam) imager, a 570 Megapixel CCD camera installed at the prime focus of on the Blanco 4m telescope at the Cerro Tololo Interamerican Observatory in northern Chile. For about 100 nights per year, from 2013 until 2018, the DECam will scan the sky to perform a 5000 sq-degree wide field survey and 30 sq-degree supernova survey. Learn more on the main <a href="http://www.darkenergysurvey.org/">DES website.</a></p>
+<p>The DES is a 5000 square degree <em>grizY</em> photometric survey of the Southern sky aimed at understanding the accelerating expansion rate of the universe using four complementary methods: weak gravitational lensing, galaxy cluster counts, baryon acoustic oscillations, and Type Ia supernovae. DES uses the new 3 square degree Dark Energy Camera (DECam) imager, a 570 Megapixel CCD camera installed at the prime focus of on the Blanco 4m telescope at the Cerro Tololo Interamerican Observatory in northern Chile. For about 100 nights per year, from 2013 until 2018, the DECam scanned the sky to perform a 5000 sq-degree wide field survey and 30 sq-degree supernova survey. Learn more on the main <a href="http://www.darkenergysurvey.org/">DES website.</a></p>
 
           <h3><strong>Dark Energy Survey Data Managment (DESDM) at NCSA</strong></h3>
-<p>The Dark Energy Survey Data Management (DESDM) Project developed and operates the DESDM system at the National Center for Supercomputing Applications (NCSA) at the University of Illinois at Urbana-Champaign.&nbsp;This system is used for the processing and calibration of DES data and the DECam Community Pipeline. The DECam Community Pipeline is used by NOAO to process DECam data obtained by non-DES observers.
-</p><p> Our mission is to process the raw data generated by the DECAM instrument at the CTIO observatory into science-ready data products. Initially, DESDM will serve these products to the collaboration, and then, after a proprietary period, to the public.</p>
-<p> Survey operations began on August 31, 2013, and DES makes its data public in two ways. First, reduced DECAam images are available from NOAO a year after they are taken, starting in August 2014. Second, DES will produce two public data releases, one about midway through the survey after the first three years of operations, and a second a final release after completion. </p>
+<p>The Dark Energy Survey Data Management (DESDM) Project developed and operates the DESDM system at the National Center for Supercomputing Applications (NCSA) at the University of Illinois at Urbana-Champaign. This system is used for the processing and calibration of DES data and the DECam Community Pipeline. The DECam Community Pipeline is used by NOAO to process DECam data obtained by non-DES observers.
+</p><p> Our mission is to process the raw data generated by the DECam instrument at the CTIO observatory into science-ready data products. We began providing data access to the general public after an initial proprietary period when DESDM served these products only to the collaboration.</p>
+<p> DES makes its data public in two ways. First, reduced DECam images are made available from NOAO a year after they are taken. Second, DES will produce two public data releases. The first one, DR1, covers data  products  derived  from  wide-area  survey  observations taken in the first three years of science operation between August 2013 to February 2016. DR1 was released in 2018. The final public data release will be available in early 2021. </p>
 
 
 
@@ -33029,6 +33044,33 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
       static get is() { return 'des-about'; }
     }
     window.customElements.define(DesAbout.is, DesAbout);
+  </script>
+</dom-module>
+<dom-module id="des-easyweb" assetpath="des-pages/">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
+
+    <des-card>
+         <div class="card-content">
+<div id="main-content">
+
+    <h3 style="padding-top: 0px;"><strong>Easyweb (aka DESaccess) have been migrated to a new site. <a href="https://deslabs.ncsa.illinois.edu/transition_desaccess.html">Read More...</a></strong></h3>
+
+</div>
+         </div>
+    </des-card>
+  </template>
+
+  <script>
+    class DesEasyweb extends Polymer.Element {
+      static get is() { return 'des-easyweb'; }
+    }
+    window.customElements.define(DesEasyweb.is, DesEasyweb);
   </script>
 </dom-module>
 <dom-module id="des-releases" assetpath="des-pages/">
@@ -33270,175 +33312,117 @@ Indicating one or more relevant topics will help us to properly answer your ques
     </style>
 
     <des-card heading="Terms and Conditions">
-         <div class="card-content">
-             <p>
-               <span style="color: rgb(33,33,33);">Welcome to the DESaccess website.<br>
-               </span>
-               <span style="color: rgb(33,33,33);">NCSA provides these website applications and other products and services to access DES public data.By using these services and &nbsp;data products you &nbsp;agree to abide by these terms.<br>
-               </span>
-               <span style="color: rgb(33,33,33);">NCSA provides these services and access to DES data, subject to the following policies and agreements, conditions, and licenses.<br>
-               </span>
-             </p>
-             <p>
-               <span style="color: rgb(33,33,33);">These Terms are subject to review and modification without user notifice. Revisions and changes will be published on this page.<br>
-               </span>
-             </p>
-             <p>
-               <span style="color: rgb(33,33,33);">For more information regarding these terms, please contact us at </span>
-               <a href="mailto:des-dr-help@ncsa.illinois.edu">
-                 <span style="color: rgb(17,85,204);">des-dr-help@ncsa.illinois.edu</span>
-               </a>
-               <span style="color: rgb(255,0,0);">.</span>
-             </p>
-             <h3>
-               <u>
-                 <span style="color: rgb(67,67,67);">Services</span>
-               </u>
-             </h3>
-             <p>
-               <span style="color: rgb(0,0,0);">Registered users agree that as a result of registering for these services they will receive maintenance, administrative, and general announcements by email.</span>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">Registered users acknowledge that NCSA provideS these services “as is”. We are a small team and we are trying to provide an enjoyable and seamless user experience when accessing DES data. NCSA does not make any specific promises about these services except to &nbsp;do the best possible to accomplish our goal. </span>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">To provide registered users with a fair and homogeneous experience, service &nbsp;limitations are detailed in each application’s documentation. These limitations include CPU time for long queries and memory resources for performing cutouts for many locations at once, among others. NCSA retains the right to stop any process or jobs that &nbsp;is consuming more resources than expected.</span>
-             </p>
-             <h3>
-               <u>
-                 <span style="color: rgb(67,67,67);">Data Policy</span>
-               </u>
-             </h3>
-             <p>
-               <span style="color: rgb(0,0,0);">Registered users who make use of these data (catalogs, files or images) for research, teaching purposes, and other activities may freely use these products under the condition to abide by the License below.</span>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">Commercial use of these data is strictly prohibited without permission.</span>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">If in doubt about this Data Policy or how it applies in your case, please do not hesitate to contact us.</span>
-             </p>
-             <h3>
-               <u>
-                 <span style="color: rgb(67,67,67);">Acceptable Use Policy</span>
-               </u>
-             </h3>
-             <p>
-               <span style="color: rgb(0,0,0);">Registered users agree to use these services, including the web pages, the web applications, and the file servers, for their intended purpose and to not &nbsp;cause harm or perform actions that significantly impede, in the judgment of service managers, other users from full use of these services. </span>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">Registered users agree to use only authorized access methods, to access only &nbsp;authorized data, and to not perform any unauthorized changes to the documentation or to our services.</span>
-             </p>
-             <p>
-               <span style="color: rgb(33,33,33);">Termination: NCSA retains the right to terminate or interrupt the usage of these services if a registered user violates the Acceptable Use Policy.</span>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">Data Expiration: User-generated data, including internal database tables, files as result of databases queries, and cutout files, will be stored for a limited period of time, between 7 and 10 days, under normal conditions.</span>
-             </p>
-             <h3>
-               <u>
-                 <span style="color: rgb(67,67,67);">License</span>
-               </u>
-             </h3>
-             <p>
-               <span style="color: rgb(0,0,0);">Registered users agree that the data obtained &nbsp;from this site may be used for any purpose, provided the Citation and Acknowledgement Policy is applied to any publication or other public dissemination of the data which is &nbsp;obtained by registered users from the site or to any data derived from data obtained from the site.</span>
-             </p>
-             <h3>
-               <u>
-                 <span style="color: rgb(67,67,67);">Citation, Copyright and &nbsp;Acknowledgement Policy</span>
-               </u>
-             </h3>
-
-             <p>
-               <span style="color: rgb(34,34,34);">Please visit the <a href="https://des.ncsa.illinois.edu/thanks">acknowledgments</a> page for citations related to SV or Y1 data products.</span>
-             </p>
-             <p>
-               <span style="color: rgb(34,34,34);">Registered users accessing DR1 data are requested to credit and acknowledge the DES Collaboration when using any and all material from these services.</span>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">For citations in academic format cite:</span>
-             </p>
-             <ul>
-               <li style="list-style-type: disc;">
-                 <p>
-                   <span><a href="http://adsabs.harvard.edu/abs/2018arXiv180103181A">The Dark Energy Survey Data Release 1, DES Collaboration (2018)</a></span>
-                 </p>
-               </li>
-               <li style="list-style-type: disc;">
-                 <p>
-                   <span><a href="http://adsabs.harvard.edu/abs/2018PASP..130g4501M">The Dark Energy Survey Image Processing Pipeline, E. Morganson, et al. (2018)</a></span>
-                 </p>
-               </li>
-               <li style="list-style-type: disc;">
-                 <p>
-                   <span style="color: rgb(65,105,225);">
-                     <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">The Dark Energy Camera, B. Flaugher, et al, AJ, 150, 150 (2015)</a>
-                   </span>
-                 </p>
-               </li>
-             </ul>
-             <p>
-               <span style="color: rgb(0,0,0);">
-                 <br>For other work credit:</span>
-             </p>
-             <ul>
-               <li style="list-style-type: disc;">
-                 <p>
-                   <span>
-                     <em>“The Dark Energy Survey Data Release 1"</em>
-                     <br>
-                   </span>
-                 </p>
-               </li>
-             </ul>
-             <p>
-               <span style="color: rgb(0,0,0);">Registered users are requested to include the respective acknowledgments in any publication that uses DES data. Please reference the Acknowledgements page: </span>
-             </p>
-             <p>
-               <a href="https://des.ncsa.illinois.edu/thanks">
-                 <span style="color: rgb(17,85,204);">https://des.ncsa.illinois.edu/thanks</span>
-               </a>
-             </p>
-             <p>
-               <a href="https://des.ncsa.illinois.edu/thanks">
-                 <span style="color: rgb(17,85,204);">
-                   <br>
-                 </span>
-               </a>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">If NCSA services are used in any scientific or educational work, we suggest the following acknowledgment:</span>
-             </p>
-             <p>
-               <em>
-                 <span style="color: rgb(0,0,0);">This work has made use of &nbsp;NCSA resources and services.</span>
-               </em>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">Registered users are asked to notify the DES Release Team (</span>
-               <a href="mailto:des-dr-help@ncsa.illinois.edu">
-                 <span style="color: rgb(17,85,204);">des-dr-help@ncsa.illinois.edu</span>
-               </a>
-               <span style="color: rgb(0,0,0);">) upon any acceptance or publication of an article, poster, or educational work which is based on DES data.</span>
-             </p>
-             <h3>
-               <u>
-                 <span style="color: rgb(67,67,67);">Privacy Policy</span>
-               </u>
-             </h3>
-             <p>
-               <span style="color: rgb(0,0,0);">Information collected during registration (such as Name, Last Name, and Email) and usage of these services, such accessing logs and job statistics, is used solely for the management of the services provided. &nbsp;However, information you disclose, including email addresses, when using supporting fora may be available in other &nbsp;supporting fora. An example of a supporting fora is an online help discussion.</span>
-             </p>
-             <p>
-               <span style="color: rgb(0,0,0);">Your username may be visible to other users of the system, for example, visible in your status and other operational meta-data. &nbsp;&nbsp;</span>
-             </p>
-             <p>
-               <br>
-             </p>
-
-
-
-         </div>
+        <div class="card-content" style="margin-right: 1rem;">
+            <p>
+                Welcome to the DESaccess website. NCSA provides these website applications and other products and services to access DES public data. By using these services and data products you agree to abide by these terms.
+            </p>
+            <p>
+                NCSA provides these services and access to DES data, subject to the following policies and agreements, conditions, and licenses.
+            </p>
+            <p>
+                These Terms are subject to review and modification without user notice. Revisions and changes will be published on this page.
+            </p>
+            <p>
+                For more information regarding these terms, please contact us at <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>.
+            </p>
+            <h3>
+                <u>Services</u>
+            </h3>
+            <p>
+                Registered users agree that as a result of registering for these services they will receive maintenance, administrative, and general announcements by email.
+            </p>
+            <p>
+                Registered users acknowledge that NCSA provides these services “as is”. We are a small team and we are trying to provide an enjoyable and seamless user experience when accessing DES data. NCSA does not make any specific promises about these services except to do the best possible to accomplish our goal. 
+            </p>
+            <p>
+                To provide registered users with a fair and homogeneous experience, service limitations are detailed in each application's documentation. These limitations include CPU time for long queries and memory resources for performing cutouts for many locations at once, among others. NCSA retains the right to stop any process or job that is consuming more resources than expected.
+            </p>
+            <h3>
+                <u>Data Policy</u>
+            </h3>
+            <p>
+                Registered users who make use of these data (catalogs, files or images) for research, teaching purposes, and other activities may freely use these products under the condition to abide by the License below.
+            </p>
+            <p>
+                Commercial use of these data is strictly prohibited without permission.
+            </p>
+            <p>
+                If in doubt about this Data Policy or how it applies in your case, please do not hesitate to contact us.
+            </p>
+            <h3>
+                <u>Acceptable Use Policy</u>
+            </h3>
+            <p>
+                Registered users agree to use these services, including the web pages, the web applications, and the file servers, for their intended purpose and to not cause harm or perform actions that significantly impede, in the judgment of service managers, other users from full use of these services. 
+            </p>
+            <p>
+                Registered users agree to use only authorized access methods, to access only authorized data, and to not perform any unauthorized changes to the documentation or to our services.
+            </p>
+            <p>
+                Termination: NCSA retains the right to terminate or interrupt the usage of these services if a registered user violates the Acceptable Use Policy.
+            </p>
+            <p>
+                Data Expiration: User-generated data, including internal database tables, files as result of databases queries, and cutout files, will be stored for a limited period of time, between 7 and 10 days, under normal conditions.
+            </p>
+            <h3>
+                <u>License</u>
+            </h3>
+            <p>
+                Registered users agree that the data obtained from this site may be used for any purpose, provided the Citation and Acknowledgment Policy is applied to any publication or other public dissemination of the data which is&nbsp;obtained by registered users from the site or to any data derived from data obtained from the site.
+            </p>
+            <h3>
+                <u>Citation, Copyright and Acknowledgment Policy</u>
+            </h3>
+            <p>
+                Please visit the <a href="https://des.ncsa.illinois.edu/thanks">acknowledgments</a> page for citations related to SV or Y1 data products.
+            </p>
+            <p>
+                Registered users accessing DR1 data are requested to credit and acknowledge the DES Collaboration when using any and all material from these services.
+            </p>
+            <p>
+                For citations in academic format cite:
+            </p>
+            <ul>
+                <li style="list-style-type: disc;">
+                    <p><a href="http://adsabs.harvard.edu/abs/2018arXiv180103181A">The Dark Energy Survey Data Release 1, DES Collaboration (2018)</a></p>
+                </li>
+                <li style="list-style-type: disc;">
+                    <p><a href="http://adsabs.harvard.edu/abs/2018PASP..130g4501M">The Dark Energy Survey Image Processing Pipeline, E. Morganson, et al. (2018)</a></p>
+                </li>
+                <li style="list-style-type: disc;">
+                    <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">The Dark Energy Camera, B. Flaugher, et al, AJ, 150, 150 (2015)</a>
+                <p></p>
+                </li>
+            </ul>
+            For other work credit:<p></p>
+            <ul>
+                <li style="list-style-type: disc;">
+                    <em>“The Dark Energy Survey Data Release 1"</em>
+                </li>
+            </ul>
+            <p>
+                Registered users are requested to include the respective acknowledgments in any publication that uses DES data. Please reference <a href="https://des.ncsa.illinois.edu/thanks"></a>the Acknowledgments page for more details. 
+            </p>
+            <p>
+                If NCSA services are used in any scientific or educational work, we suggest the following acknowledgment:
+            </p>
+            <p>
+                <em>This work has made use of&nbsp;NCSA resources and services.</em>
+            </p>
+            <p>
+                Registered users are asked to notify the DES Release Team (<a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>) upon any acceptance or publication of an article, poster, or educational work which is based on DES data.
+            </p>
+            <h3>
+                <u>Privacy Policy</u>
+            </h3>
+            <p>
+                Information collected during registration (such as Name, Last Name, and Email) and analysis of service usage are used solely for the management and improvement of the services provided. However, any personal information you disclose when using a support forum such as an online help discussion may become available to related support systems.
+            </p>
+            <p>
+                Your username may be visible to other users of the system, for example, visible in your status and other operational metadata.
+            </p>
+      
+        </div>
     </des-card>
   </template>
 
@@ -33871,7 +33855,7 @@ contains a list of urls for all files </div>
 <tr>
 <td style="color: #03A9F4">RedMaPPer</td>
 <td>redmapper_sva1-expanded_public_v6.3_members.fits.gz</td>
-<td><a href="/releases/sva1/content/redmapper_sva1-expanded_public_v6.3_members.fits.gz" target="_parent"> <iron-icon icon="icons:file-download"></iron-icon> </a></td>
+<td><a href="/[[rootPath]]releases/sva1/content/redmapper_sva1-expanded_public_v6.3_members.fits.gz" target="_parent"> <iron-icon icon="icons:file-download"></iron-icon> </a></td>
 <td>5.1MB</td>
 <td>5354696</td>
 </tr>
@@ -35612,7 +35596,11 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y1a1/key-catalogs">Y1KP catalogs</a>: This section contains additional science catalogs based on different reduction pipelines. We include the "Multi-object" fitting (MOF) photometry (and their depth maps), photometric redshifts based on MOF, the PSF and shape catalogs used in the weak lensing analyses and the redMaGiC and redMaPPer galaxy catalogs (based on MOF).</p>
       <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y1a1/key-products">Y1KP products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y1KP Catalogs described above.</p>
       <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y1a1/bao">Y1 BAO sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based in a combination of the Y1 Gold catalog and MOF photometry.</p>
-      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y1a1/density">Y1 density split statistics</a>: Data vectors and likelihoods for measuring density split statistics. These results used the Y1KP catalogs described above<strong>.</strong>
+      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y1a1/density">Y1 density split statistics</a>: Data vectors and likelihoods for measuring density split statistics. These results used the Y1KP catalogs described above</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y1a1/voids">Y1 Voids</a>: DES Y1 Void Catalogs.
+        <span style="color: rgb(255,0,0);"> </span>
+      </p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y1a1/photoz">Y1 DNF Photoz</a>: DES Y1A1 photoz by DNF code
         <span style="color: rgb(255,0,0);"> </span>
       </p>
       <p style="text-align: left;">
@@ -37109,6 +37097,255 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       static get is() { return 'des-y1a1-density'; }
     }
     window.customElements.define(DesY1A1Density.is, DesY1A1Density);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-voids" assetpath="des-y1a1/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 VIDE Voids catalogs">
+        <div style="text-align: center">
+        <iron-image style="width:375px; height:375px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/y1a1/voids_in_RedMaPPer_Y1A1.png"></iron-image>
+            <iron-image style="width:355px; height:355px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/y1a1/RM_box5.png"></iron-image>
+            </div>
+
+<div class="card-content">
+
+
+
+<h2>Overview</h2>
+<p>Here we report the watershed void catalogs that were described in <a href="https://academic.oup.com/mnras/article/487/2/2836/5509591">Pollina (2019)</a> and employed in various DES papers (<a href="https://academic.oup.com/mnras/article-abstract/490/3/3573/5583042?redirectedFrom=fulltext">Fang 2019</a>, <a href="https://arxiv.org/abs/1911.02951">Vielzeuf 2019</a>). These catalogs are obtained by running VIDE, a widely used watershed void finder, on the latest Y1 catalogs of redmagic galaxies and redmapper clusters. We also provide the void-catalogs obtained in the same manner, albeit using mocks (extracted from the MICE2 simulations). More info on the void finder and its outputs can be found on <a href="https://bitbucket.org/cosmicvoids/vide_public/wiki/Finding">VIDE's bitbucket page</a> (and reference therein).</p>
+<p>
+  <br>
+</p>
+<p>
+</p><h2>Download</h2>
+<p>
+  For each run of VIDE we include two tables that contain different info on the same void sample. The first table includes the "sky positions" (RA, dec, z), void radius, and void ID. The second table ("center central") includes the following columns: volume-weighted centre x,y,z [Mpc/h], volume [normalised by mean volume per tracer particle], effective radius [Mpc/h], redshift, volume [Mpc/h^3], void ID (unique id of the void), density contrast, num part (number of tracer particles included in the void), parent ID (ID of the parent void), tree level (level occupied in the nested void structure), number of children (number of sub-voids), central density (density within 1/4 of the void radius, in units of mean density). All of these labels are also reported in the header of each file. To match the "sky position" of a void with its properties in the "central center" table, you need to use its unique void ID.</p>
+<ul>
+  <li>
+    <strong>
+      <em>Run of VIDE on RedMaGiC Y1A1 high-density sample:</em>&nbsp; </strong>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/voids_catalogs/RedMaGiC_Y1A1_highdens.zip" target="_blank">RedMaGiC_Y1A1_highdens</a>
+  </li>
+  <li>
+    <em>
+      <strong>Run of VIDE on RedMaGiC Y1A1 high-luminosity sample:</strong>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/voids_catalogs/RedMaGiC_Y1A1_highlum.zip" target="_blank">RedMaGiC_Y1A1_highlum</a>
+  </em></li><em>
+  <li>
+    <em>
+      <strong>Run of VIDE on RedMaGiC Y1A1 higher-luminosity sample:</strong>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/voids_catalogs/RedMaGiC_Y1A1_higherlum.zip" target="_blank">RedMaGiC_Y1A1_higherlum</a>
+  </em></li><em>
+  <li>
+    <em>
+      <strong>Run of VIDE on RedMaPPer Y1A1 sample (volume limited):</strong> </em>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/voids_catalogs/RedMaPPer_Y1A1_vlim.zip" target="_blank">RedMaPPer_Y1A1_vlim</a>
+  </li>
+  <li>
+    <em>
+      <strong>Run of VIDE on RedMaPPer Y1A1 sample (full sample): </strong>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/voids_catalogs/RedMaPPer_Y1A1_full.zip" target="_blank">RedMaPPer_Y1A1_full</a>
+    </em>
+  </li>
+  <li>
+    <span style="letter-spacing: 0.0px;">
+      <strong>
+        <em>Run of VIDE on MICE2 Y1A1 mocks:</em>
+      </strong>&nbsp;
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/voids_catalogs/VIDE_on_Mice2_Y1A1_mocks.zip" target="_blank">VIDE_on_Mice2_Y1A1_mocks</a>
+    </span>
+  </li>
+</em></em></ul><em><em>
+<p>
+  <br>
+</p>
+
+
+
+</em></em></div><em><em>
+</em></em></des-card><em><em>
+</em></em></template>
+
+<script>
+    class DesY1A1Voids extends Polymer.Element {
+      static get is() { return 'des-y1a1-voids'; }
+    }
+    window.customElements.define(DesY1A1Voids.is, DesY1A1Voids);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-photoz" assetpath="des-y1a1/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 DNF photo-zs">
+<div class="card-content">
+
+<h2>
+  <strong>Overview</strong>
+</h2>
+<p>
+  This page contains the Y1A1 photo-zs computed using the DNF v4.0.5 algorithm. DNF (<a href="https://doi.org/10.1093/mnras/stw857">De Vicente, J. et al. (2016)</a>) computes the photo-z using a linear combination of fluxes. The coefficients of this linear combination&nbsp; are computed&nbsp; by the fit to the nearest neighbors on a training sample. The fluxes used are MOF (ngmix multi-epoch, multi-band, and multi-object fit) as described in <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>.&nbsp;The simultaneous closeness in fluxes and colors is achieved by directional neighborhood in color-magnitude space. The primary photo-z estimate is DNF_Z which is commonly used for tomographic binning. A second photo-z DNF_Z_1NN is provided to estimate photo-z distributions either per tomographic bin n(z) or globally N(z).
+</p>
+<h2>
+  <strong>Download Catalog&nbsp;&nbsp;</strong>
+  <strong>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/y1a1_gold_d04_wdnf.fits">DNF photo-z</a>
+  </strong>
+</h2>
+<h2>
+  <strong>Catalog Description</strong>
+</h2>
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td colspan="1">COADD_OBJECTS_ID</td>
+      <td colspan="1">Identifier&nbsp; assigned&nbsp; to&nbsp; each&nbsp; object&nbsp; in&nbsp; the&nbsp; co-add&nbsp; DES&nbsp; Y1&nbsp; dataset,&nbsp; reported&nbsp; here&nbsp; from&nbsp; The Gold Catalog</td>
+    </tr>
+    <tr>
+      <td colspan="1">RA/DEC</td>
+      <td colspan="1">Right ascension and declination (degrees) taken from the GOLD catalog.</td>
+    </tr>
+    <tr>
+      <td colspan="1">MAG_MOF_{GRIZ}</td>
+      <td colspan="1">
+        <span style="color: rgb(51,51,51);text-decoration: none;">Calibrated magnitudes for Composite Model fit, includes stellar locus fit correction&nbsp;for bands GRIZ as described in&nbsp;<span style="color: rgb(0,0,0);">
+            <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MAGERR_MOF_{GRIZ}</td>
+      <td colspan="1">Obtained as &nbsp;<span style="letter-spacing: 0.0px;">1.0857362 *&nbsp;MOF_FLUXERR / MOF_FLUX for bands GRIZ,&nbsp;<span style="color: rgb(51,51,51);text-decoration: none;"> includes stellar locus fit correction&nbsp;for bands GRIZ as described in&nbsp;<span style="color: rgb(0,0,0);">
+              <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+            </span>
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MOF_FLUX_{GRIZ}</td>
+      <td colspan="1">MOF flux for bands GRIZ&nbsp;<span style="color: rgb(51,51,51);text-decoration: none;"> includes stellar locus fit correction&nbsp;for bands GRIZ as described in&nbsp;<span style="color: rgb(0,0,0);">
+            <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MOF_FLUXERR_{GRIZ}</td>
+      <td colspan="1">
+        <p>MOF flux error for bands GRIZ&nbsp;<span style="color: rgb(51,51,51);text-decoration: none;"> includes stellar locus fit correction&nbsp;for bands GRIZ as described in&nbsp;<span style="color: rgb(0,0,0);">
+              <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+            </span>
+          </span>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>DNF_Z</td>
+      <td>DNF photo-z&nbsp;</td>
+    </tr>
+    <tr>
+      <td>DNF_Z_1NN</td>
+      <td>DNF nearest neighbor photo-z</td>
+    </tr>
+    <tr>
+      <td>DNF_ZSIGMA</td>
+      <td>Estimated DNF_Z error (unreliable photo-zs are tagged by 99)</td>
+    </tr>
+    <tr>
+      <td colspan="1">FLAGS_GOLD</td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Gold quality flags (one value for all bands). 0 means no issues.</span>
+        <br style="text-align: left;">
+        <ul style="text-align: left;">
+          <li>
+            <span style="color: rgb(0,0,0);">1: OR of SExtractor FLAGS_[GRIZ] &gt; 3 (GOLD is defined as good all of [GRIZ])</span>
+          </li>
+          <li>
+            <span style="color: rgb(0,0,0);">2: Crazy color (&lt;-1 or &gt;4 in either g-r,r-i or i-z in MAG_AUTO SLR corrected)</span>
+          </li>
+          <li>
+            <span style="color: rgb(0,0,0);">4: Bright Blue Squares around bright objects</span>
+            <ul>
+              <li>
+                <span style="color: rgb(0,0,0);">NEPOCHS_G = 0 &amp; MAGERR_AUTO_G &lt; 0.05 &amp; (MAG_MODEL_I - MAG_AUTO_I) &lt; -0.4. SLR corrected magnitudes have been used</span>
+                <br>
+                <span style="color: rgb(0,0,0);">(MAG_DETMODEL_G - MAG_MODEL_G) &gt; 2 &amp; MAG_MODEL_G &lt; 19 are objects near BBS's almost ~100% of the time (very few of them after BBS cuts though). This cut has not been included</span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span style="color: rgb(0,0,0);">8: Bad astrometric colors: ALPHAWIN_J2000/DELTAWIN_J2000 in G is not consistent with position in I within 1" if MAGERR_AUTO_G &lt; 0.22 (NB the slight inconsistency with the bad region definition, which requires MAGERR_AUTO_G &lt; 0.2 and MAG_AUTO_G &lt; 22 for an object to be termed as having a bad astrometric color).</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">FLAGS_BADREGION</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Any badregion information from GOLD footprint/bad regions (one value for all bands)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MOF_FLAGS</td>
+      <td colspan="1">mof_flags is a combined flag for all mof processing.<br>It is based on the<span>&nbsp;</span>
+        <code>flags</code>
+        <span>&nbsp;</span>field from mof, which describes any problems that occured in the primary fitting.<br>It also is based on the flags related to the convergence of the overall iteration for the MOF group.<br>It is 0 where there was an mof measurement and the following holds:<br>(flags==0) &amp; ((cm_mof_flags &amp; 2**8) == 0) &amp; ((cm_mof_flags &amp; 2**9) == 0)<br>it is equal 1 otherwise.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>
+  <strong>Contact&nbsp;&nbsp;</strong>
+</h4>
+<h4>
+  <strong>
+    <a href="mailto:juan.vicente@ciemat.es">juan.vicente@ciemat.es</a>
+  </strong>
+</h4>
+
+
+
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1Photoz extends Polymer.Element {
+      static get is() { return 'des-y1a1-photoz'; }
+    }
+    window.customElements.define(DesY1A1Photoz.is, DesY1A1Photoz);
   </script>
 
 </dom-module>
@@ -46559,7 +46796,7 @@ font-family:  "Courier New", Courier, monospace;
 <div class="fixup" id="faq7"></div>
 <h3 class="fixdown">7. How do I find out if my object/location on the sky is in the DES footprint?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
-<p class="answer">You can use the interactive tools,&nbsp;<a href="https://des.ncsa.illinois.edu/easyweb/footprint">Here</a>&nbsp;or here&nbsp;<a href="https://desportal2.cosmology.illinois.edu/dri/apps/home/">Here</a>&nbsp;. &nbsp;Using Healpix you can locate a position (or a set of positions) within a Healpix cell, then you can select the cell and the objects within directly from the DR1 DB. HPIX resolutions in NESTED schema are available at nside = 32, 64,&nbsp;1024,4096,16384</p>
+<p class="answer">You can use the interactive tools such as&nbsp;<a href="https://des.ncsa.illinois.edu/desaccess/tilefinder" target="_blank">DESaccess TileFinder</a>&nbsp;or <a href="http://desportal.cosmology.illinois.edu/" target="_blank">LIneA Science Server apps</a>&nbsp;. &nbsp;Using Healpix you can locate a position (or a set of positions) within a Healpix cell, then you can select the cell and the objects within directly from the DR1 DB. HPIX resolutions in NESTED schema are available at nside = 32, 64,&nbsp;1024,4096,16384</p>
 
 <p><br></p>
 <div class="fixup" id="faq8"></div>
@@ -46828,7 +47065,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
     From these institutions, a rich and complementary set of tools and interfaces were developed to access and interact with DES data in different ways that cover a broad set of use cases which enable scientific discovery.
     For the moment, NCSA and LIneA services are linked to the same account. <br>
     To <b>register</b> visit:
-    <a href="https://des.ncsa.illinois.edu/easyweb/signup/" target="_blank">https://des.ncsa.illinois.edu/easyweb/signup/</a>
+    <a href="https://des.ncsa.illinois.edu/desaccess/login/" target="_blank">https://des.ncsa.illinois.edu/desaccess/login/</a>
     </p>
     <p>
         To learn more about the DES DR1 services use the following links:
@@ -46860,7 +47097,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
     class desDr1Access extends Polymer.Element {
       static get is() { return 'des-dr1-access'; }
       _goncsa() {
-          var win = window.open('/easyweb/', '_blank');
+          var win = window.open('/desaccess/', '_blank');
           win.focus();
       }
       _gonoao() {
@@ -46872,7 +47109,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
           win.focus();
       }
       _goregister(e) {
-          var win = window.open('/easyweb/signup/', '_blank');
+          var win = window.open('/desaccess/login/', '_blank');
           win.focus();
       }
       _goregisterNOAO(e) {
@@ -46912,20 +47149,23 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
     <paper-button class="desButton" raised="" on-tap="_goncsa">Go to DESaccess</paper-button>
     <br>
 
-         <p>NCSA provides the primary set of basic web applications to access DES DR1 data. Developed at NCSA, DESaccess provides the user with an asynchronized job submission interface to perform SQL statements against an &nbsp;Oracle DB which contains the DES DR1 catalogs or to generate cutouts from a given list of positions from the coaddimages. It also contains information regarding the catalogs, an interactive footprint finder to locate positions and tiles and means to access images and catalogs in a tile-based format. Please read the <a href="[[rootPath]]terms">Terms and Conditions</a> before using these interfaces. <br>
+         <p>NCSA provides a primary set of basic web applications and a programmatic API to access DES DR1 data. Developed at NCSA, <a href="https://des.ncsa.illinois.edu/desaccess">DESaccess</a> provides an interface to submit asynchronous jobs that perform potentially lengthy operations involving the DES DR1 catalogs stored on the co-located Oracle database. These jobs include executing SQL statements and generating cutouts from the image data given list of positions and desired areal dimensions. <a href="https://des.ncsa.illinois.edu/desaccess">DESaccess</a> also contains information regarding the catalogs and an app to locate data in a tile-based format by coordinate or tile name for direct download. Please read the <a href="[[rootPath]]terms">Terms and Conditions</a> before using these interfaces. </p>
 
-             The main services can be summarized as follows:</p>
+             <p>The main services can be summarized as follows:</p>
              <p>
-               <strong>SQL web client:</strong> We provide a SQL web client that allows the user to submit asynchronous query jobs against the Oracle 12 database which contains the DES DR1 tables, the submitted jobs enter into a queue and results can be retrieved at later times in either csv, FITS (<a href="http://adsabs.harvard.edu/abs/1981A%26AS...44..363W">Wells et al. 1981</a>) or HDF5 (<a href="http://www.hdfgroup.org/HDF5/">The HDF Group 1997-NNNN</a>) file format, supporting compression in some of the cases. Big jobs are divided into chunks of 1.5GB to facilitate file transfer. This interface also provides means to check syntax and to evaluate synchronous jobs for a quick view. Result files are served from a HTTP server which allows file transfer to remote machines. The query used and the results are persisted for a limited period of time under a “My-Jobs” tab. The query interface is powered using <a href="https://github.com/mgckind/easyaccess">easyaccess</a>, a enhance SQL command line interpreter designed for astronomical surveys and developed for DES.</p>
+               <strong>SQL web client:</strong> We provide a SQL web client that allows the user to submit asynchronous query jobs against the Oracle 12 database which contains the DES DR1 tables. The submitted jobs enter a queue and results can be retrieved when the job completes in one of several file formats, including CSV, FITS (<a href="http://adsabs.harvard.edu/abs/1981A%26AS...44..363W">Wells et al. 1981</a>) and HDF5 (<a href="http://www.hdfgroup.org/HDF5/">The HDF Group 1997-NNNN</a>), supporting compression in some of the cases. Big jobs are divided into smaller chunks to facilitate file transfer. This interface also provides a means to check syntax and to run shorter, synchronous jobs for quick results. The query interface is powered by <a href="https://github.com/des-labs/easyaccess">easyaccess</a>, an enhanced SQL command line interpreter designed for astronomical surveys and developed for DES.</p>
              <p>
-               <strong>Cutout server:</strong> The cutout server allows the user to generate cutouts up to 15' on a side centered on a given set of positions, the returned files include all the cutouts in all the bands, a cutout in the detection image, a color TIFF image using STIFF (<a href="http://adsabs.harvard.edu/abs/2012ASPC..461..263B">Bertin 2012</a>) by combining the g, r and i bands, and a PNG image. These cutout jobs also go into a queue and results can retrieve later from the files served remotely. The header of the cutouts is a copy from the original header from the images with extra keys indicating the center of the cutout RA_CUTOUT and DEC_CUTOUT. Results are preserved for a limit period of time and can also be retrieved under a “My-Jobs” tab within the web service. No stitching is performed for objects near the edge of the tile. This feature might be added in the future.</p>
+               <strong>Cutout server:</strong> The cutout server allows the user to generate cutouts from the survey image data centered on a given set of positions, with areal dimensions up to 12 arcminutes on a side. Returned files may include image data cutouts in the selected bands in FITS format as well as tri-color composite images in PNG format generated using the STIFF (<a href="http://adsabs.harvard.edu/abs/2012ASPC..461..263B">Bertin 2012</a>) format or the Lupton method. The header of the cutout files is a copy from the original header from the images with extra keys indicating the center of the cutout RA_CUTOUT and DEC_CUTOUT. No stitching is performed for objects near the edge of the tile.</p>
              <p>
-               <strong>Footprint:</strong> A light-weight interactive tool which displays the DES footprint and its tiles. This tool can be used to search for a position in the sky and return the tile information regarding the tile name, corner coordinates, and list of files for download. It also allows searches by tilename when the name is available. This service also provides access to all the processed tiles, &nbsp;including images and catalogs in a tile based directly from the file server.</p>
+               <strong>TileFinder:</strong> A light-weight interactive tool which returns direct data tile download links matching the search query, which can be either sky RA/DEC coordinates or the explicit tile name. This service also provides access to all the processed tiles,&nbsp;including images and catalogs in a tile based directly from the file server.</p>
+              <p>
+                Job output files are served from a standard HTTP server to enable file transfer to remote machines. Job information and links to the generated files remain available for a limited duration, providing time to download results before clearing the space for other users.
+              </p>
              <p>
-               <a href="https://github.com/mgckind/desaccess">DESaccess code</a> as well as the <a href="https://github.com/mgckind/des_public_new">release page</a> are open sourced. The frontend was developed using web components, HTML, JS and <a href="https://www.polymer-project.org/">Polymer</a> which allows the re-use of already existing elements. The backend is mainly developed using the Python <a href="http://www.tornadoweb.org/en/stable/">Tornado web framework</a>. The submission jobs are handled by <a href="http://www.celeryproject.org/">Celery</a> which is a distributed queue manager written in Python. All of these applications are containerized using <a href="https://www.docker.com/">Docker</a> and all the nodes resources and scheduling, as well as all the deployment, is managed by <a href="https://kubernetes.io/">Kubernetes</a> which allows to run, manage and scale containerized applications in a robust and efficient manner.</p>
+               The code powering DESaccess as well as the DES release site are <a href="https://github.com/des-labs">open source</a>. The DESaccess website is built HTML, JS and <a href="https://www.polymer-project.org/">LitElement from the Polymer Project</a> that provides a reusable web component framework. The DESaccess API server and job management system are written in Python and use packages including the <a href="http://www.tornadoweb.org/en/stable/">Tornado web framework</a> and the <a href="https://kubernetes.io/docs/reference/using-api/client-libraries/">Kubernetes</a> <a href="https://github.com/kubernetes-client/python/">Python API</a>. All of these applications are containerized using <a href="https://www.docker.com/">Docker</a> and run within a <a href="https://kubernetes.io/">Kubernetes cluster</a>, providing a robust system enabling high-availability services with scalable deployments and efficient resource usage.</p>
 
             <des-img-big src="{{rootPath}}static/images/DESaccess.png" on-tap="_dialog" data-item="3">
-            Figure 3. Schema for DESaccess arquitecture
+            Schema for DESaccess architecture
             </des-img-big>
 
              <p>
@@ -48191,7 +48431,7 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
     <des-card heading="DES Y3 LT Wide Binaries">
         <div style="text-align: center">
           <h5>
-            L and T dwarfs in wide binary and multiple systems using Dark Energy Survey DR1 and Gaia DR2 data (dal Ponte et al. 2020)
+            Ultracool dwarfs in wide binary and multiple systems using Dark Energy Survey DR1 and Gaia DR2 data (dal Ponte et al. 2020)
           </h5>
         <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/distance_gaia_LT_new.png"></iron-image>
         <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/dist_des_LT.png"></iron-image>
@@ -48207,649 +48447,627 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
 </h2>
 
 <p>Using the L and T dwarf sample presented in <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.5301C/abstract">Carnero Rosell et al. 2019</a>, we search for wide binary systems composed of an L or T dwarf companion to main sequence stars in the Gaia DR2 and DES DR1 data.&nbsp; We also search for systems composed of two ultracool dwarfs.</p>
-<p>Our final catalog contains 255 binary and 6 multiple system candidates with wide (&gt; 5") separation composed by L or T dwarfs companions to stars, plus 9 double L and/or T dwarf systems. These systems were selected based on common distance criteria. We also compute the chance alignment probabilities in order to assess the physical nature of each pair. The typical wide binary fraction found in our sample over the L types is 2-4%. The significant leap provided by this sample will enable constraints on the formation and evolution as well as atmosphere models of L and T dwarfs.</p>
+<p>Our final catalog contains 255 binary and 6 multiple system candidates with wide (&gt; 5") separation composed by L or T dwarfs companions to stars, plus 9 double L and/or T dwarf systems. These systems were selected based on common distance and common proper motion (when available). We also compute the chance alignment probabilities in order to assess the physical nature of each pair. The typical wide binary fraction found in our sample over the L types is 2-4%. The significant leap provided by this sample will enable constraints on the formation and evolution as well as atmosphere models of L and T dwarfs.</p>
 <p>Please contact <a class="external-link" href="mailto:mari.dalponte@gmail.com" rel="nofollow">mari.dalponte@gmail.com</a>, <a class="external-link" href="mailto:basilio.santiago@ufrgs.br" rel="nofollow">basilio.santiago@ufrgs.br</a>,&nbsp;<a class="external-link" href="mailto:aurelio.carnero@ciemat.es" rel="nofollow">aurelio.carnero@ciemat.es</a> or&nbsp;<a class="external-link" href="mailto:b.burningham@herts.ac.uk" rel="nofollow">b.burningham@herts.ac.uk</a> for questions.</p>
 <h2>
-
-</h2><h2>
   <strong>Catalog Description</strong>
 </h2>
-
 <p>Our sample is composed of 3 catalogs. Above there is a description of each catalog and their columns.</p>
 <p>
-  <strong>1)</strong> Wide binary systems composed by L or T companion to stars from Gaia DR2 and DES DR1.</p>
+  <strong>1)</strong> Wide binary systems composed of L or T companion to stars from Gaia DR2 and DES DR1.</p>
 <p>
-  <br>
+  <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_gaia_ucd_des_ucd_final_catalog.fits" target="_blank">Wide binary candidates catalogs</a>
 </p>
-<p>
-  </p><h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_gaia_ucd_des_ucd_J2000_2020_final.fits" target="_blank"> pairs_gaia_ucd_des_ucd_J2000_2020_final.fits</a></h5>
-<p></p>
 <p>
   <strong>Comments</strong>: The letters A represents the primary star and B are the ultracool dwarf.&nbsp; The ID with a * symbol indicates that the primary distance for Gaia DR2 stars was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>. Only the common proper motion systems have proper motion measurements in this catalog. For the primaries, the proper motions are mostly from Gaia DR2 and for the secondaries, the proper motions are from the CatWISE catalog.</p>
-
-  <table>
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <tbody>
-      <tr>
-        <th>Column Name</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>
-          <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
-        </td>
-      </tr>
-      <tr>
-        <td>ra_star_A</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_star_A</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_star_A_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_star_A_dms</td>
-        <td>Declination in dms (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_UCD_B</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_UCD_B</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td colspan="1">ra_UCD_B_hms</td>
-        <td colspan="1">Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td colspan="1">dec_UCD_B_dms</td>
-        <td colspan="1">Declination in dms (J2000)</td>
-      </tr>
-      <tr>
-        <td>g_mag_gaia_star_A</td>
-        <td>Gaia G magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_g_des_star_A</td>
-        <td>DES Y3 g band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_g_des_star_A</td>
-        <td>Error in the DES Y3 g band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_r_des_star_A</td>
-        <td>DES Y3 r band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_r_des_star_A</td>
-        <td>Error in the DES Y3 r band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_i_des_star_A</td>
-        <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_i_des_star_A</td>
-        <td>Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_i_des_UCD_B</td>
-        <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_i_des_UCD_B</td>
-        <td>Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_z_des_UCD_B</td>
-        <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_z_des_UCD_B</td>
-        <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_Y_des_UCD_B</td>
-        <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_Y_des_UCD_B</td>
-        <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_star_A</td>
-        <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_star_A</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_UCD_B</td>
-        <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_UCD_B</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_A</td>
-        <td colspan="1">Spectral type from SIMBAD</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_B</td>
-        <td colspan="1">Ultracooldwarf spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_star_A</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_error_star_A</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_star_A</td>
-        <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_error_star_A</td>
-        <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_UCD_B</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_error_UCD_B</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_UCD_B</td>
-        <td colspan="1">Proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_error_UCD_B</td>
-        <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the pair members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the pair members</td>
-      </tr>
-      <tr>
-        <td colspan="1">chance_alignment</td>
-        <td colspan="1">Chance alignment probability (in %)</td>
-      </tr>
-    </tbody>
-  </table>
-
-
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>
+        <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
+      </td>
+    </tr>
+    <tr>
+      <td>ra_star_A</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_star_A</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_star_A_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_star_A_dms</td>
+      <td>Declination in dms (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_UCD_B</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_UCD_B</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td colspan="1">ra_UCD_B_hms</td>
+      <td colspan="1">Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td colspan="1">dec_UCD_B_dms</td>
+      <td colspan="1">Declination in dms (J2000)</td>
+    </tr>
+    <tr>
+      <td>g_mag_gaia_star_A</td>
+      <td>Gaia G magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_g_des_star_A</td>
+      <td>DES Y3 g band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_g_des_star_A</td>
+      <td>Error in the DES Y3 g band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_r_des_star_A</td>
+      <td>DES Y3 r band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_r_des_star_A</td>
+      <td>Error in the DES Y3 r band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_i_des_star_A</td>
+      <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_i_des_star_A</td>
+      <td>Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_i_des_UCD_B</td>
+      <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_i_des_UCD_B</td>
+      <td>Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_z_des_UCD_B</td>
+      <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_z_des_UCD_B</td>
+      <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_Y_des_UCD_B</td>
+      <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_Y_des_UCD_B</td>
+      <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_star_A</td>
+      <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_star_A</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_UCD_B</td>
+      <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_UCD_B</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">spt_type_A</td>
+      <td colspan="1">Spectral type from SIMBAD</td>
+    </tr>
+    <tr>
+      <td colspan="1">spt_type_B</td>
+      <td colspan="1">Ultracooldwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_star_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_error_star_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_star_A</td>
+      <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_error_star_A</td>
+      <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_UCD_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_error_UCD_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_UCD_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_error_UCD_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the pair members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the pair members</td>
+    </tr>
+    <tr>
+      <td colspan="1">chance_alignment</td>
+      <td colspan="1">Chance alignment probability (in %)</td>
+    </tr>
+  </tbody>
+</table>
 <p>
   <br>
 </p>
 <p>
-  <strong>2)</strong> Wide binary systems composed of two cool dwarfs.</p>
-
+  <strong>2)</strong> Wide binary systems composed of two ultracool dwarfs.</p>
 <p>
-  </p><h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_ucd_ucd_J2000_PM_final.fits" target="_blank"> pairs_ucd_ucd_J2000_PM_final.fits </a></h5>
-
-<p></p>
-
+  <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_ucd_ucd_final_catalog.fits" target="_blank">Wide ultracool binary candidates catalog</a>
+</p>
 <p>
   <strong>Comments</strong>: The letters A and B represent a different ultracool dwarf.&nbsp; Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements are from CatWISE catalog.</p>
-
-  <table>
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <tbody>
-      <tr>
-        <th>Column Name</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>
-          <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
-        </td>
-      </tr>
-      <tr>
-        <td>ra_A</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_A</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_A_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_A_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_B</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_B</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_B_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_B_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>mag_i_des_A</td>
-        <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_i_des_A</td>
-        <td>Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_z_des_A</td>
-        <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_z_des_A</td>
-        <td>Error in the DES Y3 z band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_Y_des_A</td>
-        <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
-      </tr>
-      <tr>
-        <td>magerr_Y_des_A</td>
-        <td>Error in the DES Y3 Y band auto magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_i_des_B</td>
-        <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_i_des_B</td>
-        <td>Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_z_des_B</td>
-        <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_z_des_B</td>
-        <td>Error in the DES Y3 z band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_Y_des_B</td>
-        <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
-      </tr>
-      <tr>
-        <td>magerr_Y_des_B</td>
-        <td>Error in the DES Y3 Y band auto magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_A</td>
-        <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_A</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_B</td>
-        <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_B</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_A</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_A</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_A</td>
-        <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_A</td>
-        <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_B</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_B</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_B</td>
-        <td colspan="1">Proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_B</td>
-        <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_A</td>
-        <td colspan="1">Ultracool dwarf A spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_B</td>
-        <td colspan="1">Ultracool dwarf B spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the pair members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the pair members</td>
-      </tr>
-      <tr>
-        <td colspan="1">chance_alignment</td>
-        <td colspan="1">Chance alignment probability (in %)</td>
-      </tr>
-    </tbody>
-  </table>
-
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>
+        <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
+      </td>
+    </tr>
+    <tr>
+      <td>ra_A</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_A</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_A_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_A_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_B</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_B</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_B_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_B_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>mag_i_des_A</td>
+      <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_i_des_A</td>
+      <td>Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_z_des_A</td>
+      <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_z_des_A</td>
+      <td>Error in the DES Y3 z band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_Y_des_A</td>
+      <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
+    </tr>
+    <tr>
+      <td>magerr_Y_des_A</td>
+      <td>Error in the DES Y3 Y band auto magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_i_des_B</td>
+      <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_i_des_B</td>
+      <td>Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_z_des_B</td>
+      <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_z_des_B</td>
+      <td>Error in the DES Y3 z band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_Y_des_B</td>
+      <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
+    </tr>
+    <tr>
+      <td>magerr_Y_des_B</td>
+      <td>Error in the DES Y3 Y band auto magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_A</td>
+      <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_A</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_B</td>
+      <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_B</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td>spt_type_A</td>
+      <td>Ultracool dwarf A spectral type</td>
+    </tr>
+    <tr>
+      <td>spt_type_B</td>
+      <td>Ultracool dwarf B spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_A</td>
+      <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_A</td>
+      <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the pair members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the pair members</td>
+    </tr>
+    <tr>
+      <td colspan="1">chance_alignment</td>
+      <td colspan="1">Chance alignment probability (in %)</td>
+    </tr>
+  </tbody>
+</table>
 <p>
   <br>
 </p>
 <p>
   <strong>3)</strong> Multiple systems composed of stellar and substellar components.</p>
 <p>
-  <br>
+  <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/multiples_final_catalog.fits" target="_blank">Multiple systems catalog</a>
 </p>
 <p>
-
-  </p><h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/multiple_systems_PM_final.fits" target="_blank"> multiple_systems_PM_final.fits</a></h5>
-
-<p></p>
-
-<p>
-  <strong>Comments</strong>: The letter A and B represent a star from Gaia DR2 or DES DR1 and C the ultracool dwarf candidate.&nbsp; Only for the system J2342-6135, the B and C represent a different ultracool dwarf.&nbsp; The ID with a * symbol indicates that for Gaia DR2 members, the distance was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.&nbsp; Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements for the L or T dwarf are from CatWISE catalog.</p>
-
-  <table>
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <tbody>
-      <tr>
-        <th>Column Name</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>
-          <div>
-            <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>ra_A</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_A</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_A_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_A_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_B</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_B</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_B_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_B_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_C</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_C</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_C_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_C_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>mag_G_gaia_A</td>
-        <td>Gaia G magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_G_gaia_B</td>
-        <td>Gaia G magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_g_des_A</td>
-        <td>DES Y3 g band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_g_des_A</td>
-        <td>Error in the DES Y3 g band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_r_des_A</td>
-        <td>DES Y3 r band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_r_des_A</td>
-        <td colspan="1">Error in the DES Y3 r band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_i_des_A</td>
-        <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_i_des_A</td>
-        <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_g_des_B</td>
-        <td colspan="1">DES Y3 g band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_g_des_B</td>
-        <td colspan="1">Error in the DES Y3 g band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_r_des_B</td>
-        <td colspan="1">DES Y3 r band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_r_des_B</td>
-        <td colspan="1">Error in the DES Y3 r band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_i_des_B</td>
-        <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_i_des_B</td>
-        <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_i_des_C</td>
-        <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_i_des_C</td>
-        <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_z_des_C</td>
-        <td colspan="1">DES Y3 z band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_z_des_C</td>
-        <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_Y_des_C</td>
-        <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_Y_des_C</td>
-        <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_A</td>
-        <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_A</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_B</td>
-        <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_B</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_C</td>
-        <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_C</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_B</td>
-        <td colspan="1">Ultracool dwarf spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_C</td>
-        <td colspan="1">Ultracool dwarf spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_A</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_A</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_A</td>
-        <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_A</td>
-        <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_B</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_B</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_B</td>
-        <td colspan="1">Proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_B</td>
-        <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_C</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_C</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_C</td>
-        <td colspan="1">Proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_C</td>
-        <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the A and B members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the A and B members</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the A and C members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the A and C members</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the B and C members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the B and C members</td>
-      </tr>
-    </tbody>
-  </table>
-
+  <strong>Comments</strong>: The letter A and B represent a star from Gaia DR2 or DES DR1 and C the ultracool dwarf candidate.&nbsp; Only for the system J2342-6135, the B and C represent a different ultracool dwarf.&nbsp; The ID with a * symbol indicates that for Gaia DR2 members, the distance was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.&nbsp; Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements for the L dwarfs are from CatWISE catalog.</p>
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>
+        <div class="content-wrapper">
+          <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>ra_A</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_A</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_A_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_A_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_B</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_B</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_B_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_B_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_C</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_C</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_C_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_C_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>mag_G_gaia_A</td>
+      <td>Gaia G magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_G_gaia_B</td>
+      <td>Gaia G magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_g_des_A</td>
+      <td>DES Y3 g band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_g_des_A</td>
+      <td>Error in the DES Y3 g band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_r_des_A</td>
+      <td>DES Y3 r band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_r_des_A</td>
+      <td colspan="1">Error in the DES Y3 r band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_i_des_A</td>
+      <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_i_des_A</td>
+      <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_g_des_B</td>
+      <td colspan="1">DES Y3 g band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_g_des_B</td>
+      <td colspan="1">Error in the DES Y3 g band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_r_des_B</td>
+      <td colspan="1">DES Y3 r band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_r_des_B</td>
+      <td colspan="1">Error in the DES Y3 r band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_i_des_B</td>
+      <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_i_des_B</td>
+      <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_i_des_C</td>
+      <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_i_des_C</td>
+      <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_z_des_C</td>
+      <td colspan="1">DES Y3 z band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_z_des_C</td>
+      <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_Y_des_C</td>
+      <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_Y_des_C</td>
+      <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_A</td>
+      <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_A</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_B</td>
+      <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_B</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_C</td>
+      <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_C</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">spt_type_B</td>
+      <td colspan="1">Ultracool dwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">spt_type_C</td>
+      <td colspan="1">Ultracool dwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_A</td>
+      <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_A</td>
+      <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_C</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_C</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_C</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_C</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the A and B members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the A and B members</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the A and C members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the A and C members</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the B and C members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the B and C members</td>
+    </tr>
+  </tbody>
+</table>
 
       </div>
       </des-card>
