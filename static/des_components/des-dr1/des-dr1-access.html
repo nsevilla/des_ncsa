@@ -65,28 +65,28 @@
         <p>
         If you'd like to access the images and catalogs from DES DR1, please use the complementary set of tools
         created by a collaborative effort between NCSA, NOAO, and LIneA. These tools allow the users to access, obtain, visualize, and explore DES DR1 products.<bR />
-        When using DES data and/or DES access tools please consider the notes in the <a href="[[rootpath]]thanks">Acknowledgement</a> page.
+        When using DES data and/or DES access tools please consider the notes in the <a href="[[rootPath]]thanks">Acknowledgement</a> page.
         <br />
         Click on the logos below to start exploring DES data tools. Follow the links below to learn more about each tool and their functionalities. <br /></p>
 
         <div class="testcards">
     <paper-card on-tap="_goncsa">
         <div class="card-content">
-            <img class="card-image" src="/static/images/ea_icon.png" >
+            <img class="card-image" src="{{rootPath}}static/images/ea_icon.png" >
             <div class="access-header">NCSA DESaccess</div>
         </div>
     </paper-card>
 
     <paper-card on-tap="_gonoao">
         <div class="card-content">
-            <img class="card-image" src="/static/images/datalab3.png">
+            <img class="card-image" src="{{rootPath}}static/images/datalab3.png">
             <div class="access-header">NOAO DataLab</div>
         </div>
 
     </paper-card>
     <paper-card on-tap="_golinea">
         <div class="card-content">
-            <img class="card-image" src="/static/images/des_logo_oficial.jpg" >
+            <img class="card-image" src="{{rootPath}}static/images/des_logo_oficial.jpg" >
             <div class="access-header">LIneA Science Server </div>
         </div>
 
@@ -100,7 +100,7 @@
     From these institutions, a rich and complementary set of tools and interfaces were developed to access and interact with DES data in different ways that cover a broad set of use cases which enable scientific discovery.
     For the moment, NCSA and LIneA services are linked to the same account. <br />
     To <b>register</b> visit:
-    <a href="https://des.ncsa.illinois.edu/easyweb/signup/" target="_blank">https://des.ncsa.illinois.edu/easyweb/signup/</a>
+    <a href="https://des.ncsa.illinois.edu/desaccess/login/" target="_blank">https://des.ncsa.illinois.edu/desaccess/login/</a>
     </p>
     <p>
         To learn more about the DES DR1 services use the following links:
@@ -108,17 +108,17 @@
         <ul>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-access/dr1-ncsa">NCSA DESaccess</a>
+              <a href="[[rootPath]]releases/dr1/dr1-access/dr1-ncsa">NCSA DESaccess</a>
             </h3>
           </li>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-access/dr1-linea">LIneA Science Server</a>
+              <a href="[[rootPath]]releases/dr1/dr1-access/dr1-linea">LIneA Science Server</a>
             </h3>
           </li>
           <li>
             <h3>
-              <a href="[[rootpath]]releases/dr1/dr1-access/dr1-noao">NOAO DataLab</a>
+              <a href="[[rootPath]]releases/dr1/dr1-access/dr1-noao">NOAO DataLab</a>
             </h3>
           </li>
         </ul>
@@ -132,7 +132,7 @@
     class desDr1Access extends Polymer.Element {
       static get is() { return 'des-dr1-access'; }
       _goncsa() {
-          var win = window.open('/easyweb/', '_blank');
+          var win = window.open('/desaccess/', '_blank');
           win.focus();
       }
       _gonoao() {
@@ -144,7 +144,7 @@
           win.focus();
       }
       _goregister(e) {
-          var win = window.open('/easyweb/signup/', '_blank');
+          var win = window.open('/desaccess/login/', '_blank');
           win.focus();
       }
       _goregisterNOAO(e) {

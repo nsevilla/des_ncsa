@@ -10,6 +10,7 @@ from email.utils import formataddr
 import smtplib
 import urllib
 import yaml
+import os
 
 def send_email():
     subject="New Ticket in DESRELEASE"
@@ -82,7 +83,13 @@ def create_ticket(first, last, email, topics, subject, question):
         'description' : body,
         #'reporter' : {'name': 'desdm-wufoo'},
         }
-    jira.create_issue(fields=issue)
+    new_jira_issue = jira.create_issue(fields=issue)
+    assignment_success = False
+    try:
+        assignment_success = jira.assign_issue(new_jira_issue, os.environ['JIRA_DEFAULT_ASSIGNEE'])
+    except:
+        pass
+    
     #send_email()
 
 def create_ticket_desdm(first, last, email, username, topics, question):
