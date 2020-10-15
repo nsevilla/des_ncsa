@@ -1,0 +1,27 @@
+<dom-module id="des-easyweb">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
+
+    <des-card>
+         <div class=card-content>
+<div id="main-content">
+
+    <h3 style="padding-top: 0px;"><strong>Easyweb has migrated</strong></h3>
+
+</div>
+         </div>
+    </des-card>
+  </template>
+
+  <script>
+    class DesEasyweb extends Polymer.Element {
+      static get is() { return 'des-easyweb'; }
+    }
+    window.customElements.define(DesEasyweb.is, DesEasyweb);
+  </script>
+</dom-module>
