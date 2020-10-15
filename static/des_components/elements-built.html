@@ -32360,6 +32360,12 @@ Custom property | Description | Default
                   <a class="app-menu-item" id="needindent" name="voids" href="[[rootPath]]releases/y1a1/voids">Y1 Voids</a>
                 </div>
                 </app-submenu>
+                
+                <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="voids" href="[[rootPath]]releases/y1a1/photoz">Y1 Photo-z</a>
+                </div>
+                </app-submenu>
 
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
@@ -32540,6 +32546,7 @@ Custom property | Description | Default
               <des-y1a1-bao name="bao"></des-y1a1-bao>
               <des-y1a1-density name="density"></des-y1a1-density>
               <des-y1a1-voids name="voids"></des-y1a1-voids>
+              <des-y1a1-photoz name="photoz"></des-y1a1-photoz>
               <des-y1a1-key-products name="key-products"></des-y1a1-key-products>
           <!-- SN PAGES -->
               <des-sn name="sn"></des-sn>
@@ -33052,7 +33059,7 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
          <div class="card-content">
 <div id="main-content">
 
-    <h3 style="padding-top: 0px;"><strong>Easyweb has migrated</strong></h3>
+    <h3 style="padding-top: 0px;"><strong>Easyweb (aka DESaccess) have been migrated to a new site. <a href="https://deslabs.ncsa.illinois.edu/transition_desaccess.html">Read More...</a></strong></h3>
 
 </div>
          </div>
@@ -35589,10 +35596,13 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y1a1/key-catalogs">Y1KP catalogs</a>: This section contains additional science catalogs based on different reduction pipelines. We include the "Multi-object" fitting (MOF) photometry (and their depth maps), photometric redshifts based on MOF, the PSF and shape catalogs used in the weak lensing analyses and the redMaGiC and redMaPPer galaxy catalogs (based on MOF).</p>
       <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y1a1/key-products">Y1KP products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y1KP Catalogs described above.</p>
       <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y1a1/bao">Y1 BAO sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based in a combination of the Y1 Gold catalog and MOF photometry.</p>
-      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y1a1/density">Y1 density split statistics</a>: Data vectors and likelihoods for measuring density split statistics. These results used the Y1KP catalogs described above<strong>.</strong>
-      </p><p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y1a1/voids">Y1 Voids</a>: DES Y1 Void Catalogs.</p>
+      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y1a1/density">Y1 density split statistics</a>: Data vectors and likelihoods for measuring density split statistics. These results used the Y1KP catalogs described above</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y1a1/voids">Y1 Voids</a>: DES Y1 Void Catalogs.
         <span style="color: rgb(255,0,0);"> </span>
-      <p></p>
+      </p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y1a1/photoz">Y1 DNF Photoz</a>: DES Y1A1 photoz by DNF code
+        <span style="color: rgb(255,0,0);"> </span>
+      </p>
       <p style="text-align: left;">
         <br>
       </p>
@@ -37171,6 +37181,171 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
       static get is() { return 'des-y1a1-voids'; }
     }
     window.customElements.define(DesY1A1Voids.is, DesY1A1Voids);
+  </script>
+
+</dom-module>
+<dom-module id="des-y1a1-photoz" assetpath="des-y1a1/">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 DNF photo-zs">
+<div class="card-content">
+
+<h2>
+  <strong>Overview</strong>
+</h2>
+<p>
+  This page contains the Y1A1 photo-zs computed using the DNF v4.0.5 algorithm. DNF (<a href="https://doi.org/10.1093/mnras/stw857">De Vicente, J. et al. (2016)</a>) computes the photo-z using a linear combination of fluxes. The coefficients of this linear combination&nbsp; are computed&nbsp; by the fit to the nearest neighbors on a training sample. The fluxes used are MOF (ngmix multi-epoch, multi-band, and multi-object fit) as described in <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>.&nbsp;The simultaneous closeness in fluxes and colors is achieved by directional neighborhood in color-magnitude space. The primary photo-z estimate is DNF_Z which is commonly used for tomographic binning. A second photo-z DNF_Z_1NN is provided to estimate photo-z distributions either per tomographic bin n(z) or globally N(z).
+</p>
+<h2>
+  <strong>Download Catalog&nbsp;&nbsp;</strong>
+  <strong>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/y1a1_gold_d04_wdnf.fits">DNF photo-z</a>
+  </strong>
+</h2>
+<h2>
+  <strong>Catalog Description</strong>
+</h2>
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td colspan="1">COADD_OBJECTS_ID</td>
+      <td colspan="1">Identifier&nbsp; assigned&nbsp; to&nbsp; each&nbsp; object&nbsp; in&nbsp; the&nbsp; co-add&nbsp; DES&nbsp; Y1&nbsp; dataset,&nbsp; reported&nbsp; here&nbsp; from&nbsp; The Gold Catalog</td>
+    </tr>
+    <tr>
+      <td colspan="1">RA/DEC</td>
+      <td colspan="1">Right ascension and declination (degrees) taken from the GOLD catalog.</td>
+    </tr>
+    <tr>
+      <td colspan="1">MAG_MOF_{GRIZ}</td>
+      <td colspan="1">
+        <span style="color: rgb(51,51,51);text-decoration: none;">Calibrated magnitudes for Composite Model fit, includes stellar locus fit correction&nbsp;for bands GRIZ as described in&nbsp;<span style="color: rgb(0,0,0);">
+            <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MAGERR_MOF_{GRIZ}</td>
+      <td colspan="1">Obtained as &nbsp;<span style="letter-spacing: 0.0px;">1.0857362 *&nbsp;MOF_FLUXERR / MOF_FLUX for bands GRIZ,&nbsp;<span style="color: rgb(51,51,51);text-decoration: none;"> includes stellar locus fit correction&nbsp;for bands GRIZ as described in&nbsp;<span style="color: rgb(0,0,0);">
+              <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+            </span>
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MOF_FLUX_{GRIZ}</td>
+      <td colspan="1">MOF flux for bands GRIZ&nbsp;<span style="color: rgb(51,51,51);text-decoration: none;"> includes stellar locus fit correction&nbsp;for bands GRIZ as described in&nbsp;<span style="color: rgb(0,0,0);">
+            <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MOF_FLUXERR_{GRIZ}</td>
+      <td colspan="1">
+        <p>MOF flux error for bands GRIZ&nbsp;<span style="color: rgb(51,51,51);text-decoration: none;"> includes stellar locus fit correction&nbsp;for bands GRIZ as described in&nbsp;<span style="color: rgb(0,0,0);">
+              <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+            </span>
+          </span>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>DNF_Z</td>
+      <td>DNF photo-z&nbsp;</td>
+    </tr>
+    <tr>
+      <td>DNF_Z_1NN</td>
+      <td>DNF nearest neighbor photo-z</td>
+    </tr>
+    <tr>
+      <td>DNF_ZSIGMA</td>
+      <td>Estimated DNF_Z error (unreliable photo-zs are tagged by 99)</td>
+    </tr>
+    <tr>
+      <td colspan="1">FLAGS_GOLD</td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Gold quality flags (one value for all bands). 0 means no issues.</span>
+        <br style="text-align: left;">
+        <ul style="text-align: left;">
+          <li>
+            <span style="color: rgb(0,0,0);">1: OR of SExtractor FLAGS_[GRIZ] &gt; 3 (GOLD is defined as good all of [GRIZ])</span>
+          </li>
+          <li>
+            <span style="color: rgb(0,0,0);">2: Crazy color (&lt;-1 or &gt;4 in either g-r,r-i or i-z in MAG_AUTO SLR corrected)</span>
+          </li>
+          <li>
+            <span style="color: rgb(0,0,0);">4: Bright Blue Squares around bright objects</span>
+            <ul>
+              <li>
+                <span style="color: rgb(0,0,0);">NEPOCHS_G = 0 &amp; MAGERR_AUTO_G &lt; 0.05 &amp; (MAG_MODEL_I - MAG_AUTO_I) &lt; -0.4. SLR corrected magnitudes have been used</span>
+                <br>
+                <span style="color: rgb(0,0,0);">(MAG_DETMODEL_G - MAG_MODEL_G) &gt; 2 &amp; MAG_MODEL_G &lt; 19 are objects near BBS's almost ~100% of the time (very few of them after BBS cuts though). This cut has not been included</span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span style="color: rgb(0,0,0);">8: Bad astrometric colors: ALPHAWIN_J2000/DELTAWIN_J2000 in G is not consistent with position in I within 1" if MAGERR_AUTO_G &lt; 0.22 (NB the slight inconsistency with the bad region definition, which requires MAGERR_AUTO_G &lt; 0.2 and MAG_AUTO_G &lt; 22 for an object to be termed as having a bad astrometric color).</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">FLAGS_BADREGION</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Any badregion information from GOLD footprint/bad regions (one value for all bands)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MOF_FLAGS</td>
+      <td colspan="1">mof_flags is a combined flag for all mof processing.<br>It is based on the<span>&nbsp;</span>
+        <code>flags</code>
+        <span>&nbsp;</span>field from mof, which describes any problems that occured in the primary fitting.<br>It also is based on the flags related to the convergence of the overall iteration for the MOF group.<br>It is 0 where there was an mof measurement and the following holds:<br>(flags==0) &amp; ((cm_mof_flags &amp; 2**8) == 0) &amp; ((cm_mof_flags &amp; 2**9) == 0)<br>it is equal 1 otherwise.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>
+  <strong>Contact&nbsp;&nbsp;</strong>
+</h4>
+<h4>
+  <strong>
+    <a href="mailto:juan.vicente@ciemat.es">juan.vicente@ciemat.es</a>
+  </strong>
+</h4>
+
+
+
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1Photoz extends Polymer.Element {
+      static get is() { return 'des-y1a1-photoz'; }
+    }
+    window.customElements.define(DesY1A1Photoz.is, DesY1A1Photoz);
   </script>
 
 </dom-module>
@@ -48256,7 +48431,7 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
     <des-card heading="DES Y3 LT Wide Binaries">
         <div style="text-align: center">
           <h5>
-            L and T dwarfs in wide binary and multiple systems using Dark Energy Survey DR1 and Gaia DR2 data (dal Ponte et al. 2020)
+            Ultracool dwarfs in wide binary and multiple systems using Dark Energy Survey DR1 and Gaia DR2 data (dal Ponte et al. 2020)
           </h5>
         <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/distance_gaia_LT_new.png"></iron-image>
         <iron-image style="width:300px; height:250px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/other/dist_des_LT.png"></iron-image>
@@ -48272,649 +48447,627 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
 </h2>
 
 <p>Using the L and T dwarf sample presented in <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.5301C/abstract">Carnero Rosell et al. 2019</a>, we search for wide binary systems composed of an L or T dwarf companion to main sequence stars in the Gaia DR2 and DES DR1 data.&nbsp; We also search for systems composed of two ultracool dwarfs.</p>
-<p>Our final catalog contains 255 binary and 6 multiple system candidates with wide (&gt; 5") separation composed by L or T dwarfs companions to stars, plus 9 double L and/or T dwarf systems. These systems were selected based on common distance criteria. We also compute the chance alignment probabilities in order to assess the physical nature of each pair. The typical wide binary fraction found in our sample over the L types is 2-4%. The significant leap provided by this sample will enable constraints on the formation and evolution as well as atmosphere models of L and T dwarfs.</p>
+<p>Our final catalog contains 255 binary and 6 multiple system candidates with wide (&gt; 5") separation composed by L or T dwarfs companions to stars, plus 9 double L and/or T dwarf systems. These systems were selected based on common distance and common proper motion (when available). We also compute the chance alignment probabilities in order to assess the physical nature of each pair. The typical wide binary fraction found in our sample over the L types is 2-4%. The significant leap provided by this sample will enable constraints on the formation and evolution as well as atmosphere models of L and T dwarfs.</p>
 <p>Please contact <a class="external-link" href="mailto:mari.dalponte@gmail.com" rel="nofollow">mari.dalponte@gmail.com</a>, <a class="external-link" href="mailto:basilio.santiago@ufrgs.br" rel="nofollow">basilio.santiago@ufrgs.br</a>,&nbsp;<a class="external-link" href="mailto:aurelio.carnero@ciemat.es" rel="nofollow">aurelio.carnero@ciemat.es</a> or&nbsp;<a class="external-link" href="mailto:b.burningham@herts.ac.uk" rel="nofollow">b.burningham@herts.ac.uk</a> for questions.</p>
 <h2>
-
-</h2><h2>
   <strong>Catalog Description</strong>
 </h2>
-
 <p>Our sample is composed of 3 catalogs. Above there is a description of each catalog and their columns.</p>
 <p>
-  <strong>1)</strong> Wide binary systems composed by L or T companion to stars from Gaia DR2 and DES DR1.</p>
+  <strong>1)</strong> Wide binary systems composed of L or T companion to stars from Gaia DR2 and DES DR1.</p>
 <p>
-  <br>
+  <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_gaia_ucd_des_ucd_final_catalog.fits" target="_blank">Wide binary candidates catalogs</a>
 </p>
-<p>
-  </p><h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_gaia_ucd_des_ucd_J2000_2020_final.fits" target="_blank"> pairs_gaia_ucd_des_ucd_J2000_2020_final.fits</a></h5>
-<p></p>
 <p>
   <strong>Comments</strong>: The letters A represents the primary star and B are the ultracool dwarf.&nbsp; The ID with a * symbol indicates that the primary distance for Gaia DR2 stars was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>. Only the common proper motion systems have proper motion measurements in this catalog. For the primaries, the proper motions are mostly from Gaia DR2 and for the secondaries, the proper motions are from the CatWISE catalog.</p>
-
-  <table>
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <tbody>
-      <tr>
-        <th>Column Name</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>
-          <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
-        </td>
-      </tr>
-      <tr>
-        <td>ra_star_A</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_star_A</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_star_A_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_star_A_dms</td>
-        <td>Declination in dms (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_UCD_B</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_UCD_B</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td colspan="1">ra_UCD_B_hms</td>
-        <td colspan="1">Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td colspan="1">dec_UCD_B_dms</td>
-        <td colspan="1">Declination in dms (J2000)</td>
-      </tr>
-      <tr>
-        <td>g_mag_gaia_star_A</td>
-        <td>Gaia G magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_g_des_star_A</td>
-        <td>DES Y3 g band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_g_des_star_A</td>
-        <td>Error in the DES Y3 g band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_r_des_star_A</td>
-        <td>DES Y3 r band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_r_des_star_A</td>
-        <td>Error in the DES Y3 r band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_i_des_star_A</td>
-        <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_i_des_star_A</td>
-        <td>Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_i_des_UCD_B</td>
-        <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_i_des_UCD_B</td>
-        <td>Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_z_des_UCD_B</td>
-        <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_z_des_UCD_B</td>
-        <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_Y_des_UCD_B</td>
-        <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_Y_des_UCD_B</td>
-        <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_star_A</td>
-        <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_star_A</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_UCD_B</td>
-        <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_UCD_B</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_A</td>
-        <td colspan="1">Spectral type from SIMBAD</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_B</td>
-        <td colspan="1">Ultracooldwarf spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_star_A</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_error_star_A</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_star_A</td>
-        <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_error_star_A</td>
-        <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_UCD_B</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_error_UCD_B</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_UCD_B</td>
-        <td colspan="1">Proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_error_UCD_B</td>
-        <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the pair members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the pair members</td>
-      </tr>
-      <tr>
-        <td colspan="1">chance_alignment</td>
-        <td colspan="1">Chance alignment probability (in %)</td>
-      </tr>
-    </tbody>
-  </table>
-
-
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>
+        <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
+      </td>
+    </tr>
+    <tr>
+      <td>ra_star_A</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_star_A</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_star_A_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_star_A_dms</td>
+      <td>Declination in dms (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_UCD_B</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_UCD_B</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td colspan="1">ra_UCD_B_hms</td>
+      <td colspan="1">Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td colspan="1">dec_UCD_B_dms</td>
+      <td colspan="1">Declination in dms (J2000)</td>
+    </tr>
+    <tr>
+      <td>g_mag_gaia_star_A</td>
+      <td>Gaia G magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_g_des_star_A</td>
+      <td>DES Y3 g band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_g_des_star_A</td>
+      <td>Error in the DES Y3 g band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_r_des_star_A</td>
+      <td>DES Y3 r band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_r_des_star_A</td>
+      <td>Error in the DES Y3 r band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_i_des_star_A</td>
+      <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_i_des_star_A</td>
+      <td>Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_i_des_UCD_B</td>
+      <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_i_des_UCD_B</td>
+      <td>Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_z_des_UCD_B</td>
+      <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_z_des_UCD_B</td>
+      <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_Y_des_UCD_B</td>
+      <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_Y_des_UCD_B</td>
+      <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_star_A</td>
+      <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_star_A</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_UCD_B</td>
+      <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_UCD_B</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">spt_type_A</td>
+      <td colspan="1">Spectral type from SIMBAD</td>
+    </tr>
+    <tr>
+      <td colspan="1">spt_type_B</td>
+      <td colspan="1">Ultracooldwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_star_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_error_star_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_star_A</td>
+      <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_error_star_A</td>
+      <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_UCD_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_error_UCD_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_UCD_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_error_UCD_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the pair members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the pair members</td>
+    </tr>
+    <tr>
+      <td colspan="1">chance_alignment</td>
+      <td colspan="1">Chance alignment probability (in %)</td>
+    </tr>
+  </tbody>
+</table>
 <p>
   <br>
 </p>
 <p>
-  <strong>2)</strong> Wide binary systems composed of two cool dwarfs.</p>
-
+  <strong>2)</strong> Wide binary systems composed of two ultracool dwarfs.</p>
 <p>
-  </p><h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_ucd_ucd_J2000_PM_final.fits" target="_blank"> pairs_ucd_ucd_J2000_PM_final.fits </a></h5>
-
-<p></p>
-
+  <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/pairs_ucd_ucd_final_catalog.fits" target="_blank">Wide ultracool binary candidates catalog</a>
+</p>
 <p>
   <strong>Comments</strong>: The letters A and B represent a different ultracool dwarf.&nbsp; Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements are from CatWISE catalog.</p>
-
-  <table>
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <tbody>
-      <tr>
-        <th>Column Name</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>
-          <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
-        </td>
-      </tr>
-      <tr>
-        <td>ra_A</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_A</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_A_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_A_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_B</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_B</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_B_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_B_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>mag_i_des_A</td>
-        <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_i_des_A</td>
-        <td>Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_z_des_A</td>
-        <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_z_des_A</td>
-        <td>Error in the DES Y3 z band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_Y_des_A</td>
-        <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
-      </tr>
-      <tr>
-        <td>magerr_Y_des_A</td>
-        <td>Error in the DES Y3 Y band auto magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_i_des_B</td>
-        <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_i_des_B</td>
-        <td>Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_z_des_B</td>
-        <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_z_des_B</td>
-        <td>Error in the DES Y3 z band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_Y_des_B</td>
-        <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
-      </tr>
-      <tr>
-        <td>magerr_Y_des_B</td>
-        <td>Error in the DES Y3 Y band auto magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_A</td>
-        <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_A</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_B</td>
-        <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_B</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_A</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_A</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_A</td>
-        <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_A</td>
-        <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_B</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_B</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_B</td>
-        <td colspan="1">Proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_B</td>
-        <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_A</td>
-        <td colspan="1">Ultracool dwarf A spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_B</td>
-        <td colspan="1">Ultracool dwarf B spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the pair members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the pair members</td>
-      </tr>
-      <tr>
-        <td colspan="1">chance_alignment</td>
-        <td colspan="1">Chance alignment probability (in %)</td>
-      </tr>
-    </tbody>
-  </table>
-
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>
+        <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
+      </td>
+    </tr>
+    <tr>
+      <td>ra_A</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_A</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_A_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_A_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_B</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_B</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_B_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_B_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>mag_i_des_A</td>
+      <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_i_des_A</td>
+      <td>Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_z_des_A</td>
+      <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_z_des_A</td>
+      <td>Error in the DES Y3 z band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_Y_des_A</td>
+      <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
+    </tr>
+    <tr>
+      <td>magerr_Y_des_A</td>
+      <td>Error in the DES Y3 Y band auto magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_i_des_B</td>
+      <td>DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_i_des_B</td>
+      <td>Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_z_des_B</td>
+      <td>DES Y3 z band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_z_des_B</td>
+      <td>Error in the DES Y3 z band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_Y_des_B</td>
+      <td>DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
+    </tr>
+    <tr>
+      <td>magerr_Y_des_B</td>
+      <td>Error in the DES Y3 Y band auto magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_A</td>
+      <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_A</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_B</td>
+      <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_B</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td>spt_type_A</td>
+      <td>Ultracool dwarf A spectral type</td>
+    </tr>
+    <tr>
+      <td>spt_type_B</td>
+      <td>Ultracool dwarf B spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_A</td>
+      <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_A</td>
+      <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the pair members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the pair members</td>
+    </tr>
+    <tr>
+      <td colspan="1">chance_alignment</td>
+      <td colspan="1">Chance alignment probability (in %)</td>
+    </tr>
+  </tbody>
+</table>
 <p>
   <br>
 </p>
 <p>
   <strong>3)</strong> Multiple systems composed of stellar and substellar components.</p>
 <p>
-  <br>
+  <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/multiples_final_catalog.fits" target="_blank">Multiple systems catalog</a>
 </p>
 <p>
-
-  </p><h5>File: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lt-widebinaries/multiple_systems_PM_final.fits" target="_blank"> multiple_systems_PM_final.fits</a></h5>
-
-<p></p>
-
-<p>
-  <strong>Comments</strong>: The letter A and B represent a star from Gaia DR2 or DES DR1 and C the ultracool dwarf candidate.&nbsp; Only for the system J2342-6135, the B and C represent a different ultracool dwarf.&nbsp; The ID with a * symbol indicates that for Gaia DR2 members, the distance was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.&nbsp; Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements for the L or T dwarf are from CatWISE catalog.</p>
-
-  <table>
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <tbody>
-      <tr>
-        <th>Column Name</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>ID</td>
-        <td>
-          <div>
-            <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>ra_A</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_A</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_A_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_A_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_B</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_B</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_B_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_B_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_C</td>
-        <td>Right Ascension in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_C</td>
-        <td>Declination in degrees (J2000)</td>
-      </tr>
-      <tr>
-        <td>ra_C_hms</td>
-        <td>Right Ascension in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>dec_C_dms</td>
-        <td>Declination in hms (J2000)</td>
-      </tr>
-      <tr>
-        <td>mag_G_gaia_A</td>
-        <td>Gaia G magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_G_gaia_B</td>
-        <td>Gaia G magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_g_des_A</td>
-        <td>DES Y3 g band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td>magerr_g_des_A</td>
-        <td>Error in the DES Y3 g band psf magnitude</td>
-      </tr>
-      <tr>
-        <td>mag_r_des_A</td>
-        <td>DES Y3 r band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_r_des_A</td>
-        <td colspan="1">Error in the DES Y3 r band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_i_des_A</td>
-        <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_i_des_A</td>
-        <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_g_des_B</td>
-        <td colspan="1">DES Y3 g band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_g_des_B</td>
-        <td colspan="1">Error in the DES Y3 g band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_r_des_B</td>
-        <td colspan="1">DES Y3 r band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_r_des_B</td>
-        <td colspan="1">Error in the DES Y3 r band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_i_des_B</td>
-        <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_i_des_B</td>
-        <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_i_des_C</td>
-        <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_i_des_C</td>
-        <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_z_des_C</td>
-        <td colspan="1">DES Y3 z band psf magnitude in AB (from SOF)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_z_des_C</td>
-        <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">mag_Y_des_C</td>
-        <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
-      </tr>
-      <tr>
-        <td colspan="1">magerr_Y_des_C</td>
-        <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_A</td>
-        <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_A</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_B</td>
-        <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_B</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">distance_C</td>
-        <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">inc_distance_C</td>
-        <td colspan="1">Distance uncertainty (in parsecs)</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_B</td>
-        <td colspan="1">Ultracool dwarf spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">spt_type_C</td>
-        <td colspan="1">Ultracool dwarf spectral type</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_A</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_A</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_A</td>
-        <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_A</td>
-        <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_B</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_B</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_B</td>
-        <td colspan="1">Proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_B</td>
-        <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_C</td>
-        <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmra_err_C</td>
-        <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_C</td>
-        <td colspan="1">Proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">pmdec_err_C</td>
-        <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the A and B members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the A and B members</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the A and C members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the A and C members</td>
-      </tr>
-      <tr>
-        <td colspan="1">angular_separation</td>
-        <td colspan="1">Separation in arcsec between the B and C members</td>
-      </tr>
-      <tr>
-        <td colspan="1">projected_separation</td>
-        <td colspan="1">Separation in astronomical units between the B and C members</td>
-      </tr>
-    </tbody>
-  </table>
-
+  <strong>Comments</strong>: The letter A and B represent a star from Gaia DR2 or DES DR1 and C the ultracool dwarf candidate.&nbsp; Only for the system J2342-6135, the B and C represent a different ultracool dwarf.&nbsp; The ID with a * symbol indicates that for Gaia DR2 members, the distance was published by <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A..94A/abstract">Anders et al. 2019</a>.&nbsp; Only the common proper motion systems have proper motion measurements in this catalog. Here, the proper motion measurements for the L dwarfs are from CatWISE catalog.</p>
+<table>
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>
+        <div class="content-wrapper">
+          <p>ID in Jhhmm±ddmm format using the primary coordinates</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>ra_A</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_A</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_A_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_A_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_B</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_B</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_B_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_B_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_C</td>
+      <td>Right Ascension in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_C</td>
+      <td>Declination in degrees (J2000)</td>
+    </tr>
+    <tr>
+      <td>ra_C_hms</td>
+      <td>Right Ascension in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>dec_C_dms</td>
+      <td>Declination in hms (J2000)</td>
+    </tr>
+    <tr>
+      <td>mag_G_gaia_A</td>
+      <td>Gaia G magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_G_gaia_B</td>
+      <td>Gaia G magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_g_des_A</td>
+      <td>DES Y3 g band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td>magerr_g_des_A</td>
+      <td>Error in the DES Y3 g band psf magnitude</td>
+    </tr>
+    <tr>
+      <td>mag_r_des_A</td>
+      <td>DES Y3 r band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_r_des_A</td>
+      <td colspan="1">Error in the DES Y3 r band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_i_des_A</td>
+      <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_i_des_A</td>
+      <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_g_des_B</td>
+      <td colspan="1">DES Y3 g band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_g_des_B</td>
+      <td colspan="1">Error in the DES Y3 g band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_r_des_B</td>
+      <td colspan="1">DES Y3 r band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_r_des_B</td>
+      <td colspan="1">Error in the DES Y3 r band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_i_des_B</td>
+      <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_i_des_B</td>
+      <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_i_des_C</td>
+      <td colspan="1">DES Y3 i band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_i_des_C</td>
+      <td colspan="1">Error in the DES Y3 i band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_z_des_C</td>
+      <td colspan="1">DES Y3 z band psf magnitude in AB (from SOF)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_z_des_C</td>
+      <td colspan="1">Error in the DES Y3 z band psf magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">mag_Y_des_C</td>
+      <td colspan="1">DES Y3 Y band auto magnitude in AB (from Sextractor)</td>
+    </tr>
+    <tr>
+      <td colspan="1">magerr_Y_des_C</td>
+      <td colspan="1">Error in the DES Y3 Y band auto magnitude</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_A</td>
+      <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_A</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_B</td>
+      <td colspan="1">Distance obtain by StarHorse code (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_B</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">distance_C</td>
+      <td colspan="1">Average distance calculated from apparent magnitudes in all the available bands (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">inc_distance_C</td>
+      <td colspan="1">Distance uncertainty (in parsecs)</td>
+    </tr>
+    <tr>
+      <td colspan="1">spt_type_B</td>
+      <td colspan="1">Ultracool dwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">spt_type_C</td>
+      <td colspan="1">Ultracool dwarf spectral type</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_A</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_A</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_A</td>
+      <td colspan="1">Proper motion in declination direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_A</td>
+      <td colspan="1">Error of proper motion in declination direction&nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_B</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_B</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_B</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_B</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_C</td>
+      <td colspan="1">Proper motion in right ascension direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmra_err_C</td>
+      <td colspan="1">Error of proper motion in right ascension direction &nbsp;(mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_C</td>
+      <td colspan="1">Proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">pmdec_err_C</td>
+      <td colspan="1">Error of proper motion in declination direction (mas/yr)</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the A and B members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the A and B members</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the A and C members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the A and C members</td>
+    </tr>
+    <tr>
+      <td colspan="1">angular_separation</td>
+      <td colspan="1">Separation in arcsec between the B and C members</td>
+    </tr>
+    <tr>
+      <td colspan="1">projected_separation</td>
+      <td colspan="1">Separation in astronomical units between the B and C members</td>
+    </tr>
+  </tbody>
+</table>
 
       </div>
       </des-card>
