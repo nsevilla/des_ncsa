@@ -1,0 +1,165 @@
+<dom-module id="des-y1a1-photoz">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 DNF photo-zs">
+<div class="card-content">
+
+<h2>
+  <strong>Overview</strong>
+</h2>
+<p>
+  This page contains the Y1A1 photo-zs computed using the DNF v4.0.5 algorithm. DNF (<a href="https://doi.org/10.1093/mnras/stw857">De Vicente, J. et al. (2016)</a>) computes the photo-z using a linear combination of fluxes. The coefficients of this linear combination  are computed  by the fit to the nearest neighbors on a training sample. The fluxes used are MOF (ngmix multi-epoch, multi-band, and multi-object fit) as described in <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. The simultaneous closeness in fluxes and colors is achieved by directional neighborhood in color-magnitude space. The primary photo-z estimate is DNF_Z which is commonly used for tomographic binning. A second photo-z DNF_Z_1NN is provided to estimate photo-z distributions either per tomographic bin n(z) or globally N(z).
+</p>
+<h2>
+  <strong>Download Catalog  </strong>
+  <strong >
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/y1a1_gold_d04_wdnf.fits">DNF photo-z</a>
+  </strong>
+</h2>
+<h2>
+  <strong>Catalog Description</strong>
+</h2>
+<table >
+  <colgroup>
+    <col />
+    <col />
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td colspan="1">COADD_OBJECTS_ID</td>
+      <td colspan="1">Identifier  assigned  to  each  object  in  the  co-add  DES  Y1  dataset,  reported  here  from  The Gold Catalog</td>
+    </tr>
+    <tr>
+      <td colspan="1">RA/DEC</td>
+      <td colspan="1">Right ascension and declination (degrees) taken from the GOLD catalog.</td>
+    </tr>
+    <tr>
+      <td colspan="1">MAG_MOF_{GRIZ}</td>
+      <td colspan="1">
+        <span style="color: rgb(51,51,51);text-decoration: none;">Calibrated magnitudes for Composite Model fit, includes stellar locus fit correction for bands GRIZ as described in <span style="color: rgb(0,0,0);">
+            <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MAGERR_MOF_{GRIZ}</td>
+      <td colspan="1">Obtained as  <span style="letter-spacing: 0.0px;">1.0857362 * MOF_FLUXERR / MOF_FLUX for bands GRIZ, <span style="color: rgb(51,51,51);text-decoration: none;"> includes stellar locus fit correction for bands GRIZ as described in <span style="color: rgb(0,0,0);">
+              <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+            </span>
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MOF_FLUX_{GRIZ}</td>
+      <td colspan="1">MOF flux for bands GRIZ <span style="color: rgb(51,51,51);text-decoration: none;"> includes stellar locus fit correction for bands GRIZ as described in <span style="color: rgb(0,0,0);">
+            <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MOF_FLUXERR_{GRIZ}</td>
+      <td colspan="1">
+        <p>MOF flux error for bands GRIZ <span style="color: rgb(51,51,51);text-decoration: none;"> includes stellar locus fit correction for bands GRIZ as described in <span style="color: rgb(0,0,0);">
+              <a href="https://ui.adsabs.harvard.edu/link_gateway/2018ApJS..235...33D/doi:10.3847/1538-4365/aab4f5">Drlica-Wagner et al. 2018</a>. This means that the quantity is <strong>extinction-corrected.</strong>
+            </span>
+          </span>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>DNF_Z</td>
+      <td>DNF photo-z </td>
+    </tr>
+    <tr>
+      <td>DNF_Z_1NN</td>
+      <td>DNF nearest neighbor photo-z</td>
+    </tr>
+    <tr>
+      <td>DNF_ZSIGMA</td>
+      <td>Estimated DNF_Z error (unreliable photo-zs are tagged by 99)</td>
+    </tr>
+    <tr>
+      <td colspan="1">FLAGS_GOLD</td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Gold quality flags (one value for all bands). 0 means no issues.</span>
+        <br style="text-align: left;"/>
+        <ul style="text-align: left;">
+          <li>
+            <span style="color: rgb(0,0,0);">1: OR of SExtractor FLAGS_[GRIZ] &gt; 3 (GOLD is defined as good all of [GRIZ])</span>
+          </li>
+          <li>
+            <span style="color: rgb(0,0,0);">2: Crazy color (&lt;-1 or &gt;4 in either g-r,r-i or i-z in MAG_AUTO SLR corrected)</span>
+          </li>
+          <li>
+            <span style="color: rgb(0,0,0);">4: Bright Blue Squares around bright objects</span>
+            <ul>
+              <li>
+                <span style="color: rgb(0,0,0);">NEPOCHS_G = 0 &amp; MAGERR_AUTO_G &lt; 0.05 &amp; (MAG_MODEL_I - MAG_AUTO_I) &lt; -0.4. SLR corrected magnitudes have been used</span>
+                <br/>
+                <span style="color: rgb(0,0,0);">(MAG_DETMODEL_G - MAG_MODEL_G) &gt; 2 &amp; MAG_MODEL_G &lt; 19 are objects near BBS's almost ~100% of the time (very few of them after BBS cuts though). This cut has not been included</span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span style="color: rgb(0,0,0);">8: Bad astrometric colors: ALPHAWIN_J2000/DELTAWIN_J2000 in G is not consistent with position in I within 1" if MAGERR_AUTO_G &lt; 0.22 (NB the slight inconsistency with the bad region definition, which requires MAGERR_AUTO_G &lt; 0.2 and MAG_AUTO_G &lt; 22 for an object to be termed as having a bad astrometric color).</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">FLAGS_BADREGION</span>
+      </td>
+      <td colspan="1">
+        <span style="color: rgb(0,0,0);">Any badregion information from GOLD footprint/bad regions (one value for all bands)</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">MOF_FLAGS</td>
+      <td colspan="1">mof_flags is a combined flag for all mof processing.<br/>It is based on the<span> </span>
+        <code>flags</code>
+        <span> </span>field from mof, which describes any problems that occured in the primary fitting.<br/>It also is based on the flags related to the convergence of the overall iteration for the MOF group.<br/>It is 0 where there was an mof measurement and the following holds:<br/>(flags==0) &amp; ((cm_mof_flags &amp; 2**8) == 0) &amp; ((cm_mof_flags &amp; 2**9) == 0)<br/>it is equal 1 otherwise.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>
+  <strong>Contact  </strong>
+</h4>
+<h4>
+  <strong>
+    <a href="mailto:juan.vicente@ciemat.es">juan.vicente@ciemat.es</a>
+  </strong>
+</h4>
+
+
+
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1Photoz extends Polymer.Element {
+      static get is() { return 'des-y1a1-photoz'; }
+    }
+    window.customElements.define(DesY1A1Photoz.is, DesY1A1Photoz);
+  </script>
+
+</dom-module>
