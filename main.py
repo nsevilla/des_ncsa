@@ -35,6 +35,11 @@ class MainHandler(tornado.web.RequestHandler):
         #if verify_password(passwords, basicauth_user, basicauth_pass):
             #self.render('index.html')
 
+class EasywebBypassHandler(tornado.web.RequestHandler):
+    @tornado.web.asynchronous
+    def get(self, path = ''):
+        self.render('easyweb_bypass.html')
+
 class HelpHandler(tornado.web.RequestHandler):
     """
     This class is special as it also include a post request to
@@ -80,6 +85,7 @@ class Application(tornado.web.Application):
             (r"{}/static/(.*)".format(Settings.APP_ROOT), tornado.web.StaticFileHandler, {'path':Settings.STATIC_PATH}),
             (r"{}/help/".format(Settings.APP_ROOT), HelpHandler),
             (r"{}/releases/sva1/content/(.*)".format(Settings.APP_ROOT), tornado.web.StaticFileHandler, {'path':Settings.SVA1_PATH}),
+            (r"{}/easyweb(.*)".format(Settings.APP_ROOT), EasywebBypassHandler),
             (r"{}/(.*)".format(Settings.APP_ROOT), MainHandler),
             ]
         settings = {
