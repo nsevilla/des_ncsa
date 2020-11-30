@@ -1,0 +1,328 @@
+<dom-module id="des-y6-rrl">
+
+<template>
+
+    <style include="shared-styles">
+
+</style>
+
+
+    <des-card heading ="Year 6 RR Lyrae Catalog">
+        <div style="text-align: center">
+        <iron-image style="width:760px; height:375px; padding:40px;" sizing="contain"
+                src="{{rootPath}}static/images/other/radial_positions_y6-rrl.png"></iron-image>
+            </div>
+        <div style="text-align: center">
+          <a style="padding: 20px; text-decoration: none" href="https://arxiv.org/abs/1905.00428"><paper-button   raised class="desButton">Documentation</paper-button></a>
+    <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y6-rrl/"><paper-button   raised class="desButton">Files</paper-button></a>
+</div>
+      <div class="card-content">
+        <h2>
+          <strong>Overview</strong>
+
+
+ </h2>
+      <p><a href="https://arxiv.org/abs/1905.00428">In Stringer, Drlica-Wagner, Macri et al. 2020</a>, we identified RRab candidates in sparsely sampled multi-band light curves from the DES Y6 wide field data. We selected candidates based on a multi-band template fitting method and random forest classifiers trained on DES color, variability, and light curve information.  Here, we present our catalog of RRab candidates and associated light curves. The data products are further described on this page.</p>
+      <p>Please contact <a href="mailto:kadrlica@fnal.gov">kadrlica[at]fnal.edu</a> with any questions.</p>
+      <hr/> 
+      <h2>
+      <strong>Table of Contents:</strong>
+        </h2>
+        <hr/>
+        <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="A">A. Catalog Column Descriptions</a></h3>
+        <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="B">B. Light Curves</a></h3>
+        <hr/>
+      <p>
+        <br>
+        <div class="fixup" id="rrlA"></div>
+        <h2 class="fixdown">
+          <strong>A. Catalog Column Descriptions</strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y6-rrl/rrab_catalog_v4.1.csv" target="_blank">rrab_catalog_v4.1.csv</a>)</h2>
+      </p>
+      <p>Column descriptions for the 6,971 RRab candidates in our sample.</p>
+      <p>Sentinel value for numerical columns is -99 unless otherwise specified.</p>
+      <p>Sentinel value for string columns is '--' unless otherwise specified.</p>
+      <p>Note that RA, DEC, and EXTINCTION are calculated from the Y6 Quick Release catalog and differ slightly from similar properties calculated from the DES DR2 coadd images.</p>
+      <table >
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>Column Name</th>
+            <th>Description</th>
+            <th colspan="1">DataType</th>
+          </tr>
+          <tr>
+            <td>COADD_OBJECT_ID</td>
+            <td>
+              <p>DES Y6A1 coadd object catalog ID number</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>RA</td>
+            <td>Right Ascension in degrees (J2000) </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>DEC</td>
+            <td>Declination in degrees (J2000)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>EXTINCTION_{G,R,I,Z,Y}</td>
+            <td>
+              <p>Extinction derived from Schlegel, Finkbeiner, &amp; Davis (1998)<span style="letter-spacing: 0.0px;"> convert to extinction in DES filters:</span>
+              </p>
+              <p>A_g = 3.6830 * EBV</p>
+              <p>A_r = 2.6048 * EBV </p>
+              <p>A_i = 1.9401 * EBV </p>
+              <p>A_z = 1.4505 * EBV </p>
+              <p>A_Y = 1.2774 * EBV</p>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;G&gt; </td>
+            <td>Mean g magnitude measured in light curves (not corrected for Galactic extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;R&gt;</td>
+            <td>Mean r magnitude measured in light curves (not corrected for Galactic extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;I&gt;</td>
+            <td>Mean i magnitude measured in light curves (not corrected for Galactic extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;Z&gt;</td>
+            <td>Mean z magnitude measured in light curves (not corrected for Galactic extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>&lt;Y&gt;</td>
+            <td>Mean Y magnitude measured in light curves (not corrected for Galactic extinction)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>NOBS</td>
+            <td>Total number of observations across all bands</td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>PERIOD_0</td>
+            <td>Period of best fitting template (days)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">PERIOD_1</td>
+            <td colspan="1">Period of 2nd best fitting template (days)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">PERIOD_2</td>
+            <td colspan="1">Period of 3rd best fitting template (days)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">AMP_0</td>
+            <td colspan="1">Amplitude of best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">AMP_1</td>
+            <td colspan="1">Amplitude of 2nd best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">AMP_2</td>
+            <td colspan="1">Amplitude of 3rd best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">MU_0</td>
+            <td colspan="1">Distance Modulus of best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">MU_1</td>
+            <td colspan="1">Distance Modulus of 2nd best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">MU_2</td>
+            <td colspan="1">Distance Modulus of 3rd best fitting template (mag)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">PHASE_0</td>
+            <td colspan="1">Phase offset of best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">PHASE_1</td>
+            <td colspan="1">Phase offset of 2nd best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">PHASE_2</td>
+            <td colspan="1">Phase offset of 3rd best fitting template</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">RF1_SCORE</td>
+            <td colspan="1">Score from first random forest classifier (variability)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">RF2_SCORE</td>
+            <td colspan="1">Score from second random forest classifier (variability)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">RF3_SCORE</td>
+            <td colspan="1">Score from third random forest classifier (template fit)</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">GAIADR2_ID</td>
+            <td colspan="1">
+              <p>Gaia DR2 source_id for cross-matched RRab in Clementini et al. 2018</p>
+              <p>-99 = not found in this catalog</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">PS1_ID</td>
+            <td colspan="1">
+              <p>ID from Sesar et al. 2017 RRab catalog</p>
+              <p>-99 = not found in this catalog</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">CSDR2_ID</td>
+            <td colspan="1">
+              <p>ID number from associated Catalina Surveys DR2 RRab catalogs </p>
+              <p>-99 = not found in this catalog</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">
+              <p class="p1">
+                <span class="s1">DES_Y3Q2_ID</span>
+              </p>
+            </td>
+            <td colspan="1">
+              <p>ID number from Stringer et al 2019 associated with the DES Y3 RRab catalog</p>
+              <p>-99 = not found in this catalog</p>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td colspan="1">SYSTEM</td>
+            <td colspan="1">
+              <p>Association with resolved stellar system (dwarf galaxy, globular cluster, etc.)</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">SYSTEM_ID</td>
+            <td colspan="1">
+              <p>ID from previous study of resolved stellar system</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">SYSTEM_REF</td>
+            <td colspan="1">
+              <p>Reference for previous study of the resolved stellar system</p>
+            </td>
+            <td colspan="1">str</td>
+          </tr>
+          <tr>
+            <td colspan="1">AC_CANDIDATE</td>
+            <td colspan="1">Anomalous Cepheid candidate flag</td>
+            <td colspan="1">bool</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr/>
+      <br>
+        <div class="fixup" id="rrlB"></div>
+        <h2 class="fixdown">
+          <strong>B. Light Curves</strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y6-rrl/rrab_lc_v4.tar.gz" target="_blank">rrab_lc_v4.tar.gz</a>)
+        </h2>
+      <p>This tarball contains light curves for each RRab candidate in the catalog above. Each light curve is stored as a separate csv file ordered by coadd object ID.</p>
+      <pre>  rrab_lc_v4/{coadd_object_id}.csv</pre>
+      <p>
+        <span style="letter-spacing: 0.0px;">Each light curve contains the following </span>
+        <span style="letter-spacing: 0.0px;">columns :</span>
+      </p>
+      <table >
+        <colgroup>
+          <col />
+          <col />
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>Column Name</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>MJD</td>
+            <td>Modified Julian Date of observation</td>
+          </tr>
+          <tr>
+            <td>BAND</td>
+            <td>DES filter band of observation <em>grizY</em>
+            </td>
+          </tr>
+          <tr>
+            <td>MAG_0</td>
+            <td>Extinction-corrected PSF magnitude</td>
+          </tr>
+          <tr>
+            <td>MAGERR_RESCALE</td>
+            <td>Rescaled PSF magnitude uncertainty</td>
+          </tr>
+          <tr>
+            <td>MAG_PSF</td>
+            <td>Measured PSF magnitude (no extinction correction)</td>
+          </tr>
+          <tr>
+            <td colspan="1">MAGERR_PSF</td>
+            <td colspan="1">Measured PSF magnitude uncertainty</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+      </div>
+      </des-card>
+
+
+</template>
+<script>
+    class DesOtherY6rrl extends Polymer.Element {
+      static get is() { return 'des-y6-rrl'; }
+      _scroll(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#rrl'+temp).scrollIntoView();
+          }
+    }
+    window.customElements.define(DesOtherY6rrl.is, DesOtherY6rrl);
+  </script>
+
+</dom-module>
