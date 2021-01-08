@@ -1,0 +1,50 @@
+<dom-module id="des-dr2">
+
+<template>
+
+    <style include="shared-styles">
+
+
+</style>
+
+
+
+    <des-card heading ="DES DR2 RELEASE">
+        <div style="text-align: center">
+        <iron-image style="width:653px; height:312px; padding:40px;" sizing="contain"
+                src="{{rootPath}}static/images/dr1/des_footprint_mbtpq.png"></iron-image>
+            </div>
+
+
+      <div class="card-content">
+          This is officially the second major public release of reduced images and wide-field coadd source catalogs from all of the six years of full science operations, consisting  in over 38,000 single exposure images, close to 62,000 coadd images covering 10,338 tiles over roughly 5,000 square degrees within the DES footprint, resulting in nearly 700M distinct cataloged objects. Use the buttons below to access DR2 documentation and products.<br />
+
+          <b>See DR2 Release paper</b> <a href="https://arxiv.org/abs/1801.03181"> Here</a>
+
+      <div style="text-align: center">
+          <br />
+
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-docs"><paper-button   raised class="desButton">Overview</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-products"><paper-button   raised class="desButton">Products</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-access"><paper-button   raised class="desButton">Data Access</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr1/dr1-faq"><paper-button   raised class="desButton">FAQ</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]help"><paper-button   raised class="desButton">Help</paper-button></a>
+
+
+      </div>
+
+
+            </div>
+
+      </des-card>
+
+
+</template>
+<script>
+    class DesDr2 extends Polymer.Element {
+      static get is() { return 'des-dr2'; }
+    }
+    window.customElements.define(DesDr2.is, DesDr2);
+  </script>
+
+</dom-module>
