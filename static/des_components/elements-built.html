@@ -49444,31 +49444,40 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
         <h2>
           <strong>Overview</strong>
         </h2>
-        <p>In <a href="https://arxiv.org/abs/2006.04294" target="_blank">Tanoglidis, Drlica-Wagner et al. 2020</a>, we describe the discovery and analysis of a catalog of 20,977 radially extended (r &gt; 2.5'') low-surface-brightness galaxies (LSBGs) using data from the first three years of DES.&nbsp;&nbsp;</p>
-        <p>The process we followed for the discovery of the LSBGs in our catalog had four steps:&nbsp;</p>
-        <ul style="list-style-type: square;">
-          <li>Selection cuts on the SourceExtractor-derived&nbsp; properties of sources in the DES Y3 Gold catalog, motivated by a similar analysis presented in&nbsp;<a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...857..104G/abstract">Greco et al. 2018</a> using data from the HSC-SSP survey.&nbsp;</li>
-          <li>Machine Learning classification using Support Vector Machines, to remove a large fraction of spurious detections passing the above cuts.</li>
-          <li>Visual inspection of the positively classified candidates to reject remaining false positives.</li>
-          <li>Selection cuts similar to the ones used in the first step, but applied to updated LSBG parameters obtained from&nbsp;<a href="https://www.nottingham.ac.uk/astronomy/megamorph/">Galfitm</a> modeling and correcting for Galactic extinction.</li>
-        </ul>
-        <p>Here we present our catalog that includes coordinates, photometric, and structural parameters for each LSBG in our catalog.</p>
-        <p>Furthermore, we make available a catalog of the 88 most significant overdensity peaks in the spatial (angular) distribution of the LSBGs. These peaks are defined as having a density &gt; 5σ greater than the mean density.</p>
-        <p>We present the angular positions of these peaks, as well as associations of them with known high-surface-brightness systems such as bright galaxies, galaxy groups, and galaxy clusters.</p>
-        <p>
-          <br>
-        </p>
-        <p>Please contact&nbsp;<a href="mailto:dtanoglidis@uchicago.edu">dtanoglidis@uchicago.edu</a> or&nbsp;<a href="mailto:kadrlica@fnal.gov">kadrlica@fnal.gov</a> for any questions.</p>
-        <hr>
-        <p>
-          <br>
-        </p>
-        
+
+      <p>In <a href="https://arxiv.org/abs/2006.04294">Tanoglidis, Drlica-Wagner et al. 2020</a>, we describe the discovery and analysis of a catalog of 23,790 radially extended (r &gt; 2.5'') low-surface-brightness galaxies (LSBGs) using data from the first three years of DES.&nbsp;&nbsp;</p>
+      <p>The process we followed for the discovery of the LSBGs in our catalog had four steps:&nbsp;</p>
+      <ul style="list-style-type: square;">
+        <li>Selection cuts on the SourceExtractor-derived properties of sources in the DES Y3 Gold catalog, motivated by a similar analysis presented in <a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...857..104G/abstract">Greco et al. 2018</a>
+          <sup>1</sup> using data from the HSC-SSP survey.&nbsp;</li>
+        <li>Machine Learning classification using Support Vector Machines, to remove a large fraction of spurious detections passing the above cuts.</li>
+        <li>Visual inspection of the positively classified candidates to reject remaining false positives.</li>
+        <li>Selection cuts similar to the ones used in the first step, but now applied to updated LSBG parameters obtained from <a href="https://www.nottingham.ac.uk/astronomy/megamorph/">Galfitm</a> modeling and correcting for Galactic extinction.</li>
+      </ul>
+      <p>
+        <span style="letter-spacing: 0.0px;">Here we present our catalog that includes coordinates, photometric, and structural parameters for each LSBG in our catalog.</span>
+      </p>
+      <p>Furthermore, we make available a catalog of the 88 most significant overdensity peaks in the spatial (angular) distribution of the LSBGs. These peaks are defined as having a density &gt; 5σ greater than the mean density.</p>
+      <p>We present the angular positions of these peaks, as well as associations of them with known high-surface-brightness systems such as bright galaxies, galaxy groups, and galaxy clusters.</p>
+      <p>
+        <span style="letter-spacing: 0.0px;">Please contact </span>
+        <a href="mailto:dtanoglidis@uchicago.edu" style="letter-spacing: 0.0px;">dtanoglidis@uchicago.edu</a>
+        <span style="letter-spacing: 0.0px;"> with&nbsp;any questions.</span>
+      </p>
+      <h4><strong>Note</strong></h4>
+      <p>
+        <sup>1</sup> Our mean surface brightness definition of LSBGs is mu_mean_g &gt; <span>24.2 mag/arcsec^2, which is slightly different from that used in <a href="https://arxiv.org/abs/1709.04474">Greco et al. 2018</a> and a previous version of this catalog (mu_mean_g &gt; 24.3 mag/arcsec^2). For an explanation see <ac:link ac:anchor="Older_Version">
+            <ac:plain-text-link-body><!--[CDATA[Older Release]]--></ac:plain-text-link-body>
+          </ac:link>.</span>
+      </p>
+      <hr>
+
         <h2>
           <strong>Table of Contents:</strong>
         </h2>
         <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="A">A.LSBG Catalog Column Descriptions </a></h3>
         <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="B">B. Peaks and Associations</a></h3>
+        <h3><a href="javascript:void(0)" on-tap="_scroll" data-item="C">C. Older Releases</a></h3>
         <p>
           <br>
         </p>
@@ -49480,404 +49489,429 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
         <div class="fixup" id="lsbgA"></div>
         <h2 class="fixdown">
         </h2><h2>
-          <strong>A. LSBG Catalog Column Descriptions&nbsp;</strong>&nbsp;( <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lsbg/LSBG_catalog.csv" target="_blank">LSBG_catalog.csv</a> )
+          <strong>A. LSBG Catalog Column Descriptions&nbsp;</strong>&nbsp;( <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lsbg/LSBG_catalog_v2.csv" target="_blank">LSBG_catalog_v2.csv</a> )
         </h2>
-        <p>This catalog contains the properties of the 20,977 LSBGs discovered in the first three years of DES data. Here we provide brief descriptions of the columns contained in this catalog.</p>
-        <p>All magnitudes and the derived surface brightnesses are corrected for interstellar extinction. The conversion between raw and extinction-corrected magnitudes is given by:</p>
-        <ul style="list-style-type: square;">
-          <li>mag_g_corr = mag_g_raw -&nbsp;<span>3.186</span>
-            <span class="MathJax">
-              <span class="math" style="text-decoration: none;">
-                <span style="text-decoration: none;">
-                  <span class="mrow" style="text-decoration: none;">
-                    <span class="mo" style="text-decoration: none;">×</span>
-                  </span>
+        <p>This catalog contains the properties of the 23,790 LSBGs discovered in the first three years of DES data. Here we provide brief descriptions of the columns contained in this catalog.</p>
+      <p>All magnitudes and the derived surface brightnesses are corrected for interstellar extinction. The conversion between raw and extinction-corrected magnitudes is given by:</p>
+      <ul style="list-style-type: square;">
+        <li>mag_g_corr = mag_g_raw -&nbsp;<span>3.186</span>
+          <span class="MathJax">
+            <span class="math" style="text-decoration: none;">
+              <span style="text-decoration: none;">
+                <span class="mrow" style="text-decoration: none;">
+                  <span class="mo" style="text-decoration: none;">×</span>
                 </span>
               </span>
             </span>
-            <span>ebv_sfd98</span>
-          </li>
-          <li>mag_r_corr = mag_r_raw - 2.140<span class="MathJax">
-              <span class="math" style="text-decoration: none;">
-                <span style="text-decoration: none;">
-                  <span class="mrow" style="text-decoration: none;">
-                    <span class="mo" style="text-decoration: none;">×</span>
-                  </span>
+          </span>
+          <span>ebv_sfd98</span>
+        </li>
+        <li>mag_r_corr = mag_r_raw - 2.140<span class="MathJax">
+            <span class="math" style="text-decoration: none;">
+              <span style="text-decoration: none;">
+                <span class="mrow" style="text-decoration: none;">
+                  <span class="mo" style="text-decoration: none;">×</span>
                 </span>
               </span>
             </span>
-            <span>ebv_sfd98</span>
-          </li>
-          <li>mag_i_corr = mag_i_raw - 1.569<span class="MathJax">
-              <span class="math" style="text-decoration: none;">
-                <span style="text-decoration: none;">
-                  <span class="mrow" style="text-decoration: none;">
-                    <span class="mo" style="text-decoration: none;">×</span>
-                  </span>
+          </span>
+          <span>ebv_sfd98</span>
+        </li>
+        <li>mag_i_corr = mag_i_raw - 1.569<span class="MathJax">
+            <span class="math" style="text-decoration: none;">
+              <span style="text-decoration: none;">
+                <span class="mrow" style="text-decoration: none;">
+                  <span class="mo" style="text-decoration: none;">×</span>
                 </span>
               </span>
             </span>
-            <span>ebv_sfd98</span>
-          </li>
-        </ul>
-        <p>Where&nbsp;<span>ebv_sfd98 is the Galactic extinction value from <a href="https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract">Schlegel, Finkbeiner, &amp; Davis 1998</a>.</span>
-        </p>
-        <p>
-          <br>
-        </p>
-        <table>
-          <colgroup>
-            <col>
-            <col>
-            <col>
-            <col>
-          </colgroup>
-          <tbody>
-            <tr>
-              <th>Column Name</th>
-              <th>Description</th>
-              <th colspan="1">Unit</th>
-              <th>DataType</th>
-            </tr>
-            <tr>
-              <td colspan="1">object_id</td>
-              <td colspan="1">Sequential unique LSBG object index</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">int64</td>
-            </tr>
-            <tr>
-              <td>coadd_object_id</td>
-              <td>DES Y3 (and DR1) COADD Object ID</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td>int64</td>
-            </tr>
-            <tr>
-              <td>ra_se</td>
-              <td>Right Ascension (J2000) - from SourceExtractor</td>
-              <td colspan="1">degree</td>
-              <td>float64</td>
-            </tr>
-            <tr>
-              <td>dec_se</td>
-              <td>Declination (J2000) - from SourceExtractor</td>
-              <td colspan="1">degree</td>
-              <td>float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">ra_gfm</td>
-              <td colspan="1">Right Ascension (J2000) - from Galfitm modeling</td>
-              <td colspan="1">degree</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">dec_gfm</td>
-              <td colspan="1">Declination (J2000) - from Galfitm modeling&nbsp;</td>
-              <td colspan="1">degree</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td>ebv_sfd98</td>
-              <td>
-                <p>Extinction value from Schlegel, Finkbeiner, &amp; Davis 1998.</p>
-              </td>
-              <td>
-                <br>
-              </td>
-              <td>float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">ell_se</td>
-              <td colspan="1">Ellipticity - from SourceExtractor</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">ell_gfm</td>
-              <td colspan="1">Ellipticity - from Galfitm</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mag_auto_g_corr</td>
-              <td colspan="1">SourceExtractor g-band adaptive aperture magnitude, extinction-corrected&nbsp;</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">magerr_auto_g</td>
-              <td colspan="1">Uncertainty in the g-band&nbsp;adaptive aperture magnitude</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mag_auto_r_corr</td>
-              <td colspan="1">SourceExtractor r-band adaptive aperture magnitude,&nbsp;extinction-corrected&nbsp;</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">magerr_auto_r</td>
-              <td colspan="1">Uncertainty in the r-band&nbsp;adaptive aperture magnitude</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mag_auto_i_corr</td>
-              <td colspan="1">SourceExtractor i-band&nbsp;adaptive aperture magnitude,&nbsp;extinction-corrected&nbsp;</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">magerr_auto_i</td>
-              <td colspan="1">Uncertainty in the i-band adaptive aperture magnitude</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">flux_radius_g_asec</td>
-              <td colspan="1">
-                <p class="p1">
-                  <span class="s1">Radius of the circle centered around the barycenter of the object containing half of the flux of the object&nbsp; - As measured by SourceExtractor in g-band</span>
-                </p>
-              </td>
-              <td colspan="1">arcsec</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">flux_radius_r_asec</td>
-              <td colspan="1">
-                <span class="s1">Radius of the circle centered around the barycenter of the object containing half of the flux of the object&nbsp; - As measured by SourceExtractor in r-band</span>
-              </td>
-              <td colspan="1">arcsec</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">flux_radius_i_asec</td>
-              <td colspan="1">
-                <span class="s1">Radius of the circle centered around the barycenter of the object containing half of the flux of the object&nbsp; - As measured by SourceExtractor in i-band</span>
-              </td>
-              <td colspan="1">arcsec</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mag_gfm_g_corr</td>
-              <td colspan="1">Galfitm g-band Sersic model magnitude,&nbsp;extinction-corrected&nbsp;&nbsp;</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">magerr_gfm_g</td>
-              <td colspan="1">Uncertainty in g-band Sersic magnitude</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mag_gfm_r_corr</td>
-              <td colspan="1">Galfitm r-band Sersic model magnitude,&nbsp;extinction-corrected&nbsp;&nbsp;</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">magerr_gfm_r</td>
-              <td colspan="1">Uncertainty in r-band Sersic magnitude</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mag_gfm_i_corr</td>
-              <td colspan="1">Galfitm i-band Sersic model magnitude,&nbsp;extinction-corrected&nbsp;&nbsp;</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">magerr_gfm_i</td>
-              <td colspan="1">Uncertainty in i-band Sersic magnitude</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">n</td>
-              <td colspan="1">Sérsic index from Galfitm modeling</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">n_err&nbsp;</td>
-              <td colspan="1">Uncertainty in the estimation of the Sérsic index</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">r_eff_g</td>
-              <td colspan="1">Effective radius in g-band from Galfitm modeling</td>
-              <td colspan="1">
-                <p>arcsec</p>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">r_eff_g_err</td>
-              <td colspan="1">Uncertainty in the estimation of the effective radius in g-band</td>
-              <td colspan="1">arcsec</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">r_eff_r</td>
-              <td colspan="1">Effective radius in r-band from Galfitm modeling</td>
-              <td colspan="1">arcsec</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">r_eff_r_err</td>
-              <td colspan="1">Uncertainty in the estimation of the effective radius in r-band</td>
-              <td colspan="1">arcsec</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">r_eff_i</td>
-              <td colspan="1">Effective radius in i-band from Galfitm modeling</td>
-              <td colspan="1">arcsec</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">r_eff_i_err</td>
-              <td colspan="1">Uncertainty in the estimation of the effective radius in i-band</td>
-              <td colspan="1">arcsec</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">chisq_loc_g</td>
-              <td colspan="1">Local estimate of the reduced chi-squared of the Galfitm model, in g-band</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">chisq_loc_r</td>
-              <td colspan="1">Local estimate of the reduced chi-squared of the Galfitm model, in r-band</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">chisq_loc_i</td>
-              <td colspan="1">Local estimate of the reduced chi-squared of the Galfitm model, in i-band</td>
-              <td colspan="1">
-                <br>
-              </td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mu_mean_g</td>
-              <td colspan="1">
-                <p>Mean surface brightness in g-band <br>- derived from extinction-corrected Galfitm Sersic parameters</p>
-              </td>
-              <td colspan="1">mag/arcsec^2</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mu_mean_r</td>
-              <td colspan="1">Mean surface brightness in r-band <br>- derived from extinction-corrected Galfitm Sersic parameters</td>
-              <td colspan="1">mag/arcsec^2</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mu_mean_i</td>
-              <td colspan="1">
-                <p>Mean surface brightness in i-band <br>- derived from extinction-corrected Galfitm Sersic parameters</p>
-              </td>
-              <td colspan="1">mag/arcsec^2</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mu_0_g</td>
-              <td colspan="1">
-                <p>Central surface brightness in g-band<br>
-                  <span style="letter-spacing: 0.0px;">- derived from extinction-corrected Galfitm Sersic parameters</span>
-                </p>
-              </td>
-              <td colspan="1">mag/arcsec^2</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mu_0_r</td>
-              <td colspan="1">
-                <p>Central surface brightness in r-band<br>
-                  <span style="letter-spacing: 0.0px;">- derived from extinction-corrected Galfitm Sersic parameters</span>
-                </p>
-              </td>
-              <td colspan="1">mag/arcsec^2</td>
-              <td colspan="1">float64</td>
-            </tr>
-            <tr>
-              <td colspan="1">mu_0_i</td>
-              <td colspan="1">
-                <p>Central surface brightness in i-band<br>
-                  <span style="letter-spacing: 0.0px;">- derived from extinction-corrected Galfitm Sersic parameters</span>
-                </p>
-              </td>
-              <td colspan="1">mag/arcsec^2</td>
-              <td colspan="1">float64</td>
-            </tr>
-          </tbody>
-        </table>
-        <h5 class="auto-cursor-target">A note on the calculation of surface brightnesses</h5>
-        <p>Mean and central surface brightnesses of our sample were calculated from the extinction-corrected parameters of the Galfitm Sersic model using the prescription of <a href="https://arxiv.org/abs/astro-ph/0503176">Graham &amp; Driver 2005</a>.</p>
-        <p class="auto-cursor-target">
-          <br>
-        </p>
+          </span>
+          <span>ebv_sfd98</span>
+        </li>
+      </ul>
+      <p>Where&nbsp;<span>ebv_sfd98 is the Galactic extinction value from <a href="https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract">Schlegel, Finkbeiner, &amp; Davis 1998</a>.</span>
+      </p>
+      <p>
+        <br>
+      </p>
+      <table>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>Column Name</th>
+            <th>Description</th>
+            <th colspan="1">Unit</th>
+            <th>DataType</th>
+          </tr>
+          <tr>
+            <td colspan="1">object_id</td>
+            <td colspan="1">Sequential unique LSBG object index</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">int64</td>
+          </tr>
+          <tr>
+            <td>coadd_object_id</td>
+            <td>DES Y3 (and DR1) COADD Object ID</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td>int64</td>
+          </tr>
+          <tr>
+            <td>ra_se</td>
+            <td>Right Ascension (J2000) - from SourceExtractor</td>
+            <td colspan="1">degree</td>
+            <td>float64</td>
+          </tr>
+          <tr>
+            <td>dec_se</td>
+            <td>Declination (J2000) - from SourceExtractor</td>
+            <td colspan="1">degree</td>
+            <td>float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">ra_gfm</td>
+            <td colspan="1">Right Ascension (J2000) - from Galfitm modeling</td>
+            <td colspan="1">degree</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">dec_gfm</td>
+            <td colspan="1">Declination (J2000) - from Galfitm modeling&nbsp;</td>
+            <td colspan="1">degree</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td>ebv_sfd98</td>
+            <td>
+              <p>Extinction value from Schlegel, Finkbeiner, &amp; Davis 1998.</p>
+            </td>
+            <td>
+              <br>
+            </td>
+            <td>float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">ell_se</td>
+            <td colspan="1">Ellipticity - from SourceExtractor</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">ell_gfm</td>
+            <td colspan="1">Ellipticity - from Galfitm</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mag_auto_g_corr</td>
+            <td colspan="1">SourceExtractor g-band adaptive aperture magnitude, extinction-corrected&nbsp;</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">magerr_auto_g</td>
+            <td colspan="1">Uncertainty in the g-band&nbsp;adaptive aperture magnitude</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mag_auto_r_corr</td>
+            <td colspan="1">SourceExtractor r-band adaptive aperture magnitude,&nbsp;extinction-corrected&nbsp;</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">magerr_auto_r</td>
+            <td colspan="1">Uncertainty in the r-band&nbsp;adaptive aperture magnitude</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mag_auto_i_corr</td>
+            <td colspan="1">SourceExtractor i-band&nbsp;adaptive aperture magnitude,&nbsp;extinction-corrected&nbsp;</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">magerr_auto_i</td>
+            <td colspan="1">Uncertainty in the i-band adaptive aperture magnitude</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">flux_radius_g_asec</td>
+            <td colspan="1">
+              <p class="p1">
+                <span class="s1">Radius of the circle centered around the barycenter of the object containing half of the flux of the object&nbsp; - As measured by SourceExtractor in g-band</span>
+              </p>
+            </td>
+            <td colspan="1">arcsec</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">flux_radius_r_asec</td>
+            <td colspan="1">
+              <span class="s1">Radius of the circle centered around the barycenter of the object containing half of the flux of the object&nbsp; - As measured by SourceExtractor in r-band</span>
+            </td>
+            <td colspan="1">arcsec</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">flux_radius_i_asec</td>
+            <td colspan="1">
+              <span class="s1">Radius of the circle centered around the barycenter of the object containing half of the flux of the object&nbsp; - As measured by SourceExtractor in i-band</span>
+            </td>
+            <td colspan="1">arcsec</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mag_gfm_g_corr</td>
+            <td colspan="1">Galfitm g-band Sersic model magnitude,&nbsp;extinction-corrected&nbsp;&nbsp;</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">magerr_gfm_g</td>
+            <td colspan="1">Uncertainty in g-band Sersic magnitude</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mag_gfm_r_corr</td>
+            <td colspan="1">Galfitm r-band Sersic model magnitude,&nbsp;extinction-corrected&nbsp;&nbsp;</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">magerr_gfm_r</td>
+            <td colspan="1">Uncertainty in r-band Sersic magnitude</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mag_gfm_i_corr</td>
+            <td colspan="1">Galfitm i-band Sersic model magnitude,&nbsp;extinction-corrected&nbsp;&nbsp;</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">magerr_gfm_i</td>
+            <td colspan="1">Uncertainty in i-band Sersic magnitude</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">n</td>
+            <td colspan="1">Sérsic index from Galfitm modeling</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">n_err&nbsp;</td>
+            <td colspan="1">Uncertainty in the estimation of the Sérsic index</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">r_eff_g</td>
+            <td colspan="1">Effective radius in g-band from Galfitm modeling</td>
+            <td colspan="1">
+              <p>arcsec</p>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">r_eff_g_err</td>
+            <td colspan="1">Uncertainty in the estimation of the effective radius in g-band</td>
+            <td colspan="1">arcsec</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">r_eff_r</td>
+            <td colspan="1">Effective radius in r-band from Galfitm modeling</td>
+            <td colspan="1">arcsec</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">r_eff_r_err</td>
+            <td colspan="1">Uncertainty in the estimation of the effective radius in r-band</td>
+            <td colspan="1">arcsec</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">r_eff_i</td>
+            <td colspan="1">Effective radius in i-band from Galfitm modeling</td>
+            <td colspan="1">arcsec</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">r_eff_i_err</td>
+            <td colspan="1">Uncertainty in the estimation of the effective radius in i-band</td>
+            <td colspan="1">arcsec</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">chisq_loc_g</td>
+            <td colspan="1">Local estimate of the reduced chi-squared of the Galfitm model, in g-band</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">chisq_loc_r</td>
+            <td colspan="1">Local estimate of the reduced chi-squared of the Galfitm model, in r-band</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">chisq_loc_i</td>
+            <td colspan="1">Local estimate of the reduced chi-squared of the Galfitm model, in i-band</td>
+            <td colspan="1">
+              <br>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_mean_g</td>
+            <td colspan="1">
+              <p>Mean surface brightness in g-band <br>- derived from extinction-corrected Galfitm Sersic parameters</p>
+            </td>
+            <td colspan="1">mag/arcsec^2</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_mean_r</td>
+            <td colspan="1">Mean surface brightness in r-band <br>- derived from extinction-corrected Galfitm Sersic parameters</td>
+            <td colspan="1">mag/arcsec^2</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_mean_i</td>
+            <td colspan="1">
+              <p>Mean surface brightness in i-band <br>- derived from extinction-corrected Galfitm Sersic parameters</p>
+            </td>
+            <td colspan="1">mag/arcsec^2</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_0_g</td>
+            <td colspan="1">
+              <p>Central surface brightness in g-band<br>
+                <span style="letter-spacing: 0.0px;">- derived from extinction-corrected Galfitm Sersic parameters</span>
+              </p>
+            </td>
+            <td colspan="1">mag/arcsec^2</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_0_r</td>
+            <td colspan="1">
+              <p>Central surface brightness in r-band<br>
+                <span style="letter-spacing: 0.0px;">- derived from extinction-corrected Galfitm Sersic parameters</span>
+              </p>
+            </td>
+            <td colspan="1">mag/arcsec^2</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_0_i</td>
+            <td colspan="1">
+              <p>Central surface brightness in i-band<br>
+                <span style="letter-spacing: 0.0px;">- derived from extinction-corrected Galfitm Sersic parameters</span>
+              </p>
+            </td>
+            <td colspan="1">mag/arcsec^2</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_mean_g_se</td>
+            <td colspan="1">Mean surface brightness in g-band <br>- derived from SourceExtractor</td>
+            <td colspan="1">
+              <p>mag/arcsec^2</p>
+            </td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_mean_r_se</td>
+            <td colspan="1">Mean surface brightness in r-band <br>- derived from SourceExtractor</td>
+            <td colspan="1">mag/arcsec^2</td>
+            <td colspan="1">float64</td>
+          </tr>
+          <tr>
+            <td colspan="1">mu_mean_i_se</td>
+            <td colspan="1">Mean surface brightness in i-band <br>- derived from SourceExtractor</td>
+            <td colspan="1">mag/arcsec^2</td>
+            <td colspan="1">float64</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <br>
+      </p>
+      <h4>A note on the calculation of surface brightnesses</h4>
+      <p>Mean and central surface brightnesses of our sample were calculated from the extinction-corrected parameters of the Galfitm Sersic model using the prescription of <a href="https://arxiv.org/abs/astro-ph/0503176">Graham &amp; Driver 2005</a>.</p>
+      <p class="auto-cursor-target">
+        <br>
+      </p>
+
+
         <hr>
         <div class="fixup" id="lsbgB"></div>
         <h2 class="fixdown">
         </h2><h2>
-          <strong>B. Peaks and Associations&nbsp;&nbsp;</strong>( <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lsbg/peaks_associations.csv" target="_blank">peaks_associations.csv</a> )
+          <strong>B. Peaks and Associations&nbsp;&nbsp;</strong>( <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lsbg/peaks_associations_v2.csv" target="_blank">peaks_associations_v2.csv</a> )
         </h2>
-        <p>This catalog contains information about the 88 peaks in the LSBG distribution exceeding the 5σ threshold described in our paper and their best associations.</p>
+        <p>This catalog contains information about the 82 peaks in the LSBG distribution exceeding the 5σ threshold described in our paper and their best associations.</p>
         <p>We searched for associations to these peaks in the LSBG density distribution by cross-matching with the Abell, NGC, REFLEX and 2MASS catalogs:</p>
         <ul style="list-style-type: square;">
           <li>32 peaks were associated with an Abell cluster.</li>
-          <li>18 peaks were associated with a bright galaxy from the NGC.</li>
-          <li>10 peaks were associated with a cluster from the ROSAT-ESO Flux-Limited X-Ray (REFLEX) Galaxy Cluster Survey.</li>
-          <li>12 peaks were associated with a galaxy group identified from the Two Micron All Sky Survey (2MASS).</li>
-          <li>16 peaks were not associated with a system from any of the above catalogs.</li>
+          <li>16 peaks were associated with a bright galaxy from the NGC.</li>
+          <li>11 peaks were associated with a cluster from the ROSAT-ESO Flux-Limited X-Ray (REFLEX) Galaxy Cluster Survey.</li>
+          <li>10 peaks were associated with a galaxy group identified from the Two Micron All Sky Survey (2MASS).</li>
+          <li>13 peaks were not associated with a system from any of the above catalogs.</li>
         </ul>
         <p>
           <br>
@@ -49989,14 +50023,47 @@ For questions and data requests, please contact Dillon Brout: dbrout@physics.upe
             </tr>
           </tbody>
         </table>
-        <h5>Notes</h5>
+        <h4>Notes</h4>
         <p>
           <sup>1</sup> Refers to the Hubble distance, assuming a ΛCDM cosmology with H_0 = 67.8 km/s/Mpc, Ω_m = 0.308 and Ω_Λ = 0.692.</p>
         <p>
           <sup>2</sup> The quality of the association was determined based on the projected, angular distance of the association from the peak and the presence (or absence) of other potential associations in the vicinity of the peak. Our classification is qualitative and is intended to guide follow-up research. For cases where we did not find an association using any of the catalogs mentioned above, we visually inspected the region around the peak. If there was not any visible high-surface-brightness counterpart, we indicated quality = I, otherwise (visible clusters of bright galaxies) we indicated quality = III.</p>
-          
+
         <br>
-        
+        <hr>
+        <div class="fixup" id="lsbgC"></div>
+        <h2 class="fixdown">
+        </h2><h2>
+          <strong>C. Older Releases&nbsp;</strong>
+        </h2>
+<p>Catalog file: <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lsbg/LSBG_catalog_v1.csv" target="_blank">LSBG_catalog_v1.csv</a>
+  
+  <br>
+  Peaks and associations:&nbsp; <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y3-lsbg/peaks_associations_v1.csv" target="_blank">peaks_associations_v1.csv</a>
+
+</p>
+<p>The current version (v2) of the DES Y3 LSBG catalog contains a significant change compared to the older release (v1) to correct an <span>inconsistency in our definition of the mean (and central) surface brightness as derived from the Sersic model (galfitm) parameters. In estimating the mean and central surface brightness, we used the effective radius and magnitude derived from galfitm and the formulae discussed in </span>
+  <a href="https://arxiv.org/abs/astro-ph/0503176">
+    <span>Graham &amp; Driver (2005)</span>
+  </a>
+  <span>. The formulae presented there assume a geometric mean profile, while the effective radius fit by galfitm corresponds to the semi-major axis. Thus, our surface brightness definition was incorrectly accounting for the ellipticity of each galaxy.&nbsp; This led to a systematic dimming of our sample. </span>
+</p>
+<p>
+  <span>After correcting this issue, a cut on the extinction-corrected mean surface brightness (mu_mean_g &gt; 24.3 mag/arcsec^2, used in the original catalog) excludes ~10% (2244) of the galaxies previously included in our catalog. Since the change in the surface brightness is small for most galaxies at the bright end, many galaxies move only slightly beyond the surface brightness threshold, and a cut of mu_mean_g &gt; 24.2 mag/arcsec^2 excludes only 3.7% (787) galaxies.&nbsp;</span>
+</p>
+<p>
+  <span>Since the surface brightness threshold of our analysis was chosen somewhat arbitrarily (i.e., only motivated by the HSC analysis by </span>
+  <a href="https://arxiv.org/abs/1709.04474">
+    <span>Greco et al. 2018</span>
+  </a>
+  <span>), we prefer to allow the community to impose their own cut on a larger sample of objects. Thus, we change our sample threshold to mu_mean_g &gt; 24.2 mag/arcsec^2 in v2 of the catalog.</span>
+</p>
+<p>For comparison, we provide the older version of the catalog of 20,977 LSBGs selected according to <span>mu_mean_g &gt; 24.3 mag/arcsec^2 (based first on the SourceExtractor parameter and then on the erroneously estimated Galfit-derived parameter). Note that the Galfit-derived mean and central surface brightnesses in this catalog suffer from the problem described above.</span>
+</p>
+<p>
+  <br>
+</p>
+
 
       </div>
       </des-card>
