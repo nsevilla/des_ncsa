@@ -378,6 +378,61 @@
                 </app-menu>
                </app-submenu no-auto-close>
 
+
+              <!-- DR2 -->
+               <app-submenu no-auto-close>
+                <div class="sublist1" slot="submenu-trigger">
+                  <a class="app-menu-item" name="dr2" href="[[rootPath]]releases/dr2">DR2<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist2" slot="submenu-content">
+                   <!--<a class="app-menu-item" id=needindent name="dr1files" href="[[rootPath]]releases/dr1/dr1files" >Files</a>-->
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr1-docs" href="[[rootPath]]releases/dr1/dr1-docs" persistent="False">Overview<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id=needsindent2 name="acquisition" href="[[rootPath]]releases/dr1/dr1-docs/acquisition" >Data Acquisition</a>
+                  <a class="app-menu-item" id=needsindent2 name="processing" href="[[rootPath]]releases/dr1/dr1-docs/processing" >Processing</a>
+                  <a class="app-menu-item" id=needsindent2 name="quality" href="[[rootPath]]releases/dr1/dr1-docs/quality" >Data Quality</a>
+                  <a class="app-menu-item" id=needsindent2 name="known-issues" href="[[rootPath]]releases/dr1/dr1-docs/known-issues" >Known Issues</a>
+                </app-menu>
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr1-products" href="[[rootPath]]releases/dr1/dr1-products" persistent="False">Products<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id=needsindent2 name="dr1-schema" href="[[rootPath]]releases/dr1/dr1-products/dr1-schema" >Table Schema</a>
+                </app-menu>
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr1-access" href="[[rootPath]]releases/dr1/dr1-access" persistent="False">Data Access<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id=needsindent2 name="dr1-ncsa" href="[[rootPath]]releases/dr1/dr1-access/dr1-ncsa" >NCSA DESaccess</a>
+                  <a class="app-menu-item" id=needsindent2 name="dr1-linea" href="[[rootPath]]releases/dr1/dr1-access/dr1-linea" >LIneA Science Server</a>
+                  <a class="app-menu-item" id=needsindent2 name="dr1-noao" href="[[rootPath]]releases/dr1/dr1-access/dr1-noao" >NOAO DataLab</a>
+                </app-menu>
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq" >DR1 FAQ</a>
+                </div>
+                </app-submenu>
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr1-team" href="[[rootPath]]releases/dr1/dr1-team" >DR1 Release Team</a>
+                </div>
+                </app-submenu>
+
+
+                </app-menu>
+               </app-submenu no-auto-close>
+
               <!-- OTHERS -->
               <app-submenu no-auto-close>
                 <div class="sublist1" slot="submenu-trigger">
