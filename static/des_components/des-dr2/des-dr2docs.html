@@ -14,27 +14,26 @@
     <div class=card-content >
         <h2>Survey Overview</h2>
         <p>
-          <span style="color: rgb(0,0,0);">We describe the second public data release of the Dark Energy Survey, DES DR1, consisting of reduced single-epoch images, coadded images, coadded source catalogs, and associated products and services assembled over the first three years of DES science operations. DES DR1 is based on optical/near-infrared imaging from 345 distinct nights (August 2013 to February 2016) by the Dark Energy Camera mounted on the 4-m Blanco telescope at Cerro Tololo Inter-American Observatory in Chile. We release data from the DES wide-area survey covering ~5000 square degrees of the southern Galactic cap in five broad photometric bands, <em>grizY</em>. </span>
+          <span style="color: rgb(0,0,0);"> We  present  the  second  public  data  release  of  the  Dark  Energy  Survey,  DES  DR2,  based  on  optical/near-infrared  imaging  by  the  Dark  Energy  Camera  mounted  on  the  4-m  Blanco  telescope  at  Cerro  Tololo  Inter-American Observatory in Chile.   DES DR2 consists of reduced single-epoch and coadded images,  a source catalog derived from coadded images, and associated data products assembled from 6 years of DES science operations.  This release includes data from the DES wide-area survey covering ∼5000 deg<sup>2</sup> of the southern Galactic cap in five broad photometric bands, grizY.  
+          <br> <br>
+          DES DR2 has a median delivered point-spread function full-width at half maximum of g = 1.11, r = 0.95, i = 0.88, z = 0.83, and Y = 0.90 arcsec, photometric uniformity with a standard deviation of &lt; 3 mmag with respect to Gaia DR2 G-band, a photometric accuracy of ∼10 mmag, and a median internal astrometric precision of ∼27 mas. The median coadded catalog depth for a 1.95'' diameter aperture at S/N = 10 is g = 24.7, r = 24.4, i = 23.8, z = 23.1, and Y = 21.7 mag. DES DR2 includes ∼691 million distinct astronomical objects detected in 10,169 coadded image tiles of size 0.534 deg<sup>2</sup> produced from 76,217 single-epoch images. After a basic quality selection, benchmark galaxy and stellar samples contain 543 million and 145 million objects, respectively. These data are accessible through several interfaces, including web-based query clients,  image cutout servers,  Jupyter notebooks,  and an interactive coadded image visualization tool. DES DR2 constitutes the largest photometric data set to date at the achieved depth and photometric precision.</span>
         </p>
-        <p>
-          <span style="color: rgb(0,0,0);">DES DR1 has a median delivered point-spread function of g = 1.119, r = 0.958, i = 0.880, z = 0.836, and Y = 0.904 arcsec FWHM, a photometric precision of &lt; 1% in all bands, and an astrometric precision of 151 mas. The median coadded catalog depth for a 1.95" diameter aperture at S/N = 10 is g = 24.33, r = 24.08, i = 23.44, z = 22.69, and Y = 21.44 mag. DES DR1 includes nearly 400M distinct astronomical objects detected in ~10,000 coadd tiles of size 0.534 square degrees produced from ~39,000 individual exposures. Benchmark galaxy and stellar templates contain ~310 M and ~80 M objects respectively, following a basic object quality selection. These data are accessible through a range of interfaces, including query web clients, image cutout servers, jupyter notebooks and an interactive coadd image visualization tool. DES DR1 constitutes the largest photometric data set to date at the achieved depth and photometric precision.</span>
-        </p>
-
+        
         <h2>Documentation</h2>
         <ul>
           <li>
             <h3>
-              <a href="[[rootPath]]releases/dr1/dr1-docs/acquisition">Data Acquisition</a>
+              <a href="https://arxiv.org/abs/1801.03181">DR2 Release Paper</a>
             </h3>
           </li>
           <li>
             <h3>
-              <a href="[[rootPath]]releases/dr1/dr1-docs/processing">Data Processing</a>
+              <a href="https://arxiv.org/abs/1801.03177">DESDM Pipeline Paper</a>
             </h3>
           </li>
           <li>
             <h3>
-              <a href="[[rootPath]]releases/dr1/dr1-docs/quality">Data Quality</a>
+              <a href="[[rootPath]]releases/dr2/dr2-docs/dr2-processing">Data Processing</a>
             </h3>
           </li>
           <li>
@@ -44,7 +43,7 @@
           </li>
         </ul>
         <h2 style="text-align: left;">
-          <span style="color: rgb(0,0,0);">DES DR1 Key Numbers and Data Quality Summary<br/>
+          <span style="color: rgb(0,0,0);">DES DR2 Key Numbers and Data Quality Summary<br/>
           </span>
         </h2>
 
@@ -88,47 +87,83 @@
           <td colspan="1">
             <p>Number of Exposures in Coadd</p>
           </td>
-          <td colspan="1" style="text-align: center;">7626</td>
-          <td colspan="1" style="text-align: center;">7470</td>
-          <td colspan="1" style="text-align: center;">7470</td>
-          <td colspan="1" style="text-align: center;">7753</td>
-          <td colspan="1" style="text-align: center;">8531</td>
+          <td colspan="1" style="text-align: center;">16,248</td>
+          <td colspan="1" style="text-align: center;">16,117</td>
+          <td colspan="1" style="text-align: center;">15,792</td>
+          <td colspan="1" style="text-align: center;">15,731</td>
+          <td colspan="1" style="text-align: center;">12,239</td>
         </tr>
         <tr>
           <td colspan="1">
-            <p>Single-epoch PSF FWHM (arcsec)</p>
+            <p>Single-epoch Median PSF FWHM (arcsec)</p>
           </td>
           <td colspan="1" style="text-align: center;">
-            <p>1.119</p>
+            <p>1.11</p>
           </td>
           <td colspan="1" style="text-align: center;">
-            <p>0.958</p>
+            <p>0.95</p>
           </td>
           <td colspan="1" style="text-align: center;">
-            <p>0.880</p>
+            <p>0.88</p>
           </td>
           <td colspan="1" style="text-align: center;">
-            <p>0.836</p>
+            <p>0.83</p>
           </td>
           <td colspan="1" style="text-align: center;">
-            <p>0.904</p>
+            <p>0.90</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1">Single-epoch Sky Brightness (mag arcsec<sup>-2</sup>)</td>
-          <td colspan="1" style="text-align: center;">22.01</td>
-          <td colspan="1" style="text-align: center;">21.15</td>
-          <td colspan="1" style="text-align: center;">19.89</td>
-          <td colspan="1" style="text-align: center;">18.72</td>
-          <td colspan="1" style="text-align: center;">17.96</td>
+          <td colspan="1">Single-epoch Median Sky Brightness (mag arcsec<sup>-2</sup>)</td>
+          <td colspan="1" style="text-align: center;">22.05</td>
+          <td colspan="1" style="text-align: center;">21.18</td>
+          <td colspan="1" style="text-align: center;">19.92</td>
+          <td colspan="1" style="text-align: center;">18.74</td>
+          <td colspan="1" style="text-align: center;">17.97</td>
         </tr>
         <tr>
-          <td colspan="1">Single-epoch Effective Image Noise (mag arcsec<sup>-2</sup>)</td>
-          <td colspan="1" style="text-align: center;">25.25</td>
-          <td colspan="1" style="text-align: center;">24.94</td>
-          <td colspan="1" style="text-align: center;">24.31</td>
-          <td colspan="1" style="text-align: center;">23.58</td>
-          <td colspan="1" style="text-align: center;">22.28</td>
+          <td colspan="1">Single-epoch Median Effective Image Noise (mag arcsec<sup>-2</sup>)</td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Single-epoch Astrometric Repeatability (mas)</p>
+          </td>
+          <td style="text-align: center;">42</td>
+          <td style="text-align: center;">36</td>
+          <td style="text-align: center;">37</td>
+          <td style="text-align: center;">39</td>
+          <td style="text-align: center;">56</td>
+        </tr>
+        <tr>
+          <td>Single-epoch Photometric Repeatability (mmag)</td>
+          <td style="text-align: center;">
+            <p>7.3</p>
+          </td>
+          <td style="text-align: center;">6.1</td>
+          <td style="text-align: center;">5.9</td>
+          <td style="text-align: center;">7.3</td>
+          <td style="text-align: center;">7.8</td>
+        </tr>
+        <tr>
+          <td colspan="1">Single-epoch Magnitude Limit (PSF, S/N = 10)</td>
+          <td colspan="1" style="text-align: center;">23.57</td>
+          <td colspan="1" style="text-align: center;">23.34</td>
+          <td colspan="1" style="text-align: center;">22.78</td>
+          <td colspan="1" style="text-align: center;">22.10</td>
+          <td colspan="1" style="text-align: center;">20.69</td>
+        </tr>
+        <tr>
+          <td colspan="1"><br></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
         </tr>
         <tr>
           <td>
@@ -169,16 +204,6 @@
           </td>
         </tr>
         <tr>
-          <td>
-            <p>Single-epoch Astrometric Repeatability (mas)</p>
-          </td>
-          <td style="text-align: center;">42</td>
-          <td style="text-align: center;">36</td>
-          <td style="text-align: center;">37</td>
-          <td style="text-align: center;">39</td>
-          <td style="text-align: center;">56</td>
-        </tr>
-        <tr>
           <td>Coadd Astrometric Precision (mas)</td>
           <td style="text-align: center;">
             <br/>
@@ -205,16 +230,6 @@
           <td style="text-align: center;">4.5</td>
         </tr>
         <tr>
-          <td>Single-epoch Photometric Repeatability (mmag)</td>
-          <td style="text-align: center;">
-            <p>7.3</p>
-          </td>
-          <td style="text-align: center;">6.1</td>
-          <td style="text-align: center;">5.9</td>
-          <td style="text-align: center;">7.3</td>
-          <td style="text-align: center;">7.8</td>
-        </tr>
-        <tr>
           <td colspan="1">Coadd Photometric Precision (mmag)</td>
           <td colspan="1" style="text-align: center;">5</td>
           <td colspan="1" style="text-align: center;">4</td>
@@ -233,14 +248,6 @@
           </td>
           <td colspan="1" style="text-align: center;">...</td>
           <td colspan="1" style="text-align: center;">...</td>
-        </tr>
-        <tr>
-          <td colspan="1">Single-epoch Magnitude Limit (PSF, S/N = 10)</td>
-          <td colspan="1" style="text-align: center;">23.57</td>
-          <td colspan="1" style="text-align: center;">23.34</td>
-          <td colspan="1" style="text-align: center;">22.78</td>
-          <td colspan="1" style="text-align: center;">22.10</td>
-          <td colspan="1" style="text-align: center;">20.69</td>
         </tr>
         <tr>
           <td colspan="1">Coadd Magnitude Limit (MAG_APER_4, 1.95" diameter, S/N = 10)</td>
