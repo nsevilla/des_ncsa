@@ -1,4 +1,4 @@
-<dom-module id="des-dr1-products">
+<dom-module id="des-dr2-products">
 
 
 <template>
@@ -20,7 +20,7 @@
 
 <paper-dialog id="dialogfig1">
             <des-img-big  src="{{rootPath}}static/images/dr1/footprint_h32_tiles.png">
-                Figure 1. DES footprint subdivisions. This figure shows the 10,338 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR1.
+                Figure 1. DES footprint subdivisions. This figure shows the 10,169 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR2.
             </des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
@@ -28,7 +28,7 @@
 </paper-dialog>
 <paper-dialog id="dialogfig2">
             <des-img-big  src="{{rootPath}}static/images/dr1/dr1_bandpass.png">
-            Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
+            Figure 2. DR1/DR2 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
             instrumental response across the science CCDs These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information"> Here</a></des-img-big>
@@ -40,7 +40,7 @@
 
 <div class="fixup" id="products_top"></div>
 <div class="fixdown"></div>
-<des-card heading = 'DR1 Data Products'>
+<des-card heading = 'DR2 Data Products'>
     <div class=card-content>
         <ul>
           <li><a href="javascript:void(0)" on-tap="_intro">Introduction</a></li>
@@ -48,37 +48,42 @@
           <li><a href="javascript:void(0)" on-tap="_catalogs">Catalogs</a></li>
           <ul>
               <li>
-                  <a href="[[rootPath]]releases/dr1/dr1-products/dr1-schema">DR1 Table Schema</a>
+                  <a href="[[rootPath]]releases/dr2/dr2-products/dr2-schema">DR2 Table Schema</a>
               </li>
           </ul>
-          <li><a href="javascript:void(0)" on-tap="_filters">DR1 Standard Bandpasses</a></li>
-          <li><a href="javascript:void(0)" on-tap="_software">DR1 Software</a></li>
+          <li><a href="javascript:void(0)" on-tap="_filters">DR2 Standard Bandpasses</a></li>
+          <li><a href="javascript:void(0)" on-tap="_software">DR2 Software</a></li>
         </ul>
         <hr />
         <p><br/></p>
         <div class="fixup" id="products_intro"></div>
         <h3 class="fixdown">Introduction  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <p>Here we present a summary and description of the individual products included in DES DR1. The primary components of DES DR1 are derived from the union of 10,338 coadd tiles covering the DES footprint. The tile distribution is shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a  > and a HEALPix map (NSIDE = 32) of 1753 pixels covering the entire DR1 release is also provided for reference. This map is useful for cross matching sections of the DES footprint with other surveys.</p>
-        <p>In order to provide a convenient way to download all the catalog data at once, and noting that the tile is the basic processing unit for the survey, we have created FITS file versions<br/>of the catalog tables grouped by coadd tile. This amounts to 31,014 total files (for the DR1_MAIN, DR1_MAGNITUDE, and DR1_FLUX tables) with almost 2.5 TB of catalog data. Both the catalog and corresponding image file paths can beobtained from the DR1_TILE_INFO table  and can be accessed through the interfaces.</p>
+        <p>Here we present a summary and description of the individual products included in DES DR2. The primary components of DES DR2 are derived from the union of 10,169 coadd tiles covering the DES footprint. The tile distribution is shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a  > and a HEALPix map (NSIDE = 32) of 1753 pixels covering the entire DR2 release is also provided for reference. This map is useful for cross matching sections of the DES footprint with other surveys.</p>
+        <p>In order to provide a convenient way to download all the catalog data at once, and noting that the tile is the basic processing unit for the survey, we have created FITS file versions<br/>of the catalog tables grouped by coadd tile. This amounts to 30,507 total files (for the DR2_MAIN, DR2_MAGNITUDE, and DR2_FLUX tables) with almost 3 TB of catalog data. Both the catalog and corresponding image file paths can be obtained from the DR2_TILE_INFO table  and can be accessed through the interfaces.</p>
             <des-img-big  src="{{rootPath}}static/images/dr1/footprint_h32_tiles.png" on-tap="_dialog" data-item="1">
-                Figure 1. DES footprint subdivisions. This figure shows the 10,338 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR1.
+                Figure 1. DES footprint subdivisions. This figure shows the 10,169 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR2.
             </des-img-big>
 
         <p><br/></p>
         <div class="fixup" id="products_images"></div>
         <h3 class="fixdown">Images  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <p>DES DR1 images can be separated into two categories:</p>
-        <p><b>a)</b> <u>Calibrated Single Exposures</u>: 38,850 exposures with photometric calibration, corresponding to 4,124,753 individual CCD images. The number of exposures per band are N<sub>g</sub> = 7626, N<sub>r</sub> = 7470, N<sub>i</sub> = 7470, N<sub>z</sub> = 7753 and N<sub>Y</sub> = 8531, respectively. Each exposure is roughly 500 MB in size. These images can be accessed through <a href="http://datalab.noao.edu/">NOAO Data Lab</a>.</p>
-        <p><b>b)</b> <u>Coadd Images</u>: As a result of the Multi-Epoch Pipeline described in <a href="[[rootPath]]releases/dr1/dr1-docs/processing">Data Processing</a>, a total of 10,338 tiles of 10k x 10k pixels spanning 0.7306deg on a side at a resolution of 0.263 arcsec/pixel (see <a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a> ) were produced in each of the 5 bands. These images along with the <em>r + i + z</em> combined detection image used are publicly available with a total of 62,028 images constituting ~11 TB of data.</p>
+        <p>DES DR2 images can be separated into two categories:</p>
+        <p><b>a)</b> <u>Calibrated Single Exposures</u>: 92,263 exposures with photometric calibration, corresponding to 5,795,641 individual CCD images. The number of exposures per band are N<sub>g</sub> = 20,043, N<sub>r</sub> = 20,106, N<sub>i</sub> = 19,545, N<sub>z</sub> = 22,713 and N<sub>Y</sub> = 13,856, respectively. 
+        
+          Each exposure is roughly 500 MB in size. These images can be accessed through <a href="http://datalab.noirlab.edu/">NOIRLab Astro Data Lab</a>.</p>
+        <p><b>b)</b> <u>Coadd Images</u>: As a result of the Multi-Epoch Pipeline described in <a href="[[rootPath]]releases/dr2/dr2-docs/processing">Data Processing</a>, a total of 10,169 tiles of 10k x 10k pixels spanning 0.7306deg on a side at a resolution of 0.263 arcsec/pixel (see <a href="javascript:void(0)" on-tap="_dialog" data-item="1"/>Figure 1</a> ) were produced in each of the 5 bands. For each tile, DESDM created a background-subtracted image for each filter which are the based for the source catalogs and one without background subtraction for each band as ancillary data.
+          
+        These 10 images per band along with the <em>r + i + z</em> combined detection image used are <a href='http://desdr-server.ncsa.illinois.edu/despublic/dr2_tiles/' target="_blank"> publicly available </a> for a total of 111,859 images constituting ~20 TB of data.</p>
 
 
         <p><br/></p>
         <div class="fixup" id="products_catalogs"></div>
         <h3 class="fixdown">Catalogs  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>
-        <a href="[[rootPath]]releases/dr1/dr1-products/dr1-schema">DR1 Table Schema</a>    
+        <a href="[[rootPath]]releases/dr2/dr2-products/dr2-schema">DR2 Table Schema</a>    
         </p>
-        <p>The coadd source extraction process detected and cataloged 399,263,026 distinct objects. Morphological object information includes object centroids, shape parameters, HEALPix indices, and processing flags. Several different photometric measurements and associated uncertainties are provided including AUTO, PETRO, WAVG_PSF, and assorted aperture magnitudes (Table 1) These measurments are distributed in three database tables: DR1_MAIN, DR1_MAGNITUDE, and DR1_FLUX served from an Oracle database at NCSA. The DR1_MAIN table contains all object information that is not a photometric measurement or uncertainty, augmented by MAG_AUTO and MAG_PETRO (and associated uncertainties) and an extinction corrected versions. The other two tables contain auxiliary magnitude and flux measurements (with associated uncertainties) in addition to extra information which is present in all three tables, like coordinates, flags, and HEALPix indexes. Additionally, the table DR1_TILE_INFO contains information about the processed tiles, such as sky location, geometry, number of objects and file paths to access the images and catalogs generated. </p>
+        <p>The coadd source extraction process detected and cataloged 6,914,836,608 distinct objects. Morphological object information includes object centroids, shape parameters, HEALPix indices, and processing flags. Several different photometric measurements and associated uncertainties are provided including AUTO, PETRO, WAVG_PSF, and assorted aperture magnitudes (Table 1). These measurements are distributed in three database tables: DR2_MAIN, DR2_MAGNITUDE, and DR2_FLUX served from an Oracle database at NCSA and can be accessed at the <a href="https://des.ncsa.illinois.edu/desaccess/login"> DESaccess portal </a>. <br> 
+          The DR2_MAIN table contains all object information that is not a photometric measurement or uncertainty, augmented by MAG_AUTO and MAG_PETRO (and associated uncertainties) and an extinction corrected versions. The other two tables contain auxiliary magnitude and flux measurements (with associated uncertainties) in addition to extra information which is present in all three tables, like coordinates, flags, and HEALPix indexes. Additionally, the table DR2_TILE_INFO contains information about the processed tiles, such as sky location, geometry, number of objects and file paths to access the images and catalogs generated. </p>
         <table>
   <colgroup>
     <col/>
@@ -204,28 +209,29 @@
 </table>
         <p><br/></p>
         <div class="fixup" id="products_filters"></div>
-        <h3 class="fixdown">DR1 Standard Bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-        <p>DES DR1 includes an updated characterization of the Blanco/DECam total system response (instrument and at mosphere) for the g, r, i, z, Y bands. The DES DR1 Standard Bandpasses are defined as the average CCD response across the focal plane as measured with the DECal system (<a href="http://adsabs.harvard.edu/abs/2013arXiv1302.5720M">Marshall et al. 2013</a>), together with a standard atmospheric transmission computed with the <code>MODTRAN IV</code> code (<a href="http://adsabs.harvard.edu/abs/1999SPIE.3756..348B">Berk et al. 1999</a>) using parameters typical of the environmental conditions encountered during DES observations (for details, see<a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B"> Burke et al. 2017</a>). For example, the airmass adopted for the standard atmosphere, 1.2, is well matched to the median airmass of exposures entering the coadd, 1.22. The system response is defined in steps of 5 Å from 3800 Å to 11000 Å. Out-of-band light leakage has been directly measured with DECal to be roughly less than 10<sup>-3</sup> relative to the in-band response, and vendor measurements of witness samples suggest that the out-of-band leakage is typically at the 10<sup>-5</sup> to 10<sup>-4</sup> level. While detailed characterization of the out-of band response is ongoing, the throughput of the DES DR1 Standard Bandpasses are defined as zero for out-of-band wavelengths (see <a href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>).</p>
+        <h3 class="fixdown">DR1/DR2 Standard Bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>DES DR2 includes an updated characterization of the Blanco/DECam total system response (instrument and at mosphere) for the g, r, i, z, Y bands. The DES DR1/DR2 Standard Bandpasses are defined as the average CCD response across the focal plane as measured with the DECal system (<a href="http://adsabs.harvard.edu/abs/2013arXiv1302.5720M">Marshall et al. 2013</a>), together with a standard atmospheric transmission computed with the <code>MODTRAN IV</code> code (<a href="http://adsabs.harvard.edu/abs/1999SPIE.3756..348B">Berk et al. 1999</a>) using parameters typical of the environmental conditions encountered during DES observations (for details, see<a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B"> Burke et al. 2017</a>). For example, the airmass adopted for the standard atmosphere, 1.2, is well matched to the median airmass of exposures entering the coadd, 1.22. The system response is defined in steps of 5 Å from 3800 Å to 11000 Å. Out-of-band light leakage has been directly measured with DECal to be roughly less than 10<sup>-3</sup> relative to the in-band response, and vendor measurements of witness samples suggest that the out-of-band leakage is typically at the 10<sup>-5</sup> to 10<sup>-4</sup> level. While detailed characterization of the out-of band response is ongoing, the throughput of the DES DR1/DR2 Standard Bandpasses are defined as zero for out-of-band wavelengths (see <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>).</p>
 
-<p>These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information">Here</a>. Note that, as described in the <a href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a>, Y3A1 Standard Bandpasses have some minor inaccuracies and are not being released in favor of the DR1 set, but can be requested by sending an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
+<p>These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information">Here</a>. <br>
+   <br>Note that, as described in the <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>, Y3A1 Standard Bandpasses have some minor inaccuracies and are not being released in favor of the DR1/DR2 set, but can be requested by sending an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
 
             <des-img-big  src="{{rootPath}}static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
-            Figure 2. DR1 Standard Bandpasses for the DECam g, r, i, z and
+            Figure 2. DR1/DR2 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
             instrumental response across the science CCDs. These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information"> Here</a></des-img-big>
 
         <p><br/></p>
         <div class="fixup" id="products_software"></div>
-        <h3 class="fixdown">DR1 Software  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <h3 class="fixdown">DR1/DR2 Software  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
         <p>All the software used in the DESDM pipelines described in Processing and in <a href="https://arxiv.org/abs/1801.03177">Morganson et al. (2018)</a> can be accessed from the release page itself or from the <a href="https://github.com/DarkEnergySurvey">DES Github Organization</a>. With access to the software used to generate these products and the configuration described in <a href="https://arxiv.org/abs/1801.03177">Morganson et al. (2018)</a>, we provide the main ingredients to reprocess the data in a similar manner as done by DES.</p>
 
     </div>
 </des-card>
 </template>
 <script>
-    class DesDr1Products extends Polymer.Element {
-      static get is() { return 'des-dr1-products'; }
+    class DesDr2Products extends Polymer.Element {
+      static get is() { return 'des-dr2-products'; }
       _intro() {this.$.products_intro.scrollIntoView();}
       _images() {this.$.products_images.scrollIntoView();}
       _catalogs() {this.$.products_catalogs.scrollIntoView();}
@@ -239,7 +245,7 @@
           this.shadowRoot.querySelector('#dialogfig'+temp).open();
           }
     }
-    window.customElements.define(DesDr1Products.is, DesDr1Products);
+    window.customElements.define(DesDr2Products.is, DesDr2Products);
   </script>
 
 </dom-module>

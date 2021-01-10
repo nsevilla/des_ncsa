@@ -12,6 +12,7 @@
 <!-- DES SVA1 -->
 <!-- DES Y1A1 -->
 <!-- DES DR1 -->
+<!-- DES DR2 -->
 <!-- DES SN -->
 <!-- DES Other -->
 </head><body><div hidden="" by-vulcanize=""><!--
@@ -32441,12 +32442,55 @@ Custom property | Description | Default
 
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id="needindent" name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq">DR1 FAQ</a>
+                  <a class="app-menu-item" id="needindent" name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq">Data Release FAQ</a>
                 </div>
                 </app-submenu>
                   <app-submenu no-auto-close="">
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id="needindent" name="dr1-team" href="[[rootPath]]releases/dr1/dr1-team">DR1 Release Team</a>
+                </div>
+                </app-submenu>
+
+
+                </app-menu>
+               </app-submenu>
+
+
+              <!-- DR2 -->
+               <app-submenu no-auto-close="">
+                <div class="sublist1" slot="submenu-trigger">
+                  <a class="app-menu-item" name="dr2" href="[[rootPath]]releases/dr2">DR2<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist2" slot="submenu-content">
+                   <!--<a class="app-menu-item" id=needindent name="dr1files" href="[[rootPath]]releases/dr1/dr1files" >Files</a>-->
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="dr2-docs" href="[[rootPath]]releases/dr2/dr2-docs" persistent="False">Overview<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="dr2-processing" href="[[rootPath]]releases/dr2/dr2-docs/dr2-processing">Processing</a>
+                  <a class="app-menu-item" id="needsindent2" name="known-issues" href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>
+                </app-menu>
+                </app-submenu>
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="dr2-products" href="[[rootPath]]releases/dr2/dr2-products" persistent="False">Products<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id="needsindent2" name="dr2-schema" href="[[rootPath]]releases/dr2/dr2-products/dr2-schema">Table Schema</a>
+                </app-menu>
+                </app-submenu>
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="dr2-access" href="[[rootPath]]releases/dr2/dr2-access" persistent="False">Data Access</a>
+                </div>
+                </app-submenu>
+
+                  <app-submenu no-auto-close="">
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="dr2-faq" href="[[rootPath]]releases/dr2/dr2-faq">Data Release FAQ</a>
                 </div>
                 </app-submenu>
 
@@ -32572,6 +32616,18 @@ Custom property | Description | Default
             <des-dr1-linea name="dr1-linea"></des-dr1-linea>
             <des-dr1-faq name="dr1-faq"></des-dr1-faq>
             <des-dr1-team name="dr1-team"></des-dr1-team>
+          
+           <!-- DR2 PAGES -->
+
+            <des-dr2 name="dr2"></des-dr2>
+            <des-dr2docs name="dr2-docs"></des-dr2docs>
+            <des-dr2-products name="dr2-products"></des-dr2-products>
+            <des-dr2-schema name="dr2-schema"></des-dr2-schema>
+            <des-dr2-access name="dr2-access"></des-dr2-access>
+            <des-dr2-soft name="dr2-processing"></des-dr2-soft>
+            <!-- FAQ is common for DR1 and DR2-->
+            <des-dr1-faq name="dr2-faq"></des-dr1-faq>
+            <des-dr1-ncsa name="dr2-ncsa"></des-dr1-ncsa>
 
            <!-- Other Releases -->
               <des-other name="other"></des-other>
@@ -32887,12 +32943,12 @@ Custom property | Description | Default
 
           <h3><strong>Overview of the Dark Energy Survey (DES)</strong> </h3>
 
-<p>The DES is a 5000 square degree <em>grizY</em> photometric survey of the Southern sky aimed at understanding the accelerating expansion rate of the universe using four complementary methods: weak gravitational lensing, galaxy cluster counts, baryon acoustic oscillations, and Type Ia supernovae. DES uses the new 3 square degree Dark Energy Camera (DECam) imager, a 570 Megapixel CCD camera installed at the prime focus of on the Blanco 4m telescope at the Cerro Tololo Interamerican Observatory in northern Chile. For about 100 nights per year, from 2013 until 2018, the DECam scanned the sky to perform a 5000 sq-degree wide field survey and 30 sq-degree supernova survey. Learn more on the main <a href="http://www.darkenergysurvey.org/">DES website.</a></p>
+<p>The DES is a 5000 square degree <em>grizY</em> photometric survey of the Southern sky aimed at understanding the accelerating expansion rate of the universe using four complementary methods: weak gravitational lensing, galaxy cluster counts, baryon acoustic oscillations, and Type Ia supernovae. DES uses the new 3 square degree Dark Energy Camera (DECam) imager, a 570 Megapixel CCD camera installed at the prime focus of on the Blanco 4m telescope at the Cerro Tololo Interamerican Observatory in northern Chile. For about 100 nights per year, from 2013 until 2019, the DECam scanned the sky to perform a 5000 sq-degree wide field survey and 30 sq-degree supernova survey. Learn more on the main <a href="http://www.darkenergysurvey.org/">DES website.</a></p>
 
           <h3><strong>Dark Energy Survey Data Managment (DESDM) at NCSA</strong></h3>
 <p>The Dark Energy Survey Data Management (DESDM) Project developed and operates the DESDM system at the National Center for Supercomputing Applications (NCSA) at the University of Illinois at Urbana-Champaign. This system is used for the processing and calibration of DES data and the DECam Community Pipeline. The DECam Community Pipeline is used by NOAO to process DECam data obtained by non-DES observers.
 </p><p> Our mission is to process the raw data generated by the DECam instrument at the CTIO observatory into science-ready data products. We began providing data access to the general public after an initial proprietary period when DESDM served these products only to the collaboration.</p>
-<p> DES makes its data public in two ways. First, reduced DECam images are made available from NOAO a year after they are taken. Second, DES will produce two public data releases. The first one, DR1, covers data  products  derived  from  wide-area  survey  observations taken in the first three years of science operation between August 2013 to February 2016. DR1 was released in 2018. The final public data release will be available in early 2021. </p>
+<p> DES makes its data public in two ways. First, reduced DECam images are made available from NOAO a year after they are taken. Second, DES will produce several public data releases. The first official release one, DR1, covers data  products  derived  from  wide-area  survey  observations taken in the first three years of science operation between August 2013 to February 2016. DR1 was released in 2018. The second official release, DR2, corresponds to the full six years of operations for the wide survey. It was released in 2021. </p>
 
 
 
@@ -32937,9 +32993,16 @@ Custom property | Description | Default
         Please use the acknowledgement below and refer to the <a href="https://des.ncsa.illinois.edu/releases/y1a1" target="_blank">Y1 Release page</a> for the additional corresponding references.
 
         <h5>DR1</h5>
-        <a href="https://arxiv.org/abs/1801.03181">The Dark Energy Survey Data Release 1, DES Collaboration (2018)</a><br>
-        <a href="https://arxiv.org/abs/1801.03177">The Dark Energy Survey Image Processing Pipeline, E. Morganson, et al. (2018)</a><br>
-        <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">The Dark Energy Camera, B. Flaugher, et al, AJ, 150, 150 (2015)</a>
+        <a href="https://ui.adsabs.harvard.edu/abs/2018ApJS..239...18A/abstract">The Dark Energy Survey Data Release 1 </a>, DES Collaboration (2018), ApJS, 239, 18<br>
+        <a href="https://ui.adsabs.harvard.edu/abs/2018PASP..130g4501M/abstract">The Dark Energy Survey Image Processing Pipeline</a>, Morganson E., Gruendl R.A., Menanteau F., Carrasco Kind M., et al., 2018, PASP, 130, 074501<br>
+        <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">The Dark Energy Camera</a>, B. Flaugher, et al., 2015, AJ, 150, 150
+
+        <h5>DR2</h5>
+        <a href="#">The Dark Energy Survey Data Release 2 </a>, DES Collaboration (2021)<br>
+        <a href="https://ui.adsabs.harvard.edu/abs/2018PASP..130g4501M/abstract">The Dark Energy Survey Image Processing Pipeline</a>, Morganson E., Gruendl R.A., Menanteau F., Carrasco Kind M., et al., 2018, PASP, 130, 074501<br>
+        <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">The Dark Energy Camera</a>, B. Flaugher, et al., 2015, AJ, 150, 150
+
+
 
 <div id="main-content">
 
@@ -33104,6 +33167,7 @@ We are grateful for the extraordinary contributions of our CTIO colleagues and t
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sva1"><paper-button noink="" raised="" class="desButton">SVA1 Gold</paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/y1a1"><paper-button noink="" raised="" class="desButton">Y1 Gold</paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/dr1"><paper-button noink="" raised="" class="desButton">DR1 </paper-button></a>
+            <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/dr2"><paper-button noink="" raised="" class="desButton">DR2 </paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/sn"><paper-button noink="" raised="" class="desButton">SN </paper-button></a>
             <a style="padding: 20px; text-decoration: none;" href="[[rootPath]]releases/other"><paper-button noink="" raised="" class="desButton">Other </paper-button></a>
             <div style="padding: 20px; text-decoration: none; display: inline;"><paper-button noink="" raised="" disabled="" class="desButton">Future Releases </paper-button></div>
@@ -33234,7 +33298,7 @@ Indicating one or more relevant topics will help us to properly answer your ques
 
             <div class="form1" id="form3">
             <p><b>Question Topic (Please Select All That Apply):</b></p>
-            <paper-checkbox name="topic" value="DR1 Release"> DR1 Release</paper-checkbox> <br>
+            <paper-checkbox name="topic" value="DR1 Release"> DR1/DR2 Release</paper-checkbox> <br>
             <paper-checkbox name="topic" value="Interfaces"> User Interfaces </paper-checkbox> <br>
             <paper-checkbox name="topic" value="LIneA"> LInea Science Portal </paper-checkbox> <br>
             <paper-checkbox name="topic" value="User Accounts"> User Accounts </paper-checkbox><br>
@@ -33384,7 +33448,7 @@ Indicating one or more relevant topics will help us to properly answer your ques
                 Please visit the <a href="https://des.ncsa.illinois.edu/thanks">acknowledgments</a> page for citations related to SV or Y1 data products.
             </p>
             <p>
-                Registered users accessing DR1 data are requested to credit and acknowledge the DES Collaboration when using any and all material from these services.
+                Registered users accessing DR1 or DR2 data are requested to credit and acknowledge the DES Collaboration when using any and all material from these services.
             </p>
             <p>
                 For citations in academic format cite:
@@ -33405,6 +33469,10 @@ Indicating one or more relevant topics will help us to properly answer your ques
             <ul>
                 <li style="list-style-type: disc;">
                     <em>“The Dark Energy Survey Data Release 1"</em>
+                </li>
+                <p> or </p>
+                <li style="list-style-type: disc;">
+                    <em>“The Dark Energy Survey Data Release 2"</em>
                 </li>
             </ul>
             <p>
@@ -42690,7 +42758,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <div class="fixup" id="products_top"></div>
 <div class="fixdown"></div>
-<des-card heading="Data Products">
+<des-card heading="DR1 Data Products">
     <div class="card-content">
         <ul>
           <li><a href="javascript:void(0)" on-tap="_intro">Introduction</a></li>
@@ -43933,7 +44001,7 @@ tpz_bin_edges = np.linspace(0.005-dz/2, 2.0-dz/2, 201)
 
 <div class="fixup" id="soft_top"></div>
 <div class="fixdown"></div>
-    <des-card heading="Data Processing">
+    <des-card heading="Data Processing for Data Releases">
     <div class="card-content">
 
 <ul>
@@ -46645,7 +46713,7 @@ font-family:  "Courier New", Courier, monospace;
 
 <div class="fixup" id="faq_top"></div>
 <div class="fixdown"></div>
-<des-card heading="DR1 Frequently Asked Questions">
+<des-card heading="DR1/DR2 Frequently Asked Questions">
     <div class="card-content">
         A growing list of Frequently Asked Question will be posted here for future references.
 
@@ -47156,11 +47224,11 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
     <paper-button class="desButton" raised="" on-tap="_goncsa">Go to DESaccess</paper-button>
     <br>
 
-         <p>NCSA provides a primary set of basic web applications and a programmatic API to access DES DR1 data. Developed at NCSA, <a href="https://des.ncsa.illinois.edu/desaccess">DESaccess</a> provides an interface to submit asynchronous jobs that perform potentially lengthy operations involving the DES DR1 catalogs stored on the co-located Oracle database. These jobs include executing SQL statements and generating cutouts from the image data given list of positions and desired areal dimensions. <a href="https://des.ncsa.illinois.edu/desaccess">DESaccess</a> also contains information regarding the catalogs and an app to locate data in a tile-based format by coordinate or tile name for direct download. Please read the <a href="[[rootPath]]terms">Terms and Conditions</a> before using these interfaces. </p>
+         <p>NCSA provides a primary set of basic web applications and a programmatic API to access DES Release data. Developed at NCSA, <a href="https://des.ncsa.illinois.edu/desaccess">DESaccess</a> provides an interface to submit asynchronous jobs that perform potentially lengthy operations involving the DES Release catalogs stored on the co-located Oracle database. These jobs include executing SQL statements and generating cutouts from the image data given list of positions and desired areal dimensions. <a href="https://des.ncsa.illinois.edu/desaccess">DESaccess</a> also contains information regarding the catalogs and an app to locate data in a tile-based format by coordinate or tile name for direct download. Please read the <a href="[[rootPath]]terms">Terms and Conditions</a> before using these interfaces. </p>
 
              <p>The main services can be summarized as follows:</p>
              <p>
-               <strong>SQL web client:</strong> We provide a SQL web client that allows the user to submit asynchronous query jobs against the Oracle 12 database which contains the DES DR1 tables. The submitted jobs enter a queue and results can be retrieved when the job completes in one of several file formats, including CSV, FITS (<a href="http://adsabs.harvard.edu/abs/1981A%26AS...44..363W">Wells et al. 1981</a>) and HDF5 (<a href="http://www.hdfgroup.org/HDF5/">The HDF Group 1997-NNNN</a>), supporting compression in some of the cases. Big jobs are divided into smaller chunks to facilitate file transfer. This interface also provides a means to check syntax and to run shorter, synchronous jobs for quick results. The query interface is powered by <a href="https://github.com/des-labs/easyaccess">easyaccess</a>, an enhanced SQL command line interpreter designed for astronomical surveys and developed for DES.</p>
+               <strong>SQL web client:</strong> We provide a SQL web client that allows the user to submit asynchronous query jobs against the Oracle 12 database which contains the DES Release tables. The submitted jobs enter a queue and results can be retrieved when the job completes in one of several file formats, including CSV, FITS (<a href="http://adsabs.harvard.edu/abs/1981A%26AS...44..363W">Wells et al. 1981</a>) and HDF5 (<a href="http://www.hdfgroup.org/HDF5/">The HDF Group 1997-NNNN</a>), supporting compression in some of the cases. Big jobs are divided into smaller chunks to facilitate file transfer. This interface also provides a means to check syntax and to run shorter, synchronous jobs for quick results. The query interface is powered by <a href="https://github.com/des-labs/easyaccess">easyaccess</a>, an enhanced SQL command line interpreter designed for astronomical surveys and developed for DES.</p>
              <p>
                <strong>Cutout server:</strong> The cutout server allows the user to generate cutouts from the survey image data centered on a given set of positions, with areal dimensions up to 12 arcminutes on a side. Returned files may include image data cutouts in the selected bands in FITS format as well as tri-color composite images in PNG format generated using the STIFF (<a href="http://adsabs.harvard.edu/abs/2012ASPC..461..263B">Bertin 2012</a>) format or the Lupton method. The header of the cutout files is a copy from the original header from the images with extra keys indicating the center of the cutout RA_CUTOUT and DEC_CUTOUT. No stitching is performed for objects near the edge of the tile.</p>
              <p>
@@ -47398,6 +47466,3581 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
   </script>
 
 </dom-module>
+<dom-module id="des-dr2" assetpath="des-dr2/">
+
+<template>
+
+    <style include="shared-styles">
+
+
+</style>
+
+
+
+    <des-card heading="DES DR2 RELEASE">
+        <div style="text-align: center">
+        <iron-image style="width:653px; height:312px; padding:40px;" sizing="contain" src="{{rootPath}}static/images/dr2/dr2_footprint.png"></iron-image>
+            </div>
+
+
+      <div class="card-content">
+          This is officially the second major public release of reduced images and wide-field coadd source catalogs from all of the six years of full science operations, consisting  in over 76,000 single exposure images, close to 62,000 coadd images covering 10,169 tiles over roughly 5,000 square degrees within the DES footprint, resulting in nearly 700M distinct cataloged objects. Use the buttons below to access DR2 documentation and products.<br>
+          <br>
+
+          <b>See DR2 Release paper</b> <a href="https://arxiv.org/abs/1801.03181"> Here</a>
+
+      <div style="text-align: center">
+          <br>
+
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr2/dr2-docs"><paper-button raised="" class="desButton">Overview</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr2/dr2-products"><paper-button raised="" class="desButton">Products</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr2/dr2-access"><paper-button raised="" class="desButton">Data Access</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/dr2/dr2-faq"><paper-button raised="" class="desButton">FAQ</paper-button></a>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]help"><paper-button raised="" class="desButton">Help</paper-button></a>
+
+
+      </div>
+
+
+            </div>
+
+      </des-card>
+
+
+</template>
+<script>
+    class DesDr2 extends Polymer.Element {
+      static get is() { return 'des-dr2'; }
+    }
+    window.customElements.define(DesDr2.is, DesDr2);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr2docs" assetpath="des-dr2/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+</style>
+
+<des-card heading="Overview">
+    <div class="card-content">
+        <h2>Survey Overview</h2>
+        <p>
+          <span style="color: rgb(0,0,0);"> We  present  the  second  public  data  release  of  the  Dark  Energy  Survey,  DES  DR2,  based  on  optical/near-infrared  imaging  by  the  Dark  Energy  Camera  mounted  on  the  4-m  Blanco  telescope  at  Cerro  Tololo  Inter-American Observatory in Chile.   DES DR2 consists of reduced single-epoch and coadded images,  a source catalog derived from coadded images, and associated data products assembled from 6 years of DES science operations.  This release includes data from the DES wide-area survey covering ∼5000 deg<sup>2</sup> of the southern Galactic cap in five broad photometric bands, grizY.  
+          <br> <br>
+          DES DR2 has a median delivered point-spread function full-width at half maximum of g = 1.11, r = 0.95, i = 0.88, z = 0.83, and Y = 0.90 arcsec, photometric uniformity with a standard deviation of &lt; 3 mmag with respect to Gaia DR2 G-band, a photometric accuracy of ∼10 mmag, and a median internal astrometric precision of ∼27 mas. The median coadded catalog depth for a 1.95'' diameter aperture at S/N = 10 is g = 24.7, r = 24.4, i = 23.8, z = 23.1, and Y = 21.7 mag. DES DR2 includes ∼691 million distinct astronomical objects detected in 10,169 coadded image tiles of size 0.534 deg<sup>2</sup> produced from 76,217 single-epoch images. After a basic quality selection, benchmark galaxy and stellar samples contain 543 million and 145 million objects, respectively. These data are accessible through several interfaces, including web-based query clients,  image cutout servers,  Jupyter notebooks,  and an interactive coadded image visualization tool. DES DR2 constitutes the largest photometric data set to date at the achieved depth and photometric precision.</span>
+        </p>
+        
+        <h2>Documentation</h2>
+        <ul>
+          <li>
+            <h3>
+              <a href="https://arxiv.org/abs/1801.03181">DR2 Release Paper</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="https://arxiv.org/abs/1801.03177">DESDM Pipeline Paper</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="[[rootPath]]releases/dr2/dr2-docs/dr2-processing">Data Processing</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>
+            </h3>
+          </li>
+        </ul>
+        <h2 style="text-align: left;">
+          <span style="color: rgb(0,0,0);">DES DR2 Key Numbers and Data Quality Summary<br>
+          </span>
+        </h2>
+
+        <table class="fixed-table wrapped">
+      <colgroup>
+        <col style="width: 489.0px;">
+        <col style="width: 57.0px;">
+        <col style="width: 57.0px;">
+        <col style="width: 201.0px;">
+        <col style="width: 57.0px;">
+        <col style="width: 57.0px;">
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Parameter</th>
+          <th style="text-align: center;">
+            <br>
+          </th>
+          <th style="text-align: center;">
+            <br>
+          </th>
+          <th style="text-align: center;">Band</th>
+          <th style="text-align: center;">
+            <br>
+          </th>
+          <th style="text-align: center;">
+            <br>
+          </th>
+        </tr>
+        <tr>
+          <th colspan="1">
+            <br>
+          </th>
+          <th colspan="1" style="text-align: center;">g</th>
+          <th colspan="1" style="text-align: center;">r</th>
+          <th colspan="1" style="text-align: center;">i</th>
+          <th colspan="1" style="text-align: center;">z</th>
+          <th colspan="1" style="text-align: center;">Y</th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>Number of Exposures in Coadd</p>
+          </td>
+          <td colspan="1" style="text-align: center;">16,248</td>
+          <td colspan="1" style="text-align: center;">16,117</td>
+          <td colspan="1" style="text-align: center;">15,792</td>
+          <td colspan="1" style="text-align: center;">15,731</td>
+          <td colspan="1" style="text-align: center;">12,239</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>Single-epoch Median PSF FWHM (arcsec)</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>1.11</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>0.95</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>0.88</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>0.83</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>0.90</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Single-epoch Median Sky Brightness (mag arcsec<sup>-2</sup>)</td>
+          <td colspan="1" style="text-align: center;">22.05</td>
+          <td colspan="1" style="text-align: center;">21.18</td>
+          <td colspan="1" style="text-align: center;">19.92</td>
+          <td colspan="1" style="text-align: center;">18.74</td>
+          <td colspan="1" style="text-align: center;">17.97</td>
+        </tr>
+        <tr>
+          <td colspan="1">Single-epoch Median Effective Image Noise (mag arcsec<sup>-2</sup>)</td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Single-epoch Astrometric Repeatability (mas)</p>
+          </td>
+          <td style="text-align: center;">42</td>
+          <td style="text-align: center;">36</td>
+          <td style="text-align: center;">37</td>
+          <td style="text-align: center;">39</td>
+          <td style="text-align: center;">56</td>
+        </tr>
+        <tr>
+          <td>Single-epoch Photometric Repeatability (mmag)</td>
+          <td style="text-align: center;">
+            <p>7.3</p>
+          </td>
+          <td style="text-align: center;">6.1</td>
+          <td style="text-align: center;">5.9</td>
+          <td style="text-align: center;">7.3</td>
+          <td style="text-align: center;">7.8</td>
+        </tr>
+        <tr>
+          <td colspan="1">Single-epoch Magnitude Limit (PSF, S/N = 10)</td>
+          <td colspan="1" style="text-align: center;">23.57</td>
+          <td colspan="1" style="text-align: center;">23.34</td>
+          <td colspan="1" style="text-align: center;">22.78</td>
+          <td colspan="1" style="text-align: center;">22.10</td>
+          <td colspan="1" style="text-align: center;">20.69</td>
+        </tr>
+        <tr>
+          <td colspan="1"><br></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Sky Coverage (individual bands, sq. deg.)</p>
+          </td>
+          <td style="text-align: center;">
+            <p>5224</p>
+          </td>
+          <td style="text-align: center;">
+            <p>5231</p>
+          </td>
+          <td style="text-align: center;">
+            <p>5230</p>
+          </td>
+          <td style="text-align: center;">
+            <p>5234</p>
+          </td>
+          <td style="text-align: center;">
+            <p>5227</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Sky Coverage (grizY intersection, sq. deg.)</p>
+          </td>
+          <td style="text-align: center;">
+            <br>
+          </td>
+          <td style="text-align: center;">
+            <br>
+          </td>
+          <td style="text-align: center;">5186</td>
+          <td style="text-align: center;">
+            <br>
+          </td>
+          <td style="text-align: center;">
+            <br>
+          </td>
+        </tr>
+        <tr>
+          <td>Coadd Astrometric Precision (mas)</td>
+          <td style="text-align: center;">
+            <br>
+          </td>
+          <td style="text-align: center;">
+            <br>
+          </td>
+          <td style="text-align: center;">30 (internal); 151 (external)</td>
+          <td style="text-align: center;">
+            <br>
+          </td>
+          <td style="text-align: center;">
+            <br>
+          </td>
+        </tr>
+        <tr>
+          <td>Absolute Photometric Statistical Uncertainty (mmag)</td>
+          <td style="text-align: center;">
+            <p>2.6</p>
+          </td>
+          <td style="text-align: center;">2.9</td>
+          <td style="text-align: center;">3.4</td>
+          <td style="text-align: center;">2.5</td>
+          <td style="text-align: center;">4.5</td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Photometric Precision (mmag)</td>
+          <td colspan="1" style="text-align: center;">5</td>
+          <td colspan="1" style="text-align: center;">4</td>
+          <td colspan="1" style="text-align: center;">4</td>
+          <td colspan="1" style="text-align: center;">5</td>
+          <td colspan="1" style="text-align: center;">5</td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Photometric Uniformity vs. Gaia (mmag)</td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">6.6</td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">...</td>
+          <td colspan="1" style="text-align: center;">...</td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Magnitude Limit (MAG_APER_4, 1.95" diameter, S/N = 10)</td>
+          <td colspan="1" style="text-align: center;">
+            <p>24.33</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>24.08</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>23.44</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>22.69</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>21.44</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Coadd 95% Completeness Limit (mag)</td>
+          <td style="text-align: center;">
+            <p>23.72</p>
+          </td>
+          <td style="text-align: center;">23.35</td>
+          <td style="text-align: center;">22.88</td>
+          <td style="text-align: center;">22.25</td>
+          <td style="text-align: center;">...</td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Spurious Object Rate&nbsp;</td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">&lt;~1%</td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Galaxy Selection<p>(EXTENDED_COADD ≥ 2, MAG_AUTO_I ≤ 22.5)</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>Efficiency &gt; 99%<br>Contamination &lt; 3%</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>Coadd Stellar Selection<br>(EXTENDED_COADD ≤ 1, MAG_AUTO_I ≤ 22.5)</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>Efficiency &gt; 90%<br>Contamination &lt; 3%</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br>
+          </td>
+        </tr>
+    </tbody>
+</table>    
+
+    </div>
+
+
+
+</des-card>
+
+</template>
+<script>
+    class DesDr2Docs extends Polymer.Element {
+      static get is() { return 'des-dr2docs'; }
+    }
+    window.customElements.define(DesDr2Docs.is, DesDr2Docs);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr2-soft" assetpath="des-dr2/">
+<template>
+<style include="shared-styles">
+:host {
+    padding: 10px;
+}
+</style>
+
+
+<paper-dialog id="dialogfig1">
+   <des-img-big src="{{rootPath}}static/images/fig4_desdm_paper.png">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+   <des-img-big src="{{rootPath}}static/images/fig5_desdm_paper.png">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig3">
+   <des-img-big src="{{rootPath}}static/images/processing.gif">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+
+
+<div class="fixup" id="soft_top"></div>
+<div class="fixdown"></div>
+    <des-card heading="Data Processing for Data Releases">
+    <div class="card-content">
+
+<ul>
+  <li>
+        <a href="javascript:void(0)" on-tap="_intro">Overview</a>
+  </li>
+  <li>
+        <a href="javascript:void(0)" on-tap="_single">Single Epoch Pipeline</a>
+  </li>
+  <li>
+        <a href="javascript:void(0)" on-tap="_multi">Multi Epoch Pipeline</a>
+  </li>
+</ul>
+<hr>
+<p><br></p>
+<div class="fixup" id="soft_intro"></div>
+<h3 class="fixdown">Overview  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p>The DES data management (DESDM) system is responsible for processing DECam images taken by DES and producing reduced data products that are ready for science analysis. The DESDM system defines several levels of data processing:</p>
+<ul>
+  <li><b>Single-Epoch Processing</b>: This pipeline removes instrumental signatures from individual exposures and produces single-epoch object catalogs. We define two processing pipelines: the first is used for real-time data quality assessment, while the second produces final science products. These two pipelines primarily differ in the image calibration and configuration files used:</li>
+</ul>
+<ol>
+  <li style="margin-left: 30.0px;">First Cut: this pipeline is focused on real-time data quality assessment to evaluate whether a specific exposure needs to be retaken. The First Cut pipeline reduces and calibrates raw image, calculate astrometric solutions, masks bad regions, models the point spread function, applies quality assessments, and produces catalog objects. This pipeline uses image calibration files produced during the previous year of observing. At the end of the pipeline, a quality assessment is performed, and any exposures that do not pass minimum quality criteria are re-observed.</li>
+  <li style="margin-left: 30.0px;">Final Cut: this pipeline performs the same tasks as First Cut. However, configuration and calibration files (e.g., flats, bad pixels masking, sky flats) are derived from the epoch during which the observation was taken. This pipeline produces images that serve as input for Multi-Epoch processing and the generation of the DES DR2 coadded catalogs.</li>
+</ol>
+<ul>
+  <li><b>Multi-Epoch Processing:</b> Multi-Epoch processing increases the imaging depth by coadding Final Cut images and producing coadd object catalogs. The processing is organized using a tiling scheme that divides the sky into 10,000 x 10,000 pixel regions spanning 0.7305 degrees on a side.  We coadd the overlapping images using the CHI-MEAN weighting and combination scheme described in <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. (2017)</a>. Astrometric refinement is performed as part of image coaddition. Photometric calibration is performed on the individual Final Cut images by the Forward Global Calibration Method (<a href="https://ui.adsabs.harvard.edu/#abs/2018AJ....155...41B/abstract">Burke et al. 2018</a>). The zeropoints of the coadded images are set to 30.</li>
+</ul>
+
+<!-- Additional algorithms are run to optimally measure shapes and photometry, including the creation of value added products such as Weighted Average Magnitudes (WAVG, <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>), Multi Epoch Data Structures (MEDS, <a href="http://adsabs.harvard.edu/abs/2016MNRAS.460.2245J">Jarvis et al. 2015</a>, Morganson et al. 2018), Multi Object Fitting (MOF, <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>), and metacalibration shear estimates (<a href="http://iopscience.iop.org/article/10.3847/1538-4357/aa704b/meta">Sheldon &amp; Huff 2017</a>) -->
+
+<p>The DESDM image detrending and processing pipeline is described in more detail in<a href="http://adsabs.harvard.edu/abs/2017PASP..129k4502B"> Bernstein et al. (2017)</a>, <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. (2017)</a> and <a href="https://arxiv.org/abs/1801.03177">Morganson et al (2018)</a>. As a visual guide to the process, we include several figures from <a href="https://arxiv.org/abs/1801.03177"> Morganson et al. (2018)</a>. <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> is a schematic for DESDM processing system, while <a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a> emphasizes the image preprocessing pipeline.
+</p>
+
+  <br>
+  <br>
+
+   <des-img-big src="{{rootPath}}static/images/fig4_desdm_paper.png" on-tap="_dialog" data-item="1">Figure 1. DESDM Pipeline. Raw DECam exposures are collected and transferred to NCSA for processing. Single-Epoch Processing (yellow box) transforms raw science exposures into First Cut images for initial evaluation and Final Cut images for science analysis. Exposures from the supernova survey are processed with the Supernova Pipeline (blue boxes). Final Cut images and catalogs are sent to Multi-Epoch Processing (pink box), the outputs of which go to the science groups for validation and analysis (gray boxes).</des-img-big>
+
+   <des-img-big src="{{rootPath}}static/images/fig5_desdm_paper.png" on-tap="_dialog" data-item="2">Figure 2. Image preprocessing (green box in Figure 1) includes image detrending, instrument signature removal, and artifact masking. Preprocessed images enter First Cut or Final Cut pipeline for processing.</des-img-big>
+ <p>
+  <br>
+ </p>
+<p>One strength of the DESDM pipeline is that it performs incremental refinement to the image products, allowing for investigation at each stage of processing. <a href="javascript:void(0)" on-tap="_dialog" data-item="3">Figure 3</a> shows the incremental steps in image processing for a single patch of sky. It starts with a raw exposure and finishes with a deep, multi-band coadd image of the sky.</p>
+
+   <des-img-big src="{{rootPath}}static/images/processing.gif" on-tap="_dialog" data-item="3">Figure 3. Simplified animation of the image reduction process. This animation starts with a raw DECam exposure and finishes with a deep, multi-band coadded image of the sky.</des-img-big>
+
+        <p><br></p>
+        <div class="fixup" id="soft_single"></div>
+        <h3 class="fixdown">Single Epoch  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>
+   Here we provide a detailed description of the Single-Epoch workflow. Each processing step is described for both First Cut and Final Cut pipelines. For each processing step, we document the parent package with corresponding version number and links to their respective code repositories. Most tools can be found on the <a href="https://github.com/DarkEnergySurvey/">DESDM GitHub repository</a> or on <a href="https://www.astromatic.net/">AstrOmatic</a>.
+ </p>
+   
+<!--Because of various improvements, you must use the right version of each package for successful processing.-->
+
+<!-- DESDM tools can be found on GitHub (<a href="https://github.com/DarkEnergySurvey/">here</a>), <a href="https://www.astromatic.net/">Astromatic </a>  for astrometr, point spread function (Emmanuel Bertin's group), and the python wrapper for Healpix <a href="http://adsabs.harvard.edu/abs/2005ApJ...622..759G"> (Górski et al. 2005)</a> -->
+
+
+
+
+ <p></p>
+ <ol>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/imdetrend" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      imdetrend
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      pixcorrect
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      sextractor
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despymisc" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despymisc
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despyfitsutils
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      scamp
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despyfits" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despyfits
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/immask" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      immask
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      psfex
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      DatabaseApps
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/qatoolkit" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      qatoolkit
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/projectDECam" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      projectDECam
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <a href="https://github.com/healpy/healpy" rel="nofollow">
+    <span style="color: rgb(0,0,255);">
+     hpixDB
+    </span>
+   </a>
+  </li>
+ </ol>
+ <p>
+  <br>
+ </p>
+ <p>
+  The following operation blocks applies crosstalk correction, bias frame subtraction, overscan correction, flat fielding, bad pixel masking, brighter fatter correction, non-linearity corrections and gain adjustments. It also masks the defective amplifier A of CCD 31, satellite streaks, and edge bleeds due to saturated stars.
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    
+    <col>
+    
+    <col>
+    
+    <col>
+    
+   </colgroup>
+   <tbody>
+    <tr>
+     <th style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      1
+     </td>
+     <td>
+      <span style="color: rgb(0,0,0);">
+       DECam_crosstalk
+      </span>
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/imdetrend" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         imdetrend
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      <span style="color: rgb(0,0,0);">
+       imdetrend/7.5.1+1/bin/DECam_crosstalk
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      2
+     </td>
+     <td>
+      pixcorrect_im
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/pixcorrect_im
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      3
+     </td>
+     <td>
+      null-weights
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/null_weights
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <span>
+   <br>
+  </span>
+ </p>
+ <p>
+  <span>
+   The initial astrometric solution is calculated then edge bleeds and saturated pixels are masked.
+  </span>
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    
+    <col>
+    
+    <col>
+    
+    <col>
+    
+   </colgroup>
+   <tbody>
+    <tr>
+     <th style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      4
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+4/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      5
+     </td>
+     <td>
+      split_ahead_by_ccd.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despymisc" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despymisc
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      despymisc/1.0.3+1/bin/split_ahead_by_ccd.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      6
+     </td>
+     <td>
+      combine_cats.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despyfitsutils
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      despyfitsutils/1.0.1+6/bin/combine_cats.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      7
+     </td>
+     <td>
+      scamp
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         scamp
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      scamp/2.4.2+7/bin/scamp
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      8
+     </td>
+     <td>
+      split_head.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despyfitsutils
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      despyfitsutils/1.0.1+6/bin/split_head.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      9
+     </td>
+     <td>
+      updateWCS
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despyfits" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despyfits
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      despyfits/0.5.1+3/bin/updateWCS
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      10
+     </td>
+     <td>
+      mkbleedmask
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/imdetrend" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         imdetrend
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      imdetrend/7.5.1+1/bin/mkbleedmask
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <span>
+   <br>
+  </span>
+ </p>
+ <p>
+  <span>
+   The sky templates and the star flat images are applied. The latter is a second-order Principal Components Analysis of dithered exposures taken dense stallar fields. Additional masking is also performed.
+  </span>
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    
+    <col>
+    
+    <col>
+    
+    <col>
+    
+   </colgroup>
+   <tbody>
+    <tr>
+     <th style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      11
+     </td>
+     <td>
+      sky_compress
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/sky_compress
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      12
+     </td>
+     <td>
+      sky_combine
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/sky_combine
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      13
+     </td>
+     <td>
+      sky_fit
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/sky_fit
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      14
+     </td>
+     <td>
+      sky_subtract
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/sky_subtract
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      15
+     </td>
+     <td>
+      pixcorrect_im
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/pixcorrect_im
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      16
+     </td>
+     <td>
+      null_weights
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/null_weights
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      17
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+4/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      18
+     </td>
+     <td>
+      immask
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/immask" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         immask
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      immask/0.5.2+12/bin/immask
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      19
+     </td>
+     <td>
+      rowinterp_nullweight
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         pixcorrect
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      pixcorrect/0.5.3+4/bin/rowinterp_nullweight
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <br>
+ </p>
+ <p>
+ The point spread function is modeled and the final single-epoch object catalog is produced. Data quality assessment is performed and a binned PNG is created for each exposure.  HEALPix <a href="http://adsabs.harvard.edu/abs/2005ApJ...622..759G">(Górski et al. 2005)</a> are calculated for each catalog object at several resolutions.
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    
+    <col>
+    
+    <col>
+    
+    <col>
+    
+   </colgroup>
+   <tbody>
+    <tr>
+     <th style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      20
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+4/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      21
+     </td>
+     <td>
+      psfex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         psfex
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      psfex/3.17.3+6/bin/psfex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      22
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+4/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      23
+     </td>
+     <td>
+      catalog_ingest.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         DatabaseApps
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      DatabaseApps/2.0.4+3/bin/catalog_ingest.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      24
+     </td>
+     <td>
+      assess_SE_products.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/qatoolkit" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         qatoolkit
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      qatoolkit/0.2.7+2/bin/assess_SE_products.py
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      25
+     </td>
+     <td>
+      projectDECamPNG
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/projectDECam" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         projectDECam
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      projectDECam/0.1.1+1/bin/projectDECamPNG
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      26
+     </td>
+     <td>
+      hpixDB
+     </td>
+     <td>
+      <a href="https://github.com/healpy/healpy" rel="nofollow">
+       <span style="color: rgb(0,0,255);">
+        hpixDB
+       </span>
+      </a>
+     </td>
+     <td>
+      hpixDB/1.1.0+0/bin/hpixDB
+     </td>
+    </tr>
+    <tr>
+     <td style="text-align: center;">
+      27
+     </td>
+     <td>
+      data_ingest.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         DatabaseApps
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      DatabaseApps/2.0.4+3/bin/datafile_ingest.py
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <br>
+        </p><p><br></p>
+        <div class="fixup" id="soft_multi"></div>
+        <h3 class="fixdown">Multi-Epoch Processing  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+  <span>
+   Multi-Epoch processing performs image coaddition to increase the DES imaging depth. During this process, an astrometric refinement is performed to place all exposures on the same astrometric reference frame. The DES DR2 object catalogs are produced from these coadded images.
+  </span>
+ <p></p>
+ <p>
+  <span>
+   We describe the Multi-Epoch pipeline in detail below. Steps are divided into blocks with brief explanations and links to the respective source code.
+  </span>
+ </p>
+ <ol>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despyfitsutils
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      scamp
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      MEPipelineAppIntg
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      pixcorrect
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/swarp" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      swarp
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despyfits" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despyfits
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/stiff" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      stiff
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      sextractor
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      psfex
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/extinction" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      extinction
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/healpy/healpy" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      hpixDB
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/wavg" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      wavg
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/despymangle" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      despymangle
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      DatabaseApps
+     </span>
+    </a>
+   </span>
+  </li>
+  <li>
+   <span style="color: rgb(0,0,255);">
+    <a href="https://github.com/DarkEnergySurvey/ngmixer" rel="nofollow">
+     <span style="color: rgb(0,0,255);">
+      ngmixer
+     </span>
+    </a>
+   </span>
+   <br>
+   <span style="color: rgb(0,51,102);">
+    <br>
+   </span>
+  </li>
+ </ol>
+ <p>
+  <span>
+   We begin by combining the Single-Epoch images into 10,000 x 10,000 pixel coadded images. This unit is known as a coadd "tile". We query all images matching the particular tile, then re-calculating the astrometric solutions (as these can vary between Single Epoch images). The astrometric refinement is done in two steps: first we perform an internal matching between CCDs, then we run SCAMP to match against 2MASS.
+   With the results of the astrometry, SWARP is used to stack the images into a single image, while also adding photometric zeropoints from the FGCM <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1706.01542">(Burke et al. 2017)</a>.
+   <br>
+  </span>
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    
+    <col>
+    
+    <col>
+    
+    <col>
+    
+   </colgroup>
+   <tbody>
+    <tr>
+     <th colspan="1" style="text-align: center;">
+      Execution order
+     </th>
+     <th style="text-align: center;">
+      Executable
+     </th>
+     <th style="text-align: center;">
+      Parent package
+     </th>
+     <th colspan="1" style="text-align: center;">
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td colspan="1">
+      1
+     </td>
+     <td>
+      combine_cats.py &amp; query_coadd_astrorefine.py
+     </td>
+     <td>
+      <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+       despyfitsutils
+      </a>
+     </td>
+     <td colspan="1">
+      despyfitsutils/1.0.1+7/bin/combine_cats.py
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      2
+     </td>
+     <td>
+      scamp
+     </td>
+     <td>
+      <a href="https://www.astromatic.net/software/scamp" rel="nofollow">
+       scamp
+      </a>
+     </td>
+     <td colspan="1">
+      scamp/2.4.2+6/bin/scamp
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      3
+     </td>
+     <td>
+      split_head.py
+     </td>
+     <td>
+      <a href="https://github.com/DarkEnergySurvey/despyfitsutils" rel="nofollow">
+       despyfitsutils
+      </a>
+     </td>
+     <td colspan="1">
+      despyfitsutils/1.0.1+7/bin/split_head.py
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      4
+     </td>
+     <td>
+      query_coadd_img_for_nullwgt.py
+     </td>
+     <td>
+      <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+       MEPipelineAppIntg
+      </a>
+     </td>
+     <td colspan="1">
+      MEPipelineAppIntg/1.0.9+1/bin/query_coadd_img_for_nullwgt.py
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      5
+     </td>
+     <td>
+      coadd_nwgint
+     </td>
+     <td>
+      <a href="https://github.com/DarkEnergySurvey/pixcorrect" rel="nofollow">
+       pixcorrect
+      </a>
+     </td>
+     <td colspan="1">
+      pixcorrect/0.5.3+7/bin/coadd_nwgint
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      6 - 9
+     </td>
+     <td>
+      swarp
+     </td>
+     <td>
+      <a href="https://www.astromatic.net/software/swarp" rel="nofollow">
+       swarp
+      </a>
+     </td>
+     <td colspan="1">
+      swarp/2.40.0+1/bin/swarp
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      10 - 11
+     </td>
+     <td>
+      coadd_assemble
+     </td>
+     <td>
+      <a href="https://github.com/DarkEnergySurvey/despyfits" rel="nofollow">
+       despyfits
+      </a>
+     </td>
+     <td colspan="1">
+      despyfits/0.5.2+1/bin/coadd_assemble
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      12 - 13
+     </td>
+     <td>
+      stiff
+     </td>
+     <td>
+      <a href="https://www.astromatic.net/software/stiff" rel="nofollow">
+       stiff
+      </a>
+     </td>
+     <td colspan="1">
+      stiff/2.7.0+0/bin/stiff
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <span style="color: rgb(255,0,0);">
+   <br>
+  </span>
+ </p>
+ <p>
+ After coadd images are produced, a new PSF model is calculated. Source extraction is performed with the same configuration as Single Epoch and PSFEx is run. Coadd PSF estimation encounters several difficulties due to sharp discontinuities in depth and quality of the coadd images that cannot be fully modeled by <em>psfex</em>. An imperfect PSF model affects photometric and morphological measurements more strongly than object detection.
+ </p>
+ <p>
+  For each object, we calculate interstellar extinction, E(B-V), from <a href="http://adsabs.harvard.edu/abs/1998ApJ...500..525S">Schlegel, Finkbeiner &amp; Davis (1998), HEALPix pixels, and weighted-averaged magnitudes.  </a>.
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    
+    <col>
+    
+    <col>
+    
+    <col>
+    
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Execution order
+     </th>
+     <th>
+      Executable
+     </th>
+     <th>
+      Parent package
+     </th>
+     <th>
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td>
+      14 - 15
+     </td>
+     <td>
+      sex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+3/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td>
+      16 - 17
+     </td>
+     <td>
+      psfex
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/psfex" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         psfex
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      psfex/3.17.3+4/bin/psfex
+     </td>
+    </tr>
+    <tr>
+     <td>
+      18 - 19
+     </td>
+     <td>
+      sextractor
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://www.astromatic.net/software/sextractor" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         sextractor
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      sextractor/2.23.2+3/bin/sex
+     </td>
+    </tr>
+    <tr>
+     <td>
+      20
+     </td>
+     <td>
+      compute_SFD98_coadd_bands
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/extinction" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         extinction
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      extinction/1.3.0+2/bin/compute_SFD98_coadd_bands
+     </td>
+    </tr>
+    <tr>
+     <td>
+      21
+     </td>
+     <td>
+      hpixDB
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/healpy/healpy" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         hpixDB
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      hpixDB/1.0.2+2/bin/hpixDB
+     </td>
+    </tr>
+    <tr>
+     <td>
+      22
+     </td>
+     <td>
+      computewavg.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/wavg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         wavg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      wavg/0.4+0/bin/computewavg.py
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <br>
+ </p>
+ <p>
+  <span style="color: rgb(0,0,0);">
+   Several additional algorithms are run to optimally measure shapes and photometry for DES cosmology. These steps include the creation of Multi Epoch Data Structures (MEDS, <a href="http://adsabs.harvard.edu/abs/2016MNRAS.460.2245J">Jarvis et al. 2015</a>, <a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>), Multi Object Fitting (MOF, <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>), and metacalibration shear estimates (<a href="http://iopscience.iop.org/article/10.3847/1538-4357/aa704b/meta">Sheldon &amp; Huff 2017</a>). These data products <b>are not</b> included with DES DR2, but are include here for completeness.
+  </span>
+ </p>
+ <div>
+  <table>
+   <colgroup>
+    <col>
+    
+    <col>
+    
+    <col>
+    
+    <col>
+    
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Execution order
+     </th>
+     <th>
+      Executable
+     </th>
+     <th>
+      Parent package
+     </th>
+     <th>
+      Package path
+     </th>
+    </tr>
+    <tr>
+     <td>
+      23
+     </td>
+     <td>
+      mangle_one_tile
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/despymangle" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         despymangle
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      despymangle/2.2.3+1/bin/mangle_one_tile
+     </td>
+    </tr>
+    <tr>
+     <td>
+      24
+     </td>
+     <td>
+      mepoch_ingest.py
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/DatabaseApps" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         DatabaseApps
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      DatabaseApps/2.0.5+2/bin/mepoch_ingest.py
+     </td>
+    </tr>
+    <tr>
+     <td>
+      25
+     </td>
+     <td>
+      run_desmeds
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      MEPipelineAppIntg/1.0.9+1/bin/run_desmeds
+     </td>
+    </tr>
+    <tr>
+     <td>
+      26
+     </td>
+     <td>
+      run_ngmixer-meds-make-nbrs-data
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      MEPipelineAppIntg/1.1.6+0/bin/run_ngmixer-meds-make-nbrs-data
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      <br>
+     </td>
+     <td colspan="1">
+      query_coadd_for_mof.py
+     </td>
+     <td colspan="1">
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td colspan="1">
+      MEPipelineAppIntg/1.1.6+0/bin/query_coadd_for_mof.py
+     </td>
+    </tr>
+    <tr>
+     <td>
+      27
+     </td>
+     <td>
+      run_ngmixit
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      MEPipelineAppIntg/1.1.6+0/bin/run_ngmixit
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      <br>
+     </td>
+     <td colspan="1">
+      query_coadd_for_mof.py
+     </td>
+     <td colspan="1">
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td colspan="1">
+      MEPipelineAppIntg/1.1.6+0/bin/query_coadd_for_mof.py
+     </td>
+    </tr>
+    <tr>
+     <td>
+      28
+     </td>
+     <td>
+      megamix-meds-collate-desdm
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/ngmixer" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         ngmixer
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      ngmixer/y3v0.9.4a+0/bin/megamix-meds-collate-desdm
+     </td>
+    </tr>
+    <tr>
+     <td>
+      29
+     </td>
+     <td>
+      run_ngmixit
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      MEPipelineAppIntg/1.1.6+0/bin/run_ngmixit
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1">
+      <br>
+     </td>
+     <td colspan="1">
+      query_coadd_for_mof.py
+     </td>
+     <td colspan="1">
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/MEPipelineAppIntg" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         MEPipelineAppIntg
+        </span>
+       </a>
+      </span>
+     </td>
+     <td colspan="1">
+      MEPipelineAppIntg/1.1.6+0/bin/query_coadd_for_mof.py
+     </td>
+    </tr>
+    <tr>
+     <td>
+      30
+     </td>
+     <td>
+      megamix-meds-collate-desdm
+     </td>
+     <td>
+      <span style="color: rgb(0,0,255);">
+       <a href="https://github.com/DarkEnergySurvey/ngmixer" rel="nofollow">
+        <span style="color: rgb(0,0,255);">
+         ngmixer
+        </span>
+       </a>
+      </span>
+     </td>
+     <td>
+      ngmixer/y3v0.9.4a+0/bin/megamix-meds-collate-desdm
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  <br>
+ </p>
+        <h3>References  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <ol>
+          <li>
+            <span>Bernstein, G. M., Abbott, T. M. C., Desai, S., et al. 2017, PASP, <em>Instrumental Response Model and Detrending for the Dark Energy Camera</em> [<span style="color: rgb(255,0,0);"> <a href="http://iopscience.iop.org/article/10.1088/1538-3873/aa858e/meta"> <span style="color: rgb(255,0,0);">PASP</span> </a> </span>] </span>[<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/1706.09928"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]</li>
+          <li>
+            <p>
+              <span>Burke, D. L., Rykoff, E. S., et al. 2017, Forward Global Photometric Calibration of the Dark Energy Survey [<a href="http://iopscience.iop.org/article/10.3847/1538-3881/aa9f22/meta"> <span style="color: rgb(255,0,0);">AJ</span> </a> </span>] [<span style="color: rgb(255,0,0);"> [<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/1706.01542"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]<br> </span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span>Drlica-Wagner, A., Sevilla-Noarbe, I., Rykoff, E. et al.&nbsp;Dark Energy Survey Year 1 Results: Photometric Data Set for Cosmology&nbsp;&nbsp;[<span style="color: rgb(255,0,0);">&nbsp;<a href="https://arxiv.org/abs/1708.01531">
+                    <span style="color: rgb(255,0,0);">arxiv</span>&nbsp;</a>
+                </span>]</span>
+            </p>
+          </li>
+          <li>
+            <p>Górski, K. M., Hivon, E., Banday, A. J., et al. 2005, ApJ, 622, 75.&nbsp;<em>HEALPix: A Framework for High-Resolution Discretization and Fast Analysis of Data Distributed on the Sphere </em>[<span style="color: rgb(255,0,0);"> <a href="http://iopscience.iop.org/article/10.1086/427976/meta"> <span style="color: rgb(255,0,0);">ApJ</span> </a> </span>]&nbsp;[<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/astro-ph/0409513"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]</p>
+          </li>
+          <li>Morganson, E., et al. 2018, in preparation</li>
+          <li>Schlegel, D. J., Finkbeiner, D. P., Davis, M, 1998, ApJ, 500, 525. <em>Maps of Dust Infrared Emission for Use in Estimation of Reddening and Cosmic Microwave Background Radiation Foregrounds</em>&nbsp;[<span style="color: rgb(255,0,0);"> <a href="http://iopscience.iop.org/article/10.1086/305772/meta"> <span style="color: rgb(255,0,0);">ApJ</span> </a> </span>] [<span style="color: rgb(255,0,0);"> <a href="https://arxiv.org/abs/astro-ph/9710327"> <span style="color: rgb(255,0,0);">arxiv</span> </a> </span>]<em> </em>
+            <em>
+              <br>
+            </em>
+          </li>
+        </ol>
+ <p style="margin-left: 30.0px;">
+  <span>
+   <br>
+  </span>
+ </p>
+</div>
+    </des-card>
+    </template>
+    <script>
+    class desDr2Soft extends Polymer.Element {
+      static get is() { return 'des-dr2-soft'; }
+      _intro() {this.$.soft_intro.scrollIntoView();}
+      _single() {this.$.soft_single.scrollIntoView();}
+      _multi() {this.$.soft_multi.scrollIntoView();}
+      _top() {
+          this.$.soft_top.scrollIntoView();
+      }
+      _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          //this.$.dialogfig.open();
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+
+          }
+       }
+     window.customElements.define(desDr2Soft.is,desDr2Soft);
+     </script>
+     </dom-module>
+<dom-module id="des-dr2-products" assetpath="des-dr2/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+.caption {
+    padding-left: 0px;
+    width: 95%;
+    font-size: 0.85rem;
+    text-align: justify;
+    font-style: italic;
+}
+</style>
+
+
+<paper-dialog id="dialogfig1">
+            <des-img-big src="{{rootPath}}static/images/dr1/footprint_h32_tiles.png">
+                Figure 1. DES footprint subdivisions. This figure shows the 10,169 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR2.
+            </des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+<paper-dialog id="dialogfig2">
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_bandpass.png">
+            Figure 2. DR1/DR2 Standard Bandpasses for the DECam g, r, i, z and
+            Y filters. The bandpasses represent the total system throughput, including
+            atmospheric transmission (airmass = 1.2) and the average
+            instrumental response across the science CCDs These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information"> Here</a></des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
+  </div>
+</paper-dialog>
+
+
+<div class="fixup" id="products_top"></div>
+<div class="fixdown"></div>
+<des-card heading="DR2 Data Products">
+    <div class="card-content">
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_intro">Introduction</a></li>
+          <li><a href="javascript:void(0)" on-tap="_images">Images</a></li>
+          <li><a href="javascript:void(0)" on-tap="_catalogs">Catalogs</a></li>
+          <ul>
+              <li>
+                  <a href="[[rootPath]]releases/dr2/dr2-products/dr2-schema">DR2 Table Schema</a>
+              </li>
+          </ul>
+          <li><a href="javascript:void(0)" on-tap="_filters">DR2 Standard Bandpasses</a></li>
+          <li><a href="javascript:void(0)" on-tap="_software">DR2 Software</a></li>
+        </ul>
+        <hr>
+        <p><br></p>
+        <div class="fixup" id="products_intro"></div>
+        <h3 class="fixdown">Introduction  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>Here we present a summary and description of the individual products included in DES DR2. The primary components of DES DR2 are derived from the union of 10,169 coadd tiles covering the DES footprint. The tile distribution is shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> and a HEALPix map (NSIDE = 32) of 1753 pixels covering the entire DR2 release is also provided for reference. This map is useful for cross matching sections of the DES footprint with other surveys.</p>
+        <p>In order to provide a convenient way to download all the catalog data at once, and noting that the tile is the basic processing unit for the survey, we have created FITS file versions<br>of the catalog tables grouped by coadd tile. This amounts to 30,507 total files (for the DR2_MAIN, DR2_MAGNITUDE, and DR2_FLUX tables) with almost 3 TB of catalog data. Both the catalog and corresponding image file paths can be obtained from the DR2_TILE_INFO table &nbsp;and can be accessed through the interfaces.</p>
+            <des-img-big src="{{rootPath}}static/images/dr1/footprint_h32_tiles.png" on-tap="_dialog" data-item="1">
+                Figure 1. DES footprint subdivisions. This figure shows the 10,169 coadd tiles and 1753 HEALPix nside = 32 pixels covered by DR2.
+            </des-img-big>
+
+        <p><br></p>
+        <div class="fixup" id="products_images"></div>
+        <h3 class="fixdown">Images  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>DES DR2 images can be separated into two categories:</p>
+        <p><b>a)</b> <u>Calibrated Single Exposures</u>: 92,263 exposures with photometric calibration, corresponding to 5,795,641 individual CCD images. The number of exposures per band are N<sub>g</sub> = 20,043, N<sub>r</sub> = 20,106, N<sub>i</sub> = 19,545, N<sub>z</sub> = 22,713 and N<sub>Y</sub> = 13,856, respectively. 
+        
+          Each exposure is roughly 500 MB in size. These images can be accessed through <a href="http://datalab.noirlab.edu/">NOIRLab Astro Data Lab</a>.</p>
+        <p><b>b)</b> <u>Coadd Images</u>: As a result of the Multi-Epoch Pipeline described in <a href="[[rootPath]]releases/dr2/dr2-docs/processing">Data Processing</a>, a total of 10,169 tiles of 10k x 10k pixels spanning 0.7306deg on a side at a resolution of 0.263 arcsec/pixel (see <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a> ) were produced in each of the 5 bands. For each tile, DESDM created a background-subtracted image for each filter which are the based for the source catalogs and one without background subtraction for each band as ancillary data.
+          
+        These 10 images per band along with the <em>r + i + z</em> combined detection image used are <a href="http://desdr-server.ncsa.illinois.edu/despublic/dr2_tiles/" target="_blank"> publicly available </a> for a total of 111,859 images constituting ~20 TB of data.</p>
+
+
+        <p><br></p>
+        <div class="fixup" id="products_catalogs"></div>
+        <h3 class="fixdown">Catalogs  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>
+        <a href="[[rootPath]]releases/dr2/dr2-products/dr2-schema">DR2 Table Schema</a>    
+        </p>
+        <p>The coadd source extraction process detected and cataloged 6,914,836,608 distinct objects. Morphological object information includes object centroids, shape parameters, HEALPix indices, and processing flags. Several different photometric measurements and associated uncertainties are provided including AUTO, PETRO, WAVG_PSF, and assorted aperture magnitudes (Table 1). These measurements are distributed in three database tables: DR2_MAIN, DR2_MAGNITUDE, and DR2_FLUX served from an Oracle database at NCSA and can be accessed at the <a href="https://des.ncsa.illinois.edu/desaccess/login"> DESaccess portal </a>. <br> 
+          The DR2_MAIN table contains all object information that is not a photometric measurement or uncertainty, augmented by MAG_AUTO and MAG_PETRO (and associated uncertainties) and an extinction corrected versions. The other two tables contain auxiliary magnitude and flux measurements (with associated uncertainties) in addition to extra information which is present in all three tables, like coordinates, flags, and HEALPix indexes. Additionally, the table DR2_TILE_INFO contains information about the processed tiles, such as sky location, geometry, number of objects and file paths to access the images and catalogs generated.&nbsp;</p>
+        <table>
+  <colgroup>
+    <col>
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Column name</th>
+      <th style="text-align: center;">Diameter(pixels)</th>
+      <th style="text-align: center;">Diameter(arcsecs)</th>
+    </tr>
+    <tr>
+      <td>
+        <code>MAG_APER_1</code>
+      </td>
+      <td style="text-align: center;">1.85</td>
+      <td style="text-align: center;">0.49</td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+          <span>MAG_APER_2</span>
+        </code>
+      </td>
+      <td style="text-align: center;">3.70</td>
+      <td style="text-align: center;">0.97</td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+          <span>MAG_APER_3</span>
+        </code>
+      </td>
+      <td style="text-align: center;">5.55</td>
+      <td style="text-align: center;">1.46</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_4</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">7.41</td>
+      <td colspan="1" style="text-align: center;">1.95</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_5</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">11.11</td>
+      <td colspan="1" style="text-align: center;">2.92</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_6</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">14.81</td>
+      <td colspan="1" style="text-align: center;">3.90</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_7</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">18.52</td>
+      <td colspan="1" style="text-align: center;">4.87</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_8</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">22.22</td>
+      <td colspan="1" style="text-align: center;">5.84</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_9</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">25.93</td>
+      <td colspan="1" style="text-align: center;">6.82</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_10</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">29.63</td>
+      <td colspan="1" style="text-align: center;">7.79</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_11</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">44.44</td>
+      <td colspan="1" style="text-align: center;">11.69</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>
+          <span>MAG_APER_12</span>
+        </code>
+      </td>
+      <td colspan="1" style="text-align: center;">66.67</td>
+      <td colspan="1" style="text-align: center;">17.53</td>
+    </tr>
+  </tbody>
+          <caption align="bottom" class="caption">
+              Table 1.&nbsp;Aperture Magnitudes Diameters
+              <br></caption>
+</table>
+        <p><br></p>
+        <div class="fixup" id="products_filters"></div>
+        <h3 class="fixdown">DR1/DR2 Standard Bandpasses  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>DES DR2 includes an updated characterization of the Blanco/DECam total system response (instrument and at mosphere) for the g, r, i, z, Y bands. The DES DR1/DR2 Standard Bandpasses are defined as the average CCD response across the focal plane as measured with the DECal system (<a href="http://adsabs.harvard.edu/abs/2013arXiv1302.5720M">Marshall et al. 2013</a>), together with a standard atmospheric transmission computed with the <code>MODTRAN IV</code> code (<a href="http://adsabs.harvard.edu/abs/1999SPIE.3756..348B">Berk et al. 1999</a>) using parameters typical of the environmental conditions encountered during DES observations (for details, see<a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B"> Burke et al. 2017</a>). For example, the airmass adopted for the standard atmosphere, 1.2, is well matched to the median airmass of exposures entering the coadd, 1.22. The system response is defined in steps of 5 Å from 3800 Å to 11000 Å. Out-of-band light leakage has been directly measured with DECal to be roughly less than 10<sup>-3</sup> relative to the in-band response, and vendor measurements of witness samples suggest that the out-of-band leakage is typically at the 10<sup>-5</sup> to 10<sup>-4</sup> level. While detailed characterization of the out-of band response is ongoing, the throughput of the DES DR1/DR2 Standard Bandpasses are defined as zero for out-of-band wavelengths (see <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>).</p>
+
+<p>These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information">Here</a>. <br>
+   <br>Note that, as described in the <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>, Y3A1 Standard Bandpasses have some minor inaccuracies and are not being released in favor of the DR1/DR2 set, but can be requested by sending an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
+
+            <des-img-big src="{{rootPath}}static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
+            Figure 2. DR1/DR2 Standard Bandpasses for the DECam g, r, i, z and
+            Y filters. The bandpasses represent the total system throughput, including
+            atmospheric transmission (airmass = 1.2) and the average
+            instrumental response across the science CCDs. These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information"> Here</a></des-img-big>
+
+        </p><p><br></p>
+        <div class="fixup" id="products_software"></div>
+        <h3 class="fixdown">DR1/DR2 Software  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>All the software used in the DESDM pipelines described in Processing and in <a href="https://arxiv.org/abs/1801.03177">Morganson et al. (2018)</a> can be accessed from the release page itself or from the <a href="https://github.com/DarkEnergySurvey">DES Github Organization</a>. With access to the software used to generate these products and the configuration described in <a href="https://arxiv.org/abs/1801.03177">Morganson et al. (2018)</a>, we provide the main ingredients to reprocess the data in a similar manner as done by DES.</p>
+
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr2Products extends Polymer.Element {
+      static get is() { return 'des-dr2-products'; }
+      _intro() {this.$.products_intro.scrollIntoView();}
+      _images() {this.$.products_images.scrollIntoView();}
+      _catalogs() {this.$.products_catalogs.scrollIntoView();}
+      _filters() {this.$.products_filters.scrollIntoView();}
+      _software() {this.$.products_software.scrollIntoView();}
+      _top() {this.$.products_top.scrollIntoView();}
+      _dialog(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var temp = e.target.dataset.item;
+          this.shadowRoot.querySelector('#dialogfig'+temp).open();
+          }
+    }
+    window.customElements.define(DesDr2Products.is, DesDr2Products);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr2-schema" assetpath="des-dr2/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+</style>
+
+
+
+
+<div class="fixup" id="schema_top"></div>
+<div class="fixdown"></div>
+<des-card heading="DR2 Table Schema">
+    <div class="card-content">
+      <strong>*TODO*: Revisit the columns </strong><br>
+        Below we present a summarized version of the DR2 tables and their description, some of the columns
+        have links to a more detailed explanation and origin, in particular, the <a href="http://sextractor.readthedocs.io/en/des_dr1/" target="_blank"> Sextractor parameters used for DR1 and DR2</a>.
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_main">DR2_MAIN</a></li>
+          <li><a href="javascript:void(0)" on-tap="_mags">DR2_MAGNITUDE</a></li>
+          <li><a href="javascript:void(0)" on-tap="_fluxes">DR2_FLUX</a></li>
+          <li><a href="javascript:void(0)" on-tap="_tiles">DR2_TILE_INFO</a></li>
+          <li><a href="javascript:void(0)" on-tap="_coverage">DR2_COVERAGE</a></li>
+        </ul>
+        <hr>
+
+        <p><br></p>
+        <div class="fixup" id="schema_main"></div>
+        <h3 class="fixdown">DR2_MAIN  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 26.63%;"> <col style="width: 58.4908%;"> <col style="width: 14.841%;"> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th colspan="1" style="text-align: center;">
+                <span>Number of Columns</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+              </td>
+              <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">AWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Major axis size, from 2nd order windowed moment measurements [pixels]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">A_IMAGE</a>
+              </td>
+              <td colspan="1">Major axis size based on an isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td><a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#background">BACKGROUND_{G,R,I,Z,Y}</a></td>
+              <td>Background level, by CCD-amplifier [mag]&nbsp;</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">BWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Minor axis size, from 2nd order windowed moment measurements [pixels]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">B_IMAGE</a>
+              </td>
+              <td>Minor axis size based on an isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#class-star">CLASS_STAR_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Simple morphological extended source classifier. Values between 0 (galaxies) and 1 (stars). SPREAD<a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#model-based-star-galaxy-separation-spread-model">SPREAD_MODEL</a> exhibits better performance for morphological classification.</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>Unique identifier for the coadded objects</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>DEC</td>
+              <td>Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+              </td>
+              <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>EBV_SFD98</td>
+              <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRAWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in major axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRA_IMAGE</a>
+              </td>
+              <td>Uncertainty in major axis size, from isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRBWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in minor axis size, from converged windowed measurement, assuming uncorrelated noise [pixel]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRB_IMAGE</a>
+              </td>
+              <td>Uncertainty in minor axis size, from isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRTHETAWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in source position angle, from converged windowed measurement [degrees]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#poserr-iso-def">ERRTHETA_IMAGE</a>
+              </td>
+              <td>Uncertainty in source position, from isophotal model [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRX2WIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in second moment of x-distribution centroid, from converged windowed measurements [pixel2]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRXYWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in second moment of xy-distribution, from converged windowed measurements [pixel2]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#poserr-win-def">ERRY2WIN_IMAGE_{G,R,I,Z,Y}</a>
+                </p>
+              </td>
+              <td colspan="1">Uncertainty in second moment of y-distribution centroid, from converged windowed measurements [pixel2]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flags">FLAGS_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUX_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Aperture-flux measurement, elliptical model based on the Kron radius [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">FLUX_RADIUS_{G,R,I,Z,Y}</td>
+              <td colspan="1">Half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=fwhm%20image#windowed-positional-parameters">FWHM_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">FWHM measured from the isophotal area, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">GALACTIC_B</td>
+              <td colspan="1">Galactic Latitude [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">GALACTIC_L</td>
+              <td colspan="1">Galactic Longitude [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
+              <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#imaflags-iso">IMAFLAGS_ISO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>ISOAREA_IMAGE_{G,R,I,Z,Y}</td>
+              <td>Isophotal area of the coadded source [pixel2]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#kron-radius">KRON_RADIUS</a>
+              </td>
+              <td>Kron radius measured from detection image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#kron-radius">KRON_RADIUS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Kron radius measured from coadded image [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">MAG_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>MAG_AUTO_{G,R,I,Z,Y}_DERED</td>
+              <td>Dereddened magnitude estimation (using SFD98), for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>NEPOCHS_{G,R,I,Z,Y}</td>
+              <td>Number of epochs the source is detected in single epoch images</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Model.html#model-minimization-def">NITER_MODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Number of iterations in model fitting photometric measurements</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spreaderr-model">SPREADERR_MODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in morphology based classifier based on comparison between PSF versus exponential-PSF model.</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spread-model">SPREAD_MODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Morphology based classifier based on comparison between a PSF versus exponential-PSF model. Values closer to 0 correspond to stars, larger values correspond to galaxies</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#windowed-shape-parameters-awin-bwin-thetawin">THETAWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Position angle of source, for converged windowed measurement grow from x to y [degrees]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html?highlight=j2000#basic-shape-parameters-a-b-theta">THETA_J2000</a>
+              </td>
+              <td>Position angle of source in J2000 coordinates, from non-windowed measurement [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>TILENAME</td>
+              <td>Identifier of each one of the tiles on which the survey is gridded</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged flux measurement of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted average flux measurement of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAG_PSF_{G,R,I,Z,Y}_DERED</td>
+              <td>Dereddened weighted average magnitude (using SFD98) from PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_SPREADERR_MODEL_{G,R,I,Z,Y}</td>
+              <td>Uncertainty in <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spreaderr-model">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_SPREAD_MODEL_{G,R,I,Z,Y}</td>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spread-model">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">X2WIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Second moment in x-direction, from converged windowed measurements [pixel2]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE</a>
+                </p>
+              </td>
+              <td>X-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">XWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>X-centroid from windowed measurements on coadded band image [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">XYWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>
+                <p>Second moment in xy-direction, from converged windowed measurements [pixel2]</p>
+              </td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-2nd-order-moments-x2-y2-xy">Y2WIN_IMAGE_{G,R,I,Z,Y}</a>
+                </p>
+              </td>
+              <td>Second moment in y-direction, from converged windowed measurements [pixel2]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE</a>
+              </td>
+              <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html?highlight=x2win#windowed-centroid-xwin-ywin">YWIN_IMAGE_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Y-centroid from windowed measurements on coadded band images [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td>
+                <br>
+              </td>
+              <td style="text-align: center;">213</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <p><br></p>
+        <div class="fixup" id="schema_mags"></div>
+        <h3 class="fixdown">DR2_MAGNITUDE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 22.789%;"> <col style="width: 62.3696%;"> <col style="width: 14.8033%;"> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Number of Columns</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+              </td>
+              <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>Unique identifier for the coadded objects</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">DEC</td>
+              <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+              </td>
+              <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>EBV_SFD98</td>
+              <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flags">FLAGS_{G,R,I,Z,Y}</a>
+            </td>
+              <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">HPIX_{32,64,1024,4096,16384}</td>
+              <td colspan="1">Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#imaflags-iso">IMAFLAGS_ISO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude estimation for circular apertures [mag]</td>
+              <td style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">MAGERR_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in magnitude for a Petrosian radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude estimation for circular apertures [mag]</td>
+              <td style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">MAG_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude estimation, for an elliptical model based on the Kron radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">MAG_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Magnitude for a Petrosian radius [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">PETRO_RADIUS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Petrosian radius [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>TILENAME</td>
+              <td>Identifier of each one of the tiles on which the survey is gridded</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted average magnitude, of PSF fit single epoch detections [mag]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+              </td>
+              <td>X-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+              </td>
+              <td>Y-centroid from windowed measurements on coadded image [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td>
+                <br>
+              </td>
+              <td style="text-align: center;">179</td>
+            </tr>
+          </tbody>
+        </table>
+<p>
+  <br>
+</p>
+        <p><br></p>
+        <div class="fixup" id="schema_fluxes"></div>
+        <h3 class="fixdown">DR2_FLUX  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 23.1261%;"> <col style="width: 62.0506%;"> <col style="width: 14.7852%;"> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Number of Columns</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+              </td>
+              <td>Right ascension for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>Unique identifier for the coadded objects</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">DEC</td>
+              <td colspan="1">Declination, with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+              </td>
+              <td>Declination for the object, J2000 in ICRS system (full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>EBV_SFD98</td>
+              <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flags">FLAGS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Additive flag describing cautionary advice about source extraction process. Use less than 4 for well behaved objects</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUXERR_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in flux measurement for circular apertures [ADU]</td>
+              <td colspan="1" style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">Uncertainty in flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">FLUXERR_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in flux for a Petrosian radius [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUX_APER_{1-12}_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux measurement for circular apertures [ADU]</td>
+              <td style="text-align: center;">60</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUX_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux measurement, for an elliptical model based on the Kron radius [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">FLUX_PETRO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux for a Petrosian radius [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>HPIX_{32,64,1024,4096,16384}</td>
+              <td>Healpix identifier for its NSIDE grid size, in a NESTED schema</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#imaflags-iso">IMAFLAGS_ISO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#flux-petro">PETRO_RADIUS_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Petrosian radius [pixel]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right ascension, with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>TILENAME</td>
+              <td>Identifier of each one of the tiles on which the survey is gridded</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+              <td>Weighted averaged flux, of PSF fit single epoch detections [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">XWIN_IMAGE</a>
+              </td>
+              <td>X-centroid of source (from coadd detection image)</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/PositionWin.html#pos-win-def">YWIN_IMAGE</a>
+              </td>
+              <td>Y-centroid of source (from coadd detection image)</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+              <td>
+                <br>
+              </td>
+              <td style="text-align: center;">179</td>
+            </tr>
+          </tbody>
+        </table>
+<p>
+  <br>
+</p>
+        <p><br></p>
+        <div class="fixup" id="schema_tiles"></div>
+        <h3 class="fixdown">DR2_TILE_INFO  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<table>
+  <colgroup> <col> <col> <col> </colgroup>
+  <tbody>
+    <tr>
+      <th>
+        <span>Column</span>
+      </th>
+      <th>
+        <span>Description</span>
+      </th>
+      <th style="text-align: center;">
+        <span>Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1">CD1_1</td>
+      <td colspan="1">WCS definition for pixel orientation. Value: -0.0000730556</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>CD1_2</td>
+      <td>WCS definition for pixel orientation. Value: 0</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>CD2_1</td>
+      <td>WCS definition for pixel orientation. Value: 0</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>CD2_2</td>
+      <td>WCS definition for pixel orientation. Value: 0.0000730556</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">COUNT</td>
+      <td colspan="1">Number of objects per tile</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CROSSRA0</td>
+      <td colspan="1">Flag tile bounday crosses RA=0/24h boundary. Values: Y or N</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRPIX1</td>
+      <td colspan="1">WCS definition of central pixel for axis 1. Value: 5000.5</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRPIX2</td>
+      <td colspan="1">WCS definition of central pixel for axis 2. Value: 5000.5</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRVAL1</td>
+      <td colspan="1">WCS definition of central pixel value for axis 1</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CRVAL2</td>
+      <td colspan="1">WCS definition of central pixel value for axis 2</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CTYPE1</td>
+      <td colspan="1">WCS projection used for axis 1. Value: RA---TAN</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">CTYPE2</td>
+      <td colspan="1">WCS projection used for axis 2. Value: DEC--TAN</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC1</td>
+      <td colspan="1">Declination at Corner 1 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC2</td>
+      <td colspan="1">Declination at Corner 2 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC3</td>
+      <td colspan="1">Declination at Corner 3 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECC4</td>
+      <td colspan="1">Declination at Corner 4 of tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">DECCMAX</td>
+      <td colspan="1">Maximum Declination covered in tile [degrees]</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DECCMIN</td>
+      <td>Minimum Declination covered in tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DEC_CENT</td>
+      <td>Central Declination for tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>DEC_SIZE</td>
+      <td>Extent of Declination for tile, in average is 0.7304 deg [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_DR2_FLUX</td>
+      <td>Filename of the served FITS being {tile_name}_dr1_flux.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_DR2_MAGNITUDE</td>
+      <td>Filename of the served FITS being {tile_name}_dr1_magnitude.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_DR2_MAIN</td>
+      <td>Filename of the served FITS being {tile_name}_dr1_main.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_IMAGE_DET</td>
+      <td>Filename of the served FITS being {tile_name}_r{reqnum}p{attnum}_det.fits.fz</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>FITS_IMAGE_{G,R,I,Z,Y}</td>
+      <td>Filename of the served FITS, per band, being {tile_name}_r{reqnum}p{attnum}_{band}.fits.fz</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>NAXIS1</td>
+      <td>WCS definition for number of pixels for axis 1</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>NAXIS2</td>
+      <td>WCS definition for number of pixels for axis 2</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>PIXELSCALE</td>
+      <td>WCS definition of pixel scale. Values: 0.263 arcsec/pixel [arcsec/pixel]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC1</td>
+      <td>Right Ascension at Corner 1 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC2</td>
+      <td>Right Ascension at Corner 2 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC3</td>
+      <td>Right Ascension at Corner 3 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RAC4</td>
+      <td>Right Ascension at Corner 4 of tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RACMAX</td>
+      <td>Maximum Right Ascension covered in tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RACMIN</td>
+      <td>Minimum Right Ascension covered in tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RA_CENT</td>
+      <td>Central Right Ascension for tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>RA_SIZE</td>
+      <td>Extent of Right Ascension for tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TIFF_COLOR_IMAGE</td>
+      <td>Filename of the TIFF image for the tile, being {tilename}_r{reqnum}p{attnum)_irg.tiff</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>TILENAME</td>
+      <td>Tilename identifier</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>UDECMAX</td>
+      <td>Maximum Unique Declination of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>UDECMIN</td>
+      <td>Minimum Unique Declination of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>URAMAX</td>
+      <td>Maximum Unique Right Ascension of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>URAMIN</td>
+      <td>Minimum Unique Right Ascension of objects measured from tile [degrees]</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+      <td style="text-align: center;">46</td>
+    </tr>
+  </tbody>
+</table>
+
+        <p><br></p>
+        <div class="fixup" id="schema_coverage"></div>
+        <h3 class="fixdown">DR2_COVERAGE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+<table>
+  <colgroup> <col> <col> <col> </colgroup>
+  <tbody>
+    <tr>
+      <th>
+        <span>Column</span>
+      </th>
+      <th>
+        <span>Description</span>
+      </th>
+      <th style="text-align: center;">
+        <span>Number of Columns</span>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1">FRAC_DET_G</td>
+      <td colspan="1">Fractional area of Healpix pixel covered simultaneously by the g band</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">FRAC_DET_R</td>
+      <td colspan="1">Fractional area of Healpix pixel covered simultaneously by the r band</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">FRAC_DET_I</td>
+      <td colspan="1">Fractional area of Healpix pixel covered simultaneously by the i band</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">FRAC_DET_Z</td>
+      <td colspan="1">Fractional area of Healpix pixel covered simultaneously by the z band</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">FRAC_DET_Y</td>
+      <td colspan="1">Fractional area of Healpix pixel covered simultaneously by the Y band</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td colspan="1">HPIX_4096</td>
+      <td colspan="1">Healpix index for NSIDE = 4096in NEST(ed) schema.</td>
+      <td colspan="1" style="text-align: center;">1</td>
+    </tr>
+    <tr>
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+      <td style="text-align: center;">6</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+</des-card>
+</template>
+<script>
+    class DesDr2Schema extends Polymer.Element {
+      static get is() { return 'des-dr2-schema'; }
+      _top() {this.$.schema_top.scrollIntoView();}
+      _mags() {this.$.schema_mags.scrollIntoView();}
+      _fluxes() {this.$.schema_fluxes.scrollIntoView();}
+      _main() {this.$.schema_main.scrollIntoView();}
+      _tiles() {this.$.schema_tiles.scrollIntoView();}
+      _coverage() {this.$.schema_coverage.scrollIntoView();}
+
+    }
+    window.customElements.define(DesDr2Schema.is, DesDr2Schema);
+  </script>
+
+</dom-module>
+<dom-module id="des-dr2-access" assetpath="des-dr2/">
+    <template>
+    <style include="shared-styles">
+    :host {
+       padding: 10px;
+       }
+       .testcards {
+           @apply --layout-horizontal;
+           @apply --layout-wrap;
+           @apply --layout-justified;
+       }
+       .bt {
+           @apply --layout-horizontal;
+           @apply --layout-center-justified;
+
+       }
+
+       .access-header {
+           @apply --paper-font-headline;
+           font-size: 1.2rem;
+           color: var(--paper-blue-500);
+           align-self: baseline;
+       }
+
+
+
+    @media only screen and (max-device-width: 480px) {
+       .access-header {
+           font-size: 0.6rem;
+           color: var(--paper-blue-500);
+       }
+    }
+       .card-image {
+           display: block;
+            width	: 100%;
+            height: auto;
+            margin: 0 auto;
+            max-height: 280px;
+            max-width: 280px;
+       }
+        paper-card {
+        margin-top: 0px;
+        width: auto;
+        max-width: 32%;
+        cursor: pointer;
+        -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+        --paper-card-header-color: var(--paper-blue-500);
+    }
+      paper-card:hover {
+          cursor: pointer;
+          @apply(--shadow-elevation-16dp);
+      }
+      .desButton{
+          margin-top:15px;
+      }
+    </style>
+    <des-card heading="DR2 Data Access">
+    <div class="card-content">
+        <p>
+        If you'd like to access the images and catalogs from DES DR2, please use the complementary set of tools
+        created by a collaborative effort between NCSA, NOIRLab, and LIneA. These tools allow the users to access, obtain, visualize, and explore DES DR2 products.<br>
+        When using DES data and/or DES access tools please consider the notes in the <a href="[[rootPath]]thanks">Acknowledgement</a> page.
+        <br>
+        Click on the logos below to start exploring DES data tools. Follow the links below to learn more about each tool and their functionalities. <br></p>
+
+        <div class="testcards">
+    <paper-card on-tap="_goncsa">
+        <div class="card-content">
+            <img class="card-image" src="{{rootPath}}static/images/ea_icon.png">
+            <div class="access-header">NCSA DESaccess</div>
+        </div>
+    </paper-card>
+
+    <paper-card on-tap="_gonoao">
+        <div class="card-content">
+            <img class="card-image" src="{{rootPath}}static/images/datalab3.png">
+            <div class="access-header">NOAO DataLab</div>
+        </div>
+
+    </paper-card>
+    <paper-card on-tap="_golinea">
+        <div class="card-content">
+            <img class="card-image" src="{{rootPath}}static/images/des_logo_oficial.jpg">
+            <div class="access-header">LIneA Science Server </div>
+        </div>
+
+    </paper-card>
+
+    </div>
+    <hr>
+    <br>
+    <p>
+
+    From these institutions, a rich and complementary set of tools and interfaces were developed to access and interact with DES data in different ways that cover a broad set of use cases to enable scientific discovery.
+    For the moment, NCSA and LIneA services are linked to the same account. <br>
+    To <b>register</b> visit:
+    <a href="https://des.ncsa.illinois.edu/desaccess/login/" target="_blank">https://des.ncsa.illinois.edu/desaccess/login/</a>
+    </p>
+    <p>
+        To learn more about the NCSA DESaccess services use the following link:
+    </p>
+        <ul>
+          <li>
+            <h3>
+              <a href="[[rootPath]]releases/dr2/dr2-access/dr2-ncsa">NCSA DESaccess</a>
+            </h3>
+          </li>
+        </ul>
+
+
+
+    </div>
+    </des-card>
+    </template>
+    <script>
+    class desDr2Access extends Polymer.Element {
+      static get is() { return 'des-dr2-access'; }
+      _goncsa() {
+          var win = window.open('/desaccess/', '_blank');
+          win.focus();
+      }
+      _gonoao() {
+          var win = window.open('http://datalab.noao.edu/', '_blank');
+          win.focus();
+      }
+      _golinea() {
+          var win = window.open('https://desportal2.cosmology.illinois.edu/dri/apps/home/', '_blank');
+          win.focus();
+      }
+      _goregister(e) {
+          var win = window.open('/desaccess/login/', '_blank');
+          win.focus();
+      }
+      _goregisterNOAO(e) {
+          var win = window.open('http://datalab.noao.edu/register.php', '_blank');
+          win.focus();
+      }
+       }
+     window.customElements.define(desDr2Access.is,desDr2Access);
+     </script>
+     </dom-module>
 <dom-module id="des-sn" assetpath="des-sn/">
 
 <template>

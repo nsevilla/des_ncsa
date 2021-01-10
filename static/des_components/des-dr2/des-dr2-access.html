@@ -1,0 +1,147 @@
+    <dom-module id='des-dr2-access'>
+    <template>
+    <style include='shared-styles'>
+    :host {
+       padding: 10px;
+       }
+       .testcards {
+           @apply --layout-horizontal;
+           @apply --layout-wrap;
+           @apply --layout-justified;
+       }
+       .bt {
+           @apply --layout-horizontal;
+           @apply --layout-center-justified;
+
+       }
+
+       .access-header {
+           @apply --paper-font-headline;
+           font-size: 1.2rem;
+           color: var(--paper-blue-500);
+           align-self: baseline;
+       }
+
+
+
+    @media only screen and (max-device-width: 480px) {
+       .access-header {
+           font-size: 0.6rem;
+           color: var(--paper-blue-500);
+       }
+    }
+       .card-image {
+           display: block;
+            width	: 100%;
+            height: auto;
+            margin: 0 auto;
+            max-height: 280px;
+            max-width: 280px;
+       }
+        paper-card {
+        margin-top: 0px;
+        width: auto;
+        max-width: 32%;
+        cursor: pointer;
+        -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+        --paper-card-header-color: var(--paper-blue-500);
+    }
+      paper-card:hover {
+          cursor: pointer;
+          @apply(--shadow-elevation-16dp);
+      }
+      .desButton{
+          margin-top:15px;
+      }
+    </style>
+    <des-card heading="DR2 Data Access">
+    <div class=card-content>
+        <p>
+        If you'd like to access the images and catalogs from DES DR2, please use the complementary set of tools
+        created by a collaborative effort between NCSA, NOIRLab, and LIneA. These tools allow the users to access, obtain, visualize, and explore DES DR2 products.<br />
+        When using DES data and/or DES access tools please consider the notes in the <a href="[[rootPath]]thanks">Acknowledgement</a> page.
+        <br />
+        Click on the logos below to start exploring DES data tools. Follow the links below to learn more about each tool and their functionalities. <br /></p>
+
+        <div class="testcards">
+    <paper-card on-tap="_goncsa">
+        <div class="card-content">
+            <img class="card-image" src="{{rootPath}}static/images/ea_icon.png" >
+            <div class="access-header">NCSA DESaccess</div>
+        </div>
+    </paper-card>
+
+    <paper-card on-tap="_gonoao">
+        <div class="card-content">
+            <img class="card-image" src="{{rootPath}}static/images/datalab3.png">
+            <div class="access-header">NOAO DataLab</div>
+        </div>
+
+    </paper-card>
+    <paper-card on-tap="_golinea">
+        <div class="card-content">
+            <img class="card-image" src="{{rootPath}}static/images/des_logo_oficial.jpg" >
+            <div class="access-header">LIneA Science Server </div>
+        </div>
+
+    </paper-card>
+
+    </div>
+    <hr />
+    <br />
+    <p>
+
+    From these institutions, a rich and complementary set of tools and interfaces were developed to access and interact with DES data in different ways that cover a broad set of use cases to enable scientific discovery.
+    For the moment, NCSA and LIneA services are linked to the same account. <br />
+    To <b>register</b> visit:
+    <a href="https://des.ncsa.illinois.edu/desaccess/login/" target="_blank">https://des.ncsa.illinois.edu/desaccess/login/</a>
+    </p>
+    <p>
+        To learn more about the NCSA DESaccess services use the following link:
+    </p>
+        <ul>
+          <li>
+            <h3>
+              <a href="[[rootPath]]releases/dr2/dr2-access/dr2-ncsa">NCSA DESaccess</a>
+            </h3>
+          </li>
+        </ul>
+
+
+
+    </div>
+    </des-card>
+    </template>
+    <script>
+    class desDr2Access extends Polymer.Element {
+      static get is() { return 'des-dr2-access'; }
+      _goncsa() {
+          var win = window.open('/desaccess/', '_blank');
+          win.focus();
+      }
+      _gonoao() {
+          var win = window.open('http://datalab.noao.edu/', '_blank');
+          win.focus();
+      }
+      _golinea() {
+          var win = window.open('https://desportal2.cosmology.illinois.edu/dri/apps/home/', '_blank');
+          win.focus();
+      }
+      _goregister(e) {
+          var win = window.open('/desaccess/login/', '_blank');
+          win.focus();
+      }
+      _goregisterNOAO(e) {
+          var win = window.open('http://datalab.noao.edu/register.php', '_blank');
+          win.focus();
+      }
+       }
+     window.customElements.define(desDr2Access.is,desDr2Access);
+     </script>
+     </dom-module>
