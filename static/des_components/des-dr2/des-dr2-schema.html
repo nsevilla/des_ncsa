@@ -17,7 +17,6 @@
 <div class="fixdown"></div>
 <des-card heading ='DR2 Table Schema'>
     <div class=card-content>
-      <strong>*TODO*: Revisit the columns </strong><br>
         Below we present a summarized version of the DR2 tables and their description, some of the columns
         have links to a more detailed explanation and origin, in particular, the <a href = "http://sextractor.readthedocs.io/en/des_dr1/" target="_blank"> Sextractor parameters used for DR1 and DR2</a>.
         <ul>
@@ -180,6 +179,26 @@
               </td>
               <td colspan="1">Uncertainty in second moment of y-distribution centroid, from converged windowed measurements [pixel2]</td>
               <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  EXTENDED_CLASS_COADD
+                </p>
+              </td>
+              <td colspan="1">
+0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data; Using Sextractor photometry</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  EXTENDED_CLASS_WAVG
+                </p>
+              </td>
+              <td colspan="1">
+0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data; Using WAVG photometry</td>
+              <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
               <td colspan="1">
@@ -422,7 +441,7 @@
               <td>
                 <br/>
               </td>
-              <td style="text-align: center;">213</td>
+              <td style="text-align: center;">215</td>
             </tr>
           </tbody>
         </table>
@@ -873,17 +892,17 @@
     </tr>
     <tr>
       <td>FITS_DR2_FLUX</td>
-      <td>Filename of the served FITS being {tile_name}_dr1_flux.fits.fz</td>
+      <td>Filename of the served FITS being {tile_name}_dr2_flux.fits</td>
       <td style="text-align: center;">1</td>
     </tr>
     <tr>
       <td>FITS_DR2_MAGNITUDE</td>
-      <td>Filename of the served FITS being {tile_name}_dr1_magnitude.fits.fz</td>
+      <td>Filename of the served FITS being {tile_name}_dr2_magnitude.fits</td>
       <td style="text-align: center;">1</td>
     </tr>
     <tr>
       <td>FITS_DR2_MAIN</td>
-      <td>Filename of the served FITS being {tile_name}_dr1_main.fits.fz</td>
+      <td>Filename of the served FITS being {tile_name}_dr2_main.fits</td>
       <td style="text-align: center;">1</td>
     </tr>
     <tr>
@@ -895,6 +914,16 @@
       <td>FITS_IMAGE_{G,R,I,Z,Y}</td>
       <td>Filename of the served FITS, per band, being {tile_name}_r{reqnum}p{attnum}_{band}.fits.fz</td>
       <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>FITS_IMAGE_NOBKG_{G,R,I,Z,Y}</td>
+      <td>Filename of the served FITS (No background substracted), per band, being {tile_name}_r{reqnum}p{attnum}_{band}_nobkg.fits.fz</td>
+      <td style="text-align: center;">5</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Internal Unique ID identifier</td>
+      <td style="text-align: center;">1</td>
     </tr>
     <tr>
       <td>NAXIS1</td>
@@ -957,6 +986,11 @@
       <td style="text-align: center;">1</td>
     </tr>
     <tr>
+      <td>TIFF_COLOR_IMAGE_NOBKG</td>
+      <td>Filename of the TIFF image for the tile (No background substracted), being {tilename}_r{reqnum}p{attnum)_irg_nobkg.tiff</td>
+      <td style="text-align: center;">1</td>
+    </tr>
+    <tr>
       <td>TILENAME</td>
       <td>Tilename identifier</td>
       <td style="text-align: center;">1</td>
@@ -988,7 +1022,7 @@
       <td>
         <br/>
       </td>
-      <td style="text-align: center;">46</td>
+      <td style="text-align: center;">53</td>
     </tr>
   </tbody>
 </table>
