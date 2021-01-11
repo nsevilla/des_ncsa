@@ -1,6 +1,6 @@
 """ Settings for app"""
 import os
-DEBUG = True
+DEBUG = False
 DIRNAME = os.path.dirname(__file__)
 if os.environ['APP_ROOT'] == '' or os.environ['APP_ROOT'] == '/':
     APP_ROOT = ''
