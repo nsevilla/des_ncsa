@@ -1,0 +1,357 @@
+<dom-module id="des-dr2docs">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+</style>
+
+<des-card heading = 'Overview'>
+    <div class=card-content >
+        <h2>Survey Overview</h2>
+        <p>
+          <span style="color: rgb(0,0,0);"> We  present  the  second  public  data  release  of  the  Dark  Energy  Survey,  DES  DR2,  based  on  optical/near-infrared  imaging  by  the  Dark  Energy  Camera  mounted  on  the  4-m  Blanco  telescope  at  Cerro  Tololo  Inter-American Observatory in Chile.   DES DR2 consists of reduced single-epoch and coadded images,  a source catalog derived from coadded images, and associated data products assembled from 6 years of DES science operations.  This release includes data from the DES wide-area survey covering ∼5000 deg<sup>2</sup> of the southern Galactic cap in five broad photometric bands, grizY.  
+          <br> <br>
+          DES DR2 has a median delivered point-spread function full-width at half maximum of g = 1.11, r = 0.95, i = 0.88, z = 0.83, and Y = 0.90 arcsec, photometric uniformity with a standard deviation of &lt; 3 mmag with respect to Gaia DR2 G-band, a photometric accuracy of ∼10 mmag, and a median internal astrometric precision of ∼27 mas. The median coadded catalog depth for a 1.95'' diameter aperture at S/N = 10 is g = 24.7, r = 24.4, i = 23.8, z = 23.1, and Y = 21.7 mag. DES DR2 includes ∼691 million distinct astronomical objects detected in 10,169 coadded image tiles of size 0.534 deg<sup>2</sup> produced from 76,217 single-epoch images. After a basic quality selection, benchmark galaxy and stellar samples contain 543 million and 145 million objects, respectively. These data are accessible through several interfaces, including web-based query clients,  image cutout servers,  Jupyter notebooks,  and an interactive coadded image visualization tool. DES DR2 constitutes the largest photometric data set to date at the achieved depth and photometric precision.</span>
+        </p>
+        
+        <h2>Documentation</h2>
+        <ul>
+          <li>
+            <h3>
+              <a href="#">DR2 Release Paper</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="https://ui.adsabs.harvard.edu/abs/2018PASP..130g4501M/abstract">DESDM Pipeline Paper</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="[[rootPath]]releases/dr2/dr2-docs/dr2-processing">Data Processing</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="[[rootPath]]releases/dr2/dr2-docs/dr2-transformations">Photometric Transformations</a>
+            </h3>
+          </li>
+        </ul>
+        <h2 style="text-align: left;">
+          <span style="color: rgb(0,0,0);">DES DR2 Key Numbers and Data Quality Summary<br/>
+          </span>
+        </h2>
+
+        <table class="fixed-table wrapped">
+      <colgroup>
+        <col style="width: 489.0px;"/>
+        <col style="width: 57.0px;"/>
+        <col style="width: 57.0px;"/>
+        <col style="width: 201.0px;"/>
+        <col style="width: 57.0px;"/>
+        <col style="width: 57.0px;"/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Parameter</th>
+          <th style="text-align: center;">
+            <br/>
+          </th>
+          <th style="text-align: center;">
+            <br/>
+          </th>
+          <th style="text-align: center;">Band</th>
+          <th style="text-align: center;">
+            <br/>
+          </th>
+          <th style="text-align: center;">
+            <br/>
+          </th>
+        </tr>
+        <tr>
+          <th colspan="1">
+            <br/>
+          </th>
+          <th colspan="1" style="text-align: center;">g</th>
+          <th colspan="1" style="text-align: center;">r</th>
+          <th colspan="1" style="text-align: center;">i</th>
+          <th colspan="1" style="text-align: center;">z</th>
+          <th colspan="1" style="text-align: center;">Y</th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>Number of Exposures in Coadd</p>
+          </td>
+          <td colspan="1" style="text-align: center;">16,248</td>
+          <td colspan="1" style="text-align: center;">16,117</td>
+          <td colspan="1" style="text-align: center;">15,792</td>
+          <td colspan="1" style="text-align: center;">15,731</td>
+          <td colspan="1" style="text-align: center;">12,239</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>Single-epoch Median PSF FWHM (arcsec)</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>1.11</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>0.95</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>0.88</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>0.83</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>0.90</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Single-epoch Median Sky Brightness (mag arcsec<sup>-2</sup>)</td>
+          <td colspan="1" style="text-align: center;">22.05</td>
+          <td colspan="1" style="text-align: center;">21.18</td>
+          <td colspan="1" style="text-align: center;">19.92</td>
+          <td colspan="1" style="text-align: center;">18.74</td>
+          <td colspan="1" style="text-align: center;">17.97</td>
+        </tr>
+        <tr>
+          <td colspan="1">Single-epoch Median Effective Image Noise (mag arcsec<sup>-2</sup>)</td>
+          <td colspan="1" style="text-align: center;">25.25</td>
+          <td colspan="1" style="text-align: center;">24.95</td>
+          <td colspan="1" style="text-align: center;">24.32</td>
+          <td colspan="1" style="text-align: center;">23.59</td>
+          <td colspan="1" style="text-align: center;">22.31</td>
+        </tr>
+        <tr>
+          <td>
+            <p>Single-epoch Astrometric Repeatability (mas)</p>
+          </td>
+          <td style="text-align: center;">34</td>
+          <td style="text-align: center;">28</td>
+          <td style="text-align: center;">29</td>
+          <td style="text-align: center;">34</td>
+          <td style="text-align: center;">53</td>
+        </tr>
+        <tr>
+          <td>Single-epoch Photometric Repeatability (mmag)</td>
+          <td style="text-align: center;">
+            <p>2.4</p>
+          </td>
+          <td style="text-align: center;">2.1</td>
+          <td style="text-align: center;">2.2</td>
+          <td style="text-align: center;">1.8</td>
+          <td style="text-align: center;">2.7</td>
+        </tr>
+        <tr>
+          <td colspan="1">Single-epoch Magnitude Limit (PSF, S/N = 10)</td>
+          <td colspan="1" style="text-align: center;">23.57</td>
+          <td colspan="1" style="text-align: center;">23.34</td>
+          <td colspan="1" style="text-align: center;">22.78</td>
+          <td colspan="1" style="text-align: center;">22.10</td>
+          <td colspan="1" style="text-align: center;">20.69</td>
+        </tr>
+        <tr>
+          <td colspan="1"><br></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+          <td colspan="1" style="text-align: center;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Sky Coverage (individual bands, sq. deg.)</p>
+          </td>
+          <td style="text-align: center;">
+            <p>5055</p>
+          </td>
+          <td style="text-align: center;">
+            <p>4988</p>
+          </td>
+          <td style="text-align: center;">
+            <p>5023</p>
+          </td>
+          <td style="text-align: center;">
+            <p>5031</p>
+          </td>
+          <td style="text-align: center;">
+            <p>5080</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Sky Coverage (grizY intersection, sq. deg.)</p>
+          </td>
+          <td style="text-align: center;">
+            <br/>
+          </td>
+          <td style="text-align: center;">
+            <br/>
+          </td>
+          <td style="text-align: center;">4913</td>
+          <td style="text-align: center;">
+            <br/>
+          </td>
+          <td style="text-align: center;">
+            <br/>
+          </td>
+        </tr>
+        <tr>
+          <td>Coadd Astrometric Precision (mas)</td>
+          <td style="text-align: center;">
+            <br/>
+          </td>
+          <td style="text-align: center;">
+            <br/>
+          </td>
+          <td style="text-align: center;">27</td>
+          <td style="text-align: center;">
+            <br/>
+          </td>
+          <td style="text-align: center;">
+            <br/>
+          </td>
+        </tr>
+        <tr>
+          <td>Absolute Photometric Statistical Uncertainty (mmag)</td>
+          <td style="text-align: center;">
+            <p>2.2</p>
+          </td>
+          <td style="text-align: center;">2.2</td>
+          <td style="text-align: center;">2.2</td>
+          <td style="text-align: center;">2.2</td>
+          <td style="text-align: center;">3.3</td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Photometric Precision (mmag)</td>
+          <td colspan="1" style="text-align: center;"> &le; 2.4</td>
+          <td colspan="1" style="text-align: center;">&le; 2.1</td>
+          <td colspan="1" style="text-align: center;">&le; 2.2</td>
+          <td colspan="1" style="text-align: center;">&le; 1.8</td>
+          <td colspan="1" style="text-align: center;">&le; 2.7</td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Photometric Uniformity vs. Gaia (mmag)</td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">2.15</td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">...</td>
+          <td colspan="1" style="text-align: center;">...</td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Magnitude Limit (MAG_APER_4, 1.95" diameter, S/N = 10)</td>
+          <td colspan="1" style="text-align: center;">
+            <p>24.7</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>24.4</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>23.8</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>23.1</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>21.7</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Coadd 95% Completeness Limit (mag)</td>
+          <td style="text-align: center;">
+            <p>24.6</p>
+          </td>
+          <td style="text-align: center;">24.3</td>
+          <td style="text-align: center;">24.0</td>
+          <td style="text-align: center;">23.7</td>
+          <td style="text-align: center;">23.5</td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Spurious Object Rate </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">&le;~1%</td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Coadd Galaxy Selection<p>(EXTENDED_COADD ≥ 2, 19 ≤ MAG_AUTO_I ≤ 22.5)</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>Efficiency &gt; 99%<br/>Contamination &lt; 3%</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <p>Coadd Stellar Selection<br/>(EXTENDED_COADD ≤ 1, 19 ≤ MAG_AUTO_I ≤ 22.5)</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <p>Efficiency &gt; 94%<br/>Contamination &lt; 3%</p>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+          <td colspan="1" style="text-align: center;">
+            <br/>
+          </td>
+        </tr>
+    </tbody>
+</table>    
+
+    </div>
+
+
+
+</des-card>
+
+</template>
+<script>
+    class DesDr2Docs extends Polymer.Element {
+      static get is() { return 'des-dr2docs'; }
+    }
+    window.customElements.define(DesDr2Docs.is, DesDr2Docs);
+  </script>
+
+</dom-module>

@@ -365,12 +365,56 @@
 
                   <app-submenu no-auto-close>
                 <div class="app-menu-item" slot="submenu-trigger">
-                  <a class="app-menu-item" id=needindent name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq" >DR1 FAQ</a>
+                  <a class="app-menu-item" id=needindent name="dr1-faq" href="[[rootPath]]releases/dr1/dr1-faq" >Data Release FAQ</a>
                 </div>
                 </app-submenu>
                   <app-submenu no-auto-close>
                 <div class="app-menu-item" slot="submenu-trigger">
                   <a class="app-menu-item" id=needindent name="dr1-team" href="[[rootPath]]releases/dr1/dr1-team" >DR1 Release Team</a>
+                </div>
+                </app-submenu>
+
+
+                </app-menu>
+               </app-submenu no-auto-close>
+
+
+              <!-- DR2 -->
+               <app-submenu no-auto-close>
+                <div class="sublist1" slot="submenu-trigger">
+                  <a class="app-menu-item" name="dr2" href="[[rootPath]]releases/dr2">DR2<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist2" slot="submenu-content">
+                   <!--<a class="app-menu-item" id=needindent name="dr1files" href="[[rootPath]]releases/dr1/dr1files" >Files</a>-->
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr2-docs" href="[[rootPath]]releases/dr2/dr2-docs" persistent="False">Overview<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id=needsindent2 name="dr2-processing" href="[[rootPath]]releases/dr2/dr2-docs/dr2-processing" >Processing</a>
+                  <a class="app-menu-item" id=needsindent2 name="known-issues" href="[[rootPath]]releases/dr2/dr2-docs/known-issues" >Known Issues</a>
+                  <a class="app-menu-item" id=needsindent2 name="dr2-transformations" href="[[rootPath]]releases/dr2/dr2-docs/dr2-transformations" >Photometric Transformations</a>
+                </app-menu>
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr2-products" href="[[rootPath]]releases/dr2/dr2-products" persistent="False">Products<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+                <app-menu class="sublist3" slot="submenu-content">
+                  <a class="app-menu-item" id=needsindent2 name="dr2-schema" href="[[rootPath]]releases/dr2/dr2-products/dr2-schema" >Table Schema</a>
+                </app-menu>
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr2-access" href="[[rootPath]]releases/dr2/dr2-access" persistent="False">Data Access</a>
+                </div>
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="dr2-faq" href="[[rootPath]]releases/dr2/dr2-faq" >Data Release FAQ</a>
                 </div>
                 </app-submenu>
 
@@ -501,6 +545,19 @@
             <des-dr1-linea name="dr1-linea"></des-dr1-linea>
             <des-dr1-faq name="dr1-faq"></des-dr1-faq>
             <des-dr1-team name="dr1-team"></des-dr1-team>
+          
+           <!-- DR2 PAGES -->
+
+            <des-dr2 name="dr2"></des-dr2>
+            <des-dr2docs name="dr2-docs"></des-dr2docs>
+            <des-dr2-products name="dr2-products"></des-dr2-products>
+            <des-dr2-schema name="dr2-schema"></des-dr2-schema>
+            <des-dr2-access name="dr2-access"></des-dr2-access>
+            <des-dr2-soft name="dr2-processing"></des-dr2-soft>
+            <des-dr2-transformations name="dr2-transformations"></des-dr2-transformations>
+            <!-- FAQ and NCSA access are common for DR1 and DR2-->
+            <des-dr1-faq name="dr2-faq"></des-dr1-faq>
+            <des-dr1-ncsa name="dr2-ncsa"></des-dr1-ncsa>
 
            <!-- Other Releases -->
               <des-other name="other"></des-other>

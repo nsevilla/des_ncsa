@@ -1,4 +1,4 @@
-    <dom-module id='des-dr1-access'>
+    <dom-module id='des-dr2-access'>
     <template>
     <style include='shared-styles'>
     :host {
@@ -60,11 +60,11 @@
           margin-top:15px;
       }
     </style>
-    <des-card heading="DR1 Data Access">
+    <des-card heading="DR2 Data Access">
     <div class=card-content>
         <p>
-        If you'd like to access the images and catalogs from DES DR1, please use the complementary set of tools
-        created by a collaborative effort between NCSA, NOAO, and LIneA. These tools allow the users to access, obtain, visualize, and explore DES DR1 products.<bR />
+        If you'd like to access the images and catalogs from DES DR2, please use the complementary set of tools
+        created by a collaborative effort between NCSA, NOIRLab, and LIneA. These tools allow the users to access, obtain, visualize, and explore DES DR2 products.<br />
         When using DES data and/or DES access tools please consider the notes in the <a href="[[rootPath]]thanks">Acknowledgement</a> page.
         <br />
         Click on the logos below to start exploring DES data tools. Follow the links below to learn more about each tool and their functionalities. <br /></p>
@@ -97,28 +97,18 @@
     <br />
     <p>
 
-    From these institutions, a rich and complementary set of tools and interfaces were developed to access and interact with DES data in different ways that cover a broad set of use cases which enable scientific discovery.
-    For the moment, NCSA and LIneA services are linked to the same account. <br />
+    From these institutions, a rich and complementary set of tools and interfaces were developed to access and interact with DES data in different ways that cover a broad set of use cases to enable scientific discovery.
+    For the moment, NCSA and LIneA services are linked to the same account. <br /><br>
     To <b>register</b> visit:
     <a href="https://des.ncsa.illinois.edu/desaccess/login/" target="_blank">https://des.ncsa.illinois.edu/desaccess/login/</a>
     </p>
     <p>
-        To learn more about the DES DR1 services use the following links:
+        To learn more about the NCSA DESaccess services use the following link:
     </p>
         <ul>
           <li>
             <h3>
-              <a href="[[rootPath]]releases/dr1/dr1-access/dr1-ncsa">NCSA DESaccess</a>
-            </h3>
-          </li>
-          <li>
-            <h3>
-              <a href="[[rootPath]]releases/dr1/dr1-access/dr1-linea">LIneA Science Server</a>
-            </h3>
-          </li>
-          <li>
-            <h3>
-              <a href="[[rootPath]]releases/dr1/dr1-access/dr1-noao">NOAO DataLab</a>
+              <a href="[[rootPath]]releases/dr2/dr2-access/dr2-ncsa">NCSA DESaccess</a>
             </h3>
           </li>
         </ul>
@@ -129,8 +119,8 @@
     </des-card>
     </template>
     <script>
-    class desDr1Access extends Polymer.Element {
-      static get is() { return 'des-dr1-access'; }
+    class desDr2Access extends Polymer.Element {
+      static get is() { return 'des-dr2-access'; }
       _goncsa() {
           var win = window.open('/desaccess/', '_blank');
           win.focus();
@@ -152,6 +142,6 @@
           win.focus();
       }
        }
-     window.customElements.define(desDr1Access.is,desDr1Access);
+     window.customElements.define(desDr2Access.is,desDr2Access);
      </script>
      </dom-module>

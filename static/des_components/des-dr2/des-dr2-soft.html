@@ -1,4 +1,4 @@
-<dom-module id='des-dr1-soft'>
+<dom-module id='des-dr2-soft'>
 <template>
 <style include='shared-styles'>
 :host {
@@ -53,7 +53,7 @@
 </ul>
 <ol>
   <li style="margin-left: 30.0px;">First Cut: this pipeline is focused on real-time data quality assessment to evaluate whether a specific exposure needs to be retaken. The First Cut pipeline reduces and calibrates raw image, calculate astrometric solutions, masks bad regions, models the point spread function, applies quality assessments, and produces catalog objects. This pipeline uses image calibration files produced during the previous year of observing. At the end of the pipeline, a quality assessment is performed, and any exposures that do not pass minimum quality criteria are re-observed.</li>
-  <li style="margin-left: 30.0px;">Final Cut: this pipeline performs the same tasks as First Cut. However, configuration and calibration files (e.g., flats, bad pixels masking, sky flats) are derived from the epoch during which the observation was taken. This pipeline produces images that serve as input for Multi-Epoch processing and the generation of the DES DR1 coadded catalogs.</li>
+  <li style="margin-left: 30.0px;">Final Cut: this pipeline performs the same tasks as First Cut. However, configuration and calibration files (e.g., flats, bad pixels masking, sky flats) are derived from the epoch during which the observation was taken. This pipeline produces images that serve as input for Multi-Epoch processing and the generation of the DES DR2 coadded catalogs.</li>
 </ol>
 <ul>
   <li><b>Multi-Epoch Processing:</b> Multi-Epoch processing increases the imaging depth by coadding Final Cut images and producing coadd object catalogs. The processing is organized using a tiling scheme that divides the sky into 10,000 x 10,000 pixel regions spanning 0.7305 degrees on a side.  We coadd the overlapping images using the CHI-MEAN weighting and combination scheme described in <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. (2017)</a>. Astrometric refinement is performed as part of image coaddition. Photometric calibration is performed on the individual Final Cut images by the Forward Global Calibration Method (<a href="https://ui.adsabs.harvard.edu/#abs/2018AJ....155...41B/abstract">Burke et al. 2018</a>). The zeropoints of the coadded images are set to 30.</li>
@@ -909,7 +909,7 @@
         <div class="fixup" id="soft_multi"></div>
         <h3 class="fixdown">Multi-Epoch Processing  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
   <span>
-   Multi-Epoch processing performs image coaddition to increase the DES imaging depth. During this process, an astrometric refinement is performed to place all exposures on the same astrometric reference frame. The DES DR1 object catalogs are produced from these coadded images.
+   Multi-Epoch processing performs image coaddition to increase the DES imaging depth. During this process, an astrometric refinement is performed to place all exposures on the same astrometric reference frame. The DES DR2 object catalogs are produced from these coadded images.
   </span>
  </p>
  <p>
@@ -1389,7 +1389,7 @@
  </p>
  <p>
   <span style="color: rgb(0,0,0);">
-   Several additional algorithms are run to optimally measure shapes and photometry for DES cosmology. These steps include the creation of Multi Epoch Data Structures (MEDS, <a href="http://adsabs.harvard.edu/abs/2016MNRAS.460.2245J">Jarvis et al. 2015</a>, <a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>), Multi Object Fitting (MOF, <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>), and metacalibration shear estimates (<a href="http://iopscience.iop.org/article/10.3847/1538-4357/aa704b/meta">Sheldon &amp; Huff 2017</a>). These data products <b>are not</b> included with DES DR1, but are include here for completeness.
+   Several additional algorithms are run to optimally measure shapes and photometry for DES cosmology. These steps include the creation of Multi Epoch Data Structures (MEDS, <a href="http://adsabs.harvard.edu/abs/2016MNRAS.460.2245J">Jarvis et al. 2015</a>, <a href="https://arxiv.org/abs/1801.03177">Morganson et al. 2018</a>), Multi Object Fitting (MOF, <a href="https://ui.adsabs.harvard.edu/#abs/2017arXiv170801531D">Drlica-Wagner et al. 2017</a>), and metacalibration shear estimates (<a href="http://iopscience.iop.org/article/10.3847/1538-4357/aa704b/meta">Sheldon &amp; Huff 2017</a>). These data products <b>are not</b> included with DES DR2, but are include here for completeness.
   </span>
  </p>
  <div>
@@ -1680,8 +1680,8 @@
     </des-card>
     </template>
     <script>
-    class desDr1Soft extends Polymer.Element {
-      static get is() { return 'des-dr1-soft'; }
+    class desDr2Soft extends Polymer.Element {
+      static get is() { return 'des-dr2-soft'; }
       _intro() {this.$.soft_intro.scrollIntoView();}
       _single() {this.$.soft_single.scrollIntoView();}
       _multi() {this.$.soft_multi.scrollIntoView();}
@@ -1697,6 +1697,6 @@
 
           }
        }
-     window.customElements.define(desDr1Soft.is,desDr1Soft);
+     window.customElements.define(desDr2Soft.is,desDr2Soft);
      </script>
      </dom-module>
