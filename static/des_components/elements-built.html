@@ -32470,6 +32470,7 @@ Custom property | Description | Default
                 <app-menu class="sublist3" slot="submenu-content">
                   <a class="app-menu-item" id="needsindent2" name="dr2-processing" href="[[rootPath]]releases/dr2/dr2-docs/dr2-processing">Processing</a>
                   <a class="app-menu-item" id="needsindent2" name="known-issues" href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>
+                  <a class="app-menu-item" id="needsindent2" name="dr2-transformations" href="[[rootPath]]releases/dr2/dr2-docs/dr2-transformations">Photometric Transformations</a>
                 </app-menu>
                 </app-submenu>
 
@@ -32625,7 +32626,8 @@ Custom property | Description | Default
             <des-dr2-schema name="dr2-schema"></des-dr2-schema>
             <des-dr2-access name="dr2-access"></des-dr2-access>
             <des-dr2-soft name="dr2-processing"></des-dr2-soft>
-            <!-- FAQ is common for DR1 and DR2-->
+            <des-dr2-transformations name="dr2-transformations"></des-dr2-transformations>
+            <!-- FAQ and NCSA access are common for DR1 and DR2-->
             <des-dr1-faq name="dr2-faq"></des-dr1-faq>
             <des-dr1-ncsa name="dr2-ncsa"></des-dr1-ncsa>
 
@@ -47487,7 +47489,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
           This is officially the second major public release of reduced images and wide-field coadd source catalogs from all of the six years of full science operations, consisting  in over 76,000 single exposure images, close to 62,000 coadd images covering 10,169 tiles over roughly 5,000 square degrees within the DES footprint, resulting in nearly 700M distinct cataloged objects. Use the buttons below to access DR2 documentation and products.<br>
           <br>
 
-          <b>See DR2 Release paper</b> <a href="https://arxiv.org/abs/1801.03181"> Here</a>
+          <b>See DR2 Release paper</b> <a href="#"> here</a>
 
       <div style="text-align: center">
           <br>
@@ -47541,7 +47543,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
         <ul>
           <li>
             <h3>
-              <a href="https://arxiv.org/abs/1801.03181">DR2 Release Paper</a>
+              <a href="#">DR2 Release Paper</a>
             </h3>
           </li>
           <li>
@@ -47557,6 +47559,11 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
           <li>
             <h3>
               <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="[[rootPath]]releases/dr2/dr2-docs/dr2-transformations">Photometric Transformations</a>
             </h3>
           </li>
         </ul>
@@ -49814,13 +49821,13 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
         <p>DES DR2 includes an updated characterization of the Blanco/DECam total system response (instrument and at mosphere) for the g, r, i, z, Y bands. The DES DR1/DR2 Standard Bandpasses are defined as the average CCD response across the focal plane as measured with the DECal system (<a href="http://adsabs.harvard.edu/abs/2013arXiv1302.5720M">Marshall et al. 2013</a>), together with a standard atmospheric transmission computed with the <code>MODTRAN IV</code> code (<a href="http://adsabs.harvard.edu/abs/1999SPIE.3756..348B">Berk et al. 1999</a>) using parameters typical of the environmental conditions encountered during DES observations (for details, see<a href="http://adsabs.harvard.edu/abs/2017arXiv170601542B"> Burke et al. 2017</a>). For example, the airmass adopted for the standard atmosphere, 1.2, is well matched to the median airmass of exposures entering the coadd, 1.22. The system response is defined in steps of 5 Å from 3800 Å to 11000 Å. Out-of-band light leakage has been directly measured with DECal to be roughly less than 10<sup>-3</sup> relative to the in-band response, and vendor measurements of witness samples suggest that the out-of-band leakage is typically at the 10<sup>-5</sup> to 10<sup>-4</sup> level. While detailed characterization of the out-of band response is ongoing, the throughput of the DES DR1/DR2 Standard Bandpasses are defined as zero for out-of-band wavelengths (see <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>).</p>
 
 <p>These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information">Here</a>. <br>
-   <br>Note that, as described in the <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>, Y3A1 Standard Bandpasses have some minor inaccuracies and are not being released in favor of the DR1/DR2 set, but can be requested by sending an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
+   <br>Note that, as described in the <a href="[[rootPath]]releases/dr2/dr2-docs/known-issues">Known Issues</a>, Y3A1 Standard Bandpasses have some minor inaccuracies and are not being released in favor of the DR1/DR2 set, but those files can be requested by sending an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>, or by submiting a ticket <a href="/help">here</a>.
 
             <des-img-big src="{{rootPath}}static/images/dr1/dr1_bandpass.png" on-tap="_dialog" data-item="2">
             Figure 2. DR1/DR2 Standard Bandpasses for the DECam g, r, i, z and
             Y filters. The bandpasses represent the total system throughput, including
             atmospheric transmission (airmass = 1.2) and the average
-            instrumental response across the science CCDs. These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information"> Here</a></des-img-big>
+            instrumental response across the science CCDs. These can be downloaded from <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information"> here</a></des-img-big>
 
         </p><p><br></p>
         <div class="fixup" id="products_software"></div>
@@ -51105,6 +51112,118 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
      window.customElements.define(desDr2Access.is,desDr2Access);
      </script>
      </dom-module>
+<dom-module id="des-dr2-transformations" assetpath="des-dr2/">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       display: block;
+       padding: 10px;
+       }
+</style>
+
+<des-card heading="DR2 Photometric Transformations">
+    <div class="card-content">
+        <h2><strong>Overview</strong></h2>
+        <p>
+      Here, we provide empirical photometric transformations between DES and several other current and recent sky surveys. We note that transformation equations can have many forms and are generally dependent on the types of objects for which the photometry is being transformed. Here, we have striven for relatively simple equations based on stars of relatively typical color. As such, these equations should work reasonably well for objects with SEDs not too dissimilar to "normal" stars, but less so for other objects (e.g., objects with strong emission lines).
+      </p><hr>
+        <p></p>
+        
+        <h2>SDSS</h2>
+
+        Here, we matched stars from DES DR2 to stars in the Stripe 82 area of SDSS DR13, using the WAVG_PSF_MAG's from DES and the PSF_MAG's from SDSS.  To reduce the effects of photon noise, we only considered stars with rms magnitude errors of ≤ 0.01 in DES and ≤ 0.02 in SDSS. For outlier rejection, we made use of iterated sigma-clipping, iterating over the fit 3 times and removing 3	σ  outliers after each iteration.  We found that the following to fall within reasonable bounds of accuracy, simplicity, and wide color coverage:<br><br>
+
+        <code>
+          g{DES} = g{SDSS} - 0.061 (g - i){SDSS} + 0.008 ~(RMS:  0.017 mag)<br>
+          r{DES} = r{SDSS} - 0.148 (r - i){SDSS} - 0.010 ~(RMS:  0.013 mag)<br>
+          i{DES} = i{SDSS} - 0.169 (r - i){SDSS} + 0.034 ~(RMS:  0.016 mag)<br>
+          z{DES} = z{SDSS} - 0.055 (r - i){SDSS} + 0.026 ~(RMS:  0.017 mag)<br>
+
+        </code> <br>
+
+        and <br><br>
+
+        <code>
+          g{SDSS} = g{DES} + 0.060 (g - i){DES} - 0.005 ~(RMS:  0.018 mag)<br>
+          r{SDSS} = r{DES} + 0.150 (r - i){DES} + 0.014 ~(RMS:  0.016 mag)<br>
+          i{SDSS} = i{DES} + 0.167 (r - i){DES} - 0.027 ~(RMS:  0.015 mag)<br>
+          z{SDSS} = z{DES} + 0.054 (r - i){DES} - 0.024 ~(RMS:  0.018 mag)<br>
+        </code><br>
+
+
+First-order polynomials based on a single color index (g-i for g and r-i for r,i,z).  These equations are valid for stars with roughly -1.0 &lt; g-i &lt; 3.5 (g) and roughly -0.4 &lt; r-i &lt; 2.0 (r,i,z).  (Note: the RMS listed after each transformation is RMS per star.  The mean RMS for a collection of stars being transformed from one photometric system to the other -- especially if that collection of stars covers a range of colors -- should be correspondingly smaller.) <br>
+<hr>
+<h2>Pan-STARRS</h2>
+
+    As for the DES/SDSS transformation equations, here, we matched stars from DES DR2 to stars in the Stripe 82 area of PanSTARRS1 DR2, using the WAVG_PSF_MAG's from DES and the MeanPSFMag's from PanSTARRS1.  Again, to reduce the effects of photon noise, we only considered stars with rms magnitude errors of  ≤ 0.01 in DES and  ≤ 0.02 in PanSTARRS1.   Using the same type of outlier rejection and aiming for similar goals in accuracy, simplicity, and color coverage, we arrived at the following equations:<br><br>
+
+    <code>
+    g{DES} = g{PS1} + 0.028 (g - i){PS1} + 0.020 ~(RMS:  0.017 mag)<br>
+    r{DES} = r{PS1} - 0.140 (r - i){PS1} - 0.012 ~(RMS:  0.011 mag)<br>
+    i{DES} = i{PS1} - 0.155 (r - i){PS1} + 0.015 ~(RMS:  0.009 mag)<br>
+    z{DES} = z{PS1} - 0.114 (r - i){PS1} - 0.011 ~(RMS:  0.012 mag)<br>
+    Y{DES} = y{PS1} - 0.031 (r - i){PS1} + 0.034 ~(RMS:  0.016 mag)<br>
+
+    </code><br><br>
+
+    and <br><br>
+
+    <code>
+    g{PS1} = g{DES} - 0.026 (g - i){DES} - 0.020 ~(RMS:  0.017 mag)<br>
+    r{PS1} = r{DES} + 0.139 (r - i){DES} + 0.014 ~(RMS:  0.015 mag)<br>
+    i{PS1} = i{DES} + 0.153 (r - i){DES} - 0.011 ~(RMS:  0.010 mag)<br>
+    z{PS1} = z{DES} + 0.112 (r - i){DES} + 0.013 ~(RMS:  0.015 mag)<br>
+    Y{PS1} = y{DES} + 0.031 (r - i){DES} - 0.034 ~(RMS:  0.016 mag)<br>
+
+    </code><br>
+
+    -- which are valid for stars with roughly -0.9 &lt; g-i &lt; 3.8 (g) and -0.4 &lt; r-i &lt; 2.4 (r,i,z,Y).<br>
+<hr>
+    <h2> HSC</h2>
+
+    As described in the DR2 paper, we used HSC-PDR2 to report our detection efficiency as a function of DES MAG_AUTO. In order to be comparable, transformation equations were derived for MAG_AUTO from matched stars between both surveys for high signal-to-noise high confidence stars (18 &lt; g, r, i &lt; 21) and with 0.2 &lt; g-r &lt; 1.2 for all bands. We also removed  2σ outliers after a first fit iteration. <br><br>
+    
+    <code>
+
+      g{DES} = g{HSC}  - 0.012 (g - r){HSC} + 0.029~(RMS:  0.027 mag) <br> 
+      r{DES} = r{HSC}  - 0.075 (g - r){HSC} + 0.031~(RMS:  0.030 mag) <br>
+      i{DES} = i{HSC}  - 0.170 (i - z){HSC} + 0.022~(RMS:  0.026 mag) <br>
+      z{DES} = z{HSC}  - 0.081 (i - z){HSC} + 0.023~(RMS:  0.033 mag) <br>
+      Y{DES} = Y{HSC}  + 0.011 (i - z){HSC} + 0.077~(RMS:  0.057 mag) <br>
+
+    </code><br>
+<hr>
+    <h2>CFHTLens</h2>
+
+    In DR1, DES detection efficiency was assessed against CFHTLens data. For completeness, we also present here the photometric transformations from CFHTLenS to the DES DR2 photometry. Similarly to what was done with HSC-PDR2, transformation equations were derived for MAG_AUTO from matched stars between both surveys for high signal-to-noise high confidence stars (18 &lt; g, r,i &lt; 21) with 0.2 &lt; g-r &lt; 1.2 and 2σ outliers removal from fit.<br><br>
+
+    <code>
+    g{DES} = g{CFHTLenS}  + 0.019 (g - r){CFHTLenS} + 0.117~(RMS: 0.035 mag) <br>
+    r{DES} = r{CFHTLenS}  - 0.062 (g - r){CFHTLenS} + 0.073~(RMS: 0.025 mag) <br>
+    i{DES} = i{CFHTLenS}  - 0.142 (i - z){CFHTLenS} + 0.099~(RMS: 0.029 mag) <br>
+    z{DES} = z{CFHTLenS}  + 0.002 (i - z){CFHTLenS} + 0.099~(RMS: 0.038 mag)<br>
+
+    </code>
+
+
+    </div>
+
+
+
+</des-card>
+
+</template>
+<script>
+    class DesDr2Transformations extends Polymer.Element {
+      static get is() { return 'des-dr2-transformations'; }
+    }
+    window.customElements.define(DesDr2Transformations.is, DesDr2Transformations);
+  </script>
+
+</dom-module>
 <dom-module id="des-sn" assetpath="des-sn/">
 
 <template>
