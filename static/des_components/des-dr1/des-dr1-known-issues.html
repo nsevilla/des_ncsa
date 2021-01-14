@@ -53,7 +53,15 @@
 
 <paper-dialog id="dialogfig5">
             <des-img-big src="{{rootPath}}static/images/dr1/DECam_chips.png">
-            Figure 5. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
+            Figure 5. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31 has unpredictable gain and has not been processed by DES. These areas are marked in red.</des-img-big>
+  <div class="buttons">
+    <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
+  </div>
+</paper-dialog>
+
+<paper-dialog id="dialogfig6">
+            <des-img-big src="{{rootPath}}static/images/dr2/calibrations.png">
+            Figure 6. Astrometric precision per single-epoch image, calculated as the standard deviation of the 2D astrometric residuals with respect to the reference Gaia DR2 catalog. All bands are included.</des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised dialog-confirm autofocus>Close</paper-button>
   </div>
@@ -70,6 +78,8 @@
           <li><a href="javascript:void(0)" on-tap="_bright">Bright Objects</a></li>
           <li><a href="javascript:void(0)" on-tap="_zp">Zeropoints and bandpasses</a></li>
           <li><a href="javascript:void(0)" on-tap="_decam">DECam CCDs</a></li>
+          <li><a href="javascript:void(0)" on-tap="_mjd">MJD Image Header</a></li>
+          <li><a href="javascript:void(0)" on-tap="_calibrations">Astrometric Calibration</a></li>
         </ul>
         <hr />
         <p><br/></p>
@@ -359,12 +369,28 @@
             From all 62 science CCDs from DECam, CCD 61, which failed in 2012. Similarly, CCD 2 was not processed between November 2013 and December 2016, during which time it was not functional. Amplifier A of CCD 31 has an unpredictable, time-variable gain and is not processed or used for DES science. Amplifier B of CCD 31 functions normally and is processed. The rest of the science CCDs are performing within specifications and are usable for science (<a href="javascript:void(0)" on-tap="_dialog" data-item="5"/>Figure 5</a>).
         </p>
 
-            <des-img-big src="{{rootPath}}static/images/dr1/DECam_chips.png">
-            Figure 5. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31has unpredictable gain and has not been processed by DES. These areas aremarked in red.</des-img-big>
+            <des-img-big src="{{rootPath}}static/images/dr1/DECam_chips.png" on-tap="_dialog" data-item="5">
+            Figure 5. DECam focal plain chips layout. Each of the 62 rectangles represents a CCD which is in turn read by two amplifiers (along the long direction).CCDs 2 and 61 have been inactive for most of DES. Amplifier A of CCD 31 has unpredictable gain and has not been processed by DES. These areas are marked in red.</des-img-big>
 
         <p>
           <br/>
         </p>
+        <div class="fixup" id="issues_mjd"></div>
+        <h3 class="fixdown">MJD Image Header &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>
+    Associating DES DR2 objects with a given temporal epoch is not straightforward.   The coadded images are assembled from single-epoch images collected over six years of observations. The MJD-OBS keyword in the coadded image headers represents the MJD of the first single-epoch image that went  into  that  coadded  image,  and  is  not  representative  of the epoch of source measurements.
+        </p>
+        <p>
+          <br>
+        </p>
+        <div class="fixup" id="issues_calibrations"></div>
+        <h3 class="fixdown">Astrometric Calibration &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <p>
+           The astrometric calibration of DES DR2 is performed against Gaia DR2 sources reported at the J2015.5 epoch in the Gaia-CRF2 frame, which is well-matched to the ICRF3-prototype to within 20 to 30μas.  However,  proper motions were not included in the SCAMP astrometric calibration, resulting in larger astrometric uncertainty for exposures taken in the years before and after the Gaiab DR2 reference epoch (see Figure 6).
+        </p>
+
+            <des-img-big src="{{rootPath}}static/images/dr2/calibrations.png" on-tap="_dialog" data-item="6">
+            Figure 6. Astrometric precision per single-epoch image, calculated as the standard deviation of the 2D astrometric residuals with respect to the reference Gaia DR2 catalog. All bands are included.</des-img-big>
 
     </div>
 </des-card>
@@ -378,6 +404,8 @@
       _bright() {this.$.issues_bright.scrollIntoView();}
       _zp() {this.$.issues_zp.scrollIntoView();}
       _decam() {this.$.issues_decam.scrollIntoView();}
+      _mjd() {this.$.issues_mjd.scrollIntoView();}
+      _calibrations() {this.$.issues_calibrations.scrollIntoView();}
       _dialog(e) {
           e.preventDefault();
           e.stopPropagation();
