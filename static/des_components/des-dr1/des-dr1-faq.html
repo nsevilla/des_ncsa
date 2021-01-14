@@ -128,9 +128,12 @@ font-family:  "Courier New", Courier, monospace;
       How to acknowledge the usage of the data?
   </a></li>
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="13">
-      What are the Terms and Conditions?
+      How to directly download the data?
   </a></li>
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="14">
+      What are the Terms and Conditions?
+  </a></li>
+  <li><a href="javascript:void(0)" on-tap="_scroll" data-item="15">
       What to do if a question is not listed in here?
   </a></li>
 </ol>
@@ -149,6 +152,7 @@ font-family:  "Courier New", Courier, monospace;
 <p>Note that EXTENDED_COADD is defined by a sequence of boolean conditions that, when true, add a unit to the classifier. This classifier results in a value of 0 (high-confidence stars), 1 (likely stars), 2 (mostly galaxies), and 3 (high-confidence galaxies).  <span style="color: rgb(0,0,0);">Although the SExtractor quantity<a href="https://sextractor.readthedocs.io/en/des_dr1/ClassStar.html#class-star-def"> CLASS_STAR</a> has been commonly used in the past, we find that SPREAD_MODEL based classifiers consistently outperform CLASS_STAR. <span style="color: rgb(0,0,0);"> It is expected that classifiers using alternative bands and/or combinations of object measurements will be more appropriate for specific science cases.</span>
   </span>
 </p>
+<p> Note that for DR2 we have included those extra EXTENDED_CLASS_COADD (based on Sextractor quantities) and EXTENDED_CLASS_WAVG (based on Weighted average PSF magnitudes) columns to facilitate this selection. </p>
 </div>
 
 <p><br/></p>
@@ -156,9 +160,9 @@ font-family:  "Courier New", Courier, monospace;
 <h3 class="fixdown">2. Which type of magnitude should I use?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
 <div class="answer" style="diplay: inline;">
-    The DES DR1 data release contains several types of magnitudes for objects, here are some guidelines for which magnitude to use in which situation.
+    The DES DR1 and DR2 data releases contain several types of magnitudes for objects, here are some guidelines for which magnitude to use in which situation.
 <p>
-  <u>MAG_AUTO_{grizY}:</u> This is an aperture-based magnitude, where the diameter of the aperture varies depending on the extent of the object (<a href="https://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">Check here</a>). This is the best magnitude available in DES DR1 to use for extended sources (i.e. galaxies), as well as your best choice for stellar magnitudes for point sources fainter than the single epoch DES object detection limit (r &gt;~ 23), since wavg_mag_psf is not available for the faintest objects in the catalog.  For stellar sources, WAVG_MAG_PSF_{grizY}_dered is the prefered magnitude choice for sources with r &lt; 23 (approx.).  Because the MAG_AUTO aperture varies with source extent and brightness, and because there is a certain amount of light in a stellar PSF beyond a canonical fitted PSF aperture, there is a systematic, magnitude dependent, bias in the MAG_AUTO measure of <strong>stellar</strong> magnitudes.  In quantitative terms, for stellar objects of magnitude 16-17, MAG_AUTO and WAVG_MAG_PSF agree well, however for objects of mag 18, MAG_AUTO-WAVG_MAG_PSF ~ 0.01 mag, and for objects of mag 20, MAG_AUTO-WAVG_MAG_PSF ~ 0.03.  This is because the variable sized MAG_AUTO aperture is too small to capture all the flux in a faint star vs. a fitted, normalized PSF model aperture used for the WAVG_MAG_PSF measurements.  For sources with r  &gt;~ 23, there is a systematic offset between MAG_AUTO and WAVG_MAG_PSF which can reach 5%.  Thus, we caution users who combine WAVG_MAG_PSF measures of brighter stellar objects with MAG_AUTO measures of fainter stellar objects to carefully normalize the MAG_AUTO and the WAVG_MAG_PSF measures using objects measured both ways near the magnitude switchover point.   Again, for extended sources, i.e. galaxies, MAG_AUTO does a better job of reflecting total magnitude for extended sources than a PSF magnitude at all magnitudes.</p>
+  <u>MAG_AUTO_{grizY}:</u> This is an aperture-based magnitude, where the diameter of the aperture varies depending on the extent of the object (<a href="https://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">Check here</a>). This is the best magnitude available in DES DR1/DR2 to use for extended sources (i.e. galaxies), as well as your best choice for stellar magnitudes for point sources fainter than the single epoch DES object detection limit (r &gt;~ 23), since wavg_mag_psf is not available for the faintest objects in the catalog.  For stellar sources, WAVG_MAG_PSF_{grizY}_dered is the prefered magnitude choice for sources with r &lt; 23 (approx.).  Because the MAG_AUTO aperture varies with source extent and brightness, and because there is a certain amount of light in a stellar PSF beyond a canonical fitted PSF aperture, there is a systematic, magnitude dependent, bias in the MAG_AUTO measure of <strong>stellar</strong> magnitudes.  In quantitative terms, for stellar objects of magnitude 16-17, MAG_AUTO and WAVG_MAG_PSF agree well, however for objects of mag 18, MAG_AUTO-WAVG_MAG_PSF ~ 0.01 mag, and for objects of mag 20, MAG_AUTO-WAVG_MAG_PSF ~ 0.03.  This is because the variable sized MAG_AUTO aperture is too small to capture all the flux in a faint star vs. a fitted, normalized PSF model aperture used for the WAVG_MAG_PSF measurements.  For sources with r  &gt;~ 23, there is a systematic offset between MAG_AUTO and WAVG_MAG_PSF which can reach 5%.  Thus, we caution users who combine WAVG_MAG_PSF measures of brighter stellar objects with MAG_AUTO measures of fainter stellar objects to carefully normalize the MAG_AUTO and the WAVG_MAG_PSF measures using objects measured both ways near the magnitude switchover point.   Again, for extended sources, i.e. galaxies, MAG_AUTO does a better job of reflecting total magnitude for extended sources than a PSF magnitude at all magnitudes.</p>
 <p>
   <u>MAG_AUTO_{grizY}_dered: </u> This is the same as MAG_AUTO, except corrected for reddening due to dust in the galaxy.  One generally wants to use this dereddened version of the magnitude for all extra-galactic work, including magnitudes and colors of all galaxies, and for magnitudes of stars which are 'behind the dust layer' of our Milky Way – which holds for most stars at distances of more than a few hundred pcs from the Sun, at the typical Galactic latitudes covered in the DES DR1 footprint. </p>
 <p>
@@ -193,7 +197,7 @@ font-family:  "Courier New", Courier, monospace;
 <p><br/></p>
 <div class="fixup" id="faq4"></div>
 <h3 class="fixdown">4. Where is <code>THETA_IMAGE</code>? How do I draw ellipses in image coordinates?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<div class="answer" style="diplay: inline;">Users of the DR1 sample will note that quantities THETAWIN_IMAGE_{grizY} are present, along with the quantity THETA_J2000 (with no band suffix).
+<div class="answer" style="diplay: inline;">Users of the DR1 and DR2 samples will note that quantities THETAWIN_IMAGE_{grizY} are present, along with the quantity THETA_J2000 (with no band suffix).
 <p>THETA_IMAGE is missing.  Error quantities ERRTHETAWIN_IMAGE_{grizY} are available, and ERRTHETA_IMAGE, but no ERRTHETA_J2000.</p>
 <p>What's going on?  Part of this is for historical reasons, but one should be able to use these quantities for your science and for drawing accurate ellipses around your objects of interest.  The quantities with _IMAGE in them are sextractor image coordinate quantities.  The quantity with _J2000 is in the 'world coordinate system'.  Since the coadd tiles x,y axes are aligned with RA,DEC the angles contain basically the same information and may be used interchangable, modulo a 90 degree difference.</p>
 <p>The quantities without the band suffix (A_IMAGE,B_IMAGE,THETA_J2000) are measured off of the so called detection image, an image which combines the r,i and z band filters. </p>
@@ -229,7 +233,7 @@ font-family:  "Courier New", Courier, monospace;
 <h3 class="fixdown">5. Where are <code>FLUX_PSF</code> and <code>MAG_PSF</code>?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p class="answer">
   <span style="color: rgb(0,0,0);">The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications  and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources</span>
-  <span style="color: rgb(0,0,0);">. Due to the known issues in coadd PSF photometry, DES DR1 does not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources). Check  <a href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a> for more information.</span>
+  <span style="color: rgb(0,0,0);">. Due to the known issues in coadd PSF photometry, DES DR1/DR2 do not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources). Check  <a href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a> for more information.</span>
 
 </p>
 
@@ -244,7 +248,7 @@ font-family:  "Courier New", Courier, monospace;
 <div class="fixup" id="faq7"></div>
 <h3 class="fixdown">7. How do I find out if my object/location on the sky is in the DES footprint?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
-<p class="answer">You can use the interactive tools such as <a href="https://des.ncsa.illinois.edu/desaccess/tilefinder" target="_blank">DESaccess TileFinder</a> or <a href="http://desportal.cosmology.illinois.edu/" target="_blank">LIneA Science Server apps</a> .  Using Healpix you can locate a position (or a set of positions) within a Healpix cell, then you can select the cell and the objects within directly from the DR1 DB. HPIX resolutions in NESTED schema are available at nside = 32, 64, 1024,4096,16384</p>
+<p class="answer">You can use the interactive tools such as <a href="https://des.ncsa.illinois.edu/desaccess/tilefinder" target="_blank">DESaccess TileFinder</a> or <a href="http://desportal2.cosmology.illinois.edu/" target="_blank">LIneA Science Server apps</a> .  Using Healpix you can locate a position (or a set of positions) within a Healpix cell, then you can select the cell and the objects within directly from the DR1 and DR2 DB Tables. HPIX resolutions in NESTED schema are available at nside = 32, 64, 1024,4096,16384</p>
 
 <p><br/></p>
 <div class="fixup" id="faq8"></div>
@@ -330,7 +334,7 @@ and d.imaflags_iso_r = 0 and d.flags_r < 4 and<br />
 
 
 <p>Note the MAG_AUTO and r-i color for the  BCG for this cluster does not fall on the red sequence in this case as this BCG galaxy is exceptionally large.</p>
-<p>One may also use the LIneA Sky Viewer DR1 interface to explore DES images of this region of sky.</p>
+<p>One may also use the LIneA Sky Viewer DR1/DR2 interface to explore DES images of this region of sky.</p>
 <p>The Aladin interface to the Sky Viewer allows one to visualize large area footprints, which may span tile boundaries (<a href="javascript:void(0)" on-tap="_dialog" data-item="6"/>Figure 6</a>)</p>
 
 <des-img-big src="{{rootPath}}static/images/faq/snapaladin.png" on-tap="_dialog" data-item="6"> Figure 6.</des-img-big>
@@ -341,13 +345,15 @@ and d.imaflags_iso_r = 0 and d.flags_r < 4 and<br />
 <des-img src="{{rootPath}}static/images/faq/lineaa1063.png" on-tap="_dialog" data-item="8"> Figure 8.</des-img>
 
 <p>Note that deblending of overlapping galaxies within DES DR1 is not perfect, in this case several galaxies close to the BCG (Brightest cluster galaxy) remain blended with the extended BCG light.  This is a general feature of the tuning of the deblending within DES DR1.</p>
-<p>One may modify the query above to select, for instance, stars instead of galaxies (i.e. use EXTENDED_COADD &lt; 2) and to explore other areas of the footprint.  The DR1_MAIN table is indexed on RA, DEC, COADD_OBJECT_ID and TILENAME, along with indicies on MAG_AUTO_grizY and other commonly used quantities.  You may wish to try a complex query out first on the DR1_MAIN_SAMPLE (1% subsample) versions of tables which have many fewer rows, and where performance of your query may be tuned before running it on the full 399 million row table.</p>
+<p>One may modify the query above to select, for instance, stars instead of galaxies (i.e. use EXTENDED_COADD &lt; 2) and to explore other areas of the footprint.  The DR1_MAIN and DR2_MAIN tables are indexed on RA, DEC, COADD_OBJECT_ID and TILENAME, along with indicies on MAG_AUTO_grizY and other commonly used quantities.  You may wish to try a complex query out first on the DR1_MAIN_SAMPLE and DR2_MAIN_SAMPPLE (1% subsample) versions of tables which have many fewer rows, and where performance of your query may be tuned before running it on the full 399/700 million row table.</p>
 </div>
 
 <p><br/></p>
 <div class="fixup" id="faq11"></div>
 <h3 class="fixdown">11. How can I convert between DES and SDSS magnitudes? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <div class="answer">
+
+    <strong><br><br>Update:</strong> We have updated the transformation equations for DR2 across multiple surveys. Please visit <a href="https://des.ncsa.illinois.edu/releases/dr2/dr2-docs/dr2-transformations">here</a>
     <p>The DES griz filters are similar but not identical to the SDSS griz filter.  Transformation equations may be used to convert objects within restricted color ranges between the two filter systems.   These transformation equations are based on stellar objects of typical magnitude 18 &lt; r &lt; 21 that were observed in the equatorial region common to both DES and SDSS: 350 &lt; ra &lt; 70, -2.5 &lt; dec &lt; 2.5.  Flagged stars and objects which deviate by more than about three sigma from the color magnitude transformation relation are rejected.  These relations have scatter of about rms = 2% per star, and may be used for galaxy magnitude transformations as well. Use extreme caution when transforming objects with colors outside the indicated color ranges.</p>
 
     <u>Convert from SDSS magnitudes to DES magnitudes</u>:<br />
@@ -376,15 +382,25 @@ and d.imaflags_iso_r = 0 and d.flags_r < 4 and<br />
 <h3 class="fixdown">12. How to acknowledge the usage of the data? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p class="answer">Please check our <a href="[[rootPath]]thanks">Acknowledgements</a> page for more information. </p>
 
+
+
 <p><br/></p>
 <div class="fixup" id="faq13"></div>
-<h3 class="fixdown">13. What are the Terms and Conditions? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">13. How to directly download the data? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer"> <br>
+
+All of the files, including images and catalogs, can be found at the DES file server: <a href="http://desdr-server.ncsa.illinois.edu/despublic/" target="_blank">http://desdr-server.ncsa.illinois.edu/despublic/</a>. All of the files are partitioned by tile. By querying the tables DR1_TILE_INFO and DR2_TILE_INFO, one can find the url for a specific file and tile. The columns on the catalog files are the same as the DB Tables.
+
+<p><br/></p>
+
+<div class="fixup" id="faq14"></div>
+<h3 class="fixdown">14. What are the Terms and Conditions? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 <p class="answer">Please check our <a href="[[rootPath]]terms">Terms and Conditions</a> page for more information
 
 <p><br/></p>
-<div class="fixup" id="faq14"></div>
-<h3 class="fixdown">14. What to do if a question is not listed in here? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<p class="answer">Please our <a href="[[rootPath]]help">Help Form</a> or send an email to <a href="mailto:des-dr-help@ncsa.illinois.edu">des-dr-help@ncsa.illinois.edu</a>
+<div class="fixup" id="faq15"></div>
+<h3 class="fixdown">15. What to do if a question is not listed in here? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<p class="answer">Please our <a href="[[rootPath]]help">Help Form</a>
 
 </div>
 </des-card>
