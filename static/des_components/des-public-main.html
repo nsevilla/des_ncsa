@@ -593,6 +593,16 @@
 
   <script>
     class DesPublic extends Polymer.Element {
+      ready() { 
+        super.ready();
+        let pageHierarchy = window.location.pathname.substr(window.location.pathname.search(this.rootPath)+1).split('/');
+        for (let pg in pageHierarchy) {
+          if (this.shadowRoot.querySelector('a[name='+pageHierarchy[pg]+']') !== null) {
+            console.log('clicking page')
+            this.shadowRoot.querySelector('a[name='+pageHierarchy[pg]+']').click();
+          }
+        }
+       }
       static get is() { return 'des-public-main'; }
       static get properties() {
         return {
