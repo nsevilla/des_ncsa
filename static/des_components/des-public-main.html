@@ -76,19 +76,20 @@
       }
 
 
-    @media only screen and (max-device-width: 800px) {
-        .toolbar {
-            font-size: 1.8rem;
-        }
+    @media only screen and (max-device-width: 1000px) {
+      .toolbar {
+          font-size: 1.8rem;
+      }
     }
-    @media only screen and (min-width: 800px) {
-    .smallScreen {
-        display: none;
-    }}
-        @media all and (max-width: 800px) {
-        .toolbar {
-            font-size: 1.8rem;
-        }
+    @media only screen and (min-width: 1000px) {
+      .smallScreen {
+          display: none;
+      }
+    }
+    @media all and (max-width: 999px) {
+    .toolbar {
+        font-size: 1.8rem;
+    }
     .wideScreen {
         display: none;
         }
@@ -177,7 +178,7 @@
           </app-toolbar>
         </app-header>
 
-    <app-drawer-layout fullbleed narrow="{{narrow}}"  id="drawerLayout" responsive-width="1000px"  style = "height: 80%;">
+    <app-drawer-layout fullbleed narrow="{{narrow}}"  id="drawerLayout" responsive-width="999px"  style = "height: 80%;">
 
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer"  class="drawer-content" swipe-open="[[narrow]]" >
@@ -592,6 +593,16 @@
 
   <script>
     class DesPublic extends Polymer.Element {
+      ready() { 
+        super.ready();
+        let pageHierarchy = window.location.pathname.substr(window.location.pathname.search(this.rootPath)+1).split('/');
+        for (let pg in pageHierarchy) {
+          if (this.shadowRoot.querySelector('a[name='+pageHierarchy[pg]+']') !== null) {
+            console.log('clicking page')
+            this.shadowRoot.querySelector('a[name='+pageHierarchy[pg]+']').click();
+          }
+        }
+       }
       static get is() { return 'des-public-main'; }
       static get properties() {
         return {
