@@ -32168,19 +32168,20 @@ Custom property | Description | Default
       }
 
 
-    @media only screen and (max-device-width: 800px) {
-        .toolbar {
-            font-size: 1.8rem;
-        }
+    @media only screen and (max-device-width: 1000px) {
+      .toolbar {
+          font-size: 1.8rem;
+      }
     }
-    @media only screen and (min-width: 800px) {
-    .smallScreen {
-        display: none;
-    }}
-        @media all and (max-width: 800px) {
-        .toolbar {
-            font-size: 1.8rem;
-        }
+    @media only screen and (min-width: 1000px) {
+      .smallScreen {
+          display: none;
+      }
+    }
+    @media all and (max-width: 999px) {
+    .toolbar {
+        font-size: 1.8rem;
+    }
     .wideScreen {
         display: none;
         }
@@ -32254,7 +32255,7 @@ Custom property | Description | Default
           </app-toolbar>
         </app-header>
 
-    <app-drawer-layout fullbleed="" narrow="{{narrow}}" id="drawerLayout" responsive-width="1000px" style="height: 80%;">
+    <app-drawer-layout fullbleed="" narrow="{{narrow}}" id="drawerLayout" responsive-width="999px" style="height: 80%;">
 
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" class="drawer-content" swipe-open="[[narrow]]">
@@ -32664,6 +32665,16 @@ Custom property | Description | Default
 
   <script>
     class DesPublic extends Polymer.Element {
+      ready() { 
+        super.ready();
+        let pageHierarchy = window.location.pathname.substr(window.location.pathname.search(this.rootPath)+1).split('/');
+        for (let pg in pageHierarchy) {
+          if (this.shadowRoot.querySelector('a[name='+pageHierarchy[pg]+']') !== null) {
+            console.log('clicking page')
+            this.shadowRoot.querySelector('a[name='+pageHierarchy[pg]+']').click();
+          }
+        }
+       }
       static get is() { return 'des-public-main'; }
       static get properties() {
         return {
@@ -33000,7 +33011,7 @@ Custom property | Description | Default
         <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">The Dark Energy Camera</a>, B. Flaugher, et al., 2015, AJ, 150, 150
 
         <h5>DR2</h5>
-        <a href="#">The Dark Energy Survey Data Release 2 </a>, DES Collaboration (2021)<br>
+        <a href="https://arxiv.org/abs/2101.05765">The Dark Energy Survey Data Release 2 </a>, DES Collaboration (2021)<br>
         <a href="https://ui.adsabs.harvard.edu/abs/2018PASP..130g4501M/abstract">The Dark Energy Survey Image Processing Pipeline</a>, Morganson E., Gruendl R.A., Menanteau F., Carrasco Kind M., et al., 2018, PASP, 130, 074501<br>
         <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">The Dark Energy Camera</a>, B. Flaugher, et al., 2015, AJ, 150, 150
 
@@ -46682,12 +46693,31 @@ h3 {
 code {
 font-family:  "Courier New", Courier, monospace;
 }
+
+iron-icon {
+  --iron-icon-height: 1.5rem;
+  --iron-icon-width: 1.5rem;
+}
+
+#back-to-top-button {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  z-index: 1;
+  background-color: black;
+  opacity: 1.0;
+  color: white;
+}
 </style>
 
-
+<a href="#" title="Back to top" onclick="return false;">
+  <paper-button id="back-to-top-button" class="" role="button" tabindex="0" animated="" elevation="0" aria-disabled="false" on-tap="_top">
+    <iron-icon icon="arrow-upward"></iron-icon>
+  </paper-button>
+</a>
 <paper-dialog id="dialogfig1">
             <des-img-big src="{{rootPath}}static/images/faq/theta_image_spikes.png" on-tap="_dialog" data-item="1">
-            Figure 1. Histograms of THETAWIN_IMAGE for a sample of objects with no filters applied(top) and with selection filters applied (bottom)
+            Figure 1. Histograms of THETAWIN_IMAGE for a sample of objects with no filters applied<iron-icon icon="arrow-upward"></iron-icon> and with selection filters applied (bottom)
         </des-img-big>
   <div class="buttons">
     <paper-button class="desButton" raised="" dialog-confirm="" autofocus="">Close</paper-button>
@@ -46782,16 +46812,16 @@ font-family:  "Courier New", Courier, monospace;
   How can I convert between DES and SDSS magnitudes?
   </a></li>
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="12">
-      How to acknowledge the usage of the data?
+      How should I acknowledge the usage of the data?
   </a></li>
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="13">
-      How to directly download the data?
+      How do I directly download the data?
   </a></li>
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="14">
       What are the Terms and Conditions?
   </a></li>
   <li><a href="javascript:void(0)" on-tap="_scroll" data-item="15">
-      What to do if a question is not listed in here?
+      What do I do if a question is not listed in here?
   </a></li>
 </ol>
 <hr>
@@ -46799,7 +46829,7 @@ font-family:  "Courier New", Courier, monospace;
 
 <p><br></p>
 <div class="fixup" id="faq1"></div>
-<h3 class="fixdown">1. How do I select stars/galaxies?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">1. How do I select stars/galaxies?  &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 
 <div class="answer" style="diplay: inline;"> We recommend the use of the SExtractor <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html#spread-model-def">SPREAD_MODEL</a>, which compares the fit of a local PSF model to a slightly extended exponential disk model. Below we show a example using SPREAD_MODEL for object classification in a way that is suitable for both stellar and extragalactic science.
 <p>We define a new variable EXTENDED_COADD as the independent sum of several Boolean conditions:</p>
@@ -46814,7 +46844,7 @@ font-family:  "Courier New", Courier, monospace;
 
 <p><br></p>
 <div class="fixup" id="faq2"></div>
-<h3 class="fixdown">2. Which type of magnitude should I use?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">2. Which type of magnitude should I use?  &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 
 <div class="answer" style="diplay: inline;">
     The DES DR1 and DR2 data releases contain several types of magnitudes for objects, here are some guidelines for which magnitude to use in which situation.
@@ -46827,16 +46857,16 @@ font-family:  "Courier New", Courier, monospace;
 <p>
   <u>WAVG_MAG_PSF_{grizY}_dered:&nbsp;</u> Most stellar work within the DES DR1 footprint involves stars beyond the nearby dust layer of a few hundred pcs, and therefore it is appropriate to use fully dereddened magnitudes (and derived colors), as given by this quantity.&nbsp; If you are working with bright M dwarfs or white dwarfs which may not be behind the Milky Way's dust layer, then you may prefer to use the un-dereddened versions of WAVG_MAG_PSF (above).</p>
 <p>
-  <u>MAG_APER_{1-12}_{grizY}:&nbsp;</u> 12 aperture magnitudes (and errors) are provided for all objects in the DR1_MAGNITUDE table.&nbsp; Join to the DR1_MAIN table on COADD_OBJECT_ID in both tables.&nbsp; The diameters of these 12 magnitudes are given elsewhere in the documentation: <a href="https://des.ncsa.illinois.edu/releases/dr1/dr1-products"> Here</a>).&nbsp; For example, MAG_APER_4 is a ~2 arcsecond diameter aperture while MAG_APER_8 is a ~6 arcsecond diameter aperture.&nbsp;</p>
+  <u>MAG_APER_{1-12}_{grizY}:&nbsp;</u> 12 aperture magnitudes (and errors) are provided for all objects in the <code>DR1_MAGNITUDE</code> table.&nbsp; Join to the <code>DR1_MAIN</code> table on <code>COADD_OBJECT_ID</code> in both tables.&nbsp; The diameters of these 12 magnitudes are given elsewhere in the documentation: <a href="https://des.ncsa.illinois.edu/releases/dr1/dr1-products"> Here</a>).&nbsp; For example, MAG_APER_4 is a ~2 arcsecond diameter aperture while MAG_APER_8 is a ~6 arcsecond diameter aperture.&nbsp;</p>
 <p>
-  <u>MAG_PETRO_{grizY}:</u>&nbsp; This classic SExtractor quantity is provided in the DR1_MAGNITUDE table, however in general it has lower signal to noise than other measures available (i.e. MAG_AUTO) for all types of objects, extended and non-extended.</p>
+  <u>MAG_PETRO_{grizY}:</u>&nbsp; This classic SExtractor quantity is provided in the <code>DR1_MAGNITUDE</code> table, however in general it has lower signal to noise than other measures available (i.e. MAG_AUTO) for all types of objects, extended and non-extended.</p>
 
 </div>
 
 
 <p><br></p>
 <div class="fixup" id="faq3"></div>
-<h3 class="fixdown">3. Why does <code>THETAWIN_IMAGE</code> have such strange spikes?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">3. Why does <code>THETAWIN_IMAGE</code> have such strange spikes?  &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 
 <div class="answer" style="diplay: inline;">
     A histogram of THETAWIN_IMAGE appears to be quantized, with angles of 90 degrees and 45 appearing much more commonly than angles in between (<a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a>).
@@ -46844,7 +46874,7 @@ font-family:  "Courier New", Courier, monospace;
 <p>b_image &gt; 0.9 .AND. ( (mag_auto_i &lt; 19 and 1-b_image/a_image &lt; 0.2) OR (1-b_image/a_image &lt; 0.2 + (mag_auto_i-19)/5 )), one rejects very small objects and also objects which are bright and very elongated or somewhat fainter and slightly more elongated), one can get rid of most of the spikes in the histogram (lower panel of <a href="javascript:void(0)" on-tap="_dialog" data-item="1">Figure 1</a>).&nbsp; The over-represented 5-edge-contiguous-pixel configurations are shown in <a href="javascript:void(0)" on-tap="_dialog" data-item="2">Figure 2</a>.</p>
 
             <des-img src="{{rootPath}}static/images/faq/theta_image_spikes.png" on-tap="_dialog" data-item="1">
-            Figure 1. Histograms of THETAWIN_IMAGE for a sample of objects with no filters applied(top) and with selection filters applied (bottom)
+            Figure 1. Histograms of THETAWIN_IMAGE for a sample of objects with no filters applied<iron-icon icon="arrow-upward"></iron-icon> and with selection filters applied (bottom)
             </des-img>
             <des-img src="{{rootPath}}static/images/faq/spikes.png" on-tap="_dialog" data-item="2">
             Figure 2. The represented 5-edge-contiguous-pixel configurations in a 9 x 9 box. <br>
@@ -46853,7 +46883,7 @@ font-family:  "Courier New", Courier, monospace;
 
 <p><br></p>
 <div class="fixup" id="faq4"></div>
-<h3 class="fixdown">4. Where is <code>THETA_IMAGE</code>? How do I draw ellipses in image coordinates?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">4. Where is <code>THETA_IMAGE</code>? How do I draw ellipses in image coordinates?  &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 <div class="answer" style="diplay: inline;">Users of the DR1 and DR2 samples will note that quantities THETAWIN_IMAGE_{grizY} are present, along with the quantity THETA_J2000 (with no band suffix).
 <p>THETA_IMAGE is missing.&nbsp; Error quantities ERRTHETAWIN_IMAGE_{grizY} are available, and ERRTHETA_IMAGE, but no ERRTHETA_J2000.</p>
 <p>What's going on?&nbsp; Part of this is for historical reasons, but one should be able to use these quantities for your science and for drawing accurate ellipses around your objects of interest.&nbsp; The quantities with _IMAGE in them are sextractor image coordinate quantities.&nbsp; The quantity with _J2000 is in the 'world coordinate system'.&nbsp; Since the coadd tiles x,y axes are aligned with RA,DEC the angles contain basically the same information and may be used interchangable, modulo a 90 degree difference.</p>
@@ -46887,7 +46917,7 @@ font-family:  "Courier New", Courier, monospace;
 
 <p><br></p>
 <div class="fixup" id="faq5"></div>
-<h3 class="fixdown">5. Where are <code>FLUX_PSF</code> and <code>MAG_PSF</code>?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">5. Where are <code>FLUX_PSF</code> and <code>MAG_PSF</code>?  &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 <p class="answer">
   <span style="color: rgb(0,0,0);">The PSF model has limited flexibility to accommodate discontinuities in the effective PSF that can occur in coadded images at boundaries in coverage between individual exposures. In these regions, the local PSF model can fail to accurately fit the point-like sources, and accordingly, both the coadd morphological classifications &nbsp;and coadd PSF photometry are suspect. The photometry of extended sources is impacted to a lesser degree. Generally, more robust treatment (especially for point-like sources) is possible with weighted-average quantities, at the cost of some loss of object detection completeness for the faintest sources</span>
   <span style="color: rgb(0,0,0);">. Due to the known issues in coadd PSF photometry, DES DR1/DR2 do not include the coadd MAG_PSF quantities. For studies of point-like sources we recommend the use of WAVG_MAG_PSF (bright sources) or MAG_AUTO (faint sources). Check  <a href="[[rootPath]]releases/dr1/dr1-docs/known-issues">Known Issues</a> for more information.</span>
@@ -46896,35 +46926,35 @@ font-family:  "Courier New", Courier, monospace;
 
 <p><br></p>
 <div class="fixup" id="faq6"></div>
-<h3 class="fixdown">6. What is <code>IMAFLAGS_ISO</code> and how should I use it?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">6. What is <code>IMAFLAGS_ISO</code> and how should I use it?  &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 <p class="answer">
   <span>Among all the objects detected and cataloged, ~2.3% have been flagged by IMAFLAGS_ISO in at least one of the</span> <em>&nbsp;grizY&nbsp;</em> <span>bands, and ~0.1% have artifacts in all 5 bands.<br> </span> <span>It is recommended to use IMAFLAGS_ISO = 0 as a first filter of clean objects. Most of the objects with IMAFLAGS_ISO = 1 are saturated stars</span> <span>. A smaller fraction of flagged objects are missing imaging data in one or more of the bands</span> <span>, and usually have NITER_MODEL = 0, which is set for objects that did not converge during the photometry measurement.</span>
 </p>
 
 <p><br></p>
 <div class="fixup" id="faq7"></div>
-<h3 class="fixdown">7. How do I find out if my object/location on the sky is in the DES footprint?  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">7. How do I find out if my object/location on the sky is in the DES footprint?  &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 
 <p class="answer">You can use the interactive tools such as&nbsp;<a href="https://des.ncsa.illinois.edu/desaccess/tilefinder" target="_blank">DESaccess TileFinder</a>&nbsp;or <a href="http://desportal2.cosmology.illinois.edu/" target="_blank">LIneA Science Server apps</a>&nbsp;. &nbsp;Using Healpix you can locate a position (or a set of positions) within a Healpix cell, then you can select the cell and the objects within directly from the DR1 and DR2 DB Tables. HPIX resolutions in NESTED schema are available at nside = 32, 64,&nbsp;1024,4096,16384</p>
 
 <p><br></p>
 <div class="fixup" id="faq8"></div>
-<h3 class="fixdown">8. Is <code>FLUX_RADIUS</code> a flux or a radius? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">8. Is <code>FLUX_RADIUS</code> a flux or a radius? &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 <p class="answer">It is a radius measurement, it's the half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions. If the profile is Gaussian, then&nbsp;&nbsp;FWHM = 2*FLUX_RADIUS .</p>
 
 <p><br></p>
 <div class="fixup" id="faq9"></div>
-<h3 class="fixdown">9. What is the difference between the "DR1 Standard Bandpasses" and the "Y3A1 Standard Bandpasses"? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">9. What is the difference between the "DR1 Standard Bandpasses" and the "Y3A1 Standard Bandpasses"? &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 <p class="answer"> The <a href="http://www.ctio.noao.edu/noao/content/DECam-filter-information">DR1 Standard Bandpasses</a> contain the DES survey's present best knowledge of the true filter bandpasses of the DECam CCD+Filter system.&nbsp; The Y3A1 Standard Bandpasses have slightly different behavior in the far out-of-band regions of some filters.&nbsp; This can result in a color-dependent magnitude difference for very red objects (g-r &gt; 1.5, i.e. late M-star and redder) of a few mmag.&nbsp; The magnitudes in the DR1 release have <strong>not</strong> been corrected to account for what the survey understands about the out-of-band behavior of the DES filters, as that analyses is proceeding.&nbsp; For essentially all science projects the systematic difference is much smaller than other photometric errors.&nbsp; (The difference between Y3A1 and Y3A2 is internal to the DES release notation and refers to small changes in data products not released as part of DR1).</p>
 
 
 <p><br></p>
 <div class="fixup" id="faq10"></div>
-<h3 class="fixdown">10. How can I join two information from two tables together?&nbsp; Can you walk me through a sample query and connect objects and images? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">10. How can I join two information from two tables together?&nbsp; Can you walk me through a sample query and connect objects and images? &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 
 <div class="answer">
 <p>We know that a rich galaxy cluster, Abell S 1063 (RXJ2248-4431) exists within the DES footprint, centered on (RA, DEC) = (342.183, -44.531) deg.
-We wish to select magnitudes, colors, star/galaxy separation indicators, flag and shape information for all objects within, say a 0.5 degree sq box centered on this cluster.  Furthermore we wish to explore not only MAG_AUTO for these objects, but also aperture magnitudes of two different diameters, say 2'' and 3''.  Most of this infomation is in the DR1_MAIN table, but the aperture magnitudes are in the DR1_MAGNITUDE table, so a join is required.  The indexed key for joining between most tables is the unique COADD_OBJECT_ID (for joining on tile info in DR1_TILE_INFO, one joins to the tilename field).  MAG_AUTO_{grizY} in DR1_MAIN is DR1's workhorse magnitude for extended object work, but in some cases, users may wish to use MAG_APER_{1-12}_{grizY} in the DR1_MAGNITUDE table.  Both tables are named and referenced in the query below.</p>
+We wish to select magnitudes, colors, star/galaxy separation indicators, flag and shape information for all objects within, say a 0.5 degree sq box centered on this cluster.  Furthermore we wish to explore not only MAG_AUTO for these objects, but also aperture magnitudes of two different diameters, say 2'' and 3''.  Most of this infomation is in the <code>DR1_MAIN</code> table, but the aperture magnitudes are in the <code>DR1_MAGNITUDE</code> table, so a join is required.  The indexed key for joining between most tables is the unique <code>COADD_OBJECT_ID</code> (for joining on tile info in <code>DR1_TILE_INFO</code>, one joins to the tilename field).  MAG_AUTO_{grizY} in <code>DR1_MAIN</code> is DR1's workhorse magnitude for extended object work, but in some cases, users may wish to use MAG_APER_{1-12}_{grizY} in the <code>DR1_MAGNITUDE</code> table.  Both tables are named and referenced in the query below.</p>
 <p>
 Math operations may be done within queries, including operations such as SQRT and LOG(10,X).   A CASE syntax may be used to join together three boolean expressions to come up with a way to represent the recommended EXTENDED_COADD star/galaxy spread_model based separation parameter.  Note that the EXTENDED_COADD star/galaxy separation indicator may use either the wavg_spread_model or the regular spread_model quantities.  We recommend the regular spread_model quantities if you are interested in objects all the way to the catalog limit.  The wavg_spread_model indicator stops working when the single epoch magnitude limit is hit (about r ~ 23).  In this case, because we are interested in members of the RXJ cluster brighter than about 23, we use the WAVG version, and only keep 'highly confident' galaxies (EXTENDED_COADD &gt; 2), but  you may wish to try other combinations.
 </p>
@@ -46940,7 +46970,7 @@ Math operations may be done within queries, including operations such as SQRT an
 -- also select flags for objects and extract basic shape<br>
 -- (ellipse a,b, position angle params)<br>
 -- information for each object<br>
--- Join to the DR1_MAGNITUDE table (on the indexed quantity<br>
+-- Join to the <code>DR1_MAGNITUDE</code> table (on the indexed quantity<br>
 -- coadd_object_id) and also select MAG_APER_4 (2'' diameter) and<br>
 -- MAG_APER_5 (3'' diameter) r,i band mags/colors (dereddened)<br>
 -- for these same objects to see if the Aper mags are<br>
@@ -46969,7 +46999,7 @@ m.mag_aper_4_r-2.13*d.ebv_sfd98 as m4r,<br>
 m.mag_aper_4_r-m.mag_aper_4_i-(2.13-1.568)*d.ebv_sfd98 as rmi4ap0,<br>
 m.mag_aper_5_r-2.13*d.ebv_sfd98 as m5r,<br>
 m.mag_aper_5_r-m.mag_aper_5_i-(2.13-1.568)*d.ebv_sfd98 as rmi5ap0<br>
-from dr1_main d,dr1_magnitude m where<br>
+from dr1_main d,<code>DR1_MAGNITUDE</code> m where<br>
 d.coadd_object_id=m.coadd_object_id and<br>
 d.ra between 342.183-0.25/0.7 and 342.183+0.25/0.7 and<br>
 d.dec between -44.531-0.25 and -44.531+0.25<br>
@@ -46979,7 +47009,7 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 (CASE WHEN (wavg_spread_model_i-wavg_spreaderr_model_i) &gt; 0.003 THEN 1 ELSE 0 END)) &gt; 2<br>
 </code>
 
-<p>This query may be run in quick mode, as it takes less than a minute to select 7030 high confidence extended objects (galaxies) with imaflags_iso_r = 0 (no very bright saturated stars) and flags_r &lt; 4 (no saturated objects or other sextractor flags &gt;=4), however, close pairs and deblends, with flag values 1 and 2, are allowed.&nbsp; The Case expression performs the star/galaxy separation, with &gt;2 indicating we select only high confidence extended objects and the wavg_spread_model quantities indicating we are not interested in objects fainter than about r~23.&nbsp; The i-band spread_model gives slightly better results than g, r or z spread model.&nbsp; Note that we convert the magnitudes to dereddeneded quantities on-the-fly by subtracting off R_filter * E(B-V) for each object.&nbsp; R_filter is a fixed coefficient which gives Absorption&nbsp; in a given band from dust in the Galaxy toward a particular sightline.&nbsp; The E(B-V) values from SFD98 are tablulated in DR1 for each object and may be extracted from the database. The recommended R_filter values for DES DR1 are R(g,r,i,z,Y) = (3.184, 2.130, 1.568, 1.196, 1.048).&nbsp;&nbsp; Note that for magnitudes in the DR1_MAIN table, dereddened versions of the magnitudes are already available, for instance as MAG_AUTO_R_DERED = MAG_AUTO_R - 2.130*ebv_sfd98, and thus the subtraction of R*E(B-V) need only be done for the MAG_APER quantities in the DR1_MAGNITUDES table.&nbsp; Both ways of obtaining the dereddened magnitudes are shown here for completeness.</p>
+<p>This query may be run in quick mode, as it takes less than a minute to select 7030 high confidence extended objects (galaxies) with imaflags_iso_r = 0 (no very bright saturated stars) and flags_r &lt; 4 (no saturated objects or other sextractor flags &gt;=4), however, close pairs and deblends, with flag values 1 and 2, are allowed.&nbsp; The Case expression performs the star/galaxy separation, with &gt;2 indicating we select only high confidence extended objects and the wavg_spread_model quantities indicating we are not interested in objects fainter than about r~23.&nbsp; The i-band spread_model gives slightly better results than g, r or z spread model.&nbsp; Note that we convert the magnitudes to dereddeneded quantities on-the-fly by subtracting off R_filter * E(B-V) for each object.&nbsp; R_filter is a fixed coefficient which gives Absorption&nbsp; in a given band from dust in the Galaxy toward a particular sightline.&nbsp; The E(B-V) values from SFD98 are tablulated in DR1 for each object and may be extracted from the database. The recommended R_filter values for DES DR1 are R(g,r,i,z,Y) = (3.184, 2.130, 1.568, 1.196, 1.048).&nbsp;&nbsp; Note that for magnitudes in the <code>DR1_MAIN</code> table, dereddened versions of the magnitudes are already available, for instance as MAG_AUTO_R_DERED = MAG_AUTO_R - 2.130*ebv_sfd98, and thus the subtraction of R*E(B-V) need only be done for the MAG_APER quantities in the <code>DR1_MAGNITUDE</code> table.&nbsp; Both ways of obtaining the dereddened magnitudes are shown here for completeness.</p>
 <p>Using the results of this query one may further select, using the distance to the cluster center parameter calculated within the query and plot MAG_AUTO_R_0 (dereddened) vs. MAG_AUTO(R-I) dereddened for all 2276 galaxies within 0.15 degrees (9') of the cluster center (<a href="javascript:void(0)" on-tap="_dialog" data-item="4">Figure 4</a>)</p>
 
 <des-img src="{{rootPath}}static/images/faq/figa1063.gif" on-tap="_dialog" data-item="4"> Figure 4.</des-img>
@@ -47002,12 +47032,12 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 <des-img src="{{rootPath}}static/images/faq/lineaa1063.png" on-tap="_dialog" data-item="8"> Figure 8.</des-img>
 
 <p>Note that deblending of overlapping galaxies within DES DR1 is not perfect, in this case several galaxies close to the BCG (Brightest cluster galaxy) remain blended with the extended BCG light.&nbsp; This is a general feature of the tuning of the deblending within DES DR1.</p>
-<p>One may modify the query above to select, for instance, stars instead of galaxies (i.e. use EXTENDED_COADD &lt; 2) and to explore other areas of the footprint.&nbsp; The DR1_MAIN and DR2_MAIN tables are indexed on RA, DEC, COADD_OBJECT_ID and TILENAME, along with indicies on MAG_AUTO_grizY and other commonly used quantities.&nbsp; You may wish to try a complex query out first on the DR1_MAIN_SAMPLE and DR2_MAIN_SAMPPLE (1% subsample) versions of tables which have many fewer rows, and where performance of your query may be tuned before running it on the full 399/700 million row table.</p>
+<p>One may modify the query above to select, for instance, stars instead of galaxies (i.e. use EXTENDED_COADD &lt; 2) and to explore other areas of the footprint.&nbsp; The <code>DR1_MAIN</code> and <code>DR2_MAIN</code> tables are indexed on RA, DEC, <code>COADD_OBJECT_ID</code> and TILENAME, along with indicies on MAG_AUTO_grizY and other commonly used quantities.&nbsp; You may wish to try a complex query out first on the <code>DR1_MAIN_SAMPLE</code> and <code>DR2_MAIN_SAMPLE</code> (1% subsample) versions of tables which have many fewer rows, and where performance of your query may be tuned before running it on the full 399/700 million row table.</p>
 </div>
 
 <p><br></p>
 <div class="fixup" id="faq11"></div>
-<h3 class="fixdown">11. How can I convert between DES and SDSS magnitudes? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">11. How can I convert between DES and SDSS magnitudes? &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 <div class="answer">
 
     <strong><br><br>Update:</strong> We have updated the transformation equations for DR2 across multiple surveys. Please visit <a href="https://des.ncsa.illinois.edu/releases/dr2/dr2-docs/dr2-transformations">here</a>
@@ -47036,28 +47066,28 @@ and d.imaflags_iso_r = 0 and d.flags_r &lt; 4 and<br>
 
 <p><br></p>
 <div class="fixup" id="faq12"></div>
-<h3 class="fixdown">12. How to acknowledge the usage of the data? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">12. How should I acknowledge the usage of the data? &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 <p class="answer">Please check our <a href="[[rootPath]]thanks">Acknowledgements</a> page for more information.&nbsp;</p>
 
 
 
 <p><br></p>
 <div class="fixup" id="faq13"></div>
-<h3 class="fixdown">13. How to directly download the data? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+<h3 class="fixdown">13. How do I directly download the data? &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
 <p class="answer"> <br>
 
-All of the files, including images and catalogs, can be found at the DES file server: <a href="http://desdr-server.ncsa.illinois.edu/despublic/" target="_blank">http://desdr-server.ncsa.illinois.edu/despublic/</a>. All of the files are partitioned by tile. By querying the tables DR1_TILE_INFO and DR2_TILE_INFO, one can find the url for a specific file and tile. The columns on the catalog files are the same as the DB Tables.
+All of the files, including images and catalogs, can be found at the DES file server: <a href="http://desdr-server.ncsa.illinois.edu/despublic/" target="_blank">http://desdr-server.ncsa.illinois.edu/despublic/</a>. All of the files are partitioned by tile. By querying the tables <code>DR1_TILE_INFO</code> and <code>DR2_TILE_INFO</code>, one can find the url for a specific file and tile. The columns on the catalog files are the same as the DB Tables.
 
 </p><p><br></p>
 
 <div class="fixup" id="faq14"></div>
-<h3 class="fixdown">14. What are the Terms and Conditions? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<p class="answer">Please check our <a href="[[rootPath]]terms">Terms and Conditions</a> page for more information
+<h3 class="fixdown">14. What are the Terms and Conditions? &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
+<p class="answer">Please check our <a href="[[rootPath]]terms">Terms and Conditions</a> page for more information.
 
 </p><p><br></p>
 <div class="fixup" id="faq15"></div>
-<h3 class="fixdown">15. What to do if a question is not listed in here? &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
-<p class="answer">Please our <a href="[[rootPath]]help">Help Form</a>
+<h3 class="fixdown">15. What do I do if a question is not listed in here? &nbsp; &nbsp; <!-- a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top" title="Back to top"><iron-icon icon="arrow-upward"></iron-icon></a --></h3>
+<p class="answer">Please use our <a href="[[rootPath]]help">Help Form</a>.
 
 </p></div>
 
@@ -47065,7 +47095,11 @@ All of the files, including images and catalogs, can be found at the DES file se
 <script>
     class DesDr1Faq extends Polymer.Element {
       static get is() { return 'des-dr1-faq'; }
-      _top() { this.$.faq_top.scrollIntoView();}
+      _top() {
+        this.$.faq_top.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
       _scroll(e) {
           e.preventDefault();
           e.stopPropagation();
@@ -47081,6 +47115,8 @@ All of the files, including images and catalogs, can be found at the DES file se
 
     }
     window.customElements.define(DesDr1Faq.is, DesDr1Faq);
+
+
   </script>
 
 </dom-module>
@@ -47533,7 +47569,7 @@ All of the files, including images and catalogs, can be found at the DES file se
           This is officially the second major public release of reduced images and wide-field coadd source catalogs from all of the six years of full science operations, consisting  in over 76,000 single exposure images, close to 62,000 coadd images covering 10,169 tiles over roughly 5,000 square degrees within the DES footprint, resulting in nearly 700M distinct cataloged objects. Use the buttons below to access DR2 documentation and products.<br>
           <br>
 
-          <b>See DR2 Release paper</b> <a href="#"> here</a>
+          <b>See DR2 Release paper</b> <a href="https://arxiv.org/abs/2101.05765"> here</a>
 
       <div style="text-align: center">
           <br>
@@ -47587,7 +47623,7 @@ All of the files, including images and catalogs, can be found at the DES file se
         <ul>
           <li>
             <h3>
-              <a href="#">DR2 Release Paper</a>
+              <a href="https://arxiv.org/abs/2101.05765">DR2 Release Paper</a>
             </h3>
           </li>
           <li>
