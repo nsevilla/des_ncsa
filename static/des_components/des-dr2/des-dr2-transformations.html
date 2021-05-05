@@ -97,11 +97,11 @@ First-order polynomials based on a single color index (g-i for g and r-i for r,i
     <h2> Johnson-Cousins (UBVR<subscript>c<subscript>I<subscript>c<subscript>)<h2>
            
     Here, we matched stars from the DES DR2 to stars in Peter Stetson’s database of [Johnson-Cousins standard stars](https://www.canfar.net/storage/list/STETSON/Standards).  To reduce the effects of photon noise,
-    we only considered stars with rms magnitude errors of &le; 0.02 in either DES or the Stetson sample, and we only included Stetson stars that had at least 5 observations each in B, V, R, and *I*.
+    we only considered stars with rms magnitude errors of &le; 0.02 in either DES or the Stetson sample, and we only included Stetson stars that had at least 5 observations each in B, V, R, and I.
     These cuts left ~10,000 star matches.  Due to substantial differences between the DES and the Johnson-Cousins passbands, we fit each relation with 2 or 3 piecewise branches,
     in which no effort was made to ensure that the value obtained from the red endpoint of one branch would match the value of the blue endpoint of the next branch.
     This was done on purpose, due to the minor discontinuities and/or bifurcations seen in the stellar locus of the plotted relations.
-    For outlier rejection, we made use of iterated sigma-clipping, iterating over the fit 3 times and removing 3$\sigma$ outliers after each iteration.
+    For outlier rejection, we made use of iterated sigma-clipping, iterating over the fit 3 times and removing 3~sigma outliers after each iteration.
     
     <code>
     g{DES} = V + 0.552 (B-V) - 0.099~[-0.2 < (B-V) &le; 0.4]~(RMS: 0.012 mag)<br>
