@@ -30,7 +30,7 @@
           <a href="{{rootPath}}static/images/dr2/qaPlot.sdss_to_des.fit.dmag_r.ri_sdss.norder1.qa1.png" target="_blank">QA plot</a>
           <br>
           i{DES} = i{SDSS} - 0.166 (r - i){SDSS} + 0.032 ~(RMS:  0.018 mag)
-          <a href="{{rootPath}}static/images/dr2/qaPlot.sdss_to_des.fit.dmag_r.ri_sdss.norder1.qa1.png" target="_blank">QA plot</a>
+          <a href="{{rootPath}}static/images/dr2/qaPlot.sdss_to_des.fit.dmag_i.ri_sdss.norder1.qa1.png" target="_blank">QA plot</a>
           <br>
           z{DES} = z{SDSS} - 0.056 (r - i){SDSS} + 0.027 ~(RMS:  0.018 mag)
           <a href="{{rootPath}}static/images/dr2/qaPlot.sdss_to_des.fit.dmag_z.ri_sdss.norder1.qa1.png" target="_blank">QA plot</a>
@@ -137,7 +137,7 @@ First-order polynomials based on a single color index (g-i for g and r-i for r,i
     These cuts left ~10,000 star matches.  Due to substantial differences between the DES and the Johnson-Cousins passbands, we fit each relation with 2 or 3 piecewise branches,
     in which no effort was made to ensure that the value obtained from the red endpoint of one branch would match the value of the blue endpoint of the next branch.
     This was done on purpose, due to the minor discontinuities and/or bifurcations seen in the stellar locus of the plotted relations.
-    For outlier rejection, we made use of iterated sigma-clipping, iterating over the fit 3 times and removing 3~sigma outliers after each iteration.<br><br>
+    For outlier rejection, we made use of iterated sigma-clipping, iterating over the fit 3 times and removing 3 &#963; outliers after each iteration.<br><br>
     
     <code>
     g{DES} = V + 0.552 (B-V) - 0.099 [-0.2 < (B-V) &le; 0.4] (RMS: 0.012 mag)<br>
@@ -161,7 +161,7 @@ First-order polynomials based on a single color index (g-i for g and r-i for r,i
     Y{DES} = I<sub>c</sub> - 0.831 (R-I)<sub>c</sub> + 0.698 [ 0.2 < (R-I)<sub>c</sub> &le; 0.7] (RMS: 0.026 mag)<br>
     Y{DES} = I<sub>c</sub> - 0.437 (R-I)<sub>c</sub> + 0.451 [ 0.7 < (R-I)<sub>c</sub> &le; 2.0] (RMS: 0.030 mag)<br>
     <a href="{{rootPath}}static/images/dr2/qaPlot.stetson_to_des.fit.dmag_Y_des-I.RI.norder1.qa1.png" target="_blank">QA plot</a>
-    </code><br>
+    </code><br><br>
     and
     <br><br>
     <code>
