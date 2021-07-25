@@ -6,7 +6,7 @@ This repository is the source code for the DESDM public data release website at 
 Workflow for contributing content updates
 ----------------------------------------------
 
-0. Install `docker` and `git`.
+0. [Install `docker`](https://docs.docker.com/engine/install/) and `git`.
 1. Fork the repo https://github.com/des-labs/des_ncsa to https://github.com/$GITHUB_USER/des_ncsa where `$GITHUB_USER` is your GitHub account username.
 2. Clone your fork locally and checkout the `dev` branch.
     ```shell
