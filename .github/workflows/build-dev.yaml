@@ -1,12 +1,12 @@
-name: desdm-public-build
+name: build-dev
 
 on:
   push:
     branches:
-      - 'master'
+      - 'dev'
     paths:
     - '**'
-    - '.github/workflows/build-desdm-public.yaml'
+    - '.github/workflows/build-dev.yaml'
 
 jobs:
   docker:
@@ -47,7 +47,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: hub.ncsa.illinois.edu/des/desdm-public:latest
+          tags: hub.ncsa.illinois.edu/des/desdm-public:dev
           # From https://github.com/docker/build-push-action/blob/master/docs/advanced/cache.md#github-cache
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
