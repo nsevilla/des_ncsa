@@ -48,4 +48,4 @@ Workflow for contributing content updates
     git commit -m 'Updated release page blah'
     git push
     ```
-10. Create a pull request to merge and publish your changes.
+10. Create a pull request to merge and publish your changes. You must [inform the DES Science Release community via the #sci-release Slack channel](https://darkenergysurvey.slack.com/archives/C0PMTCWRL) to allow for a peer review of the submission before it can be accepted. 
