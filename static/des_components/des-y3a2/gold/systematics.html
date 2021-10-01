@@ -1,0 +1,140 @@
+<dom-module id="des-y1a1-gold-systematics">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 Observing Conditions">
+<div class="card-content">
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>
+      <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>  we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming cosmological analyses. The Y1A1 GOLD data set is assembled from multiple epochs of DES imaging and consists of calibrated photometric zero-points, object catalogs, and ancillary data products—e.g., maps of survey depth and observing conditions, star–galaxy classification, and photometric redshift estimates— The Y1A1 GOLD wide-area object catalog consists of ~137 million objects detected in co-added images covering ~1800 deg</span>
+      <sup>2</sup>
+      <span style="color: rgb(0,0,0);"> in the DES grizY filters. </span>
+    </p>
+    <p>
+      <span style="color: rgb(0,0,0);letter-spacing: 0.0px;">This page documents the observing condition maps created from the DESDM products.</span>
+    </p>
+    <h2>
+      <strong>
+        <span style="color: rgb(0,0,0);">Download</span>
+      </strong>
+    </h2>
+    <p>
+      <span style="color: rgb(0,0,0);">The observing conditions maps are distributed separately for each band and contains the survey conditions both for SPT and STRIPE82 together.</span>
+    </p>
+    <p>
+      <span style="color: rgb(0,0,0);">In all cases, these are <a href="https://healpix.jpl.nasa.gov/">healpix</a> maps, in RING ordering schema, equatorial coordinates at nside = 4096 that have been compressed in a <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">zip</a> file of  ~ 160MB each.  </span>
+    </p>
+    <p>
+      <strong>
+        <span style="color: rgb(0,0,0);">Files</span>
+      </strong>
+    </p>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_g_nside4096_systematics.zip">Y1A1GOLD_band_g_nside4096_systematics.zip</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_r_nside4096_systematics.zip">Y1A1GOLD_band_r_nside4096_systematics.zip</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_i_nside4096_systematics.zip">Y1A1GOLD_band_i_nside4096_systematics.zip</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_z_nside4096_systematics.zip">Y1A1GOLD_band_z_nside4096_systematics.zip</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/systematic_maps/Y1A1GOLD_band_Y_nside4096_systematics.zip">Y1A1GOLD_band_Y_nside4096_systematics.zip</a>
+      </li>
+    </ul>
+    <h2>
+      <strong>
+        <span style="color: rgb(0,0,0);">Description</span>
+      </strong>
+    </h2>
+    <p>
+      <span style="color: rgb(0,0,0);">For each band g,r,i,z,Y we have the following observing condition maps:  </span>
+    </p>
+    <table >
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>AIRMASS_coaddweights3_mean</td>
+          <td>Mean AIRMASS</td>
+        </tr>
+        <tr>
+          <td>count_fracdet</td>
+          <td>Effective coverage fraction of each pixel (normalized to 1).</td>
+        </tr>
+        <tr>
+          <td>EXPTIME_total</td>
+          <td>Total exposure time [seconds]</td>
+        </tr>
+        <tr>
+          <td>FWHM_MEAN_coaddweights3_mean</td>
+          <td>Mean FWHM</td>
+        </tr>
+        <tr>
+          <td>maglimit3</td>
+          <td>Magnitude limit at 10sigma for an aperture of 2" [mag]</td>
+        </tr>
+        <tr>
+          <td>SKYBRITE_coaddweights3_mean</td>
+          <td>Mean sky brightness [ADU]</td>
+        </tr>
+        <tr>
+          <td>SKYSIGMA_coaddweights3_mean</td>
+          <td>Mean skysigma [ADU]</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <span style="color: rgb(0,0,0);">
+        <br/>
+      </span>
+    </p>
+    <p style="margin-left: 30.0px;">
+      <span style="color: rgb(0,0,0);">
+        <br/>
+      </span>
+    </p>
+    <p style="margin-left: 30.0px;">
+      <br/>
+    </p>
+    <p>
+      <br/>
+    </p>
+    <p>
+      <span style="color: rgb(0,0,0);">
+        <br/>
+      </span>
+    </p>
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1GoldSystematics extends Polymer.Element {
+      static get is() { return 'des-y1a1-gold-systematics'; }
+    }
+    window.customElements.define(DesY1A1GoldSystematics.is, DesY1A1GoldSystematics);
+  </script>
+
+</dom-module>

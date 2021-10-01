@@ -1,0 +1,234 @@
+<dom-module id="des-y1a1-gold-footprint">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 Footprint and Depth Maps">
+<div class="card-content">
+
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>
+      <span style="color: rgb(0,0,0);">In <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. (2018)</a>  we describe the creation, content, and validation of the Dark Energy Survey (DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming cosmological analyses. The Y1A1 GOLD wide-area object catalog consists of ~137 million objects detected in co-added images covering ~1800 deg</span>
+      <sup>2</sup>
+      <span style="color: rgb(0,0,0);"> in the DES grizY filters. </span>
+    </p>
+    <p>
+      <span style="color: rgb(0,0,0);">Here we present the Y1A1 GOLD footprint maps and 10sigma depth maps in <a href="https://healpix.jpl.nasa.gov/">healpix</a> formats<span style="color: rgb(0,0,0);"> (</span>MOF<strong> </strong>
+        <span style="color: rgb(0,0,0);">depth maps can be found </span>
+        <strong>
+          <a href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">here</a>
+        </strong>
+        <span style="color: rgb(0,0,0);">)</span>. Depth maps have the stellar locus regression (SLR) calibration adjustment applied to them to correct for interstellar extinction and zeropoint non-uniformity</span>
+      <span style="color: rgb(0,0,0);">.</span>
+    </p>
+    <p>
+      <span style="color: rgb(0,0,0);">The footprint maps are divided into two parts:</span>
+    </p>
+    <ol>
+      <li>
+        <span style="color: rgb(0,0,0);">"Footprint" maps describe the footprint for which we have all of griz imaging, taking into account the mangle mask</span>
+      </li>
+      <li>
+        <span style="color: rgb(0,0,0);">"Bad Region" maps flag different regions which can be removed from the footprint depending on analysis needs.</span>
+      </li>
+    </ol>
+    <p>
+      <span style="color: rgb(0,0,0);">In general, you will need to combine these two maps, plus the depth maps, to get your desired footprint.</span>
+    </p>
+    <h2>
+      <strong>
+        <span style="color: rgb(0,0,0);">Download</span>
+      </strong>
+    </h2>
+    <p>
+      <span style="color: rgb(0,0,0);">The footprint maps are distributed at nside=4096, ordering=ring, equatorial coordinates. The version differences (1.0.2 and 1.0.3) are a DES internal nomenclature, both maps presented here are the latest version of each product that went into the cosmological analyses.</span>
+    </p>
+    <h4>
+      <span style="color: rgb(0,0,0);">Footprint<br/>
+      </span>
+    </h4>
+    <ul>
+      <li>
+        <span style="color: rgb(0,0,0);">
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_wide_footprint_4096.fits.gz">y1a1_gold_1.0.2_wide_footprint_4096.fits.gz (1.2M)</a>
+          <br/>
+        </span>
+      </li>
+      <li>
+        <span style="color: rgb(0,0,0);">
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.3_wide_badmask_4096.fits.gz">y1a1_gold_1.0.3_wide_badmask_4096.fits.gz (2.8M)</a>
+        </span>
+        <p style="color: rgb(0,0,0);">
+          <br/>
+        </p>
+      </li>
+    </ul>
+    <h4>10sigma MAG_AUTO depth maps</h4>
+    <ul>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_wide_auto_nside4096_g_10sigma.fits.gz">y1a1_gold_1.0.2_wide_auto_nside4096_g_10sigma.fits.gz (27M)</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_wide_auto_nside4096_r_10sigma.fits.gz">y1a1_gold_1.0.2_wide_auto_nside4096_r_10sigma.fits.gz (26M)</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_wide_auto_nside4096_i_10sigma.fits.gz">y1a1_gold_1.0.2_wide_auto_nside4096_i_10sigma.fits.gz (24M)</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_wide_auto_nside4096_z_10sigma.fits.gz">y1a1_gold_1.0.2_wide_auto_nside4096_z_10sigma.fits.gz (25M)</a>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/masks_maps/y1a1_gold_1.0.2_wide_auto_nside4096_Y_10sigma.fits.gz">y1a1_gold_1.0.2_wide_auto_nside4096_Y_10sigma.fits.gz (25M)</a>
+      </li>
+    </ul>
+    <p>
+      <br/>
+    </p>
+    <h2>
+      <strong>Description</strong>
+    </h2>
+    <p>The <strong>footprint</strong> mask can be used to describe a footprint with griz or grizY. The values are:</p>
+    <ul>
+      <li>UNSEEN: No Y1A1 data in this pixel</li>
+      <li>0: Y1A1 data is available in some bands, but not all of griz.</li>
+      <li>1: Pixel has Mangle coverage fraction FRAC&gt;0.5 in all of griz; Systematics FRACDET&gt;0.5 and &gt;=90s EXPTIME in all of griz; SLR solution in griz   <strong>(Recommended)</strong>
+      </li>
+      <li>3: In addition, pixel has Mangle FRAC&gt;0.5 in Y and systematics FRACDET&gt;0.5 and &gt;=45s EXPTIME in Y; SLR solution in Y</li>
+    </ul>
+    <p>
+      <br/>
+    </p>
+    <p>The <strong>badmask</strong> mask is a bitmask map with the following information:</p>
+    <p>
+      <br/>
+    </p>
+    <table >
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Mask Bit</th>
+          <th style="text-align: center;">Description</th>
+          <th colspan="2" style="text-align: center;">
+            <strong>Wide (griz)</strong>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <br/>
+          </th>
+          <th>
+            <br/>
+          </th>
+          <th>Masked Area (deg^2)</th>
+          <th>Footprint Area (deg^2)</th>
+        </tr>
+        <tr>
+          <td style="text-align: center;">
+            <br/>
+          </td>
+          <td>Total area</td>
+          <td>
+            <br/>
+          </td>
+          <td>1759.58</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">512</td>
+          <td>COADD PSF failures</td>
+          <td>7.23</td>
+          <td>1752.35</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">256</td>
+          <td>Globular clusters</td>
+          <td>0.66</td>
+          <td>1751.68</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">128</td>
+          <td>In 1.0.1, but not 1.0.2</td>
+          <td>0.00</td>
+          <td>1751.68</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">64</td>
+          <td>Crazy colors</td>
+          <td>1.31</td>
+          <td>1750.38</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">32</td>
+          <td>Yale bright stars</td>
+          <td>18.29</td>
+          <td>1732.19</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">16</td>
+          <td>Near the LMC</td>
+          <td>95.78</td>
+          <td>1637.94</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">8</td>
+          <td>2MASS bright star region (5&lt;J&lt;8)</td>
+          <td>28.32</td>
+          <td>1612.18</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">4</td>
+          <td>Large nearby galaxy (RC3 catalog)</td>
+          <td>5.23</td>
+          <td>1607.55</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">2</td>
+          <td>2MASS fainter star region (8&lt;J&lt;12)</td>
+          <td>118.20</td>
+          <td>1501.37</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">1</td>
+          <td>Bad astrometric colors</td>
+          <td>29.96</td>
+          <td>1482.31</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <p>The <strong>10sigma depth</strong> maps are estimated for the <strong>AUTO</strong> magnitude, appropriate for galaxies, following the procedure of <a class="external-link" href="http://adsabs.harvard.edu/abs/2015arXiv150900870R" rel="nofollow">Rykoff et al. (2015)</a>.  Maps of the 10σ galaxy limiting magnitude were generated by fitting the magnitude error versus magnitude relationship on large pixels and correlating with small-scale spatially varying survey characteristics. <strong>The depth maps have the stellar locus regression zeropoint corrections applied, which account for interstellar extinction.</strong>
+    </p>
+    <p>Coarse depth measurements were made with NISDE=1024 using secure galaxies selected by the MODEST_CLASS classificator, and good objects and all good region cuts.</p>
+    <p>For training, systematics maps (nside=4096) were averaged to NSIDE=1024. Only coarse pixels that were completely filled in the given band were used in training. Only pixels that had at least 100 galaxies were used in the training. (Note that for Y band everything had to be done at NSIDE=512 to get sufficient density of galaxies).</p>
+    <p>According to simple estimates the AUTO depth maps are good to 6-7%, though 3-4% of this (in quadrature) is due to "pixelization noise". (That is, the high resolution maps should be good, but when you average over a range of depths you necessarily introduce additional noise).</p>
+    <p>
+      <span style="color: rgb(0,0,0);">
+        <br/>
+      </span>
+    </p>
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1GoldFootprint extends Polymer.Element {
+      static get is() { return 'des-y1a1-gold-footprint'; }
+    }
+    window.customElements.define(DesY1A1GoldFootprint.is, DesY1A1GoldFootprint);
+  </script>
+
+</dom-module>
