@@ -1,0 +1,240 @@
+<dom-module id="des-y1a1-key-photoz">
+<template>
+      <style include="shared-styles">
+</style>
+
+<des-card heading="Y1 Photo-z Catalogs">
+<div class="card-content">
+
+  <h2>
+    <strong>Overview</strong>
+  </h2>
+  <p>
+    <span style="color: rgb(0,0,0);">From <a href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H">Hoyle &amp; Gruen et al. (2018)</a>:<a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">
+        <br/>
+      </a>
+    </span>
+  </p>
+  <p>We describe the derivation and validation of redshift distribution estimates and their uncertainties for the populations of galaxies used as weak-lensing sources in the Dark Energy Survey (DES) Year 1 cosmological analyses.</p>
+  <p>The Bayesian Photometric Redshift (BPZ) code is used to assign galaxies to four redshift bins between z ≈ 0.2 and ≈1.3, and to produce initial estimates of the lensing-weighted redshift distributions</p>
+  <p>This paper details the BPZ and COSMOS procedures, and demonstrates that the cosmological inference is insensitive to details of the n<sup>i</sup>(z) beyond the choice of Δz<sup>i</sup>. The clustering and COSMOS validation methods produce consistent estimates of Δz<sup>i</sup> in the bins where both can be applied, with combined uncertainties of σ_{Δ z<sup>i</sup>}=0.015, 0.013, 0.011, and 0.022 in the four bins.</p>
+  <p>For BPZ configuration used, please refer to the reference above.</p>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>All the files can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/">here</a>, each one is ~ 13GB. </p>
+  <ul>
+
+    <li>
+      <span class="nolink">
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/y1a1-gold-mof-badregion_BPZ.fits">y1a1-gold-mof-badregion_BPZ.fits</a> (MOF based)
+      </span>
+    </li>
+
+    <li>
+      <span class="nolink">
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched_BPZbase.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZbase.fits</a> (METACAL based)
+      </span>
+    </li>
+    <li>
+      <span class="nolink">
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ1m.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ1m.fits</a> (METACAL based)
+      </span>
+    </li>
+    <li>
+      <span class="nolink">
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ2m.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ2m.fits</a> (METACAL based)
+      </span>
+    </li>
+    <li>
+      <span class="nolink">
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ1p.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ1p.fits</a> (METACAL based)
+      </span>
+    </li>
+    <li>
+      <span class="nolink">
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/mcal-y1a1-combined-griz-blind-v3-matched.BPZ2p.fits">mcal-y1a1-combined-griz-blind-v3-matched.BPZ2p.fits</a> (METACAL based)
+      </span>
+    </li>
+  </ul>
+
+  <h2>
+    <strong>Usage<br/>
+    </strong>
+  </h2>
+
+<p>
+    To reproduce the DES Year 1 cosmology results, one should use the BPZ from Metacal photometry to bin objects and the BPZ from MOF photometry to stack an n(z). It is important that objects are binned by photo-zs based on the metacal photometry, so that the selection bias from redshift binning can be incorporated in the shear calibration correction R_S. When stacking the n(z) it is also important that the distribution be weighted by the response values (provided also in the photo-z catalog for convenience), so that the n(z) is weighted in the same way as the measured signal. In all cases, the resulting n(z) will be significantly biased without further calibration. For the calibration procedure used in DES Year 1 cosmology, see <a href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H">Hoyle &amp; Gruen et al. (2018)</a>.
+</p>
+
+  <h2>
+    <strong>Catalog Description<br/>
+    </strong>
+  </h2>
+
+  <h4>MOF_BPZ</h4>
+  <p>This is the photo-z based on MOF photometry</p>
+  <table class="relative-table">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>TEMPLATE_ID</p>
+        </td>
+        <td colspan="1">Best fit BPZ template ID</td>
+      </tr>
+      <tr>
+        <td colspan="1">COADD_OBJECTS_ID</td>
+        <td colspan="1">
+          <p>
+            <span style="color: rgb(0,0,0);">Y1A1 unique object ID</span>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">TEMPLATE_TYPE</td>
+        <td colspan="1">Best fit BPZ template type</td>
+      </tr>
+      <tr>
+        <td colspan="1">MEDIAN_Z</td>
+        <td colspan="1">Median photometric redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">MEAN_Z</td>
+        <td colspan="1">Mean photometric redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">MINCHI2</td>
+        <td colspan="1">Best fit BPZ chi2</td>
+      </tr>
+      <tr>
+        <td colspan="1">MODE_Z</td>
+        <td colspan="1">Mode photometric redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_SIGMA68</td>
+        <td colspan="1">sigma68 photometric redshift error</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_SIGMA</td>
+        <td colspan="1">sigma photometric redshift error</td>
+      </tr>
+      <tr>
+        <td colspan="1">KL_POST_PRIOR</td>
+        <td colspan="1">The Kullback Leibler divergence, between the prior and posterior. How much information has this galaxy's pdf obtained from the photo-z analysis.</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_MC</td>
+        <td colspan="1">Montecarlo realization of the photometric redshift PDF</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4>METACAL_BPZ</h4>
+  <p>This is the photo-z based on MOF photometry</p>
+  <p>
+    <strong>
+      <br/>
+    </strong>All files have the same content. </p>
+  <p>
+    <span style="color: rgb(255,0,0);">
+      <strong>
+        <br/>
+      </strong>
+    </span>
+  </p>
+  <table >
+    <colgroup>
+      <col />
+      <col />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>TEMPLATE_ID</p>
+        </td>
+        <td colspan="1">Best fit BPZ template ID</td>
+      </tr>
+      <tr>
+        <td colspan="1">COADD_OBJECTS_ID</td>
+        <td colspan="1">
+          <p>
+            <span style="color: rgb(0,0,0);">Y1A1 unique object ID</span>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">R11</td>
+        <td colspan="1">The shear response matrix e1-e1 element. For details on calculation, see <a class="external-link" href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533" rel="nofollow">Zuntz &amp; Sheldon et al. (2018)</a>. You must calculate the selection bias response to add to this.</td>
+      </tr>
+      <tr>
+        <td colspan="1">R22</td>
+        <td colspan="1">
+          <span>The shear response matrix e2-e2 element.</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">TEMPLATE_TYPE</td>
+        <td colspan="1">Best fit BPZ template type</td>
+      </tr>
+      <tr>
+        <td colspan="1">MEDIAN_Z</td>
+        <td colspan="1">Median photometric redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">MEAN_Z</td>
+        <td colspan="1">Mean photometric redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">MINCHI2</td>
+        <td colspan="1">Best fit BPZ chi2</td>
+      </tr>
+      <tr>
+        <td colspan="1">MODE_Z</td>
+        <td colspan="1">Mode photometric redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_SIGMA68</td>
+        <td colspan="1">sigma68 photometric redshift error</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_SIGMA</td>
+        <td colspan="1">sigma photometric redshift error</td>
+      </tr>
+      <tr>
+        <td colspan="1">KL_POST_PRIOR</td>
+        <td colspan="1">The Kullback Leibler divergence, between the prior and posterior. How much information has this galaxy's pdf obtained from the photo-z analysis.</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_MC</td>
+        <td colspan="1">Montecarlo realization of the photometric redshift PDF</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyPhotoz extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-photoz'; }
+    }
+    window.customElements.define(DesY1A1KeyPhotoz.is, DesY1A1KeyPhotoz);
+  </script>
+
+</dom-module>
