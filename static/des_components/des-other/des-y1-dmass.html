@@ -1,0 +1,189 @@
+<dom-module id="des-y1-dmass">
+
+<template>
+
+    <style include="shared-styles">
+
+</style>
+
+
+    <des-card heading ="DES Y1 DMASS catalog v1.0  (Lee et al. 2019)">
+        <div style="text-align: center">
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/other/y1-dmass"><paper-button   raised class="desButton">Documentation</paper-button></a>
+    <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1-dmass/"><paper-button   raised class="desButton">Files</paper-button></a>
+</div>
+      <div class="card-content">
+        <h2>
+  <strong>Overview</strong>
+</h2>
+<p>In <a href="http://arxiv.org/abs/1906.01136">Lee et al. (2019)</a>, we constructed the DES-CMASS (DMASS) galaxy catalog, a subset of the DES Y1 GOLD catalog (<a href="https://arxiv.org/abs/1708.01531">Drlica-Wagner et al. 2018</a>) that replicates the statistical properties of the BOSS CMASS sample. In <a href="http://arxiv.org/abs/2104.11319">Lee et al. (2021)</a> and <a href="http://arxiv.org/abs/2104.14515">Lee et al. (2021)</a>, we measured galaxy-galaxy lensing around DMASS and performed a joint analysis of DES and BOSS in the framework of modified gravity, by combining the galaxy-galaxy lensing measurement with other probes including the RSD measurement from BOSS. Here, we present our catalogs, measurement of two-point functions, likelihood chains, and ancillary data products described in those three papers.</p> 
+
+<p>The data products can also be accessed at <a href="https://github.com/sujeong-lee/dmass_analysis">github</a>.</p>
+
+<p>Please contact <a href="mailto:lee.5922@osu.edu">lee.5922@osu.edu</a> with any questions or concerns.</p>
+
+        <hr/>
+        <h2>
+          <strong> Catalogs </strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1-dmass/dmass_y1_public_v1.fits" target="_blank">dmass_y1_public_v1.fits</a>, <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1dmass/random_dmass_y1_public_v1.fits", target="_blank">random_dmass_y1_public_v1.fits</a>)
+        </h2>
+	<p>We release the DMASS catalog and corresponding randoms. The DMASS catalog includes 'CMASS_PROB', the selection weights for the DES Y1 GOLD galaxies that weights GOLD galaxies to produce a statistical match to the BOSS CMASS sample. See Section 3.4 for details. Systematics weight `WEIGHT_SYS` has been characterized in Section 4 of the paper. These weights should be applied for any two-point function-related computations. The algorithm that computes the selection weights can be found <a href="https://github.com/sujeong-lee/DMASS.git">here</a>.</p>
+        <p>To use the catalogs, follow the steps below:</p>
+        <p>1. Exclude contaminated regions and noisy sources as follows:</p>
+	<pre><code >
+	for dmass  : (VETO != 0) && (CMASS_PROB > 0.01)
+	for random : (VETO != 0)
+	</code></pre>
+	<p>'VETO != 0' keeps galaxies in the regions where the impact of survey properties (observing condition, depth) is negligible. The cut 'CMASS_PROB > 0.01' removes low probability galaxies that are less likely to be a CMASS. The cut was determined to yield the same number density as CMASS. More details can be found in Section 3.5 of <a href="http://arxiv.org/abs/1906.01136">Lee et al. (2019)</a>. We recommend applying the same cut as stated here but leave it as the user's choice.</p>
+	<p>2. Apply weights to the DMASS galaxies as follows:</p>
+	<pre><code >
+	weight = CMASS_PROB * WEIGHT_SYS
+	</code></pre>
+        <p> Column descriptions:
+          <br/>
+        </p>
+        <table >
+          <colgroup>
+            <col />
+            <col />
+	    <col />
+	    <col />
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Column Name</th>
+              <th>Description</th>
+	      <th>Unit</th>
+	      <th>DataType</th>
+            </tr>
+            <tr>
+              <td>COADD_OBJECTS_ID</td>
+              <td>
+                <p>DES Y1 COADD Object ID</p>
+              </td>
+	      <td></td>
+	      <td>int64</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right Ascension (J2000).</td>
+	      <td>degree</td>
+	      <td>float64</td>
+            </tr>
+            <tr>
+              <td>DEC</td>
+              <td>Declination (J2000).</td>
+	      <td>degree</td>
+	      <td>float64</td>
+            </tr>
+            <tr>
+              <td colspan="1">CMASS_PROB</td>
+              <td colspan="1">
+                <p>CMASS membership probability</p>
+              </td>
+	      <td></td>
+	      <td>float64</td>
+            </tr>
+            <tr>
+              <td>WEIGHT_SYS</td>
+              <td>Weights for systematics corrections</td>
+	      <td></td>
+              <td>float64</td>
+            </tr>
+            <tr>
+              <td>VETO</td>
+              <td>Bad regions where observing conditions are extreme</td>
+	      <td></td>
+              <td>int64</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>
+          <strong> Measurements of tangential shear and cosmological constraints </strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1-dmass/dmass_analysis_v1.tar.gz" target="_blank">dmass_analysis_v1.tar.gz</a>)
+        </h2>
+	<p>This tarball contains the data products of the two papers (<a href="http://arxiv.org/abs/2104.11319">arxiv:2104.11319</a> and <a href="http://arxiv.org/abs/2104.14515">arxiv:2104.14515</a>). In this release page, we only list files of our key results - the measured galaxy-galaxy lensing and galaxy clustering of DMASS, covariance matrices, and cosmology chains. For descriptions for other outputs that are not listed here, please see 'readme' text files in each directory. The cosmology chains are produced using multinest and importance sampler. When using chains, you must weight the contribution of each sample according to the weight column. The data products can also be accessed at <a href="https://github.com/sujeong-lee/dmass_analysis">github</a>.</p>
+	<p><b>Measurements of the two-point functions and covariance matrices</b></p>
+        <table >
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>File Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>measurement/result/2pt/gammat.txt</td>
+              <td>
+                <p>DMASS tangential shear</p>
+              </td>
+            </tr>
+            <tr>
+              <td>measurement/result/2pt/wtheta.txt</td>
+              <td>DMASS galaxy angular correlation function</td>
+            </tr>
+            <tr>
+              <td>measurement/result/cov/cov_2x2pt.txt</td>
+              <td>Covariance matrix for galaxy clustering and tangential shear </td>
+            </tr>
+            <tr>
+              <td>measurement/result/cov/cov_3x2pt.txt</td>
+              <td>Covariance matrix for galaxy clustering, tangential shear, and DES Y1 cosmic shear</td>
+            </tr>
+          </tbody>
+        </table>
+
+	<p><b>Cosmology chains</b></p>
+        <table >
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>File Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>analysis/result/chains/des+ext/dwgsb_run2_chain.txt</td>
+              <td>
+                <p>DMASS 3x2pt in MG combined with BOSS-CMASS</p>
+              </td>
+            </tr>
+            <tr>
+              <td>analysis/result/chains/des+ext/dwgsbp_run2_chain.txt</td>
+              <td>DMASS 3x2pt in MG combined with BOSS-CMASS and Planck</td>
+            </tr>
+            <tr>
+              <td>analysis/result/chains/des+ext/dwgsbp_src34_run2_chain.txt</td>
+              <td>DMASS 3x2pt (no 1st and 2nd gamma_t signals) in MG combined with BOSS-CMASS and Planck</td>
+            </tr>
+            <tr>
+              <td>analysis/result/chains/des+ext/dwgsbp_redmagic_run2_chain.txt</td>
+              <td>DES Y1 redMaGiC 3x2pt in MG combined with BOSS-CMASS and Planck</td>
+            </tr>
+	    <tr>
+              <td>analysis/result/chains/ext-only/boss_run1_chain.txt</td>
+              <td>BOSS-CMASS only in MG</td>
+            </tr>
+            <tr>
+              <td>analysis/result/chains/ext-only/boss_planck_chain.txt</td>
+              <td>BOSS-CMASS + Planck in MG</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+      </des-card>
+
+
+</template>
+<script>
+    class DesOtherY1dmass extends Polymer.Element {
+      static get is() { return 'des-y1-dmass'; }
+    }
+    window.customElements.define(DesOtherY1dmass.is, DesOtherY1dmass);
+  </script>
+
+</dom-module>
