@@ -27,13 +27,16 @@
         <strong>Overview</strong>
       </h2>
       <p>The Dark Energy Survey (DES) Year-Three (Y3) Gold data release consists of the data products used for DES Y3 cosmology and some non-cosmology related science. These products include object catalogs, survey characterization maps, and cosmological likelihoods associated with DES Y3 papers. This release is divided into several sections:</p>
-      <!--p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/gold">Y3 Gold products</a>: This section contains the primary DES Y3 data products including the Gold object catalog and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
-      <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y3a2/key-catalogs">Y3KP catalogs</a>: This section contains all catalogs used to run the main cosmological analysis from the cross-correlation of weak-lensing and clustering. It is serve as several h5 files, plus some code snippet (python) to interface with the data and isntructions to reproduce the catalogs used in our analysis. They include the shape catalogs (metacal), the redmagic and the maglim samples.</p>
-      <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y3a2/key-products">Y3KP products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y3KP Catalogs described above.</p>
-      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/bao">Y3 BAO sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based on the Y3 Gold catalog.</p>
-      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/redmagic">Y3 Redmagic samples</a>: Redmagic samples</p>
-      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y3a2/mass-maps">Y3 mass maps</a>: Mass maps reconstructed from weak lensing signal</p-->
-      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/morphology">Y3 Morphology catalogs</a>: Several galaxy morphology catalogs
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3gold">Gold products</a>: This section contains the primary DES Y3 data products including the Gold object catalog and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3balrog">Balrog</a>: This section contains the primary DES Y3 data products including the Gold object catalog and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3deepfields">Deep Fields</a>: This section contains the primary DES Y3 data products including the Gold object catalog and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
+      <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y3a2/Y3key-catalogs">Y3KP catalogs</a>: This section contains all catalogs used to run the main cosmological analysis from the cross-correlation of weak-lensing and clustering. It is serve as several h5 files, plus some code snippet (python) to interface with the data and isntructions to reproduce the catalogs used in our analysis. They include the shape catalogs (metacal), the redmagic and the maglim samples.</p>
+      <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y3a2/Y3key-products">Y3KP products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y3KP Catalogs described above.</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3bao">BAO sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based on the Y3 Gold catalog.</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3redmagic">Redmagic samples</a>: Redmagic samples</p>
+      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y3a2/Y3massmaps">Mass maps</a>: Mass maps reconstructed from weak lensing signal</p>
+      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y3a2/Y3mard">X-ray clusters</a>: X-ray clusters</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/gal-morphology">Morphology catalogs</a>: Several galaxy morphology catalogs
         <span style="color: rgb(255,0,0);"> </span>
       </p>
       <p style="text-align: left;">
@@ -108,37 +111,53 @@
               <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract">Sevilla et al. (2021)</a>
             </td>
           </tr>
-          <!--tr>
-            <td>Y1A1 Gold</td>
-            <td>Morphological Catalog</td>
-            <td>
-                 <a href="[[rootPath]]releases/y1a1/gold/morphology">Morphological Catalogs</a>
-            </td>
-            <td>
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/morph_catalogs/">Link</a>
-            </td>
-            <td>
-              <a href="http://adsabs.harvard.edu/doi/10.1093/mnras/sty1970">Tarsitano et al. (2018)</a>
-            </td>
-          </tr-->
-          <!--tr>
-            <td>Y1A1 Gold</td>
-            <td>Star/Galaxy Separation</td>
-            <td>
-                <a href="[[rootPath]]releases/y1a1/gold/classification">Star-Galaxy Separation</a>
-            </td>
-            <td>
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/sgsep_catalogs/">Link</a>
-            </td>
-            <td>
-              <a href="http://adsabs.harvard.edu/abs/2018arXiv180502427S">Sevilla-Noarbe et al. (2018)</a>
-            </td>
-          </tr-->
           <tr>
             <td colspan="1">Y3A2 Gold</td>
-            <td colspan="1">Footprint/Mask</td>
+            <td colspan="1">Footprint</td>
             <td colspan="1">
-              <a href="[[rootPath]]releases/y3a2/gold/footprint">Footprint/Depth</a>
+              <a href="[[rootPath]]releases/y3a2/gold/Y3footprint">Footprint</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/masks_maps/">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract">Sevilla et al. (2021)</a>
+            </td>
+	  </tr>
+          <tr>
+
+            <td colspan="1">Y3A2 Gold</td>
+            <td colspan="1">Depth</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y3a2/gold/Y3depth">Depth</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/masks_maps/">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract">Sevilla et al. (2021)</a>
+            </td>
+          </tr>
+          <tr>
+
+            <td colspan="1">Y3A2 Gold</td>
+	    <td colspan="1">Badregions</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y3a2/gold/Y3badregions">Bad Regions</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/masks_maps/">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract">Sevilla et al. (2021)</a>
+            </td>
+	  </tr>
+          <tr>
+
+            <td colspan="1">Y3A2 Gold</td>
+            <td colspan="1">Foregrounds</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y3a2/gold/Y3foregrounds">Depth</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/masks_maps/">Link</a>
@@ -151,7 +170,7 @@
             <td colspan="1">Y3A2 Gold</td>
             <td colspan="1">Observing Conditions</td>
             <td colspan="1">
-                <a href="[[rootPath]]releases/y3a2/gold/systematics">Observing Conditions</a>
+                <a href="[[rootPath]]releases/y3a2/gold/Y3systematics">Observing Conditions</a>
             </td>
             <td colspan="1">
               <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/systematic_maps/">Link</a>
@@ -179,137 +198,37 @@
           </tr>
           <tr>
             <td colspan="1">Y3KP catalogs</td>
-            <td colspan="1">Multi-Object-Fitting Photometry</td>
+            <td colspan="1">3x2pt Source Catalogs</td>
             <td colspan="1">
-              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">Link</a>
+              <a href="[[rootPath]]releases/y3a2/Y3key-catalogs">Y3 Key Catalogs</a>
             </td>
             <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mof_catalogs">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/y3kp_catalogs">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">Drlica-Wagner et al. (2018)</a>
+              <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">REF</a>
             </td>
           </tr>
           <tr>
-            <td colspan="1">Y1KP catalogs</td>
-            <td colspan="1">Shape Catalogs</td>
-            <td colspan="1">
-              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-shape">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://adsabs.harvard.edu/abs/2018MNRAS.tmp.2129Z">Zuntz &amp; Sheldon et al. (2018)</a>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">Y1KP catalogs</td>
-            <td colspan="1">PSF Catalog</td>
-            <td colspan="1">
-              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-psf">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/psf_catalogs/">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://adsabs.harvard.edu/abs/2018MNRAS.tmp.2129Z">Zuntz &amp; Sheldon et al. (2018)</a>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">Y1KP catalogs</td>
-            <td colspan="1">redMaPPer Catalogs</td>
-            <td colspan="1">To be released</td>
-            <td colspan="1">To be released</td>
-            <td colspan="1">
-              <a href="http://adsabs.harvard.edu/abs/2018arXiv180500039M">McClintock &amp; Varga et al. (2018)</a>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">Y1KP catalogs</td>
-            <td colspan="1">redMaGiC Catalogs</td>
-            <td colspan="1">
-              <a href="[[rootPath]]releases/y1a1/key-catalogs/key-redmagic">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01536">Elvin-Poole et al. (2018)</a>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">Y1KP catalogs</td>
-            <td colspan="1">Photometric Redshift Catalog</td>
-            <td colspan="1"><a href="[[rootPath]]releases/y1a1/key-catalogs/key-photoz">Link</a></td>
-            <td colspan="1"><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/photoz_catalogs/">Link</a></td>
-            <td colspan="1">
-              <a href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H">Hoyle &amp; Gruen et al. (2018)</a>
-            </td>
-          </tr>
-          <tr>
-            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
-              <br/>
-            </td>
-            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
-              <br/>
-            </td>
-            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
-              <br/>
-            </td>
-            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
-              <br/>
-            </td>
-            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
-              <br/>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">Y1A1 Key Project</td>
+            <td colspan="1">Y3A2 Key Project</td>
             <td colspan="1">Data Vectors</td>
-            <td colspan="1"><a href="[[rootPath]]releases/y1a1/key-products">Link</a></td>
-            <td colspan="1"><a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/2pt_NG_mcal_1110.fits">Link</a></td>
+            <td colspan="1"><a href="[[rootPath]]releases/y3a2/Y3key-products">Link</a></td>
+            <td colspan="1"><a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/">Link</a></td>
             <td colspan="1">
-              <a href="http://adsabs.harvard.edu/abs/2017arXiv170801530D">DES Collaboration (2018)</a>
+              <a href="http://adsabs.harvard.edu/abs/2017arXiv170801530D">REF</a>
             </td>
           </tr>
           <tr>
-            <td colspan="1">Y1A1 Key Project</td>
-            <td colspan="1">Redshift Distributions in Tomographic Bins</td>
-            <td colspan="1">
-              <a href="[[rootPath]]releases/y1a1/key-products">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://adsabs.harvard.edu/abs/2017arXiv170801530D">DES Collaboration (2018)</a>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">Y1A1 Key Project</td>
+            <td colspan="1">Y3A2 Key Project</td>
             <td colspan="1">Likelihoods/Chains</td>
             <td colspan="1">
-              <a href="[[rootPath]]releases/y1a1/key-products">Link</a>
+              <a href="[[rootPath]]releases/y3a2/Y3key-products">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/chains/">Link</a>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/">Link</a>
             </td>
             <td colspan="1">
-              <a href="http://adsabs.harvard.edu/abs/2017arXiv170801530D">DES Collaboration (2018)</a>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">Y1A1 Key Project</td>
-            <td colspan="1">Mass Maps</td>
-            <td colspan="1">
-              <a href="[[rootPath]]releases/y1a1/key-products">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/">Link</a>
-            </td>
-            <td colspan="1">
-              <a href="http://adsabs.harvard.edu/abs/2018MNRAS.475.3165C">Chang et al. (2018)</a>
+              <a href="http://adsabs.harvard.edu/abs/2017arXiv170801530D">REF</a>
             </td>
           </tr>
           <tr>
