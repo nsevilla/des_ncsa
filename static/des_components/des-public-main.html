@@ -302,7 +302,6 @@
 
               </app-submenu>
 
-
               <!-- SN -->
 
               <app-submenu no-auto-close>
@@ -437,6 +436,12 @@
                   <a class="app-menu-item" id="needindent" name="paper-data" href="[[rootPath]]releases/other/paper-data">Ancillary paper data</a>
                 </div>
                 </app-submenu>
+                
+		<app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="y1-dmass" href="[[rootPath]]releases/other/y1-dmass" >Y1 DMASS</a>
+                </div>
+                </app-submenu>
 
                   <app-submenu no-auto-close>
                 <div class="app-menu-item" slot="submenu-trigger">
@@ -562,6 +567,7 @@
 
            <!-- Other Releases -->
               <des-other name="other"></des-other>
+              <des-y1-dmass name="y1-dmass"></des-y1-dmass>
               <des-y3-rrl name="y3-rrl"></des-y3-rrl>
               <des-y3-mlt name="y3-mlt"></des-y3-mlt>
               <des-y3-lt-widebinaries name="y3-lt-widebinaries"></des-y3-lt-widebinaries>
