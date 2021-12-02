@@ -1,0 +1,398 @@
+<dom-module id="des-y3a2-deepfields">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+<!--ul>
+  <li><a href="deepoverview">Overview</a></li>
+  <li><a href="#images">Images</a></li>
+  <li><a href="#photometry">Photometry</a></li>
+  <li><a href="#photoz">Photometric redshifts</a></li>
+</ul-->
+
+
+<des-card heading="DES Deep Fields Y3 data">
+
+<div class="card-content">
+
+<a id="overview"><h2><strong>Overview</strong></h2></a>
+
+<p> The DES Deep Fields are described in <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> </p>
+
+<p>The DES Deep Fields comprise the set of fields where the integrated exposure time per pixel in the four key DECam passbands (griz) is approximately ten times that of the main DES survey area or greater. For the DES Y3 cosmology analysis we built images in the ten supernova (SN) fields and the COSMOS field, combining DES exposures and community data. Names of the SN pointings are derived from the respective pre-cursor surveys in that region of the sky, CDFS (SN-C1, SN-C2, SN-C3), Elais-South (SN-E1, SN-E2), XXXX????? (SN-S1, SN-S2) and XMM-LSS (SN-X1, SN-X2, SN-X3). The sky locations and footprints of the eleven fields are shown in the figure below. Filled rectangles correspond to the DECam chips that are used to produce our photometric catalogue.</p>
+
+<img src="{{rootPath}}static/images/y3a2/deep_fig1.png" width=1200 height=800>
+
+<p>Images in the SN fields were built to serve a variety of science use cases and thus we constructed images with three different choices for the trade-off between depth and seeing FWHM. These choices, or depth levels, are referred to as,</p>
+
+<ul>
+  <li> Single-epoch truth (SE_TRUTH): target effective exposure time of 10x one nominal DES main survey exposure.</li>
+  <li> Coadd truth (COADD_TRUTH): target effective exposure time of 10x the average integrated per pixel exposure time in the main DES survey.</li>
+  <li> Deepest (DEEPEST): all exposures deemed useful were included in the relevant coadded image.</li>
+</ul>
+
+<p>The following figure shows these different depth levels for a fraction of a DECam chip.</p>
+
+<img src="{{rootPath}}static/images/y3a2/X3_C55_colour_figure_reduce.png" width=1200 height=400>
+
+<p>Where possible, images were built for each of the six DECam broad-band filters with the following exceptions:</p>
+
+<ul>
+  <li> Owing to a generally smaller number of longer exposures, only a single depth level was built for the COSMOS field. It is labelled as COADD_TRUTH.</li>
+  <li> We did not build u or Y-band images at SE_TRUTH depth level.</li>
+  <li> There are no Y-band images for SN-E1, SN-E2, SN-S1, SN-S2.</li>
+  <li> Chips 02 (in most cases) and 62 are missing, chip 3XXX is only half-sized due to a faulty amplifierXXXXXXXX.</li>
+</ul>
+
+<p>For the DES Y3 cosmology analysis we chose those fields that had data available both from DECam (ugriz bands) and from public VISTA VIRCam imaging (JHKs) at the time of data assembly. The result is an 8-band photometric catalogue covering 5.88 sq. deg., after masking. This catalogue is based on the COADD_TRUTH depth level of images and enables the computation of photometric redshifts and a star-galaxy classification - see <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> for details.</p>
+
+<p>The contents of this release are as follows:</p>
+<ul>
+  <li>Coadded science images, pixel masks and weight maps at three depth levels (SN fields), or single depth level (COSMOS).</li>
+  <li>8-band photometric catalogue covering 5.88 sq. deg..</li>
+  <li>kNN-based star-galaxy classifications</li>
+  <li>Photometric redshift catalogues from EAzY and DNF.</li>
+</ul>
+
+<a id="images"><h2><strong>Images</strong></h2></a>
+
+<p>
+Image files are compressed with fpack and one file is provided for each coadded DECam chip image and depth level (SE_TRUTH, COADD_TRUTH, DEEPEST). The structure of each multi-extension fits file is as follows:
+<list>
+  <li>Extension 0: science image</li>
+  <li>Extension 1: mask</li>
+  <li>Extension 2: weight map</li>
+</list>
+</p>
+
+<p>
+  Directory structure is depth first, followed by field name. Images for all chips and all bands for a given depth and field are contained in a single directory.
+
+  <list>
+    <li>--link to SE_TRUTH directory--</li>
+    <li>--link to COADD_TRUTH directory--</li>
+    <li>--link to DEEPEST directory--</li>
+  </list>
+</p>
+
+<p>
+  File naming convention follows the pattern, [field name]_[chip number]_[depth level]_[band].fits.fz <br>
+  e.g. The COADD_TRUTH-depth z-band image for chip number 19 in the X3 supernova field has the path:<br>
+  COADD_TRUTH/SN_X3/SN-X3_C19_COADD_TRUTH_z.fits.fz
+</p>
+
+<p> The following table from <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> describes the integrated exposure time, seeing FWHM and 10-sigma depth in 2-arcsec apertures for each combination of field and depth level.</p>
+
+<img src="{{rootPath}}static/images/y3a2/table_deep.png" width=1200 height=600>
+
+
+</br>
+<a id="photometry"><h2><strong> Key Project Catalogue</strong></h2></a>
+
+<p>The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available as a database table, willhartley.Y3_DEEP_FIELDS_PHOTOM, via [[[link to the db server]]].</p>
+
+<p>HERE, AND BELOW, COULD DO WITH AN EXAMPLE QUERY TO GRAB A SORT OF "STANDARD" PRODUCT.</P>
+
+<table>
+<tr>
+<th>Column </th><th>Units </th><th>Description </th><th>Number of Columns </th>
+</tr>
+<tr>
+<td> BADPIX_FRAC  </td><td>  -  </td><td>  Fraction of pixels in the fitting region labelled as bad (DECam)  </td><td>1</td>
+</tr>
+<tr>
+<td> BADPIX_FRAC_NIR  </td><td>  -  </td><td>  Fraction of pixels in the fitting region labelled as bad (VIRCam)  </td><td>1</td>
+</tr>
+<tr>
+<td> BDF_FLUX_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Bulge+Disk model flux with field-to-field calibration offset applied  </td><td>8</td>
+</tr>
+<tr>
+<td> BDF_FLUX_DERED_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Bulge+Disk model flux with Galactic reddening correction and field-to-field calibration offset applied  </td><td>8</td></tr>
+<tr>
+<td> BDF_FLUX_DERED_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Bulge+Disk model flux with Galactic reddening correction applied  </td><td>8</td>
+</tr>
+<tr>
+<td> BDF_FLUX_ERR_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Bulge+Disk model flux uncertainty with field-to-field calibration offset applied  </td><td>8</td>
+</tr>
+<tr>
+<td> BDF_FLUX_ERR_DERED_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Bulge+Disk model flux uncertainty with Galactic reddening correction and field-to-field calibration offset applied</td><td>8</td></tr>
+<tr>
+<td> BDF_FLUX_ERR_DERED_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Bulge+Disk model flux uncertainty with Galactic reddening correction applied  </td><td>8</td>
+</tr>
+<tr>
+<td> BDF_FLUX_ERR_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Bulge+Disk model flux uncertainty (uncorrected) </td><td>8</td>
+</tr>
+<tr>
+<td> BDF_FLUX_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Bulge+Disk model flux (uncorrected) </td><td>8</td>
+</tr>
+<tr>
+<td> BDF_FRACDEV  </td><td>  -  </td><td>  Fraction of light in the de Vaucouleurs's component of the Bulge+Disk model  </td><td>1</td>
+</tr>
+<tr>
+<td> BDF_FRACDEV_ERR  </td><td>  -  </td><td>  Uncertainty on the fraction of light in the de Vaucouleurs's component of the Bulge+Disk model  </td><td>1</td>
+</tr>
+<tr>
+<td> BDF_G_0  </td><td>  -  </td><td>  Elliptical deformation matrix parameter for Bulge+Disk model, component 0  </td><td>1</td>
+</tr>
+<tr>
+<td> BDF_G_1  </td><td>  -  </td><td>  Elliptical deformation matrix parameter for Bulge+Disk model, component 1  </td><td>1</td>
+</tr>
+<tr>
+<td> BDF_MAG_DERED_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  AB mag  </td><td>  Bulge+Disk model magnitude with field-to-field calibration offset and Galactic reddening correction applied  </td><td>8</td></tr>
+<tr>
+<td> BDF_MAG_DERED_{U,G,R,I,Z,J,H,KS}  </td><td>  AB mag  </td><td>  Bulge+Disk model magnitude with Galactic reddening correction applied  </td><td>8</td>
+</tr>
+<tr>
+<td> BDF_MAG_ERR_DERED_{U,G,R,I,Z,J,H,KS}  </td><td>  AB mag  </td><td>  Bulge+Disk model magnitude uncertainty with Galactic reddening correction applied  </td><td>8</td>
+</tr>
+<tr>
+<td> BDF_MAG_{U,G,R,I,Z,J,H,KS}  </td><td>  AB mag  </td><td>  Bulge+Disk model magnitude (uncorrected) </td><td>8</td>
+</tr>
+<tr>
+<td> BDF_T  </td><td>  arcsec<sup>2</sup>  </td><td>  Bulge+Disk model size  </td><td>1</td>
+</tr>
+<tr>
+<td> BDF_T_ERR  </td><td>  arcsec<sup>2</sup>  </td><td>  Bulge+Disk model size uncertainty  </td><td>1</td>
+</tr>
+<tr>
+<td> BDF_T_RATIO  </td><td>  -  </td><td>  Ratio of pre-seeing Bulge+Disk model size to PSF model size  </td><td>1</td>
+</tr>
+<tr>
+<td> DEC  </td><td>  Degrees  </td><td>  J2000  </td><td>1</td>
+</tr>
+<tr>
+<td> EBV_SFD98  </td><td>  -  </td><td>  Galactic reddening colour excess computed from the Schlegel, Finkbeiner and Davis (1998) dust map  </td><td>1</td>
+</tr>
+<tr>
+<td> FLAGS  </td><td>  -  </td><td>  Flag identifier for DECam data  </td><td>1</td>
+</tr>
+<tr>
+<td> FLAGSTR  </td><td>  -  </td><td>  Flag information string for DECam data  </td><td>1</td>
+</tr>
+<tr>
+<td> FLAGSTR_NIR  </td><td>  -  </td><td>  Flag information string for VIRCam data  </td><td>1</td>
+</tr>
+<tr>
+<td> FLAGS_NIR  </td><td>  -  </td><td>  Flag identifier for VIRCam data  </td><td>1</td>
+</tr>
+<tr>
+<td> FOF_ID  </td><td>  -  </td><td>  Friends-of-friends group ID number  </td><td>1</td>
+</tr>
+<tr>
+<td> FOF_SIZE  </td><td>  -  </td><td>  Number of objects in freinds-of-friends group  </td><td>1</td>
+</tr>
+<tr>
+<td> GAP_FLUX_ERR_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Analytic Gaussian aperture flux uncertainty (uncorrected) </td><td>8</td>
+</tr>
+<tr>
+<td> GAP_FLUX_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  Analytic Gaussian aperture flux (uncorrected) </td><td>8</td>
+</tr>
+<tr>
+<td> ID  </td><td>  -  </td><td>  Deep Fields Y3 ID number  </td><td>1</td>
+</tr>
+<tr>
+<td> KNN_CLASS  </td><td>  -  </td><td>  kNN-based star / galaxy classifcation; 0 - No class (bands missing), 1 - Galaxy , 2 - Star, 3 - Ambiguous  </td><td>1</td>
+</tr>
+<tr>
+<td> MASK_FLAGS  </td><td>  -  </td><td>  Flag containing mask information for DECam data: Unmasked sources=0  </td><td>1</td>
+</tr>
+<tr>
+<td> MASK_FLAGS_NIR  </td><td>  -  </td><td>  Flag containing mask information for VIRCam data: Unmasked sources=0  </td><td>1</td>
+</tr>
+<tr>
+<td> PSF_FLUX_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  PSF model flux with field-to-field calibration offset applied  </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_FLUX_DERED_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  PSF model flux with Galactic reddening correction and field-to-field calibration offset applied  </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_FLUX_DERED_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  PSF model flux with Galactic reddening correction applied  </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_FLUX_ERR_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  PSF model flux uncertainty with field-to-field calibration offset applied  </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_FLUX_ERR_DERED_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  PSF model flux uncertainty with Galactic reddening correction and field-to-field calibration offset applied  </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_FLUX_ERR_DERED_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  PSF model flux uncertainty with field-to-field calibration offset applied  </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_FLUX_ERR_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  PSF model flux uncertainty (uncorrected) </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_FLUX_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  PSF model flux (uncorrected) </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_G_0  </td><td>  -  </td><td>  Elliptical deformation matrix parameter for PSF model, component 0  </td><td>1</td>
+</tr>
+<tr>
+<td> PSF_G_1  </td><td>  -  </td><td>  Elliptical deformation matrix parameter for PSF model, component 1  </td><td>1</td>
+</tr>
+<tr>
+<td> PSF_MAG_DERED_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  AB mag  </td><td>  PSF model magnitude with Galactic reddening correction and field-to-field calibration offset applied  </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_MAG_DERED_{U,G,R,I,Z,J,H,KS}  </td><td>  AB mag  </td><td>  PSF model magnitude with Galactic reddening correction applied  </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_MAG_ERR_DERED_{U,G,R,I,Z,J,H,KS}  </td><td>  AB mag  </td><td>  PSF model magnitude uncertainty with Galactic reddening correction applied  </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_MAG_{U,G,R,I,Z,J,H,KS}  </td><td>  AB mag  </td><td>  PSF model magnitude (uncorrected) </td><td>8</td>
+</tr>
+<tr>
+<td> PSF_T  </td><td>  arcsec<sup>2</sup>  </td><td>  PSF size  </td><td>1</td>
+</tr>
+<tr>
+<td> RA  </td><td>  Degrees  </td><td>  J2000  </td><td>1</td>
+</tr>
+<tr>
+<td> TILENAME  </td><td>  -  </td><td>  Field name and chip number  </td><td>1</td>
+</tr>
+</table>
+
+<a id="photoz"><h2><strong>Photometric redshifts</strong></h2></a>
+
+<p>Photometric redshifts for the key project catalogue have been computed using the EAzY template-ftting software and DNF machine learning algorthim. They are available as separate database tables,  willhartley.Y3_DEEP_FIELDS_PHOTOZ for EAZY and [[[[table DNF]]]] for DNF, via [[[link to the db server]]].</p>
+
+<h4>willhartley.Y3_DEEP_FIELDS_PHOTOZ (EAZY)</h4>
+
+<table>
+<tr>
+<th>Column </th><th> Description </th><th> Number of columns </th>
+</tr>
+<tr>
+<td>    BDF_MAG_DERED_CALIB_R  </td><td>   Corrected model magnitude in r-band (AB), used for the redshift prior </td><td>1</td>
+</tr>
+<tr>
+<td>                    CHI_A  </td><td>   Chi-squared value at the maximum likelihood redshift </td><td>1</td>
+</tr>
+<tr>
+<td>                    CHI_P  </td><td>   Chi-squared value at the maximum a posteriori solution </td><td>1</td>
+</tr>
+<tr>
+<td>                      DEC  </td><td>   Object declination, J2000 (degrees) </td><td>1</td>
+</tr>
+<tr>
+<td>                    FLAGS  </td><td>   DECam flag identifier value, copied from photometry table </td><td>1</td>
+</tr>
+<tr>
+<td>                       ID  </td><td>   Deep Fields Y3 ID number  </td><td>1</td>
+</tr>
+<tr>
+<td>                      L68  </td><td>   Lower redshift limit of the central 68th percentile range </td><td>1</td>
+</tr>
+<tr>
+<td>                      L95  </td><td>   Lower redshift limit of the central 95th percentile range </td><td>1</td>
+</tr>
+<tr>
+<td>                     L99   </td><td>   Lower redshift limit of the central 9th percentile range </td><td>1</td>
+</tr>
+<tr>
+<td>              MASK_FLAGS   </td><td>  Flag containing mask information for DECam data: Unmasked sources=0 </td><td>1</td>
+</tr>
+<tr>
+<td>                   NFILT   </td><td>   Number of filters used in the fit </td><td>1</td>
+</tr>
+<tr>
+<td>                    ODDS   </td><td>   Odds of Z_P, the integrated probability within dz=0.2 of Z_P </td><td>1</td>
+</tr>
+<tr>
+<td>                 PDZ_XXX   </td><td>   Posterior probability at redshift, z=X.XX </td><td>800</td>
+</tr>
+<tr>
+<td>              PEAK_PROB   </td><td>  Integrated probability of the most probable posterior redshift peak </td><td>1</td>
+</tr>
+<tr>
+<td>                    Q_Z   </td><td>  Redshift quality indicator: reduced chi-squared multiplied by odds-scaled 3-sigma range (see EAzY code) </td><td>1</td>
+</tr>
+<tr>
+<td>                     RA   </td><td>  Object Right Ascension, J2000 (degrees) </td><td>1</td>
+</tr>
+<tr>
+<td>                    U68   </td><td>  Upper redshift limit of the central 68th percentile range </td><td>1</td>
+</tr>
+<tr>
+<td>                    U95   </td><td>  Upper redshift limit of the central 95th percentile range </td><td>1</td>
+</tr>
+<tr>
+<td>                    U99   </td><td>  Upper redshift limit of the central 99th percentile range </td><td>1</td>
+</tr>
+<tr>
+<td>                    Z_A   </td><td>  Maximum likelihood redshift value </td><td>1</td>
+</tr>
+<tr>
+<td>                   Z_M1   </td><td>  Mean of the redshift likelihood distribution </td><td>1</td>
+</tr>
+<tr>
+<td>                   Z_M2   </td><td>  Mean of the posterior redshift distribution  </td><td>1</td>
+</tr>
+<tr>
+<td>                   Z_MC   </td><td>  A random draw from the posterior redshift probability distribution </td><td>1</td>
+</tr>
+<tr>
+<td>                    Z_P   </td><td>  Maximum a posteriori redshift </td><td>1</td>
+</tr>
+<tr>
+<td>                 Z_PEAK   </td><td>  Mean redshift of the most probable posterior redshift peak </td><td>1</td>
+</tr>
+</table>
+
+<h4>Y3_DEEP_FIELDS_PHOTOZ_DNF (DNF)</h4>
+<table>
+<tr>
+<th>Column </th><th> Description </th><th> Number of columns </th>
+</tr>
+<tr>
+<td> ID                     </td><td> Deep Fields Y3 ID number  </td><td>1</td>
+</tr>
+<tr>
+<td> RA                     </td><td> Object Right Ascension, J2000 (degrees)  </td><td>1</td>
+</tr>
+<tr>
+<td> DEC                     </td><td>Object declination, J2000 (degrees)   </td><td>1</td>
+</tr>
+<tr>
+<td>     DNF_Z                 </td><td>Main point redshift estimated from DNF_NUM_NN photometric neighbor galaxies   </td><td>1</td>
+</tr>
+<tr>
+<td>         DNF_Z1             </td><td>Secondary point redshift estimated from 1 neighbor galaxy. Useful for n(z) estimation   </td><td>1</td>
+</tr>
+<tr>
+<td> DNF_ZSIGMA                     </td><td> DNF_Z error estimation  </td><td>1</td>
+</tr>
+<tr>
+<td>     DNF_D1                 </td><td>  Photometric angular distance to nearest neighbor galaxy </td><td>1</td>
+</tr>
+<tr>
+<td>          DNF_DE1            </td><td> Photometric euclidean distance to nearest neighbor galaxy  </td><td>1</td>
+</tr>
+<tr>
+<td>          DNF_ID1            </td><td> ID of the nearest neighbor galaxy  </td><td>1</td>
+</tr>
+<tr>
+<td>           DNF_NUM_NN           </td><td> Number of photometric nearest neighbor galaxies used for DNF_Z computation  </td><td>1</td>
+</tr>
+<tr>
+<td>          DNF_USED_FILTERS            </td><td>Number of filters available for DNF_Z computation   </td><td>1</td>
+</tr>
+</table>
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY3A2Deepfields extends Polymer.Element {
+      static get is() { return 'des-y3a2-deepfields'; }
+    }
+    window.customElements.define(DesY3A2Deepfields.is, DesY3A2Deepfields);
+  </script>
+
+</dom-module>

@@ -1,0 +1,228 @@
+<dom-module id="des-y3a2-mard">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="The MARD-Y3 catalog of X-ray selected galaxy clusters ">
+<div class="card-content">
+
+  <h2>
+    <strong>Overview</strong>
+  </h2>
+
+  <p>The MARD-Y3 catalog consists of clusters initially detected in the ROSAT All Sky Survey (RASS) and confirmed by multicomponent matched filter cluster confirmation tool (<a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.488..739K/abstract">MCMF, Klein+19</a>) using DES-Y3 data.</p>
+  <p>The X-ray candidate list is drawn from the RASS based 2RXS catalog (<a href="https://ui.adsabs.harvard.edu/abs/2016A%26A...588A.103B/abstract">Boller+16</a>) and MCMF is run on all candidates (e.g. no selection on source extend). Only ~10% of the 2RXS candidates are expected to be galaxy clusters, other sources, such as AGN or stars and even false detection are more frequent. MCMF allows to identify 1000-2000 clusters from initially 20,000 candidates. The estimator f_cont provides the expected fractional contamination of the catalog when selected  on f_cont (e.g. select f_cont &lt;=0.1 to obtain a ~10% contaminated sample).</p>
+  <p>Remaining contamination can be further reduced when we exclude NWAY (<a href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.473.4937S/abstract">Salvato+18</a>) based 2RXSxWISE matches that show a X-ray mass that is 2 sigma too high compared to the mean lambda mass relation.</p>
+
+  <h2>
+    <strong>Reference</strong>
+  </h2>
+
+  <p>The paper describing the catalog is <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.488..739K/abstract">A new RASS galaxy cluster catalogue with low contamination extending to z~1 in the DES overlap region (Klein+19)</a></p>
+
+  <p><strong>Abstract:</strong></p>
+
+  <p>We present the MARD-Y3 catalogue of between 1086 and 2171 galaxy clusters (52 per cent and 65 per cent new) produced using multicomponent matched filter (MCMF) follow-up in 5000 deg2 of DES-Y3 optical data of the 20000 overlapping ROSAT All-Sky Survey source catalogue (2RXS) X-ray sources. Optical counterparts are identified as peaks in galaxy richness as a function of redshift along the line of sight towards each 2RXS source within a search region informed by an X-ray prior. All peaks are assigned a probability fcont of being a random superposition. The clusters lie at 0.02 &lt; z &lt; 1.1 with more than 100 clusters at z &gt; 0.5. Residual contamination is 2.6 per cent and 9.6 per cent for the cuts adopted here. For each cluster we present the optical centre, redshift, rest frame X-ray luminosity, M500 mass, coincidence with NWAY infrared sources, and estimators of dynamical state. About 2 per cent of MARD-Y3 clusters have multiple possible counterparts, the photo-z's are high quality with σ∆z/(1 + z) = 0.0046, and 1 per cent of clusters exhibit evidence of X-ray luminosity boosting from emission by cluster active galactic nuclei. Comparison with other catalogues (MCXC, RM, SPT-SZ, Planck) is performed to test consistency of richness, luminosity, and mass estimates. We measure the MARD-Y3 X-ray luminosity function and compare it to the expectation from a fiducial cosmology and externally calibrated luminosity- and richness-mass relations. Agreement is good, providing evidence that MARD-Y3 has low contamination and can be understood as a simple two step selection - X-ray and then optical - of an underlying cluster population described by the halo mass function.</p>
+
+ <div style="text-align: center">
+        <iron-image style="width:637px; height:337px; padding:40px;" sizing="contain"
+                src="{{rootPath}}static/images/y3a2/image2019-7-22_17-53-12.jpeg"></iron-image>
+            </div>
+<h2>
+    <strong>Catalog usage and cautionary notes:</strong>
+  </h2>
+  <p>The catalog provided here is pre-selected to <strong>f_cont_LFCR&lt;=0.2</strong>. Depending on the users science goals a stricter cut is suggested. The 2RXS source catalog from which MARD-Y3 is drawn from has the "feature" that in some cases (e.g. nearby resolved galaxy clusters) it detects the same source multiple times with slightly different centres. 2RXS does not perform deblendingso count rates etc. are not affected. The MARD-Y3 catalog provides the column MULTIPLE_FLAG, that marks those multiple detections (value=1) and just leaves one source unfledged. If it is desirable to avoid multiple detections for the anticipated project please select <strong>MULTIPLE_FLAG=0</strong>. Salvato+18 produced a catalog of WISE counterparts to 2RXS sources using NWAY. Having a single WISE match is not equal being AGN or Star, but not having a WISE match is a good indication that the 2RXS might be a cluster. We used the X-ray "mass" to richness "mass" relation found non-matches in WISE to define outliers in thecorresponding relation with WISE matches. Selecting <strong>D_SIG_LFCR&lt;2</strong>, excludes cluster candidates with WISE match that show an X-ray based mass that is &gt;2 sigma from the mean scaling relation (note D_SIG_LFCR is only calculated for WISE matches). Using <strong>this cut reduces the contamination by ~40%</strong> compared to the chosen f_cont cut. For some example cuts please look at table 1 in Klein+19. In ~1-2% of the cluster there is at least a second reasonable counter part present. You can identify them using DFC_LFCR, the difference between lowest and second lowest f_cont value for a given X-ray candidate. If the difference is small (eq. &lt;0.05) then you have as second good optical counter part and likely both contribute to the X-ray detection. This is also the main reason for redshift miss matches between MARD-Y3 and literature values.</p>
+  <p>This catalog is a "light" version of the catalog. If additional columns (e.g. dynamical sate estimators) are needed, please contact the first author.</p>
+
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>The catalog can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/mard/">here</a>, as well as in <a href="https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/488/739#/browse">CDS</a>. </p>
+
+  <h2>
+    <strong>Description of the Catalog<br/>
+    </strong>
+  </h2>
+  <h4>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/mard/mard-y3.dat.gz">mard-y3.dat.gz</a>
+  </h4>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>Column Name</p>
+        </th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">NAME</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">[+-.0123456789ADJMR]<br/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">RA_DEG/DEC_DEG</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">X-ray position from 2RXS</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">EXPOSURE</td>
+        <td colspan="1">RASS exposure time</td>
+      </tr>
+      <tr>
+        <td colspan="1">CTS</td>
+        <td colspan="1">X-ray source counts</td>
+      </tr>
+      <tr>
+        <td colspan="1">CERR</td>
+        <td colspan="1">
+          <p>error on counts</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">RATE</td>
+        <td colspan="1">X-ray count rate</td>
+      </tr>
+      <tr>
+        <td colspan="1">ERATE</td>
+        <td colspan="1">
+          <p>error on the rate</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">EXT</td>
+        <td colspan="1">X-ray extend [PIX]</td>
+      </tr>
+      <tr>
+        <td colspan="1">EXTERR</td>
+        <td colspan="1">error on extend</td>
+      </tr>
+      <tr>
+        <td colspan="1">EXT_ML</td>
+        <td colspan="1">Extend likelihood</td>
+      </tr>
+      <tr>
+        <td colspan="1">EXI_ML</td>
+        <td colspan="1">Existence likelihood</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_P1/Z_P2/Z_P3</td>
+        <td colspan="1">redshift P1, P2, P3</td>
+      </tr>
+      <tr>
+        <td colspan="1">LAMBDA_P1/LAMBDA_P2/LAMBDA_P3</td>
+        <td colspan="1">richness P1, P2, P3</td>
+      </tr>
+      <tr>
+        <td colspan="1">RA_P1/RA_P2/RA_P3</td>
+        <td colspan="1">optical right ascension P1, P2, P3</td>
+      </tr>
+      <tr>
+        <td colspan="1">DEC_P1/DEC_P2/DEC_P3</td>
+        <td colspan="1">optical declination P1, P2, P3</td>
+      </tr>
+      <tr>
+        <td colspan="1">MULTIPLE_FLAG</td>
+        <td colspan="1">1 for multiple detection in X-rays, 0 else</td>
+      </tr>
+      <tr>
+        <td colspan="1">LUM_P1_CORR/LUM_P2_CORR/LUM_P3_CORR</td>
+        <td colspan="1">corrected luminosity P1, P2, P3</td>
+      </tr>
+      <tr>
+        <td colspan="1">M500_P1_CORR/M500_P2_CORR/M500_P3_CORR</td>
+        <td colspan="1">corrected mass M_500 P1, P2, P3</td>
+      </tr>
+      <tr>
+        <td colspan="1">E_LAMBDA_P1/E_LAMBDA_P2/E_LAMBDA_P3</td>
+        <td colspan="1">error on richness P1, P2, P3</td>
+      </tr>
+      <tr>
+        <td colspan="1">E_LAMBDA_LFCR</td>
+        <td colspan="1">error on richness for best counter part</td>
+      </tr>
+      <tr>
+        <td colspan="1">LAMBDA_LFCR</td>
+        <td colspan="1">richness of best counter counter part</td>
+      </tr>
+      <tr>
+        <td colspan="1">F_CONT_R_P1/F_CONT_R_P2/F_CONT_R_P3</td>
+        <td colspan="1">f_cont for P1, P2, P3</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z_LFCR</td>
+        <td colspan="1">redshift of best counter part</td>
+      </tr>
+      <tr>
+        <td colspan="1">F_CONT_LFCR</td>
+        <td colspan="1">f_cont of best counter part</td>
+      </tr>
+      <tr>
+        <td colspan="1">LUM_LFCR</td>
+        <td colspan="1">(raw) luminosity of best counter part</td>
+      </tr>
+      <tr>
+        <td colspan="1">M500_LFCR_CORR</td>
+        <td colspan="1">corrected M500 of best counter part</td>
+      </tr>
+      <tr>
+        <td colspan="1">M500_LFCR</td>
+        <td colspan="1">(raw) M500 of best counter part</td>
+      </tr>
+      <tr>
+        <td colspan="1">LUM_LFCR_CORR</td>
+        <td colspan="1">corr. luminosity of best  counter part</td>
+      </tr>
+      <tr>
+        <td colspan="1">RA_LFCR/DEC_LFCR</td>
+        <td colspan="1">Optical position of best counter part</td>
+      </tr>
+      <tr>
+        <td colspan="1">D_SIG_LFCR</td>
+        <td colspan="1">Dist. from mean scaling for WISE matches</td>
+      </tr>
+      <tr>
+        <td colspan="1">DFC_LFCR</td>
+        <td colspan="1">Diff. lowest to sec. lo</td>
+      </tr>
+    </tbody>
+  </table>
+
+<h2>
+    <strong>Comparison to DES RedMaPPer:</strong>
+  </h2>
+
+
+  <p>In section A2 in <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.488..739K/abstract">Klein+19</a>, we compare RedMaPPer(RM) and MCMF in terms of redshifts, richness and centring. Summary is that we see good agreement between and similar performance of both methods.</p>
+
+  <p>We see a slight disagreement between MCMF and RM redshifts at z&lt;=0.1, but this is the RM lower limit and z&gt;0.2 is suggested for most work on RM clusters. There is a reasonable but scattered relation between lambda_RM and lambda_MCMF even for clusters that are likely not X-ray detected (Note: MCMF uses X-ray flux to define the aperture for counting galaxies).</p>
+  <p>Important to note is that MCMF is not using the same strict masks as RM does, causing the effective footprint to be a bit larger. Most RMxMCMF non matches are related to clusters within masked regions.</p>
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY3A2MARD extends Polymer.Element {
+      static get is() { return 'des-y3a2-mard'; }
+    }
+    window.customElements.define(DesY3A2MARD.is, DesY3A2MARD);
+  </script>
+
+</dom-module>

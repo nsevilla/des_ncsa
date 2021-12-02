@@ -1,0 +1,571 @@
+<dom-module id="des-y3a2-bao">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y3 BAO Data">
+<div class="card-content">
+
+  <h2>
+    <strong>Overview</strong>
+  </h2>
+  <p>In <a href="https://arxiv.org/abs/2107.04646">DES Collaboration (2021)</a> we present angular diameter measurements obtained by measuring the position of Baryon Acoustic Oscillations (BAO) in an optimised sample of galaxies from the first three years of Dark Energy Survey data (DES Y3).</p>
+  <!--ul-->
+    <!--li-->
+    <p>
+      <span class="MathJax">The sample contains more than 7 million galaxies distributed over a footprint of 4100 deg2 with 0.6&lt;redshift&lt;1.1 and a typical redshift uncertainty of 0.03(1+z) (<a href="https://arxiv.org/abs/2107.05477">Carnero Rosell et al., 2021</a>). The sample selection is defined using color and magnitude cuts, optimising the trade-offs between number density and redshift uncertainty. We correct by spurious clustering coming from more than 100 observing conditions maps obtained in Y3. </span>
+    </p>
+    <!--/li-->
+    <!--li-->
+    <!--/li-->
+    <!--li-->
+    <p>
+      <span class="MathJax">We validate our pipeline with an ensemble of realistic simulations. We created a set of 1952 mock catalogues of the Y3 BAO sample that reproduce with high accuracy the principal properties of the data: (i) the sample observational volume, (ii) the abundance of galaxies, true redshift distribution and photometric redshift uncertainty and (iii) the clustering as a function of redshift. (<a href="https://arxiv.org/abs/2107.04602">Ferrero et al., 2021</a>). </span>
+    <!--/li-->
+    </p>  
+    <!--span >We combine two different statistics: angular correlation function and angular power spectrum, after the confirmation that both statistics yielded compatible results. </span-->
+  <!--/ul-->
+  <p>
+    <span class="MathJax">We combine the likelihoods derived from angular correlations and spherical harmonics to constrain the ratio of comoving angular diameter distance, DM, at the effective redshift of zeff=0.835, to the sound horizon scale at the drag epoch. We find:</span>
+  </p>
+  <p>
+    <span class="MathJax">DM(zeff=0.835)/rd=18.92 +- 0.51<br/>
+    </span>
+  </p>
+  <p>Which is consistent with, but smaller than, the Planck prediction assuming flat LCDM, at the level of 2.3sigma. The likelihood is given below. The analysis was performed blind and is robust to changes in a number of analysis choices. It represents the most precise BAO distance measurement from imaging data to date, and is competitive with the latest transverse ones from spectroscopic samples at z>0.75.</p>
+  <p>Here we make public all the data products and catalogues used to derived those results.</p>
+  <h2>
+    <strong>References</strong>
+  </h2>
+  <ol>
+    <li>
+      <a href="https://arxiv.org/abs/2107.04646">DES Collaboration 2021</a>, ArXiv e-prints 2107.04646: main BAO paper</li>
+    <li>
+      <a href="https://arxiv.org/abs/2107.05477">Carnero Rosell et al, 2021</a>, ArXiv e-prints 2107.05477: sample selection</li>
+    <li>
+      <a href="https://arxiv.org/abs/2107.04602">Ferrero et al, 2021</a>, Arxiv e-prints 2107.04602: Cola mock catalogues</li>
+  </ol>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>All the products can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/">here</a>. </p>
+  <p>We provide: the galaxy catalogue, the footprint mask, the true redshift distributions dn/dz for the 5 baseline tomographic bins, 2 set of randoms (10 times larger than the BAO sample each), the data-vectors of the different observables (ACF and APS in 5 baseline tomographic bins, the full covariance matrix), and the final likelihood.</p>
+  <p>We also provide the 1952 Cola mocks (and associated randoms) used in the analysis.</p>
+  <h3>Catalogue, dn/dz and footprint</h3>
+  <ul>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_CATALOG.fits">DESY3_LSSBAO_CATALOG.fits</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_MASK_HPIX4096NEST.fits">DESY3_LSSBAO_MASK_HPIX4096NEST.fits</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_CALIBRATED_dNdZ/">DESY3_LSSBAO_CALIBRATED_dNdZ</a>
+    </li>
+  </ul>
+  <h3>Catalogue Randoms</h3>
+  <ul>
+  <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_RANDOMS_10x_1.fits.gz">DESY3_LSSBAO_RANDOMS_10x_1.fits.gz</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_RANDOMS_10x_2.fits.gz">DESY3_LSSBAO_RANDOMS_10x_2.fits.gz</a>
+    </li>
+  </ul>
+  <h3>Data Vectors and Likelihood</h3>
+  <ul>
+    <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/chi2profile_dvdesy3_cosmoplanck18_covcosmolike.csv">BAO sample Chi2</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/">Angular Correlation Functions w(th) and convariance</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/">Angular Power Spectrum and covariance</a>
+    </li>
+  </ul>
+  <h3>COLA Mocks</h3>
+  <ul>
+    <li>
+	<a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_COLAMOCKS/">DESY3_LSSBAO_COLAMOCKS</a>
+    </li>
+  </ul>
+  <h2>
+    <strong>Description of Catalogue, Randoms and Mask<br/>
+    </strong>
+  </h2>
+  <h4>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_CATALOG.fits">DESY3_LSSBAO_CATALOG.fits</a></h4>
+  <p>This is the BAO galaxy catalogue described in <span class="MathJax" style="letter-spacing: 0.0px;">
+      <a href="https://arxiv.org/abs/2107.05477">Carnero Rosell et al. (2021)</a>
+    </span>
+  </p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>Column Name</p>
+        </th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">COADD_OBJECT_ID</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Y3A2 unique object ID <br/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">RA/DEC</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Coordinates [degrees]</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">TILENAME</td>
+        <td colspan="1">Unique name of DES tile containing the object</td>
+      </tr>
+	<tr>
+        <td colspan="1">HPIX_4096</td>
+        <td colspan="1">Healpix index for NSIDE = 4096 in NEST schema for the object</td>
+      </tr>
+	<tr>
+        <td colspan="1">SOF_CM_MAG_CORRECTED_G,R,I,Z</td>
+        <td colspan="1">SOF corrected mag i.e. SOF_CM_MAG + DELTA_MAG_Y4 + DELTA_MAG_CHROM - A_SED_SFD98 </td>
+      </tr>
+	<tr>
+        <td colspan="1">SOF_CM_MAG_ERR_G,R,I,Z</td>
+        <td colspan="1">SOF mag error </td>
+      </tr>
+      <tr>
+        <td colspan="1">DNF_ZMEAN_SOF</td>
+        <td colspan="1">DNF photometric redshift best estimate</td>
+      </tr>
+      <tr>
+        <td colspan="1">DNF_ZMC_SOF</td>
+        <td colspan="1">DNF photo-z MC statistic (obtained from nearest neighbor) </td>
+      </tr>
+      <tr>
+        <td colspan="1">DNF_ZSIGMA_SOF</td>
+        <td colspan="1">DNF photo-z error (obtained from photometry of the source) </td>
+      </tr>
+
+      <tr>
+        <td colspan="1">WTOT</td>
+        <td colspan="1">Weights based on fits against relationships with observing conditions using ISD method</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>
+    <br/>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_MASK_HPIX4096NEST.fits">
+      DESY3_LSSBAO_MASK_HPIX4096NEST.fits</a>
+  </h4>
+  <p>This is the BAO sample mask, detailed in <span class="MathJax">
+	  <a href="https://arxiv.org/abs/2107.05477">Carnero Rosell et al. (2021)</a>
+    </span>. It is a Healpix map in order = NEST at nside = 4096. The map (SIGNAL) has as information the effective area per healpix pixel.</p>
+  <h4>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_CALIBRATED_dNdZ/">
+      DESY3_LSSBAO_CALIBRATED_dNdZ</a>
+  </h4>
+  <p>The redshift probability distributions for each of the 5 tomographic bins. Each file has three columns: the redshift, the estimated true redshift distribution from VIPERS (normalized) and the sample variance. These are detailed in  <span class="MathJax">
+      <a href="https://arxiv.org/abs/2107.05477">Carnero Rosell et al. (2021)</a>
+    </span>.</p>
+  <p>
+    <br/>
+  </p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>File Name</th>
+        <th>photo-z range</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_CALIBRATED_dNdZ/DESY3_LSSBAO_CALIBRATED_dNdZ_0.6_0.7.dat">DESY3_LSSBAO_CALIBRATED_dNdZ_0.6_0.7.dat</a>
+        </td>
+        <td colspan="1">0.6 &lt; photo-z &lt; 0.7<span style="color: rgb(0,0,0);">
+            <br/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_CALIBRATED_dNdZ/DESY3_LSSBAO_CALIBRATED_dNdZ_0.7_0.8.dat">DESY3_LSSBAO_CALIBRATED_dNdZ_0.7_0.8.dat</a>
+        </td>
+        <td colspan="1">0.7 &lt; photo-z &lt; 0.8</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_CALIBRATED_dNdZ/DESY3_LSSBAO_CALIBRATED_dNdZ_0.8_0.9.dat">DESY3_LSSBAO_CALIBRATED_dNdZ_0.8_0.9.dat</a>
+        </td>
+        <td colspan="1">0.8 &lt; photo-z &lt; 0.9</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_CALIBRATED_dNdZ/DESY3_LSSBAO_CALIBRATED_dNdZ_0.9_1.0.dat">DESY3_LSSBAO_CALIBRATED_dNdZ_0.9_1.0.dat</a>
+        </td>
+        <td colspan="1">0.9 &lt; photo-z &lt; 1.0</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_CALIBRATED_dNdZ/DESY3_LSSBAO_CALIBRATED_dNdZ_1.0_1.1.dat">DESY3_LSSBAO_CALIBRATED_dNdZ_1.0_1.1.dat</a>
+        </td>
+        <td colspan="1">1.0 &lt; photo-z &lt; 1.1</td>
+      </tr>
+
+    </tbody>
+  </table>
+  <h4>Catalogue Randoms</h4>
+
+  <p>These are the randoms used in the BAO sample analysis. It is divided in two files of 10 times the size of the BAO sample. Concatenating both, you will end with a sample 20 times the size.</p>
+  <ul>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_RANDOMS_10x_1.fits.gz">DESY3_LSSBAO_RANDOMS_10x_1.fits.gz</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_RANDOMS_10x_1.fits.gz">DESY3_LSSBAO_RANDOMS_10x_2.fits.gz</a>
+    </li>
+  </ul>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>RA</pre>
+        </td>
+        <td colspan="1">Right Ascension (RA)<span style="color: rgb(0,0,0);">
+            <br/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>DEC</pre>
+        </td>
+        <td colspan="1">Declination (DEC)</td>
+      </tr>
+      <tr>
+        <td colspan="1">Z</td>
+        <td colspan="1">Redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">WEIGHT</td>
+        <td colspan="1">For completeness, all set to = 1</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>
+
+    <strong>Description of Data vectors and likelihoods</strong>
+  </h2>
+  <h4>BAO sample chi2 profile</h4>
+  <p>chi2 profile in terms of the ratio of the recovered comoving angular diameter distance D_M at z_eff =0.835 to the sound horizon scale, assuming the Planck cosmology, for which (D_M(zeff)/r_d)_planck = 20.1. This is the final result in <a href="https://arxiv.org/abs/2107.04646">DES Collaboration (2021)</a>.</p>
+
+  <p> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/chi2profile_dvdesy3_cosmoplanck18_covcosmolike.csv">chi2profile_dvdesy3_cosmoplanck18_covcosmolike.csv</a> </p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>alpha</p>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Alpha value in (DA/rd) / (DA/rd)_Planck<br class="confluenceTd"/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>ACF+APS</p>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Chi2 for ACF+APS<br class="confluenceTd"/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>ACF</p>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Chi2 for ACF<br class="confluenceTd"/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <p>APS</p>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Chi2 for APS<br class="confluenceTd"/>
+          </span>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <h4>Angular Correlation Function w(th)</h4>
+  <p>Angular Correlation Functions w(th) and covariance matrix. Each file is one redshift bin. First column is theta, next is w(th)</p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>File Name</p>
+        </th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/wtheta_bao_y3_bin1_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat">wtheta_bao_y3_bin1_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat</a>
+        </td>
+        <td colspan="1">w(th) for 0.6 &lt; z &lt; 0.7<span style="color: rgb(0,0,0);">
+            <br/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/wtheta_bao_y3_bin2_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat">wtheta_bao_y3_bin2_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat</a>
+        </td>
+        <td colspan="1">w(th) for 0.7 &lt; z &lt; 0.8</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+		<a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/wtheta_bao_y3_bin3_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat">wtheta_bao_y3_bin3_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat</a>
+        </td>
+        <td colspan="1">w(th) for 0.8 &lt; z &lt; 0.9</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+		<a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/wtheta_bao_y3_bin4_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat">wtheta_bao_y3_bin4_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat</a>
+        </td>
+        <td colspan="1">w(th) for 0.9 &lt; z &lt; 1.0</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+		<a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/wtheta_bao_y3_bin5_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat">wtheta_bao_y3_bin5_weighted_CUTE_bf_rand_x20_Dtheta0.20.dat</a>
+        </td>
+        <td colspan="1">w(th) for 1.0 &lt; z &lt; 1.1</td>
+      </tr>
+
+      <tr>
+        <td colspan="1">
+		<a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/bao_cola_v1p5_DeltaTheta0p2_mask_g.txt">bao_cola_v1p5_DeltaTheta0p2_mask_g.txt</a>
+        </td>
+        <td colspan="1">Covariance matrix from cosmolike, including covariance across tomographic bins</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Angular Power Spectrum C(l)</h4>
+  <p>Angular Power Spectrum C(l) and covariance matrix. Each file is one redshift bin. First column is l, next is C(l), next is error</p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>File Name</p>
+        </th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+            <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/cl_y3baosample_nside1024_dl20lmin10lmax600_bin1.csv">cl_y3baosample_nside1024_dl20lmin10lmax600_bin1.csv</a>
+        </td>
+        <td colspan="1">C(l) for 0.6 &lt; z &lt; 0.7<span style="color: rgb(0,0,0);">
+            <br/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/cl_y3baosample_nside1024_dl20lmin10lmax600_bin2.csv">cl_y3baosample_nside1024_dl20lmin10lmax600_bin2.csv</a>
+</td>
+        <td colspan="1">C(l) for 0.7 &lt; z &lt; 0.8</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+	<a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/cl_y3baosample_nside1024_dl20lmin10lmax600_bin3.csv">cl_y3baosample_nside1024_dl20lmin10lmax600_bin3.csv</a>
+        </td>
+        <td colspan="1">C(l) for 0.8 &lt; z &lt; 0.9</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+		<a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/cl_y3baosample_nside1024_dl20lmin10lmax600_bin4.csv">cl_y3baosample_nside1024_dl20lmin10lmax600_bin4.csv</a>
+        </td>
+        <td colspan="1">C(l) for 0.9 &lt; z &lt; 1.0</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+		<a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/cl_y3baosample_nside1024_dl20lmin10lmax600_bin5.csv">cl_y3baosample_nside1024_dl20lmin10lmax600_bin5.csv</a>
+        </td>
+        <td colspan="1">C(l) for 1.0 &lt; z &lt; 1.1</td>
+      </tr>
+      <tr>
+        <td colspan="1">
+		<a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_VECTORSLIKELIHOODS/cl_covmat_nside1024_dl20lmin10lmax600_cosmolikeplanck.txt">cl_covmat_nside1024_dl20lmin10lmax600_cosmolikeplanck.txt</a>
+        </td>
+        <td colspan="1">Covariance matrix from cosmolike, including covariance across tomographic bins</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <br/>
+  </p>
+   <p>
+    <br/>
+  </p>
+
+
+  <h2>
+    <strong>Description of COLA Mocks and Randoms</strong>
+  </h2>
+  <p>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/baosample/DESY3_LSSBAO_COLAMOCKS/">Here</a> you can find 1952 mock catalogues reproducing the DES Y3-BAO sample.</p>
+  <p>For details, see <a href="https://arxiv.org/abs/2107.04602">Ferrero et al. 2021</a> </p>
+  <p> Each full-sky COLA mock is divided in 4 maps, covering approximately 5000 square degrees each (see Figure 8) </p>
+  <p>We also include 4 different random catalogues sampling the same map footprint for each tomographic bin separately, containing 20 times as many objects as the average of the mock catalogues.</p>
+  <h4>Mock Catalogues</h4>
+  <p>The 1952 Mock files are distributed in parquet file format, they can be read easily in Python using Pandas (it also needs pyarrow) like:</p>
+  <p> mockdata = pd.read_parquet('COLA_BAOsample_v1.5_seed00152_map1.parquet', engine='pyarrow')</p>
+  <p> Each mock contains 11 columns with the following information.</p>
+  <p> The naming convention is the following: for each of the 4 maps (MAPNUMBER = 1,2,3,4) we have 488 different seeds (SEEDNUMBER = 152-642, excluding numbers 238 and 386).</p>
+  <p>Each file is called: COLA_BAOsample_v1.5_seed00SEEDNUMBER_mapMAPNUMBER.parquet </p>  
+  <p class="auto-cursor-target">
+    <br/>
+  </p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          xhalo, yhalo, zhalo
+        </td>
+        <td colspan="1">Galaxy comoving distance (Mpc/h) in x,y,z axis </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          vxhalo, vyhalo, vzhalo
+        </td>
+        <td colspan="1">Galaxy physical (peculiar) velocity in x,y,z component (km/h)</td>
+      </tr>
+      <tr>
+        <td colspan="1">z_cgal</td>
+        <td colspan="1">Galaxy true redshift</td>
+      </tr>
+      <tr>
+        <td colspan="1">lmhalo</td>
+        <td colspan="1">Log base 10 of  halo mass</td>
+      </tr>
+      <tr>
+        <td colspan="1">flag_central</td>
+        <td colspan="1">Flag 0==central 1==satellite</td>
+      </tr>
+      <tr>
+        <td colspan="1">z_cgal_rsd</td>
+        <td colspan="1">Galaxy observed redshift (including peculiar velocity)</td>
+      </tr>
+      <tr>
+        <td colspan="1">photo_z</td>
+        <td colspan="1">Photometric redshift</td>
+      </tr>
+
+    </tbody>
+  </table>
+  <h4>Mock randoms</h4>
+  <p>Randoms are distributed in ASCII files. For each map (MAPNUMBER = 1,2,3,4) we have 1 random file per redshift bin (BIN = 1,2,3,4,5). The naming convetion is Random_radec_x20_mapMAPNUMBER_binBIN.csv.</p>
+  <p> Each file contains 3 columns without name:</p>
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>Column Number</p>
+        </th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>(1)</pre>
+        </td>
+        <td colspan="1">Right Ascension (RA)<span style="color: rgb(0,0,0);">
+            <br/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <pre>(2)</pre>
+        </td>
+        <td colspan="1">Declination (DEC)</td>
+      </tr>
+      <tr>
+        <td colspan="1">( 3 )</td>
+        <td colspan="1">Photo-z</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY3A2Bao extends Polymer.Element {
+      static get is() { return 'des-y3a2-bao'; }
+    }
+    window.customElements.define(DesY3A2Bao.is, DesY3A2Bao);
+  </script>
+
+</dom-module>
