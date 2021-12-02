@@ -8,34 +8,61 @@
 
 </style>
 
+<!--ul>
+  <li><a href="deepoverview">Overview</a></li>
+  <li><a href="#images">Images</a></li>
+  <li><a href="#photometry">Photometry</a></li>
+  <li><a href="#photoz">Photometric redshifts</a></li>
+</ul-->
+
 
 <des-card heading="DES Deep Fields Y3 data">
-  <div style="text-align: center">
-        <iron-image style="width:637px; height:337px; padding:40px;" sizing="contain"
-                src="{{rootPath}}static/images/y3a2/deep_fields_figure-1024x339.png"></iron-image>
-            <!--iron-image style="width:375px; height:375px; padding:40px;" sizing="contain"
-                src="{{rootPath}}static/images/y1a1/y1a1_footprint.png"></iron-image-->
-  <figcaption>grz image of approximately one half of a decam chip from the SN-X3 field, showing the three depth level coadd images we produce: SE_TRUTH,
-COADD_TRUTH and DEEPEST, left to right respectively. Inset figures are a factor 2 zoom-in of the interacting group located on the far right in the main image.</figcaption>          
-  </div>
 
-	<div class="card-content">
+<div class="card-content">
 
-  <h2>
-    <strong>Overview</strong>
-  </h2>
-  <p>General description. Contents of the release.
+<a id="overview"><h2><strong>Overview</strong></h2></a>
 
-Paper link, Robert's figure, maybe the big table.
+<p> The DES Deep Fields are described in <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> </p>
 
-In <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley et al. 2021</a> we describe the Dark Energy Survey (DES) Deep Fields, a set of images and associated multi-wavelength catalogue (ugrizJHKs) built from Dark Energy Camera (DECam) and Visible and Infrared Survey Telescope for Astronomy (VISTA) data. The DES Deep Fields comprise 11 fields (10 DES supernova fields plus COSMOS), with a total area of ~30 square degrees in ugriz bands and reaching a maximum i-band depth of 26.75 (AB, 10σ, 2″)</p>
+<p>The DES Deep Fields comprise the set of fields where the integrated exposure time per pixel in the four key DECam passbands (griz) is approximately ten times that of the main DES survey area or greater. For the DES Y3 cosmology analysis we built images in the ten supernova (SN) fields and the COSMOS field, combining DES exposures and community data. Names of the SN pointings are derived from the respective pre-cursor surveys in that region of the sky, CDFS (SN-C1, SN-C2, SN-C3), Elais-South (SN-E1, SN-E2), XXXX????? (SN-S1, SN-S2) and XMM-LSS (SN-X1, SN-X2, SN-X3). The sky locations and footprints of the eleven fields are shown in the figure below. Filled rectangles correspond to the DECam chips that are used to produce our photometric catalogue.</p>
 
+<img src="{{rootPath}}static/images/y3a2/deep_fig1.png" width=1200 height=800>
 
-  <h2>
-    <strong>Images</strong>
-  </h2>
+<p>Images in the SN fields were built to serve a variety of science use cases and thus we constructed images with three different choices for the trade-off between depth and seeing FWHM. These choices, or depth levels, are referred to as,</p>
+
+<ul>
+  <li> Single-epoch truth (SE_TRUTH): target effective exposure time of 10x one nominal DES main survey exposure.</li>
+  <li> Coadd truth (COADD_TRUTH): target effective exposure time of 10x the average integrated per pixel exposure time in the main DES survey.</li>
+  <li> Deepest (DEEPEST): all exposures deemed useful were included in the relevant coadded image.</li>
+</ul>
+
+<p>The following figure shows these different depth levels for a fraction of a DECam chip.</p>
+
+<img src="{{rootPath}}static/images/y3a2/X3_C55_colour_figure_reduce.png" width=1200 height=400>
+
+<p>Where possible, images were built for each of the six DECam broad-band filters with the following exceptions:</p>
+
+<ul>
+  <li> Owing to a generally smaller number of longer exposures, only a single depth level was built for the COSMOS field. It is labelled as COADD_TRUTH.</li>
+  <li> We did not build u or Y-band images at SE_TRUTH depth level.</li>
+  <li> There are no Y-band images for SN-E1, SN-E2, SN-S1, SN-S2.</li>
+  <li> Chips 02 (in most cases) and 62 are missing, chip 3XXX is only half-sized due to a faulty amplifierXXXXXXXX.</li>
+</ul>
+
+<p>For the DES Y3 cosmology analysis we chose those fields that had data available both from DECam (ugriz bands) and from public VISTA VIRCam imaging (JHKs) at the time of data assembly. The result is an 8-band photometric catalogue covering 5.88 sq. deg., after masking. This catalogue is based on the COADD_TRUTH depth level of images and enables the computation of photometric redshifts and a star-galaxy classification - see <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> for details.</p>
+
+<p>The contents of this release are as follows:</p>
+<ul>
+  <li>Coadded science images, pixel masks and weight maps at three depth levels (SN fields), or single depth level (COSMOS).</li>
+  <li>8-band photometric catalogue covering 5.88 sq. deg..</li>
+  <li>kNN-based star-galaxy classifications</li>
+  <li>Photometric redshift catalogues from EAzY and DNF.</li>
+</ul>
+
+<a id="images"><h2><strong>Images</strong></h2></a>
+
 <p>
-Image files are compressed with fpack and one file is provided for each single-chip coadded image and depth level (SE_TRUTH, COADD_TRUTH, DEEPEST). The structure of each multi-extension fits file is as follows:
+Image files are compressed with fpack and one file is provided for each coadded DECam chip image and depth level (SE_TRUTH, COADD_TRUTH, DEEPEST). The structure of each multi-extension fits file is as follows:
 <list>
   <li>Extension 0: science image</li>
   <li>Extension 1: mask</li>
@@ -59,11 +86,17 @@ Image files are compressed with fpack and one file is provided for each single-c
   COADD_TRUTH/SN_X3/SN-X3_C19_COADD_TRUTH_z.fits.fz
 </p>
 
+<p> The following table from <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> describes the integrated exposure time, seeing FWHM and 10-sigma depth in 2-arcsec apertures for each combination of field and depth level.</p>
+
+<img src="{{rootPath}}static/images/y3a2/table_deep.png" width=1200 height=600>
+
 
 </br>
-<h2> Key Project Catalogue </h2>
+<a id="photometry"><h2><strong> Key Project Catalogue</strong></h2></a>
 
-The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available as a database table, [[[[table name]]]], via [[[link to the db server]]].
+<p>The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available as a database table, willhartley.Y3_DEEP_FIELDS_PHOTOM, via [[[link to the db server]]].</p>
+
+<p>HERE, AND BELOW, COULD DO WITH AN EXAMPLE QUERY TO GRAB A SORT OF "STANDARD" PRODUCT.</P>
 
 <table>
 <tr>
@@ -163,13 +196,13 @@ The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available
 <td> ID  </td><td>  -  </td><td>  Deep Fields Y3 ID number  </td><td>1</td>
 </tr>
 <tr>
+<td> KNN_CLASS  </td><td>  -  </td><td>  kNN-based star / galaxy classifcation; 0 - No class (bands missing), 1 - Galaxy , 2 - Star, 3 - Ambiguous  </td><td>1</td>
+</tr>
+<tr>
 <td> MASK_FLAGS  </td><td>  -  </td><td>  Flag containing mask information for DECam data: Unmasked sources=0  </td><td>1</td>
 </tr>
 <tr>
 <td> MASK_FLAGS_NIR  </td><td>  -  </td><td>  Flag containing mask information for VIRCam data: Unmasked sources=0  </td><td>1</td>
-</tr>
-<tr>
-<td> NEARESTNEIGHBORS_CLASS  </td><td>  -  </td><td>  kNN-based star / galaxy classifcation; 0 - No class (bands missing), 1 - Galaxy , 2 - Star, 3 - Ambiguous  </td><td>1</td>
 </tr>
 <tr>
 <td> PSF_FLUX_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  3.63 nJy  </td><td>  PSF model flux with field-to-field calibration offset applied  </td><td>8</td>
@@ -199,7 +232,7 @@ The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available
 <td> PSF_G_0  </td><td>  -  </td><td>  Elliptical deformation matrix parameter for PSF model, component 0  </td><td>1</td>
 </tr>
 <tr>
-<td> PSF_G_1  </td><td>  -  </td><td>  Elliptical deformation matrix parameter for Bulge+Disk model, component 1  </td><td>1</td>
+<td> PSF_G_1  </td><td>  -  </td><td>  Elliptical deformation matrix parameter for PSF model, component 1  </td><td>1</td>
 </tr>
 <tr>
 <td> PSF_MAG_DERED_CALIB_{U,G,R,I,Z,J,H,KS}  </td><td>  AB mag  </td><td>  PSF model magnitude with Galactic reddening correction and field-to-field calibration offset applied  </td><td>8</td>
@@ -224,9 +257,11 @@ The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available
 </tr>
 </table>
 
-<h2> Photometric redshifts </h2>
+<a id="photoz"><h2><strong>Photometric redshifts</strong></h2></a>
 
-Photometric redshifts for the key project catalogue computed using the EAzY software are available as database table, [[[[table name]]]], via [[[link to the db server]]].
+<p>Photometric redshifts for the key project catalogue have been computed using the EAzY template-ftting software and DNF machine learning algorthim. They are available as separate database tables,  willhartley.Y3_DEEP_FIELDS_PHOTOZ for EAZY and [[[[table DNF]]]] for DNF, via [[[link to the db server]]].</p>
+
+<h4>willhartley.Y3_DEEP_FIELDS_PHOTOZ (EAZY)</h4>
 
 <table>
 <tr>
@@ -309,6 +344,45 @@ Photometric redshifts for the key project catalogue computed using the EAzY soft
 </tr>
 </table>
 
+<h4>Y3_DEEP_FIELDS_PHOTOZ_DNF (DNF)</h4>
+<table>
+<tr>
+<th>Column </th><th> Description </th><th> Number of columns </th>
+</tr>
+<tr>
+<td> ID                     </td><td> Deep Fields Y3 ID number  </td><td>1</td>
+</tr>
+<tr>
+<td> RA                     </td><td> Object Right Ascension, J2000 (degrees)  </td><td>1</td>
+</tr>
+<tr>
+<td> DEC                     </td><td>Object declination, J2000 (degrees)   </td><td>1</td>
+</tr>
+<tr>
+<td>     DNF_Z                 </td><td>Main point redshift estimated from DNF_NUM_NN photometric neighbor galaxies   </td><td>1</td>
+</tr>
+<tr>
+<td>         DNF_Z1             </td><td>Secondary point redshift estimated from 1 neighbor galaxy. Useful for n(z) estimation   </td><td>1</td>
+</tr>
+<tr>
+<td> DNF_ZSIGMA                     </td><td> DNF_Z error estimation  </td><td>1</td>
+</tr>
+<tr>
+<td>     DNF_D1                 </td><td>  Photometric angular distance to nearest neighbor galaxy </td><td>1</td>
+</tr>
+<tr>
+<td>          DNF_DE1            </td><td> Photometric euclidean distance to nearest neighbor galaxy  </td><td>1</td>
+</tr>
+<tr>
+<td>          DNF_ID1            </td><td> ID of the nearest neighbor galaxy  </td><td>1</td>
+</tr>
+<tr>
+<td>           DNF_NUM_NN           </td><td> Number of photometric nearest neighbor galaxies used for DNF_Z computation  </td><td>1</td>
+</tr>
+<tr>
+<td>          DNF_USED_FILTERS            </td><td>Number of filters available for DNF_Z computation   </td><td>1</td>
+</tr>
+</table>
 
 </div>
 </des-card>
