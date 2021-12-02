@@ -1,0 +1,1139 @@
+<dom-module id="des-y1a1-key-shape">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Y1 Shape Catalogs">
+<div class="card-content">
+
+    <h2>
+      <strong>Overview</strong>
+    </h2>
+    <p>From <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>:</p>
+    <p>We present two galaxy shape catalogues from the Dark Energy Survey Year 1 data set, covering ~1500 square degrees with a median redshift of 0.59. The catalogues cover two main fields: Stripe 82, and an area overlapping the South Pole Telescope survey region. We describe our data analysis process and in particular our shape measurement using two independent shear measurement pipelines, METACALIBRATION and IM3SHAPE. The METACALIBRATION catalogue uses a Gaussian model with an innovative internal calibration scheme, and was applied to riz-bands, yielding 34.8M objects. The IM3SHAPE catalogue uses a maximum-likelihood bulge/disc model calibrated using simulations, and was applied to r-band data, yielding 21.9M objects. Both catalogues pass a suite of null tests that demonstrate their fitness for use in weak lensing science. We estimate the 1 sigma uncertainties in multiplicative shear calibration to be 0.013 and 0.025 for the METACALIBRATION and IM3SHAPE catalogues, respectively. We further deliver a file containing redshift information, with the assignment of each object to the redshift bins shown in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a> and validated therein and in Davis et al. (2018) and <a href="http://adsabs.harvard.edu/abs/2018MNRAS.477.1664G">Gatti &amp; Vielzeuf et al. (2018)</a>.<strong> <br/> </strong>
+    </p>
+    <h2>
+      <strong>Download</strong>
+    </h2>
+    <ul>
+      <li>
+        <strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/mcal-y1a1-combined-riz-unblind-v4-matched.fits">mcal-y1a1-combined-riz-unblind-v4-matched.fits</a>  (METACAL)</strong>
+      </li>
+      <li>
+        <strong>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/y1_metacal_flux_griz_release.fits">y1_metacal_flux_griz_release.fits</a> (METACAL griz FLUXES)</strong>
+      </li>
+      <li>
+        <strong> <span class="m_-2365888534823485024gmail-c-message__body"> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/shear_catalogs/y1a1-im3shape_v5_unblind_v2_matched_v4.fits">y1a1-im3shape_v5_unblind_v2_matched_v4.fits</a> </span> (IM3SHAPE)</strong>
+      </li>
+      <li>
+        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_source_redshift_binning_v1.fits"> <strong>y1_source_redshift_binning_v1.fits</strong> </a> <strong>(REDSHIFT BINNING INFORMATION)</strong>
+      </li>
+      <li>
+        <strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_redshift_distributions_v1.fits">y1_redshift_distributions_v1.fits</a> (REDSHIFT DISTRIBUTIONS OF EACH REDSHIFT BIN)</strong> </li>
+    </ul>
+    <h2>
+      <strong>Catalog Description</strong>
+    </h2>
+    <h3>
+      <span style="color: rgb(255,0,0);"> <span style="color: rgb(23,43,77);"> <strong>METACALIBRATION</strong> </span> </span>
+    </h3>
+    <p>For further information about the METACALIBRATION procedure and description of its implementation in DES, see <a href="https://arxiv.org/abs/1702.02600">Huff &amp; Mandelbaum 2017</a>, <a href="http://adsabs.harvard.edu/abs/2017ApJ...841...24S">Sheldon &amp; Huff 2017</a>, and <span style="color: rgb(255,0,0);"> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+      </span>. It is important to note that the METACALIBRATION catalog contains information necessary to calibrate an arbitrary selection (based on properties measured in this or related METACALIBRATION catalogs - i.e., griz METACALIBRATION flux measurements for photometric redshifts), unlike other forms of shear calibration that are valid only for a particular ensemble selection. <strong>If making selections beyond the METACALIBRATION catalog flags_select, the uncertainty on shear calibration given in  <span style="color: rgb(255,0,0);"> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+        </span> will no longer be correct. </strong>
+        <br />
+        Note: To reproduce the lensing measurements used in the DES Y1 3x2pt analyses, please apply the redMaGiC <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits" target="_blank"> mask </a> to the shape catalog.
+
+    </p>
+    <p>
+      <strong> <br/> </strong>
+    </p>
+    <table class="wrapped">
+      <colgroup> <col/> <col/> </colgroup>
+      <tbody>
+        <tr>
+          <th>Column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>
+            <code>coadd_objects_id</code>
+          </td>
+          <td>Unique internal DES release object identifier. This can be used to match objects across catalogs within a DES release (here Y1A1).</td>
+        </tr>
+        <tr>
+          <td>flags</td>
+          <td>Quality flagging used as bit 2<sup>3</sup> in flags_select. <span style="color: rgb(0,0,0);">See Table below. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>mask_frac</td>
+          <td>The fraction of masked model flux.</td>
+        </tr>
+        <tr>
+          <td>psf_e1</td>
+          <td>The PSF model <span>ellipticity </span>e1 in WCS.</td>
+        </tr>
+        <tr>
+          <td>psf_e2</td>
+          <td>
+            <span>The PSF model <span>ellipticity </span>e2 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>psf_size</td>
+          <td>The PSF model size T (arcsec^2). See Eq. 3.1 of <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. (2018)</a> for definition of T.</td>
+        </tr>
+        <tr>
+          <td>mcal_psf_e1</td>
+          <td>The PSF model <span>ellipticity </span>e1 used in the metacal process. For typical null tests, use 'psf_e1'.</td>
+        </tr>
+        <tr>
+          <td>mcal_psf_e2</td>
+          <td>
+            <span>The PSF model <span>ellipticity </span>e2 used in the <span>metacal</span> process. For <span>typical </span>null tests, use 'psf_e2'.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>mcal_psf_size</td>
+          <td>
+            <span>The PSF model size T (arcsec^2)<span> used in the <span>metacal</span> process</span>. <span>For <span>typical </span>null tests, use 'psf_size'.</span> </span>
+          </td>
+        </tr>
+        <tr>
+          <td>e1</td>
+          <td>The measured ellipticity e1 in WCS.</td>
+        </tr>
+        <tr>
+          <td>e1_1p</td>
+          <td>The measured e1 after applying a shear of g1=0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>e1_1m</td>
+          <td>
+            <span>The measured e1 </span>after applying a shear of g1=-0.01 to the image<span> (in the metacal process)</span>.</td>
+        </tr>
+        <tr>
+          <td>e1_2p</td>
+          <td>
+            <span>The measured e1 </span>after applying a shear of g2=0.01 to the image<span> (in the metacal process)</span>.</td>
+        </tr>
+        <tr>
+          <td>e1_2m</td>
+          <td>
+            <span>The measured e1 </span>after applying a shear of g2=-0.01 to the image<span> (in the metacal process)</span>.</td>
+        </tr>
+        <tr>
+          <td>e2</td>
+          <td>
+            <span>The measured ellipticity e2 in WCS. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>e2_1p</td>
+          <td>
+            <span>The measured e2 </span>after applying a shear of g1=0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>e2_1m</td>
+          <td>
+            <span>The measured e2 </span>after applying a shear of g1=-0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>e2_2p</td>
+          <td>
+            <span>The measured e2 </span>after applying a shear of g2=0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>e2_2m</td>
+          <td>
+            <span>The measured e2 </span>after applying a shear of g2=-0.01 to the image (in the metacal process).</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>The measured <span>object</span> size T (arcsec^2).</td>
+        </tr>
+        <tr>
+          <td>size_1p</td>
+          <td>
+            <span>The measured T <span>after applying a shear of g1=0.01 to the image (in the metacal process).</span> </span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_1m</td>
+          <td>
+            <span>The measured T </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_2p</td>
+          <td>
+            <span>The measured T </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_2m</td>
+          <td>
+            <span>The measured T </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err</td>
+          <td>
+            <span>The uncertainty in the <span>object</span> size T (arcsec^2).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err_1p</td>
+          <td>
+            <span>The uncertainty in T </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err_1m</td>
+          <td>
+            <span>The uncertainty in T </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err_2p</td>
+          <td>
+            <span>The uncertainty in T </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>size_err_2m</td>
+          <td>
+            <span>The uncertainty in T </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr</td>
+          <td>
+            <span>The measured signal-to-noise (snr) of the <span>object</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr_1p</td>
+          <td>
+            <span>The snr of the object <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr_1m</td>
+          <td>
+            <span>The snr of the <span>object</span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr_2p</td>
+          <td>
+            <span>The snr of the <span>object</span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>snr_2m</td>
+          <td>
+            <span>The snr of the <span>object</span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_0</td>
+          <td>The e1-e1 covariance.</td>
+        </tr>
+        <tr>
+          <td>covmat_0_0_1p</td>
+          <td>
+            <span>The e1-e1 covariance <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>.</span> </span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_0_1m</td>
+          <td>
+            <span>The e1-e1 covariance </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_0_2p</td>
+          <td>
+            <span>The e1-e1 covariance </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_0_2m</td>
+          <td>
+            <span>The e1-e1 covariance </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1</td>
+          <td>
+            <span>The e1-e2 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1_1p</td>
+          <td>
+            <span>The e1-e2 covariance </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1_1m</td>
+          <td>
+            <span>The e1-e2 covariance </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1_2p</td>
+          <td>
+            <span>The e1-e2 covariance </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1_2m</td>
+          <td>
+            <span>The e1-e2 covariance </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1</td>
+          <td>
+            <span>The e2-e2 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1_1p</td>
+          <td>
+            <span>The e2-e2 covariance </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1_1m</td>
+          <td>
+            <span>The e2-e2 covariance </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1_2p</td>
+          <td>
+            <span>The e2-e2 covariance </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1_2m</td>
+          <td>
+            <span>The e2-e2 covariance </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_r</td>
+          <td>The measured r-band flux of the object.</td>
+        </tr>
+        <tr>
+          <td>flux_r_1p</td>
+          <td>
+            <span>The measured <span>r-band </span>flux of the object <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_r_1m</td>
+          <td>
+            <span>The measured <span>r-band </span>flux of the object </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_r_2p</td>
+          <td>
+            <span>The measured <span>r-band </span>flux of the object </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_r_2m</td>
+          <td>
+            <span>The measured <span>r-band </span>flux of the object </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_err_r</td>
+          <td>The uncertainty on the r-band flux.</td>
+        </tr>
+        <tr>
+          <td>flux_i</td>
+          <td>
+            <span>The measured i-band flux of the object. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_i_1p</td>
+          <td>
+            <span>The measured i</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_i_1m</td>
+          <td>
+            <span>The measured i</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_i_2p</td>
+          <td>
+            <span>The measured i</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_i_2m</td>
+          <td>
+            <span>The measured i</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_err_i</td>
+          <td>
+            <span>The uncertainty on the i-band flux.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z</td>
+          <td>
+            <span>The measured z-band flux of the object. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z_1p</td>
+          <td>
+            <span>The measured z</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span> <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z_1m</td>
+          <td>
+            <span>The measured z</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span> <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z_2p</td>
+          <td>
+            <span>The measured z</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_z_2m</td>
+          <td>
+            <span>The measured z</span> <span>-band </span> <span>flux of the object </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flux_err_z</td>
+          <td>
+            <div class="content-wrapper">
+              <span>The uncertainty on the z-band flux.</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>R11</td>
+          <td>
+            <div class="content-wrapper">The shear response matrix e1-e1 element. For details on calculation, see <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. (2018)</a>. You must calculate the selection bias response to add to this.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>R12</td>
+          <td>
+            <div class="content-wrapper">
+              <span>The shear response matrix e1-e2 element.</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>R21</td>
+          <td>
+            <div class="content-wrapper">
+              <span>The shear response matrix e2-e1 element.</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>R22</td>
+          <td>
+            <div class="content-wrapper">
+              <span>The shear response matrix e2-e2 element.</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>region</td>
+          <td>Which footprint region of the catalog the object is in. 1=SPT (used in the key project papers), 2=Stripe 82, 3=D04.</td>
+        </tr>
+        <tr>
+          <td>ra</td>
+          <td>Right Ascension (degrees) from the MOF catalog.</td>
+        </tr>
+        <tr>
+          <td>dec</td>
+          <td>Declination (degrees) from the MOF catalog.</td>
+        </tr>
+        <tr>
+          <td>tilename</td>
+          <td>Tile name of tile the object lies within. Each tile is a square of 10,000 pixels on a side, which makes up the extent of the coadd image. The position of the tile on the sky is encoded in its name.</td>
+        </tr>
+        <tr>
+          <td>flags_select</td>
+          <td>Selection flag based on unshared quantities. 0 means use the object. <span>See Table</span> <span style="color: rgb(0,0,0);">below. </span>
+          </td>
+        </tr>
+        <tr>
+          <td>flags_select_1p</td>
+          <td>
+            <span>Selection flag<span> based on sheared (g1=0.01) quantities</span>. </span>0 means use the object.</td>
+        </tr>
+        <tr>
+          <td>flags_select_1m</td>
+          <td>
+            <span>Selection flag<span> based on <span>sheared (g1=-0.01)</span> quantities</span>. </span>0 means use the object.</td>
+        </tr>
+        <tr>
+          <td>flags_select_2p</td>
+          <td>
+            <span>Selection flag<span> based on <span>sheared (g2=0.01)</span> quantities</span>. </span>0 means use the object.</td>
+        </tr>
+        <tr>
+          <td>flags_select_2m</td>
+          <td>
+            <span>Selection flag<span> based on <span>sheared (g2=-0.01)</span> quantities</span>. </span>0 means use the object.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <strong>
+        <br/>
+      </strong>
+    </p>
+    <h3>
+      <strong>METACAL FLUXES</strong>
+    </h3>
+    <p>For further information about the METACALIBRATION procedure and description of its implementation in DES, see <a href="https://arxiv.org/abs/1702.02600">Huff &amp; Mandelbaum 2017</a>, <a href="http://adsabs.harvard.edu/abs/2017ApJ...841...24S">Sheldon &amp; Huff 2017</a>, and <span style="color: rgb(255,0,0);">
+    <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+  </span>. It is important to note that the METACALIBRATION catalog contains information necessary to calibrate an arbitrary selection (based on properties measured in this or related METACALIBRATION catalogs - i.e., griz METACALIBRATION flux measurements for photometric redshifts), unlike other forms of shear calibration that are valid only for a particular ensemble selection. <strong>If making selections beyond the METACALIBRATION catalog flags_select, the uncertainty on shear calibration given in  <span style="color: rgb(255,0,0);">
+      <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+    </span> will no longer be correct. </strong>
+</p>
+    <table >
+      <colgroup>
+        <col />
+        <col />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Column name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>coadd_objects_id</td>
+          <td>
+            <p>Unique internal DES release object identifier. This can be used to match objects across catalogs within a DES release (here Y1A1).</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flags</td>
+          <td colspan="1">Quality flagging used as bit 2<sup>3</sup> in flags_select. <span style="color: rgb(0,0,0);">See Table below. </span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}</td>
+          <td colspan="1">The measured {g|r|i|z}-band flux of the object.</td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}_1p</td>
+          <td colspan="1">
+            <span>The measured <span>{g|r|i|z}-band </span>flux of the object <span>after applying a shear of g1=0.01 to the image (in the metacal process)</span>. </span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}_1m</td>
+          <td colspan="1">
+            <div class="content-wrapper">
+              <p>
+                <span>The measured </span>{g|r|i|z}<span>
+                  <span>-band </span>flux of the object <span>after applying a shear of g1=-0.01 to the image (in the metacal process)</span>. </span>
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}_2p</td>
+          <td colspan="1">
+            <span>The measured <span>
+                <span> </span>{g|r|i|z}<span>
+                  <span>-band</span>
+                </span> </span>flux of the object </span> <span>after applying a shear of g2=0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_{g|r|i|z}_2m</td>
+          <td colspan="1">
+            <span>The measured <span> </span>{g|r|i|z}<span>
+                <span>-band</span>
+              </span> flux of the object </span> <span>after applying a shear of g2=-0.01 to the image (in the metacal process)</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">flux_err_{g|r|i|z}</td>
+          <td colspan="1">The uncertainty on the <span> </span>{g|r|i|z}<span>
+              <span>-band</span>
+            </span> flux.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>
+      <strong>IM3SHAPE</strong>
+    </h3>
+    <p>The Y1 IM3SHAPE catalog is similar to the SV IM3SHAPE catalog, but has calibrations based on substantially improved images simulations as described in <a href="http://adsabs.harvard.edu/abs/2018MNRAS.475.4524S">Samuroff et al. (2018)</a> and <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. (2018)</a>.</p>
+      <p>
+        Note: To reproduce the lensing measurements used in the DES Y1 3x2pt analyses, please apply the redMaGiC <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redmagic/DES_Y1A1_3x2pt_redMaGiC_MASK_HPIX4096RING.fits" target="_blank"> mask </a> to the shape catalog.
+        </p>
+    <p>
+      <br/>
+    </p>
+    <table >
+      <colgroup> <col />
+          <col /> </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="1">Column Name</th>
+          <th colspan="1">Description</th>
+        </tr>
+        <tr>
+          <td>coadd_objects_id</td>
+          <td>
+            <span>Unique internal DES release object identifier. This can be used to match objects across catalogs within a DES release (here Y1A1).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>e1</td>
+          <td>
+            <span>The measured ellipticity e1 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>e2</td>
+          <td>
+            <span>The measured ellipticity e2 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>m</td>
+          <td>The multiplicative bias correction determined from image simulations. See details in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>.</td>
+        </tr>
+        <tr>
+          <td>c1</td>
+          <td>The additive bias correction c1 <span>determined from image simulations. See details in </span> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>c2</td>
+          <td>
+            <span>The additive bias correction c2 </span> <span>determined from image simulations. See details in </span> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>weight</td>
+          <td>The object weight, which should be used in all ensemble calculations. Details of derivation are provided in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>radius</td>
+          <td>The half-light-radius of the object (arcsec).</td>
+        </tr>
+        <tr>
+          <td>snr</td>
+          <td>
+            <span>The measured signal-to-noise (snr) of the </span> <span>object</span> <span>.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>likelihood</td>
+          <td>"Log-likelihood" i.e. -chi<sup>2</sup>/2. What a "good" value is depends on the stamp_size column.</td>
+        </tr>
+        <tr>
+          <td>chi2_pixel</td>
+          <td>The chi<sup>2</sup> per pixel in the stamp.</td>
+        </tr>
+        <tr>
+          <td>flags</td>
+          <td>
+            <span>Quality flagging used for bit 2<sup>5</sup> in flags_select. See Table</span> below.</td>
+        </tr>
+        <tr>
+          <td>covmat_0_0</td>
+          <td>
+            <span>The e1-e1 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_0_1</td>
+          <td>
+            <span>The e1-e2 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>covmat_1_1</td>
+          <td>
+            <span>The e2-e2 covariance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>rgpp_rp</td>
+          <td>PSF convolved galaxy size over PSF size, averaged over exposures.</td>
+        </tr>
+        <tr>
+          <td>psf_e1</td>
+          <td>
+            <span>The PSF model </span> <span>ellipticity </span> <span>e1 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>psf_e2</td>
+          <td>
+            <span>The PSF model </span> <span>ellipticity </span> <span>e2 in WCS.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>psf_size</td>
+          <td>The PSF FWHM (arcsec).</td>
+        </tr>
+        <tr>
+          <td>nexp</td>
+          <td>Number of available exposures (i.e. number of postage stamps) for this object.</td>
+        </tr>
+        <tr>
+          <td>stamp_size</td>
+          <td>The size of the postage stamps used in image fitting (pixels).</td>
+        </tr>
+        <tr>
+          <td>mask_fraction</td>
+          <td>fraction of pixels with zero weight over all exposures</td>
+        </tr>
+        <tr>
+          <td>bulge_fraction</td>
+          <td>The fraction of flux contained in the bulge component.</td>
+        </tr>
+        <tr>
+          <td>flags_select</td>
+          <td>
+            <span>Selection flag. 0 means use the object. </span> See Table below.<strong> </strong>
+          </td>
+        </tr>
+        <tr>
+          <td>ra</td>
+          <td>
+            <span>Right Ascension (degrees) from the MOF catalog.</span>
+          </td>
+        </tr>
+        <tr>
+          <td>dec</td>
+          <td>Declination (degrees) from the MOF catalog.</td>
+        </tr>
+        <tr>
+          <td>tilename</td>
+          <td>
+            <span> <span>Tile name of tile the object lies within. Each tile is a square of 10,000 pixels on a side, which makes up the extent of the coadd image. The position of the tile on the sky is encoded in its name.</span> </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 class="auto-cursor-target">REDSHIFT BINNING INFORMATION</h3>
+    <p>This table of integers indicates the tomographic redshift bin of each object based on the four bins defined in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a>. -1 means not in any bin (outside the range z=0.3-1.3). The tomographic bin placement is based on the mean redshift of the PDF, within the ranges (0.3-0.43, 0.43-0.63, 0.63-0.9, 0.9-1.3). Because of the use of photometric information for binning from MOF in im3shape and from metacalibration-measured fluxes in metacalibration, the binning differs between the two shape catalogs. The photometric information measured with metacalibration on artificially sheared images allows for the correction of photo-z based selection biases on shear signals.</p>
+    <table class="relative-table wrapped">
+      <colgroup> <col/> <col/> </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="1">
+            <p>Column Name</p>
+          </th>
+          <th colspan="1">Description</th>
+        </tr>
+        <tr>
+          <td>coadd_objects_id</td>
+          <td>
+            <span>Unique internal DES release object identifier. This can be used to match objects across catalogs within a DES release (here Y1A1).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_im3</td>
+          <td>The tomographic bin identifier for IM3SHAPE (based on griz-band MOF fluxes).</td>
+        </tr>
+        <tr>
+          <td>zbin_mcal</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_mcal_1p</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_mcal_1m</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_mcal_2p</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+        <tr>
+          <td>zbin_mcal_2m</td>
+          <td>
+            <span>The tomographic bin identifier for <span>METACALIBRATION</span> (<span>based on unsheared griz-band METACAL fluxes</span>).</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <p class="auto-cursor-target">The source redshift distributions of the bins defined here can be found in the nz_source_mcal and nz_source_im3 extensions of <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/redshift_bins/y1_redshift_distributions_v1.fits">y1_redshift_distributions_v1.fits</a>. They are only valid if interpreted with the redshift bins and source selections made upon the METACALIBRATION or IM3SHAPE catalog flags_select and redshift bins defined in this catalog, and should be interpreted with the systematic uncertainties on mean redshift defined in <a class="external-link" href="http://adsabs.harvard.edu/abs/2018MNRAS.478..592H" rel="nofollow">Hoyle &amp; Gruen et al. (2018)</a>.<strong> If making selections of beyond this, the redshift distribution information and calibration will no longer be correct.</strong>
+    </p>
+    <p>The relevant extensions containing the source redshift distributions are described in the tables below.</p>
+    <table class="wrapped">
+      <colgroup> <col/> <col/> <col/> </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 1 Name = nz_source_mcal (METACALIBRATION sources)</p>
+            <p>HDU 2 Name = nz_source_im3 (IM3SHAPE sources)</p>
+            <p>(Tomographic redshift distribution of the source galaxies)</p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br/>
+          </td>
+          <td colspan="1">
+            <strong> <strong>Header Value</strong> </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="10">
+            <br/>
+          </td>
+          <td>NGAL_{i}</td>
+          <td>
+            <p>The mean number density (gal/arcmin^2) of the tomographic bin (1-4)</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">SIG_E_{i}</td>
+          <td colspan="1">The total ellipticity dispersion of the tomographic bin (1-4)</td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>Z_LOW</td>
+          <td>The lower z boundary of this z bin range</td>
+        </tr>
+        <tr>
+          <td>Z_MID</td>
+          <td>The central z <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Z_HIGH</td>
+          <td colspan="1">The upper z boundary <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN1</td>
+          <td colspan="1">The n(z) in this z bin range for tomographic bin 1</td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN2</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 2</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN3</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 3</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN4</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 4</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <table class="wrapped">
+      <colgroup> <col/> <col/> <col/> </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+            <p>HDU 3 Name = nz_lens</p>
+            <p>
+              <span>(<span>Tomographic r</span>edshift distribution of the lens galaxies)</span>
+            </p>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <br/>
+          </td>
+          <td colspan="1">
+            <strong> <strong>Header Value</strong> </strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="10">
+            <br/>
+          </td>
+          <td>NGAL_{i}</td>
+          <td>
+            <p>The mean number density (gal/arcmin^2) of the tomographic bin (1-5)</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">
+            <strong>Column Name</strong>
+          </td>
+          <td colspan="1">
+            <strong>Description</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>Z_LOW</td>
+          <td>The lower z boundary of this z bin range</td>
+        </tr>
+        <tr>
+          <td>Z_MID</td>
+          <td>The central z <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">Z_HIGH</td>
+          <td colspan="1">The upper z boundary <span>of this z bin range</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN1</td>
+          <td colspan="1">The n(z) in this z bin range for tomographic bin 1</td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN2</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 2</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN3</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 3</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN4</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 4</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">BIN5</td>
+          <td colspan="1">
+            <span>The n(z) in this z bin range for tomographic bin 5</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <p>
+      <strong>DEFINITION OF FLAGS</strong>
+    </p>
+    <p>Objects useable for tomographic shear measurements are characterized by flags_select==0 in the METACALIBRATION or IM3SHAPE catalog, and zbin_[mcal/im3]&gt;=0 in the redshift binning table (both described above).</p>
+    <p>Definitions of the flags are given in the tables below.</p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <strong>METACALIBRATION flags_select</strong>
+          </td>
+        </tr>
+        <tr>
+          <th>Flag</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>2<sup>0</sup>
+          </td>
+          <td>Object south of dec=-60<sup>o</sup>
+          </td>
+        </tr>
+        <tr>
+          <td>2<sup>1</sup>
+          </td>
+          <td>Object in <a href="https://opensource.ncsa.illinois.edu/confluence/pages/viewpage.action?pageId=132841661">'bad region'</a>
+          </td>
+        </tr>
+        <tr>
+          <td>2<sup>2</sup>
+          </td>
+          <td>Extended gold flag &gt; 0 (see below and <span style="color: rgb(0,0,0);">
+              <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. 2018</a>
+            </span>)</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>3</sup>
+          </td>
+          <td colspan="1">METACALIBRATION procedure internal quality flag</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>4</sup>
+          </td>
+          <td colspan="1">Object fails size cut recommended in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>5</sup>
+          </td>
+          <td colspan="1">Object fails signal-to-noise ratio cut recommended in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>6</sup>
+          </td>
+          <td colspan="1">MOF photometry internal quality flag</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>7</sup>
+          </td>
+          <td colspan="1">MOF flux in any of g,r,i,z &lt; 0</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>8</sup>
+          </td>
+          <td colspan="1">METACALIBRATION flux in any of r,i,z &lt; 0</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>30</sup>
+          </td>
+          <td colspan="1">object not measured with METACALIBRATION</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note that flag bits 2<sup>4</sup>, 2<sup>5</sup> and 2<sup>8</sup> are re-measured on the sheared versions of the galaxy images, producing flags_select_[12][pm], that must be used to correct for selection biases.</p>
+    <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <strong>IM3SHAPE flags_select</strong>
+          </td>
+        </tr>
+        <tr>
+          <th>Flag</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>2<sup>0</sup>
+          </td>
+          <td>Object south of dec=-60<sup>o</sup>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>1</sup>
+          </td>
+          <td colspan="1">Object classified as star by MODEST_CLASS (<span style="color: rgb(0,0,0);">
+              <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. 2018</a>
+            </span>)</td>
+        </tr>
+        <tr>
+          <td>2<sup>2</sup>
+          </td>
+          <td>Object in <a href="https://opensource.ncsa.illinois.edu/confluence/pages/viewpage.action?pageId=132841661">'bad region'</a>
+          </td>
+        </tr>
+        <tr>
+          <td>2<sup>3</sup>
+          </td>
+          <td>Extended gold flag &gt; 0 (see below and <span style="color: rgb(0,0,0);">
+              <a class="external-link" href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D" rel="nofollow">Drlica-Wagner et al. 2018</a>
+            </span>)</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>4</sup>
+          </td>
+          <td colspan="1">MOF photometry internal quality flag</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>5</sup>
+          </td>
+          <td colspan="1">IM3SHAPE internal quality flag (without the bits that correspond to bit 2<sup>3</sup> and 2<sup>4</sup> here)</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>5</sup>
+          </td>
+          <td colspan="1">Object fails signal-to-noise ratio cut recommended in <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1708.01533">Zuntz &amp; Sheldon et al. 2018</a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>6</sup>
+          </td>
+          <td colspan="1">MOF flux in any of g,r,i,z &lt; 0</td>
+        </tr>
+        <tr>
+          <td colspan="1">2<sup>7</sup>
+          </td>
+          <td colspan="1">no valid noise bias calibration available</td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY1A1KeyShape extends Polymer.Element {
+      static get is() { return 'des-y1a1-key-shape'; }
+    }
+    window.customElements.define(DesY1A1KeyShape.is, DesY1A1KeyShape);
+  </script>
+
+</dom-module>
