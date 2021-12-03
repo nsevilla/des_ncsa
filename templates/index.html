@@ -12,7 +12,7 @@
         rootPath: '{{rootPath}}'
       };
       // Load and register pre-caching Service Worker
-      if ('serviceWorker' in navigator && false) {
+      if ('serviceWorker' in navigator && false && false && false) {
         window.addEventListener('load', function() {
           navigator.serviceWorker.register('{{rootPath}}static/service-worker.js', {
             scope: '{{rootPath}}static/',
