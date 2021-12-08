@@ -45,7 +45,7 @@ def send_email_desdm():
 
 def create_ticket(first, last, email, topics, subject, question):
     with open('config/desaccess.yaml', 'r') as cfile:
-        conf = yaml.load(cfile)['jira']
+        conf = yaml.load(cfile, Loader=yaml.FullLoader)['jira']
     my_string_u = base64.b64decode(conf['uu']).decode().strip()
     my_string_p = base64.b64decode(conf['pp']).decode().strip()
     """
@@ -94,7 +94,7 @@ def create_ticket(first, last, email, topics, subject, question):
 
 def create_ticket_desdm(first, last, email, username, topics, question):
     with open('config/desaccess.yaml', 'r') as cfile:
-        conf = yaml.load(cfile)['jira']
+        conf = yaml.load(cfile, Loader=yaml.FullLoader)['jira']
     my_string_u = base64.b64decode(conf['uu']).decode().strip()
     my_string_p = base64.b64decode(conf['pp']).decode().strip()
     """
