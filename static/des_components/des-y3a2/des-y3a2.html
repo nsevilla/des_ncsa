@@ -1,0 +1,339 @@
+<dom-module id="des-y3a2">
+<template>
+
+<style include="shared-styles"></style>
+
+
+<des-card  heading=" Y3 cosmology Data Release" >
+        <div style="text-align: center">
+        <iron-image style="width:637px; height:337px; padding:40px;" sizing="contain"
+                src="{{rootPath}}static/images/y3a2/image_map_quality_good.jpg"></iron-image>
+            <!--iron-image style="width:375px; height:375px; padding:40px;" sizing="contain"
+                src="{{rootPath}}static/images/y1a1/y1a1_footprint.png"></iron-image-->
+            </div>
+      <div class="card-content">
+          <span>
+              This page presents the release of the DES Year 3 (Y3) data products. For a detailed description and list of available files of this release please see the links below. Users may also consider using the <a href="[[rootPath]]releases/dr2">DES DR2</a> based on six years of survey operations. 
+
+	      <p> Some products are accesible through a query server, they can be access from <a href="https://des.ncsa.illinois.edu/desaccess/">DESaccess</a></p>
+	      
+	      <p> For a full list of Year-3 publications, please visit <a href="https://www.darkenergysurvey.org/des-year-3-cosmology-results-papers">https://www.darkenergysurvey.org/des-year-3-cosmology-results-papers/</a></p>
+          </span>
+
+      <div style="text-align: center">
+
+          <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/" target="_blank"><paper-button   raised  class="desButton">Files</paper-button></a>
+              <paper-button   raised  class="desButton" on-click="_scroll"> Data Summary</paper-button>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]help"><paper-button   raised class="desButton">Help</paper-button></a>
+      </div>
+      <hr />
+      <h2>
+        <strong>Overview</strong>
+      </h2>
+      <p>The Dark Energy Survey (DES) Year-Three (Y3) Gold data release consists of the data products used for DES Y3 cosmology and some non-cosmology related science. These products include object catalogs, survey characterization maps, and cosmological likelihoods associated with DES Y3 papers. This release is divided into several sections:</p>
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3gold">Gold products</a>: This section contains the primary DES Y3 catalog (aka Gold) and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3balrog">Balrog</a>: This section contains data associated with the Balrog products.</p>
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3deepfields">Deep Fields</a>: This section contains data associated with the Deep Fields.</p>
+      <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y3a2/Y3key-catalogs">Y3KP catalogs</a>: This section contains all catalogs used to run the main cosmological analysis from the cross-correlation of weak-lensing and clustering. It is serve as several h5 files, plus some code snippet (python) to interface with the data and isntructions to reproduce the catalogs used in our analysis</p>
+      <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y3a2/Y3key-products">Y3KP products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y3KP Catalogs described above.</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3bao">BAO sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based on the Y3 Gold catalog.</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3redmagic">Redmagic samples</a>: Redmagic samples</p>
+      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y3a2/Y3massmaps">Mass maps</a>: Mass maps reconstructed from weak lensing signal</p>
+      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y3a2/Y3mard">X-ray clusters</a>: X-ray clusters</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/gal-morphology">Morphology catalogs</a>: Several galaxy morphology catalogs
+        <span style="color: rgb(255,0,0);"> </span>
+      </p>
+      <p style="text-align: left;">
+        <br/>
+      </p>
+      <h3>
+        <strong>Caveats</strong>
+      </h3>
+      <p>The DES Y3 data products <strong class="style-scope des-docs">
+          <span class="style-scope des-docs" style="color: rgb(0,0,0);">do not</span>
+        </strong> constitute an official DES data release and are provided on an <strong class="style-scope des-docs">
+          <span class="style-scope des-docs" style="color: rgb(0,0,0);">"as is"</span>
+        </strong> basis in support of DES publications based on Y3 data.</p>
+        <!--p>
+          Note that the object catalogs distributed as part of this release <strong>do not</strong> all report identical values for the equatorial coordinates (RA, DEC) of individual objects due to differences in the precision of coordinate values recorded in the catalogs. Most of the catalogs based on multi-object fitting (MOF) report the (RA, DEC) coordinates at double precision, whereas the Gold catalog and several catalogs derived from the Gold catalog report truncated values at float precision. The coordinate precision is specified in the documentation for each object catalog. Users may also consider using the DES DR1 based on three years of survey operations for improved astrometric accuracy and precision.
+        </p-->
+
+
+      <h3>
+        <strong>Support</strong>
+      </h3>
+        <div id="y3access" />
+      <p>Support for the Y3 data products is very limited. The primary sources of documentation are the papers that derived these data products, and questions can be addressed to the authors of those papers.</p>
+      <p>
+        <br/>
+      </p>
+
+      <h2>
+        <strong>Data Access</strong>
+      </h2>
+      <p>The full listing of downloadable files can be found <strong>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/">here</a>
+        </strong>. Y3 Gold products and Deep Field catalogs are only accesible through <a href="https://des.ncsa.illinois.edu/desaccess/">DESaccess</a></p>
+	<p>The data products are described in more detail on the pages linked above. </p> 
+	<!--p>and files are linked by topic below. Catalog files are distributed as gzipped <a href="http://fits.gsfc.nasa.gov/fits_documentation.html">FITS</a> binary tables. Ancillary depth maps, survey condition maps, and footprint masks are provided as <a href="http://healpix.jpl.nasa.gov/">HEALPix</a> formatted gzipped binary FITS tables.</p-->
+      <p>
+        <strong>Release Notes:</strong>
+      </p>
+      <p><u>01 January 2022</u>: First release of Gold catalog and Y3KP products, morphology, mass maps, redmagic and BAO</p>
+
+      <!--p><u>01 October 2018</u>: catalogs of individual photometric redshifs, BAO mock catalogs, 3x2pt data vector are now available with the latest release.
+
+      </p-->
+      <p>
+        <br/>
+      </p>
+      <!--table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>Main Category</th>
+            <th>Product</th>
+            <th>Documentation</th>
+            <th>Filename(s)</th>
+            <th>Reference</th>
+          </tr>
+          <tr>
+            <td>Y3A2 Gold</td>
+            <td>Gold Catalog</td>
+            <td>
+                <a href="[[rootPath]]releases/y3a2/gold">Y3A2 Gold Data</a>
+            </td>
+            <td>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/gold_catalogs/">Link</a>
+            </td>
+            <td>
+              <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract">Sevilla et al. (2021)</a>
+            </td>
+          </tr>
+	  <tr>
+            <td>Y3A2 Deep Fields</td>
+            <td>Y3 Deep fields </td>
+            <td>
+                <a href="[[rootPath]]releases/y3a2/gold">Y3A2 Gold Data</a>
+            </td>
+            <td>
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/gold_catalogs/">Link</a>
+            </td>
+            <td>
+              <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract">Sevilla et al. (2021)</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+             <td colspan="1">
+              <br/>
+            </td>
+            <td colspan="1">
+              <br/>
+            </td>
+            <td colspan="1">
+              <br/>
+            </td>
+            <td colspan="1">
+              <br/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">Y3KP catalogs</td>
+            <td colspan="1">3x2pt Source Catalogs</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y3a2/Y3key-catalogs">Y3 Key Catalogs</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/y3kp_catalogs">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://adsabs.harvard.edu/abs/2018ApJS..235...33D">REF</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">Y3A2 Key Project</td>
+            <td colspan="1">Data Vectors</td>
+            <td colspan="1"><a href="[[rootPath]]releases/y3a2/Y3key-products">Link</a></td>
+            <td colspan="1"><a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/">Link</a></td>
+            <td colspan="1">
+              <a href="http://adsabs.harvard.edu/abs/2017arXiv170801530D">REF</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">Y3A2 Key Project</td>
+            <td colspan="1">Likelihoods/Chains</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y3a2/Y3key-products">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://adsabs.harvard.edu/abs/2017arXiv170801530D">REF</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
+              <br/>
+            </td>
+            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
+              <br/>
+            </td>
+            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
+              <br/>
+            </td>
+            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
+              <br/>
+            </td>
+            <td class="highlight-grey" colspan="1" data-highlight-colour="grey">
+              <br/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">Y1A1 BAO</td>
+            <td colspan="1">Catalogs, Footprint, and Redshift Distributions</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y1a1/bao">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="https://arxiv.org/abs/1712.06211">Crocce et al. (2018)</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">Y1A1 BAO</td>
+            <td colspan="1">Consensus Likelihood from BAO measurement</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y1a1/bao">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/mainBAOpaper/DES_Y1A1_LSSBAO_likelihood.dat">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://adsabs.harvard.edu/abs/2017arXiv171206209T">DES Collaboration (2017)</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">Y1A1 BAO</td>
+            <td colspan="1">Angular Correlation Function</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y1a1/bao">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/mainBAOpaper/">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://adsabs.harvard.edu/abs/2017arXiv171206209T">DES Collaboration (2017)</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">Y1A1 BAO</td>
+            <td colspan="1">Angular Power Spectrum</td>
+            <td colspan="1">To be released</td>
+            <td colspan="1">To be released</td>
+            <td colspan="1">
+              <a href="https://arxiv.org/abs/1807.10163">Camacho et al. (2018)</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">Y1A1 BAO</td>
+            <td colspan="1">3D Clustering</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y1a1/bao">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/baosample/xir/">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://adsabs.harvard.edu/abs/2017arXiv171206209T">DES Collaboration (2017)</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">Y1A1 BAO</td>
+            <td colspan="1">Mock Catalogs</td>
+            <td colspan="1">
+              <a href="[[rootPath]]releases/y1a1/bao">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mock_catalogs/">Link</a>
+            </td>
+            <td colspan="1">
+              <a href="https://academic.oup.com/mnras/article-abstract/479/1/94/5017483">Avila et al. (2018)</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">
+              <br/>
+            </td>
+            <td colspan="1">
+              <br/>
+            </td>
+            <td colspan="1">
+              <br/>
+            </td>
+            <td colspan="1">
+              <br/>
+            </td>
+            <td colspan="1">
+              <br/>
+            </td>
+          </tr>
+         </tbody>
+      </table-->
+      <!--p>
+        <br/>
+      </p-->
+      <h4>Acknowledgements and General DES References</h4>
+      <ul>
+          <li> Please see the <a href="https://des.ncsa.illinois.edu/thanks">Acknowledgements</a> page for general acknowledgements references. Please also make sure to visit each product page for the corresponding references. </li><br />
+        <li>
+          <em>The Dark Energy Survey</em> - <a href="http://adsabs.harvard.edu/abs/2005astro.ph.10346T">DES Collaboration (2005)</a>
+        </li>
+        <li>
+          <em>The Dark Energy Survey: more than dark energy - an overview – </em>
+          <a href="http://adsabs.harvard.edu/abs/2016arXiv160100329D">DES Collaboration (2016)</a>
+        </li>
+        <li>
+          <em>The Dark Energy Camera</em> - <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. (2015)</a>
+        </li>
+      </ul>
+      <p style="text-align: center;">
+        <span style="color: rgb(128,128,128);"> </span>
+      </p>
+      <hr/>
+
+
+
+
+      </div>
+      </des-card>
+
+
+</template>
+
+<script>
+    class DesY3A2 extends Polymer.Element {
+      static get is() { return 'des-y3a2'; }
+
+      _scroll() {
+
+    var elmnt = this.$.y3access;
+    console.log(elmnt);
+    elmnt.scrollIntoView();
+
+      }
+    }
+    window.customElements.define(DesY3A2.is, DesY3A2);
+  </script>
+
+</dom-module>
