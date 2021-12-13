@@ -11,20 +11,27 @@
 </style>
 
 
-
-
 <div class="fixup" id="schema_top"></div>
 <div class="fixdown"></div>
 <des-card heading ='Y3 Gold Table Schema'>
     <div class=card-content>
-        Below we present a summarized version of the Y3 Gold tables and their description, corresponding to the internal DES release 2.2. 
-        Some of the columns of this release with less relevance have been removed for clarity and improved accessibility in the database. ome of the columns
-        have links to a more detailed explanation and origin, in particular, the <a href = "http://sextractor.readthedocs.io/en/des_dr1/" target="_blank"> Sextractor parameters used for DR1 and DR2</a>. Note that each table has a 1% sampled version of the table for trying out queries. For example, Y3_GOLD_SAMPLE is the same as Y3_GOLD but with only 1% of objects.
+        Below we present a summarized version of the Y3 Gold tables (Y3A2, second annual Data Management release) and their description, corresponding to the internal Gold DES release 2.0. Some of the columns of this release with less relevance have been removed for clarity and improved accessibility in the database. Some of the columns have links to a more detailed explanation and origin, in particular, the <a href = "http://sextractor.readthedocs.io/en/des_dr1/" target="_blank"> Sextractor parameters used for DR1 and DR2</a>. Note that each table has a 1% sampled version of the table for trying out queries. For example, Y3_GOLD_SAMPLE is the same as Y3_GOLD but with only 1% of objects. The Y3 Gold data products and data quality checks are described in <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract"> Sevilla-Noarbe et al. (2021) </a>. Updated information will be published here, when applicable.
+
+        The following table (from Sevilla-Noarbe et al. (2021) contains the main characteristics of the catalog:
+
+        <div style="text-align: center">
+        <iron-image style="width:937px; height:495px; padding:1px;" sizing="contain"
+                src="{{rootPath}}static/images/y3a2/y3_gold_table.png"></iron-image>
+        </div>
+        The links below take you to the descriptions of the columns contained in the release for each table associated to the Y3 GOLD data set.
         <ul>
           <li><a href="javascript:void(0)" on-tap="_main">Y3_GOLD</a></li>
        </ul>
         <ul>
-          <li><a href="javascript:void(0)" on-tap="_main">Y3_SURVEYCONDITIONS_(G,R,I,Z,Y)_4096</a></li>
+          <li><a href="javascript:void(0)" on-tap="_survey">Y3_GOLD_SURVEYCONDITIONS</a></li>
+       </ul>
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_coverage">Y3_GOLD_COVERAGE</a></li>
        </ul>
         <hr />
 
@@ -1106,8 +1113,8 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
         </table>
 
         <p><br/></p>
-        <div class="fixup" id="schema_main"></div>
-        <h3 class="fixdown">Y3_SURVEYCONDITIONS_(G,R,I,Z,Y)_4096  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+        <div class="fixup" id="schema_survey"></div>
+        <h3 class="fixdown">Y3_GOLD_SURVEYCONDITIONS  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
         <table class="wrapped">
           <colgroup> <col style="width: 26.63%;"/> <col style="width: 58.4908%;"/> <col style="width: 14.841%;"/> </colgroup>
@@ -1124,9 +1131,39 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               </th>
             </tr>
           <tr>
-            <td> AIRMASS </td>
+            <td> AIRMASS_{G,R,I,Z,Y} </td>
             <td> Secant of the zenith angle </td>
             <td> MAX, MIN, WMEAN </td>
+          </tr>
+          <tr>
+            <td> DEPTH_AUTO_{G,R,I,Z,Y} </td>
+            <td> Estimate of the depth using MAG_AUTO photometry (TBD) [mag]</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> DEPTH_MOF_{G,R,I,Z} </td>
+            <td> Estimate of the depth using MAG_MOF photometry (TBD) [mag]</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> DEPTH_SOF_{G,R,I,Z} </td>
+            <td> Estimate of the depth using MAG_SOF photometry (TBD) [mag]</td>
+            <td> MAX, MIN, WMEAN </td>
+          </tr>
+          <tr>
+            <td> EBV_LENZ17 </td>
+            <td> Extinction as measured from Lenz et al. 2017 (TBD) [mag]</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> EBV_PLANCK13 </td>
+            <td> Extinction as measured from Planck Collaboration 2013 (TBD) [mag]</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> EBV_SFD98 </td>
+            <td> Extinction as measured from Schlegel et al. 98 (TBD) [mag]</td>
+            <td> </td>
           </tr>
           <tr>
             <td> EXPTIME </td>
@@ -1136,7 +1173,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
           <tr>
             <td> FGCM_GRY </td>
             <td> Residual ‘gray’ corrections to the zeropoint from FGCM [mag]</td>
-            <td> MAX, MIN, WMEAN </td>
+            <td> MAX (TBC), MIN, WMEAN </td>
           </tr>
           <tr>
             <td> FWHM_FLUXRAD </td>
@@ -1146,6 +1183,11 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             <td> FWHM </td>
             <td> Average FWHM of the 2D elliptical Moffat function that fits best the PSF model from PSFEx. [arcsec]</td>
             <td> MAX, MIN, WMEAN </td>
+          </tr>
+          <tr>
+            <td> HPIX_4096 </td>
+            <td> Healpix ID for this entry, on NSIDE = 4096</td>
+            <td> </td>
           </tr>
           <tr>
             <td> MAGLIM </td>
@@ -1165,7 +1207,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
           <tr>
             <td> SKYVAR </td>
             <td> Variance on the sky brightness. [(e-/CCD pixel)**2] </td>
-            <td> MAX, MIN, WMEAN </td>
+            <td> MAX, MIN, WMEAN (TBC)</td>
           </tr>
           <tr>
             <td> SKYVAR_SQRT </td>
@@ -1175,7 +1217,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
           <tr>
             <td> SKYVAR_UNCERTAINTY </td>
             <td> Sky variance with flux scaled by zeropoint [e-/s/coadd pixel] </td>
-            <td> TBD </td>
+            <td> </td>
           </tr>
           <tr>
             <td> T_EFF_EXPTIME </td>
@@ -1186,9 +1228,52 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             <td> T_EFF </td>
             <td> Figure of merit for quality of observations [e-/s/coadd pixel] </td>
             <td> MAX, MIN, WMEAN </td>
+          </tr> 
+        </tbody>
+      </table>
+
+      <p><br/></p>
+      <div class="fixup" id="schema_coverage"></div>
+      <h3 class="fixdown">Y3_GOLD_COVERAGE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 26.63%;"/> <col style="width: 58.4908%;"/> <col style="width: 14.841%;"/> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+            </tr>
+          <tr>
+            <td> BADREGIONS </td>
+            <td> Bit flag fore bad regions </td>
           </tr>                                                                       
-      </tbody>
-    </table>
+          <tr>
+            <td> COVERAGE_GRIZ </td>
+            <td> GRIZ footprint </td>
+          </tr>                                                                       
+          <tr>
+            <td> COVERAGE_GRIZY </td>
+            <td> GRIZY footprint </td>
+          </tr>                                                                       
+          <tr>
+            <td> FOREGROUND </td>
+            <td> Bit flag for foreground regions </td>
+          </tr>    
+          <tr>
+            <td> FRACDET_{G,R,I,Z,Y} </td>
+            <td> Detection fraction over an NSIDE = 4096 Healpix pixel </td>
+          </tr>
+          <tr>
+            <td> HPIX_4096 </td>
+            <td> Healpix ID for this entry, on NSIDE = 4096</td>
+            <td> </td>
+          </tr>                                                                                                              
+        </tbody>
+      </table>
 
 
 
@@ -1198,13 +1283,10 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
 <script>
     class DesY3A2Gold extends Polymer.Element {
       static get is() { return 'des-y3a2-gold'; }
-      _top() {this.$.schema_top.scrollIntoView();}
-      _mags() {this.$.schema_mags.scrollIntoView();}
-      _fluxes() {this.$.schema_fluxes.scrollIntoView();}
+	_top() {this.$.schema_top.scrollIntoView();}
       _main() {this.$.schema_main.scrollIntoView();}
-      _tiles() {this.$.schema_tiles.scrollIntoView();}
+      _survey() {this.$.schema_survey.scrollIntoView();}
       _coverage() {this.$.schema_coverage.scrollIntoView();}
-
     }
     window.customElements.define(DesY3A2Gold.is, DesY3A2Gold);
   </script>
