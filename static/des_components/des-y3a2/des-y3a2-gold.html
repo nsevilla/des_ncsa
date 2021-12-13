@@ -24,7 +24,7 @@
           <li><a href="javascript:void(0)" on-tap="_main">Y3_GOLD</a></li>
        </ul>
         <ul>
-          <li><a href="javascript:void(0)" on-tap="_main">Y3_SURVEYCONDITIONS_(G,R,I,Z,Y)_4096</a></li>
+          <li><a href="javascript:void(0)" on-tap="_survey">Y3_SURVEYCONDITIONS_(G,R,I,Z,Y)_4096</a></li>
        </ul>
         <hr />
 
@@ -1106,7 +1106,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
         </table>
 
         <p><br/></p>
-        <div class="fixup" id="schema_main"></div>
+        <div class="fixup" id="schema_survey"></div>
         <h3 class="fixdown">Y3_SURVEYCONDITIONS_(G,R,I,Z,Y)_4096  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
         <table class="wrapped">
@@ -1198,13 +1198,9 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
 <script>
     class DesY3A2Gold extends Polymer.Element {
       static get is() { return 'des-y3a2-gold'; }
-      _top() {this.$.schema_top.scrollIntoView();}
-      _mags() {this.$.schema_mags.scrollIntoView();}
-      _fluxes() {this.$.schema_fluxes.scrollIntoView();}
+	_top() {this.$.schema_top.scrollIntoView();}
       _main() {this.$.schema_main.scrollIntoView();}
-      _tiles() {this.$.schema_tiles.scrollIntoView();}
-      _coverage() {this.$.schema_coverage.scrollIntoView();}
-
+      _survey() {this.$.schema_survey.scrollIntoView();}
     }
     window.customElements.define(DesY3A2Gold.is, DesY3A2Gold);
   </script>
