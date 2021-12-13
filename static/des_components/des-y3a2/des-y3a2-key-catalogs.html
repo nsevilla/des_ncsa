@@ -111,34 +111,1419 @@
  </tbody>
     </table>
 
-    <p> The full Gold catalog is also available by SQL table access, <a href="[[rootPath]]releases/y3a2/des-y3a2/des-y3a2-gold">described here </a>. </p>
+    <p> The full Gold catalog is also available by SQL table access, <a href="[[rootPath]]releases/y3a2/Y3gold">described here </a>. </p>
 
     <h2>
-      <strong>Y1KP Products Download</strong>
+      <strong>Catalog access</strong>
     </h2>
-    <ul>
-      <li>
-    <a href="[[rootPath]]releases/y1a1/key-catalogs/key-mof">Multi-Object-Fitting (MOF) Catalogs and Depth Maps</a>
-      </li>
-      <li>
-    <a href="[[rootPath]]releases/y1a1/key-catalogs/key-psf">PSF Catalog</a>
-      </li>
-      <li>
-    <a href="[[rootPath]]releases/y1a1/key-catalogs/key-shape">Shape Catalogs</a> with associated redshift distributions
-      </li>
-      <li>
-    <a href="[[rootPath]]releases/y1a1/key-catalogs/key-photoz">Photo-z Catalogs</a> 
-      </li>
-      <li>
-       <a href="[[rootPath]]releases/y1a1/key-catalogs/key-redmagic">redMaGiC Catalogs</a>
-      </li>
-      <li>
-       <a href="[[rootPath]]releases/y1a1/key-catalogs/key-redmapper">redMaPPer Catalogs</a>
-      </li>
-    </ul>
+    <p> The catalogs are all linked within the index file, so all data can be accessed by interacting within python using e.g. h5py from loading just the index file. All catalog files must be placed in the same directory for this to work. </p>
+    <p> We provide (without support) a set of python classes to interact with the linked HDF5 catalog files that were used internally to DES. These classes also include code to calculate e.g. the shear response automatically. </p>
+    <p> These can be installed from the main branch of https://github.com/des-science/DESY3Cats, which includes basic documentation and examples. </p>
+
+    <h2>
+      <strong>Cumulative flag bitmasks</strong>
+    </h2>
+    <p>Next we list the selections applied in the Y3KP main cosmological analises</p>
+    <p><strong> Gold selection:</strong></p>
+<xmp>
+flags_foreground == 0
+flags_badregions < 2
+flags_gold < 8
+flags_footprint == 1
+</xmp>
+    <p><strong> Gold photometry selection (for photo-z use):</strong></p>
+<xmp>
+flags_foreground == 0
+flags_badregions < 2
+flags_gold < 2
+flags_footprint == 1
+</xmp>
+<p><strong>Metacal selection:</strong></p>
+<xmp>
+flags == 0
+snr > 10
+snr < 1000
+size_ratio > 0.5 [size_ratio is T/mcal_T_psf]
+T<10
+Not: T>2 AND SNR<30
+Not: log10(T) < (22.25 - mag_r)/3.5 AND sqrt(e_1**2 + e_2**2) > 0.8
+</xmp>
+<p><strong>Metacal photometry for PZ selection:</strong></p>
+<xmp>
+18<i<23.5
+15<(r,z)<26
+-1.5<(r-i,z-i)<4
+</xmp>
+
+<h2>
+      <strong>Structure of catalog files</strong>
+    </h2>
+
+   <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+<p>Gold Catalog</p>
+<xmp>DESY3_GOLD_2_2.1.h5</xmp>
+</th>
+</tr>
+<tr>
+<th colspan="3">
+[Gold Catalog] <xmp> /catalog/gold            Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>COADD_OBJECT_ID</td>
+          <td>
+            <p>Unique identifier for the coadded objects</p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+          <td>RA, DEC</td>
+          <td>
+            <p>Coordinates (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</p>
+          </td>
+	  <td>2</td>
+        </tr>
+        <tr>
+          <td>FLAGS</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+          <td>FLAGS_GOLD</td>
+          <td>
+            <p>Flag describing object anomalies. See Y3 Gold paper for description</p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+          <td>FLAGS_PHOT</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+          <td>HPIX_16384</td>
+          <td>
+            <p>Healpix index for NSIDE = 16384 in NEST schema for the object</p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+          <td>SOF_CM_FRACDEV</td>
+          <td>
+            <p>SOF composite model fraction of de Vaucouleurs flux: cm = fracdev * devaucouleurs + (1-fracdev) * exponential</p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>SOF_CM_MAG_CORRECTED_{G,R,I,Z}</td>
+          <td>
+            <p>SOF corrected magnitude = SOF_CM_MAG + DELTA_MAG_Y4 + DELTA_MAG_CHROM + A_SED_SFD98</p>
+          </td>
+	  <td>4</td>
+        </tr>
+        <tr>
+		<td>SOF_CM_MAG_ERR_{G,R,I,Z}</td>
+          <td>
+            <p>Uncertainty in SOF magnitude</p>
+          </td>
+	  <td>4</td>
+        </tr>
+        <tr>
+          <td>SOF_CM_T</td>
+          <td>
+            <p>Size squared of the object: T=+ [arcsec**2]</p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+          <td>SOF_FLAGS</td>
+          <td>
+            <p>Overall image processing flags. See flag definition in TBD. Can contain NULLs for objects with unfinished processing for SOF</p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+          <td>TILENAME</td>
+          <td>
+            <p>Identifier of each one of the tiles on which the survey is gridded for data processing</p>
+          </td>
+	  <td>1</td>
+        </tr>
+<tr>
+<th colspan="3">
+[Gold Mask] <xmp>/masks/gold/            Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>HPIX</td>
+          <td>
+            <p>Healpix ID, NSIDE = XXX, Nested = True</p>
+          </td>
+	  <td>1</td>
+        </tr>
+
+      </tbody>
+    </table>
     <p>
-      <br/>
+    </br>
     </p>
+   <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+
+<p>LENS samples </p>
+<xmp>DESY3_maglim_redmagic_v0.5.1.h5</xmp>
+</th>
+</tr>
+        <tr>
+          <th colspan="3">
+[Magnitude-limited] <xmp>/catalog/maglim      Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>RA, DEC</td>
+          <td>
+            <p>Coordinates (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</p>
+          </td>
+	  <td>2</td>
+        </tr>
+        <tr>
+          <td>WEIGHT</td>
+          <td>
+            <p>Analysis weight</p>
+          </td>
+	  <td>1</td>
+        </tr>
+<tr>
+          <th colspan="3">
+[RedMaGiC] <xmp>/catalog/redmagic/combined_sample_fid      Group</xmp>
+          </th>
+</tr>
+<tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>
+		  CHISQ
+          </td>
+          <td>
+            Chi-square to best-fit
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>RA, DEC</td>
+          <td>
+            <p>Coordinates (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</p>
+          </td>
+	  <td>2</td>
+        </tr>
+        <tr>
+          <td>COADD_OBJECT_ID</td>
+          <td>
+            <p>Unique identifier for the coadded objects</p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+          <td>
+		LUM 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		MAG 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		MAG_ERR 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		REFMAG 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		REFMAG_ERR 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		WEIGHT 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		ZREDMAGIC 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		ZREDMAGIC_E 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		ZREDMAGIC_SAMP 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		ZSPEC 
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+<tr>
+          <th colspan="3">
+[LENS Samples Mask] <xmp>/masks/redmagic/combined_sample_fid      Group</xmp>
+          </th>
+</tr>
+<tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+		FRACGOOD 
+          </td>
+          <td>
+		  Effective area of the pixel (between 0. and 1.)
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+<tr>
+        <tr>
+          <td>
+		HPIX
+          </td>
+          <td>
+		  Healpix ID, NSIDE = XXX, Nested = True
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+<tr>
+        <tr>
+          <td>
+		ZMAX
+          </td>
+          <td>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+<tr>
+          <th colspan="3">
+[RANDOMS for MagLim Sample] <xmp>/randoms/maglim      Group</xmp>
+          </th>
+       </tr>
+       <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>
+		RA,DEC
+          </td>
+          <td>
+		Coordinates (J2000.0)
+          </td>
+          <td>
+            2
+          </td>
+        </tr>
+<tr>
+          <td>
+		WEIGHT
+          </td>
+          <td>
+		  Analysis weight
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		Z
+          </td>
+          <td>
+		  Redshift
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+<tr>
+          <th colspan="3">
+[RANDOMS for RedMaGiC Sample] <xmp>/randoms/redmagic/combined_sample_fid      Group</xmp>
+          </th>
+       </tr>
+       <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>
+		RA,DEC
+          </td>
+          <td>
+		Coordinates (J2000.0)
+          </td>
+          <td>
+            2
+          </td>
+        </tr>
+<tr>
+          <td>
+		WEIGHT
+          </td>
+          <td>
+		  Analysis weight
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+		Z
+          </td>
+          <td>
+		  Redshift
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <p>
+    </br>
+    </p>
+
+
+
+   <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+<p>Shape catalog</p>
+<xmp>DESY3_metacal_v02-004.h5</xmp>
+          </th>
+        </tr>
+	<tr>
+	  <th colspan="3">
+		  <xmp>/catalog/metacal/sheared_1m      Group</xmp>
+</th>
+	</tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>T_ERR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+
+
+        <tr>
+		<td>COVMAT_0_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_1_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_2_2</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>E_{1,2}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>2</td>
+        </tr>
+        <tr>
+		<td>FLUX_ERR_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>FLUX_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>SIZE_RATIO</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>SNR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>WEIGHT</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+	<tr>
+	  <th colspan="3">
+		  <xmp>/catalog/metacal/sheared_1p      Group</xmp>
+</th>
+	</tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>T_ERR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+
+
+        <tr>
+		<td>COVMAT_0_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_1_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_2_2</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>E_{1,2}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>2</td>
+        </tr>
+        <tr>
+		<td>FLUX_ERR_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>FLUX_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>SIZE_RATIO</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>SNR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>WEIGHT</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+	<tr>
+	  <th colspan="3">
+		  <xmp>/catalog/metacal/sheared_2m      Group</xmp>
+</th>
+	</tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>T_ERR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+
+
+        <tr>
+		<td>COVMAT_0_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_1_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_2_2</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>E_{1,2}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>2</td>
+        </tr>
+        <tr>
+		<td>FLUX_ERR_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>FLUX_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>SIZE_RATIO</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>SNR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>WEIGHT</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+	<tr>
+	  <th colspan="3">
+		  <xmp>/catalog/metacal/sheared_2p      Group</xmp>
+</th>
+	</tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>T_ERR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+
+
+        <tr>
+		<td>COVMAT_0_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_1_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_2_2</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>E_{1,2}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>2</td>
+        </tr>
+        <tr>
+		<td>FLUX_ERR_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>FLUX_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>SIZE_RATIO</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>SNR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>WEIGHT</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+	<tr>
+	  <th colspan="3">
+		  <xmp>/catalog/metacal/unsheared      Group</xmp>
+</th>
+	</tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+	<tr>
+          <td>R11</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+<tr>
+          <td>R12</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+<tr>
+          <td>R21</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+<tr>
+          <td>R22</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>T</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>T_ERR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+<tr>
+          <td>COADD_OBJECT_ID</td>
+          <td>
+            <p>Unique identifier for the coadded objects</p>
+          </td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+		<td>COVMAT_0_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_1_1</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>COVMAT_2_2</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+          <td>RA, DEC</td>
+          <td>
+            <p>Coordinates (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</p>
+          </td>
+	  <td>2</td>
+        </tr>
+
+        <tr>
+		<td>E_{1,2}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>2</td>
+        </tr>
+<tr>
+                <td>FLAGS</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+		<td>FLUX_ERR_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>FLUX_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>3</td>
+        </tr>
+        <tr>
+		<td>SIZE_RATIO</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>SNR</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+        <tr>
+		<td>WEIGHT</td>
+          <td>
+            <p></p>
+          </td>
+	  <td>1</td>
+        </tr>
+
+	
+	
+	<tr>
+                <td>MASK_FRAC</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+<tr>
+                <td>MCAL_PSF_T</td>
+          <td>
+            <p></p>
+          </td>
+          <td>2</td>
+        </tr>
+<tr>
+                <td>MCAL_PSF_E{1,2}</td>
+          <td>
+            <p></p>
+          </td>
+          <td>2</td>
+        </tr>
+<tr>
+	<td>NIMAGE_TOT_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+          <td>3</td>
+        </tr>
+	<tr>
+                <td>NIMAGE_USE_{R,I,Z}</td>
+          <td>
+            <p></p>
+          </td>
+          <td>3</td>
+        </tr>
+<tr>
+                <td>PSF_T</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+<tr>
+                <td>PSF_E{1,2}</td>
+          <td>
+            <p></p>
+          </td>
+          <td>2</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+    </br>
+    </p>
+
+   <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+<p>DNF Photo-z catalog</p>
+<xmp>DESY3_GOLD_2_2.1_DNF.h5</xmp>
+</th>
+</tr>
+<tr>
+<th colspan="3">
+[DNF Catalog] <xmp>/catalog/unsheared            Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+	<tr>
+          <td>COADD_OBJECT_ID</td>
+          <td>
+            <p>Unique identifier for the coadded objects</p>
+          </td>
+	  <td>1</td>
+        </tr>
+<tr>
+                <td>ZMC_SOF</td>
+          <td>
+            <p>Nearest neighbor redshift from the reference set produced by the DNF photo-z estimator. Appropriate for building ensemble redshift distributions</p>
+          </td>
+          <td>1</td>
+        </tr>
+	<tr>
+                <td>ZMEAN_SOF</td>
+          <td>
+            <p>Best redshift estimate from the DNF photo-z algorithm</p>
+          </td>
+          <td>1</td>
+        </tr>
+
+      </tbody>
+    </table>
+    <p>
+    </br>
+    </p>
+
+   <table class="wrapped">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="3">
+<p>SOMPZ Redshift Information</p>
+<xmp>DESY3_sompz_v0.40.h5</xmp>
+</th>
+</tr>
+<tr>
+<th colspan="3">
+[PZ Data] <xmp>/catalog/sompz/pzdata            Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+	<tr>
+		<td>BIN{0,1,2,3}</td>
+          <td>
+            <p>Redshift bin for each of the tomographic redshift bins</p>
+          </td>
+          <td>4</td>
+        </tr>
+	<tr>
+		<td>PZ_C</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+	<tr>
+                <td>PZ_CHAT</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+	<tr>
+                <td>ZHIGH</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+	<tr>
+                <td>ZLOW</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+<tr>
+<th colspan="3">
+[Data For Sheared 1m] <xmp>/catalog/sompz/sheared_1m            Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+	<tr>
+                <td>BHAT</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+	<tr>
+                <td>CELL_WIDE</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+<tr>
+<th colspan="3">
+[Data For Sheared 1p] <xmp>/catalog/sompz/sheared_1p            Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+	<tr>
+                <td>BHAT</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+	<tr>
+                <td>CELL_WIDE</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+<tr>
+<th colspan="3">
+[Data For Sheared 2m] <xmp>/catalog/sompz/sheared_2m            Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+	<tr>
+                <td>BHAT</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+	<tr>
+                <td>CELL_WIDE</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+<tr>
+<th colspan="3">
+[Data For Sheared 2p] <xmp>/catalog/sompz/sheared_2p            Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+	<tr>
+                <td>BHAT</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+	<tr>
+                <td>CELL_WIDE</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+<tr>
+<th colspan="3">
+[Data For Unsheared] <xmp>/catalog/sompz/unsheared            Group</xmp>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Column name</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
+          <td>
+            <strong>Number of columns</strong>
+          </td>
+        </tr>
+	<tr>
+                <td>BHAT</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+	<tr>
+                <td>CELL_WIDE</td>
+          <td>
+            <p></p>
+          </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>COADD_OBJECT_ID</td>
+          <td>
+            <p>Unique identifier for the coadded objects</p>
+          </td>
+	  <td>1</td>
+        </tr>
+
+
+      </tbody>
+    </table>
 
 
 </div>
