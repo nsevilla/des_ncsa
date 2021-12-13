@@ -10,7 +10,7 @@
     <des-card heading ="DES Y1 DMASS catalog v1.0  (Lee et al. 2019)">
         <div style="text-align: center">
           <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/other/y1-dmass"><paper-button   raised class="desButton">Documentation</paper-button></a>
-    <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1-dmass/"><paper-button   raised class="desButton">Files</paper-button></a>
+    <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1_dmass/"><paper-button   raised class="desButton">Files</paper-button></a>
 </div>
       <div class="card-content">
         <h2>
@@ -22,9 +22,9 @@
 
         <hr/>
         <h2>
-          <strong> Catalogs </strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1-dmass/dmass_y1_public_v1.fits" target="_blank">dmass_y1_public_v1.fits</a>, <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1dmass/random_dmass_y1_public_v1.fits", target="_blank">random_dmass_y1_public_v1.fits</a>)
+          <strong> Catalogs </strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1_dmass/dmass_y1_public_v1.fits" target="_blank">dmass_y1_public_v1.fits</a>, <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1_dmass/random_dmass_y1_public_v1.fits", target="_blank">random_dmass_y1_public_v1.fits</a>)
         </h2>
-	<p>We release the DMASS catalog and corresponding randoms. The DMASS catalog includes 'CMASS_PROB', the selection weights for the DES Y1 GOLD galaxies that weights GOLD galaxies to produce a statistical match to the BOSS CMASS sample. See Section 3.4 for details. Systematics weight `WEIGHT_SYS` has been characterized in Section 4 of the paper. These weights should be applied for any two-point function-related computations. The algorithm that computes the selection weights can be found in <a href="https://github.com/sujeong-lee/DMASS">this github repository (branch publish_v1.0)</a>.</p>
+	<p>We release the DMASS catalog and corresponding randoms. The DMASS catalog includes 'CMASS_PROB', the selection weights for the DES Y1 GOLD galaxies that weights GOLD galaxies to produce a statistical match to the BOSS CMASS sample. See Section 3.4 for details. Systematics weight `WEIGHT_SYS` has been characterized in Section 4 of the paper. These weights should be applied for any two-point function-related computations. The algorithm that computes the selection weights can be found in <a href="https://github.com/sujeong-lee/DMASS/releases/tag/v1.0">this GitHub repository (release <code>dmass_algorithm_v1.0</code>)</a>.</p>
         <p>To use the catalogs, follow the steps below:</p>
         <p>1. Exclude contaminated regions and noisy sources as follows:</p>
 	<pre><code >
@@ -96,7 +96,7 @@
           </tbody>
         </table>
         <h2>
-          <strong> Measurements of tangential shear and cosmological constraints </strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1-dmass/dmass_analysis-1.0.tar.gz" target="_blank">dmass_analysis-1.0.tar.gz</a>)
+          <strong> Measurements of tangential shear and cosmological constraints </strong> (<a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/y1_dmass/dmass_analysis-1.0.tar.gz" target="_blank">dmass_analysis-1.0.tar.gz</a>)
         </h2>
 	<p>This tarball contains the data products of the two papers (<a href="http://arxiv.org/abs/2104.11319">arxiv:2104.11319</a> and <a href="http://arxiv.org/abs/2104.14515">arxiv:2104.14515</a>). In this release page, we only list files of our key results - the measured galaxy-galaxy lensing and galaxy clustering of DMASS, covariance matrices, and cosmology chains. For descriptions for other outputs that are not listed here, please see 'readme' text files in each directory. The cosmology chains are produced using multinest and importance sampler. When using chains, you must weight the contribution of each sample according to the weight column. </p>
 	<p><b>Measurements of the two-point functions and covariance matrices</b></p>

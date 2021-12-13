@@ -4,7 +4,7 @@
 <style include="shared-styles"></style>
 
 
-<des-card  heading="DES Y3 RELEASE" >
+<des-card  heading=" Y3 cosmology Data Release" >
         <div style="text-align: center">
         <iron-image style="width:637px; height:337px; padding:40px;" sizing="contain"
                 src="{{rootPath}}static/images/y3a2/image_map_quality_good.jpg"></iron-image>
@@ -13,7 +13,11 @@
             </div>
       <div class="card-content">
           <span>
-              This page presents the release of the DES Year 3 (Y3) data products. For a detailed description and list of available files of this release please see the links below. Users may also consider using the <a href="[[rootPath]]releases/dr2">DES DR2</a> based on six years of survey operations. For a full list of Year-3 publications, please visit <a href="https://www.darkenergysurvey.org/des-year-3-cosmology-results-papers">https://www.darkenergysurvey.org/des-year-3-cosmology-results-papers/</a>
+              This page presents the release of the DES Year 3 (Y3) data products. For a detailed description and list of available files of this release please see the links below. Users may also consider using the <a href="[[rootPath]]releases/dr2">DES DR2</a> based on six years of survey operations. 
+
+	      <p> Some products are accesible through a query server, they can be access from <a href="https://des.ncsa.illinois.edu/desaccess/">DESaccess</a></p>
+	      
+	      <p> For a full list of Year-3 publications, please visit <a href="https://www.darkenergysurvey.org/des-year-3-cosmology-results-papers">https://www.darkenergysurvey.org/des-year-3-cosmology-results-papers/</a></p>
           </span>
 
       <div style="text-align: center">
@@ -27,10 +31,10 @@
         <strong>Overview</strong>
       </h2>
       <p>The Dark Energy Survey (DES) Year-Three (Y3) Gold data release consists of the data products used for DES Y3 cosmology and some non-cosmology related science. These products include object catalogs, survey characterization maps, and cosmological likelihoods associated with DES Y3 papers. This release is divided into several sections:</p>
-      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3gold">Gold products</a>: This section contains the primary DES Y3 data products including the Gold object catalog and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
-      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3balrog">Balrog</a>: This section contains the primary DES Y3 data products including the Gold object catalog and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
-      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3deepfields">Deep Fields</a>: This section contains the primary DES Y3 data products including the Gold object catalog and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
-      <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y3a2/Y3key-catalogs">Y3KP catalogs</a>: This section contains all catalogs used to run the main cosmological analysis from the cross-correlation of weak-lensing and clustering. It is serve as several h5 files, plus some code snippet (python) to interface with the data and isntructions to reproduce the catalogs used in our analysis. They include the shape catalogs (metacal), the redmagic and the maglim samples.</p>
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3gold">Gold products</a>: This section contains the primary DES Y3 catalog (aka Gold) and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3balrog">Balrog</a>: This section contains data associated with the Balrog products.</p>
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3deepfields">Deep Fields</a>: This section contains data associated with the Deep Fields.</p>
+      <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y3a2/Y3key-catalogs">Y3KP catalogs</a>: This section contains all catalogs used to run the main cosmological analysis from the cross-correlation of weak-lensing and clustering. It is serve as several h5 files, plus some code snippet (python) to interface with the data and isntructions to reproduce the catalogs used in our analysis</p>
       <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y3a2/Y3key-products">Y3KP products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y3KP Catalogs described above.</p>
       <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3bao">BAO sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based on the Y3 Gold catalog.</p>
       <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3redmagic">Redmagic samples</a>: Redmagic samples</p>
@@ -69,8 +73,9 @@
       </h2>
       <p>The full listing of downloadable files can be found <strong>
           <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/">here</a>
-        </strong>.</p>
-      <p>The data products are described in more detail on the pages linked above and files are linked by topic below. Catalog files are distributed as gzipped <a href="http://fits.gsfc.nasa.gov/fits_documentation.html">FITS</a> binary tables. Ancillary depth maps, survey condition maps, and footprint masks are provided as <a href="http://healpix.jpl.nasa.gov/">HEALPix</a> formatted gzipped binary FITS tables.</p>
+        </strong>. Y3 Gold products and Deep Field catalogs are only accesible through <a href="https://des.ncsa.illinois.edu/desaccess/">DESaccess</a></p>
+	<p>The data products are described in more detail on the pages linked above. </p> 
+	<!--p>and files are linked by topic below. Catalog files are distributed as gzipped <a href="http://fits.gsfc.nasa.gov/fits_documentation.html">FITS</a> binary tables. Ancillary depth maps, survey condition maps, and footprint masks are provided as <a href="http://healpix.jpl.nasa.gov/">HEALPix</a> formatted gzipped binary FITS tables.</p-->
       <p>
         <strong>Release Notes:</strong>
       </p>
@@ -82,7 +87,7 @@
       <p>
         <br/>
       </p>
-      <table>
+      <!--table>
         <colgroup>
           <col />
           <col />
@@ -284,10 +289,10 @@
             </td>
           </tr>
          </tbody>
-      </table>
-      <p>
+      </table-->
+      <!--p>
         <br/>
-      </p>
+      </p-->
       <h4>Acknowledgements and General DES References</h4>
       <ul>
           <li> Please see the <a href="https://des.ncsa.illinois.edu/thanks">Acknowledgements</a> page for general acknowledgements references. Please also make sure to visit each product page for the corresponding references. </li><br />
