@@ -124,21 +124,25 @@
       <strong>Cumulative flag bitmasks</strong>
     </h2>
     <p>Next we list the selections applied in the Y3KP main cosmological analises</p>
-    <p><strong> Gold selection:</strong></p>
+    <p><strong>The select index array (DESY3_indexcat.h5//index/select*) contains all the below flags, along with the intersection of the relevant footprint masks.</strong></p>
+    
+    <p></br></p>
+
+    <p><strong> Gold selection (DESY3_GOLD_2_2.1.h5//catalog/gold/flags_gold):</strong></p>
 <xmp>
 flags_foreground == 0
 flags_badregions < 2
 flags_gold < 8
 flags_footprint == 1
 </xmp>
-    <p><strong> Gold photometry selection (for photo-z use):</strong></p>
+    <p><strong> Gold photometry selection (for photo-z use) (DESY3_GOLD_2_2.1.h5//catalog/gold/flags_phot):</strong></p>
 <xmp>
 flags_foreground == 0
 flags_badregions < 2
 flags_gold < 2
 flags_footprint == 1
 </xmp>
-<p><strong>Metacal selection:</strong></p>
+<p><strong>Metacal selection (DESY3_indexcat.h5//index/metacal/select*):</strong></p>
 <xmp>
 flags == 0
 snr > 10
@@ -156,7 +160,7 @@ Not: log10(T) < (22.25 - mag_r)/3.5 AND sqrt(e_1**2 + e_2**2) > 0.8
 </xmp>
 
 <h2>
-      <strong>Structure of catalog files</strong>
+      <strong>Structure of h5 catalog files</strong>
     </h2>
 
    <table class="wrapped">
