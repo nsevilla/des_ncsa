@@ -1,0 +1,103 @@
+<dom-module id="des-y3a2-psf">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="PSF Modeling">
+<div class="card-content">
+  <h2>
+    <strong>Catalog Overview</strong>
+  </h2>
+
+  <p>DESCRIPTION AND REFERENCE HERE</p>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>The catalog is a fits file. It can be downloaded from <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/psf/psf_y3a1-v29.fits">here</a> </p>
+  <h2>
+    <strong>Catalog Description - psf_y3a1-v29.fits</strong>
+  </h2>
+  <p>This catalog contains 56,707,987 objets from a Piff run.</p>
+  <p>This run of Piff covers all Y3 exposures used for the Y3 meds files in g,r,i,z,Y bands and includes 38287 exposures. 20% of the stars are reserved from the Piff solution for use in the null tests. The catalogs include measurements of the DESDM PSFEx models for the same stars.</p>
+  <table >
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">RA, DEC</td>
+        <td colspan="1">Right ascension and declination [degrees] </td>
+      </tr>
+      <tr>
+        <td colspan="1">X, Y</td>
+        <td colspan="1">Position on the CCD [pixels]</td>
+      </tr>
+      <tr>
+        <td colspan="1">OBS_E1, OBS_E2</td>
+        <td colspan="1">The shape of the observed star (using shear definition, not distortion)</td>
+      </tr>
+      <tr>
+        <td colspan="1">OBS_T</td>
+        <td colspan="1">The size (as T = Ixx + Iyy) of the observed star [arcsec^2]</td>
+      </tr>
+      <tr>
+        <td colspan="1">PIFF_E1, PIFF_E2</td>
+        <td colspan="1">The shape of the Piff model of the PSF (using shear definition, not distortion)</td>
+      </tr>
+      <tr>
+        <td colspan="1">PIFF_T</td>
+        <td colspan="1">The size (as T = Ixx + Iyy) of the Piff model of the PSF [arcsec^2]</td>
+      </tr>
+      <tr>
+        <td colspan="1">MAG</td>
+        <td colspan="1">Magnitude in the given bandpass (in AB)</td>
+      </tr>
+      <tr>
+        <td colspan="1">FOV_X, FOV_Y</td>
+        <td colspan="1">Position in field-of-view coordinates (arcsec relative to field center at 0,0)
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">EXP</td>
+        <td colspan="1">Exposure number</td>
+      </tr>
+      <tr>
+        <td colspan="1">CCD</td>
+        <td colspan="1">DECAm CCD number (1-62)</td>
+      </tr>
+      <tr>
+        <td colspan="1">BAND</td>
+        <td colspan="1">Bandpass of observation (g, r, i, z, Y)</td>
+      </tr>
+      <tr>
+        <td colspan="1">TILING</td>
+        <td colspan="1">Which tiling number where each tiling covers the whole DES footprint once (usually from 1-6)</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY3A2Psf extends Polymer.Element {
+      static get is() { return 'des-y3a2-psf'; }
+    }
+    window.customElements.define(DesY3A2Psf.is, DesY3A2Psf);
+  </script>
+
+</dom-module>
