@@ -1083,9 +1083,9 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
         <strong>Known issues <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></strong>
       </h2>
       <h3>BPZ performance </h3>
-      As described in Sevilla-Noarbe et al. 2021, this template fitting code shows a poor performance at z < 0.5. DNF is recommended for this range.
+      As described in Sevilla-Noarbe et al. 2021, this template fitting code shows a poor performance at z < 0.5 (Figure 11). DNF is recommended for this range.
       <h3>Large, fake objects in dense fields </h3>
-      A few fake objects have been found in very dense environments with a very large size (usually encompassing several blended objects/artifacts). This is a consequence of an artificially large detection associated with collections of these objects.
+      A few fake objects (1%) have been found in very dense environments with a very large size (CM_T), usually encompassing several blended objects/artifacts. This is a consequence of an artificially large detection associated with collections of these objects.
       <h3>Magnitude vs magnitude error between SOF and AUTO </h3>
       There are differences in how the errors are calculated in SOF and AUTO, that increases the dispersion in the SNR relation. This translates into some dependence between the depth maps and the catalogs in the SNR limit of the definition. For a fixed magnitude limit in a catalog, pixels with depth near a given SNR limit, will contain more objects with lower SNR than using AUTO. This translates into a density increase in regions with depth similar to the magnitude limit, that we do not see in AUTO.
 
