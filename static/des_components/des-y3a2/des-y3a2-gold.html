@@ -12,29 +12,66 @@
 
 
 
-<div class="fixup" id="schema_top"></div>
+<div class="fixup" id="gold_top"></div>
 <div class="fixdown"></div>
-<des-card heading ='Y3 Gold Table Schema'>
+<des-card heading ='Y3 Gold'>
     <div class=card-content>
-        Below we present a summarized version of the Y3 Gold tables (Y3A2, second annual Data Management release) and their description, corresponding to the internal Gold DES release 2.0. Some of the columns of this release with less relevance have been removed for clarity and improved accessibility in the database. Some of the columns have links to a more detailed explanation and origin, in particular, the <a href = "http://sextractor.readthedocs.io/en/des_dr1/" target="_blank"> Sextractor parameters used for DR1 and DR2</a>. Note that each table has a 1% sampled version of the table for trying out queries. For example, Y3_GOLD_SAMPLE is the same as Y3_GOLD but with only 1% of objects. The Y3 Gold data products and data quality checks are described in <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract"> Sevilla-Noarbe et al. (2021) </a>. Updated information will be published here, when applicable.
+    <h2>
+    <strong>Overview</strong>
+    </h2>
 
-        The following table (from Sevilla-Noarbe et al. (2021) contains the main characteristics of the catalog:
+    The Y3 Gold release includes a collection of data sets including a value added version of the DR1 coadd catalog and ancillary information such as survey maps. The Y3 Gold data products and data quality checks are described in <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract"> Sevilla-Noarbe et al. (2021) </a>. Updated information will be published here, when applicable. In addition, we present a list of sample queries and known issues for this catalog.
+
+    The following table (from Sevilla-Noarbe et al. (2021) contains the main characteristics of the catalog:
 
         <div style="text-align: center">
         <iron-image style="width:937px; height:495px; padding:1px;" sizing="contain"
                 src="{{rootPath}}static/images/y3a2/y3_gold_table.png"></iron-image>
         </div>
+
+    At the bottom of this page, you can also find:
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_schematop">Y3 Gold schema</a></li>
+    </ul>
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_issues">A list of known issues</a></li>
+    </ul>
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_queries">Some sample queries</a></li>
+    </ul>
+
+
+    <h2>
+    <strong>References</strong>
+    </h2>
+    <ol>
+      <li>
+      <a href="https://doi.org/10.3847/1538-4365/abeb66">Sevilla-Noarbe et al. (2021)</a>, ApJS 254, 24</li>
+      <li>
+      <a href="https://doi.org/10.3847/1538-4365/ac00b3">DES Collaboration (2021)</a>, ApJS 255, 20</li>
+      <li>
+      <a href="https://doi.org/10.3847/1538-4365/aab4f5">Drlica-Wagner et al. (2018)</a>, ApJS 235, 33</li>
+      <li>
+      <a href="https://doi.org/10.1088/1538-3873/aab4ef">Morganson et al. (2018)</a>, PASP 130, 074501</li>
+    </ol>
+ 
+    <h2>
+      <div id="schema_top"></div>
+      <strong>Y3 Gold schema </strong>
+    </h2>
+
+        Below we present a summarized version of the Y3 Gold tables (Y3A2, second annual Data Management release) and their description, corresponding to the internal Gold DES release 2.0. Some of the columns of this release with less relevance have been removed for clarity and improved accessibility in the database. Some of the columns have links to a more detailed explanation and origin, in particular, the <a href = "http://sextractor.readthedocs.io/en/des_dr1/" target="_blank"> Sextractor parameters used for DR1 and DR2</a>.  
+
         The links below take you to the descriptions of the columns contained in the release for each table associated to the Y3 GOLD data set.
         <ul>
           <li><a href="javascript:void(0)" on-tap="_main">Y3_GOLD</a></li>
        </ul>
         <ul>
-          <li><a href="javascript:void(0)" on-tap="_main">Y3_GOLD_SURVEYCONDITIONS</a></li>
+          <li><a href="javascript:void(0)" on-tap="_survey">Y3_GOLD_SURVEYCONDITIONS</a></li>
        </ul>
         <ul>
-          <li><a href="javascript:void(0)" on-tap="_main">Y3_GOLD_COVERAGE</a></li>
+          <li><a href="javascript:void(0)" on-tap="_footprint">Y3_GOLD_FOOTPRINT</a></li>
        </ul>
-        <hr />
 
         <p><br/></p>
         <div class="fixup" id="schema_main"></div>
@@ -114,35 +151,35 @@
               <td>
                 <a>BPZ_ZMC_{MOF/SOF}</a>
               </td>
-              <td>MonteCarlo instance from the redshift distribution computed from BPZ (TBC)</td>
+              <td>MonteCarlo instance from the redshift distribution computed from BPZ</td>
               <td colspan="1" style="text-align: center;">2</td>
             </tr>
             <tr>
               <td>
                 <a>BPZ_ZMEAN_{MOF/SOF}</a>
               </td>
-              <td>Mean of the redshift distribution computed from BPZ (TBC)</td>
+              <td>Mean of the redshift distribution computed from BPZ</td>
               <td colspan="1" style="text-align: center;">2</td>
             </tr>
             <tr>
               <td>
                 <a>BPZ_ZMODE_{MOF/SOF}</a>
               </td>
-              <td>Mode of the redshift distribution computed from BPZ (TBC)</td>
+              <td>Mode of the redshift distribution computed from BPZ</td>
               <td colspan="1" style="text-align: center;">2</td>
             </tr>
             <tr>
               <td>
                 <a>BPZ_ZSIGMA68_{MOF/SOF}</a>
               </td>
-              <td>Width of the 68% quantile (TBC)</td>
+              <td>Width of the 68% quantile</td>
               <td colspan="1" style="text-align: center;">2</td>
             </tr>
             <tr>
               <td>
                 <a>BPZ_ZSIGMA_{MOF/SOF}</a>
               </td>
-              <td>Width of the redshift distribution computed from BPZ (TBC)</td>
+              <td>Width of the redshift distribution computed from BPZ</td>
               <td colspan="1" style="text-align: center;">2</td>
             </tr>
             <tr>
@@ -150,13 +187,6 @@
                 <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">B_IMAGE</a>
               </td>
               <td>Detection image based basic shape parameter; B = semiminor-axis [pixels]</td>
-              <td colspan="1" style="text-align: center;">1</td>
-            </tr>
-            <tr>
-              <td>
-                <a><font color="red">CAL_TEMPLATE_INDEX</font></a>
-              </td>
-              <td>Calibration template index (TBC)</td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
@@ -257,7 +287,7 @@
                 </p>
               </td>
               <td colspan="1">
-Star/galaxy separation using SExtractor photometry and SPREAD_MODEL, SPREAD_MODEL_ERR in the i band (TBC) 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
+Star/galaxy separation using SExtractor photometry and SPREAD_MODEL, SPREAD_MODEL_ERR in the i band. 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
@@ -267,7 +297,7 @@ Star/galaxy separation using SExtractor photometry and SPREAD_MODEL, SPREAD_MODE
                 </p>
               </td>
               <td colspan="1">
-Star/galaxy separation using MOF/SOF photometry, and WAVG and finally coadd quantities in case of missing values (TBC) 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
+Star/galaxy separation using MOF/SOF photometry in the i band, and WAVG and finally coadd quantities in case of missing values. 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
               <td colspan="1" style="text-align: center;">2</td>
             </tr>
             <tr>
@@ -277,7 +307,7 @@ Star/galaxy separation using MOF/SOF photometry, and WAVG and finally coadd quan
                 </p>
               </td>
               <td colspan="1">
-Star/galaxy separation using MOF/SOF photometry and T_SIZE in the i band (TBC) 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
+Star/galaxy separation using MOF/SOF photometry and T_SIZE in the i band. 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
               <td colspan="1" style="text-align: center;">2</td>
             </tr>
             <tr>
@@ -287,7 +317,7 @@ Star/galaxy separation using MOF/SOF photometry and T_SIZE in the i band (TBC) 0
                 </p>
               </td>
               <td colspan="1">
-Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR in the i band (TBC) 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
+Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR in the i band. 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
@@ -361,14 +391,14 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
-              <td colspan="1">FRAC_DET_{G,R,I,Z}</td>
+              <td colspan="1">FRAC_DET_GRIZ</td>
               <td colspan="1">Fractional area of Healpix pixel covered simultaneously by griz bands</td>
-              <td colspan="1" style="text-align: center;">4</td>
+              <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
-              <td colspan="1">FRAC_DET_{G,R,I,Z,Y}</td>
+              <td colspan="1">FRAC_DET_GRIZY</td>
               <td colspan="1">Fractional area of Healpix pixel covered simultaneously by grizY bands</td>
-              <td colspan="1" style="text-align: center;">5</td>
+              <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
               <td colspan="1">HPIX_16384</td>
@@ -404,7 +434,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_AUTO_{G,R,I,Z,Y}(</a>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_AUTO_{G,R,I,Z,Y}</a>
               </td>
               <td>Error in MAG_AUTO [mag]</td>
               <td style="text-align: center;">5</td>
@@ -452,11 +482,6 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
-              <td><font color="red"> MOF_BOX_SIZE </font></td>
-              <td>Linear size of the postage stamp used for MOF estimation[pixels, TBC]</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
               <td>MOF_CM_CHI2PER</td>
               <td>Chi2 per degree of freedom of the composite model fit</td>
               <td style="text-align: center;">1</td>
@@ -464,16 +489,6 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             <tr>
               <td>MOF_CM_DOF</td>
               <td>Number of the degrees of freedom for the composite model fit</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red"> MOF_CM_FLAGS </font></td>
-              <td>Composite model galaxy fit flag (TBD further documentation)</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_CM_FLAGS_R</font></td>
-              <td>Flags for the roundified parameter determination (TBD further documentation)</td>
               <td style="text-align: center;">1</td>
             </tr>            
             <tr>
@@ -572,21 +587,6 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td style="text-align: center;">4</td>
             </tr>            
             <tr>
-              <td><font color="red">MOF_CM_MOF_FLAGS</font></td>
-              <td>Flags for MOF CM fit. Flag definitions TBD</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_CM_MOF_NUM_ITR</font></td>
-              <td>Number of iterations in MOF fit</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_CM_PSF_T_R</font></td>
-              <td>Roundified PSF size (PSF_T)</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
               <td>MOF_CM_T</td>
               <td>Size squared of the object: T=<x**2>+<y**2> [arcsec**2]</td>
               <td style="text-align: center;">1</td>
@@ -597,89 +597,14 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td style="text-align: center;">1</td>
             </tr>            
             <tr>
-              <td><font color="red">MOF_CM_TDBYTE_NOCLIP</font></td>
-              <td>Ratio of sizes Tdev/Texp without FRACDEV clipping to [0,1]  </td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
               <td>MOF_CM_T_ERR</td>
               <td>Error in size squared [arcsec**2]</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_CM_T_R</font></td>
-              <td>Roundified T size [arcsec**2]</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_CM_T_S2N</font></td>
-              <td>Signal to noise for T size determination</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_CM_WEIGHT</font></td>
-              <td>Total weight across all epochs and bands</td>
               <td style="text-align: center;">1</td>
             </tr>            
             <tr>
               <td>MOF_FLAGS</td>
               <td>Overall image processing flags. See flag definition in TBD. Can contain NULLs for objects with unfinished processing for MOF</td>
               <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_FOFID</font></td>
-              <td>Index of friends-of-friends group to which the object belongs to</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_FOFIND</font></td>
-              <td>TBD</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_MASK_FRAC</font></td>
-              <td>The fraction of postage stamp that was masked. sum(WEIGHT)/max(WEIGHT)/npix</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_NBR</font></td>
-              <td>ngmix object index within a tile</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_NIMAGE_TOT_{G,R,I,Z}</font></td>
-              <td>Total number of images available for this object</td>
-              <td style="text-align: center;">4</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_NIMAGE_USE_{G,R,I,Z}</font></td>
-              <td>Number of images actually used for this object for MOF calculations</td>
-              <td style="text-align: center;">4</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_OBJ_FLAGS_{G,R,I,Z}</font></td>
-              <td>MOF object flags (TBD)</td>
-              <td style="text-align: center;">4</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_PSFREC_G_1</font></td>
-              <td>MOF based shape component 1 (reduced version of e1)</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_PSFREC_G_2</font></td>
-              <td>MOF based shape component 2 (reduced version of e2)</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_PSFREC_T</font></td>
-              <td>Size squared of the object: T=<x**2>+<y**2> [arcsec**2]</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_PSF_FLAGS_{G,R,I,Z}</font></td>
-              <td>MOF PSF fit flag (TBD further documentation)</td>
-              <td style="text-align: center;">4</td>
             </tr>            
             <tr>
               <td>MOF_PSF_FLUX_ERR_{G,R,I,Z}</td>
@@ -705,16 +630,6 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td>MOF_PSF_MAG_{G,R,I,Z}</td>
               <td>Magnitude from MOF_PSF_FLUX. MAG = 30-2.5*log10(FLUX)</td>
               <td style="text-align: center;">4</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOF_TIME_LAST_FIT</font></td>
-              <td>Time it took for the most recent fit to the object[TBD]</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">MOLY_NUMBER_{G,R,I,Z,Y}</font></td>
-              <td>Unique identifier of the Molygon that this object resides in (grizY) band</td>
-              <td style="text-align: center;">5</td>
             </tr>            
             <tr>
               <td>MU_EFF_MODEL_{G,R,I,Z,Y}</td>
@@ -769,11 +684,6 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td style="text-align: center;">1</td>
             </tr>
             <tr>
-              <td><font color="red">PFW_ATTEMPT_ID</font></td>
-              <td>DES Data Management internal processing index number</td>
-              <td style="text-align: center;">1</td>
-            </tr>
-            <tr>
               <td>RA</td>
               <td>Right Ascension (J2000.0) with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
               <td colspan="1" style="text-align: center;">1</td>
@@ -784,11 +694,6 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td style="text-align: center;">1</td>
             </tr>
             <tr>
-              <td><font color="red"> SOF_BOX_SIZE </font></td>
-              <td>Linear size of the postage stamp used for SOF estimation[pixels, TBC]</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
               <td>SOF_CM_CHI2PER</td>
               <td>Chi2 per degree of freedom of the composite model fit</td>
               <td style="text-align: center;">1</td>
@@ -796,16 +701,6 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             <tr>
               <td>SOF_CM_DOF</td>
               <td>Number of the degrees of freedom for the composite model fit</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red"> SOF_CM_FLAGS </font></td>
-              <td>Composite model galaxy fit flag (TBD further documentation)</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_CM_FLAGS_R</font></td>
-              <td>Flags for the roundified parameter determination (TBD further documentation)</td>
               <td style="text-align: center;">1</td>
             </tr>            
             <tr>
@@ -904,21 +799,6 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td style="text-align: center;">4</td>
             </tr>            
             <tr>
-              <td><font color="red">SOF_CM_SOF_FLAGS</font></td>
-              <td>Flags for SOF CM fit. Flag definitions TBD</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_CM_SOF_NUM_ITR</font></td>
-              <td>Number of iterations in SOF fit</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_CM_PSF_T_R</font></td>
-              <td>Roundified PSF size (PSF_T)</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
               <td>SOF_CM_T</td>
               <td>Size squared of the object: T=<x**2>+<y**2> [arcsec**2]</td>
               <td style="text-align: center;">1</td>
@@ -929,89 +809,14 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td style="text-align: center;">1</td>
             </tr>            
             <tr>
-              <td><font color="red">SOF_CM_TDBYTE_NOCLIP</font></td>
-              <td>Ratio of sizes Tdev/Texp without FRACDEV clipping to [0,1]  </td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
               <td>SOF_CM_T_ERR</td>
               <td>Error in size squared [arcsec**2]</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_CM_T_R</font></td>
-              <td>Roundified T size [arcsec**2]</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_CM_T_S2N</font></td>
-              <td>Signal to noise for T size determination</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_CM_WEIGHT</font></td>
-              <td>Total weight across all epochs and bands</td>
               <td style="text-align: center;">1</td>
             </tr>            
             <tr>
               <td>SOF_FLAGS</td>
               <td>Overall image processing flags. See flag definition in TBD. Can contain NULLs for objects with unfinished processing for SOF</td>
               <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_FOFID</font></td>
-              <td>Index of friends-of-friends group to which the object belongs to</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_FOFIND</font></td>
-              <td>TBD</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_MASK_FRAC</font></td>
-              <td>The fraction of postage stamp that was masked. sum(WEIGHT)/max(WEIGHT)/npix</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_NBR</font></td>
-              <td>ngmix object index within a tile</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_NIMAGE_TOT_{G,R,I,Z}</font></td>
-              <td>Total number of images available for this object</td>
-              <td style="text-align: center;">4</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_NIMAGE_USE_{G,R,I,Z}</font></td>
-              <td>Number of images actually used for this object for SOF calculations</td>
-              <td style="text-align: center;">4</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_OBJ_FLAGS_{G,R,I,Z}</font></td>
-              <td>SOF object flags (TBD)</td>
-              <td style="text-align: center;">4</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_PSFREC_G_1</font></td>
-              <td>SOF based shape component 1 (reduced version of e1)</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_PSFREC_G_2</font></td>
-              <td>SOF based shape component 2 (reduced version of e2)</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_PSFREC_T</font></td>
-              <td>Size squared of the object: T=<x**2>+<y**2> [arcsec**2]</td>
-              <td style="text-align: center;">1</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_PSF_FLAGS_{G,R,I,Z}</font></td>
-              <td>SOF PSF fit flag (TBD further documentation)</td>
-              <td style="text-align: center;">4</td>
             </tr>            
             <tr>
               <td>SOF_PSF_FLUX_ERR_{G,R,I,Z}</td>
@@ -1037,11 +842,6 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td>SOF_PSF_MAG_{G,R,I,Z}</td>
               <td>Magnitude from SOF_PSF_FLUX. MAG = 30-2.5*log10(FLUX)</td>
               <td style="text-align: center;">4</td>
-            </tr>            
-            <tr>
-              <td><font color="red">SOF_TIME_LAST_FIT</font></td>
-              <td>Time it took for the most recent fit to the object[TBD]</td>
-              <td style="text-align: center;">1</td>
             </tr>            
             <tr>
               <td>
@@ -1114,7 +914,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
         </table>
 
         <p><br/></p>
-        <div class="fixup" id="schema_main"></div>
+        <div class="fixup" id="schema_survey"></div>
         <h3 class="fixdown">Y3_GOLD_SURVEYCONDITIONS  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
         <table class="wrapped">
@@ -1167,21 +967,21 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             <td> </td>
           </tr>
           <tr>
-            <td> EXPTIME </td>
+            <td> EXPTIME_{G,R,I,Z,Y}  </td>
             <td> Exposure time [s]</td>
             <td> SUM </td>
           </tr>
           <tr>
-            <td> FGCM_GRY </td>
+            <td> FGCM_GRY_{G,R,I,Z,Y} </td>
             <td> Residual ‘gray’ corrections to the zeropoint from FGCM [mag]</td>
-            <td> MAX (TBC), MIN, WMEAN </td>
+            <td> MIN, WMEAN </td>
           </tr>
           <tr>
-            <td> FWHM_FLUXRAD </td>
+            <td> FWHM_FLUXRAD_{G,R,I,Z,Y} </td>
             <td> Twice the average half-light radius from the sources used for determining the PSF with PSFEx. [arcsec]</td>
             <td> MAX, MIN, WMEAN </td>
           </tr>
-            <td> FWHM </td>
+            <td> FWHM_{G,R,I,Z,Y} </td>
             <td> Average FWHM of the 2D elliptical Moffat function that fits best the PSF model from PSFEx. [arcsec]</td>
             <td> MAX, MIN, WMEAN </td>
           </tr>
@@ -1191,42 +991,42 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             <td> </td>
           </tr>
           <tr>
-            <td> MAGLIM </td>
+            <td> MAGLIM_{G,R,I,Z,Y} </td>
             <td> Magnitude limit estimated by mangle from the weight maps. This is measured as 10-sigma values in 2 arcsec diameter apertures.  [mag]</td>
             <td> </td>
           </tr>
           <tr>
-            <td> N_IMAGES </td>
+            <td> N_IMAGES_{G,R,I,Z,Y} </td>
             <td> Number of images. </td>
             <td> </td>
           </tr>
           <tr>
-            <td> SIGMA_MAG_ZERO </td>
+            <td> SIGMA_MAG_ZERO_{G,R,I,Z,Y} </td>
             <td> Quadrature sum of zeropoint uncertainties. [mag] </td>
             <td> QSUM</td>
           </tr>
           <tr>
-            <td> SKYVAR </td>
+            <td> SKYVAR_{G,R,I,Z,Y} </td>
             <td> Variance on the sky brightness. [(e-/CCD pixel)**2] </td>
-            <td> MAX, MIN, WMEAN (TBC)</td>
+            <td> MAX, MIN</td>
           </tr>
           <tr>
-            <td> SKYVAR_SQRT </td>
+            <td> SKYVAR_SQRT_{G,R,I,Z,Y} </td>
             <td> Square root of sky variance. [e-/CCD pixel] </td>
             <td> WMEAN </td>
           </tr>
           <tr>
-            <td> SKYVAR_UNCERTAINTY </td>
+            <td> SKYVAR_UNCERTAINTY_{G,R,I,Z,Y} </td>
             <td> Sky variance with flux scaled by zeropoint [e-/s/coadd pixel] </td>
             <td> </td>
           </tr>
           <tr>
-            <td> T_EFF_EXPTIME </td>
+            <td> T_EFF_EXPTIME_{G,R,I,Z,Y} </td>
             <td> Exposure time multiplied by T_EFF [s] </td>
             <td> SUM </td>
           </tr>                                              
           <tr>
-            <td> T_EFF </td>
+            <td> T_EFF_{G,R,I,Z,Y} </td>
             <td> Figure of merit for quality of observations [e-/s/coadd pixel] </td>
             <td> MAX, MIN, WMEAN </td>
           </tr> 
@@ -1234,8 +1034,8 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
       </table>
 
       <p><br/></p>
-      <div class="fixup" id="schema_main"></div>
-      <h3 class="fixdown">Y3_GOLD_COVERAGE  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+      <div class="fixup" id="schema_footprint"></div>
+      <h3 class="fixdown">Y3_GOLD_FOOTPRINT  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
         <table class="wrapped">
           <colgroup> <col style="width: 26.63%;"/> <col style="width: 58.4908%;"/> <col style="width: 14.841%;"/> </colgroup>
@@ -1276,21 +1076,87 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
         </tbody>
       </table>
 
+      <p><br/></p>
 
+      <h2>
+        <div id="gold_issues"></div>
+        <strong>Known issues <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></strong>
+      </h2>
+      <h3>BPZ performance </h3>
+      As described in Sevilla-Noarbe et al. 2021, this template fitting code shows a poor performance at z < 0.5. DNF is recommended for this range.
+      <h3>Large, fake objects in dense fields </h3>
+      A few fake objects have been found in very dense environments with a very large size (usually encompassing several blended objects/artifacts). This is a consequence of an artificially large detection associated with collections of these objects.
+      <h3>Magnitude vs magnitude error between SOF and AUTO </h3>
+      There are differences in how the errors are calculated in SOF and AUTO, that increases the dispersion in the SNR relation. This translates into some dependence between the depth maps and the catalogs in the SNR limit of the definition. For a fixed magnitude limit in a catalog, pixels with depth near a given SNR limit, will contain more objects with lower SNR than using AUTO. This translates into a density increase in regions with depth similar to the magnitude limit, that we do not see in AUTO.
 
+      <h2>
+        <div id="gold_queries"></div>
+        <strong>Sample queries <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></strong>
+      </h2>
+      <strong>Preview</strong>
+      <p>Grab a few lines for a preview</p>
+      <code>
+        <p>SELECT coadd_object_id, ra, dec FROM Y3_GOLD WHERE rownum < 10 </p>
+      </code>
+      <strong>Star sample with some quality cuts</strong>
+      <code>
+        <p>SELECT </p>
+        <p>coadd_object_id, ra, dec, sof_psf_mag_g + delta_mag_y4_g + delta_mag_chrom_g - a_sed_sfd98_g AS sof_psf_mag_g_corrected,sof_psf_mag_r + delta_mag_y4_r + delta_mag_chrom_r - a_sed_sfd98_r AS sof_psf_mag_r_corrected,sof_psf_mag_i + delta_mag_y4_i + delta_mag_chrom_i - a_sed_sfd98_i AS sof_psf_mag_i_corrected, sof_psf_mag_z + delta_mag_y4_z + delta_mag_chrom_z - a_sed_sfd98_z AS sof_psf_mag_z_corrected, sof_psf_mag_err_g, sof_psf_mag_err_r, sof_psf_mag_err_i, sof_psf_mag_err_z 
+        <p>FROM Y3_GOLD </p>
+        <p>WHERE </p>
+        <p>flags_footprint = 1 AND flags_foreground = 0 AND BITAND(flags_gold, 60) = 0 AND extended_class_mash_sof <= 2 AND sof_psf_mag_r BETWEEN 16 AND 23 </p>
+      </code>
+      <strong>Galaxy sample with some quality cuts</strong>
+      <code>
+        <p>SELECT </p>
+        <p>coadd_object_id, ra, dec, dnf_zmean_sof, bpz_zmean_sof, sof_cm_mag_corrected_g, sof_cm_mag_corrected_r, sof_cm_mag_corrected_i, sof_cm_mag_corrected_z, sof_cm_mag_err_g, sof_cm_mag_err_r, sof_cm_mag_err_i, sof_cm_mag_err_z </p>
+        <p>FROM Y3_GOLD</p> 
+        <p>WHERE </p>
+        <p>flags_footprint = 1 and flags_foreground = 0 and bitand(flags_gold,62) = 0 and extended_class_mash_sof = 3 and sof_cm_mag_i between 16 and 24
+      </code>
+      <strong>Make a healpix map of magnitude residuals</strong>
+      <code>
+        <p>SELECT</p> 
+        <p>hpix_4096, avg(mof_cm_mag_corrected_i-sof_cm_mag_corrected_i) as mofsof_residuals_i</p> 
+        <p>FROM Y3_GOLD</p> 
+        <p>WHERE </p>
+        <p>flags_footprint = 1 and flags_gold = 0 </p>
+        <p>GROUP BY </p>
+        <p>hpix_4096 </p>
+      </code>
+      <strong>Make a healpix map of stars/galaxies</strong>
+      <code>
+        <p>SELECT</p> 
+        <p>hpix_4096, count(*)</p> 
+        <p>FROM Y3_GOLD</p> 
+        <p>WHERE </p>
+        <p>flags_footprint = 1 and extended_class_mash_sof = 0 # USE 3 FOR GALAXIES</p>
+        <p>GROUP BY </p>
+        <p>hpix_4096 </p>
+      </code>
+      <p><strong>Make a mask combining maps</strong></p>
+       This uses the Y3_GOLD_FOOTPRINT and the Y3_GOLD_SURVEYCONDITIONS maps in the database. In this case, it is the mask used for the Y3 BAO sample analysis.</strong>
+      <code>
+        <p>SELECT</p> 
+        <p>foot.hpix_4096, foot.coverage_griz, foot.foreground, foot.badregions, sys.depth_sof_i</p>
+        <p>FROM Y3_GOLD_FOOTPRINT foot INNER JOIN Y3_GOLD_SURVEYCONDITIONS sys ON foot.hpix_4096=sys.hpix_4096
+        <p>WHERE </p>
+        <p>sys.n_images_g >= 1 and sys.n_images_r >= 1 and sys.n_images_i >= 1 and sys.n_images_z >= 1 and foot.coverage_griz > 0.8 and sys.depth_sof_i >=22.3 and (2*sys.depth_sof_r-sys.depth_sof_z)>24 and sys.depth_sof_g>=22 and sys.depth_sof_r>=22 and sys.depth_sof_z>=21 and bitand(foot.badregions,4) = 0 and bitand(foot.foreground,127) = 0
+      </code>
     </div>
+
 </des-card>
 </template>
 <script>
     class DesY3A2Gold extends Polymer.Element {
       static get is() { return 'des-y3a2-gold'; }
-      _top() {this.$.schema_top.scrollIntoView();}
-      _mags() {this.$.schema_mags.scrollIntoView();}
-      _fluxes() {this.$.schema_fluxes.scrollIntoView();}
+      _top() {this.$.gold_top.scrollIntoView();}
+      _schematop() {this.$.schema_top.scrollIntoView();}
       _main() {this.$.schema_main.scrollIntoView();}
-      _tiles() {this.$.schema_tiles.scrollIntoView();}
-      _coverage() {this.$.schema_coverage.scrollIntoView();}
-
+      _survey() {this.$.schema_survey.scrollIntoView();}
+      _footprint() {this.$.schema_footprint.scrollIntoView();}
+      _issues() {this.$.gold_issues.scrollIntoView();}
+      _queries() {this.$.gold_queries.scrollIntoView();}
     }
     window.customElements.define(DesY3A2Gold.is, DesY3A2Gold);
   </script>
