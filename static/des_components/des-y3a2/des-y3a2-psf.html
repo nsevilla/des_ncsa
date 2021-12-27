@@ -15,7 +15,22 @@
     <strong>Catalog Overview</strong>
   </h2>
 
-  <p>DESCRIPTION AND REFERENCE HERE</p>
+  <p>In <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.1282J/">Jarvis, et al (2021)</a>,
+  we describe a new software package for modelling the point spread function (PSF) of
+  astronomical images, called PIFF (PSFs In the Full FOV), which we applied to the DES Y3 data.
+  These PSF models were used for the weak lensing shape measurements to remove the effects of
+  the PSF smearing from the galaxy images.</p>
+  <p>The catalog available here contains measurements of a set of "reserve" stars (a random
+  20% of the initial set of candidate PSF stars), which were
+  not used to constrain the PSF models. The catalog includes both measurements of the star
+  itself and of the PSF model interpolated to the location of the star.  The differences
+  thus serve as fair estimates of the residual errors in the PSF model across the field of view.
+  These size and shape measurements were made using the
+  <a href=http://adsabs.harvard.edu/abs/2003MNRAS.343..459H>HSM algorithm</a>.
+  These measurements were used for most of the null tests presented in Jarvis, et al.</p>
+  These objects are detected in the single-epoch images, and they do not have the COADD_OBJECT_ID
+  column that most of the rest of the Y3 catalogs have. RA and DEC columns are provided and it
+  should be possible to match these rows to rows in other catalogs via the sky position.</p>
   <h2>
     <strong>Download</strong>
   </h2>
@@ -23,8 +38,8 @@
   <h2>
     <strong>Catalog Description - psf_y3a1-v29.fits</strong>
   </h2>
-  <p>This catalog contains 56,707,987 objets from a Piff run.</p>
-  <p>This run of Piff covers all Y3 exposures used for the Y3 meds files in g,r,i,z,Y bands and includes 38287 exposures. 20% of the stars are reserved from the Piff solution for use in the null tests. The catalogs include measurements of the DESDM PSFEx models for the same stars.</p>
+  <p>This catalog contains 56,707,987 objets from a PIFF run.</p>
+  <p>This run of PIFF covers all Y3 exposures used for the Y3 meds files in g,r,i,z,Y bands and includes 38287 exposures. The catalogs include measurements of the PIFF models for a set of reserve stars (20%) not used to constrain the PIFF models.</p>
   <table >
     <colgroup>
       <col/>
