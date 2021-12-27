@@ -24,7 +24,7 @@
 
 <p> The DES Deep Fields are described in <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> </p>
 
-<p>The DES Deep Fields comprise the set of fields where the integrated exposure time per pixel in the four key DECam passbands (griz) is approximately ten times that of the main DES survey area or greater. For the DES Y3 cosmology analysis we built images in the ten supernova (SN) fields and the COSMOS field, combining DES exposures and community data. Names of the SN pointings are derived from the respective pre-cursor surveys in that region of the sky, CDFS (SN-C1, SN-C2, SN-C3), Elais-South (SN-E1, SN-E2), XXXX????? (SN-S1, SN-S2) and XMM-LSS (SN-X1, SN-X2, SN-X3). The sky locations and footprints of the eleven fields are shown in the figure below. Filled rectangles correspond to the DECam chips that are used to produce our photometric catalogue.</p>
+<p>The DES Deep Fields comprise the set of fields where the integrated exposure time per pixel in the four key DECam passbands (griz) is approximately ten times that of the main DES survey area or greater. For the DES Y3 cosmology analysis we built images in the ten supernova (SN) fields and the COSMOS field, combining DES exposures and community data. Names of the SN pointings are derived from the respective pre-cursor surveys in that region of the sky, CDFS (SN-C1, SN-C2, SN-C3), Elais-South (SN-E1, SN-E2), Stripe 82 (SN-S1, SN-S2) and XMM-LSS (SN-X1, SN-X2, SN-X3). The sky locations and footprints of the eleven fields are shown in the figure below. Filled rectangles correspond to the DECam chips that are used to produce our photometric catalogue.</p>
 
 <img src="{{rootPath}}static/images/y3a2/deep_fig1.png" width=1200 height=800>
 
@@ -44,8 +44,8 @@
 
 <ul>
   <li> Owing to a generally smaller number of longer exposures, only a single depth level was built for the COSMOS field. It is labelled as COADD_TRUTH.</li>
-  <li> We did not build u or Y-band images at SE_TRUTH depth level.</li>
-  <li> There are no Y-band images for SN-E1, SN-E2, SN-S1, SN-S2.</li>
+  <li> We did not build u-band or Y-band images at SE_TRUTH depth level.</li>
+  <li> There are no Y-band images for SN-E1, SN-E2, SN-S1 and SN-S2.</li>
   <li> Chips 02 (in most cases) and 62 are missing, chip 3XXX is only half-sized due to a faulty amplifierXXXXXXXX.</li>
 </ul>
 
@@ -55,7 +55,7 @@
 <ul>
   <li>Coadded science images, pixel masks and weight maps at three depth levels (SN fields), or single depth level (COSMOS).</li>
   <li>8-band photometric catalogue covering 5.88 sq. deg..</li>
-  <li>kNN-based star-galaxy classifications</li>
+  <li>kNN-based star-galaxy classifications.</li>
   <li>Photometric redshift catalogues from EAzY and DNF.</li>
 </ul>
 
@@ -74,15 +74,15 @@ Image files are compressed with fpack and one file is provided for each coadded 
   Directory structure is depth first, followed by field name. Images for all chips and all bands for a given depth and field are contained in a single directory.
 
   <list>
-    <li>--link to SE_TRUTH directory--</li>
-    <li>--link to COADD_TRUTH directory--</li>
-    <li>--link to DEEPEST directory--</li>
+  <li><a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/deepfields/SE_TRUTH">SE_TRUTH directory</a></li>
+    <li><a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/deepfields/COADD_TRUTH">COADD_TRUTH directory</a></li>
+    <li><a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/deepfields/DEEPEST">DEEPEST directory</a></li>
   </list>
 </p>
 
 <p>
   File naming convention follows the pattern, [field name]_[chip number]_[depth level]_[band].fits.fz <br>
-  e.g. The COADD_TRUTH-depth z-band image for chip number 19 in the X3 supernova field has the path:<br>
+  e.g. the COADD_TRUTH-depth z-band image for chip number 19 in the X3 supernova field has the path:<br>
   COADD_TRUTH/SN_X3/SN-X3_C19_COADD_TRUTH_z.fits.fz
 </p>
 
@@ -94,9 +94,9 @@ Image files are compressed with fpack and one file is provided for each coadded 
 </br>
 <a id="photometry"><h2><strong> Key Project Catalogue</strong></h2></a>
 
-<p>The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available as a database table, willhartley.Y3_DEEP_FIELDS_PHOTOM, via [[[link to the db server]]].</p>
+<p>The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available as a database table, Y3_DEEP_FIELDS_PHOTOM, via <a href="https://des.ncsa.illinois.edu/desaccess">the DB server</a>.</p>
 
-<p>HERE, AND BELOW, COULD DO WITH AN EXAMPLE QUERY TO GRAB A SORT OF "STANDARD" PRODUCT.</P>
+<!--p>HERE, AND BELOW, COULD DO WITH AN EXAMPLE QUERY TO GRAB A SORT OF "STANDARD" PRODUCT.</P-->
 
 <table>
 <tr>
@@ -163,7 +163,7 @@ Image files are compressed with fpack and one file is provided for each coadded 
 <td> BDF_T_RATIO  </td><td>  -  </td><td>  Ratio of pre-seeing Bulge+Disk model size to PSF model size  </td><td>1</td>
 </tr>
 <tr>
-<td> DEC  </td><td>  Degrees  </td><td>  J2000  </td><td>1</td>
+<td> DEC  </td><td>  Degrees  </td><td> Object declination, J2000  </td><td>1</td>
 </tr>
 <tr>
 <td> EBV_SFD98  </td><td>  -  </td><td>  Galactic reddening colour excess computed from the Schlegel, Finkbeiner and Davis (1998) dust map  </td><td>1</td>
@@ -250,7 +250,7 @@ Image files are compressed with fpack and one file is provided for each coadded 
 <td> PSF_T  </td><td>  arcsec<sup>2</sup>  </td><td>  PSF size  </td><td>1</td>
 </tr>
 <tr>
-<td> RA  </td><td>  Degrees  </td><td>  J2000  </td><td>1</td>
+<td> RA  </td><td>  Degrees  </td><td> Right Ascension, J2000  </td><td>1</td>
 </tr>
 <tr>
 <td> TILENAME  </td><td>  -  </td><td>  Field name and chip number  </td><td>1</td>
@@ -259,9 +259,9 @@ Image files are compressed with fpack and one file is provided for each coadded 
 
 <a id="photoz"><h2><strong>Photometric redshifts</strong></h2></a>
 
-<p>Photometric redshifts for the key project catalogue have been computed using the EAzY template-ftting software and DNF machine learning algorthim. They are available as separate database tables,  willhartley.Y3_DEEP_FIELDS_PHOTOZ for EAZY and [[[[table DNF]]]] for DNF, via [[[link to the db server]]].</p>
+<p>Photometric redshifts for the key project catalogue have been computed using the EAzY template-ftting software and DNF machine learning algorithm. They are available as separate database tables,  Y3_DEEP_FIELDS_PHOTOZ for EAZY and Y3_DEEP_FIELDS_PHOTOZ_DNF for DNF, via <a href="https://des.ncsa.illinois.edu/desaccess">the DB server</a>.</p>
 
-<h4>willhartley.Y3_DEEP_FIELDS_PHOTOZ (EAZY)</h4>
+<h4>Y3_DEEP_FIELDS_PHOTOZ (EAZY)</h4>
 
 <table>
 <tr>
