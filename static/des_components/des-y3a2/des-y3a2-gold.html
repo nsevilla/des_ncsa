@@ -130,7 +130,7 @@
               <td>
                 <a>A_SED_SFD98_{GRIZY}</a>
               </td>
-              <td> SED-dependent interstellar extinction based on the E(B − V) reddening maps from <a href="https://"> Schlegel, Finkbeiner & Davis (1998) </a> ; used in the CORRECTED columns; current recommendation [magnitudes]</td>
+              <td> SED-dependent interstellar extinction based on the E(B − V) reddening maps from <a href="https://doi.org/10.1086/305772"> Schlegel, Finkbeiner & Davis (1998) </a> ; used in the CORRECTED columns; current recommendation [magnitudes]</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -191,7 +191,7 @@
             </tr>
             <tr>
               <td>
-                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#class-star">CLASS_STAR_{G,R,I,Z,Y}</a>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Position.html#class-star-def">CLASS_STAR_{G,R,I,Z,Y}</a>
               </td>
               <td>Morphology based star-galaxy classifier from SExtractor. Values between 0 (galaxies) and 1 (stars).</td>
               <td colspan="1" style="text-align: center;">5</td>
@@ -215,12 +215,12 @@
             </tr>
             <tr>
               <td>DELTA_MAG_CHROM_{G,R,I,Z,Y}</td>
-              <td>Coadd object chromatic correction (ADD MORE DETAILS)</td>
+              <td>Coadd object chromatic correction using an appropriate spectral template for the object. See section 4.3 of Sevilla-Noarbe et al. (2021)</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>DELTA_MAG_Y4_{G,R,I,Z,Y}</td>
-              <td>Coadd object Y4 correction (ADD MORE DETAILS)</td>
+              <td>Updates to photometry using Year 4 imaging.  See section 4.3 of Sevilla-Noarbe et al. (2021).</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -246,17 +246,17 @@
             </tr>
              <tr>
               <td>EBV_LENZ17</td>
-              <td>E(B-V) reddening coefficient from Lenz et al. 2017 [mag]</td>
+              <td>E(B-V) reddening coefficient from <a href="https://doi.org/10.7910/DVN/AFJNWJ"> Lenz et al. (2017) </a></td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
              <tr>
               <td>EBV_PLANCK13</td>
-              <td>E(B-V) reddening coefficient from Planck Collaboration 2013 [mag]</td>
+              <td>E(B-V) reddening coefficient from <a href="https://doi.org/10.1051/0004-6361/201323195"> Planck Collaboration (2014) </a></td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
              <tr>
               <td>EBV_SFD98</td>
-              <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner &amp; Davis, 1998 [mag]</td>
+              <td>E(B-V) reddening coefficient from <a href="https://doi.org/10.1086/305772"> Schlegel, Finkbeiner & Davis (1998) </a>  [mag]</td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
@@ -324,24 +324,24 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td colspan="1">
                 FLAGS_BADREGIONS
               </td>
-              <td colspan="1">Flag describing whether the object is contained in a region with potentially problematic processing. See Y3 Gold paper for description</td>
+              <td colspan="1">Flag describing whether the object is contained in a region with potentially problematic processing. See Sevilla-Noarbe et al. (2021) for description.</td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
               <td colspan="1">
                 FLAGS_FOOTPRINT
               </td>
-              <td colspan="1">Flag describing whether the object is contained in the fiducial footprint of the survey. See Y3 Gold paper for description</td>
+              <td colspan="1">Flag describing whether the object is contained in the fiducial footprint of the survey. See Sevilla-Noarbe et al. (2021) for description.</td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
               <td colspan="1">FLAGS_FOREGROUND</td>
-              <td colspan="1">Flag describing whether the object is contained in a region with a foreground astrophysical object. See Y3 Gold paper for description</td>
+              <td colspan="1">Flag describing whether the object is contained in a region with a foreground astrophysical object. See Sevilla-Noarbe et al. (2021) for description.</td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
               <td colspan="1">FLAGS_GOLD</td>
-              <td colspan="1">Flag describing object anomalies. See Y3 Gold paper for description</td>
+              <td colspan="1">Flag describing object anomalies. See Sevilla-Noarbe et al. (2021) for description.</td>
               <td colspan="1" style="text-align: center;">1</td>
             </tr>
             <tr>
@@ -353,7 +353,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             </tr>
             <tr>
               <td colspan="1">
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux-flux-auto">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
               </td>
               </td>
               <td colspan="1">Uncertainty in FLUX_AUTO [ADU]</td>
@@ -380,9 +380,9 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUX_DETMODEL_{G,R,I,Z,Y}</a>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html">FLUX_DETMODEL_{G,R,I,Z,Y}</a>
               </td>
-              <td>Flux measurement, for a bulge + disk model fit on the detection image (TBC) [ADU]</td>
+              <td>Flux measurement, for a bulge + disk model fit on the detection image [ADU]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -427,56 +427,56 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_APER_8_{G,R,I,Z,Y}</a>
+                MAGERR_APER_8_{G,R,I,Z,Y}
               </td>
               <td>Error in MAG_APER_8 [mag]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_AUTO_{G,R,I,Z,Y}</a>
+                MAGERR_AUTO_{G,R,I,Z,Y}
               </td>
               <td>Error in MAG_AUTO [mag]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_DETMODEL_{G,R,I,Z,Y}</a>
+                MAGERR_DETMODEL_{G,R,I,Z,Y}
               </td>
               <td>Error in MAG_DETMODEL [mag]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAGERR_PSF_{G,R,I,Z,Y}</a>
+                MAGERR_PSF_{G,R,I,Z,Y}
               </td>
               <td>Error in MAG_PSF [mag]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_APER_8_{G,R,I,Z,Y}</a>
+                MAG_APER_8_{G,R,I,Z,Y}
               </td>
               <td>Magnitude measured in a circular aperture of 22.22 pixels (5.8437 arcsecs) diameter [mag]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_AUTO_{G,R,I,Z,Y}</a>
+                MAG_AUTO_{G,R,I,Z,Y}
               </td>
               <td>Magnitude measurement in an elliptical aperture, shaped by the second moments of the object and scaled by the Kron radius [mag]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_DETMODEL_{G,R,I,Z,Y}</a>
+                MAG_DETMODEL_{G,R,I,Z,Y}
               </td>
-              <td>Magnitude measurement, for a bulge + disk model fit on the detection image (TBC) [mag]</td>
+              <td>Magnitude measurement, for a bulge + disk model fit on the detection image [mag]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
-                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">MAG_PSF_{G,R,I,Z,Y}</a>
+                MAG_PSF_{G,R,I,Z,Y}
               </td>
               <td>Magnitude measured using the coadd PSF (use caution as this PSF varies discontinuously across footprint) [mag]</td>
               <td style="text-align: center;">5</td>
@@ -603,7 +603,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             </tr>            
             <tr>
               <td>MOF_FLAGS</td>
-              <td>Overall image processing flags. See flag definition in TBD. Can contain NULLs for objects with unfinished processing for MOF</td>
+              <td>Overall image processing flags. Can contain NULLs for objects with unfinished processing for MOF</td>
               <td style="text-align: center;">1</td>
             </tr>            
             <tr>
@@ -633,27 +633,27 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             </tr>            
             <tr>
               <td>MU_EFF_MODEL_{G,R,I,Z,Y}</td>
-              <td>Effective model surface brightness above background. The surface brightness is measured at the isophote which includes half of the flux of the model, above background [mag./sq.arcmin.]</td>
+              <td>Effective model surface brightness above background. The surface brightness is measured at the isophote which includes half of the flux of the model, above background [mag./sq.arcsec]</td>
               <td style="text-align: center;">5</td>
             </tr>            
             <tr>
               <td>MU_MAX_{G,R,I,Z,Y}</td>
-              <td>Surface brightness at the brightest pixel [mag./sq.arcmin.]</td>
+              <td>Surface brightness at the brightest pixel [mag./sq.arcsec]</td>
               <td style="text-align: center;">5</td>
             </tr>            
             <tr>
               <td>MU_MAX_MODEL_{G,R,I,Z,Y}</td>
-              <td>Maximum surface brightness using the whole area inside the isophote used for MU_EFF_MODEL [mag./sq.arcmin.]</td>
+              <td>Maximum surface brightness using the whole area inside the isophote used for MU_EFF_MODEL [mag./sq.arcsec]</td>
               <td style="text-align: center;">5</td>
             </tr>            
             <tr>
               <td>MU_MEAN_MODEL_{G,R,I,Z,Y}</td>
-              <td>Mean surface brightness using the whole area inside the isophote used for MU_EFF_MODEL [mag./sq.arcmin.]</td>
+              <td>Mean surface brightness using the whole area inside the isophote used for MU_EFF_MODEL [mag./sq.arcsec]</td>
               <td style="text-align: center;">5</td>
             </tr>            
             <tr>
               <td>MU_THRESHOLD</td>
-              <td>Surface brightness threshold (SExtractor parameter) [TBC]</td>
+              <td>Surface brightness threshold (SExtractor parameter) [mag./sq.arcsec.]</td>
               <td style="text-align: center;">1</td>
             </tr>            
             <tr>
@@ -815,7 +815,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             </tr>            
             <tr>
               <td>SOF_FLAGS</td>
-              <td>Overall image processing flags. See flag definition in TBD. Can contain NULLs for objects with unfinished processing for SOF</td>
+              <td>Overall image processing flags. Can contain NULLs for objects with unfinished processing for SOF</td>
               <td style="text-align: center;">1</td>
             </tr>            
             <tr>
@@ -938,32 +938,32 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
           </tr>
           <tr>
             <td> DEPTH_AUTO_{G,R,I,Z,Y} </td>
-            <td> Estimate of the depth using MAG_AUTO photometry (TBD) [mag]</td>
+            <td> Estimate of the depth using MAG_AUTO photometry using a trained model. See section 5.1 of Sevilla-Noarbe et al. (2021) [magnitudes]</td>
             <td> </td>
           </tr>
           <tr>
             <td> DEPTH_MOF_{G,R,I,Z} </td>
-            <td> Estimate of the depth using MAG_MOF photometry (TBD) [mag]</td>
+            <td> Estimate of the depth using MAG_MOF photometry using a trained model. See section 5.1 of Sevilla-Noarbe et al. (2021) [magnitudes]</td>
             <td> </td>
           </tr>
           <tr>
             <td> DEPTH_SOF_{G,R,I,Z} </td>
-            <td> Estimate of the depth using MAG_SOF photometry (TBD) [mag]</td>
+            <td> Estimate of the depth using MAG_SOF photometry using a trained model. See section 5.1 of Sevilla-Noarbe et al. (2021) [magnitudes]</td>
             <td> MAX, MIN, WMEAN </td>
           </tr>
           <tr>
             <td> EBV_LENZ17 </td>
-            <td> Extinction as measured from Lenz et al. 2017 (TBD) [mag]</td>
+            <td> E(B-V) reddening coefficient map from <a href="https://doi.org/10.7910/DVN/AFJNWJ"> Lenz et al. (2017) </a>[mag]</td>
             <td> </td>
           </tr>
           <tr>
             <td> EBV_PLANCK13 </td>
-            <td> Extinction as measured from Planck Collaboration 2013 (TBD) [mag]</td>
+            <td> E(B-V) reddening coefficient map from <a href="https://doi.org/10.1051/0004-6361/201323195"> Planck Collaboration (2014) </a> [mag]</td>
             <td> </td>
           </tr>
           <tr>
             <td> EBV_SFD98 </td>
-            <td> Extinction as measured from Schlegel et al. 98 (TBD) [mag]</td>
+            <td> E(B-V) reddening coefficient map from <a href="https://doi.org/10.1086/305772"> Schlegel, Finkbeiner & Davis (1998) </a> [mag]</td>
             <td> </td>
           </tr>
           <tr>
