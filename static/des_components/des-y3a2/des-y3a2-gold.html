@@ -20,7 +20,7 @@
     <strong>Overview</strong>
     </h2>
 
-    The Y3 Gold release includes a collection of data sets including a value added version of the DR1 coadd catalog and ancillary information such as survey maps. The Y3 Gold data products and data quality checks are described in <a href="https://ui.adsabs.harvard.edu/abs/2021ApJS..254...24S/abstract"> Sevilla-Noarbe et al. (2021) </a>. Updated information will be published here, when applicable. In addition, we present a list of sample queries and known issues for this catalog.
+    The Y3 Gold release includes a collection of data sets including a value added version of the DR1 coadd catalog and ancillary information such as survey maps. The Y3 Gold data products and data quality checks are described in <a href="https://doi.org/10.3847/1538-4365/abeb66"> Sevilla-Noarbe et al. (2021) </a>. Updated information will be published here, when applicable. In addition, we present a list of sample queries and known issues for this catalog.
 
     The following table (from Sevilla-Noarbe et al. (2021) contains the main characteristics of the catalog:
 
@@ -102,7 +102,7 @@
               <td>
                 <a>A_FIDUCIAL_{GRIZY}</a>
               </td>
-              <td>Fiducial reddening correction (subtract off) in band GRIZY [magnitudes]</td>
+              <td>SED-independent interstellar extinction based on the E(B − V) reddening maps from <a href="https://"> Schlegel, Finkbeiner & Davis (1998) </a>  in band GRIZY [magnitudes]</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -116,21 +116,21 @@
               <td>
                 <a>A_SED_LENZ17_{GRIZY}</a>
               </td>
-              <td>SED-dependent Lenz 17 reddening coefficients</td>
+              <td> SED-dependent interstellar extinction based on the E(B − V) reddening maps from <a href="https://doi.org/10.7910/DVN/AFJNWJ"> Lenz et al. (2017) </a> [magnitudes] </td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
                 <a>A_SED_PLANCK13_{GRIZY}</a>
               </td>
-              <td>SED-dependent Planck 13 reddening coefficients</td>
+              <td> SED-dependent interstellar extinction based on the E(B − V) reddening maps from <a href="https://doi.org/10.1051/0004-6361/201323195"> Planck Collaboration (2014) </a> [magnitudes] </td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
                 <a>A_SED_SFD98_{GRIZY}</a>
               </td>
-              <td>SED-dependent SFD98 reddening coefficients; used in the CORRECTED columns; current recommendation</td>
+              <td> SED-dependent interstellar extinction based on the E(B − V) reddening maps from <a href="https://"> Schlegel, Finkbeiner & Davis (1998) </a> ; used in the CORRECTED columns; current recommendation [magnitudes]</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -1112,7 +1112,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
         <p>coadd_object_id, ra, dec, dnf_zmean_sof, bpz_zmean_sof, sof_cm_mag_corrected_g, sof_cm_mag_corrected_r, sof_cm_mag_corrected_i, sof_cm_mag_corrected_z, sof_cm_mag_err_g, sof_cm_mag_err_r, sof_cm_mag_err_i, sof_cm_mag_err_z </p>
         <p>FROM Y3_GOLD</p> 
         <p>WHERE </p>
-        <p>flags_footprint = 1 and flags_foreground = 0 and bitand(flags_gold,62) = 0 and extended_class_mash_sof = 3 and sof_cm_mag_i between 16 and 24
+        <p>flags_footprint = 1 and flags_foreground = 0 and bitand(flags_gold,62) = 0 and extended_class_mash_sof = 3 and sof_cm_mag_i between 16 and 24 </p>
       </code>
       <strong>Make a healpix map of magnitude residuals</strong>
       <code>
