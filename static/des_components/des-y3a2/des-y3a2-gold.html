@@ -348,7 +348,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td colspan="1">
                 <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUXERR_APER_8_{G,R,I,Z,Y}</a>
               </td>
-              <td colspan="1">Uncertainty in FLUX_APER_8 [ADU]</td>
+              <td colspan="1">RMS error estimate of FLUX_APER_8 [ADU]</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -356,12 +356,12 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
                 <a href="https://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux-flux-auto">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
               </td>
               </td>
-              <td colspan="1">Uncertainty in FLUX_AUTO [ADU]</td>
+              <td colspan="1">RMS error estimate of FLUX_AUTO [ADU]</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
               <td colspan="1">FLUXERR_DETMODEL_{G,R,I,Z,Y}</td>
-              <td colspan="1">Uncertainty in FLUX_DETMODEL measurement [ADU]</td>
+              <td colspan="1">RMS error estimate of FLUX_DETMODEL measurement [ADU]</td>
               <td colspan="1" style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -429,28 +429,28 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
               <td>
                 MAGERR_APER_8_{G,R,I,Z,Y}
               </td>
-              <td>Error in MAG_APER_8 [magnitudes]</td>
+              <td>Error in MAG_APER_8, scaled from FLUXERR_APER_8 [magnitudes]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
                 MAGERR_AUTO_{G,R,I,Z,Y}
               </td>
-              <td>Error in MAG_AUTO [magnitudes]</td>
+              <td>Error in MAG_AUTO, scaled from FLUXERR_AUTO [magnitudes]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
                 MAGERR_DETMODEL_{G,R,I,Z,Y}
               </td>
-              <td>Error in MAG_DETMODEL [magnitudes]</td>
+              <td>Error in MAG_DETMODEL, scaled from FLUXERR_DETMODEL [magnitudes]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
               <td>
                 MAGERR_PSF_{G,R,I,Z,Y}
               </td>
-              <td>Error in MAG_PSF [magnitudes]</td>
+              <td>Error in MAG_PSF, scaled from MAG_PSF [magnitudes]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -871,7 +871,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             </tr>
             <tr>
               <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
-              <td>Uncertainty of WAVG_FLUX_PSF [ADU]</td>
+              <td>RMS error estimate of WAVG_FLUX_PSF [ADU]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
@@ -881,7 +881,7 @@ Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR 
             </tr>
             <tr>
               <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
-              <td>Uncertainty of WAVG_MAG_PSF [magnitudes]</td>
+              <td>Uncertainty of WAVG_MAG_PSF, scaled from WAVG_FLUXERR_PSF [magnitudes]</td>
               <td style="text-align: center;">5</td>
             </tr>
             <tr>
