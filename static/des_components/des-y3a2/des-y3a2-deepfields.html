@@ -384,6 +384,19 @@ Image files are compressed with fpack and one file is provided for each coadded 
 </tr>
 </table>
 
+ <h2>
+        <div id="deep_queries"></div>
+        <strong>Example queries <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></strong>
+      </h2>
+      <strong>Get a basic flux catalogue with star/galaxy classes</strong>
+      <code>
+        <p>SELECT </p>
+        <p>ID, RA, DEC, TILENAME, BDF_FLUX_DERED_CALIB_U as flux_u, BDF_FLUX_DERED_CALIB_G as flux_g, BDF_FLUX_DERED_CALIB_R as flux_r, BDF_FLUX_DERED_CALIB_I as flux_i, BDF_FLUX_DERED_CALIB_Z as flux_z, BDF_FLUX_DERED_CALIB_J as flux_J, BDF_FLUX_DERED_CALIB_H as flux_H, BDF_FLUX_DERED_CALIB_KS as flux_Ks, BDF_FLUX_ERR_DERED_CALIB_U as fluxerr_u, BDF_FLUX_ERR_DERED_CALIB_G as fluxerr_g, BDF_FLUX_ERR_DERED_CALIB_R as fluxerr_r, BDF_FLUX_ERR_DERED_CALIB_I as fluxerr_i, BDF_FLUX_ERR_DERED_CALIB_Z as fluxerr_z, BDF_FLUX_ERR_DERED_CALIB_J as fluxerr_J, BDF_FLUX_ERR_DERED_CALIB_H as fluxerr_H, BDF_FLUX_ERR_DERED_CALIB_KS as fluxerr_Ks, KNN_CLASS
+        <p>FROM Y3_DEEP_FIELDS_PHOTOM </p>
+        <p>WHERE </p>
+        <p>flags=0 and flags_nir=0 and mask_flags=0 and mask_flags_nir=0; </p>
+      </code>
+
 </div>
 </des-card>
 </template>
