@@ -11,9 +11,9 @@
             </div>
       <div class="card-content">
           <span>
-              This page presents the release of the DES Year 3 (Y3) data products. For a detailed description and list of available files of this release please see the links below. Users may also consider using the <a href="[[rootPath]]releases/dr2">DES DR2</a> based on six years of survey operations. 
+              This page presents the release of the DES Year 3 (Y3) data products used for cosmology analyses, which includes additional information with respect to DR1, and provides the necessary information to reproduce and reanalyze this data set. For a detailed description and list of available files of this release please see the links below. Users may also consider using the <a href="[[rootPath]]releases/dr2">DES DR2</a> based on six years of survey operations. 
 
-	      <p> Some products are accesible through a query server, they can be access from <a href="https://des.ncsa.illinois.edu/desaccess/">DESaccess</a></p>
+	      <p> Some products are accessible through a query server, they can be accessed from <a href="https://des.ncsa.illinois.edu/desaccess/">DESaccess</a></p>
 	      
 	      <p> For a list of Year-3 publications, please see at the bottom of the page </p>
           </span>
@@ -28,18 +28,18 @@
       <h2>
         <strong>Overview</strong>
       </h2>
-      <p>The Dark Energy Survey (DES) Year-Three (Y3) Gold data release consists of the data products used for DES Y3 cosmology and some non-cosmology related science. These products include object catalogs, survey characterization maps, and cosmological likelihoods associated with DES Y3 papers. This release is divided into several sections:</p>
+      <p>The Dark Energy Survey (DES) Year-Three (Y3) Cosmology data release consists of value added data products used in several Y3 based DES papers. This data release spans the same coadd object catalog as DR1, now including new columns and ancillary information necessary for high-level scientific analyses. This release is divided into several sections:</p>
       <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3gold">Gold Products</a>: This section contains the primary DES Y3 catalog (aka Gold) and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
-      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3piff">PSF Modeling</a>: This section contains PSF measurements of a set of "reserve" stars using PIFF.</p>
-      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3balrog">Balrog Catalogs</a>: This section contains data associated with the Balrog products.</p>
-      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3deepfields">Deep Fields</a>: This section contains data associated with the Deep Fields.</p>
-      <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y3a2/Y3key-catalogs">Y3KP catalogs</a>: This section contains all catalogs used to run the main cosmological analysis from the cross-correlation of weak-lensing and clustering. It is serve as several h5 files, plus some code snippet (python) to interface with the data and isntructions to reproduce the catalogs used in our analysis</p>
-      <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y3a2/Y3key-products">Y3KP Products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y3KP Catalogs described above.</p>
-      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3bao">BAO Sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based on the Y3 Gold catalog.</p>
-      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3redmagic">redMaGiC Catalogs</a>: Y3 redMaGiC galaxy catalogs</p>
+      <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y3a2/Y3piff">PSF Modeling</a>: This section contains PSF measurements of a set of "reserve" stars using PIFF.</p>
+      <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y3a2/Y3balrog">Balrog Catalogs</a>: This section contains data associated with the Balrog products.</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3deepfields">Deep Fields</a>: This section contains data associated with the Deep Fields.</p>
+      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y3a2/Y3key-catalogs">Y3KP Catalogs</a>: This section contains all catalogs used to run the main cosmological analysis from the cross-correlation of weak-lensing and clustering. It is serve as several h5 files, plus some code snippet (python) to interface with the data and isntructions to reproduce the catalogs used in our analysis</p>
+      <p style="margin-left: 60.0px;">6) <a href="[[rootPath]]releases/y3a2/Y3key-products">Y3KP Products</a>: Data vectors and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y3KP Catalogs described above.</p>
+      <p style="margin-left: 60.0px;">7) <a href="[[rootPath]]releases/y3a2/Y3bao">BAO Sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based on the Y3 Gold catalog.</p>
+      <p style="margin-left: 60.0px;">8) <a href="[[rootPath]]releases/y3a2/Y3redmagic">redMaGiC Catalogs</a>: Y3 redMaGiC galaxy catalogs</p>
       <!--p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y3a2/Y3massmaps">Mass Maps</a>: Mass maps reconstructed from weak lensing signal</p-->
-      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y3a2/Y3mard">X-ray Clusters</a>: X-ray selected galaxy clusters</p>
-      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/gal-morphology">Galaxy Morphology</a>: A Neural Network galaxy morphology catalog
+      <p style="margin-left: 60.0px;">9) <a href="[[rootPath]]releases/y3a2/Y3mard">X-ray Clusters</a>: X-ray selected galaxy clusters</p>
+      <p style="margin-left: 60.0px;">10) <a href="[[rootPath]]releases/y3a2/gal-morphology">Galaxy Morphology</a>: A Neural Network galaxy morphology catalog
         <span style="color: rgb(255,0,0);"> </span>
       </p>
       <p style="text-align: left;">
