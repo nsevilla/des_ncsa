@@ -11,7 +11,17 @@
 
 <des-card heading="Morphological catalogs">
 <div class="card-content">
+	    Here you can find two different morphological catalogs:
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_vega">Vega-Ferrero et al. 2021</a></li>
+    </ul>
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_cheng">Cheng et al. 2021</a></li>
+    </ul>
+
   <h2>
+ <div id="vega"></div>
+
     <strong>Pushing automated morphological classifications to their limits with the Dark Energy Survey</strong>
   </h2>
   <p>In <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.506.1927V/abstract">Vega-Ferrero et al. (2021)</a> we present morphological classifications of 27 million galaxies from the Dark Energy Survey (DES) Data Release 1 (DR1) using a supervised deep learning algorithm. The classification scheme separates: (a) early-type galaxies (ETGs) from late-types (LTGs); and (b) face-on galaxies from edge-on. The final catalog comprises five independent CNN predictions for each classification scheme, helping to determine if the CNN predictions are robust or not.</span>
@@ -78,6 +88,7 @@
     </tbody>
   </table>
 <h2>
+ <div id="cheng"></div>
     <strong>Galaxy Morphological Classification Catalogue of the Dark Energy Survey Year 3 data with Convolutional Neural Networks</strong>
   </h2>
   <p> Please contact ting-yun.cheng@durham.ac.uk for comments or questions. </p>
@@ -85,12 +96,12 @@
   <h2>
     <strong>Download</strong>
   </h2>
-  <p>The catalog is a fits file. It can be downloaded from <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/CNNmorphology/">here</a> </p>
+  <p>The catalog is a fits file. It can be downloaded from <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/CNNmorphology/DES_morph_classification_TCHENG.fits">here</a> </p>
   <h2>
 <h2>
-    <strong>Catalog Description (XXXX)</strong>
+    <strong>Catalog Description (DES_morph_classification_TCHENG.fits)</strong>
   </h2>
-  <p>This catalogue includes 21,119,107 galaxies from DES Y3 GOLD data with a size of ~1.9GB. Below we show the columns shown in the catalogue. </p>
+  <p>This catalogue includes 21,119,107 galaxies from DES Y3 GOLD data with a size of ~4.5GB. Below we show the columns shown in the catalogue. </p>
  <table >
     <colgroup>
       <col/>
@@ -148,6 +159,8 @@
 <script>
     class DesY3A2Morphology extends Polymer.Element {
       static get is() { return 'des-y3a2-morphology'; }
+    _vega() {this.$.vega.scrollIntoView();}
+    _cheng() {this.$.cheng.scrollIntoView();}
     }
     window.customElements.define(DesY3A2Morphology.is, DesY3A2Morphology);
   </script>
