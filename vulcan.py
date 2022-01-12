@@ -12,7 +12,7 @@ def replacein(inputfile):
             print(line.replace('elements.html', 'elements-built.html'), end='')
     with fileinput.FileInput(inputfile, inplace=True) as file:
         for line in file:
-            print(line.replace('in navigator && false', 'in navigator'), end='')
+            print(line.replace('in navigator && false)', 'in navigator)'), end='')
     with fileinput.FileInput(inputfile, inplace=True) as file:
         for line in file:
             print(line.replace('app.js', 'app.min.js'), end='')
@@ -24,7 +24,7 @@ def replaceout(inputfile):
             print(line.replace('elements-built.html', 'elements.html'), end='')
     with fileinput.FileInput(inputfile, inplace=True) as file:
         for line in file:
-            print(line.replace('in navigator', 'in navigator && false'), end='')
+            print(line.replace('in navigator)', 'in navigator && false)'), end='')
     with fileinput.FileInput(inputfile, inplace=True) as file:
         for line in file:
             print(line.replace('app.min.js', 'app.js'), end='')
