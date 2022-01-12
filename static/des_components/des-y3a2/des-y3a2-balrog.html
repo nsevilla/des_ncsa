@@ -1,0 +1,727 @@
+<dom-module id="des-y3a2-balrog">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Balrog Catalogs">
+<div class="card-content">
+
+  <h2>
+    <strong>Overview</strong>
+  </h2>
+
+  <p>The paper <a href="https://arxiv.org/abs/2012.12825">Everett et al. (2021)</a> presents results of the DES Year 3 ‘Balrog’ effort to characterize biases and errors between object flux, color and size measurements vs. ‘truth’ values for a representative sample of galaxy models distributed across the DES footprint.</p>
+  <p> Here we provide access to the main data products from the above paper in the form of FITS tables, along with column descriptions.</p>
+
+  <h2>
+    <strong>References</strong>
+  </h2>
+  <ol>
+    <li>
+      <a href="https://arxiv.org/abs/2012.12825">Everett et al. (2021)</a>, ArXiv e-prints 2012.12825: to appear in ApJSupplements.</li>
+  </ol>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>All the products can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/balrog/">here</a>. </p>
+
+  <h3>Catalogs</h3>
+  <ul>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/balrog/balrog_detection_catalog_sof_y3-merged_v1.2.fits">balrog_detection_catalog_sof_y3-merged_v1.2.fits</a>
+    </li>
+    <li>
+      <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/balrog/balrog_matched_catalog_sof_y3-merged_v1.2.fits">balrog_matched_catalog_sof_y3-merged_v1.2.fits</a>
+    </li>
+  </ul>
+
+
+  <h2>
+    <strong>Description of Catalogs<br/>
+    </strong>
+  </h2>
+  <h4>
+    <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/balrog/balrog_detection_catalog_sof_y3-merged_v1.2.fits">balrog_detection_catalog_sof_y3-merged_v1.2.fits</a>
+  </h4>
+  <p> This fits catalog contains a listing of properties of all 26M objects injected into the 1500 Balrog run2,run2a coadd tiles, and includes a ‘detected’ flag if detected in the measurement tile (or not). As such, this table is used to determine the detection threshold and efficiency of detection as a function of input magnitude shown in Figure 9 of the paper (above). </p>
+  <p> The detection table has 26,442,133 rows.</p>
+
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>Column Name</p>
+        </th>
+        <th>Description</th>
+	<th>Format</th>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">bal_id</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Unique identifier for object<br/>
+          </span>
+        </td>
+	<td colspan="1">
+          <span style="color: rgb(0,0,0);">int64<br/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">meas_tilename</span>
+        </td>
+        <td colspan="1">
+          <span style="color: rgb(0,0,0);">Tilename object injected into</span>
+        </td>
+	<td colspan="1">
+          <span style="color: rgb(0,0,0);">str12<br/>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_id</td>
+        <td colspan="1">Coadd_object_id of injected</td>
+	<td colspan="1">int64</td>
+      </tr>
+      <tr>
+        <td colspan="1">detected</td>
+        <td colspan="1">Flag 1=detected in meas tlle, 0=not detected in meas tile</td>
+	<td colspan="1">int64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_id</td>
+        <td colspan="1">Original coadd_obj_id of deep field object</td>
+	<td colspan="1">int64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_ra,true_dec</td>
+        <td colspan="1">Original coordinates of deep field obj</td>
+	<td colspan="1">2xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_mag_deredden</td>
+        <td colspan="1">Mag injected, and dereddened (griz)</td>
+	<td colspan="1">4xfloat32</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_gap_riz_flux_deredden</td>
+        <td colspan="1">Original riz avg 4.0’’ Gaussian Aperture flux injected,dereddened</td>
+	<td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">flags_footprint</td>
+        <td colspan="1">1=in footprint</td>
+	<td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">flags_foreground</td>
+        <td colspan="1">0=no foreground (bright star) issues</td>
+        <td colspan="1">float64</td>
+      </tr>
+<tr>
+        <td colspan="1">flags_badregions</td>
+        <td colspan="1">0=no badregions issues</td>
+        <td colspan="1">float64</td>
+      </tr>
+<tr>
+        <td colspan="1">meas_FLAGS_GOLD_SOF_ONLY</td>
+        <td colspan="1">Measured (recovered) flags gold for object (short version)</td>
+        <td colspan="1">int32</td>
+      </tr>
+<tr>
+        <td colspan="1">meas_EXTENDED_CLASS_SOF</td>
+        <td colspan="1">Measured (recovered) SOF classifier 0,1=star, 2,3=Galaxy</td>
+        <td colspan="1">int64</td>
+      </tr>
+<tr>
+        <td colspan="1">ext_fact</td>
+        <td colspan="1">Extinction fraction (griz) (used for dereddening on fluxes)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+<tr>
+        <td colspan="1">ext_mag</td>
+        <td colspan="1">Extinction mag(griz)  (used for dereddening on mags)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+<tr>
+        <td colspan="1">match_flag_0.5_asec</td>
+        <td colspan="1">Match flag assuming 0.5 asec match radius (0,1=ok 2=reject)</td>
+        <td colspan="1">int32</td>
+      </tr>
+<tr>
+        <td colspan="1">match_flag_0.75_asec</td>
+        <td colspan="1">Match flag, 0.75asec match radius, 0=only matched to input injection (good), 1=2ndary gold object match within 0.75, but gap flux of gold object is fainter (ok), 2=2ndary gold object match is brighter (reject)</td>
+        <td colspan="1">int32</td>
+      </tr>
+<tr>
+        <td colspan="1">match_flag_1.0_asec</td>
+        <td colspan="1">Match radius for gold interlopers 1’’</td>
+        <td colspan="1">int32</td>
+      </tr>
+<tr>
+        <td colspan="1">match_flag_1.25_asec</td>
+        <td colspan="1">Match radius for gold interlopers 1.25’’</td>
+        <td colspan="1">int32</td>
+      </tr>
+<tr>
+        <td colspan="1">match_flag_1.5_asec</td>
+        <td colspan="1">Match radius for interlopers 1.5’’</td>
+        <td colspan="1">int32</td>
+      </tr>
+<tr>
+        <td colspan="1">match_flag_1.75_asec</td>
+        <td colspan="1">Match radius for interlopers 1.75’’</td>
+        <td colspan="1">int32</td>
+      </tr>
+<tr>
+        <td colspan="1">match_flag_2.0_asec</td>
+        <td colspan="1">Match radius for interlopers 2.0’’</td>
+        <td colspan="1">int32</td>
+      </tr>
+<tr>
+        <td colspan="1">run_name</td>
+        <td colspan="1">Run2 (mag inject &lt; 25.4) or Run2a (mag inject &lt; 24.5) </td>
+        <td colspan="1">str10</td>
+      </tr>
+<tr>
+        <td colspan="1">injection_counts</td>
+        <td colspan="1">Counts for injected object</td>
+        <td colspan="1">int64</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <h4> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/balrog/balrog_matched_catalog_sof_y3-merged_v1.2.fits">balrog_matched_catalog_sof_y3-merged_v1.2.fits</a> </h4>
+  <p> This table contains the subset of injected objects which were detected on the measurement image, matched to their corresponding input injected object.  There are 11M matches out of 26M injections, and these matches are used to derive the selection function (input-output magnitude) as a function of magnitude,color, size (T) and profile (fracDev) of the input injected object (see paper for more details). </p>
+  <p> There are 11,250,845 rows in the matched table. </p>
+
+  <table class="relative-table wrapped">
+    <colgroup>
+      <col/>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>
+          <p>Column Name</p>
+        </th>
+        <th>Description</th>
+        <th>Format</th>
+      </tr>
+      <tr>
+        <td colspan="1">true_id</td>
+        <td colspan="1">Coadd_object_id of deep field object</td>
+        <td colspan="1">int64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_flags</td>
+        <td colspan="1">gold/sextractor flags of input </td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_flags</td>
+        <td colspan="1">Bdf fitting flags 0=good</td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_ra, true_dec</td>
+        <td colspan="1">Coordinates of original deep field object</td>
+        <td colspan="1">2xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_psf_mag</td>
+        <td colspan="1">PSF fit to original deep field object (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_T</td>
+        <td colspan="1">Size (area in arcsec^2) fit to deconvolved (with PSF) of original deep field object</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_T_err</td>
+        <td colspan="1">Error on size</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_s2n</td>
+        <td colspan="1">Signal-to-noise of bdf joint 4flux fit (i.e. all bands fit simultaneously, with one S/N output)</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_flux</td>
+        <td colspan="1">Input bdf flux to inject (griz), note: one should use dereddened version to compare with measured quantity</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_flux_err</td>
+        <td colspan="1">Error on flux (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_mask_flags</td>
+        <td colspan="1">Input mask flags</td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_mag</td>
+        <td colspan="1">Input bdf mags (griz), note: use dereddened version for comparison to meas. quantities</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_g</td>
+        <td colspan="1">Input bdf reduced shear two-component ellipticity parameter (g0,g1) </td>
+        <td colspan="1">2xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_fracdev</td>
+        <td colspan="1">Input bdf fracDev parameter 1.0=elliptical 0.0=spiral, can be in range [0,1]</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_flux_cov</td>
+        <td colspan="1">Covariance between bands on the flux (4x4) (griz) in original object on deep field fit</td>
+        <td colspan="1">16xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_pars</td>
+        <td colspan="1">Alternate representation of input bdf fit (offset[2],flux[4],T,fracdev,g[2], not in that order)</td>
+        <td colspan="1">10xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_tilename</td>
+        <td colspan="1">Original deep field tile where injected object was drawn from</td>
+        <td colspan="1">str20</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_gap_flux</td>
+        <td colspan="1">1.0’’ FWHM Gaussian convolved aperture flux of object (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_gap_flux_err</td>
+        <td colspan="1">Error on gap flux (not meaningful)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_gap_mag</td>
+        <td colspan="1">Gap flux converted magnitude (griz) (mag=30.0-2.5log10(flux)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_flux_deredden</td>
+        <td colspan="1">Input bdf flux (griz) dereddened (use this to compare to meas flux dered)</td>
+        <td colspan="1">4xfloat32</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_bdf_mag_deredden</td>
+        <td colspan="1">Input bdf mag(griz) dereddened (use this to compare to meas mag dered)</td>
+        <td colspan="1">4xfloat32</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_in_VHS_footprint</td>
+        <td colspan="1">If injected object in injected into a DES tile that overlaps the VHS IR JHK tiles with coverage this flag=1</td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_avgbdf</td>
+        <td colspan="1">Avg (r+i+z)/3 ‘detection image’ flux injected</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_rotation</td>
+        <td colspan="1">Rotation angle of object (deg) applied upon injection</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_gap_flux_fwhm4asec</td>
+        <td colspan="1">4.0’’ FWHM Gaussian convolved aperture flux (griz) of input object (use this one over the 1.0’’ FWHM one for best comparison with meas quantities)</td>
+        <td colspan="1">4xfloat32</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_gap_flags_fwhm4asec</td>
+        <td colspan="1">Flags on gap flux measure 0=good</td>
+        <td colspan="1">4xint32</td>
+      </tr>
+      <tr>
+        <td colspan="1">bal_id</td>
+        <td colspan="1">Unique id defining input object (unique across multiple injections of the same true deep field object)</td>
+        <td colspan="1">int64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_id</td>
+        <td colspan="1">Coadd_object_id of measured object on injected tile</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_number</td>
+        <td colspan="1">Number of object, unique only to one tile, sextractor id</td>
+        <td colspan="1">int64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_ra, meas_dec</td>
+        <td colspan="1">Coordinates of object on tile it was injected into</td>
+        <td colspan="1">2xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_nimage_tot</td>
+        <td colspan="1">Number of single epoch images in coadd object (griz)</td>
+        <td colspan="1">4xint32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_fofid</td>
+        <td colspan="1">For MOF, friend-of-friends group id (obsolete)</td>
+        <td colspan="1">int64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_flags</td>
+        <td colspan="1">Measurement flags</td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_time_last_fit</td>
+        <td colspan="1">meas_time_last_fit</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_box_size</td>
+        <td colspan="1">Size of stamp (brighter objects have larger stamp size in pixels)</td>
+        <td colspan="1">int16</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_obj_flags</td>
+        <td colspan="1">Object flags on measured image</td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_psf_flags</td>
+        <td colspan="1">Flags on psf fit 0=good</td>
+        <td colspan="1">4xint32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_psf_flux</td>
+        <td colspan="1">Flux from PSF fit to object (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_psf_flux_err</td>
+        <td colspan="1">Error on flux (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_psf_mag</td>
+        <td colspan="1">30-2.5*log10(flux) for (griz) psf  fit to object</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_psf_flux_s2n</td>
+        <td colspan="1">Signal-to-noise of psf fit (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_nimage_use</td>
+        <td colspan="1">Number of single epoch images used in fit (&lt;= meas_nimage_tot)</td>
+        <td colspan="1">4xint32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_mask_frac</td>
+        <td colspan="1">Fraction of stamp masked out due to bright neighbor, off-the-edge,etc</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_psfrec_T</td>
+        <td colspan="1">Rectilinear version of psf area param (obsolete)</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_psfrec_g</td>
+        <td colspan="1">Rectilinear version of psf shear param (obsolete)</td>
+        <td colspan="1">2xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_gapflux</td>
+        <td colspan="1">1.0’’ FWHM Gaussian convolved aperture flux (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_gapflags</td>
+        <td colspan="1">0=good (griz)</td>
+        <td colspan="1">4xint32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_flags</td>
+        <td colspan="1">Cm (composite model) fitting flags (0=good)</td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_pars</td>
+        <td colspan="1">Alternate representation of (offset[2],flux[4],T,g[2])</td>
+        <td colspan="1">9xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_pars_cov</td>
+        <td colspan="1">Covariance between the various fitted model flags</td>
+        <td colspan="1">(9x9)float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_T</td>
+        <td colspan="1">Fitted cm_T area (asec^2) of deconvolved object</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_T_err</td>
+        <td colspan="1">Error on cm_T</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_T_s2n</td>
+        <td colspan="1">Signal-to-noise of cm_T measurement</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_flux_cov</td>
+        <td colspan="1">Covariance of cm_flux measurement (griz)</td>
+        <td colspan="1">(4x4)float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_flux</td>
+        <td colspan="1">Fitted cm flux (use dereddened version to compare with true dered quantities)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_flux_s2n</td>
+        <td colspan="1">Signal-to-noise on measured fitted flux (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_mag</td>
+        <td colspan="1">30-2.5*log10(flux) (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_logsb</td>
+        <td colspan="1">Log surface brightness log(flux/T) in some units</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_g</td>
+        <td colspan="1">2-component reduced shear fitted</td>
+        <td colspan="1">2xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_g_cov</td>
+        <td colspan="1">Covariance on 2-component shear components</td>
+        <td colspan="1">(2x2)float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_weight</td>
+        <td colspan="1">Background image weight</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_flags</td>
+        <td colspan="1">Max version of flags</td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_pars</td>
+        <td colspan="1">Max version of pars</td>
+        <td colspan="1">9xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_pars_cov</td>
+        <td colspan="1">Max version of param cov</td>
+        <td colspan="1">(9x9)float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_T</td>
+        <td colspan="1">Max version of cm_T</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_T_err</td>
+        <td colspan="1">Error on max cm T</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_T_s2n</td>
+        <td colspan="1">Max version of T S/N</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_flux_cov</td>
+        <td colspan="1">Max version of flux covariance</td>
+        <td colspan="1">(4x4)float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_flux</td>
+        <td colspan="1">Max version of flux(griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_flux_s2n</td>
+        <td colspan="1">Max version of s2n flux</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_max_mag</td>
+        <td colspan="1">Max version of mag(griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">max_cm_max_logsb</td>
+        <td colspan="1">Max version of log surface brightness</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_s2n_w</td>
+        <td colspan="1">w version of meas cm s2n (unused)</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_chi2per</td>
+        <td colspan="1">Chi-sq per degree of freedom on cm fig</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_dof</td>
+        <td colspan="1">Degrees of freedom of cm fit</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_flags_r</td>
+        <td colspan="1">Round verison of fit (unused)</td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_s2n_r</td>
+        <td colspan="1">Round version of s2n (unused)</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_T_r</td>
+        <td colspan="1">Round version of T (unused)</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_psf_T_r</td>
+        <td colspan="1">Round version of psf_T (unused)</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_fracdev</td>
+        <td colspan="1">Fitted cm version of fracDev (1.0=elliptical, 0.0=spiral), allowed range [0,1]</td>
+        <td colspan="1">float32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_fradev_noclip</td>
+        <td colspan="1">Noclip version of fracdev (unused)</td>
+        <td colspan="1">float32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_fracdev_err</td>
+        <td colspan="1">Error on fracdev</td>
+        <td colspan="1">float32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_TdByTe</td>
+        <td colspan="1">Ratio of T_d/T_e (fitted elliptical deVauc scale len^2/exponential scale len^2) after PSF deconvolution</td>
+        <td colspan="1">float32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_TdByTe_noclip</td>
+        <td colspan="1">Noclip version (unused)</td>
+        <td colspan="1">float32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_FLAGS_GOLD_SOF_ONLY</td>
+        <td colspan="1">Gold flags (SOF only version) emulated 0=good</td>
+        <td colspan="1">int32</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_EXTENDED_CLASS_SOF</td>
+        <td colspan="1">0,1=star, 2,3=galaxy</td>
+        <td colspan="1">int64</td>
+      </tr>
+      <tr>
+        <td colspan="1">separation</td>
+        <td colspan="1">Difference between meas and true position (arcsec)</td>
+        <td colspan="1">float64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_tilename</td>
+        <td colspan="1">Name of DES tile object injected into</td>
+        <td colspan="1">str12</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_flux_deredden</td>
+        <td colspan="1">Dereddened flux (use this for comparison to true dereddened) measured for injected object</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">meas_cm_mag_deredden</td>
+        <td colspan="1">30-2.5*log10(flux), use this dereddened version to compare to true dereddened mags injected</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">ext_fact</td>
+        <td colspan="1">Extinction factor (fractional) used to correct flux for reddening (griz)</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">ext_mag</td>
+        <td colspan="1">Extinction factor (mag units) used to deredden mags (griz) on injected tile</td>
+        <td colspan="1">4xfloat64</td>
+      </tr>
+      <tr>
+        <td colspan="1">run_name</td>
+        <td colspan="1">Run2 (mag &lt; 25.4), run2a (mag &lt; 24.5)</td>
+        <td colspan="1">str10</td>
+      </tr>
+      <tr>
+        <td colspan="1">true_avgbdffluxderedden</td>
+        <td colspan="1">Average (r+i+z)/3 flux injected, dereddened, used to determine run2/run2a magnitude limit for injection</td>
+        <td colspan="1">float32</td>
+      </tr>
+
+  </tbody>
+  </table>
+
+  <h2>
+    <strong>Notes<br/>
+    </strong>
+  </h2>
+
+  <p>The names of many columns are prefixes with either meas_<colname> or true_<colname>, where <colname> is a column from the Y3 Gold table, referenced <a href="[[rootPath]]releases/y3a2/Y3gold">here</a></p>
+  <p>The meas prefix indicates a measured quantity, as measured on the tile with the object injected, while the true prefix indicates a quantity from the truth table, typically a parameterized quantity (mag, flux, tilename, cm_T (size), etc) from the deep field image it was drawn from.
+One should compare dereddened true fluxes/mags with dereddened measured fluxes/mags to remove the effect of reddening (removed from the deep field truth tables and added in tile by tile to the measured injected object tiles).  If one compares dereddened to dereddened quantities, then there is no further need to correct for reddening in the transfer function tabulation.</p>
+  <p>Other tables: The ‘metacal’ tables, used for the SOMPZ analysis are available upon request to the paper’s authors.  These have a similar format to the BDF/CM match and detection tables described here.</p>
+  
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY3A2Balrog extends Polymer.Element {
+      static get is() { return 'des-y3a2-balrog'; }
+    }
+    window.customElements.define(DesY3A2Balrog.is, DesY3A2Balrog);
+  </script>
+
+</dom-module>

@@ -1,0 +1,168 @@
+<dom-module id="des-y3a2-morphology">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Galaxy Morphology">
+<div class="card-content">
+	    Here you can find two different morphological catalogs:
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_vega">Vega-Ferrero et al. 2021</a></li>
+    </ul>
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_cheng">Cheng et al. 2021</a></li>
+    </ul>
+
+  <h2>
+ <div id="vega"></div>
+
+    <strong>Pushing automated morphological classifications to their limits with the Dark Energy Survey</strong>
+  </h2>
+  <p>In <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.506.1927V/abstract">Vega-Ferrero et al. (2021)</a> we present morphological classifications of 27 million galaxies from the Dark Energy Survey (DES) Data Release 1 (DR1) using a supervised deep learning algorithm. The classification scheme separates: (a) early-type galaxies (ETGs) from late-types (LTGs); and (b) face-on galaxies from edge-on. The final catalog comprises five independent CNN predictions for each classification scheme, helping to determine if the CNN predictions are robust or not.</span>
+  </p>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>The catalog is a fits file, compressed in tar.gz format (~2GB). It can be downloaded from <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/CNNmorphology/DES_DR1_CNN_morphological_catalog.tar.gz">here</a> </p>
+  <h2>
+    <strong>Catalog Description (DES_DR1_CNN_morphological_catalog.fit)</strong>
+  </h2>
+  <p>The catalog contains 26,971,945 entries, each one corresponding to a galaxy in the DES DR1, and a total of 19 columns. In the following table, we describe the content of the full DES DR1 morphological catalog.</p>
+  <table >
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">COADD_OBJECT_ID</td>
+        <td colspan="1">Unique object ID for Y3 coadd processing (same as DR1)</td>
+      </tr>
+      <tr>
+        <td colspan="1">RA/DEC</td>
+        <td colspan="1">Right ascension and declination (degrees) taken from the GOLD catalog</td>
+      </tr>
+      <tr>
+        <td colspan="1">MAG_AUTO_R</td>
+        <td colspan="1">Apparent magnitude in an elliptical aperture shaped by the Kron radius</td>
+      </tr>
+      <tr>
+        <td colspan="1">FLUX_RADIUS_R</td>
+        <td colspan="1">Radius (in pixels) of the circle containing half of the flux of the object
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">Pi_LTG</td>
+        <td colspan="1">Probability of being LTG for each of the 5 models (with i = [1,5])</td>
+      </tr>
+      <tr>
+        <td colspan="1">MP_LTG</td>
+        <td colspan="1">Median probability of the 5 models of being LTG</td>
+      </tr>
+      <tr>
+        <td colspan="1">Pi_EdgeOn</td>
+        <td colspan="1">Probability of being edge-on for each of the 5 models (with i = [1,5])</td>
+      </tr>
+      <tr>
+        <td colspan="1">MP_EdgeOn</td>
+        <td colspan="1">Median probability of the 5 models of being edge-on</td>
+      </tr>
+      <tr>
+        <td colspan="1">FLAG_LTG</td>
+        <td colspan="1">Classification for ETG vs. LTG model; 0=ETG, 2=secure ETG, 4=robust ETG; 1=LTG, 3=secure LTG, 5=robust LTG</td>
+      </tr>
+      <tr>
+        <td colspan="1">FLAG_EdgeOn</td>
+        <td colspan="1">Classification for edge-on model; 0= no edge-on, 1=edge-on, 2= secure edge-on, 3=robust edge-on</td>
+      </tr>
+    </tbody>
+  </table>
+<h2>
+ <div id="cheng"></div>
+    <strong>Galaxy Morphological Classification Catalogue of the Dark Energy Survey Year 3 data with Convolutional Neural Networks</strong>
+  </h2>
+  <p> Please contact ting-yun.cheng@durham.ac.uk for comments or questions. </p>
+  <p> In <a href="https://arxiv.org/abs/2107.10210">Cheng et al. 2021</a> we present a galaxy morphological classification catalogue including over 20 million of galaxies, using the Dark Energy Survey (DES) Year 3 data based on Convolutional Neural Networks. We classify galaxies into two classes: Elliptical galaxies and Spiral galaxies (disk galaxies), using monochromatic i-band DES images with linear, logarithmic, and gradient scales, matched with debiased visual classifications from the Galaxy Zoo 1 catalogue (<a href="https://academic.oup.com/mnras/article/410/1/166/1032478">Lintott et al. 2011</a>). The final catalogue includes the average predict probabilities from 5 individually training models to each sample and a morphology flag using the probability threshold of 0.8 for users' convenience. Two additional quantities, confidence_flag and frac_n, are provided in this catalogue to select classification that users prefer based on different assumptions (Details can be check in Section 5.3 from <a href="https://arxiv.org/abs/2107.10210">Cheng et al. 2021</a>). </p>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>The catalog is a fits file. It can be downloaded from <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/CNNmorphology/DES_morph_classification_TCHENG.fits">here</a> </p>
+  <h2>
+<h2>
+    <strong>Catalog Description (DES_morph_classification_TCHENG.fits)</strong>
+  </h2>
+  <p>This catalogue includes 21,119,107 galaxies from DES Y3 GOLD data with a size of ~4.5GB. Below we show the columns shown in the catalogue. </p>
+ <table >
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td colspan="1">DES_Y3_ID</td>
+        <td colspan="1">Unique object ID for Y3 coadd processing (same as DR1)</td>
+      </tr>
+      <tr>
+        <td colspan="1">RA/DEC</td>
+        <td colspan="1">Right ascension and declination (degrees) taken from the GOLD catalog</td>
+      </tr>
+      <tr>
+        <td colspan="1">pE</td>
+        <td colspan="1">Average probability of being Ellipticals from 5 individual models</td>
+      </tr>
+      <tr>
+        <td colspan="1">pS</td>
+	<td colspan="1">Average probability of being Spirals from 5 individual models
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">MORPH_FLAG</td>
+        <td colspan="1">Classification using a probability threshold of 0.8. 0=Ellipticals; 1=Spirals</td>
+      </tr>
+      <tr>
+        <td colspan="1">confidence_flag</td>
+        <td colspan="1">Confidence level scheme assigned within magnitude and redshift bins which made by comparing with the colour and Sersic index distributions of the training set</td>
+      </tr>
+      <tr>
+        <td colspan="1">frac_n</td>
+        <td colspan="1">Fraction of classifications that satisfy Sersic index criteria within magnitude and redshift bins:  >2.5 for Ellipticals and <=2.5 for Spirals.</td>
+      </tr>
+      <tr>
+        <td colspan="1">MAG_I</td>
+        <td colspan="1">Apparent i-band magnitude from Y3 GOLD catalogue (MAG_AUTO_I)</td>
+      </tr>
+      <tr>
+        <td colspan="1">ZMEAN</td>
+        <td colspan="1">Photometric redshift from Y3 GOLD catalogue (DNF_ZMEAN_MOF)</td>
+      </tr>
+   </tbody>
+  </table>
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY3A2Morphology extends Polymer.Element {
+      static get is() { return 'des-y3a2-morphology'; }
+    _vega() {this.$.vega.scrollIntoView();}
+    _cheng() {this.$.cheng.scrollIntoView();}
+    }
+    window.customElements.define(DesY3A2Morphology.is, DesY3A2Morphology);
+  </script>
+
+</dom-module>

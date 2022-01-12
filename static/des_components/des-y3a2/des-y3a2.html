@@ -1,0 +1,192 @@
+<dom-module id="des-y3a2">
+<template>
+
+<style include="shared-styles"></style>
+
+
+<des-card  heading=" Y3 COSMOLOGY DATA RELEASE" >
+        <div style="text-align: center">
+        <iron-image style="width:637px; height:337px; padding:40px;" sizing="contain"
+                src="{{rootPath}}static/images/y3a2/image_map_quality_good.jpg"></iron-image>
+            </div>
+      <div class="card-content">
+          <span>
+              This page presents the release of the DES Year 3 (Y3) data products used for cosmology analyses, which includes additional information with respect to DR1, and provides the necessary information to reproduce and reanalyze this data set. For a detailed description and list of available files of this release please see the links below. Users may also consider using the <a href="[[rootPath]]releases/dr2">DES DR2</a> based on six years of survey operations. 
+
+	      <p> Gold products and Deep Fields catalogs are accessible through a query server, they can be accessed from <a href="https://des.ncsa.illinois.edu/desaccess/">DESaccess</a>. The Y3 Gold catalog is also accessible from the <a href="https://cosmohub.pic.es">CosmoHub website</a>.</p>
+	      
+	      <p> For a list of Year-3 publications, please see at the bottom of the page </p>
+          </span>
+
+      <div style="text-align: center">
+
+          <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/" target="_blank"><paper-button   raised  class="desButton">Files</paper-button></a>
+              <paper-button   raised  class="desButton" on-click="_scroll"> Data Summary</paper-button>
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]help"><paper-button   raised class="desButton">Help</paper-button></a>
+      </div>
+      <hr />
+      <h2>
+        <strong>Overview</strong>
+      </h2>
+      <p>The Dark Energy Survey (DES) Year-Three (Y3) Cosmology data release consists of value added data products used in several Y3 based DES papers. This data release spans the same coadd object catalog as DR1, now including new columns and ancillary information necessary for high-level scientific analyses. This release is divided into several sections:</p>
+      <p style="margin-left: 60.0px;">1) <a href="[[rootPath]]releases/y3a2/Y3gold">Gold Products</a>: This section contains the primary DES Y3 catalog (aka Gold) and auxiliary healpix maps, including hundreds of observing condition maps and footprint masks.</p>
+      <p style="margin-left: 60.0px;">2) <a href="[[rootPath]]releases/y3a2/Y3piff">PSF Modeling</a>: This section contains PSF measurements of a set of "reserve" stars using PIFF.</p>
+      <p style="margin-left: 60.0px;">3) <a href="[[rootPath]]releases/y3a2/Y3balrog">Balrog Catalogs</a>: This section contains data associated with the Balrog products.</p>
+      <p style="margin-left: 60.0px;">4) <a href="[[rootPath]]releases/y3a2/Y3deepfields">Deep Fields</a>: This section contains data associated with the Deep Fields.</p>
+      <p style="margin-left: 60.0px;">5) <a href="[[rootPath]]releases/y3a2/Y3key-catalogs">Y3KP Catalogs</a>: This section contains all catalogs used to run the main cosmological analysis from the cross-correlation of weak-lensing and clustering. It is serve as several h5 files, plus some code snippet (python) to interface with the data and isntructions to reproduce the catalogs used in our analysis</p>
+      <p style="margin-left: 60.0px;">6) <a href="[[rootPath]]releases/y3a2/Y3key-products">Y3KP Products</a>: Data vectors (to be released 1st of March) and likelihoods from the main DES cosmological analysis (3x2pt statistics), combining weak lensing and galaxy clustering. These results used the Y3KP Catalogs described above.</p>
+      <p style="margin-left: 60.0px;">7) <a href="[[rootPath]]releases/y3a2/Y3bao">BAO Sample</a>: a subset of Gold products aimed at measuring the BAO scale; includes the catalogs, data vectors and likelihoods. The selection was based on the Y3 Gold catalog.</p>
+      <p style="margin-left: 60.0px;">8) <a href="[[rootPath]]releases/y3a2/Y3redmagic">redMaGiC Catalogs</a>: Y3 redMaGiC galaxy catalogs</p>
+      <p style="margin-left: 60.0px;">9) <a href="[[rootPath]]releases/y3a2/Y3massmaps">WL Mass Maps</a>: Mass maps reconstructed from weak lensing signal</p>
+      <p style="margin-left: 60.0px;">10) <a href="[[rootPath]]releases/y3a2/Y3mard">X-ray Clusters</a>: X-ray selected galaxy clusters</p>
+      <p style="margin-left: 60.0px;">11) <a href="[[rootPath]]releases/y3a2/gal-morphology">Galaxy Morphology</a>: A Neural Network galaxy morphology catalog
+        <span style="color: rgb(255,0,0);"> </span>
+      </p>
+      <p style="text-align: left;">
+        <br/>
+      </p>
+      <h3>
+        <strong>Caveats</strong>
+      </h3>
+      <p>The DES Y3 data products <strong class="style-scope des-docs">
+          <span class="style-scope des-docs" style="color: rgb(0,0,0);">do not</span>
+        </strong> constitute an official DES data release and are provided on an <strong class="style-scope des-docs">
+          <span class="style-scope des-docs" style="color: rgb(0,0,0);">"as is"</span>
+        </strong> basis in support of DES publications based on Y3 data.</p>
+
+
+      <h3>
+        <strong>Support</strong>
+      </h3>
+        <div id="y3access" />
+      <p>Support for the Y3 data products is very limited. The primary sources of documentation are the papers that derived these data products, and questions can be addressed to the authors of those papers.</p>
+      <p>
+        <br/>
+      </p>
+
+      <h2>
+        <strong>Data Access</strong>
+      </h2>
+      <p>The full listing of downloadable files can be found <strong>
+          <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/">here</a>
+        </strong>. Y3 Gold products and Deep Field catalogs are only accesible through <a href="https://des.ncsa.illinois.edu/desaccess/">DESaccess</a>.</p>
+	<p> The Y3 Gold catalog is also accessible from the <a href="https://cosmohub.pic.es">CosmoHub website</a>.</p>
+	<p>The data products are described in more detail on the pages linked above. </p> 
+	<!--p>and files are linked by topic below. Catalog files are distributed as gzipped <a href="http://fits.gsfc.nasa.gov/fits_documentation.html">FITS</a> binary tables. Ancillary depth maps, survey condition maps, and footprint masks are provided as <a href="http://healpix.jpl.nasa.gov/">HEALPix</a> formatted gzipped binary FITS tables.</p-->
+      <p>
+        <strong>Release Notes:</strong>
+      </p>
+      <p><u>12 January 2022</u>: Main release of Y3 Cosmology products, including the Gold catalog, redMaGiC and BAO sample, two galaxy morphological catalogs, and X-ray selected galaxy clusters catalog and more.</p>
+	<p><strong> Coming on the 1st of March: </strong>Data Vectors from the main Y3KP analysis</p>
+      <!--p><u>01 October 2018</u>: catalogs of individual photometric redshifs, BAO mock catalogs, 3x2pt data vector are now available with the latest release.
+
+      </p-->
+      <p>
+        <br/>
+      </p>
+      <h4>Acknowledgements and General DES References</h4>
+      <ul>
+          <li> Please see the <a href="https://des.ncsa.illinois.edu/thanks">Acknowledgements</a> page for general acknowledgements references. Please also make sure to visit each product page for the corresponding references. </li><br />
+        <li>
+          <em>The Dark Energy Survey</em> - <a href="http://adsabs.harvard.edu/abs/2005astro.ph.10346T">DES Collaboration (2005)</a>
+        </li>
+        <li>
+          <em>The Dark Energy Survey: more than dark energy - an overview – </em>
+          <a href="http://adsabs.harvard.edu/abs/2016arXiv160100329D">DES Collaboration (2016)</a>
+        </li>
+        <li>
+          <em>The Dark Energy Camera</em> - <a href="http://adsabs.harvard.edu/abs/2015AJ....150..150F">Flaugher et al. (2015)</a>
+        </li>
+      </ul>
+      <p style="text-align: center;">
+        <span style="color: rgb(128,128,128);"> </span>
+      </p>
+      <hr/>
+
+    <h2>
+      <br/>
+      <strong>Y3 Cosmology Release References</strong>
+    </h2>
+    <p>For a full list of Year-3 publications, please visit <a href="https://www.darkenergysurvey.org/des-year-3-cosmology-results-papers">https://www.darkenergysurvey.org/des-year-3-cosmology-results-papers/</a></p>
+    <p>
+      <a href="https://arxiv.org/abs/2105.13549">https://arxiv.org/abs/2105.13549</a> Dark Energy Survey Year 3 Results: Cosmological Constraints from Galaxy Clustering and Weak Lensing, DES Collaboration, arXiv e-prints, arXiv:2105.13549 (2021)</p>
+    <p>
+      <a href="https://arxiv.org/abs/2011.03407">https://arxiv.org/abs/2011.03407</a> Dark Energy Survey Year 3 Results: Photometric Data Set for Cosmology, Sevilla-Noarbe, I., Bechtol, K., Carrasco Kind, M., et al. (DES Collaboration), ApJS, 254, 24 (2021)</p>
+    <p>
+      <a href="https://arxiv.org/abs/2012.12825">https://arxiv.org/abs/2012.12825</a> Dark Energy Survey Year 3 Results: Measuring the Survey Transfer Function with Balrog, Everett, S., et al. (DES Collaboration), arXiv e-prints, arXiv:2012.12825 (2020)</p>
+    <p>
+      <a href="https://arxiv.org/abs/2012.12824">https://arxiv.org/abs/2012.12824</a> Dark Energy Survey Year 3 Results: Deep Field Optical + Near-Infrared Images and Catalogue, Hartley, W. G., Choi, A., et al. (DES Collaboration), arXiv e-prints, arXiv:2012.12824 (2020)</p>
+    <p>
+      <a href="https://arxiv.org/abs/2011.03408">https://arxiv.org/abs/2011.03408</a> Dark energy survey year 3 results: weak lensing shape catalogue, Gatti, M., Sheldon, E., et al. (DES Collaboration), MNRAS, 504, 4312 (2021) </p>
+    <p>
+      <a href="https://arxiv.org/abs/2011.03409">https://arxiv.org/abs/2011.03409</a> Dark Energy Survey year 3 results: point spread function modelling, Jarvis, M. et al. (DES Collaboration), MNRAS, 501, 1282 (2021) </p>
+    <p>
+      <a href="https://arxiv.org/abs/2012.08567">https://arxiv.org/abs/2012.08567</a> Dark Energy Survey Y3 results: Blending shear and redshift biases in image simulations, MacCrann, N., Becker, M. R., et al. (DES Collaboration), MNRAS, (2021)    </p>
+    <p>
+      <a href="https://arxiv.org/abs/2012.08566">https://arxiv.org/abs/2012.08566</a> Dark Energy Survey Year 3 results: redshift calibration of the weak lensing source galaxies, Myles, J., Alarcon, A., et al. (DES Collaboration), MNRAS, 505, 4249 (2021) </p>
+    <p>
+      <a href="https://arxiv.org/abs/2012.08569">https://arxiv.org/abs/2012.08569</a> Dark Energy Survey Year 3 Results: Clustering Redshifts -- Calibration of the Weak Lensing Source Redshift Distributions with redMaGiC and BOSS/eBOSS, Gatti, M., Giannini, G., et al. (DES Collaboration), arXiv e-prints, arXiv:2012.08569 (2020)   </p>
+    <p>
+      <a href="https://arxiv.org/abs/2012.12826">https://arxiv.org/abs/2012.12826</a> Dark Energy Survey Year 3 Results: Calibration of Lens Sample Redshift Distributions using Clustering Redshifts with BOSS/eBOSS, Cawthon, R., et al. (DES Collaboration), arXiv e-prints, arXiv:2012.12826 (2020)  </p>
+    <p>
+      <a href="https://arxiv.org/abs/1901.05005">https://arxiv.org/abs/1901.05005</a> Phenotypic redshifts with self-organizing maps: A novel method to characterize redshift distributions of source galaxies for weak lensing, Buchs, R., et al., (DES Collaboration), MNRAS, 489, 820 (2019)  </p>
+    <p>
+      <a href="https://arxiv.org/abs/2109.09636">https://arxiv.org/abs/2109.09636</a> Dark Energy Survey Year 3 results: Marginalisation over redshift distribution uncertainties using ranking of discrete realisations, Cordero, J. P., Harrison, I., et al. (DES Collaboration), arXiv e-prints, arXiv:2109.09636 (2021)</p>
+    <p>
+      <a href="https://arxiv.org/abs/2105.13542" >https://arxiv.org/abs/2105.13542</a> Dark Energy Survey Year 3 Results: Exploiting small-scale information with lensing shear ratios, Sánchez, C., Prat, J., et al. (DES Collaboration), arXiv e-prints, arXiv:2105.13542 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2105.13547">https://arxiv.org/abs/2105.13547</a> Dark Energy Survey Year 3 results: cosmology from combined galaxy clustering and lensing -- validation on cosmological simulations, DeRose, J., et al. (DES Collaboration), arXiv e-prints, arXiv:2105.13547 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2012.09554">https://arxiv.org/abs/2012.09554</a> Assessing tension metrics with dark energy survey and Planck data, Lemos, P., Raveri, M., et al. (DES Collaboration), MNRAS, 505, 6179 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2011.03410">https://arxiv.org/abs/2011.03410</a> Dark energy survey internal consistency tests of the joint cosmological probes analysis with posterior predictive distributions, Doux, C., et al. (DES Collaboration), MNRAS, 503, 2688 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2012.08568">https://arxiv.org/abs/2012.08568</a> Dark Energy Survey year 3 results: covariance modelling and its impact on parameter estimation and quality of fit, Friedrich, O., et al. (DES Collaboration), MNRAS, 508, 3125 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/1911.05929">https://arxiv.org/abs/1911.05929</a> Blinding multiprobe cosmological experiments, Muir, J., et al. (DES Collaboration), MNRAS, 494, 4454 (2020)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2105.13548">https://arxiv.org/abs/2105.13548</a> Dark Energy Survey Year 3 Results: Multi-Probe Modeling Strategy and Validation, Krause, E., Fang, X., et al. (DES Collaboration), arXiv e-prints, arXiv:2105.13548 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2105.13539">https://arxiv.org/abs/2105.13539</a> Dark Energy Survey Year 3 results: Curved-sky weak lensing mass map reconstruction, Jeffrey, N., Gatti, M., et al. (DES Collaboration), MNRAS, 505, 4626 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2105.13540">https://arxiv.org/abs/2105.13540</a> Dark Energy Survey Year 3 Results: Galaxy clustering and systematics treatment for lens galaxy samples, Rodríguez-Monroy, M., et al. (DES Collaboration), arXiv e-prints, arXiv:2105.13540 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2105.13541">https://arxiv.org/abs/2105.13541</a> Dark Energy Survey Year 3 Results: High-precision measurement and modeling of galaxy-galaxy lensing, Prat, J., et al. (DES Collaboration), arXiv e-prints, arXiv:2105.13541 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2105.13543">https://arxiv.org/abs/2105.13543</a> Dark Energy Survey Year 3 Results: Cosmology from Cosmic Shear and Robustness to Data Calibration, Amon, A., et al. (DES Collaboration), arXiv e-prints, arXiv:2105.13543 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2105.13544">https://arxiv.org/abs/2105.13544</a> Dark Energy Survey Year 3 Results: Cosmology from Cosmic Shear and Robustness to Modeling Uncertainty, Secco, L. F., Samuroff, S., et al. (DES Collaboration), arXiv e-prints, arXiv:2105.13544 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2105.13545">https://arxiv.org/abs/2105.13545</a> Dark Energy Survey Year 3 Results: Constraints on cosmological parameters and galaxy bias models from galaxy clustering and galaxy-galaxy lensing using the redMaGiC sample, Pandey, S., et al. (DES Collaboration), arXiv e-prints, arXiv:2105.13545 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2011.03411">https://arxiv.org/abs/2011.03411</a> Dark Energy Survey Year 3 results: Optimizing the lens sample in a combined galaxy clustering and galaxy-galaxy lensing analysis, Porredon, A., et al. (DES Collaboration), PRD, 103, 043503 (2021)  </p>
+    <p>
+    <a href="https://arxiv.org/abs/2105.13546">https://arxiv.org/abs/2105.13546</a> Dark Energy Survey Year 3 results: Cosmological constraints from galaxy clustering and galaxy-galaxy lensing using the MagLim lens sample, Porredon, A., et al. (DES Collaboration), arXiv e-prints, arXiv:2105.13546 (2021)  </p>
+    <p>
+      <br/>
+    </p>
+
+
+
+      </div>
+      </des-card>
+
+
+</template>
+
+<script>
+    class DesY3A2 extends Polymer.Element {
+      static get is() { return 'des-y3a2'; }
+
+      _scroll() {
+
+    var elmnt = this.$.y3access;
+    console.log(elmnt);
+    elmnt.scrollIntoView();
+
+      }
+    }
+    window.customElements.define(DesY3A2.is, DesY3A2);
+  </script>
+
+</dom-module>

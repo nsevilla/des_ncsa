@@ -229,7 +229,7 @@
               <!-- Y1 -->
               <app-submenu no-auto-close>
                 <div class="sublist1" slot="submenu-trigger">
-                <a class="app-menu-item" name="y1a1" href="[[rootPath]]releases/y1a1">Y1 Gold<iron-icon icon="expand-more"></iron-icon></a>
+                <a class="app-menu-item" name="y1a1" href="[[rootPath]]releases/y1a1">Y1 Cosmology<iron-icon icon="expand-more"></iron-icon></a>
                 </div>
 
                 <app-menu class="sublist2" slot="submenu-content">
@@ -297,6 +297,95 @@
                   <a class="app-menu-item" id="needindent" name="file-content" href="http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/" target="_blank">Files</a>
                 </div>
                 </app-submenu>
+
+                </app-menu>
+
+              </app-submenu>
+
+              <!-- Y3 -->
+              <app-submenu no-auto-close>
+                <div class="sublist1" slot="submenu-trigger">
+                <a class="app-menu-item" name="y3a2" href="[[rootPath]]releases/y3a2">Y3 Cosmology<iron-icon icon="expand-more"></iron-icon></a>
+                </div>
+
+                <app-menu class="sublist2" slot="submenu-content">
+		
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="Y3gold" href="[[rootPath]]releases/y3a2/Y3gold" persistent="False">Gold Products</a>
+                </div>
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="Y3piff" href="[[rootPath]]releases/y3a2/Y3piff" persistent="False">PSF Modelling</a>
+                </div>
+                </app-submenu>
+
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="Y3balrog" href="[[rootPath]]releases/y3a2/Y3balrog">Balrog Catalogs</a>
+                </div>
+                </app-submenu>
+                  
+		<app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="Y3deepfields" href="[[rootPath]]releases/y3a2/Y3deepfields">Deep Fields</a>
+                </div>
+                </app-submenu>
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id=needindent name="Y3key-catalogs" href="[[rootPath]]releases/y3a2/Y3key-catalogs" persistent="False">Y3KP Catalogs</a>
+                </div>
+                </app-submenu>
+
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="Y3key-products" href="[[rootPath]]releases/y3a2/Y3key-products">Y3KP Products</a>
+                </div> 
+                </app-submenu>
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="Y3bao" href="[[rootPath]]releases/y3a2/Y3bao">BAO Sample</a>
+                </div>
+                </app-submenu>
+                
+		<app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="Y3redmagic" href="[[rootPath]]releases/y3a2/Y3redmagic">redMaGiC Catalogs</a>
+                </div>
+                </app-submenu>
+                  
+
+                  <app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="Y3massmaps" href="[[rootPath]]releases/y3a2/Y3massmaps">WL Mass Maps</a>
+                </div>
+                </app-submenu>
+
+  		
+		<app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="Y3mard" href="[[rootPath]]releases/y3a2/Y3mard">X-ray Clusters</a>
+                </div>
+                </app-submenu>
+
+  		<app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="gal-morphology" href="[[rootPath]]releases/y3a2/gal-morphology">Galaxy Morphology</a>
+                </div>
+                </app-submenu>
+             
+                  <!--app-submenu no-auto-close>
+                <div class="app-menu-item" slot="submenu-trigger">
+                  <a class="app-menu-item" id="needindent" name="y3a2_files" href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files" target="_blank">Files</a>
+                </div>
+                </app-submenu-->
+
 
                 </app-menu>
 
@@ -533,8 +622,20 @@
               <des-y1a1-voids name="voids"></des-y1a1-voids>
               <des-y1a1-photoz name="photoz"></des-y1a1-photoz>
               <des-y1a1-key-products name="key-products"></des-y1a1-key-products>
-          <!-- SN PAGES -->
-              <des-sn name="sn"></des-sn>
+          <!-- Y3A2 pages -->
+              <des-y3a2 name="y3a2"></des-y3a2>
+              <des-y3a2-gold name="Y3gold"></des-y3a2-gold>
+              <des-y3a2-psf name="Y3piff"></des-y3a2-psf>
+              <des-y3a2-key-catalogs name="Y3key-catalogs"></des-y3a2-key-catalogs >
+              <des-y3a2-key-products name="Y3key-products"></des-y3a2-key-products >
+	      <des-y3a2-balrog name="Y3balrog"></des-y3a2-balrog >
+	      <des-y3a2-deepfields name="Y3deepfields"></des-y3a2-deepfields >
+              <des-y3a2-bao name="Y3bao"></des-y3a2-bao >
+              <des-y3a2-redmagic name="Y3redmagic"></des-y3a2-redmagic >
+                <des-y3a2-massmaps name="Y3massmaps"></des-y3a2-massmaps >
+              <des-y3a2-morphology name="gal-morphology"></des-y3a2-morphology>
+              <des-y3a2-mard name="Y3mard"></des-y3a2-mard>
+
 
           <!-- DR1 PAGES -->
             <des-dr1 name="dr1"></des-dr1>
@@ -564,6 +665,9 @@
             <!-- FAQ and NCSA access are common for DR1 and DR2-->
             <des-dr1-faq name="dr2-faq"></des-dr1-faq>
             <des-dr1-ncsa name="dr2-ncsa"></des-dr1-ncsa>
+
+	    <!-- SN PAGES -->
+              <des-sn name="sn"></des-sn>
 
            <!-- Other Releases -->
               <des-other name="other"></des-other>

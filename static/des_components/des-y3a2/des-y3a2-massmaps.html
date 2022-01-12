@@ -1,0 +1,44 @@
+<dom-module id="des-y3a2-massmaps">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="WL Mass Maps">
+<div class="card-content">
+
+  <h2>
+    <strong>DES Year 3 weak gravitational lensing maps</strong>
+  </h2>
+  <p>In <a href="https://arxiv.org/abs/2105.13539">Jeffrey & Gatti et al. (2021)</a> we present reconstructed convergence maps, mass maps, from the Dark Energy Survey (DES) third year (Y3) weak gravitational lensing data set. The mass maps are weighted projections of the density field (primarily dark matter) in the foreground of the observed galaxies. We use four reconstruction methods, each is a maximum a-posteriori estimate with a different model for the prior probability of the map: Kaiser-Squires, null B-mode prior, Gaussian prior, and a sparsity prior.
+</p>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>All the products can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/massmaps/">here</a>. </p>
+  <p>All files are FITS format "HEALPix" maps (https://healpix.sourceforge.io/).</p>
+
+  <h2>
+    <strong>File description</strong>
+  </h2>
+  <p>There are four method labels: [KS, nullB, wiener, glimpse]. For each method, there is a file labelled "full" (the map with all galaxies) and four files for each tomographic galaxy redshift bin [1, 2, 3, 4]</p>
+
+  <p>As the Glimpse maps are the result of a patching method (see paper for details), the maps have masked pixels with ```UNSEEN``` values as described by the HEALPix documentation. This mask is also included as ```glimpse_mask.fits``` -- this mask can be applied to the maps from the other methods (to make the maps directly comparable for a given use).</p> 
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY3A2Massmaps extends Polymer.Element {
+      static get is() { return 'des-y3a2-massmaps'; }
+    }
+    window.customElements.define(DesY3A2Massmaps.is, DesY3A2Massmaps);
+  </script>
+
+</dom-module>

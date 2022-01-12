@@ -1,35 +1,59 @@
 <dom-module id="des-supported">
-<style>
+  <style>
 
-</style>
+  </style>
 
-<template>
-        <des-card>
-        <div style = "padding:10px;text-align: center">
-        <p style="font-size:13px; border-top: 1px solid #f0f0f0;">The DES Data Management System is supported by the National Science Foundation under Grant
-            NSF AST 07-15036 and NSF AST 08-13543 </p>
-        <div style="text-align: center">
-         <a href="http://www.ncsa.illinois.edu/" target="_blank" style="padding:20px">
-        <img src="{{rootPath}}static/images/ncsa_logo.jpg" height="30px" style=" background-color: #eeeeee;"> </a>
-    <a href="http://illinois.edu/" target="_blank" style="padding:20px">
-        <img src="{{rootPath}}static/images/ui_logo.jpg" height="30px" style=" background-color: #eeeeee"></a>
-    <a href="http://www.nsf.gov/" target="_blank" style="padding:20px">
-        <img src="{{rootPath}}static/images/nsf1sm.gif" height="30px" style=" background-color: #eeeeee"></a>
+  <template>
+    <des-card>
+      <div style="padding: 10px; text-align: center">
+        <div style="width: 50%; border-top: 1px solid #f0f0f0; margin: auto; ">
+          <p style="font-size: 13px; ">The DES Data Management System is supported by the National Science Foundation under Grant NSF AST 07-15036, NSF AST 08-13543, and NSF AST 15-36171. </p>
+        </div>
+        <style>
+          .footer {
+            display: grid;
+            width: 50%;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            align-content: center;
+            justify-content: center;
+            margin: auto;
+          }
+          .footer a {
+            text-decoration: none;
+          }
+          .footer img {
+            height: 60px;
+          }
+          </style>
+        <div class="footer">
+          <div>
+            <a href="http://www.ncsa.illinois.edu/" target="_blank">
+              <img src="{{rootPath}}static/images/NCSA_FullColor_RGB.png"> </a>
+          </div>
+          <div>
+            <a href="http://www.nsf.gov/" target="_blank">
+              <img src="{{rootPath}}static/images/NSF_4-Color_bitmap_Logo.png" ></a>
+          </div>
+          <div>
+            <a href="http://www.energy.gov/" target="_blank">
+              <img src="{{rootPath}}static/images/doe_logo.svg" ></a>
+          </div>
 
         </div>
-        </div>
+      </div>
 
-        <div>
-            &nbsp;
-        </div>
+      <div>
+        &nbsp;
+      </div>
 
-      </des-card>
+    </des-card>
 
 
-</template>
+  </template>
 
-<script>
-     class DesSupported extends Polymer.Element {
+  <script>
+    class DesSupported extends Polymer.Element {
       static get is() { return 'des-supported'; }
     }
     window.customElements.define(DesSupported.is, DesSupported);

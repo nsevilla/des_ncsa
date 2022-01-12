@@ -1,0 +1,1169 @@
+<dom-module id="des-y3a2-gold">
+
+
+<template>
+
+<style include="shared-styles">
+:host {
+       padding: 10px;
+       }
+
+</style>
+
+
+
+<div class="fixup" id="gold_top"></div>
+<div class="fixdown"></div>
+<des-card heading ='Gold Products'>
+    <div class=card-content>
+    <h2>
+    <strong>Overview</strong>
+    </h2>
+
+    The Y3 Gold release includes a collection of data sets including a value added version of the DR1 coadd catalog and ancillary information such as survey maps. The Y3 Gold data products and data quality checks are described in <a href="https://doi.org/10.3847/1538-4365/abeb66"> Sevilla-Noarbe et al. (2021) </a>. Updated information will be published here, when applicable. In addition, we present a list of sample queries and known issues for this catalog.
+
+    The following table (from Sevilla-Noarbe et al. (2021) contains the main characteristics of the catalog:
+
+        <div style="text-align: center">
+        <iron-image style="width:937px; height:495px; padding:1px;" sizing="contain"
+                src="{{rootPath}}static/images/y3a2/y3_gold_table.png"></iron-image>
+        </div>
+
+    <h2>
+    <strong>References</strong>
+    </h2>
+    <ol>
+      <li>
+      <a href="https://doi.org/10.3847/1538-4365/abeb66">Sevilla-Noarbe et al. (2021)</a>, ApJS 254, 24 The Year 3 Gold data set description. </li> 
+      <li>
+      <a href="https://doi.org/10.3847/1538-4365/ac00b3">DES Collaboration (2021)</a>, ApJS 255, 20 The public Data Release 1 description.</li>
+      <li>
+      <a href="https://doi.org/10.3847/1538-4365/aab4f5">Drlica-Wagner et al. (2018)</a>, ApJS 235, 33 The Year 1 Gold data set description. </li>
+      <li>
+      <a href="https://doi.org/10.1088/1538-3873/aab4ef">Morganson et al. (2018)</a>, PASP 130, 074501 The DES Data Management system description. </li>
+    </ol>
+
+    <h2>
+    <strong>Data access</strong>
+    </h2>
+
+    The catalog as described below is available at <a href="https://des.ncsa.illinois.edu/desaccess/"> DESaccess </a> as the rest of the products. At the bottom of this page, you can find:
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_schematop">Y3 Gold schema</a></li>
+    </ul>
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_issues">A list of known issues</a></li>
+    </ul>
+    <ul>
+      <li><a href="javascript:void(0)" on-tap="_queries">Some sample queries</a></li>
+    </ul>
+
+    <p>   The catalog and quick visualization functionalities are also available at the <a href="https://cosmohub.pic.es/"> CosmoHub website</a> as with previous data releases.</p>
+  
+    <h2>
+      <div id="schema_top"></div>
+      <strong>Y3 Gold schema </strong>
+    </h2>
+
+        Below we present a summarized version of the Y3 Gold tables (second annual Data Management release) and their description, corresponding to the internal Gold DES release 2.2. Some of the columns of this release with less relevance have been removed for clarity and improved accessibility in the database. Some of the columns have links to a more detailed explanation and origin, in particular, the <a href = "http://sextractor.readthedocs.io/en/des_dr1/" target="_blank"> Sextractor parameters used for DR1 and DR2</a>.  
+
+        The links below take you to the descriptions of the columns contained in the release for each table associated to the Y3 GOLD data set.
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_main">Y3_GOLD</a></li>
+       </ul>
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_survey">Y3_GOLD_SURVEYCONDITIONS</a></li>
+       </ul>
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_footprint">Y3_GOLD_FOOTPRINT</a></li>
+       </ul>
+
+        <p><br/></p>
+        <div class="fixup" id="schema_main"></div>
+        <h3 class="fixdown">Y3_GOLD  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 26.63%;"/> <col style="width: 58.4908%;"/> <col style="width: 14.841%;"/> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th colspan="1" style="text-align: center;">
+                <span>Number of Columns</span>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">ALPHAWIN_J2000</a>
+              </td>
+              <td>Right Ascension (J2000.0) of the object using a Gaussian window with a FWHM corresponding to the disk containing 50% of the flux. [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                A_FIDUCIAL_{GRIZY}
+              </td>
+              <td>SED-independent interstellar extinction based on the E(B − V) reddening maps from <a href="https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract"> Schlegel, Finkbeiner & Davis (1998) </a>  in band GRIZY [magnitudes]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">A_IMAGE</a>
+              </td>
+              <td colspan="1">Detection image based basic shape parameter; A = semimajor-axis [pixels]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                A_SED_LENZ17_{GRIZY}
+              </td>
+              <td> SED-dependent interstellar extinction based on the E(B − V) reddening maps from <a href="https://doi.org/10.7910/DVN/AFJNWJ"> Lenz et al. (2017) </a> [magnitudes] </td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                A_SED_PLANCK13_{GRIZY}
+              </td>
+              <td> SED-dependent interstellar extinction based on the E(B − V) reddening maps from <a href="https://doi.org/10.1051/0004-6361/201323195"> Planck Collaboration (2014) </a> [magnitudes] </td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                A_SED_SFD98_{GRIZY}
+              </td>
+              <td> SED-dependent interstellar extinction based on the E(B − V) reddening maps from <a href="https://doi.org/10.1086/305772"> Schlegel, Finkbeiner & Davis (1998) </a> ; used in the CORRECTED columns; current recommendation [magnitudes]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                B
+              </td>
+              <td>Latitude in Galactic coordinates [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                BPZ_TEMPLATE_ID_{MOF/SOF}
+              </td>
+              <td>Template identification from the BPZ code</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td>
+                BPZ_ZMC_{MOF/SOF}
+              </td>
+              <td>MonteCarlo instance from the redshift distribution computed from BPZ</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td>
+                BPZ_ZMEAN_{MOF/SOF}
+              </td>
+              <td>Mean of the redshift distribution computed from BPZ</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td>
+                BPZ_ZMODE_{MOF/SOF}
+              </td>
+              <td>Mode of the redshift distribution computed from BPZ</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td>
+                BPZ_ZSIGMA68_{MOF/SOF}
+              </td>
+              <td>Width of the 68% quantile</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td>
+                BPZ_ZSIGMA_{MOF/SOF}
+              </td>
+              <td>Width of the redshift distribution computed from BPZ</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html#basic-shape-parameters-a-b-theta">B_IMAGE</a>
+              </td>
+              <td>Detection image based basic shape parameter; B = semiminor-axis [pixels]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Position.html#class-star-def">CLASS_STAR_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Morphology based star-galaxy classifier from SExtractor. Values between 0 (galaxies) and 1 (stars).</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>COADD_OBJECT_ID</td>
+              <td>Unique identifier for the coadded objects</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>DEC</td>
+              <td>Declination (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Param.html?highlight=alpha#sky-coords">DELTAWIN_J2000</a>
+              </td>
+              <td>Declination (J2000.0) of the object using a Gaussian window with a FWHM corresponding to the disk containing 50% of the flux. [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>DELTA_MAG_CHROM_{G,R,I,Z,Y}</td>
+              <td>Coadd object chromatic correction using an appropriate spectral template for the object. See section 4.3 of Sevilla-Noarbe et al. (2021)</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>DELTA_MAG_Y4_{G,R,I,Z,Y}</td>
+              <td>Updates to photometry using Year 4 imaging.  See section 4.3 of Sevilla-Noarbe et al. (2021).</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                DNF_ZMC_{MOF/SOF}
+              </td>
+              <td>Nearest neighbor redshift from the reference set produced by the DNF photo-z estimator. Appropriate for building ensemble redshift distributions</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td>
+                DNF_ZMEAN_{MOF/SOF}
+              </td>
+              <td>Best redshift estimate from the DNF photo-z algorithm.</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td>
+                DNF_ZSIGMA_{MOF/SOF}
+              </td>
+              <td>Error estimate in redshift from the DNF photo-z algorithm.</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+             <tr>
+              <td>EBV_LENZ17</td>
+              <td>E(B-V) reddening coefficient from <a href="https://doi.org/10.7910/DVN/AFJNWJ"> Lenz et al. (2017) </a></td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+             <tr>
+              <td>EBV_PLANCK13</td>
+              <td>E(B-V) reddening coefficient from <a href="https://doi.org/10.1051/0004-6361/201323195"> Planck Collaboration (2014) </a></td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+             <tr>
+              <td>EBV_SFD98</td>
+              <td>E(B-V) reddening coefficient from <a href="https://doi.org/10.1086/305772"> Schlegel, Finkbeiner & Davis (1998) </a> </td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                ERRA_IMAGE
+              </td>
+              <td>Uncertainty in major axis size, from isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                ERRB_IMAGE
+              </td>
+              <td>Uncertainty in minor axis size, from isophotal model [pixel]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                ERRTHETA_IMAGE
+              </td>
+              <td>Uncertainty in source position, from isophotal model [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  EXTENDED_CLASS_COADD
+                </p>
+              </td>
+              <td colspan="1">
+Star/galaxy separation using SExtractor photometry and SPREAD_MODEL, SPREAD_MODEL_ERR in the i band. 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  EXTENDED_CLASS_MASH_{MOF/SOF}
+                </p>
+              </td>
+              <td colspan="1">
+Star/galaxy separation using MOF/SOF photometry in the i band, and WAVG and finally coadd quantities in case of missing values. 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  EXTENDED_CLASS_{MOF/SOF}
+                </p>
+              </td>
+              <td colspan="1">
+Star/galaxy separation using MOF/SOF photometry and T_SIZE in the i band. 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
+              <td colspan="1" style="text-align: center;">2</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <p>
+                  EXTENDED_CLASS_WAVG
+                </p>
+              </td>
+              <td colspan="1">
+Star/galaxy separation using WAVG photometry and SPREAD_MODEL, SPREAD_MODEL_ERR in the i band. 0: high confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; -9: No data</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                FLAGS_BADREGIONS
+              </td>
+              <td colspan="1">Flag describing whether the object is contained in a region with potentially problematic processing. See Sevilla-Noarbe et al. (2021) for description.</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                FLAGS_FOOTPRINT
+              </td>
+              <td colspan="1">Flag describing whether the object is contained in the fiducial footprint of the survey. See Sevilla-Noarbe et al. (2021) for description.</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">FLAGS_FOREGROUND</td>
+              <td colspan="1">Flag describing whether the object is contained in a region with a foreground astrophysical object. See Sevilla-Noarbe et al. (2021) for description.</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">FLAGS_GOLD</td>
+              <td colspan="1">Flag describing object anomalies. See Sevilla-Noarbe et al. (2021) for description.</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUXERR_APER_8_{G,R,I,Z,Y}</a>
+              </td>
+              <td colspan="1">RMS error estimate of FLUX_APER_8 [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Photom.html#automatic-aperture-flux-flux-auto">FLUXERR_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              </td>
+              <td colspan="1">RMS error estimate of FLUX_AUTO [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">FLUXERR_DETMODEL_{G,R,I,Z,Y}</td>
+              <td colspan="1">RMS error estimate of FLUX_DETMODEL measurement [ADU]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-aper-def">FLUX_APER_8_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux measurement in a circular aperture of 22.22 pixels (5.8437 arcsecs) diameter; MAG=30-2.5*log10(FLUX) [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Photom.html#flux-auto-def">FLUX_AUTO_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux measurement in an elliptical aperture, shaped by the second moments of the object and scaled by the Kron radius; MAG=30-2.5*log10(FLUX) [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Model.html">FLUX_DETMODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Flux measurement, for a bulge + disk model fit on the detection image [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">FLUX_RADIUS_{G,R,I,Z,Y}</td>
+              <td colspan="1">Half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">FRAC_DET_GRIZ</td>
+              <td colspan="1">Fractional area of Healpix pixel covered simultaneously by griz bands</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">FRAC_DET_GRIZY</td>
+              <td colspan="1">Fractional area of Healpix pixel covered simultaneously by grizY bands</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">HPIX_16384</td>
+              <td colspan="1">Healpix index for NSIDE = 16384 in NEST schema for the object</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">HPIX_4096</td>
+              <td colspan="1">Healpix index for NSIDE = 4096 in NEST schema for the object</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td colspan="1">IMAFLAGS_ISO_{G,R,I,Z,Y}</td>
+              <td colspan="1">Flag identifying sources with missing/flagged pixels, considering all single epoch images</td>
+              <td colspan="1" style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td colspan="1">KRON_RADIUS</td>
+              <td colspan="1">Detection image luminosity weighted radius for the object, encompassing approximately 90% of the total flux</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>Longitude in Galactic coordinates [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>
+                MAGERR_APER_8_{G,R,I,Z,Y}
+              </td>
+              <td>Error in MAG_APER_8, scaled from FLUXERR_APER_8 [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                MAGERR_AUTO_{G,R,I,Z,Y}
+              </td>
+              <td>Error in MAG_AUTO, scaled from FLUXERR_AUTO [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                MAGERR_DETMODEL_{G,R,I,Z,Y}
+              </td>
+              <td>Error in MAG_DETMODEL, scaled from FLUXERR_DETMODEL [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                MAGERR_PSF_{G,R,I,Z,Y}
+              </td>
+              <td>Error in MAG_PSF, scaled from MAG_PSF [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                MAG_APER_8_{G,R,I,Z,Y}
+              </td>
+              <td>Magnitude measured in a circular aperture of 22.22 pixels (5.8437 arcsecs) diameter [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                MAG_AUTO_{G,R,I,Z,Y}
+              </td>
+              <td>Magnitude measurement in an elliptical aperture, shaped by the second moments of the object and scaled by the Kron radius [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                MAG_DETMODEL_{G,R,I,Z,Y}
+              </td>
+              <td>Magnitude measurement, for a bulge + disk model fit on the detection image [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                MAG_PSF_{G,R,I,Z,Y}
+              </td>
+              <td>Magnitude measured using the coadd PSF (use caution as this PSF varies discontinuously across footprint) [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>MOF_CM_CHI2PER</td>
+              <td>Chi2 per degree of freedom of the composite model fit</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_DOF</td>
+              <td>Number of the degrees of freedom for the composite model fit</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_FLUX_COV_G_G</td>
+              <td>Diagonal covariance of the MOF CM flux in the g band</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_FLUX_COV_R_R</td>
+              <td>Diagonal covariance of the MOF CM flux in the r band</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_FLUX_COV_I_I</td>
+              <td>Diagonal covariance of the MOF CM flux in the i band</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_FLUX_COV_Z_Z</td>
+              <td>Diagonal covariance of the MOF CM flux in the z band</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_FLUX_{G,R,I,Z}</td>
+              <td>Measured MOF composite model flux [ADU]</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_FLUX_S2N_{G,R,I,Z}</td>
+              <td>MOF composite model flux signal to noise ratio</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_FRACDEV</td>
+              <td>MOF composite model fraction of de Vaucouleurs flux: cm = fracdev * devaucouleurs + (1-fracdev) * exponential</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_FRACDEV_ERR</td>
+              <td>Error in FRACDEV</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_FRACDEV_NOCLIP</td>
+              <td>Value of FRACDEV if not clipped to [0,1] range</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_G_1</td>
+              <td>MOF based shape component 1 (reduced version of e1)</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_G_2</td>
+              <td>MOF based shape component 2 (reduced version of e2)</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_G_COV_1_1</td>
+              <td>MOF based shape covariance component 1-1</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_G_COV_1_2</td>
+              <td>MOF based shape covariance component 1-2</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_G_COV_2_1</td>
+              <td>MOF based shape covariance component 2-1</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_G_COV_2_2</td>
+              <td>MOF based shape covariance component 2-2</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_LOGSB_{G,R,I,Z}</td>
+              <td>Logarithm of the MOF based surface brightness</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_MAG_CORRECTED_{G,R,I,Z}</td>
+              <td>MOF corrected magnitude = MOF_CM_MAG + DELTA_MAG_Y4 + DELTA_MAG_CHROM + A_SED_SFD98</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_MAG_ERR_{G,R,I,Z}</td>
+              <td>Uncertainty in MOF magnitude</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_MAG_{G,R,I,Z}</td>
+              <td>Magnitude from MOF_CM_FLUX. MAG = 30-2.5*log10(FLUX)</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_T</td>
+              <td>Size squared of the object: T=<x**2>+<y**2> [arcsec**2]</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_TDBYTE</td>
+              <td>Ratio of sizes Tdev/Texp</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_CM_T_ERR</td>
+              <td>Error in size squared [arcsec**2]</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_FLAGS</td>
+              <td>Overall image processing flags. Can contain NULLs for objects with unfinished processing for MOF</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>MOF_PSF_FLUX_ERR_{G,R,I,Z}</td>
+              <td>Uncertainty in measured MOF PSF flux [ADU]</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_PSF_FLUX_{G,R,I,Z}</td>
+              <td>Measured MOF PSF flux [ADU]</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_PSF_FLUX_S2N_{G,R,I,Z}</td>
+              <td>MOF PSF flux signal to noise ratio</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_PSF_MAG_ERR_{G,R,I,Z}</td>
+              <td>Uncertainty in MOF PSF magnitude</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MOF_PSF_MAG_{G,R,I,Z}</td>
+              <td>Magnitude from MOF_PSF_FLUX. MAG = 30-2.5*log10(FLUX)</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>MU_EFF_MODEL_{G,R,I,Z,Y}</td>
+              <td>Effective model surface brightness above background. The surface brightness is measured at the isophote which includes half of the flux of the model, above background [mag./sq.arcsec]</td>
+              <td style="text-align: center;">5</td>
+            </tr>            
+            <tr>
+              <td>MU_MAX_{G,R,I,Z,Y}</td>
+              <td>Surface brightness at the brightest pixel [mag./sq.arcsec]</td>
+              <td style="text-align: center;">5</td>
+            </tr>            
+            <tr>
+              <td>MU_MAX_MODEL_{G,R,I,Z,Y}</td>
+              <td>Maximum surface brightness using the whole area inside the isophote used for MU_EFF_MODEL [mag./sq.arcsec]</td>
+              <td style="text-align: center;">5</td>
+            </tr>            
+            <tr>
+              <td>MU_MEAN_MODEL_{G,R,I,Z,Y}</td>
+              <td>Mean surface brightness using the whole area inside the isophote used for MU_EFF_MODEL [mag./sq.arcsec]</td>
+              <td style="text-align: center;">5</td>
+            </tr>            
+            <tr>
+              <td>MU_THRESHOLD</td>
+              <td>Surface brightness threshold (SExtractor parameter) [mag./sq.arcsec.]</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>NEPOCHS_{G,R,I,Z,Y}</td>
+              <td>Number of epochs the source is detected in single epoch images</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Model.html#model-minimization-def">NITER_MODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Number of iterations for convergence in SExtractor model fitting</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>N_IMAGES_{G,R,I,Z,Y}</td>
+              <td>Number of (grizY) band exposures at the object location (from the Healpix map)</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>OBJECT_NUMBER</td>
+              <td>SExtractor unique number for a processing tile</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>PARENT_NUMBER</td>
+              <td>SExtractor OBJECT_NUMBER of parent object of which this object is a deblended child</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>RA</td>
+              <td>Right Ascension (J2000.0) with quantized precision for indexing (ALPHAWIN_J2000 has full precision but not indexed) [degrees]</td>
+              <td colspan="1" style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>SEXTRACTOR_FLAGS_{G,R,I,Z,Y}</td>
+              <td>SExtractor 16-bit flag parameter which contains basic warnings about the source extraction process</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>SOF_CM_CHI2PER</td>
+              <td>Chi2 per degree of freedom of the composite model fit</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_DOF</td>
+              <td>Number of the degrees of freedom for the composite model fit</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_FLUX_COV_G_G</td>
+              <td>Diagonal covariance of the SOF CM flux in the g band</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_FLUX_COV_R_R</td>
+              <td>Diagonal covariance of the SOF CM flux in the r band</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_FLUX_COV_I_I</td>
+              <td>Diagonal covariance of the SOF CM flux in the i band</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_FLUX_COV_Z_Z</td>
+              <td>Diagonal covariance of the SOF CM flux in the z band</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_FLUX_{G,R,I,Z}</td>
+              <td>Measured SOF composite model flux [ADU]</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_FLUX_S2N_{G,R,I,Z}</td>
+              <td>SOF composite model flux signal to noise ratio</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_FRACDEV</td>
+              <td>SOF composite model fraction of de Vaucouleurs flux: cm = fracdev * devaucouleurs + (1-fracdev) * exponential</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_FRACDEV_ERR</td>
+              <td>Error in FRACDEV</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_FRACDEV_NOCLIP</td>
+              <td>Value of FRACDEV if not clipped to [0,1] range</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_G_1</td>
+              <td>SOF based shape component 1 (reduced version of e1)</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_G_2</td>
+              <td>SOF based shape component 2 (reduced version of e2)</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_G_COV_1_1</td>
+              <td>SOF based shape covariance component 1-1</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_G_COV_1_2</td>
+              <td>SOF based shape covariance component 1-2</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_G_COV_2_1</td>
+              <td>SOF based shape covariance component 2-1</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_G_COV_2_2</td>
+              <td>SOF based shape covariance component 2-2</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_LOGSB_{G,R,I,Z}</td>
+              <td>Logarithm of the SOF based surface brightness</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_MAG_CORRECTED_{G,R,I,Z}</td>
+              <td>SOF corrected magnitude = SOF_CM_MAG + DELTA_MAG_Y4 + DELTA_MAG_CHROM + A_SED_SFD98</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_MAG_ERR_{G,R,I,Z}</td>
+              <td>Uncertainty in SOF magnitude</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_MAG_{G,R,I,Z}</td>
+              <td>Magnitude from SOF_CM_FLUX. MAG = 30-2.5*log10(FLUX)</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_T</td>
+              <td>Size squared of the object: T=<x**2>+<y**2> [arcsec**2]</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_TDBYTE</td>
+              <td>Ratio of sizes Tdev/Texp</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_CM_T_ERR</td>
+              <td>Error in size squared [arcsec**2]</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_FLAGS</td>
+              <td>Overall image processing flags. Can contain NULLs for objects with unfinished processing for SOF</td>
+              <td style="text-align: center;">1</td>
+            </tr>            
+            <tr>
+              <td>SOF_PSF_FLUX_ERR_{G,R,I,Z}</td>
+              <td>Uncertainty in measured SOF PSF flux [ADU]</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_PSF_FLUX_{G,R,I,Z}</td>
+              <td>Measured SOF PSF flux [ADU]</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_PSF_FLUX_S2N_{G,R,I,Z}</td>
+              <td>SOF PSF flux signal to noise ratio</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_PSF_MAG_ERR_{G,R,I,Z}</td>
+              <td>Uncertainty in SOF PSF magnitude</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>SOF_PSF_MAG_{G,R,I,Z}</td>
+              <td>Magnitude from SOF_PSF_FLUX. MAG = 30-2.5*log10(FLUX)</td>
+              <td style="text-align: center;">4</td>
+            </tr>            
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spreaderr-model">SPREADERR_MODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Uncertainty in SPREAD_MODEL.</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spread-model">SPREAD_MODEL_{G,R,I,Z,Y}</a>
+              </td>
+              <td>Morphology based classifier based on a linear discriminant between the pixel map of the object convolved with the PSF model and the pixel map convolved with a PSF+exponential model. Values closer to 0 correspond to stars, larger values correspond to galaxies</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://sextractor.readthedocs.io/en/des_dr1/Position.html?highlight=j2000#basic-shape-parameters-a-b-theta">THETA_J2000</a>
+              </td>
+              <td>Position angle of the ellipse fit to the object with the N/S/E/W axes in equatorial J2000 coordinates, from non-windowed measurement. THETA_J2000 = THETA_IMAGE-90(MOD 180) [degrees]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>TILENAME</td>
+              <td>Identifier of each one of the tiles on which the survey is gridded for data processing</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUXERR_PSF_{G,R,I,Z,Y}</td>
+              <td>RMS error estimate of WAVG_FLUX_PSF [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_FLUX_PSF_{G,R,I,Z,Y}</td>
+              <td>PSF flux using the weighted averaged values of single epoch objects (according to weight maps). Not valid if NEPOCHS = 0 [ADU]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAGERR_PSF_{G,R,I,Z,Y}</td>
+              <td>Uncertainty of WAVG_MAG_PSF, scaled from WAVG_FLUXERR_PSF [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_MAG_PSF_{G,R,I,Z,Y}</td>
+              <td>Magnitude corresponding to MAG = 30-2.5*log10(WAVG_FLUX_PSF) [magnitudes]</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_SPREADERR_MODEL_{G,R,I,Z,Y}</td>
+              <td>Uncertainty in WAVG_SPREAD_MODEL</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>WAVG_SPREAD_MODEL_{G,R,I,Z,Y}</td>
+              <td>
+                <a href="https://sextractor.readthedocs.io/en/des_dr1/Param.html#spread-model">SPREAD MODEL</a> using the weighted averaged values from single epoch detections</td>
+              <td style="text-align: center;">5</td>
+            </tr>
+            <tr>
+              <td>XWIN_IMAGE</td>
+              <td>X position of the barycenter of the object within the image using a Gaussian window with a FWHM corresponding to the radius of the aperture containing 50% of the flux [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+            <tr>
+              <td>YWIN_IMAGE</td>
+              <td>Y position of the barycenter of the object within the image using a Gaussian window with a FWHM corresponding to the radius of the aperture containing 50% of the flux [pixel]</td>
+              <td style="text-align: center;">1</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><br/></p>
+        <div class="fixup" id="schema_survey"></div>
+        <h3 class="fixdown">Y3_GOLD_SURVEYCONDITIONS  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 26.63%;"/> <col style="width: 58.4908%;"/> <col style="width: 14.841%;"/> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+              <th colspan="1" style="text-align: center;">
+                <span>Available statistics</span>
+              </th>
+            </tr>
+          <tr>
+            <td> AIRMASS_{G,R,I,Z,Y} </td>
+            <td> Secant of the zenith angle </td>
+            <td> MAX, MIN, WMEAN </td>
+          </tr>
+          <tr>
+            <td> DEPTH_AUTO_{G,R,I,Z,Y} </td>
+            <td> Estimate of the depth using MAG_AUTO photometry using a trained model. See section 5.1 of Sevilla-Noarbe et al. (2021) [magnitudes]</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> DEPTH_MOF_{G,R,I,Z} </td>
+            <td> Estimate of the depth using MAG_MOF photometry using a trained model. See section 5.1 of Sevilla-Noarbe et al. (2021) [magnitudes]</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> DEPTH_SOF_{G,R,I,Z} </td>
+            <td> Estimate of the depth using MAG_SOF photometry using a trained model. See section 5.1 of Sevilla-Noarbe et al. (2021) [magnitudes]</td>
+            <td> MAX, MIN, WMEAN </td>
+          </tr>
+          <tr>
+            <td> EBV_LENZ17 </td>
+            <td> E(B-V) reddening coefficient map from <a href="https://doi.org/10.7910/DVN/AFJNWJ"> Lenz et al. (2017) </a></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> EBV_PLANCK13 </td>
+            <td> E(B-V) reddening coefficient map from <a href="https://doi.org/10.1051/0004-6361/201323195"> Planck Collaboration (2014) </a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> EBV_SFD98 </td>
+            <td> E(B-V) reddening coefficient map from <a href="https://doi.org/10.1086/305772"> Schlegel, Finkbeiner & Davis (1998) </a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> EXPTIME_{G,R,I,Z,Y}  </td>
+            <td> Exposure time [s]</td>
+            <td> SUM </td>
+          </tr>
+          <tr>
+            <td> FGCM_GRY_{G,R,I,Z,Y} </td>
+            <td> Residual ‘gray’ corrections to the zeropoint from FGCM [mag]</td>
+            <td> MIN, WMEAN </td>
+          </tr>
+          <tr>
+            <td> FWHM_FLUXRAD_{G,R,I,Z,Y} </td>
+            <td> Twice the average half-light radius from the sources used for determining the PSF with PSFEx. [arcsec]</td>
+            <td> MAX, MIN, WMEAN </td>
+          </tr>
+            <td> FWHM_{G,R,I,Z,Y} </td>
+            <td> Average FWHM of the 2D elliptical Moffat function that fits best the PSF model from PSFEx. [arcsec]</td>
+            <td> MAX, MIN, WMEAN </td>
+          </tr>
+          <tr>
+            <td> HPIX_4096 </td>
+            <td> Healpix ID for this entry, on NSIDE = 4096</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> MAGLIM_{G,R,I,Z,Y} </td>
+            <td> Magnitude limit estimated by mangle from the weight maps. This is measured as 10-sigma values in 2 arcsec diameter apertures.  [mag]</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> N_IMAGES_{G,R,I,Z,Y} </td>
+            <td> Number of images. </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> SIGMA_MAG_ZERO_{G,R,I,Z,Y} </td>
+            <td> Quadrature sum of zeropoint uncertainties. [magnitudes] </td>
+            <td> QSUM</td>
+          </tr>
+          <tr>
+            <td> SKYVAR_{G,R,I,Z,Y} </td>
+            <td> Variance on the sky brightness. [(e-/CCD pixel)**2] </td>
+            <td> MAX, MIN</td>
+          </tr>
+          <tr>
+            <td> SKYVAR_SQRT_{G,R,I,Z,Y} </td>
+            <td> Square root of sky variance. [e-/CCD pixel] </td>
+            <td> WMEAN </td>
+          </tr>
+          <tr>
+            <td> SKYVAR_UNCERTAINTY_{G,R,I,Z,Y} </td>
+            <td> Sky variance with flux scaled by zeropoint [e-/s/coadd pixel] </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> T_EFF_EXPTIME_{G,R,I,Z,Y} </td>
+            <td> Exposure time multiplied by T_EFF [s] </td>
+            <td> SUM </td>
+          </tr>                                              
+          <tr>
+            <td> T_EFF_{G,R,I,Z,Y} </td>
+            <td> Figure of merit for quality of observations [e-/s/coadd pixel] </td>
+            <td> MAX, MIN, WMEAN </td>
+          </tr> 
+        </tbody>
+      </table>
+
+      <p><br/></p>
+      <div class="fixup" id="schema_footprint"></div>
+      <h3 class="fixdown">Y3_GOLD_FOOTPRINT  &nbsp; &nbsp; <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+        <table class="wrapped">
+          <colgroup> <col style="width: 26.63%;"/> <col style="width: 58.4908%;"/> <col style="width: 14.841%;"/> </colgroup>
+          <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+            </tr>
+          <tr>
+            <td> BADREGIONS </td>
+            <td> Bit flag fore bad regions </td>
+          </tr>                                                                       
+          <tr>
+            <td> COVERAGE_GRIZ </td>
+            <td> GRIZ footprint </td>
+          </tr>                                                                       
+          <tr>
+            <td> COVERAGE_GRIZY </td>
+            <td> GRIZY footprint </td>
+          </tr>                                                                       
+          <tr>
+            <td> FOREGROUND </td>
+            <td> Bit flag for foreground regions </td>
+          </tr>    
+          <tr>
+            <td> FRACDET_{G,R,I,Z,Y} </td>
+            <td> Detection fraction over an NSIDE = 4096 Healpix pixel </td>
+          </tr>
+          <tr>
+            <td> HPIX_4096 </td>
+            <td> Healpix ID for this entry, on NSIDE = 4096</td>
+            <td> </td>
+          </tr>                                                                                                              
+        </tbody>
+      </table>
+
+      <p><br/></p>
+
+      <h2>
+        <div id="gold_issues"></div>
+        <strong>Known issues <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></strong>
+      </h2>
+      <h3>BPZ performance </h3>
+      As described in Sevilla-Noarbe et al. 2021, this template fitting code shows a poor performance at z < 0.5 (Figure 11). DNF is recommended for this range.
+      <h3>Large, fake objects in dense fields </h3>
+      A few fake objects (1%) have been found in very dense environments with a very large size (CM_T), usually encompassing several blended objects/artifacts. This is a consequence of an artificially large detection associated with collections of these objects.
+      <h3>Magnitude vs magnitude error between SOF and AUTO </h3>
+      There are differences in how the errors are calculated in SOF and AUTO, that increases the dispersion in the SNR relation. This translates into some dependence between the depth maps and the catalogs in the SNR limit of the definition. For a fixed magnitude limit in a catalog, pixels with depth near a given SNR limit, will contain more objects with lower SNR than using AUTO. This translates into a density increase in regions with depth similar to the magnitude limit, that we do not see in AUTO.
+
+      <h2>
+        <div id="gold_queries"></div>
+        <strong>Sample queries <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></strong>
+      </h2>
+      <strong>Preview</strong>
+      <p>Grab a few lines for a preview</p>
+      <code>
+        <p>SELECT coadd_object_id, ra, dec FROM Y3_GOLD WHERE rownum < 10 </p>
+      </code>
+      <strong>Star sample with some quality cuts</strong>
+      <code>
+        <p>SELECT </p>
+        <p>coadd_object_id, ra, dec, sof_psf_mag_g + delta_mag_y4_g + delta_mag_chrom_g - a_sed_sfd98_g AS sof_psf_mag_g_corrected,sof_psf_mag_r + delta_mag_y4_r + delta_mag_chrom_r - a_sed_sfd98_r AS sof_psf_mag_r_corrected,sof_psf_mag_i + delta_mag_y4_i + delta_mag_chrom_i - a_sed_sfd98_i AS sof_psf_mag_i_corrected, sof_psf_mag_z + delta_mag_y4_z + delta_mag_chrom_z - a_sed_sfd98_z AS sof_psf_mag_z_corrected, sof_psf_mag_err_g, sof_psf_mag_err_r, sof_psf_mag_err_i, sof_psf_mag_err_z 
+        <p>FROM Y3_GOLD </p>
+        <p>WHERE </p>
+        <p>flags_footprint = 1 AND flags_foreground = 0 AND BITAND(flags_gold, 60) = 0 AND extended_class_mash_sof <= 2 AND sof_psf_mag_r BETWEEN 16 AND 23 </p>
+      </code>
+      <strong>Galaxy sample with some quality cuts</strong>
+      <code>
+        <p>SELECT </p>
+        <p>coadd_object_id, ra, dec, dnf_zmean_sof, bpz_zmean_sof, sof_cm_mag_corrected_g, sof_cm_mag_corrected_r, sof_cm_mag_corrected_i, sof_cm_mag_corrected_z, sof_cm_mag_err_g, sof_cm_mag_err_r, sof_cm_mag_err_i, sof_cm_mag_err_z </p>
+        <p>FROM Y3_GOLD</p> 
+        <p>WHERE </p>
+        <p>flags_footprint = 1 and flags_foreground = 0 and bitand(flags_gold,62) = 0 and extended_class_mash_sof = 3 and sof_cm_mag_i between 16 and 24 </p>
+      </code>
+      <strong>Make a healpix map of magnitude residuals</strong>
+      <code>
+        <p>SELECT</p> 
+        <p>hpix_4096, avg(mof_cm_mag_corrected_i-sof_cm_mag_corrected_i) as mofsof_residuals_i</p> 
+        <p>FROM Y3_GOLD</p> 
+        <p>WHERE </p>
+        <p>flags_footprint = 1 and flags_gold = 0 </p>
+        <p>GROUP BY </p>
+        <p>hpix_4096 </p>
+      </code>
+      <strong>Make a healpix map of stars/galaxies</strong>
+      <code>
+        <p>SELECT</p> 
+        <p>hpix_4096, count(*)</p> 
+        <p>FROM Y3_GOLD</p> 
+        <p>WHERE </p>
+        <p>flags_footprint = 1 and extended_class_mash_sof = 0 # USE 3 FOR GALAXIES</p>
+        <p>GROUP BY </p>
+        <p>hpix_4096 </p>
+      </code>
+      <p><strong>Make a mask combining maps</strong></p>
+       This uses the Y3_GOLD_FOOTPRINT and the Y3_GOLD_SURVEYCONDITIONS maps in the database. In this case, it is the mask used for the Y3 BAO sample analysis.</strong>
+      <code>
+        <p>SELECT</p> 
+        <p>foot.hpix_4096, foot.coverage_griz, foot.foreground, foot.badregions, sys.depth_sof_i</p>
+        <p>FROM Y3_GOLD_FOOTPRINT foot INNER JOIN Y3_GOLD_SURVEYCONDITIONS sys ON foot.hpix_4096=sys.hpix_4096
+        <p>WHERE </p>
+        <p>sys.n_images_g >= 1 and sys.n_images_r >= 1 and sys.n_images_i >= 1 and sys.n_images_z >= 1 and foot.coverage_griz > 0.8 and sys.depth_sof_i >=22.3 and (2*sys.depth_sof_r-sys.depth_sof_z)>24 and sys.depth_sof_g>=22 and sys.depth_sof_r>=22 and sys.depth_sof_z>=21 and bitand(foot.badregions,4) = 0 and bitand(foot.foreground,127) = 0
+      </code>
+    </div>
+
+</des-card>
+</template>
+<script>
+    class DesY3A2Gold extends Polymer.Element {
+      static get is() { return 'des-y3a2-gold'; }
+      _top() {this.$.gold_top.scrollIntoView();}
+      _schematop() {this.$.schema_top.scrollIntoView();}
+      _main() {this.$.schema_main.scrollIntoView();}
+      _survey() {this.$.schema_survey.scrollIntoView();}
+      _footprint() {this.$.schema_footprint.scrollIntoView();}
+      _issues() {this.$.gold_issues.scrollIntoView();}
+      _queries() {this.$.gold_queries.scrollIntoView();}
+    }
+    window.customElements.define(DesY3A2Gold.is, DesY3A2Gold);
+  </script>
+
+</dom-module>
