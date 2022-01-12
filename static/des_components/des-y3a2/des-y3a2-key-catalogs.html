@@ -357,6 +357,7 @@
 		LUM 
           </td>
           <td>
+		   Luminosity used for selection (units of L*)
           </td>
           <td>
             1
@@ -367,6 +368,7 @@
 		MAG 
           </td>
           <td>
+		  BDF magnitude
           </td>
           <td>
             1
@@ -377,6 +379,7 @@
 		MAG_ERR 
           </td>
           <td>
+		  Error in BDF magnitude
           </td>
           <td>
             1
@@ -387,6 +390,7 @@
 		REFMAG 
           </td>
           <td>
+		  Bandpass in MAG and LUM
           </td>
           <td>
             1
@@ -397,6 +401,7 @@
 		REFMAG_ERR 
           </td>
           <td>
+		  Bandpass in MAG_ERR
           </td>
           <td>
             1
@@ -407,6 +412,7 @@
 		WEIGHT 
           </td>
           <td>
+		  Weight used in clustering analysis
           </td>
           <td>
             1
@@ -417,6 +423,7 @@
 		ZREDMAGIC 
           </td>
           <td>
+		  redMaGiC photometric redshift estimate
           </td>
           <td>
             1
@@ -427,6 +434,7 @@
 		ZREDMAGIC_E 
           </td>
           <td>
+		  Gaussianized error for zredmagic
           </td>
           <td>
             1
@@ -437,6 +445,7 @@
 		ZREDMAGIC_SAMP 
           </td>
           <td>
+		  Sample from (non-gaussian) redMaGiC p(z)
           </td>
           <td>
             1
@@ -447,6 +456,7 @@
 		ZSPEC 
           </td>
           <td>
+		  Spectroscopic redshift if available
           </td>
           <td>
             1
@@ -498,6 +508,7 @@
 		ZMAX
           </td>
           <td>
+		  The highest redshift that a typical red sequence galaxy will be observed at 5sigma
           </td>
           <td>
             1
@@ -643,14 +654,14 @@
         <tr>
           <td>T</td>
           <td>
-            <p></p>
+            <p> Size squared of the object (arcsec^2): T=&lt;x^2&gt;+&lt;y^2&gt; </p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>T_ERR</td>
           <td>
-            <p></p>
+            <p> Error in size squared (arcsec^2), T </p>
           </td>
 	  <td>1</td>
         </tr>
@@ -659,21 +670,21 @@
         <tr>
 		<td>COVMAT_0_1</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 0-1</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>COVMAT_1_1</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 1-1</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>COVMAT_2_2</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 2-2</p>
           </td>
 	  <td>1</td>
         </tr>
@@ -687,35 +698,35 @@
         <tr>
 		<td>FLUX_ERR_{R,I,Z}</td>
           <td>
-            <p></p>
+            <p>Error in flux in bandpass</p>
           </td>
 	  <td>3</td>
         </tr>
         <tr>
 		<td>FLUX_{R,I,Z}</td>
           <td>
-            <p></p>
+            <p>Flux in bandpass</p>
           </td>
 	  <td>3</td>
         </tr>
         <tr>
 		<td>SIZE_RATIO</td>
           <td>
-            <p></p>
+            <p> T/psfrec_T</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>SNR</td>
           <td>
-            <p></p>
+            <p>Signal-to-noise</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>WEIGHT</td>
           <td>
-            <p></p>
+            <p>Analysis weight</p>
           </td>
 	  <td>1</td>
         </tr>
@@ -738,14 +749,14 @@
         <tr>
           <td>T</td>
           <td>
-            <p></p>
+            <p>Size squared of the object (arcsec^2): T=&lt;x^2&gt;+&lt;y^2&gt;</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>T_ERR</td>
           <td>
-            <p></p>
+            <p>Error in size squared (arcsec^2), T</p>
           </td>
 	  <td>1</td>
         </tr>
@@ -754,21 +765,21 @@
         <tr>
 		<td>COVMAT_0_1</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 0-1</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>COVMAT_1_1</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 1-1</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>COVMAT_2_2</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 2-2</p>
           </td>
 	  <td>1</td>
         </tr>
@@ -782,35 +793,35 @@
         <tr>
 		<td>FLUX_ERR_{R,I,Z}</td>
           <td>
-            <p></p>
+            <p>Error in flux in bandpass</p>
           </td>
 	  <td>3</td>
         </tr>
         <tr>
 		<td>FLUX_{R,I,Z}</td>
           <td>
-            <p></p>
+            <p>Flux in bandpass</p>
           </td>
 	  <td>3</td>
         </tr>
         <tr>
 		<td>SIZE_RATIO</td>
           <td>
-            <p></p>
+            <p>T/psfrec_T</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>SNR</td>
           <td>
-            <p></p>
+            <p>Signal-to-noise</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>WEIGHT</td>
           <td>
-            <p></p>
+            <p>Analisis weight</p>
           </td>
 	  <td>1</td>
         </tr>
@@ -830,17 +841,17 @@
             <strong>Number of columns</strong>
           </td>
         </tr>
-        <tr>
+	<tr>
           <td>T</td>
           <td>
-            <p></p>
+            <p>Size squared of the object (arcsec^2): T=&lt;x^2&gt;+&lt;y^2&gt;</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>T_ERR</td>
           <td>
-            <p></p>
+            <p>Error in size squared (arcsec^2), T</p>
           </td>
 	  <td>1</td>
         </tr>
@@ -849,21 +860,21 @@
         <tr>
 		<td>COVMAT_0_1</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 0-1</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>COVMAT_1_1</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 1-1</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>COVMAT_2_2</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 2-2</p>
           </td>
 	  <td>1</td>
         </tr>
@@ -877,38 +888,39 @@
         <tr>
 		<td>FLUX_ERR_{R,I,Z}</td>
           <td>
-            <p></p>
+            <p>Error in flux in bandpass</p>
           </td>
 	  <td>3</td>
         </tr>
         <tr>
 		<td>FLUX_{R,I,Z}</td>
           <td>
-            <p></p>
+            <p>Flux in bandpass</p>
           </td>
 	  <td>3</td>
         </tr>
         <tr>
 		<td>SIZE_RATIO</td>
           <td>
-            <p></p>
+            <p>T/psfrec_T</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>SNR</td>
           <td>
-            <p></p>
+            <p>Signal-to-noise</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>WEIGHT</td>
           <td>
-            <p></p>
+            <p>Analisis weight</p>
           </td>
 	  <td>1</td>
         </tr>
+
 	<tr>
 	  <th colspan="3">
 		  <xmp>/catalog/metacal/sheared_2p      Group</xmp>
@@ -925,17 +937,17 @@
             <strong>Number of columns</strong>
           </td>
         </tr>
-        <tr>
+	<tr>
           <td>T</td>
           <td>
-            <p></p>
+            <p>Size squared of the object (arcsec^2): T=&lt;x^2&gt;+&lt;y^2&gt;</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>T_ERR</td>
           <td>
-            <p></p>
+            <p>Error in size squared (arcsec^2), T</p>
           </td>
 	  <td>1</td>
         </tr>
@@ -944,21 +956,21 @@
         <tr>
 		<td>COVMAT_0_1</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 0-1</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>COVMAT_1_1</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 1-1</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>COVMAT_2_2</td>
           <td>
-            <p></p>
+            <p>Shape covariance component 2-2</p>
           </td>
 	  <td>1</td>
         </tr>
@@ -972,38 +984,39 @@
         <tr>
 		<td>FLUX_ERR_{R,I,Z}</td>
           <td>
-            <p></p>
+            <p>Error in flux in bandpass</p>
           </td>
 	  <td>3</td>
         </tr>
         <tr>
 		<td>FLUX_{R,I,Z}</td>
           <td>
-            <p></p>
+            <p>Flux in bandpass</p>
           </td>
 	  <td>3</td>
         </tr>
         <tr>
 		<td>SIZE_RATIO</td>
           <td>
-            <p></p>
+            <p>T/psfrec_T</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>SNR</td>
           <td>
-            <p></p>
+            <p>Signal-to-noise</p>
           </td>
 	  <td>1</td>
         </tr>
         <tr>
 		<td>WEIGHT</td>
           <td>
-            <p></p>
+            <p>Analisis weight</p>
           </td>
 	  <td>1</td>
         </tr>
+
 	<tr>
 	  <th colspan="3">
 		  <xmp>/catalog/metacal/unsheared      Group</xmp>
