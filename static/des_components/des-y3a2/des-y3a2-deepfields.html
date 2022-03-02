@@ -8,6 +8,9 @@
 
 </style>
 
+<div class="fixup" id="deep_top"></div>
+
+
 <!--ul>
   <li><a href="deepoverview">Overview</a></li>
   <li><a href="#images">Images</a></li>
@@ -17,12 +20,27 @@
 
 
 <des-card heading="Deep Fields">
+<ul>
+	<li><a href="javascript:void(0)" on-tap="_deepoverview">Overview</a></li>
+	</ul>
+	<ul>
+      <li><a href="javascript:void(0)" on-tap="_deepimages">Deep Images</a></li>
+      </ul>
+      <ul>
+      <li><a href="javascript:void(0)" on-tap="_deepcatalog">Deep Source Catalog</a></li>
+      </ul>
+      <ul>
+      <li><a href="javascript:void(0)" on-tap="_deepphotoz">Deep Photo-z Estimates</a></li>
+    </ul>
 
+<div id="deep_overview"></div>
 <div class="card-content">
 
 <a id="overview"><h2><strong>Overview</strong></h2></a>
 
 <p> The DES Deep Fields are described in <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> </p>
+
+
 
 <p>The DES Deep Fields comprise the set of fields where the integrated exposure time per pixel in the four key DECam passbands (griz) is approximately ten times that of the main DES survey area or greater. For the DES Y3 cosmology analysis we built images in the ten supernova (SN) fields and the COSMOS field, combining DES exposures and community data. Names of the SN pointings are derived from the respective pre-cursor surveys in that region of the sky, CDFS (SN-C1, SN-C2, SN-C3), Elais-South (SN-E1, SN-E2), Stripe 82 (SN-S1, SN-S2) and XMM-LSS (SN-X1, SN-X2, SN-X3). The sky locations and footprints of the eleven fields are shown in the figure below. Filled rectangles correspond to the DECam chips that are used to produce our photometric catalogue.</p>
 
@@ -59,6 +77,7 @@
   <li>Photometric redshift catalogues from EAzY and DNF.</li>
 </ul>
 
+<div id="deep_images"></div>
 <a id="images"><h2><strong>Images</strong></h2></a>
 
 <p>
@@ -92,6 +111,7 @@ Image files are compressed with fpack and one file is provided for each coadded 
 
 
 </br>
+<div id="deep_catalog"></div>
 <a id="photometry"><h2><strong> Key Project Catalogue</strong></h2></a>
 
 <p>The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available as a database table, Y3_DEEP_FIELDS_PHOTOM, via <a href="https://des.ncsa.illinois.edu/desaccess/db-access" target="_blank">the DB server</a>.</p>
@@ -257,10 +277,17 @@ Image files are compressed with fpack and one file is provided for each coadded 
 </tr>
 </table>
 
+<div id="deep_photoz"></div>
 <a id="photoz"><h2><strong>Photometric redshifts</strong></h2></a>
 
 <p>Photometric redshifts for the key project catalogue have been computed using the EAzY (<a href="http://adsabs.harvard.edu/abs/2008ApJ...686.1503B">Brammer, van Dokkum & Coppi, 2008</a>) template-ftting software and DNF (<a href="http://adsabs.harvard.edu/abs/2016MNRAS.459.3078D">De Vicente, Sanchez & Sevilla-Noarbe, 2016)</a> machine learning algorithm. They are available as separate database tables,  Y3_DEEP_FIELDS_PHOTOZ for EAZY and Y3_DEEP_FIELDS_PHOTOZ_DNF for DNF, via <a href="https://des.ncsa.illinois.edu/desaccess/db-access" target="_blank">the DB server</a>.</p>
 
+<p> Contact:</p>
+<ol>
+      <li> EAZY: Will Hartley (willliam.hartley@gmail.com) </li>
+      <li> DNF: Laura Toribio (laura.toribio@ciemat.es) </li>
+</ol>
+  </br>
 <h4>Y3_DEEP_FIELDS_PHOTOZ (EAZY)</h4>
 
 <table>
@@ -404,6 +431,12 @@ Image files are compressed with fpack and one file is provided for each coadded 
 <script>
     class DesY3A2Deepfields extends Polymer.Element {
       static get is() { return 'des-y3a2-deepfields'; }
+	_top() {this.$.deep_top.scrollIntoView();}
+	    _deepoverview() {this.$.deep_overview.scrollIntoView();}
+	    _deepimages() {this.$.deep_images.scrollIntoView();}
+	    _deepcatalog() {this.$.deep_catalog.scrollIntoView();}
+	    _deepphotoz() {this.$.deep_photoz.scrollIntoView();}
+
     }
     window.customElements.define(DesY3A2Deepfields.is, DesY3A2Deepfields);
   </script>
