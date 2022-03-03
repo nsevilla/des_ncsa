@@ -8,8 +8,20 @@
 
 </style>
 
+<div class="fixup" id="kp_products_top"></div>
 
 <des-card heading="Y3KP Products">
+	<ul>
+        <li><a href="javascript:void(0)" on-tap="_kpoverview">Overview</a></li>
+        </ul>
+        <ul>
+      <li><a href="javascript:void(0)" on-tap="_datavectors">Data Vectors</a></li>
+      </ul>
+      <ul>
+      <li><a href="javascript:void(0)" on-tap="_cosmochains">Cosmology Chains</a></li>
+      </ul>
+
+<div id="keyproducts_overview"></div>
 <div class="card-content">
 
     <h2>
@@ -19,28 +31,26 @@
     <h2>
       <strong>Download</strong>
     </h2>
-    <!--p>Here you can download the Data Vectors used in the main DES Y3 3x2pt analysis, as well as the cosmology chains. The full listing of downloadable files can be found <strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/">here</a> </strong>.  </p-->
-    <p>Here you can download the main DES Y3 3x2pt cosmology chains. <strong> Data Vectors will be made available by 1st of March 2022</strong>.</p>
-    <p>The full listing of downloadable files can be found <strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/">here</a> </strong>.  </p>
-
-    <!--p>  </strong>Also you can download the weak lensing mass maps (full listing <strong>
-        <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/mass_maps/">here</a>
-      </strong>).</p-->
+    <p>Here you can download the Data Vectors used in the main DES Y3 3x2pt analysis, as well as the cosmology chains.  </p>
+    <p>The full listing of downloadable files can be found <strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/">here (chains)</a> </strong> and <strong> <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/datavectors/">here (data vectors)</a> </strong>.  </p>
 
 
     <h2>
       <strong>Description</strong>
     </h2>
 
-      <h3>Data Vectors</h3>
+	<div id="kp_datavectors"></div>
 
-      <p>These files (with fiducial MagLim- or redMaGiC-based lens samples) include all the 3x2pt data vectors, redshift distributions, and covariance matrix. </p> <!--p>They are included in a single FITS binary file, with 7 HDU extensions. Please note that metadata is stored as values in the header of each HDU, as described below, and may be necessary to understand the contents of the HDU.</p-->
-      <p><strong>Data Vectors will be made available by 1st of March 2022.</strong>
-      <!--ul>
+      <h3>Data Vectors <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
+
+      <p>These files (with fiducial MagLim- or redMaGiC-based lens samples) include all the 3x2pt data vectors, redshift distributions, and covariance matrix. </p>
+
+      <p>They are included in a single FITS binary file, with 7 HDU extensions. Please note that metadata is stored as values in the header of each HDU, as described below, and may be necessary to understand the contents of the HDU.</p>
+      <ul>
       <li><a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/datavectors/2pt_NG_final_2ptunblind_02_26_21_wnz_maglim_covupdate.fits">2pt_NG_final_2ptunblind_02_26_21_wnz_maglim_covupdate.fits (MagLim Data Vector)</a></li>
       <li><a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/datavectors/2pt_NG_final_2ptunblind_02_24_21_wnz_redmagic_covupdate.fits">2pt_NG_final_2ptunblind_02_24_21_wnz_redmagic_covupdate.fits (redMaGiC Data Vector)</a> </li>
-      </ul-->
-    <!--table class="wrapped">
+      </ul>
+    <table class="wrapped">
       <colgroup>
         <col/>
         <col/>
@@ -687,13 +697,14 @@
           <td colspan="1">The n(z) in this z bin range for tomographic bin (1-4)</td>
         </tr>
       </tbody>
-    </table-->
+    </table>
 
 
 
 
 
-    <h3>Cosmology Chains</h3>
+    <div id="kp_cosmochains"></div>
+    <h3>Cosmology Chains <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
     <p>Here we present the cosmological chains for the various models presented in the Y3 3x2pt key paper. Information about the model and settings used in each chain are documented in the file headers.</p>
     <p>
       <br/>The chains are produced using polychord. When using the chains, you must weight the contribution of each sample according to the weight column. The final N samples to be used are listed at the end of the chain (nsample), along with the final log evidence. <b>Note that this is a nested sampler, so the sequence of samples is not a random walk.</b></p>
@@ -1032,6 +1043,11 @@
 <script>
     class DesY3A2KeyProducts extends Polymer.Element {
       static get is() { return 'des-y3a2-key-products'; }
+	    _top() {this.$.kp_products_top.scrollIntoView();}
+            _kpoverview() {this.$.keyproducts_overview.scrollIntoView();}
+            _datavectors() {this.$.kp_datavectors.scrollIntoView();}
+            _cosmochains() {this.$.kp_cosmochains.scrollIntoView();}
+
     }
     window.customElements.define(DesY3A2KeyProducts.is, DesY3A2KeyProducts);
   </script>
