@@ -16,6 +16,7 @@
 </style>
 
 
+<!-- 
 <des-card  heading="DES Release Help Form">
     <div class="card-content">
 Please complete the form below with any questions related to the DES Releases
@@ -23,7 +24,8 @@ that were not addressed by the documentation pages.
 Indicating one or more relevant topics will help us to properly answer your question.
 </div>
 <hr>
-</des-card>
+</des-card> 
+-->
 
 <des-card class="helpform">
 
@@ -34,6 +36,10 @@ Indicating one or more relevant topics will help us to properly answer your ques
        <iron-form class="ironformcontent" id="Helpform" >
         <form is="iron-form" method="post" action="/help/">
             <div style="text-align: center; font-size: larger; color:red; padding-top: 10px">Help Form</div>
+            <p>After submitting this form, <b></b>you must check your email and open the confirmation link.</b>
+              This provides you with a copy of your submitted form and helps us prevent spam. 
+              <i>Don't forget to check your spam folder</i>.
+            </p>
             <div class="form1" id="form1" >
             <p><b>Name:</b></p>
             <paper-input name="name" label="First" required></paper-input>
@@ -80,8 +86,8 @@ Indicating one or more relevant topics will help us to properly answer your ques
     </div>
 
       </des-card>
-<paper-toast style="z-index: 9999; margin-left:260px;" id="toast1" text="Form has been submitted! Thanks"> </paper-toast>
-<paper-toast style="z-index: 9999; margin-left:260px; color:red;" id="toast2" text="ERROR!, Please Check Form"> </paper-toast>
+<paper-toast style="z-index: 9999; margin-left:260px; color: white; background-color: green;" id="toast1" text="One more step! Check your email for a confirmation link." duration="60000"> </paper-toast>
+<paper-toast style="z-index: 9999; margin-left:260px; color:red;" id="toast2" text="ERROR! Please Check Form"> </paper-toast>
 
 
 </template>

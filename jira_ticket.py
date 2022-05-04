@@ -11,7 +11,62 @@ import smtplib
 import urllib
 import yaml
 import os
+from datetime import datetime
+from global_vars import log
 
+
+def send_confirmation_email(base_url, token, email, last_name, first_name, subject, message, topics):
+    email_subject = f'''Please confirm your DESDM help request'''
+    toemail = email
+    fromemail = 'devnull@ncsa.illinois.edu'
+    s = smtplib.SMTP('smtp.ncsa.uiuc.edu')
+    topics_list = topics.replace('\n', '<br>')
+    current_time_string = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S")
+    text = f'''
+    <html>
+        <p>
+            To finish submitting your DESDM help request, you must open the link below. 
+            This is necessary to avoid spam submissions. If you did not submit this form, please ignore and delete this email.
+        </p>
+        <p style="text-align: center; font-size: larger;">
+            <a href="https://{base_url}/help/confirm/{token}">Click here to confirm your help request.</a>
+        </p>
+        <p>This is the help request associated with this email address that was submitted at {current_time_string} (UTC):</p>
+        <p>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>{first_name} {last_name}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{email}</td>
+                </tr>
+                <tr>
+                    <td>Subject:</td>
+                    <td>{subject}</td>
+                </tr>
+                <tr>
+                    <td>Message:</td>
+                    <td>{message}</td>
+                </tr>
+                <tr>
+                    <td>Topics:</td>
+                    <td>{topics_list}</td>
+                </tr>
+            </table>
+        </p>
+    </html>
+    '''
+    log.debug(text)
+    MP1 = MIMEText(text, 'html')
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = email_subject
+    msg['From'] = formataddr((str(Header('DESDM Help Request', 'utf-8')), fromemail))
+    msg['To'] = toemail
+    msg.attach(MP1)
+    s.sendmail(fromemail, toemail, msg.as_string())
+    s.quit()
 
 def send_email(jira_issue, subject, body):
     subject = f'''DESDM Help Request [{jira_issue}]: {subject}'''
@@ -63,7 +118,9 @@ def create_ticket(first, last, email, topics, subject, question):
     %s
 
     *Question*:
+    {noformat}
     %s
+    {noformat}
 
     """ % (email, first, last, email, topics, question)
 
