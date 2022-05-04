@@ -12,13 +12,13 @@
         rootPath: '{{rootPath}}'
       };
       // Load and register pre-caching Service Worker
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('{{rootPath}}static/service-worker.js', {
-            scope: '{{rootPath}}static/',
-          });
-        });
-      }
+      // if ('serviceWorker' in navigator) {
+      //   window.addEventListener('load', function() {
+      //     navigator.serviceWorker.register('{{rootPath}}static/service-worker.js', {
+      //       scope: '{{rootPath}}static/',
+      //     });
+      //   });
+      // }
     </script>
 
   <base href="/">
