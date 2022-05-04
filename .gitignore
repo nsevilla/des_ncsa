@@ -4,3 +4,4 @@ static/log.csv
 __pycache__/
 static/bower_components/*
 .DS_Store
+.codesync
