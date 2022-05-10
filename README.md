@@ -22,9 +22,10 @@ Workflow for contributing content updates
 4. Configure the webserver to run in "dev" mode.
     ```shell
     docker run --rm --name desdm-public \
-      -e APP_ROOT="/" -e JIRA_DEFAULT_ASSIGNEE="" \
+      -e APP_ROOT="/" -e JIRA_DEFAULT_ASSIGNEE="" -e BASE_URL="localhost" \
       -p 8080:8080 \
       -v $(pwd):/home/des \
+      -v /tmp:/db \
       -u $(id -u) \
       desdm-public:dev \
       python3 vulcan.py --dev
@@ -32,9 +33,10 @@ Workflow for contributing content updates
 5. Run the webserver to serve the webpage.
     ```shell
     docker run --rm --name desdm-public \
-      -e APP_ROOT="/" -e JIRA_DEFAULT_ASSIGNEE="" \
+      -e APP_ROOT="/" -e JIRA_DEFAULT_ASSIGNEE="" -e BASE_URL="localhost" \
       -p 8080:8080 \
       -v $(pwd):/home/des \
+      -v /tmp:/db \
       -u $(id -u) \
       desdm-public:dev \
       python3 main.py
