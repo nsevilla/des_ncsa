@@ -1,0 +1,84 @@
+<dom-module id="des-quadruply-qso-method">
+
+<template>
+
+    <style include="shared-styles">
+
+</style>
+
+
+    <des-card heading ="Finding quadruply imaged quasars with Machine Learning. I. Methods">
+        <!--div style="text-align: center">
+        <iron-image style="width:450px; height:375px; padding:40px;" sizing="contain"
+                src="{{rootPath}}static/images/other/y3-mlt-gagne.png"></iron-image>
+        <iron-image style="width:450px; height:375px; padding:40px;" sizing="contain"
+                src="{{rootPath}}static/images/other/y3-mlt.png"></iron-image>
+            </div-->
+        <div style="text-align: center">
+          <a style="padding: 20px; text-decoration: none" href="[[rootPath]]releases/other/quadruply-qso-method"><paper-button   raised class="desButton">Documentation</paper-button></a>
+    <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/quadruply-qso-method/"><paper-button   raised class="desButton">Files</paper-button></a>
+</div>
+      <div class="card-content">
+        <h2>
+  <strong>Overview</strong>
+</h2>
+<p>Gravitationally lensed quasars are interesting and rare systems which allow us to solve some of the mysteries about the Universe, for example, the expansion history of the Universe, fraction of dark matter and the environments of Black Holes. Finding them in astronomical images is a classic ‘needle in a haystack’ problem, as they are outnumbered by other (contaminant) sources by many orders of magnitude. To solve this problem, we develop state-of-the-art deep learning methods and train them on realistic simulated quads based on real images of galaxies taken from the Dark Energy Survey, with realistic source and deflector models, including the chromatic effects of microlensing. The performance of the best methods on a mixture of simulated and real objects is excellent, yielding an area under the receiver operating curve in the range of 0.86-0.89. Our methods are fast and are expected to minimize incompleteness arising due to photometric pre-selection applied in known samples of lensed quasars.</p>
+<p><strong> REFERENCE:</strong> <a href="https://academic.oup.com/mnras/article/513/2/2407/6564188">A. Akhazhanov et al. 2022</a>
+
+<br/>
+<h2>
+  <strong>Data Description</strong>
+</h2>
+<p> We share 3 Datasets of images stored in individual FITS images:</p>
+<table>
+	<colgroup>
+            <col />
+            <col />
+          </colgroup>
+	<tbody>
+            <tr>
+		    <th>DIRECTORY NAME in <a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/quadruply-qso-method/">Repository</a> </th>
+              <th>DESCRIPTION</th>  
+            </tr>
+		<tr>
+              <td><a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/quadruply-qso-method/outfitq">outfitq</a></td>
+              <td>
+                <p>28498 FITS files. Each FITS file has 6 layers. The first 4 layers show the same lens system in the g,r,i and z bands. The lens system is a mixture of simulated lensed quasar images superposed on real images of galaxies selected from the DES data. The 5th layer shows the simulated quasar-only image in i band and the 6th layer shows the real image of a galaxy selected from the DES - i band data.</p>
+              </td>
+            </tr>
+	    <tr>
+              <td><a href="http://desdr-server.ncsa.illinois.edu/despublic/other_files/quadruply-qso-method/outfit_qso">outfit_qso</a></td>
+              <td>
+                <p>28498 FITS files. Each FITS file has 4 layers corresponding to the simulated lensed quasar only images in the g,r,i and z bands.</p>
+              </td>
+            </tr>
+	    </tr>
+            <tr>
+              <td>COMING SOON</td>
+              <td>
+                <p> </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+
+
+<!--p>Please contact <a href="mailto:aurelio.carnero@ciemat.es">aurelio.carnero@ciemat.es</a>, <a href="mailto:basilio.santiago@ufrgs.br">basilio.santiago@ufrgs.br</a>, <a href="mailto:mari.dalponte@gmail.com">mari.dalponte@gmail.com</a> or <a href="mailto:b.burningham@herts.ac.uk">b.burningham@herts.ac.uk</a> for questions.</p-->
+
+
+</div>
+</des-card>
+
+
+</template>
+<script>
+    class DesOtherQuadQSO extends Polymer.Element {
+      static get is() { return 'des-quadruply-qso-method'; }
+    }
+    window.customElements.define(DesOtherQuadQSO.is, DesOtherQuadQSO);
+  </script>
+
+</dom-module>
